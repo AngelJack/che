@@ -44,13 +44,11 @@ import org.eclipse.che.api.git.shared.ShowFileContentResponse;
 import org.eclipse.che.api.git.shared.Status;
 import org.eclipse.che.api.git.shared.StatusFormat;
 import org.eclipse.che.api.git.shared.Tag;
-import org.eclipse.che.commons.lang.Pair;
 
 import java.io.Closeable;
 import java.io.File;
 import java.net.URISyntaxException;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Connection to Git repository.
@@ -199,15 +197,15 @@ public interface GitConnection extends Closeable {
     DiffPage diff(DiffParams params) throws GitException;
 
     /**
-     * Get edited lines (added, changed, removed) of the file.
+     * Get list of edited regions (insertions, modifications, removals) of the file.
      *
      * @param file
      *         path of the file
-     * @return Map that contains Pair of first and last edited line as a key, and edition type as a value
+     * @return list of {@link Edition} objects that contain type and range of the edition
      * @throws GitException
      *         if any error occurs
      */
-    List<Edition> getDifferentLines(String file) throws GitException;
+    List<Edition> getEditions(String file) throws GitException;
 
     /**
      * Show content of the file from specified revision or branch.

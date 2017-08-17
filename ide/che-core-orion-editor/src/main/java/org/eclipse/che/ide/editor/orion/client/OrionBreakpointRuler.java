@@ -48,7 +48,7 @@ public class OrionBreakpointRuler implements Gutter {
     /** {@inheritDoc} */
     @Override
     public void addGutterItem(int line, String gutterId, Element element) {
-        if (!Gutters.BREAKPOINTS_GUTTER.equals(gutterId) && !Gutters.VCS_MARKS_GUTTER.equals(gutterId)) {
+        if (!Gutters.BREAKPOINTS_GUTTER.equals(gutterId) && !Gutters.EDITIONS_GUTTER.equals(gutterId)) {
             return;
         }
 

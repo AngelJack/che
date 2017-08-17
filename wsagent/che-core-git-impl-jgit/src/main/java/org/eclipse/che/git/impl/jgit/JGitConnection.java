@@ -74,7 +74,6 @@ import org.eclipse.che.api.git.shared.Status;
 import org.eclipse.che.api.git.shared.StatusFormat;
 import org.eclipse.che.api.git.shared.Tag;
 import org.eclipse.che.commons.annotation.Nullable;
-import org.eclipse.che.commons.lang.Pair;
 import org.eclipse.che.plugin.ssh.key.script.SshKeyProvider;
 import org.eclipse.che.commons.proxy.ProxyAuthenticator;
 import org.eclipse.jgit.api.AddCommand;
@@ -123,7 +122,6 @@ import org.eclipse.jgit.lib.RepositoryCache;
 import org.eclipse.jgit.lib.RepositoryState;
 import org.eclipse.jgit.lib.StoredConfig;
 import org.eclipse.jgit.merge.ResolveMerger;
-import org.eclipse.jgit.patch.HunkHeader;
 import org.eclipse.jgit.revwalk.RevCommit;
 import org.eclipse.jgit.revwalk.RevObject;
 import org.eclipse.jgit.revwalk.RevTag;
@@ -188,7 +186,6 @@ import static java.nio.file.attribute.PosixFilePermission.OWNER_WRITE;
 import static java.util.concurrent.TimeUnit.MILLISECONDS;
 import static java.util.concurrent.TimeUnit.SECONDS;
 import static java.util.stream.Collectors.toList;
-import static java.util.stream.Collectors.toMap;
 import static org.eclipse.che.api.git.shared.BranchListMode.LIST_ALL;
 import static org.eclipse.che.api.git.shared.BranchListMode.LIST_LOCAL;
 import static org.eclipse.che.api.git.shared.BranchListMode.LIST_REMOTE;
@@ -666,7 +663,7 @@ class JGitConnection implements GitConnection {
     }
 
     @Override
-    public List<Edition> getDifferentLines(String file) throws GitException {
+    public List<Edition> getEditions(String file) throws GitException {
         DirCache dirCache = null;
         try {
             dirCache = getRepository().lockDirCache();

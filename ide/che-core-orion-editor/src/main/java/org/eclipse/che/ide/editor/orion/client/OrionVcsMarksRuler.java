@@ -15,7 +15,6 @@ import elemental.dom.Element;
 import org.eclipse.che.ide.api.editor.gutter.Gutter;
 import org.eclipse.che.ide.api.editor.gutter.Gutters;
 import org.eclipse.che.ide.editor.orion.client.jso.ModelChangedEventOverlay;
-import org.eclipse.che.ide.editor.orion.client.jso.OrionAnnotationIteratorOverlay;
 import org.eclipse.che.ide.editor.orion.client.jso.OrionAnnotationModelOverlay;
 import org.eclipse.che.ide.editor.orion.client.jso.OrionAnnotationOverlay;
 import org.eclipse.che.ide.editor.orion.client.jso.OrionEditorOverlay;
@@ -49,7 +48,7 @@ public class OrionVcsMarksRuler implements Gutter {
     /** {@inheritDoc} */
     @Override
     public void addGutterItem(int line, String gutterId, Element element) {
-        if (!Gutters.VCS_MARKS_GUTTER.equals(gutterId)) {
+        if (!Gutters.EDITIONS_GUTTER.equals(gutterId)) {
             return;
         }
 
@@ -60,7 +59,7 @@ public class OrionVcsMarksRuler implements Gutter {
     /** {@inheritDoc} */
     @Override
     public void addGutterItem(int line, String gutterId, Element element, final LineNumberingChangeCallback lineCallback) {
-        if (!Gutters.VCS_MARKS_GUTTER.equals(gutterId)) {
+        if (!Gutters.EDITIONS_GUTTER.equals(gutterId)) {
             return;
         }
 
@@ -88,7 +87,7 @@ public class OrionVcsMarksRuler implements Gutter {
     /** {@inheritDoc} */
     @Override
     public void removeGutterItem(int line, String gutterId) {
-        if (!Gutters.VCS_MARKS_GUTTER.equals(gutterId)) {
+        if (!Gutters.EDITIONS_GUTTER.equals(gutterId)) {
             return;
         }
 
@@ -99,7 +98,7 @@ public class OrionVcsMarksRuler implements Gutter {
     /** {@inheritDoc} */
     @Override
     public Element getGutterItem(int line, String gutterId) {
-        if (!Gutters.VCS_MARKS_GUTTER.equals(gutterId)) {
+        if (!Gutters.EDITIONS_GUTTER.equals(gutterId)) {
             return null;
         }
 
@@ -116,7 +115,7 @@ public class OrionVcsMarksRuler implements Gutter {
     /** {@inheritDoc} */
     @Override
     public void clearGutter(String gutterId) {
-        if (!Gutters.VCS_MARKS_GUTTER.equals(gutterId)) {
+        if (!Gutters.EDITIONS_GUTTER.equals(gutterId)) {
             return;
         }
 
@@ -127,7 +126,7 @@ public class OrionVcsMarksRuler implements Gutter {
     /** {@inheritDoc} */
     @Override
     public void setGutterItem(int line, String gutterId, Element element) {
-        if (!Gutters.VCS_MARKS_GUTTER.equals(gutterId)) {
+        if (!Gutters.EDITIONS_GUTTER.equals(gutterId)) {
             return;
         }
 

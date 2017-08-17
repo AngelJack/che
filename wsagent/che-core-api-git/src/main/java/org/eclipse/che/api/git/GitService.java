@@ -12,6 +12,7 @@ package org.eclipse.che.api.git;
 
 import org.eclipse.che.api.core.ApiException;
 import org.eclipse.che.api.core.BadRequestException;
+import org.eclipse.che.api.core.rest.annotations.Required;
 import org.eclipse.che.api.git.exception.GitException;
 import org.eclipse.che.api.git.params.AddParams;
 import org.eclipse.che.api.git.params.CheckoutParams;
@@ -232,11 +233,12 @@ public class GitService {
     }
 
     @GET
-    @Path("lines")
+    @Path("editions")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Edition> getEdition(@QueryParam("file") String file) throws ApiException {
+    public List<Edition> getEdition(@Required @QueryParam("file") String file) throws ApiException {
+        requiredNotNull(file, "File path");
         try (GitConnection gitConnection = getGitConnection()) {
-            return gitConnection.getDifferentLines(file);
+            return gitConnection.getEditions(file);
         }
     }
 
@@ -537,5 +539,21 @@ public class GitService {
 
     private GitConnection getGitConnection() throws ApiException {
         return gitConnectionFactory.getConnection(getAbsoluteProjectPath(projectPath));
+    }
+
+    /**
+     * Checks object reference is not {@code null}
+     *
+     * @param object
+     *         object reference to check
+     * @param subject
+     *         used as subject of exception message "{subject} required"
+     * @throws BadRequestException
+     *         when object reference is {@code null}
+     */
+    private void requiredNotNull(Object object, String subject) throws BadRequestException {
+        if (object == null) {
+            throw new BadRequestException(subject + " required");
+        }
     }
 }

@@ -119,8 +119,8 @@ import org.eclipse.che.ide.api.resources.ResourceDelta;
 import org.eclipse.che.ide.api.resources.VirtualFile;
 import org.eclipse.che.ide.api.selection.Selection;
 import org.eclipse.che.ide.api.vcs.HasVcsMarkRender;
-import org.eclipse.che.ide.api.vcs.VcsMarkRender;
-import org.eclipse.che.ide.api.vcs.VcsMarkRenderFactory;
+import org.eclipse.che.ide.api.vcs.VcsEditionRender;
+import org.eclipse.che.ide.api.vcs.VcsEditionRenderFactory;
 import org.eclipse.che.ide.editor.orion.client.events.NewLineAddedEvent;
 import org.eclipse.che.ide.editor.orion.client.jso.OrionExtRulerOverlay;
 import org.eclipse.che.ide.editor.orion.client.jso.OrionLinkedModelDataOverlay;
@@ -178,7 +178,7 @@ public class OrionEditorPresenter extends AbstractEditorPresenter implements Tex
     private final BreakpointManager                      breakpointManager;
     private final PreferencesManager                     preferencesManager;
     private final BreakpointRendererFactory              breakpointRendererFactory;
-    private final VcsMarkRenderFactory                   vcsMarkRenderFactory;
+    private final VcsEditionRenderFactory                vcsEditionRenderFactory;
     private final DialogFactory                          dialogFactory;
     private final DocumentStorage                        documentStorage;
     private final EditorMultiPartStackPresenter          editorMultiPartStackPresenter;
@@ -215,7 +215,7 @@ public class OrionEditorPresenter extends AbstractEditorPresenter implements Tex
     private HandlerRegistration      resourceChangeHandler;
     private OrionEditorInit          editorInit;
 
-    private VcsMarkRender vcsMarkRender;
+    private VcsEditionRender vcsEditionRender;
 
     @Inject
     public OrionEditorPresenter(final CodeAssistantFactory codeAssistantFactory,
@@ -223,7 +223,7 @@ public class OrionEditorPresenter extends AbstractEditorPresenter implements Tex
                                 final BreakpointManager breakpointManager,
                                 final PreferencesManager preferencesManager,
                                 final BreakpointRendererFactory breakpointRendererFactory,
-                                final VcsMarkRenderFactory vcsMarkRenderFactory,
+                                final VcsEditionRenderFactory vcsEditionRenderFactory,
                                 final DialogFactory dialogFactory,
                                 final DocumentStorage documentStorage,
                                 final EditorMultiPartStackPresenter editorMultiPartStackPresenter,
@@ -246,7 +246,7 @@ public class OrionEditorPresenter extends AbstractEditorPresenter implements Tex
         this.breakpointManager = breakpointManager;
         this.preferencesManager = preferencesManager;
         this.breakpointRendererFactory = breakpointRendererFactory;
-        this.vcsMarkRenderFactory = vcsMarkRenderFactory;
+        this.vcsEditionRenderFactory = vcsEditionRenderFactory;
         this.dialogFactory = dialogFactory;
         this.documentStorage = documentStorage;
         this.editorMultiPartStackPresenter = editorMultiPartStackPresenter;
@@ -673,14 +673,14 @@ public class OrionEditorPresenter extends AbstractEditorPresenter implements Tex
     }
 
     @Override
-    public Promise<VcsMarkRender> getOrCreateVcsMarkRender() {
+    public Promise<VcsEditionRender> getOrCreateVcsMarkRender() {
         return Promises.create((resolve, reject) -> {
 
             java.util.Optional<OrionExtRulerOverlay> optional =
                     stream(editorWidget.getTextView().getRulers()).filter(ruler -> "git".equals(ruler.getStyle().getStyleClass()))
                                                                   .findAny();
             if (optional.isPresent()) {
-                resolve.apply(vcsMarkRender);
+                resolve.apply(vcsEditionRender);
             } else {
                 OrionStyleOverlay style = OrionStyleOverlay.create();
                 style.setStyleClass("git");
@@ -693,10 +693,10 @@ public class OrionEditorPresenter extends AbstractEditorPresenter implements Tex
                                                 OrionVcsMarksRuler orionVcsMarksRuler = new OrionVcsMarksRuler(orionExtRulerOverlay,
                                                                                                                editorWidget.getEditor());
 
-                                                vcsMarkRender = vcsMarkRenderFactory.create(orionVcsMarksRuler,
-                                                                                            editorWidget.getLineStyler(),
-                                                                                            document);
-                                                resolve.apply(vcsMarkRender);
+                                                vcsEditionRender = vcsEditionRenderFactory.create(orionVcsMarksRuler,
+                                                                                                  editorWidget.getLineStyler(),
+                                                                                                  document);
+                                                resolve.apply(vcsEditionRender);
                                             });
             }
         });

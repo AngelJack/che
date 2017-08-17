@@ -16,23 +16,18 @@ import org.eclipse.che.api.core.jsonrpc.commons.RequestHandlerConfigurator;
 import org.eclipse.che.api.git.shared.Edition;
 import org.eclipse.che.api.git.shared.GitChangeEventDto;
 import org.eclipse.che.api.git.shared.Status;
-import org.eclipse.che.api.promises.client.Operation;
-import org.eclipse.che.api.promises.client.OperationException;
-import org.eclipse.che.api.promises.client.Promise;
 import org.eclipse.che.ide.api.app.AppContext;
 import org.eclipse.che.ide.api.editor.EditorAgent;
 import org.eclipse.che.ide.api.editor.EditorOpenedEvent;
-import org.eclipse.che.ide.api.editor.EditorOpenedEventHandler;
 import org.eclipse.che.ide.api.git.GitServiceClient;
 import org.eclipse.che.ide.api.parts.EditorMultiPartStack;
 import org.eclipse.che.ide.api.parts.EditorTab;
 import org.eclipse.che.ide.api.resources.File;
 import org.eclipse.che.ide.api.resources.Resource;
 import org.eclipse.che.ide.api.vcs.HasVcsMarkRender;
-import org.eclipse.che.ide.api.vcs.VcsMarkRender;
+import org.eclipse.che.ide.api.vcs.VcsEditionRender;
 import org.eclipse.che.ide.api.vcs.VcsStatus;
 import org.eclipse.che.ide.editor.orion.client.events.NewLineAddedEvent;
-import org.eclipse.che.ide.editor.orion.client.events.OnNewLineAddedHandler;
 import org.eclipse.che.ide.part.explorer.project.ProjectExplorerPresenter;
 import org.eclipse.che.ide.resource.Path;
 import org.eclipse.che.ide.resources.tree.FileNode;
@@ -76,34 +71,29 @@ public class GitChangesHandler {
         this.projectExplorerPresenterProvider = projectExplorerPresenterProvider;
         this.multiPartStackProvider = multiPartStackProvider;
 
-        eventBus.addHandler(NewLineAddedEvent.TYPE, new OnNewLineAddedHandler() {
-            @Override
-            public void onNewLineAdded(NewLineAddedEvent event) {
-                event.getOrionEditorPresenter().getOrCreateVcsMarkRender().then(new Operation<VcsMarkRender>() {
-                    @Override
-                    public void apply(VcsMarkRender arg) throws OperationException {
-                        arg.handleEnter(event.getLine());
-                    }
-                });
-            }
-        });
+        eventBus.addHandler(NewLineAddedEvent.TYPE,
+                            event -> event.getOrionEditorPresenter()
+                                          .getOrCreateVcsMarkRender()
+                                          .then(arg -> {
+                                              arg.handleNewLineAdded(event.getLine());
+                                          }));
 
         eventBus.addHandler(EditorOpenedEvent.TYPE,
-                            event -> ((HasVcsMarkRender)event.getEditor())
-                                    .getOrCreateVcsMarkRender()
-                                    .then(render -> {
-                                        gitServiceClient.getEditions(event.getFile()
-                                                                          .getLocation()
-                                                                          .uptoSegment(1),
-                                                                     event.getFile()
-                                                                          .getLocation()
-                                                                          .removeFirstSegments(1)
-                                                                          .toString())
-                                                        .then(edition -> {
-                                                            render.clearMarks();
-                                                            handleEdition(edition, render);
-                                                        });
-                                    }));
+                            event -> {
+                                if (((File)event.getFile()).getVcsStatus() != MODIFIED) {
+                                    return;
+                                }
+                                ((HasVcsMarkRender)event.getEditor())
+                                        .getOrCreateVcsMarkRender()
+                                        .then(render -> {
+                                            Path location = event.getFile().getLocation();
+                                            gitServiceClient.getEditions(location.uptoSegment(1),
+                                                                         location.removeFirstSegments(1).toString())
+                                                            .then(edition -> {
+                                                                handleEdition(edition, render);
+                                                            });
+                                        });
+                            });
 
         configureHandler(configurator);
     }
@@ -153,25 +143,25 @@ public class GitChangesHandler {
                            .getOpenedEditors()
                            .forEach(editor -> ((HasVcsMarkRender)editor).getOrCreateVcsMarkRender()
                                                                         .then(arg -> {
-                                                                            arg.clearMarks();
                                                                             handleEdition(dto.getEditions(), arg);
                                                                         }));
     }
 
-    private void handleEdition(List<Edition> editions, VcsMarkRender render) {
+    private void handleEdition(List<Edition> editions, VcsEditionRender render) {
+        render.clearAllEditions();
         editions.forEach(edition -> {
             for (int i = edition.getBeginLine(); i <= edition.getEndLine(); i++) {
                 switch (edition.getType()) {
                     case "INSERT": {
-                        render.addVcsMarkAdded(i);
+                        render.addInsertion(i);
                         continue;
                     }
                     case "REPLACE": {
-                        render.addVcsMarkModified(i);
+                        render.addModification(i);
                         continue;
                     }
                     case "DELETE": {
-                        render.addVcsMarkDeleted(i);
+                        render.addDeletion(i);
                     }
                 }
             }

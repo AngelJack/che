@@ -78,7 +78,7 @@ public class GitServiceClientImpl implements GitServiceClient {
     private static final String COMMIT     = "/git/commit";
     private static final String CONFIG     = "/git/config";
     private static final String DIFF       = "/git/diff";
-    private static final String EDITIONS   = "/git/lines";
+    private static final String EDITIONS   = "/git/editions";
     private static final String FETCH      = "/git/fetch";
     private static final String INIT       = "/git/init";
     private static final String LOG        = "/git/log";
@@ -379,8 +379,8 @@ public class GitServiceClientImpl implements GitServiceClient {
 
     @Override
     public Promise<List<Edition>> getEditions(Path project, String file) {
-        return asyncRequestFactory.createGetRequest(getWsAgentBaseUrl() + EDITIONS + "?projectPath=" + project + "&file=" + file)
-                                  .send(dtoUnmarshallerFactory.newListUnmarshaller(Edition.class));
+        String url = getWsAgentBaseUrl() + EDITIONS + "?projectPath=" + project + "&file=" + file;
+        return asyncRequestFactory.createGetRequest(url).send(dtoUnmarshallerFactory.newListUnmarshaller(Edition.class));
     }
 
     private AsyncRequest diff(Path project,

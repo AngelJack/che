@@ -28,7 +28,6 @@ import org.eclipse.che.ide.api.editor.events.HasCursorActivityHandlers;
 import org.eclipse.che.ide.api.editor.events.HasGutterClickHandlers;
 import org.eclipse.che.ide.api.editor.keymap.Keymap;
 import org.eclipse.che.ide.api.editor.position.PositionConverter;
-import org.eclipse.che.requirejs.ModuleHolder;
 
 import javax.validation.constraints.NotNull;
 import java.util.List;
@@ -71,8 +70,6 @@ public interface EditorWidget extends IsWidget,
      * @return the mode
      */
     String getMode();
-
-    ModuleHolder getModuleHolder();
 
     /**
      * Change readonly state of the editor.

@@ -117,6 +117,7 @@ public interface TextEditorPartView extends RequiresResize, IsWidget, HasNotific
         /** Reaction when the cursor position changes. */
         void editorCursorPositionChanged();
 
+        /** Reaction when the Enter key pressed. */
         void onNewLineAdded(int line);
     }
 }

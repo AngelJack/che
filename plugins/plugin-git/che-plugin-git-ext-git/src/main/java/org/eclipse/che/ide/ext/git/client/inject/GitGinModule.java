@@ -18,11 +18,11 @@ import com.google.inject.Singleton;
 import org.eclipse.che.ide.api.extension.ExtensionGinModule;
 import org.eclipse.che.ide.api.preferences.PreferencePagePresenter;
 import org.eclipse.che.ide.api.project.wizard.ImportWizardRegistrar;
-import org.eclipse.che.ide.api.vcs.VcsMarkRender;
-import org.eclipse.che.ide.api.vcs.VcsMarkRenderFactory;
+import org.eclipse.che.ide.api.vcs.VcsEditionRender;
+import org.eclipse.che.ide.api.vcs.VcsEditionRenderFactory;
 import org.eclipse.che.ide.ext.git.client.GitChangesHandler;
 import org.eclipse.che.ide.ext.git.client.GitCheckoutHandler;
-import org.eclipse.che.ide.ext.git.client.GitMarkRender;
+import org.eclipse.che.ide.ext.git.client.GitEditionRender;
 import org.eclipse.che.ide.ext.git.client.add.AddToIndexView;
 import org.eclipse.che.ide.ext.git.client.add.AddToIndexViewImpl;
 import org.eclipse.che.ide.ext.git.client.branch.BranchView;
@@ -76,8 +76,8 @@ public class GitGinModule extends AbstractGinModule {
         GinMultibinder.newSetBinder(binder(), PreferencePagePresenter.class).addBinding().to(CommitterPreferencePresenter.class);
 
         install(new GinFactoryModuleBuilder()
-                        .implement(VcsMarkRender.class, GitMarkRender.class)
-                        .build(VcsMarkRenderFactory.class));
+                        .implement(VcsEditionRender.class, GitEditionRender.class)
+                        .build(VcsEditionRenderFactory.class));
 
         bind(AddToIndexView.class).to(AddToIndexViewImpl.class).in(Singleton.class);
         bind(ResetToCommitView.class).to(ResetToCommitViewImpl.class).in(Singleton.class);

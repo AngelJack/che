@@ -14,24 +14,28 @@ import org.eclipse.che.dto.shared.DTO;
 
 @DTO
 public interface Edition {
+
+    /**
+     * First line of the edition range.
+     */
     int getBeginLine();
 
     void setBeginLine(int startLine);
 
     Edition withBeginLine(int startLine);
 
+    /**
+     * Last line of the edition range.
+     */
     int getEndLine();
 
     void setEndLine(int endLine);
 
     Edition withEndLine(int endLine);
 
-//    int[] getLines();
-//
-//    void setLines(int[] lines);
-//
-//    Edition withLines(int[] lines);
-
+    /**
+     * Type of the edition e.g. insertion, modification, deletion.
+     */
     String getType();
 
     void setType(String type);

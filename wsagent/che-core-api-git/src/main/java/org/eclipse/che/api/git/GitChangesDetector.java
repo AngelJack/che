@@ -128,7 +128,7 @@ public class GitChangesDetector {
                            .methodName(OUTGOING_METHOD)
                            .paramsAsDto(newDto(GitChangeEventDto.class).withPath(path)
                                                                        .withType(type)
-                                                                       .withEditions(connection.getDifferentLines(itemPath)))
+                                                                       .withEditions(connection.getEditions(itemPath)))
                            .sendAndSkipResult();
             } catch (GitException e) {
                 String errorMessage = e.getMessage();
