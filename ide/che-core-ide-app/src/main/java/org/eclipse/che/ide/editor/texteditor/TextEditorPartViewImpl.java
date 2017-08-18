@@ -140,12 +140,6 @@ public class TextEditorPartViewImpl extends Composite implements TextEditorPartV
                 delegate.editorGotFocus();
             }
         });
-
-        this.addDomHandler(keyPressEvent -> {
-            if (keyPressEvent.getNativeKeyCode() == KeyCodes.KEY_ENTER) {
-                delegate.onNewLineAdded(editorWidget.getDocument().getCursorPosition().getLine());
-            }
-        }, KeyUpEvent.getType());
     }
 
     @Override

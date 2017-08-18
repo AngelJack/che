@@ -15,6 +15,7 @@ import com.google.web.bindery.event.shared.EventBus;
 import org.eclipse.che.api.core.jsonrpc.commons.RequestHandlerConfigurator;
 import org.eclipse.che.api.git.shared.Edition;
 import org.eclipse.che.api.git.shared.GitChangeEventDto;
+import org.eclipse.che.api.git.shared.GitIndexChangeEventDto;
 import org.eclipse.che.api.git.shared.Status;
 import org.eclipse.che.ide.api.app.AppContext;
 import org.eclipse.che.ide.api.editor.EditorAgent;
@@ -24,10 +25,10 @@ import org.eclipse.che.ide.api.parts.EditorMultiPartStack;
 import org.eclipse.che.ide.api.parts.EditorTab;
 import org.eclipse.che.ide.api.resources.File;
 import org.eclipse.che.ide.api.resources.Resource;
+import org.eclipse.che.ide.api.vcs.EditionType;
 import org.eclipse.che.ide.api.vcs.HasVcsMarkRender;
-import org.eclipse.che.ide.api.vcs.VcsEditionRender;
+import org.eclipse.che.ide.api.vcs.VcsChangeMarkerRender;
 import org.eclipse.che.ide.api.vcs.VcsStatus;
-import org.eclipse.che.ide.editor.orion.client.events.NewLineAddedEvent;
 import org.eclipse.che.ide.part.explorer.project.ProjectExplorerPresenter;
 import org.eclipse.che.ide.resource.Path;
 import org.eclipse.che.ide.resources.tree.FileNode;
@@ -55,6 +56,7 @@ public class GitChangesHandler {
 
     private final AppContext                         appContext;
     private final Provider<EditorAgent>              editorAgentProvider;
+    private final Provider<GitServiceClient>         gitServiceClientProvider;
     private final Provider<ProjectExplorerPresenter> projectExplorerPresenterProvider;
     private final Provider<EditorMultiPartStack>     multiPartStackProvider;
 
@@ -64,19 +66,14 @@ public class GitChangesHandler {
                              GitServiceClient gitServiceClient,
                              AppContext appContext,
                              Provider<EditorAgent> editorAgentProvider,
+                             Provider<GitServiceClient> gitServiceClientProvider,
                              Provider<ProjectExplorerPresenter> projectExplorerPresenterProvider,
                              Provider<EditorMultiPartStack> multiPartStackProvider) {
         this.appContext = appContext;
         this.editorAgentProvider = editorAgentProvider;
+        this.gitServiceClientProvider = gitServiceClientProvider;
         this.projectExplorerPresenterProvider = projectExplorerPresenterProvider;
         this.multiPartStackProvider = multiPartStackProvider;
-
-        eventBus.addHandler(NewLineAddedEvent.TYPE,
-                            event -> event.getOrionEditorPresenter()
-                                          .getOrCreateVcsMarkRender()
-                                          .then(arg -> {
-                                              arg.handleNewLineAdded(event.getLine());
-                                          }));
 
         eventBus.addHandler(EditorOpenedEvent.TYPE,
                             event -> {
@@ -107,7 +104,7 @@ public class GitChangesHandler {
 
         configurator.newConfiguration()
                     .methodName("event/git-index")
-                    .paramsAsDto(Status.class)
+                    .paramsAsDto(GitIndexChangeEventDto.class)
                     .noResult()
                     .withBiConsumer(this::apply);
     }
@@ -121,7 +118,7 @@ public class GitChangesHandler {
                                                                             .getLocation()
                                                                             .equals(Path.valueOf(dto.getPath())))
             .forEach(node -> {
-                ((ResourceNode)node).getData().asFile().setVcsStatus(VcsStatus.from(dto.getType().toString()));
+                ((ResourceNode)node).getData().asFile().setVcsStatus(VcsStatus.from(dto.getStatus().toString()));
                 tree.refresh(node);
             });
 
@@ -130,7 +127,7 @@ public class GitChangesHandler {
                            .stream()
                            .filter(editor -> editor.getEditorInput().getFile().getLocation().equals(Path.valueOf(dto.getPath())))
                            .forEach(editor -> {
-                               VcsStatus vcsStatus = VcsStatus.from(dto.getType().toString());
+                               VcsStatus vcsStatus = VcsStatus.from(dto.getStatus().toString());
                                EditorTab tab = multiPartStackProvider.get().getTabByPart(editor);
                                if (vcsStatus != null) {
                                    tab.setTitleColor(vcsStatus.getColor());
@@ -147,29 +144,16 @@ public class GitChangesHandler {
                                                                         }));
     }
 
-    private void handleEdition(List<Edition> editions, VcsEditionRender render) {
-        render.clearAllEditions();
+    private void handleEdition(List<Edition> editions, VcsChangeMarkerRender render) {
+        render.clearAllMarkers();
         editions.forEach(edition -> {
-            for (int i = edition.getBeginLine(); i <= edition.getEndLine(); i++) {
-                switch (edition.getType()) {
-                    case "INSERT": {
-                        render.addInsertion(i);
-                        continue;
-                    }
-                    case "REPLACE": {
-                        render.addModification(i);
-                        continue;
-                    }
-                    case "DELETE": {
-                        render.addDeletion(i);
-                    }
-                }
-            }
+            render.addChangeMarker(edition.getBeginLine(), edition.getEndLine(), EditionType.valueOf(edition.getType().toString()));
         });
     }
 
-    public void apply(String endpointId, Status status) {
+    public void apply(String endpointId, GitIndexChangeEventDto dto) {
         Tree tree = projectExplorerPresenterProvider.get().getTree();
+        Status status = dto.getStatus();
         tree.getNodeStorage()
             .getAll()
             .stream()
@@ -207,6 +191,20 @@ public class GitChangesHandler {
                                } else if (((File)tab.getFile()).getVcsStatus() != NOT_MODIFIED) {
                                    tab.setTitleColor(NOT_MODIFIED.getColor());
                                }
+                           });
+
+        editorAgentProvider.get()
+                           .getOpenedEditors()
+                           .forEach(editor -> {
+                               String file = editor.getEditorInput().getFile().getLocation().removeFirstSegments(1).toString();
+                               ((HasVcsMarkRender)editor).getOrCreateVcsMarkRender()
+                                                         .then(render -> {
+                                                             if (dto.getModifiedFiles().keySet().contains(file)) {
+                                                                 handleEdition(dto.getModifiedFiles().get(file), render);
+                                                             } else {
+                                                                 render.clearAllMarkers();
+                                                             }
+                                                         });
                            });
 
         appContext.getWorkspaceRoot().synchronize();

@@ -677,12 +677,29 @@ class JGitConnection implements GitConnection {
             if (optional.isPresent()) {
                 EditList edits = formatter.toFileHeader(optional.get()).getHunks().get(0).toEditList();
                 return edits.stream()
-                            .map(edit -> newDto(Edition.class).withBeginLine(DELETE.equals(edit.getType()) ? edit.getBeginB() : edit.getBeginB() + 1)
-                                                              .withEndLine(edit.getEndB())
-                                                              .withType(edit.getType().toString()))
+                            .map(edit -> {
+                                Edition.Type type = null;
+                                switch (edit.getType()) {
+                                    case INSERT: {
+                                        type = Edition.Type.INSERTION;
+                                        break;
+                                    }
+                                    case REPLACE: {
+                                        type = Edition.Type.MODIFICATION;
+                                        break;
+                                    }
+                                    case DELETE: {
+                                        type = Edition.Type.DELETION;
+                                        break;
+                                    }
+                                }
+                                return newDto(Edition.class)
+                                        .withBeginLine(edit.getType() == DELETE ? edit.getBeginB() : edit.getBeginB() + 1)
+                                        .withEndLine(edit.getEndB())
+                                        .withType(type);
+                            })
                             .collect(toList());
             }
-
         } catch (IOException e) {
             throw new GitException(e.getMessage());
         } finally {

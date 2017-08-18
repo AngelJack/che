@@ -10,8 +10,23 @@
  *******************************************************************************/
 package org.eclipse.che.ide.api.vcs;
 
-import org.eclipse.che.api.promises.client.Promise;
+/** Component that handles change markers. */
+public interface VcsChangeMarkerRender {
 
-public interface HasVcsMarkRender {
-    Promise<VcsChangeMarkerRender> getOrCreateVcsMarkRender();
+    /**
+     * Add change marker to the gutter on the given lines.
+     *
+     * @param lineStart
+     *         first line of the marker
+     * @param lineEnd
+     *         lastLine of the marker
+     * @param type
+     *         tpe of the marker e.g. insertion, modification, deletion
+     */
+    void addChangeMarker(int lineStart, int lineEnd, EditionType type);
+
+    /**
+     * Clear all change markers in the gutter.
+     */
+    void clearAllMarkers();
 }

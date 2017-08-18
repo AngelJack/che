@@ -235,7 +235,7 @@ public class GitService {
     @GET
     @Path("editions")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Edition> getEdition(@Required @QueryParam("file") String file) throws ApiException {
+    public List<Edition> getEditions(@Required @QueryParam("file") String file) throws ApiException {
         requiredNotNull(file, "File path");
         try (GitConnection gitConnection = getGitConnection()) {
             return gitConnection.getEditions(file);

@@ -21,21 +21,25 @@ import java.util.List;
  */
 @DTO
 public interface GitChangeEventDto {
-    Type getType();
 
+    /** Status of the file. */
+    Status getStatus();
+
+    GitChangeEventDto withStatus(Status type);
+
+    /** Path of the file. */
     String getPath();
-
-    GitChangeEventDto withType(Type type);
 
     GitChangeEventDto withPath(String path);
 
+    /** List of edited regions of the file. */
     List<Edition> getEditions();
 
     void setEditions(List<Edition> editions);
 
     GitChangeEventDto withEditions(List<Edition> editions);
 
-    enum Type {
+    enum Status {
         ADDED,
         MODIFIED,
         UNTRACKED,

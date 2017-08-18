@@ -47,23 +47,24 @@ public class OrionBreakpointRuler implements Gutter {
 
     /** {@inheritDoc} */
     @Override
-    public void addGutterItem(int line, String gutterId, Element element) {
+    public void addGutterItem(int lineStart, int lineEnd, String gutterId, Element element) {
         if (!Gutters.BREAKPOINTS_GUTTER.equals(gutterId) && !Gutters.EDITIONS_GUTTER.equals(gutterId)) {
             return;
         }
 
-        OrionAnnotationOverlay annotation = toAnnotation(element, line);
+        OrionAnnotationOverlay annotation = toAnnotation(element, lineStart, lineEnd);
         annotationModel.addAnnotation(annotation);
     }
 
     /** {@inheritDoc} */
     @Override
-    public void addGutterItem(int line, String gutterId, Element element, final LineNumberingChangeCallback lineCallback) {
+    public void addGutterItem(int lineStart, int lineEnd, String gutterId, Element element,
+                              final LineNumberingChangeCallback lineCallback) {
         if (!Gutters.BREAKPOINTS_GUTTER.equals(gutterId)) {
             return;
         }
 
-        addGutterItem(line, gutterId, element);
+        addGutterItem(lineStart, lineEnd, gutterId, element);
         if (modelChangingEventHandler == null) {
             modelChangingEventHandler = new OrionTextModelOverlay.EventHandler<ModelChangedEventOverlay>() {
                 @Override
@@ -86,23 +87,23 @@ public class OrionBreakpointRuler implements Gutter {
 
     /** {@inheritDoc} */
     @Override
-    public void removeGutterItem(int line, String gutterId) {
+    public void removeGutterItem(int lineStart, int lineEnd, String gutterId) {
         if (!Gutters.BREAKPOINTS_GUTTER.equals(gutterId)) {
             return;
         }
 
-        OrionAnnotationOverlay[] annotations = getAnnotations(line);
+        OrionAnnotationOverlay[] annotations = getAnnotations(lineStart, lineEnd);
         removeAnnotations(annotations);
     }
 
     /** {@inheritDoc} */
     @Override
-    public Element getGutterItem(int line, String gutterId) {
+    public Element getGutterItem(int lineStart, int lineEnd, String gutterId) {
         if (!Gutters.BREAKPOINTS_GUTTER.equals(gutterId)) {
             return null;
         }
 
-        OrionAnnotationOverlay[] annotations = getAnnotations(line);
+        OrionAnnotationOverlay[] annotations = getAnnotations(lineStart, lineEnd);
         for (OrionAnnotationOverlay annotation : annotations) {
             if (isBreakpointAnnotation(annotation)) {
                 return Elements.createDivElement(annotation.getStyle().getStyleClass());
@@ -125,15 +126,15 @@ public class OrionBreakpointRuler implements Gutter {
 
     /** {@inheritDoc} */
     @Override
-    public void setGutterItem(int line, String gutterId, Element element) {
+    public void setGutterItem(int lineStart, int lineEnd, String gutterId, Element element) {
         if (!Gutters.BREAKPOINTS_GUTTER.equals(gutterId)) {
             return;
         }
 
-        OrionAnnotationOverlay[] oldAnnotations = getAnnotations(line);
+        OrionAnnotationOverlay[] oldAnnotations = getAnnotations(lineStart, lineEnd);
         removeAnnotations(oldAnnotations);
 
-        addGutterItem(line, gutterId, element);
+        addGutterItem(lineStart, lineEnd, gutterId, element);
     }
 
     private void removeAnnotations(OrionAnnotationOverlay[] annotations) {
@@ -144,10 +145,7 @@ public class OrionBreakpointRuler implements Gutter {
         }
     }
 
-    private OrionAnnotationOverlay toAnnotation(Element element, int line) {
-        int lineStart = editorOverlay.getModel().getLineStart(line);
-        int lineEnd = editorOverlay.getModel().getLineEnd(line);
-
+    private OrionAnnotationOverlay toAnnotation(Element element, int lineStart, int lineEnd) {
         OrionAnnotationOverlay annotation = OrionAnnotationOverlay.create();
 
         OrionStyleOverlay styleOverlay = OrionStyleOverlay.create();
@@ -155,16 +153,15 @@ public class OrionBreakpointRuler implements Gutter {
 
         annotation.setStyle(styleOverlay);
         annotation.setType(CHE_BREAKPOINT);
-        annotation.setStart(lineStart);
-        annotation.setEnd(lineEnd);
+        annotation.setStart(editorOverlay.getModel().getLineStart(lineStart));
+        annotation.setEnd(editorOverlay.getModel().getLineStart(lineEnd));
 
         return annotation;
     }
 
-    private OrionAnnotationOverlay[] getAnnotations(int line) {
-        int lineStart = editorOverlay.getModel().getLineStart(line);
-        int lineEnd = editorOverlay.getModel().getLineEnd(line);
-        return doGetAnnotations(lineStart, lineEnd);
+    private OrionAnnotationOverlay[] getAnnotations(int lineStart, int lineEnd) {
+        return doGetAnnotations(editorOverlay.getModel().getLineStart(lineStart),
+                                editorOverlay.getModel().getLineStart(lineEnd));
     }
 
     private OrionAnnotationOverlay[] getAnnotationsFrom(int fromLine) {

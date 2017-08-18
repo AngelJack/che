@@ -119,9 +119,8 @@ import org.eclipse.che.ide.api.resources.ResourceDelta;
 import org.eclipse.che.ide.api.resources.VirtualFile;
 import org.eclipse.che.ide.api.selection.Selection;
 import org.eclipse.che.ide.api.vcs.HasVcsMarkRender;
-import org.eclipse.che.ide.api.vcs.VcsEditionRender;
+import org.eclipse.che.ide.api.vcs.VcsChangeMarkerRender;
 import org.eclipse.che.ide.api.vcs.VcsEditionRenderFactory;
-import org.eclipse.che.ide.editor.orion.client.events.NewLineAddedEvent;
 import org.eclipse.che.ide.editor.orion.client.jso.OrionExtRulerOverlay;
 import org.eclipse.che.ide.editor.orion.client.jso.OrionLinkedModelDataOverlay;
 import org.eclipse.che.ide.editor.orion.client.jso.OrionLinkedModelGroupOverlay;
@@ -215,7 +214,7 @@ public class OrionEditorPresenter extends AbstractEditorPresenter implements Tex
     private HandlerRegistration      resourceChangeHandler;
     private OrionEditorInit          editorInit;
 
-    private VcsEditionRender vcsEditionRender;
+    private VcsChangeMarkerRender vcsChangeMarkerRender;
 
     @Inject
     public OrionEditorPresenter(final CodeAssistantFactory codeAssistantFactory,
@@ -673,14 +672,14 @@ public class OrionEditorPresenter extends AbstractEditorPresenter implements Tex
     }
 
     @Override
-    public Promise<VcsEditionRender> getOrCreateVcsMarkRender() {
+    public Promise<VcsChangeMarkerRender> getOrCreateVcsMarkRender() {
         return Promises.create((resolve, reject) -> {
 
             java.util.Optional<OrionExtRulerOverlay> optional =
                     stream(editorWidget.getTextView().getRulers()).filter(ruler -> "git".equals(ruler.getStyle().getStyleClass()))
                                                                   .findAny();
             if (optional.isPresent()) {
-                resolve.apply(vcsEditionRender);
+                resolve.apply(vcsChangeMarkerRender);
             } else {
                 OrionStyleOverlay style = OrionStyleOverlay.create();
                 style.setStyleClass("git");
@@ -690,13 +689,14 @@ public class OrionEditorPresenter extends AbstractEditorPresenter implements Tex
                                             OrionExtRulerOverlay.RulerOverview.PAGE.getOverview(),
                                             orionExtRulerOverlay -> {
                                                 editorWidget.getTextView().addRuler(orionExtRulerOverlay, 6);
-                                                OrionVcsMarksRuler orionVcsMarksRuler = new OrionVcsMarksRuler(orionExtRulerOverlay,
-                                                                                                               editorWidget.getEditor());
+                                                OrionVcsChangeMarkersRuler
+                                                        orionVcsChangeMarkersRuler = new OrionVcsChangeMarkersRuler(orionExtRulerOverlay,
+                                                                                                                    editorWidget.getEditor());
 
-                                                vcsEditionRender = vcsEditionRenderFactory.create(orionVcsMarksRuler,
-                                                                                                  editorWidget.getLineStyler(),
-                                                                                                  document);
-                                                resolve.apply(vcsEditionRender);
+                                                vcsChangeMarkerRender = vcsEditionRenderFactory.create(orionVcsChangeMarkersRuler,
+                                                                                                       editorWidget.getLineStyler(),
+                                                                                                       document);
+                                                resolve.apply(vcsChangeMarkerRender);
                                             });
             }
         });
@@ -867,11 +867,6 @@ public class OrionEditorPresenter extends AbstractEditorPresenter implements Tex
     @Override
     public void editorCursorPositionChanged() {
         this.editorView.updateInfoPanelPosition(this.document.getCursorPosition());
-    }
-
-    @Override
-    public void onNewLineAdded(int line) {
-        generalEventBus.fireEvent(new NewLineAddedEvent(this, line   ));
     }
 
     @Override

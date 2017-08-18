@@ -14,7 +14,7 @@ import org.eclipse.che.api.core.jsonrpc.commons.RequestHandlerConfigurator;
 import org.eclipse.che.api.core.jsonrpc.commons.RequestTransmitter;
 import org.eclipse.che.api.git.exception.GitException;
 import org.eclipse.che.api.git.shared.GitChangeEventDto;
-import org.eclipse.che.api.git.shared.Status;
+import org.eclipse.che.api.git.shared.GitChangeEventDto.Status;
 import org.eclipse.che.api.git.shared.StatusFormat;
 import org.eclipse.che.api.vfs.watcher.FileWatcherManager;
 import org.slf4j.Logger;
@@ -28,9 +28,9 @@ import java.util.function.Consumer;
 
 import static com.google.common.collect.Sets.newConcurrentHashSet;
 import static java.nio.file.Files.isDirectory;
-import static org.eclipse.che.api.git.shared.GitChangeEventDto.Type.ADDED;
-import static org.eclipse.che.api.git.shared.GitChangeEventDto.Type.MODIFIED;
-import static org.eclipse.che.api.git.shared.GitChangeEventDto.Type.UNTRACKED;
+import static org.eclipse.che.api.git.shared.GitChangeEventDto.Status.ADDED;
+import static org.eclipse.che.api.git.shared.GitChangeEventDto.Status.MODIFIED;
+import static org.eclipse.che.api.git.shared.GitChangeEventDto.Status.UNTRACKED;
 import static org.eclipse.che.api.vfs.watcher.FileWatcherManager.EMPTY_CONSUMER;
 import static org.eclipse.che.dto.server.DtoFactory.newDto;
 import static org.slf4j.LoggerFactory.getLogger;
@@ -111,23 +111,23 @@ public class GitChangesDetector {
             String itemPath = normalizedPath.substring(normalizedPath.indexOf("/") + 1);
             try {
                 GitConnection connection = gitConnectionFactory.getConnection(project);
-                Status status = gitConnectionFactory.getConnection(project).status(StatusFormat.SHORT);
-                GitChangeEventDto.Type type;
+                org.eclipse.che.api.git.shared.Status status = gitConnectionFactory.getConnection(project).status(StatusFormat.SHORT);
+                Status fileStatus;
                 if (status.getAdded().contains(itemPath)) {
-                    type = ADDED;
+                    fileStatus = ADDED;
                 } else if (status.getUntracked().contains(itemPath)) {
-                    type = UNTRACKED;
+                    fileStatus = UNTRACKED;
                 } else if (status.getModified().contains(itemPath) || status.getChanged().contains(itemPath)) {
-                    type = MODIFIED;
+                    fileStatus = MODIFIED;
                 } else {
-                    type = GitChangeEventDto.Type.NOT_MODIFIED;
+                    fileStatus = Status.NOT_MODIFIED;
                 }
 
                 transmitter.newRequest()
                            .endpointId(id)
                            .methodName(OUTGOING_METHOD)
                            .paramsAsDto(newDto(GitChangeEventDto.class).withPath(path)
-                                                                       .withType(type)
+                                                                       .withStatus(fileStatus)
                                                                        .withEditions(connection.getEditions(itemPath)))
                            .sendAndSkipResult();
             } catch (GitException e) {
@@ -137,5 +137,7 @@ public class GitChangesDetector {
                 }
             }
         };
+
+
     }
 }

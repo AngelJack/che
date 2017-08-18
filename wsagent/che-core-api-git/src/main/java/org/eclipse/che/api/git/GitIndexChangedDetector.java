@@ -13,6 +13,9 @@ package org.eclipse.che.api.git;
 import org.eclipse.che.api.core.jsonrpc.commons.RequestHandlerConfigurator;
 import org.eclipse.che.api.core.jsonrpc.commons.RequestTransmitter;
 import org.eclipse.che.api.git.exception.GitException;
+import org.eclipse.che.api.git.shared.Edition;
+import org.eclipse.che.api.git.shared.GitChangeEventDto;
+import org.eclipse.che.api.git.shared.GitIndexChangeEventDto;
 import org.eclipse.che.api.git.shared.Status;
 import org.eclipse.che.api.git.shared.StatusFormat;
 import org.eclipse.che.api.vfs.watcher.FileWatcherManager;
@@ -22,6 +25,9 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.inject.Inject;
 import java.nio.file.PathMatcher;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
@@ -107,7 +113,8 @@ public class GitIndexChangedDetector {
         return id -> {
             String project = (path.startsWith("/") ? path.substring(1) : path).split("/")[0];
             try {
-                Status status = gitConnectionFactory.getConnection(project).status(StatusFormat.SHORT);
+                GitConnection connection = gitConnectionFactory.getConnection(project);
+                Status status = connection.status(StatusFormat.SHORT);
                 Status statusDto = newDto(Status.class);
                 statusDto.setAdded(status.getAdded());
                 statusDto.setUntracked(status.getUntracked());
@@ -116,10 +123,19 @@ public class GitIndexChangedDetector {
                 statusDto.setMissing(status.getMissing());
                 statusDto.setRemoved(status.getRemoved());
                 statusDto.setConflicting(status.getConflicting());
+
+                Map<String, List<Edition>> map = new HashMap<>();
+                for (String file : status.getChanged()) {
+                    map.put(file, connection.getEditions(file));
+                }
+
+                GitIndexChangeEventDto dto = newDto(GitIndexChangeEventDto.class).withStatus(status).withModifiedFiles(map);
+
+
                 transmitter.newRequest()
                            .endpointId(id)
                            .methodName(OUTGOING_METHOD)
-                           .paramsAsDto(statusDto)
+                           .paramsAsDto(dto)
                            .sendAndSkipResult();
             } catch (GitException e) {
                 String errorMessage = e.getMessage();

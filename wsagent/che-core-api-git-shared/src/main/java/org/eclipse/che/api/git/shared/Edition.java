@@ -16,7 +16,7 @@ import org.eclipse.che.dto.shared.DTO;
 public interface Edition {
 
     /**
-     * First line of the edition range.
+     * First line of the edited region.
      */
     int getBeginLine();
 
@@ -25,7 +25,7 @@ public interface Edition {
     Edition withBeginLine(int startLine);
 
     /**
-     * Last line of the edition range.
+     * Last line of the edited region.
      */
     int getEndLine();
 
@@ -34,11 +34,17 @@ public interface Edition {
     Edition withEndLine(int endLine);
 
     /**
-     * Type of the edition e.g. insertion, modification, deletion.
+     * Status of the edition e.g. insertion, modification, deletion.
      */
-    String getType();
+    Type getType();
 
-    void setType(String type);
+    void setType(Type type);
 
-    Edition withType(String type);
+    Edition withType(Type type);
+
+    enum Type {
+        INSERTION,
+        MODIFICATION,
+        DELETION
+    }
 }

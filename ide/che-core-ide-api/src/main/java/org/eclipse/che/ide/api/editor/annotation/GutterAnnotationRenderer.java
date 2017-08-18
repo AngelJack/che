@@ -77,7 +77,7 @@ public class GutterAnnotationRenderer implements AnnotationModelHandler, ClearAn
     private void removeAnnotationItem(final AnnotationModelEvent event, final Annotation annotation) {
         final Position position = event.getPositionOfRemovedAnnotation(annotation);
         final TextPosition textPosition = this.document.getPositionFromIndex(position.getOffset());
-        final Element annotationItem = this.hasGutter.getGutterItem(textPosition.getLine(), ANNOTATION_GUTTER);
+        final Element annotationItem = this.hasGutter.getGutterItem(textPosition.getLine(), textPosition.getLine(), ANNOTATION_GUTTER);
         if (AnnotationGroupImpl.isAnnotation(annotationItem)) {
             final AnnotationGroup group = AnnotationGroupImpl.create(annotationItem);
             group.removeAnnotation(annotation, position.getOffset());
@@ -86,7 +86,7 @@ public class GutterAnnotationRenderer implements AnnotationModelHandler, ClearAn
             }
         }
         // else
-        this.hasGutter.removeGutterItem(textPosition.getLine(), ANNOTATION_GUTTER);
+        this.hasGutter.removeGutterItem(textPosition.getLine(), textPosition.getLine(), ANNOTATION_GUTTER);
     }
 
     private void addAnnotationItem(final AnnotationModel model, final Annotation annotation) {
@@ -97,7 +97,7 @@ public class GutterAnnotationRenderer implements AnnotationModelHandler, ClearAn
         }
         final TextPosition textPosition = this.document.getPositionFromIndex(position.getOffset());
 
-        final Element annotationItem = this.hasGutter.getGutterItem(textPosition.getLine(),
+        final Element annotationItem = this.hasGutter.getGutterItem(textPosition.getLine(), textPosition.getLine(),
                                                                     ANNOTATION_GUTTER);
 
         AnnotationGroup annotationGroup;
@@ -111,7 +111,7 @@ public class GutterAnnotationRenderer implements AnnotationModelHandler, ClearAn
                 }
             }, false);
 
-            this.hasGutter.addGutterItem(textPosition.getLine(), ANNOTATION_GUTTER,
+            this.hasGutter.addGutterItem(textPosition.getLine(), textPosition.getLine(), ANNOTATION_GUTTER,
                                                                  newGroup.getElement());
             annotationGroup = newGroup;
         } else {

@@ -11,6 +11,7 @@
 package org.eclipse.che.ide.editor.orion.client;
 
 import elemental.dom.Element;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import org.eclipse.che.ide.api.editor.gutter.Gutter;
 import org.eclipse.che.ide.api.editor.gutter.Gutters;
@@ -24,11 +25,11 @@ import org.eclipse.che.ide.editor.orion.client.jso.OrionTextModelOverlay;
 import org.eclipse.che.ide.util.dom.Elements;
 
 /**
- * Orion implementation of the ruler for adding breakpoints marks.
+ * Orion implementation of the ruler for adding VCS change markers.
  *
- * @author Anatoliy Bazko
+ * @author Igor Vinokur
  */
-public class OrionVcsMarksRuler implements Gutter {
+public class OrionVcsChangeMarkersRuler implements Gutter {
 
     private static final String VCS_MARK = "vcs.makr";
 
@@ -38,32 +39,31 @@ public class OrionVcsMarksRuler implements Gutter {
 
     private OrionTextModelOverlay.EventHandler<ModelChangedEventOverlay> modelChangingEventHandler;
 
-    public OrionVcsMarksRuler(OrionExtRulerOverlay rulerOverlay, OrionEditorOverlay editorOverlay) {
+    OrionVcsChangeMarkersRuler(OrionExtRulerOverlay rulerOverlay, OrionEditorOverlay editorOverlay) {
         this.orionExtRulerOverlay = rulerOverlay;
         this.editorOverlay = editorOverlay;
         this.orionExtRulerOverlay.addAnnotationType(VCS_MARK, 1);
         this.annotationModel = orionExtRulerOverlay.getAnnotationModel();
     }
 
-    /** {@inheritDoc} */
     @Override
-    public void addGutterItem(int line, String gutterId, Element element) {
+    public void addGutterItem(int lineStart, int lineEnd, String gutterId, Element element) {
         if (!Gutters.EDITIONS_GUTTER.equals(gutterId)) {
             return;
         }
 
-        OrionAnnotationOverlay annotation = toAnnotation(element, line);
+        OrionAnnotationOverlay annotation = toAnnotation(element, lineStart - 1, lineEnd - 1);
         annotationModel.addAnnotation(annotation);
     }
 
-    /** {@inheritDoc} */
     @Override
-    public void addGutterItem(int line, String gutterId, Element element, final LineNumberingChangeCallback lineCallback) {
+    public void addGutterItem(int lineStart, int lineEnd, String gutterId, Element element,
+                              final LineNumberingChangeCallback lineCallback) {
         if (!Gutters.EDITIONS_GUTTER.equals(gutterId)) {
             return;
         }
 
-        addGutterItem(line, gutterId, element);
+        addGutterItem(lineStart, lineEnd, gutterId, element);
         if (modelChangingEventHandler == null) {
             modelChangingEventHandler = new OrionTextModelOverlay.EventHandler<ModelChangedEventOverlay>() {
                 @Override
@@ -84,25 +84,23 @@ public class OrionVcsMarksRuler implements Gutter {
         }
     }
 
-    /** {@inheritDoc} */
     @Override
-    public void removeGutterItem(int line, String gutterId) {
+    public void removeGutterItem(int lineStart, int lineEnd, String gutterId) {
         if (!Gutters.EDITIONS_GUTTER.equals(gutterId)) {
             return;
         }
 
-        OrionAnnotationOverlay[] annotations = getAnnotations(line);
+        OrionAnnotationOverlay[] annotations = getAnnotations(lineStart, lineEnd);
         removeAnnotations(annotations);
     }
 
-    /** {@inheritDoc} */
     @Override
-    public Element getGutterItem(int line, String gutterId) {
+    public Element getGutterItem(int lineStart, int lineEnd, String gutterId) {
         if (!Gutters.EDITIONS_GUTTER.equals(gutterId)) {
             return null;
         }
 
-        OrionAnnotationOverlay[] annotations = getAnnotations(line);
+        OrionAnnotationOverlay[] annotations = getAnnotations(lineStart, lineEnd);
         for (OrionAnnotationOverlay annotation : annotations) {
             if (isVcsMarkAnnotation(annotation)) {
                 return Elements.createDivElement(annotation.getStyle().getStyleClass());
@@ -112,7 +110,6 @@ public class OrionVcsMarksRuler implements Gutter {
         return null;
     }
 
-    /** {@inheritDoc} */
     @Override
     public void clearGutter(String gutterId) {
         if (!Gutters.EDITIONS_GUTTER.equals(gutterId)) {
@@ -123,17 +120,16 @@ public class OrionVcsMarksRuler implements Gutter {
         removeAnnotations(annotations);
     }
 
-    /** {@inheritDoc} */
     @Override
-    public void setGutterItem(int line, String gutterId, Element element) {
+    public void setGutterItem(int lineStart, int lineEnd, String gutterId, Element element) {
         if (!Gutters.EDITIONS_GUTTER.equals(gutterId)) {
             return;
         }
 
-        OrionAnnotationOverlay[] oldAnnotations = getAnnotations(line);
+        OrionAnnotationOverlay[] oldAnnotations = getAnnotations(lineStart, lineEnd);
         removeAnnotations(oldAnnotations);
 
-        addGutterItem(line, gutterId, element);
+        addGutterItem(lineStart, lineEnd, gutterId, element);
     }
 
     private void removeAnnotations(OrionAnnotationOverlay[] annotations) {
@@ -144,10 +140,7 @@ public class OrionVcsMarksRuler implements Gutter {
         }
     }
 
-    private OrionAnnotationOverlay toAnnotation(Element element, int line) {
-        int lineStart = editorOverlay.getModel().getLineStart(line);
-        int lineEnd = editorOverlay.getModel().getLineEnd(line);
-
+    private OrionAnnotationOverlay toAnnotation(Element element, int lineStart, int lineEnd) {
         OrionAnnotationOverlay annotation = OrionAnnotationOverlay.create();
 
         OrionStyleOverlay styleOverlay = OrionStyleOverlay.create();
@@ -155,16 +148,15 @@ public class OrionVcsMarksRuler implements Gutter {
 
         annotation.setStyle(styleOverlay);
         annotation.setType(VCS_MARK);
-        annotation.setStart(lineStart);
-        annotation.setEnd(lineEnd);
+        annotation.setStart(editorOverlay.getModel().getLineStart(lineStart));
+        annotation.setEnd(editorOverlay.getModel().getLineEnd(lineEnd) + 1);
 
         return annotation;
     }
 
-    private OrionAnnotationOverlay[] getAnnotations(int line) {
-        int lineStart = editorOverlay.getModel().getLineStart(line);
-        int lineEnd = editorOverlay.getModel().getLineEnd(line);
-        return doGetAnnotations(lineStart, lineEnd);
+    private OrionAnnotationOverlay[] getAnnotations(int lineStart, int lineEnd) {
+        return doGetAnnotations(editorOverlay.getModel().getLineStart(lineStart),
+                                editorOverlay.getModel().getLineEnd(lineEnd));
     }
 
     private OrionAnnotationOverlay[] getAnnotationsFrom(int fromLine) {

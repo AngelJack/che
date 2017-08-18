@@ -8,10 +8,10 @@
  * Contributors:
  *   Codenvy, S.A. - initial API and implementation
  *******************************************************************************/
-package org.eclipse.che.ide.editor.orion.client.events;
+package org.eclipse.che.ide.api.vcs;
 
-import com.google.gwt.event.shared.EventHandler;
-
-public interface OnNewLineAddedHandler extends EventHandler {
-    void onNewLineAdded(NewLineAddedEvent event);
+public enum EditionType {
+    INSERTION,
+    MODIFICATION,
+    DELETION
 }
