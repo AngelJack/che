@@ -17,36 +17,36 @@ import org.vectomatic.dom.svg.ui.SVGResource;
 
 class EditorInputImpl implements EditorInput {
 
-    private VirtualFile file;
-    private FileType    fileType;
+  private VirtualFile file;
+  private FileType fileType;
 
-    EditorInputImpl(FileType fileType, VirtualFile file) {
-        this.fileType = fileType;
-        this.file = file;
-    }
+  EditorInputImpl(FileType fileType, VirtualFile file) {
+    this.fileType = fileType;
+    this.file = file;
+  }
 
-    @Override
-    public String getToolTipText() {
-        return null;
-    }
+  @Override
+  public String getToolTipText() {
+    return null;
+  }
 
-    @Override
-    public String getName() {
-        return file.getDisplayName();
-    }
+  @Override
+  public String getName() {
+    return file.getDisplayName();
+  }
 
-    @Override
-    public SVGResource getSVGResource() {
-        return fileType.getImage();
-    }
+  @Override
+  public SVGResource getSVGResource() {
+    return fileType.getImage();
+  }
 
-    @Override
-    public VirtualFile getFile() {
-        return file;
-    }
+  @Override
+  public VirtualFile getFile() {
+    return file;
+  }
 
-    @Override
-    public void setFile(VirtualFile file) {
-        this.file = file;
-    }
+  @Override
+  public void setFile(VirtualFile file) {
+    this.file = file;
+  }
 }

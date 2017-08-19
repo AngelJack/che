@@ -10,44 +10,40 @@
  */
 package org.eclipse.che.plugin.testing.ide.model.info;
 
-/**
- * Describes information about test which is not ran.
- */
+/** Describes information about test which is not ran. */
 public class NotRunInfo extends AbstractTestStateInfo {
 
-    public static final NotRunInfo INSTANCE = new NotRunInfo();
+  public static final NotRunInfo INSTANCE = new NotRunInfo();
 
+  private NotRunInfo() {}
 
-    private NotRunInfo() {
-    }
+  @Override
+  public boolean isFinal() {
+    return false;
+  }
 
-    @Override
-    public boolean isFinal() {
-        return false;
-    }
+  @Override
+  public boolean isInProgress() {
+    return false;
+  }
 
-    @Override
-    public boolean isInProgress() {
-        return false;
-    }
+  @Override
+  public boolean isProblem() {
+    return false;
+  }
 
-    @Override
-    public boolean isProblem() {
-        return false;
-    }
+  @Override
+  public boolean wasLaunched() {
+    return false;
+  }
 
-    @Override
-    public boolean wasLaunched() {
-        return false;
-    }
+  @Override
+  public boolean wasTerminated() {
+    return false;
+  }
 
-    @Override
-    public boolean wasTerminated() {
-        return false;
-    }
-
-    @Override
-    public TestStateDescription getDescription() {
-        return TestStateDescription.NOT_RUN;
-    }
+  @Override
+  public TestStateDescription getDescription() {
+    return TestStateDescription.NOT_RUN;
+  }
 }

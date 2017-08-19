@@ -17,7 +17,7 @@ package org.eclipse.che.plugin.docker.client.exception;
  */
 public class ImageNotFoundException extends DockerException {
 
-    public ImageNotFoundException(String message) {
-        super(message, 404);
-    }
+  public ImageNotFoundException(String message) {
+    super(message, 404);
+  }
 }

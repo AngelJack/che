@@ -17,5 +17,5 @@ package org.eclipse.che.ide.api.editor.texteditor;
  */
 public interface ContentInitializedHandler {
 
-    void onContentInitialized();
+  void onContentInitialized();
 }

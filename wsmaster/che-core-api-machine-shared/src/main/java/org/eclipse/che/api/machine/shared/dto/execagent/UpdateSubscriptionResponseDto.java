@@ -15,13 +15,13 @@ import org.eclipse.che.dto.shared.DTO;
 
 @DTO
 public interface UpdateSubscriptionResponseDto extends DtoWithPid {
-    UpdateSubscriptionResponseDto withPid(int pid);
+  UpdateSubscriptionResponseDto withPid(int pid);
 
-    String getEventTypes();
+  String getEventTypes();
 
-    UpdateSubscriptionResponseDto withEventTypes(String eventTypes);
+  UpdateSubscriptionResponseDto withEventTypes(String eventTypes);
 
-    String getText();
+  String getText();
 
-    UpdateSubscriptionResponseDto withText(String text);
+  UpdateSubscriptionResponseDto withText(String text);
 }

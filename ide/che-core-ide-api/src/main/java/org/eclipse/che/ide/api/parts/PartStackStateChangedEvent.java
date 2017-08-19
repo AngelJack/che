@@ -20,35 +20,31 @@ import com.google.gwt.event.shared.GwtEvent;
  */
 public class PartStackStateChangedEvent extends GwtEvent<PartStackStateChangedEvent.Handler> {
 
-    /**
-     * Implement to handle changing the part stack state.
-     */
-    public interface Handler extends EventHandler {
+  /** Implement to handle changing the part stack state. */
+  public interface Handler extends EventHandler {
 
-        void onPartStackStateChanged(PartStackStateChangedEvent event);
+    void onPartStackStateChanged(PartStackStateChangedEvent event);
+  }
 
-    }
+  public static final GwtEvent.Type<Handler> TYPE = new GwtEvent.Type<Handler>();
 
-    public static final GwtEvent.Type<Handler> TYPE = new GwtEvent.Type<Handler>();
+  private PartStack partStack;
 
-    private PartStack partStack;
+  public PartStackStateChangedEvent(PartStack partStack) {
+    this.partStack = partStack;
+  }
 
-    public PartStackStateChangedEvent(PartStack partStack) {
-        this.partStack = partStack;
-    }
+  public PartStack getPartStack() {
+    return partStack;
+  }
 
-    public PartStack getPartStack() {
-        return partStack;
-    }
+  @Override
+  public Type<Handler> getAssociatedType() {
+    return TYPE;
+  }
 
-    @Override
-    public Type<Handler> getAssociatedType() {
-        return TYPE;
-    }
-
-    @Override
-    protected void dispatch(Handler handler) {
-        handler.onPartStackStateChanged(this);
-    }
-
+  @Override
+  protected void dispatch(Handler handler) {
+    handler.onPartStackStateChanged(this);
+  }
 }

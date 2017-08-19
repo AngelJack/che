@@ -10,10 +10,9 @@
  */
 package org.eclipse.che.api.project.shared.dto;
 
+import java.util.List;
 import org.eclipse.che.api.core.model.project.type.Value;
 import org.eclipse.che.dto.shared.DTO;
-
-import java.util.List;
 
 /**
  * Data transfer object (DTO) for Value
@@ -23,11 +22,11 @@ import java.util.List;
 @DTO
 public interface ValueDto extends Value {
 
-    @Override
-    String getString();
+  @Override
+  String getString();
 
-    @Override
-    List<String> getList();
+  @Override
+  List<String> getList();
 
-    ValueDto withList(List<String> list);
+  ValueDto withList(List<String> list);
 }

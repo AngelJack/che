@@ -13,15 +13,15 @@ package org.eclipse.che.ide.commons;
 /** @author andrew00x */
 @SuppressWarnings("serial")
 public class ParsingResponseException extends Exception {
-    public ParsingResponseException(String message, Throwable cause) {
-        super(message, cause);
-    }
+  public ParsingResponseException(String message, Throwable cause) {
+    super(message, cause);
+  }
 
-    public ParsingResponseException(String message) {
-        super(message);
-    }
+  public ParsingResponseException(String message) {
+    super(message);
+  }
 
-    public ParsingResponseException(Throwable cause) {
-        super(cause);
-    }
+  public ParsingResponseException(Throwable cause) {
+    super(cause);
+  }
 }

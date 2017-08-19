@@ -17,6 +17,6 @@ package org.eclipse.che.api.system.shared.event;
  */
 public interface SystemEvent {
 
-    /** Returns type of this event. */
-    EventType getType();
+  /** Returns type of this event. */
+  EventType getType();
 }

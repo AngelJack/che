@@ -17,23 +17,15 @@ package org.eclipse.che.api.core.model.factory;
  */
 public interface ButtonAttributes {
 
-    /**
-     * Returns factory button color
-     */
-    String getColor();
+  /** Returns factory button color */
+  String getColor();
 
-    /**
-     * Returns factory button counter
-     */
-    Boolean getCounter();
+  /** Returns factory button counter */
+  Boolean getCounter();
 
-    /**
-     * Returns factory button logo
-     */
-    String getLogo();
+  /** Returns factory button logo */
+  String getLogo();
 
-    /**
-     * Returns factory button style
-     */
-    String getStyle();
+  /** Returns factory button style */
+  String getStyle();
 }

@@ -10,9 +10,8 @@
  */
 package org.eclipse.che.plugin.github.shared;
 
-import org.eclipse.che.dto.shared.DTO;
-
 import java.util.List;
+import org.eclipse.che.dto.shared.DTO;
 
 /**
  * @author <a href="mailto:vparfonov@exoplatform.com">Vitaly Parfonov</a>
@@ -20,7 +19,7 @@ import java.util.List;
  */
 @DTO
 public interface Collaborators {
-    List<GitHubUser> getCollaborators();
-    
-    void setCollaborators(List<GitHubUser> collaborators);
+  List<GitHubUser> getCollaborators();
+
+  void setCollaborators(List<GitHubUser> collaborators);
 }

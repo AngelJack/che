@@ -10,9 +10,8 @@
  */
 package org.eclipse.che.ide.api.editor.texteditor;
 
-import org.eclipse.che.ide.api.editor.texteditor.EditorWidget.WidgetInitializedCallback;
-
 import java.util.List;
+import org.eclipse.che.ide.api.editor.texteditor.EditorWidget.WidgetInitializedCallback;
 
 /**
  * Interface for {@link EditorWidget} factories.
@@ -22,14 +21,14 @@ import java.util.List;
  */
 public interface EditorWidgetFactory<T extends EditorWidget> {
 
-    /**
-     * Create an editor instance.
-     *
-     * @param editorModes
-     *         the editor modes
-     * @param widgetInitializedCallback
-     *         the callback that will be called when the editor widget is fully initialize
-     * @return an editor instance
-     */
-    T createEditorWidget(List<String> editorModes, WidgetInitializedCallback widgetInitializedCallback);
+  /**
+   * Create an editor instance.
+   *
+   * @param editorModes the editor modes
+   * @param widgetInitializedCallback the callback that will be called when the editor widget is
+   *     fully initialize
+   * @return an editor instance
+   */
+  T createEditorWidget(
+      List<String> editorModes, WidgetInitializedCallback widgetInitializedCallback);
 }

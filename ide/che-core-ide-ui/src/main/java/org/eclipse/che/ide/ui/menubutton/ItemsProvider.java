@@ -10,41 +10,37 @@
  */
 package org.eclipse.che.ide.ui.menubutton;
 
-import org.eclipse.che.commons.annotation.Nullable;
-import org.eclipse.che.ide.util.Pair;
-
 import java.util.List;
 import java.util.Optional;
+import org.eclipse.che.commons.annotation.Nullable;
+import org.eclipse.che.ide.util.Pair;
 
 /** Provides {@link MenuItem}s for {@link MenuButton}. */
 public interface ItemsProvider {
 
-    /**
-     * Returns an {@code Optional} with a default {@link MenuItem} which should be passed
-     * to {@link ActionHandler#onAction(MenuItem)}
-     * when user makes a short click on a {@link MenuButton}.
-     * <p>Returns an empty {@code Optional} if no default {@link MenuItem}.
-     */
-    Optional<MenuItem> getDefaultItem();
+  /**
+   * Returns an {@code Optional} with a default {@link MenuItem} which should be passed to {@link
+   * ActionHandler#onAction(MenuItem)} when user makes a short click on a {@link MenuButton}.
+   *
+   * <p>Returns an empty {@code Optional} if no default {@link MenuItem}.
+   */
+  Optional<MenuItem> getDefaultItem();
 
-    /** Returns top level items. */
-    List<MenuItem> getItems();
+  /** Returns top level items. */
+  List<MenuItem> getItems();
 
-    /**
-     * Checks whether the given {@code item} is a group.
-     * Group item cannot be selected.
-     */
-    boolean isGroup(MenuItem item);
+  /** Checks whether the given {@code item} is a group. Group item cannot be selected. */
+  boolean isGroup(MenuItem item);
 
-    /** Returns the pair of the given {@code parent} children and their labels. */
-    @Nullable
-    Pair<List<MenuItem>, String> getChildren(MenuItem parent);
+  /** Returns the pair of the given {@code parent} children and their labels. */
+  @Nullable
+  Pair<List<MenuItem>, String> getChildren(MenuItem parent);
 
-    /** Sets the {@link DataChangedHandler}. */
-    void setDataChangedHandler(DataChangedHandler handler);
+  /** Sets the {@link DataChangedHandler}. */
+  void setDataChangedHandler(DataChangedHandler handler);
 
-    interface DataChangedHandler {
-        /** Should be called when provided by {@link ItemsProvider} data has been changed. */
-        void onDataChanged();
-    }
+  interface DataChangedHandler {
+    /** Should be called when provided by {@link ItemsProvider} data has been changed. */
+    void onDataChanged();
+  }
 }

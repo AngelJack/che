@@ -11,7 +11,6 @@
 package org.eclipse.che.ide.ext.java.client.search;
 
 import com.google.inject.ImplementedBy;
-
 import org.eclipse.che.ide.api.mvp.View;
 import org.eclipse.che.ide.api.parts.base.BaseActionDelegate;
 import org.eclipse.che.ide.ext.java.shared.dto.search.FindUsagesResponse;
@@ -24,13 +23,9 @@ import org.eclipse.che.ide.ext.java.shared.dto.search.FindUsagesResponse;
 @ImplementedBy(FindUsagesViewImpl.class)
 public interface FindUsagesView extends View<FindUsagesView.ActionDelegate> {
 
+  void setVisible(boolean visible);
 
-    void setVisible(boolean visible);
+  void showUsages(FindUsagesResponse usagesResponse);
 
-    void showUsages(FindUsagesResponse usagesResponse);
-
-    interface ActionDelegate extends BaseActionDelegate {
-
-    }
-
+  interface ActionDelegate extends BaseActionDelegate {}
 }

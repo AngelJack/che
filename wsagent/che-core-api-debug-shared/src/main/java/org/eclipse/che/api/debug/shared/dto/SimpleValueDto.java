@@ -10,23 +10,22 @@
  */
 package org.eclipse.che.api.debug.shared.dto;
 
+import java.util.List;
 import org.eclipse.che.api.debug.shared.model.SimpleValue;
 import org.eclipse.che.dto.shared.DTO;
-
-import java.util.List;
 
 /** @author andrew00x */
 @DTO
 public interface SimpleValueDto extends SimpleValue {
-    List<VariableDto> getVariables();
+  List<VariableDto> getVariables();
 
-    void setVariables(List<VariableDto> variables);
+  void setVariables(List<VariableDto> variables);
 
-    SimpleValueDto withVariables(List<VariableDto> variables);
+  SimpleValueDto withVariables(List<VariableDto> variables);
 
-    String getValue();
+  String getValue();
 
-    void setValue(String value);
+  void setValue(String value);
 
-    SimpleValueDto withValue(String value);
+  SimpleValueDto withValue(String value);
 }

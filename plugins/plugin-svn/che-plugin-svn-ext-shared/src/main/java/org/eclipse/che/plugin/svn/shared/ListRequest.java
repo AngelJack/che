@@ -21,38 +21,33 @@ import org.eclipse.che.dto.shared.DTO;
 @DTO
 public interface ListRequest {
 
-    /**
-     * Returns the project path.
-     */
-    String getProjectPath();
+  /** Returns the project path. */
+  String getProjectPath();
 
-    void setProjectPath(String projectPath);
+  void setProjectPath(String projectPath);
 
-    ListRequest withProjectPath(String projectPath);
+  ListRequest withProjectPath(String projectPath);
 
-    /**
-     * Returns the target path to browse.
-     */
-    String getTargetPath();
+  /** Returns the target path to browse. */
+  String getTargetPath();
 
-    void setTargetPath(String targetPath);
+  void setTargetPath(String targetPath);
 
-    ListRequest withTargetPath(String targetPath);
+  ListRequest withTargetPath(String targetPath);
 
+  /**
+   * ************************************************************************ Credentials
+   * ************************************************************************
+   */
+  String getUsername();
 
-    /**************************************************************************
-     * Credentials
-     **************************************************************************/
+  void setUsername(@Nullable final String username);
 
-    String getUsername();
+  ListRequest withUsername(@Nullable final String username);
 
-    void setUsername(@Nullable final String username);
+  String getPassword();
 
-    ListRequest withUsername(@Nullable final String username);
+  void setPassword(@Nullable final String password);
 
-    String getPassword();
-
-    void setPassword(@Nullable final String password);
-
-    ListRequest withPassword(@Nullable final String password);
+  ListRequest withPassword(@Nullable final String password);
 }

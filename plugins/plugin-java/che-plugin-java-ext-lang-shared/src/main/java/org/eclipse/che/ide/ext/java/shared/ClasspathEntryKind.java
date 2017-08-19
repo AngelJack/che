@@ -11,14 +11,14 @@
 package org.eclipse.che.ide.ext.java.shared;
 
 /**
- *  Entry kind constants describe a type of classpath entry.
+ * Entry kind constants describe a type of classpath entry.
  *
  * @author Valeriy Svydenko
  */
 public class ClasspathEntryKind {
-    public static final int LIBRARY   = 1;
-    public static final int PROJECT   = 2;
-    public static final int SOURCE    = 3;
-    public static final int VARIABLE  = 4;
-    public static final int CONTAINER = 5;
+  public static final int LIBRARY = 1;
+  public static final int PROJECT = 2;
+  public static final int SOURCE = 3;
+  public static final int VARIABLE = 4;
+  public static final int CONTAINER = 5;
 }

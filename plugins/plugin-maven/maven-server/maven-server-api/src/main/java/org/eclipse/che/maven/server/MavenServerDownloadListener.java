@@ -21,5 +21,5 @@ import java.rmi.RemoteException;
  */
 public interface MavenServerDownloadListener extends Remote {
 
-    void artifactDownloaded(File file, String relativePath) throws RemoteException;
+  void artifactDownloaded(File file, String relativePath) throws RemoteException;
 }

@@ -12,32 +12,28 @@ package org.eclipse.che.plugin.sampleactions.ide.action;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-
 import org.eclipse.che.ide.api.action.Action;
 import org.eclipse.che.ide.api.action.ActionEvent;
-import org.eclipse.che.ide.api.app.AppContext;
 import org.eclipse.che.ide.api.notification.NotificationManager;
 import org.eclipse.che.ide.api.notification.StatusNotification;
 
-/**
- * Action for showing a string via the {@link NotificationManager}.
- */
+/** Action for showing a string via the {@link NotificationManager}. */
 @Singleton
 public class HelloWorldAction extends Action {
 
-    private NotificationManager notificationManager;
+  private NotificationManager notificationManager;
 
-    @Inject
-    public HelloWorldAction(NotificationManager notificationManager) {
-        super("Say Hello World", "Say Hello World Action");
-        this.notificationManager = notificationManager;
-    }
+  @Inject
+  public HelloWorldAction(NotificationManager notificationManager) {
+    super("Say Hello World", "Say Hello World Action");
+    this.notificationManager = notificationManager;
+  }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        this.notificationManager.notify(
-                "Hello World",
-                StatusNotification.Status.SUCCESS,
-                StatusNotification.DisplayMode.FLOAT_MODE);
-    }
+  @Override
+  public void actionPerformed(ActionEvent e) {
+    this.notificationManager.notify(
+        "Hello World",
+        StatusNotification.Status.SUCCESS,
+        StatusNotification.DisplayMode.FLOAT_MODE);
+  }
 }

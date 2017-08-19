@@ -10,22 +10,22 @@
  */
 package org.eclipse.che.plugin.cpp.projecttype;
 
-import com.google.inject.Inject;
-
-import org.eclipse.che.api.project.server.type.ProjectTypeDef;
-
 import static org.eclipse.che.plugin.cpp.shared.Constants.CPP_LANG;
 import static org.eclipse.che.plugin.cpp.shared.Constants.CPP_PROJECT_TYPE_ID;
 import static org.eclipse.che.plugin.cpp.shared.Constants.LANGUAGE;
 
+import com.google.inject.Inject;
+import org.eclipse.che.api.project.server.type.ProjectTypeDef;
+
 /**
  * C++ project type
+ *
  * @author Vitalii Parfonov
  */
 public class CppProjectType extends ProjectTypeDef {
-    @Inject
-    public CppProjectType() {
-        super(CPP_PROJECT_TYPE_ID, "C++", true, false, true);
-        addConstantDefinition(LANGUAGE, "language", CPP_LANG);
-    }
+  @Inject
+  public CppProjectType() {
+    super(CPP_PROJECT_TYPE_ID, "C++", true, false, true);
+    addConstantDefinition(LANGUAGE, "language", CPP_LANG);
+  }
 }

@@ -10,11 +10,10 @@
  */
 package org.eclipse.che.api.workspace.shared;
 
-import org.eclipse.che.api.core.model.workspace.Environment;
-import org.eclipse.che.api.core.model.workspace.ExtendedMachine;
-
 import java.util.List;
 import java.util.Map;
+import org.eclipse.che.api.core.model.workspace.Environment;
+import org.eclipse.che.api.core.model.workspace.ExtendedMachine;
 
 /**
  * Utility class for workspace related code that might be useful on server or GWT client.
@@ -22,22 +21,21 @@ import java.util.Map;
  * @author Alexander Garagatyi
  */
 public class Utils {
-    private Utils() {}
+  private Utils() {}
 
-    /**
-     * Finds dev machine name in environment definition.
-     *
-     * @param envConfig
-     *         environment definition
-     * @return dev machine name or {@code null} if dev machine is not found in environment
-     */
-    public static String getDevMachineName(Environment envConfig) {
-        for (Map.Entry<String, ? extends ExtendedMachine> entry : envConfig.getMachines().entrySet()) {
-            List<String> agents = entry.getValue().getAgents();
-            if (agents != null && agents.contains("org.eclipse.che.ws-agent")) {
-                return entry.getKey();
-            }
-        }
-        return null;
+  /**
+   * Finds dev machine name in environment definition.
+   *
+   * @param envConfig environment definition
+   * @return dev machine name or {@code null} if dev machine is not found in environment
+   */
+  public static String getDevMachineName(Environment envConfig) {
+    for (Map.Entry<String, ? extends ExtendedMachine> entry : envConfig.getMachines().entrySet()) {
+      List<String> agents = entry.getValue().getAgents();
+      if (agents != null && agents.contains("org.eclipse.che.ws-agent")) {
+        return entry.getKey();
+      }
     }
+    return null;
+  }
 }

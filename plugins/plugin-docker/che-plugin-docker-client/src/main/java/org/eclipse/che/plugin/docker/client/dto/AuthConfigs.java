@@ -10,9 +10,8 @@
  */
 package org.eclipse.che.plugin.docker.client.dto;
 
-import org.eclipse.che.dto.shared.DTO;
-
 import java.util.Map;
+import org.eclipse.che.dto.shared.DTO;
 
 /**
  * Implementation of docker model ConfigFile object
@@ -23,9 +22,9 @@ import java.util.Map;
 @DTO
 public interface AuthConfigs {
 
-    Map<String, AuthConfig> getConfigs();
+  Map<String, AuthConfig> getConfigs();
 
-    void setConfigs(Map<String, AuthConfig> configs);
+  void setConfigs(Map<String, AuthConfig> configs);
 
-    AuthConfigs withConfigs(Map<String, AuthConfig> configs);
+  AuthConfigs withConfigs(Map<String, AuthConfig> configs);
 }

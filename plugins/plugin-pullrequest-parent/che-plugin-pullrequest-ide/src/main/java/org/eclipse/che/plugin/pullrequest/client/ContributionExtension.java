@@ -10,17 +10,16 @@
  */
 package org.eclipse.che.plugin.pullrequest.client;
 
-import org.eclipse.che.ide.api.extension.Extension;
-
 import javax.inject.Inject;
 import javax.inject.Singleton;
+import org.eclipse.che.ide.api.extension.Extension;
 
 /**
  * Registers event handlers for adding/removing contribution part.
  *
- * <p>Manages {@code AppContext#getRootProject}
- * current root project state, in the case of adding and removing 'contribution' mixin.
- * Contribution mixin itself is 'synthetic' one and needed only for managing plugin specific project attributes.
+ * <p>Manages {@code AppContext#getRootProject} current root project state, in the case of adding
+ * and removing 'contribution' mixin. Contribution mixin itself is 'synthetic' one and needed only
+ * for managing plugin specific project attributes.
  *
  * @author Stephane Tournie
  * @author Kevin Pollet
@@ -30,10 +29,10 @@ import javax.inject.Singleton;
 @Extension(title = "Contributor", version = "1.0.0")
 public class ContributionExtension {
 
-    @Inject
-    @SuppressWarnings("unused")
-    public ContributionExtension(ContributeResources resources,
-                                 ContributionMixinProvider contributionMixinProvider) {
-        resources.contributeCss().ensureInjected();
-    }
+  @Inject
+  @SuppressWarnings("unused")
+  public ContributionExtension(
+      ContributeResources resources, ContributionMixinProvider contributionMixinProvider) {
+    resources.contributeCss().ensureInjected();
+  }
 }

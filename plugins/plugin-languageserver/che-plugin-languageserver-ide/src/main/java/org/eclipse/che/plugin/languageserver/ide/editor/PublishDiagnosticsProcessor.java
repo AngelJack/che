@@ -21,42 +21,40 @@ import org.eclipse.che.ide.api.editor.texteditor.TextEditor;
 import org.eclipse.che.ide.resource.Path;
 import org.eclipse.lsp4j.Diagnostic;
 
-/**
- * @author Anatolii Bazko
- */
+/** @author Anatolii Bazko */
 @Singleton
 public class PublishDiagnosticsProcessor {
 
-    private final EditorAgent editorAgent;
+  private final EditorAgent editorAgent;
 
-    @Inject
-    public PublishDiagnosticsProcessor(EditorAgent editorAgent) {
-        this.editorAgent = editorAgent;
+  @Inject
+  public PublishDiagnosticsProcessor(EditorAgent editorAgent) {
+    this.editorAgent = editorAgent;
+  }
+
+  public void processDiagnostics(ExtendedPublishDiagnosticsParams diagnosticsMessage) {
+    EditorPartPresenter openedEditor =
+        editorAgent.getOpenedEditor(new Path(diagnosticsMessage.getParams().getUri()));
+    //TODO add markers
+    if (openedEditor == null) {
+      return;
     }
 
-    public void processDiagnostics(ExtendedPublishDiagnosticsParams diagnosticsMessage) {
-        EditorPartPresenter openedEditor = editorAgent.getOpenedEditor(new Path(diagnosticsMessage.getParams().getUri()));
-        //TODO add markers
-        if (openedEditor == null) {
-            return;
+    if (openedEditor instanceof TextEditor) {
+      TextEditorConfiguration editorConfiguration = ((TextEditor) openedEditor).getConfiguration();
+      AnnotationModel annotationModel = editorConfiguration.getAnnotationModel();
+      if (annotationModel != null && annotationModel instanceof DiagnosticCollector) {
+        DiagnosticCollector collector = (DiagnosticCollector) annotationModel;
+        String languageServerId = diagnosticsMessage.getLanguageServerId();
+        collector.beginReporting(languageServerId);
+        try {
+          for (Diagnostic diagnostic : diagnosticsMessage.getParams().getDiagnostics()) {
+            collector.acceptDiagnostic(languageServerId, diagnostic);
+          }
+        } finally {
+          collector.endReporting(languageServerId);
         }
-
-        if (openedEditor instanceof TextEditor) {
-            TextEditorConfiguration editorConfiguration = ((TextEditor)openedEditor).getConfiguration();
-            AnnotationModel annotationModel = editorConfiguration.getAnnotationModel();
-            if (annotationModel != null && annotationModel instanceof DiagnosticCollector) {
-                DiagnosticCollector collector = (DiagnosticCollector)annotationModel;
-                String languageServerId = diagnosticsMessage.getLanguageServerId();
-                collector.beginReporting(languageServerId);
-                try {
-                    for (Diagnostic diagnostic : diagnosticsMessage.getParams().getDiagnostics()) {
-                        collector.acceptDiagnostic(languageServerId, diagnostic);
-                    }
-                } finally {
-                    collector.endReporting(languageServerId);
-                }
-            }
-        }
+      }
     }
-
+  }
 }

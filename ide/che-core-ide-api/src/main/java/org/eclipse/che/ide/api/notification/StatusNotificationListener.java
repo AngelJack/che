@@ -16,6 +16,6 @@ package org.eclipse.che.ide.api.notification;
  * @author Roman Nikitenko
  */
 public interface StatusNotificationListener {
-    /** Performs some actions in response to a notification status has been changed */
-    void onNotificationStatusChanged(StatusNotification notification);
+  /** Performs some actions in response to a notification status has been changed */
+  void onNotificationStatusChanged(StatusNotification notification);
 }

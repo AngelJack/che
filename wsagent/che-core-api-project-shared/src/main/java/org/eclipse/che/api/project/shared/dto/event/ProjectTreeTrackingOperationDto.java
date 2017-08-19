@@ -14,18 +14,18 @@ import org.eclipse.che.dto.shared.DTO;
 
 @DTO
 public interface ProjectTreeTrackingOperationDto {
-    String getPath();
+  String getPath();
 
-    ProjectTreeTrackingOperationDto withPath(String path);
+  ProjectTreeTrackingOperationDto withPath(String path);
 
-    Type getType();
+  Type getType();
 
-    ProjectTreeTrackingOperationDto withType(Type type);
+  ProjectTreeTrackingOperationDto withType(Type type);
 
-    enum Type {
-        START,
-        STOP,
-        SUSPEND,
-        RESUME,
-    }
+  enum Type {
+    START,
+    STOP,
+    SUSPEND,
+    RESUME,
+  }
 }

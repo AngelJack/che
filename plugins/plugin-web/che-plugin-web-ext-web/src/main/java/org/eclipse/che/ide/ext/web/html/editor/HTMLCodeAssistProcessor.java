@@ -12,11 +12,9 @@ package org.eclipse.che.ide.ext.web.html.editor;
 
 import org.eclipse.che.ide.api.editor.codeassist.CodeAssistProcessor;
 
-
 /**
  * Marker interface for HTML.
- * 
+ *
  * @author Florent Benoit
  */
-public interface HTMLCodeAssistProcessor extends CodeAssistProcessor {
-}
+public interface HTMLCodeAssistProcessor extends CodeAssistProcessor {}

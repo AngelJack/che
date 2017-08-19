@@ -14,33 +14,32 @@ import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.inject.Inject;
-
+import javax.validation.constraints.NotNull;
 import org.eclipse.che.ide.CoreLocalizationConstant;
 
-import javax.validation.constraints.NotNull;
-
 /**
- * The class represent widget which contains label with description and text field to input correct location.
+ * The class represent widget which contains label with description and text field to input correct
+ * location.
  *
  * @author Dmitry Shnurenko
  */
 class ChangeLocationWidget extends FlowPanel {
 
-    private final TextBox textBox;
+  private final TextBox textBox;
 
-    @Inject
-    public ChangeLocationWidget(TextBox textBox, Label label, CoreLocalizationConstant locale) {
-        this.textBox = textBox;
+  @Inject
+  public ChangeLocationWidget(TextBox textBox, Label label, CoreLocalizationConstant locale) {
+    this.textBox = textBox;
 
-        label.setText(locale.locationIncorrect());
-        textBox.setWidth("420px");
+    label.setText(locale.locationIncorrect());
+    textBox.setWidth("420px");
 
-        add(label);
-        add(textBox);
-    }
+    add(label);
+    add(textBox);
+  }
 
-    @NotNull
-    public String getText() {
-        return textBox.getText();
-    }
+  @NotNull
+  public String getText() {
+    return textBox.getText();
+  }
 }

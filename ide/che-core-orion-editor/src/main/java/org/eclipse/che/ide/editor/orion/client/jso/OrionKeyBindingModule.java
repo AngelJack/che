@@ -14,9 +14,9 @@ import com.google.gwt.core.client.JavaScriptObject;
 
 /**
  * A KeyBinding is an interface used to define keyboard shortcuts.
+ *
  * @author Evgen Vidolob
  */
 public class OrionKeyBindingModule extends JavaScriptObject {
-    protected OrionKeyBindingModule() {
-    }
+  protected OrionKeyBindingModule() {}
 }

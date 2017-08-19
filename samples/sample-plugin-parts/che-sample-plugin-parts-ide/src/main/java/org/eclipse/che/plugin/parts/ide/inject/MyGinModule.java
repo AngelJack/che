@@ -11,22 +11,21 @@
 package org.eclipse.che.plugin.parts.ide.inject;
 
 import com.google.gwt.inject.client.AbstractGinModule;
-
 import org.eclipse.che.ide.api.extension.ExtensionGinModule;
 import org.eclipse.che.plugin.parts.ide.helloworldview.HelloWorldView;
 import org.eclipse.che.plugin.parts.ide.helloworldview.HelloWorldViewImpl;
 
 /**
- * Gin module binding the {@link HelloWorldView} to the {@link HelloWorldViewImpl} implementation class.
+ * Gin module binding the {@link HelloWorldView} to the {@link HelloWorldViewImpl} implementation
+ * class.
  *
  * @author Edgar Mueller
  */
 @ExtensionGinModule
 public class MyGinModule extends AbstractGinModule {
 
-    @Override
-    protected void configure() {
-        bind(HelloWorldView.class).to(HelloWorldViewImpl.class);
-    }
-
+  @Override
+  protected void configure() {
+    bind(HelloWorldView.class).to(HelloWorldViewImpl.class);
+  }
 }

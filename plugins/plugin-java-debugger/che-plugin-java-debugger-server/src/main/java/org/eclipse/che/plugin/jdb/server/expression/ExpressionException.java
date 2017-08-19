@@ -12,11 +12,11 @@ package org.eclipse.che.plugin.jdb.server.expression;
 
 /** @author andrew00x */
 public class ExpressionException extends RuntimeException {
-    public ExpressionException(String message) {
-        super(message);
-    }
+  public ExpressionException(String message) {
+    super(message);
+  }
 
-    public ExpressionException(String message, Throwable cause) {
-        super(message, cause);
-    }
+  public ExpressionException(String message, Throwable cause) {
+    super(message, cause);
+  }
 }

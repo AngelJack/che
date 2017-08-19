@@ -20,47 +20,43 @@ import org.eclipse.che.dto.shared.DTO;
 @DTO
 public interface SearchOccurrenceDto extends SearchOccurrence {
 
-    /**
-     * @see org.eclipse.che.api.project.shared.SearchOccurrence
-     * @param score
-     * @return
-     */
-    SearchOccurrenceDto withScore(float score);
+  /**
+   * @see org.eclipse.che.api.project.shared.SearchOccurrence
+   * @param score
+   * @return
+   */
+  SearchOccurrenceDto withScore(float score);
 
+  /**
+   * @see org.eclipse.che.api.project.shared.SearchOccurrence
+   * @param phrase
+   * @return
+   */
+  SearchOccurrenceDto withPhrase(String phrase);
 
-    /**
-     * @see org.eclipse.che.api.project.shared.SearchOccurrence
-     * @param phrase
-     * @return
-     */
-    SearchOccurrenceDto withPhrase(String phrase);
+  /**
+   * @see org.eclipse.che.api.project.shared.SearchOccurrence
+   * @param endOffset
+   */
+  SearchOccurrenceDto withEndOffset(int endOffset);
 
+  /**
+   * @see org.eclipse.che.api.project.shared.SearchOccurrence
+   * @param startOffset
+   */
+  SearchOccurrenceDto withStartOffset(int startOffset);
 
-    /**
-     * @see org.eclipse.che.api.project.shared.SearchOccurrence
-     * @param endOffset
-     */
-    SearchOccurrenceDto withEndOffset(int endOffset);
+  /**
+   * @see org.eclipse.che.api.project.shared.SearchOccurrence
+   * @param lineNumber
+   * @return
+   */
+  SearchOccurrenceDto withLineNumber(int lineNumber);
 
-
-    /**
-     * @see org.eclipse.che.api.project.shared.SearchOccurrence
-     * @param startOffset
-     */
-    SearchOccurrenceDto withStartOffset(int startOffset);
-
-    /**
-     * @see org.eclipse.che.api.project.shared.SearchOccurrence
-     * @param lineNumber
-     * @return
-     */
-    SearchOccurrenceDto withLineNumber(int lineNumber);
-
-    /**
-     * @see org.eclipse.che.api.project.shared.SearchOccurrence
-     * @param lineContent
-     * @return
-     */
-    SearchOccurrenceDto withLineContent(String lineContent);
-
+  /**
+   * @see org.eclipse.che.api.project.shared.SearchOccurrence
+   * @param lineContent
+   * @return
+   */
+  SearchOccurrenceDto withLineContent(String lineContent);
 }

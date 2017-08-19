@@ -10,24 +10,15 @@
  */
 package org.eclipse.che.ide.api.debug;
 
-/**
- * @author Anatoliy Bazko
- */
+/** @author Anatoliy Bazko */
 public interface BreakpointManagerObserver {
 
-    /**
-     * Event happens when breakpoint added.
-     */
-    void onBreakpointAdded(Breakpoint breakpoint);
+  /** Event happens when breakpoint added. */
+  void onBreakpointAdded(Breakpoint breakpoint);
 
-    /**
-     * Event happens when breakpoint deleted.
-     */
-    void onBreakpointDeleted(Breakpoint breakpoint);
+  /** Event happens when breakpoint deleted. */
+  void onBreakpointDeleted(Breakpoint breakpoint);
 
-    /**
-     * Event happens when all breakpoint deleted.
-     */
-    void onAllBreakpointsDeleted();
-
+  /** Event happens when all breakpoint deleted. */
+  void onAllBreakpointsDeleted();
 }

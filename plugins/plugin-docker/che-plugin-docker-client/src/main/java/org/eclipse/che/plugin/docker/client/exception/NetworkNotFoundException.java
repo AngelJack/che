@@ -16,7 +16,7 @@ package org.eclipse.che.plugin.docker.client.exception;
  * @author Alexander Garagatyi
  */
 public class NetworkNotFoundException extends DockerException {
-    public NetworkNotFoundException(String message) {
-        super(message, 404);
-    }
+  public NetworkNotFoundException(String message) {
+    super(message, 404);
+  }
 }

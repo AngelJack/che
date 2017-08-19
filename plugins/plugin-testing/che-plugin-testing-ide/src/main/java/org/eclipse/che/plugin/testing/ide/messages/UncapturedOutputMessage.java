@@ -12,25 +12,22 @@ package org.eclipse.che.plugin.testing.ide.messages;
 
 import org.eclipse.che.plugin.testing.ide.model.Printer.OutputType;
 
-/**
- * Data class represents test uncaptured message.
- */
+/** Data class represents test uncaptured message. */
 public class UncapturedOutputMessage extends ClientTestingMessage {
 
-    UncapturedOutputMessage() {
-    }
+  UncapturedOutputMessage() {}
 
-    @Override
-    public void visit(TestingMessageVisitor visitor) {
-        visitor.visitUncapturedOutput(this);
-    }
+  @Override
+  public void visit(TestingMessageVisitor visitor) {
+    visitor.visitUncapturedOutput(this);
+  }
 
-    public String getOutput() {
-        return getAttributeValue("output");
-    }
+  public String getOutput() {
+    return getAttributeValue("output");
+  }
 
-    public OutputType getOutputType() {
-        String outputType = getAttributeValue("outputType");
-        return OutputType.valueOf(outputType);
-    }
+  public OutputType getOutputType() {
+    String outputType = getAttributeValue("outputType");
+    return OutputType.valueOf(outputType);
+  }
 }

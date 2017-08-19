@@ -10,26 +10,22 @@
  */
 package org.eclipse.che.plugin.testing.ide.messages;
 
-/**
- * Data class represents test started message.
- */
+/** Data class represents test started message. */
 public class TestStarted extends BaseTestMessage {
 
-    TestStarted() {
-    }
+  TestStarted() {}
 
-    @Override
-    public void visit(TestingMessageVisitor visitor) {
-        visitor.visitTestStarted(this);
-    }
+  @Override
+  public void visit(TestingMessageVisitor visitor) {
+    visitor.visitTestStarted(this);
+  }
 
-    public String getLocation() {
-        return getAttributeValue("locationHint");
-    }
+  public String getLocation() {
+    return getAttributeValue("locationHint");
+  }
 
-    public boolean isConfig() {
-        String config = getAttributeValue("config");
-        return !(config == null || config.isEmpty()) && Boolean.parseBoolean(config);
-
-    }
+  public boolean isConfig() {
+    String config = getAttributeValue("config");
+    return !(config == null || config.isEmpty()) && Boolean.parseBoolean(config);
+  }
 }

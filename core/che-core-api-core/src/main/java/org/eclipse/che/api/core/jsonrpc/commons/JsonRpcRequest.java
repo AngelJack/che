@@ -10,37 +10,35 @@
  */
 package org.eclipse.che.api.core.jsonrpc.commons;
 
-/**
- * Represents JSON RPC request object
- */
+/** Represents JSON RPC request object */
 public class JsonRpcRequest {
-    private final String        id;
-    private final String        method;
-    private final JsonRpcParams params;
+  private final String id;
+  private final String method;
+  private final JsonRpcParams params;
 
-    public JsonRpcRequest(String id, String method, JsonRpcParams params) {
-        this.id = id;
-        this.method = method;
-        this.params = params;
-    }
+  public JsonRpcRequest(String id, String method, JsonRpcParams params) {
+    this.id = id;
+    this.method = method;
+    this.params = params;
+  }
 
-    public boolean hasParams() {
-        return params != null;
-    }
+  public boolean hasParams() {
+    return params != null;
+  }
 
-    public boolean hasId() {
-        return id != null;
-    }
+  public boolean hasId() {
+    return id != null;
+  }
 
-    public String getMethod() {
-        return method;
-    }
+  public String getMethod() {
+    return method;
+  }
 
-    public String getId() {
-        return id;
-    }
+  public String getId() {
+    return id;
+  }
 
-    public JsonRpcParams getParams() {
-        return params;
-    }
+  public JsonRpcParams getParams() {
+    return params;
+  }
 }

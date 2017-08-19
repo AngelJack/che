@@ -12,9 +12,7 @@ package org.eclipse.che.plugin.pullrequest.client.dialogs.paste;
 
 import com.google.gwt.event.shared.EventHandler;
 
-/**
- * {@link EventHandler} for {@link PasteEvent}s.
- */
+/** {@link EventHandler} for {@link PasteEvent}s. */
 public interface PasteHandler extends EventHandler {
-    void onPaste(PasteEvent event);
+  void onPaste(PasteEvent event);
 }

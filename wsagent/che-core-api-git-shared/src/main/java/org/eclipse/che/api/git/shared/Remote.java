@@ -19,11 +19,11 @@ import org.eclipse.che.dto.shared.DTO;
  */
 @DTO
 public interface Remote {
-    String getName();
-    
-    Remote withName(String name);
-    
-    String getUrl();
-    
-    Remote withUrl(String url);
+  String getName();
+
+  Remote withName(String name);
+
+  String getUrl();
+
+  Remote withUrl(String url);
 }

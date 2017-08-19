@@ -15,23 +15,22 @@ import com.google.inject.ProvisionException;
 import com.google.inject.TypeLiteral;
 import com.google.inject.matcher.Matchers;
 import com.google.inject.spi.TypeConverter;
-
 import java.net.MalformedURLException;
 import java.net.URL;
 
 /** @author andrew00x */
 public class URLConverter extends AbstractModule implements TypeConverter {
-    @Override
-    public Object convert(String value, TypeLiteral<?> toType) {
-        try {
-            return new URL(value);
-        } catch (MalformedURLException e) {
-            throw new ProvisionException(String.format("Invalid URL '%s'", value), e);
-        }
+  @Override
+  public Object convert(String value, TypeLiteral<?> toType) {
+    try {
+      return new URL(value);
+    } catch (MalformedURLException e) {
+      throw new ProvisionException(String.format("Invalid URL '%s'", value), e);
     }
+  }
 
-    @Override
-    protected void configure() {
-        convertToTypes(Matchers.only(TypeLiteral.get(URL.class)), this);
-    }
+  @Override
+  protected void configure() {
+    convertToTypes(Matchers.only(TypeLiteral.get(URL.class)), this);
+  }
 }

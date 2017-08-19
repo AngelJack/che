@@ -17,21 +17,19 @@ package org.eclipse.che.plugin.github.factory.resolver;
  */
 public interface GithubURLParser {
 
-    /**
-     * Check if the URL is a valid Github url for the given provider.
-     *
-     * @param url
-     *         a not null string representation of URL
-     * @return {@code true} if the URL is a valid url for the given provider.
-     */
-    boolean isValid(String url);
+  /**
+   * Check if the URL is a valid Github url for the given provider.
+   *
+   * @param url a not null string representation of URL
+   * @return {@code true} if the URL is a valid url for the given provider.
+   */
+  boolean isValid(String url);
 
-    /**
-     * Provides a parsed URL object of the given provider type.
-     *
-     * @param url
-     *         URL to transform into a managed object
-     * @return managed url object
-     */
-    GithubUrl parse(String url);
+  /**
+   * Provides a parsed URL object of the given provider type.
+   *
+   * @param url URL to transform into a managed object
+   * @return managed url object
+   */
+  GithubUrl parse(String url);
 }

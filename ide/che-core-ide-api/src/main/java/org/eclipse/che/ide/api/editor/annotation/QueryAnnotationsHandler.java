@@ -15,6 +15,6 @@ import com.google.gwt.event.shared.EventHandler;
 /** Handler for {@link QueryAnnotationsEvent} events. */
 public interface QueryAnnotationsHandler extends EventHandler {
 
-    /** The handler method. */
-    void onQueryAnnotations(QueryAnnotationsEvent event);
+  /** The handler method. */
+  void onQueryAnnotations(QueryAnnotationsEvent event);
 }

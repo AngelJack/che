@@ -11,7 +11,6 @@
 package org.eclipse.che.ide.command.goal;
 
 import com.google.inject.Inject;
-
 import org.eclipse.che.ide.api.command.BaseCommandGoal;
 
 /**
@@ -21,8 +20,8 @@ import org.eclipse.che.ide.api.command.BaseCommandGoal;
  */
 public class TestGoal extends BaseCommandGoal {
 
-    @Inject
-    public TestGoal() {
-        super("Test");
-    }
+  @Inject
+  public TestGoal() {
+    super("Test");
+  }
 }

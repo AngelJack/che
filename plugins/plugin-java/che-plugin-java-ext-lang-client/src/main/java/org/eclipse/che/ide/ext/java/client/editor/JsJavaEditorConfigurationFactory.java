@@ -13,5 +13,5 @@ package org.eclipse.che.ide.ext.java.client.editor;
 import org.eclipse.che.ide.api.editor.texteditor.TextEditor;
 
 public interface JsJavaEditorConfigurationFactory {
-    JsJavaEditorConfiguration create(TextEditor editor);
+  JsJavaEditorConfiguration create(TextEditor editor);
 }

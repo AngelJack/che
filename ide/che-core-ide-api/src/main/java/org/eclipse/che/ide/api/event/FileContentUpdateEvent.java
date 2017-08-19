@@ -12,62 +12,56 @@ package org.eclipse.che.ide.api.event;
 
 import com.google.gwt.event.shared.GwtEvent;
 
-/**
- * Event that notifies of file content changes.
- */
+/** Event that notifies of file content changes. */
 public class FileContentUpdateEvent extends GwtEvent<FileContentUpdateHandler> {
-    /** The event type. */
-    public static Type<FileContentUpdateHandler> TYPE = new Type<>();
+  /** The event type. */
+  public static Type<FileContentUpdateHandler> TYPE = new Type<>();
 
-    /**
-     * The path to the file that is updated.
-     */
-    private final String filePath;
+  /** The path to the file that is updated. */
+  private final String filePath;
 
-    /**
-     * Encoded content.
-     */
-    private String modificationStamp;
+  /** Encoded content. */
+  private String modificationStamp;
 
-    /**
-     * Constructor.
-     * 
-     * @param filePath the path of the file that changed
-     */
-    public FileContentUpdateEvent(final String filePath) {
-        this.filePath = filePath;
-    }
+  /**
+   * Constructor.
+   *
+   * @param filePath the path of the file that changed
+   */
+  public FileContentUpdateEvent(final String filePath) {
+    this.filePath = filePath;
+  }
 
-    public FileContentUpdateEvent(final String filePath, final String contentStamp) {
-        this.filePath = filePath;
-        this.modificationStamp = contentStamp;
-    }
+  public FileContentUpdateEvent(final String filePath, final String contentStamp) {
+    this.filePath = filePath;
+    this.modificationStamp = contentStamp;
+  }
 
-    @Override
-    public Type<FileContentUpdateHandler> getAssociatedType() {
-        return TYPE;
-    }
+  @Override
+  public Type<FileContentUpdateHandler> getAssociatedType() {
+    return TYPE;
+  }
 
-    @Override
-    protected void dispatch(FileContentUpdateHandler handler) {
-        handler.onFileContentUpdate(this);
-    }
+  @Override
+  protected void dispatch(FileContentUpdateHandler handler) {
+    handler.onFileContentUpdate(this);
+  }
 
-    /**
-     * Returns the path to the file that had changes.
-     * 
-     * @return the path
-     */
-    public String getFilePath() {
-        return filePath;
-    }
+  /**
+   * Returns the path to the file that had changes.
+   *
+   * @return the path
+   */
+  public String getFilePath() {
+    return filePath;
+  }
 
-    /**
-     * Returns content's stamp of the file that had changes.
-     *
-     * @return the path
-     */
-    public String getModificationStamp() {
-        return modificationStamp;
-    }
+  /**
+   * Returns content's stamp of the file that had changes.
+   *
+   * @return the path
+   */
+  public String getModificationStamp() {
+    return modificationStamp;
+  }
 }

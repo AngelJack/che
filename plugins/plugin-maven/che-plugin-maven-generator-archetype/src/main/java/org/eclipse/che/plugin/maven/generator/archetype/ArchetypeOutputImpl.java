@@ -18,31 +18,31 @@ import org.eclipse.che.plugin.maven.shared.dto.ArchetypeOutput;
  * @author Vitalii Parfonov
  */
 public class ArchetypeOutputImpl implements ArchetypeOutput {
-    private String output;
-    private State state;
+  private String output;
+  private State state;
 
-    public ArchetypeOutputImpl(String output, State state) {
-        this.output = output;
-        this.state = state;
-    }
+  public ArchetypeOutputImpl(String output, State state) {
+    this.output = output;
+    this.state = state;
+  }
 
-    @Override
-    public String getOutput() {
-        return output;
-    }
+  @Override
+  public String getOutput() {
+    return output;
+  }
 
-    @Override
-    public State getState() {
-        return state;
-    }
+  @Override
+  public State getState() {
+    return state;
+  }
 
-    @Override
-    public void setOutput(String output) {
-        this.output = output;
-    }
+  @Override
+  public void setOutput(String output) {
+    this.output = output;
+  }
 
-    @Override
-    public void setState(State state) {
-        this.state = state;
-    }
+  @Override
+  public void setState(State state) {
+    this.state = state;
+  }
 }

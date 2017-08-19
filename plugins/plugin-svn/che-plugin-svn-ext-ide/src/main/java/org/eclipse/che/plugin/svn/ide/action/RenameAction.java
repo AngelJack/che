@@ -12,27 +12,29 @@ package org.eclipse.che.plugin.svn.ide.action;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-
 import org.eclipse.che.ide.api.action.ActionEvent;
 import org.eclipse.che.ide.api.app.AppContext;
 import org.eclipse.che.plugin.svn.ide.SubversionExtensionLocalizationConstants;
 import org.eclipse.che.plugin.svn.ide.SubversionExtensionResources;
 
-/**
- * Extension of {@link SubversionAction} for implementing the "svn mv" (rename) command.
- */
+/** Extension of {@link SubversionAction} for implementing the "svn mv" (rename) command. */
 @Singleton
 public class RenameAction extends SubversionAction {
 
-    @Inject
-    public RenameAction(AppContext appContext,
-                        SubversionExtensionLocalizationConstants constants,
-                        SubversionExtensionResources resources) {
-        super(constants.renameTitle(), constants.renameDescription(), resources.rename(), appContext, constants, resources);
-    }
+  @Inject
+  public RenameAction(
+      AppContext appContext,
+      SubversionExtensionLocalizationConstants constants,
+      SubversionExtensionResources resources) {
+    super(
+        constants.renameTitle(),
+        constants.renameDescription(),
+        resources.rename(),
+        appContext,
+        constants,
+        resources);
+  }
 
-    @Override
-    public void actionPerformed(ActionEvent actionEvent) {
-
-    }
+  @Override
+  public void actionPerformed(ActionEvent actionEvent) {}
 }

@@ -11,9 +11,7 @@
 package org.eclipse.che.ide.commons.exception;
 
 import com.google.gwt.http.client.Response;
-
 import org.eclipse.che.ide.rest.AsyncRequest;
-
 
 /**
  * @author Vitaliy Gulyy
@@ -22,14 +20,14 @@ import org.eclipse.che.ide.rest.AsyncRequest;
 @SuppressWarnings("serial")
 public class UnauthorizedException extends ServerException {
 
-    private AsyncRequest request;
+  private AsyncRequest request;
 
-    public UnauthorizedException(Response response, AsyncRequest request) {
-        super(response);
-        this.request = request;
-    }
+  public UnauthorizedException(Response response, AsyncRequest request) {
+    super(response);
+    this.request = request;
+  }
 
-    public AsyncRequest getRequest() {
-        return request;
-    }
+  public AsyncRequest getRequest() {
+    return request;
+  }
 }

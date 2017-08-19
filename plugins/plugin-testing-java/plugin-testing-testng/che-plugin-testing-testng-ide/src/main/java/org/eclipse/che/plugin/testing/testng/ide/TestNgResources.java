@@ -11,14 +11,10 @@
 package org.eclipse.che.plugin.testing.testng.ide;
 
 import com.google.gwt.resources.client.ClientBundle;
-
 import org.vectomatic.dom.svg.ui.SVGResource;
-/**
- * Resource bundle for TestNg extension.
- */
+/** Resource bundle for TestNg extension. */
 public interface TestNgResources extends ClientBundle {
 
-    @Source("org/eclipse/che/plugin/testing/testng/ide/svg/test.svg")
-    SVGResource testIcon();
-
+  @Source("org/eclipse/che/plugin/testing/testng/ide/svg/test.svg")
+  SVGResource testIcon();
 }

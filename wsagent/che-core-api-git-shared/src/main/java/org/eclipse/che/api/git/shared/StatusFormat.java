@@ -10,21 +10,13 @@
  */
 package org.eclipse.che.api.git.shared;
 
-/**
- * Format for the status output.
- */
+/** Format for the status output. */
 public enum StatusFormat {
 
-    /**
-     * Short format, to show the user (has colors) but harder to understand than long format.
-     */
-    SHORT,
-    /**
-     * Long format, to show the user.
-     */
-    LONG,
-    /**
-     * Porcelain format, made to be fed to scripts and guaranteed to not change.
-     */
-    PORCELAIN
+  /** Short format, to show the user (has colors) but harder to understand than long format. */
+  SHORT,
+  /** Long format, to show the user. */
+  LONG,
+  /** Porcelain format, made to be fed to scripts and guaranteed to not change. */
+  PORCELAIN
 }

@@ -17,19 +17,17 @@ package org.eclipse.che.ide.ui.smartTree.event;
  */
 public interface CancellableEvent {
 
-    /**
-     * Returns true if the event has been cancelled.
-     *
-     * @return true for cancelled
-     */
-    public boolean isCancelled();
+  /**
+   * Returns true if the event has been cancelled.
+   *
+   * @return true for cancelled
+   */
+  public boolean isCancelled();
 
-    /**
-     * True to cancel the event.
-     *
-     * @param cancel
-     *         true to cancel
-     */
-    public void setCancelled(boolean cancel);
-
+  /**
+   * True to cancel the event.
+   *
+   * @param cancel true to cancel
+   */
+  public void setCancelled(boolean cancel);
 }

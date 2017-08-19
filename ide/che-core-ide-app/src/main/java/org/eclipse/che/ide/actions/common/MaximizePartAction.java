@@ -28,33 +28,35 @@ import org.eclipse.che.ide.api.parts.PartStack;
 @Singleton
 public class MaximizePartAction extends Action implements ActivePartChangedHandler {
 
-    private PartStack activePartStack;
+  private PartStack activePartStack;
 
-    @Inject
-    public MaximizePartAction(final EventBus eventBus,
-                              final CoreLocalizationConstant coreLocalizationConstant) {
-        super(coreLocalizationConstant.actionMaximizePartTitle(), coreLocalizationConstant.actionMaximizePartDescription());
-        eventBus.addHandler(ActivePartChangedEvent.TYPE, this);
+  @Inject
+  public MaximizePartAction(
+      final EventBus eventBus, final CoreLocalizationConstant coreLocalizationConstant) {
+    super(
+        coreLocalizationConstant.actionMaximizePartTitle(),
+        coreLocalizationConstant.actionMaximizePartDescription());
+    eventBus.addHandler(ActivePartChangedEvent.TYPE, this);
+  }
+
+  @Override
+  public void update(ActionEvent e) {
+    if (activePartStack == null) {
+      e.getPresentation().setEnabledAndVisible(false);
+      return;
     }
 
-    @Override
-    public void update(ActionEvent e) {
-        if (activePartStack == null) {
-            e.getPresentation().setEnabledAndVisible(false);
-            return;
-        }
+    e.getPresentation()
+        .setEnabledAndVisible(PartStack.State.NORMAL == activePartStack.getPartStackState());
+  }
 
-        e.getPresentation().setEnabledAndVisible(PartStack.State.NORMAL == activePartStack.getPartStackState());
-    }
+  @Override
+  public void actionPerformed(ActionEvent e) {
+    activePartStack.maximize();
+  }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        activePartStack.maximize();
-    }
-
-    @Override
-    public void onActivePartChanged(ActivePartChangedEvent event) {
-        activePartStack = event.getActivePart().getPartStack();
-    }
-
+  @Override
+  public void onActivePartChanged(ActivePartChangedEvent event) {
+    activePartStack = event.getActivePart().getPartStack();
+  }
 }

@@ -13,11 +13,9 @@ package org.eclipse.che.api.debug.shared.model.impl.action;
 import org.eclipse.che.api.debug.shared.model.action.Action;
 import org.eclipse.che.api.debug.shared.model.action.StepOverAction;
 
-/**
- * @author Anatoliy Bazko
- */
+/** @author Anatoliy Bazko */
 public class StepOverActionImpl extends ActionImpl implements StepOverAction {
-    public StepOverActionImpl() {
-        super(Action.TYPE.STEP_OVER);
-    }
+  public StepOverActionImpl() {
+    super(Action.TYPE.STEP_OVER);
+  }
 }

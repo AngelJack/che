@@ -18,12 +18,11 @@ import org.eclipse.che.ide.api.resources.File;
  * @author Vlad Zhukovskiy
  */
 public interface RecentFileActionFactory {
-    /**
-     * Creates new recent file action to show in main menu.
-     *
-     * @param file
-     *         file associated with
-     * @return action
-     */
-    RecentFileAction newRecentFileAction(File file);
+  /**
+   * Creates new recent file action to show in main menu.
+   *
+   * @param file file associated with
+   * @return action
+   */
+  RecentFileAction newRecentFileAction(File file);
 }

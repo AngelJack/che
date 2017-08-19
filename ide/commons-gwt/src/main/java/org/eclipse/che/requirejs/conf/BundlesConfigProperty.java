@@ -19,22 +19,21 @@ import com.google.gwt.core.client.JsArrayString;
  * @author "Mickaël Leduque"
  */
 public final class BundlesConfigProperty extends JavaScriptObject {
-    protected BundlesConfigProperty() {
-    }
+  protected BundlesConfigProperty() {}
 
-    public final static native BundlesConfigProperty create() /*-{
+  public static final native BundlesConfigProperty create() /*-{
         return {};
     }-*/;
 
-    public final native void addBundle(String mainModule, JsArrayString bundlesModules) /*-{
+  public final native void addBundle(String mainModule, JsArrayString bundlesModules) /*-{
         this[mainModule] = bundlesModules;
     }-*/;
 
-    public final native JsArrayString getBundle(String mainModule) /*-{
+  public final native JsArrayString getBundle(String mainModule) /*-{
         return this[mainModule];
     }-*/;
 
-    public final native JsArrayString getKeys() /*-{
+  public final native JsArrayString getKeys() /*-{
         return this.getOwnPropertyNames();
     }-*/;
 }

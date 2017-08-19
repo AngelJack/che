@@ -18,28 +18,26 @@ import org.eclipse.che.ide.api.parts.PartStackType;
 import org.eclipse.che.ide.api.parts.WorkspaceAgent;
 import org.eclipse.che.plugin.embedjsexample.ide.view.HelloWorldViewPresenter;
 
-/**
- * Action for opening a part which embeds javascript code.
- */
+/** Action for opening a part which embeds javascript code. */
 @Singleton
 public class HelloWorldAction extends Action {
 
-    public final static String ACTION_ID = "helloWorldFromJSAction";
+  public static final String ACTION_ID = "helloWorldFromJSAction";
 
-    private WorkspaceAgent workspaceAgent;
-    private HelloWorldViewPresenter helloWorldViewPresenter;
+  private WorkspaceAgent workspaceAgent;
+  private HelloWorldViewPresenter helloWorldViewPresenter;
 
-    @Inject
-    public HelloWorldAction(WorkspaceAgent workspaceAgent, HelloWorldViewPresenter helloWorldViewPresenter) {
-        super("Show Hello World JavaScript View");
-        this.workspaceAgent = workspaceAgent;
-        this.helloWorldViewPresenter = helloWorldViewPresenter;
-    }
+  @Inject
+  public HelloWorldAction(
+      WorkspaceAgent workspaceAgent, HelloWorldViewPresenter helloWorldViewPresenter) {
+    super("Show Hello World JavaScript View");
+    this.workspaceAgent = workspaceAgent;
+    this.helloWorldViewPresenter = helloWorldViewPresenter;
+  }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        workspaceAgent.openPart(helloWorldViewPresenter, PartStackType.INFORMATION);
-        workspaceAgent.setActivePart(helloWorldViewPresenter);
-    }
-
+  @Override
+  public void actionPerformed(ActionEvent e) {
+    workspaceAgent.openPart(helloWorldViewPresenter, PartStackType.INFORMATION);
+    workspaceAgent.setActivePart(helloWorldViewPresenter);
+  }
 }

@@ -10,22 +10,17 @@
  */
 package org.eclipse.che.plugin.ssh.key.script;
 
-
 import org.eclipse.che.api.core.ServerException;
 
-/**
- * @author Sergii Kabashniuk
- */
+/** @author Sergii Kabashniuk */
 public interface SshKeyProvider {
 
-    /**
-     * Get private ssh key.
-     *
-     * @param url
-     *         url to the repository
-     * @return byte array that contains private ssh key
-     * @throws ServerException
-     *         if an error occurs while fetching keys
-     */
-    byte[] getPrivateKey(String url) throws ServerException;
+  /**
+   * Get private ssh key.
+   *
+   * @param url url to the repository
+   * @return byte array that contains private ssh key
+   * @throws ServerException if an error occurs while fetching keys
+   */
+  byte[] getPrivateKey(String url) throws ServerException;
 }

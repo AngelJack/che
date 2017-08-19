@@ -19,10 +19,10 @@ import org.eclipse.che.dto.shared.DTO;
  */
 @DTO
 public interface Token {
-    /** "Authentication token obtained after login" */
-    String getValue();
+  /** "Authentication token obtained after login" */
+  String getValue();
 
-    void setValue(String value);
+  void setValue(String value);
 
-    Token withValue(String value);
+  Token withValue(String value);
 }

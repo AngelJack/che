@@ -15,5 +15,5 @@ package org.eclipse.che.ide.api.action;
  * @version $Id:
  */
 public interface Toggleable {
-    String SELECTED_PROPERTY = "selected";
+  String SELECTED_PROPERTY = "selected";
 }

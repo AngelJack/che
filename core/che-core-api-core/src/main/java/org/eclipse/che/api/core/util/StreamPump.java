@@ -17,60 +17,60 @@ import java.io.InputStreamReader;
 /** @author andrew00x */
 public final class StreamPump implements Runnable {
 
-    private BufferedReader bufferedReader;
-    private LineConsumer   lineConsumer;
+  private BufferedReader bufferedReader;
+  private LineConsumer lineConsumer;
 
-    private Exception exception;
-    private boolean   done;
+  private Exception exception;
+  private boolean done;
 
-    public synchronized void start(Process process, LineConsumer lineConsumer) {
-        this.lineConsumer = lineConsumer;
-        bufferedReader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-        final Thread t = new Thread(this, "StreamPump");
-        t.setDaemon(true);
-        t.start();
+  public synchronized void start(Process process, LineConsumer lineConsumer) {
+    this.lineConsumer = lineConsumer;
+    bufferedReader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+    final Thread t = new Thread(this, "StreamPump");
+    t.setDaemon(true);
+    t.start();
+  }
+
+  public synchronized void stop() {
+    // Not clear do we need close original stream, but since it was wrapped by BufferedReader close it anyway.
+    try {
+      bufferedReader.close();
+    } catch (IOException ignored) {
     }
+  }
 
-    public synchronized void stop() {
-        // Not clear do we need close original stream, but since it was wrapped by BufferedReader close it anyway.
-        try {
-            bufferedReader.close();
-        } catch (IOException ignored) {
-        }
+  public synchronized void await() throws InterruptedException {
+    while (!done) {
+      wait();
     }
+  }
 
-    public synchronized void await() throws InterruptedException {
-        while (!done) {
-            wait();
-        }
-    }
+  public synchronized boolean isDone() {
+    return done;
+  }
 
-    public synchronized boolean isDone() {
-        return done;
-    }
+  public boolean hasError() {
+    return null != exception;
+  }
 
-    public boolean hasError() {
-        return null != exception;
-    }
+  public Exception getException() {
+    return exception;
+  }
 
-    public Exception getException() {
-        return exception;
+  @Override
+  public void run() {
+    String line;
+    try {
+      while ((line = bufferedReader.readLine()) != null) {
+        lineConsumer.writeLine(line);
+      }
+    } catch (IOException e) {
+      exception = e;
+    } finally {
+      synchronized (this) {
+        done = true;
+        notifyAll();
+      }
     }
-
-    @Override
-    public void run() {
-        String line;
-        try {
-            while ((line = bufferedReader.readLine()) != null) {
-                lineConsumer.writeLine(line);
-            }
-        } catch (IOException e) {
-            exception = e;
-        } finally {
-            synchronized (this) {
-                done = true;
-                notifyAll();
-            }
-        }
-    }
+  }
 }

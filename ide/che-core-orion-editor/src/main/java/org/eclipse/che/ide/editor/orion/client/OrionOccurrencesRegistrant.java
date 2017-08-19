@@ -14,39 +14,44 @@ import com.google.gwt.core.client.JsArrayString;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
 import com.google.inject.Singleton;
-
 import org.eclipse.che.api.promises.client.Operation;
 import org.eclipse.che.api.promises.client.OperationException;
 import org.eclipse.che.ide.editor.orion.client.jso.OrionCodeEditWidgetOverlay;
 import org.eclipse.che.ide.editor.orion.client.jso.OrionServiceRegistryOverlay;
 
-/**
- * @author Xavier Coulon,Red Hat
- */
+/** @author Xavier Coulon,Red Hat */
 @Singleton
 public class OrionOccurrencesRegistrant {
 
-    private final Provider<OrionCodeEditWidgetOverlay> codeEditWidgetProvider;
-    private final EditorInitializePromiseHolder        editorModule;
+  private final Provider<OrionCodeEditWidgetOverlay> codeEditWidgetProvider;
+  private final EditorInitializePromiseHolder editorModule;
 
-    @Inject
-    public OrionOccurrencesRegistrant(Provider<OrionCodeEditWidgetOverlay> codeEditWidgetProvider,
-                                EditorInitializePromiseHolder editorModule) {
-        this.codeEditWidgetProvider = codeEditWidgetProvider;
-        this.editorModule = editorModule;
-    }
+  @Inject
+  public OrionOccurrencesRegistrant(
+      Provider<OrionCodeEditWidgetOverlay> codeEditWidgetProvider,
+      EditorInitializePromiseHolder editorModule) {
+    this.codeEditWidgetProvider = codeEditWidgetProvider;
+    this.editorModule = editorModule;
+  }
 
-    public void registerOccurrencesHandler(final JsArrayString contentTypes, final OrionOccurrencesHandler handler) {
-        editorModule.getInitializerPromise().then(new Operation<Void>() {
-            @Override
-            public void apply(Void arg) throws OperationException {
-            	registerOccurrencesHandler(codeEditWidgetProvider.get().getServiceRegistry(), contentTypes, handler);
-            }
-        });
-    }
+  public void registerOccurrencesHandler(
+      final JsArrayString contentTypes, final OrionOccurrencesHandler handler) {
+    editorModule
+        .getInitializerPromise()
+        .then(
+            new Operation<Void>() {
+              @Override
+              public void apply(Void arg) throws OperationException {
+                registerOccurrencesHandler(
+                    codeEditWidgetProvider.get().getServiceRegistry(), contentTypes, handler);
+              }
+            });
+  }
 
-    private final native void registerOccurrencesHandler(OrionServiceRegistryOverlay serviceRegistry, JsArrayString contentTypes,
-    		OrionOccurrencesHandler handler) /*-{
+  private final native void registerOccurrencesHandler(
+      OrionServiceRegistryOverlay serviceRegistry,
+      JsArrayString contentTypes,
+      OrionOccurrencesHandler handler) /*-{
         serviceRegistry.registerService("orion.edit.occurrences", {
             computeOccurrences: function(editorContext, context) {
            		return handler.@OrionOccurrencesHandler::computeOccurrences(*)(context);
@@ -56,6 +61,4 @@ public class OrionOccurrencesRegistrant {
             contentType: contentTypes
         });
     }-*/;
-
-
 }

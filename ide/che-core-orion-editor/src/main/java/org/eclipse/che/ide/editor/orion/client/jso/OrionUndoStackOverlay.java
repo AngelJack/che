@@ -15,58 +15,57 @@ import com.google.gwt.core.client.JsArray;
 
 public class OrionUndoStackOverlay extends JavaScriptObject {
 
-    protected OrionUndoStackOverlay() {
-    }
+  protected OrionUndoStackOverlay() {}
 
-    public final native boolean canUndo() /*-{
+  public final native boolean canUndo() /*-{
         return this.canUndo();
     }-*/;
 
-    public final native boolean canRedo() /*-{
+  public final native boolean canRedo() /*-{
         return this.canRedo();
     }-*/;
 
-    public final native boolean isClean() /*-{
+  public final native boolean isClean() /*-{
         return this.isClean();
     }-*/;
 
-    public final native void markClean() /*-{
+  public final native void markClean() /*-{
         this.markClean();
     }-*/;
 
-    public final native OrionUndoStackSizeOverlay getSize() /*-{
+  public final native OrionUndoStackSizeOverlay getSize() /*-{
         return this.getSize();
     }-*/;
 
-    public final native JsArray<OrionTextChangeOverlay> getRedoChanges() /*-{
+  public final native JsArray<OrionTextChangeOverlay> getRedoChanges() /*-{
         return this.getRedoChanges();
     }-*/;
 
-    public final native JsArray<OrionTextChangeOverlay> getUndoChanges() /*-{
+  public final native JsArray<OrionTextChangeOverlay> getUndoChanges() /*-{
         return this.getUndoChanges();
     }-*/;
 
-    public final native void add(OrionTextChangeOverlay change) /*-{
+  public final native void add(OrionTextChangeOverlay change) /*-{
         this.add(change);
     }-*/;
 
-    public final native void reset() /*-{
+  public final native void reset() /*-{
         this.reset();
     }-*/;
 
-    public final native boolean undo() /*-{
+  public final native boolean undo() /*-{
         this.undo();
     }-*/;
 
-    public final native boolean redo() /*-{
+  public final native boolean redo() /*-{
         this.redo();
     }-*/;
 
-    public final native void startCompoundChange(JavaScriptObject owner) /*-{
+  public final native void startCompoundChange(JavaScriptObject owner) /*-{
         this.startCompoundChange(owner);
     }-*/;
 
-    public final native void endCompoundChange() /*-{
+  public final native void endCompoundChange() /*-{
         this.endCompoundChange();
     }-*/;
 }

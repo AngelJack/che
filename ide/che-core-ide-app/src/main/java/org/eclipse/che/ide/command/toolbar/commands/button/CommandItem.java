@@ -12,20 +12,19 @@ package org.eclipse.che.ide.command.toolbar.commands.button;
 
 import com.google.inject.Inject;
 import com.google.inject.assistedinject.Assisted;
-
 import org.eclipse.che.ide.api.command.CommandImpl;
 import org.eclipse.che.ide.ui.menubutton.MenuItem;
 
 /** A {@link MenuItem} represents {@link CommandImpl}. */
 public class CommandItem extends AbstractMenuItem {
 
-    @Inject
-    public CommandItem(@Assisted CommandImpl command) {
-        super(command);
-    }
+  @Inject
+  public CommandItem(@Assisted CommandImpl command) {
+    super(command);
+  }
 
-    @Override
-    public String getName() {
-        return getCommand().getName();
-    }
+  @Override
+  public String getName() {
+    return getCommand().getName();
+  }
 }

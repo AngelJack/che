@@ -12,30 +12,28 @@ package org.eclipse.che.plugin.docker.client.exception;
 
 import java.io.IOException;
 
-/**
- * @author andrew00x
- */
+/** @author andrew00x */
 public class DockerException extends IOException {
-    private final int    status;
-    private final String originError;
+  private final int status;
+  private final String originError;
 
-    public DockerException(String message, int status) {
-        super(message);
-        this.status = status;
-        this.originError = null;
-    }
+  public DockerException(String message, int status) {
+    super(message);
+    this.status = status;
+    this.originError = null;
+  }
 
-    public DockerException(String message, String originError, int status) {
-        super(message);
-        this.status = status;
-        this.originError = originError;
-    }
+  public DockerException(String message, String originError, int status) {
+    super(message);
+    this.status = status;
+    this.originError = originError;
+  }
 
-    public int getStatus() {
-        return status;
-    }
+  public int getStatus() {
+    return status;
+  }
 
-    public String getOriginError() {
-        return originError;
-    }
+  public String getOriginError() {
+    return originError;
+  }
 }

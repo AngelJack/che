@@ -12,7 +12,6 @@ package org.eclipse.che.ide.ui.loaders.request;
 
 import com.google.gwt.resources.client.ClientBundle;
 import com.google.gwt.resources.client.CssResource;
-
 import org.vectomatic.dom.svg.ui.SVGResource;
 
 /**
@@ -23,19 +22,19 @@ import org.vectomatic.dom.svg.ui.SVGResource;
  */
 public interface MessageLoaderResources extends ClientBundle {
 
-    interface LoaderCss extends CssResource {
-        String loader();
+  interface LoaderCss extends CssResource {
+    String loader();
 
-        String loaderSvg();
+    String loaderSvg();
 
-        String label();
+    String label();
 
-        String glass();
-    }
+    String glass();
+  }
 
-    @Source("progress.svg")
-    SVGResource loader();
+  @Source("progress.svg")
+  SVGResource loader();
 
-    @Source({"RequestLoader.css", "org/eclipse/che/ide/api/ui/style.css"})
-    LoaderCss Css();
+  @Source({"RequestLoader.css", "org/eclipse/che/ide/api/ui/style.css"})
+  LoaderCss Css();
 }

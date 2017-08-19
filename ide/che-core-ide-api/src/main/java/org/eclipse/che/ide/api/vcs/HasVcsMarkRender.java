@@ -13,5 +13,5 @@ package org.eclipse.che.ide.api.vcs;
 import org.eclipse.che.api.promises.client.Promise;
 
 public interface HasVcsMarkRender {
-    Promise<VcsChangeMarkerRender> getOrCreateVcsMarkRender();
+  Promise<VcsChangeMarkerRender> getOrCreateVcsMarkRender();
 }

@@ -19,26 +19,25 @@ import org.eclipse.che.ide.collections.Jso;
  */
 public class Pair extends Jso {
 
-    public static Pair create() {
-        return Jso.create().cast();
-    }
+  public static Pair create() {
+    return Jso.create().cast();
+  }
 
-    protected Pair() {
-    }
+  protected Pair() {}
 
-    public final String getName() {
-        return getStringField("name");
-    }
+  public final String getName() {
+    return getStringField("name");
+  }
 
-    public final void setName(String name) {
-        addField("name", name);
-    }
+  public final void setName(String name) {
+    addField("name", name);
+  }
 
-    public final String getValue() {
-        return getStringField("value");
-    }
+  public final String getValue() {
+    return getStringField("value");
+  }
 
-    public final void setValue(String value) {
-        addField("value", value);
-    }
+  public final void setValue(String value) {
+    addField("value", value);
+  }
 }

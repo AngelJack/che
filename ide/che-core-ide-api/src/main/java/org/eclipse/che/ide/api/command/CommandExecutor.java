@@ -21,29 +21,29 @@ import org.eclipse.che.ide.api.macro.Macro;
  */
 public interface CommandExecutor {
 
-    /**
-     * Sends the the given {@code command} to the specified {@code machine} for execution.
-     * <p><b>Note</b> that all {@link Macro}s will be expanded into
-     * real values before sending the {@code command} for execution.
-     *
-     * @param command
-     *         command to execute
-     * @param machine
-     *         machine to execute the command
-     * @see Macro
-     */
-    void executeCommand(Command command, Machine machine);
+  /**
+   * Sends the the given {@code command} to the specified {@code machine} for execution.
+   *
+   * <p><b>Note</b> that all {@link Macro}s will be expanded into real values before sending the
+   * {@code command} for execution.
+   *
+   * @param command command to execute
+   * @param machine machine to execute the command
+   * @see Macro
+   */
+  void executeCommand(Command command, Machine machine);
 
-    /**
-     * Sends the the given {@code command} for execution.
-     * <p>If any machine is currently selected it will be used as execution target.
-     * Otherwise user will be asked for choosing execution target.
-     * <p><b>Note</b> that all {@link Macro}s will be expanded into
-     * real values before sending the {@code command} for execution.
-     *
-     * @param command
-     *         command to execute
-     * @see Macro
-     */
-    void executeCommand(CommandImpl command);
+  /**
+   * Sends the the given {@code command} for execution.
+   *
+   * <p>If any machine is currently selected it will be used as execution target. Otherwise user
+   * will be asked for choosing execution target.
+   *
+   * <p><b>Note</b> that all {@link Macro}s will be expanded into real values before sending the
+   * {@code command} for execution.
+   *
+   * @param command command to execute
+   * @see Macro
+   */
+  void executeCommand(CommandImpl command);
 }

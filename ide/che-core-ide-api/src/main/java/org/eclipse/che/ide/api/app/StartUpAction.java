@@ -19,19 +19,19 @@ import java.util.Map;
  */
 public class StartUpAction {
 
-    private String              actionId;
-    private Map<String, String> parameters;
+  private String actionId;
+  private Map<String, String> parameters;
 
-    public StartUpAction(String actionId, Map<String, String> parameters) {
-        this.actionId = actionId;
-        this.parameters = parameters;
-    }
+  public StartUpAction(String actionId, Map<String, String> parameters) {
+    this.actionId = actionId;
+    this.parameters = parameters;
+  }
 
-    public String getActionId() {
-        return actionId;
-    }
+  public String getActionId() {
+    return actionId;
+  }
 
-    public Map<String, String> getParameters() {
-        return parameters;
-    }
+  public Map<String, String> getParameters() {
+    return parameters;
+  }
 }

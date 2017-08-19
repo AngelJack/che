@@ -11,19 +11,18 @@
 package org.eclipse.che.ide.command.goal;
 
 import com.google.inject.Inject;
-
 import org.eclipse.che.ide.api.command.BaseCommandGoal;
 
 /**
- * Represents predefined 'Common' goal.
- * By default it's used for grouping commands which doesn't belong to any goal.
+ * Represents predefined 'Common' goal. By default it's used for grouping commands which doesn't
+ * belong to any goal.
  *
  * @author Artem Zatsarynnyi
  */
 public class CommonGoal extends BaseCommandGoal {
 
-    @Inject
-    public CommonGoal() {
-        super("Common");
-    }
+  @Inject
+  public CommonGoal() {
+    super("Common");
+  }
 }

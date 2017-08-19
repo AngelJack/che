@@ -22,18 +22,15 @@ import org.eclipse.che.api.factory.shared.dto.FactoryDto;
  */
 public interface FactoryCreateValidator {
 
-    /**
-     * Validates factory object on creation stage. Implementation should throw
-     * exception if factory object is invalid.
-     *
-     * @param factory
-     *         factory object to validate
-     * @throws BadRequestException
-     *         in case if factory is not valid
-     * @throws ServerException
-     *         when any server error occurs
-     * @throws ForbiddenException
-     *         when user have no access rights for factory creation
-     */
-    void validateOnCreate(FactoryDto factory) throws BadRequestException, ServerException, ForbiddenException;
+  /**
+   * Validates factory object on creation stage. Implementation should throw exception if factory
+   * object is invalid.
+   *
+   * @param factory factory object to validate
+   * @throws BadRequestException in case if factory is not valid
+   * @throws ServerException when any server error occurs
+   * @throws ForbiddenException when user have no access rights for factory creation
+   */
+  void validateOnCreate(FactoryDto factory)
+      throws BadRequestException, ServerException, ForbiddenException;
 }

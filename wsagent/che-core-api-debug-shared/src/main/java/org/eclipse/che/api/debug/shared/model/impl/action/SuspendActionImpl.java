@@ -12,11 +12,9 @@ package org.eclipse.che.api.debug.shared.model.impl.action;
 
 import org.eclipse.che.api.debug.shared.model.action.SuspendAction;
 
-/**
- * @author Roman Nikitenko
- */
+/** @author Roman Nikitenko */
 public class SuspendActionImpl extends ActionImpl implements SuspendAction {
-    public SuspendActionImpl() {
-        super(TYPE.SUSPEND);
-    }
+  public SuspendActionImpl() {
+    super(TYPE.SUSPEND);
+  }
 }

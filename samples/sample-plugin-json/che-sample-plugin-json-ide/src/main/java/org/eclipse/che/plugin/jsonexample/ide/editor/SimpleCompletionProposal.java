@@ -12,46 +12,44 @@ package org.eclipse.che.plugin.jsonexample.ide.editor;
 
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Widget;
-
 import org.eclipse.che.ide.api.editor.codeassist.CompletionProposal;
 import org.eclipse.che.ide.api.icon.Icon;
 import org.eclipse.che.plugin.jsonexample.ide.JsonExampleResources;
 
 /**
- * A very simple implementation of a {@link CompletionProposal} that basically
- * only contains a string.
+ * A very simple implementation of a {@link CompletionProposal} that basically only contains a
+ * string.
  */
 public class SimpleCompletionProposal implements CompletionProposal {
 
-    private String proposal;
+  private String proposal;
 
-    /**
-     * Constructor.
-     *
-     * @param proposal
-     *         the actual proposal
-     */
-    public SimpleCompletionProposal(String proposal) {
-        this.proposal = proposal;
-    }
+  /**
+   * Constructor.
+   *
+   * @param proposal the actual proposal
+   */
+  public SimpleCompletionProposal(String proposal) {
+    this.proposal = proposal;
+  }
 
-    @Override
-    public void getAdditionalProposalInfo(AsyncCallback<Widget> callback) {
-        callback.onSuccess(null);
-    }
+  @Override
+  public void getAdditionalProposalInfo(AsyncCallback<Widget> callback) {
+    callback.onSuccess(null);
+  }
 
-    @Override
-    public String getDisplayString() {
-        return proposal;
-    }
+  @Override
+  public String getDisplayString() {
+    return proposal;
+  }
 
-    @Override
-    public Icon getIcon() {
-        return new Icon("", JsonExampleResources.INSTANCE.completion());
-    }
+  @Override
+  public Icon getIcon() {
+    return new Icon("", JsonExampleResources.INSTANCE.completion());
+  }
 
-    @Override
-    public void getCompletion(CompletionCallback callback) {
-        callback.onCompletion(new SimpleCompletion(proposal));
-    }
+  @Override
+  public void getCompletion(CompletionCallback callback) {
+    callback.onCompletion(new SimpleCompletion(proposal));
+  }
 }

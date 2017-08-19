@@ -18,26 +18,27 @@ import org.eclipse.che.api.core.jsonrpc.commons.RequestTransmitter;
 import org.eclipse.che.api.languageserver.shared.model.ExtendedPublishDiagnosticsParams;
 import org.eclipse.che.plugin.languageserver.ide.editor.PublishDiagnosticsProcessor;
 
-/**
- * Subscribes and receives JSON-RPC messages related to 'textDocument/publishDiagnostics' events
- */
+/** Subscribes and receives JSON-RPC messages related to 'textDocument/publishDiagnostics' events */
 @Singleton
 public class PublishDiagnosticsReceiver {
-    @Inject
-    private void configureReceiver(Provider<PublishDiagnosticsProcessor> provider, RequestHandlerConfigurator configurator) {
-        configurator.newConfiguration()
-                    .methodName("textDocument/publishDiagnostics")
-                    .paramsAsDto(ExtendedPublishDiagnosticsParams.class)
-                    .noResult()
-                    .withConsumer(params -> provider.get().processDiagnostics(params));
-    }
+  @Inject
+  private void configureReceiver(
+      Provider<PublishDiagnosticsProcessor> provider, RequestHandlerConfigurator configurator) {
+    configurator
+        .newConfiguration()
+        .methodName("textDocument/publishDiagnostics")
+        .paramsAsDto(ExtendedPublishDiagnosticsParams.class)
+        .noResult()
+        .withConsumer(params -> provider.get().processDiagnostics(params));
+  }
 
-    @Inject
-    private void subscribe(RequestTransmitter transmitter) {
-        transmitter.newRequest()
-                   .endpointId("ws-agent")
-                   .methodName("textDocument/publishDiagnostics/subscribe")
-                   .noParams()
-                   .sendAndSkipResult();
-    }
+  @Inject
+  private void subscribe(RequestTransmitter transmitter) {
+    transmitter
+        .newRequest()
+        .endpointId("ws-agent")
+        .methodName("textDocument/publishDiagnostics/subscribe")
+        .noParams()
+        .sendAndSkipResult();
+  }
 }

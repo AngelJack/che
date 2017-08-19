@@ -15,23 +15,21 @@ import com.google.gwt.core.client.JsArrayString;
 
 public class ShimConfigProperty extends JavaScriptObject {
 
-    protected ShimConfigProperty() {
-    }
+  protected ShimConfigProperty() {}
 
-    public final native ShimConfigProperty create() /*-{
+  public final native ShimConfigProperty create() /*-{
         return {};
     }-*/;
 
-    public final native void addShim(String module, ShimItem shim) /*-{
+  public final native void addShim(String module, ShimItem shim) /*-{
         this[module] = shim;
     }-*/;
 
-    public final native ShimItem getShim(String module) /*-{
+  public final native ShimItem getShim(String module) /*-{
         return this[module];
     }-*/;
 
-    public final native JsArrayString getKeys() /*-{
+  public final native JsArrayString getKeys() /*-{
         return this.getOwnPropertyNames();
     }-*/;
-
 }

@@ -10,10 +10,8 @@
  */
 package org.eclipse.che.api.project.server.handlers;
 
-/**
- * @author gazarenkov
- */
+/** @author gazarenkov */
 public interface ProjectHandler {
 
-    String getProjectType();
+  String getProjectType();
 }

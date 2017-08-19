@@ -17,9 +17,10 @@ import java.lang.annotation.Target;
 
 /**
  * Helps to inform client about mandatory parameters of request.
- * <p/>
- * This annotation may be applied to parameter of RESTful method annotated with {@link javax.ws.rs.QueryParam &#64;QueryParam}. In this
- * case field of {@link org.eclipse.che.api.core.rest.shared.dto.LinkParameter#isRequired()} is set to {@code true}.
+ *
+ * <p>This annotation may be applied to parameter of RESTful method annotated with {@link
+ * javax.ws.rs.QueryParam &#64;QueryParam}. In this case field of {@link
+ * org.eclipse.che.api.core.rest.shared.dto.LinkParameter#isRequired()} is set to {@code true}.
  *
  * @author <a href="mailto:andrew00x@gmail.com">Andrey Parfonov</a>
  * @see org.eclipse.che.api.core.rest.shared.dto.LinkParameter
@@ -27,5 +28,4 @@ import java.lang.annotation.Target;
  */
 @Target({ElementType.PARAMETER})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Required {
-}
+public @interface Required {}

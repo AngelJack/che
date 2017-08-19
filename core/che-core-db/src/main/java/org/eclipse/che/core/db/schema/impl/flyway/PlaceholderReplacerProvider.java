@@ -10,11 +10,10 @@
  */
 package org.eclipse.che.core.db.schema.impl.flyway;
 
-import org.eclipse.che.inject.ConfigurationProperties;
-import org.flywaydb.core.internal.util.PlaceholderReplacer;
-
 import javax.inject.Inject;
 import javax.inject.Provider;
+import org.eclipse.che.inject.ConfigurationProperties;
+import org.flywaydb.core.internal.util.PlaceholderReplacer;
 
 /**
  * Placeholder replacer that uses configuration properties.
@@ -23,15 +22,15 @@ import javax.inject.Provider;
  */
 public class PlaceholderReplacerProvider implements Provider<PlaceholderReplacer> {
 
-    private final PlaceholderReplacer replacer;
+  private final PlaceholderReplacer replacer;
 
-    @Inject
-    public PlaceholderReplacerProvider(ConfigurationProperties properties) {
-        replacer = new PlaceholderReplacer(properties.getProperties(".*"), "${", "}");
-    }
+  @Inject
+  public PlaceholderReplacerProvider(ConfigurationProperties properties) {
+    replacer = new PlaceholderReplacer(properties.getProperties(".*"), "${", "}");
+  }
 
-    @Override
-    public PlaceholderReplacer get() {
-        return replacer;
-    }
+  @Override
+  public PlaceholderReplacer get() {
+    return replacer;
+  }
 }

@@ -17,15 +17,9 @@ package org.eclipse.che.ide.api.constraints;
  */
 public enum Direction {
 
-    /**
-     * Direction type that specifies the item to be the horizontally at the
-     * moment of addition.
-     */
-    HORIZONTALLY,
+  /** Direction type that specifies the item to be the horizontally at the moment of addition. */
+  HORIZONTALLY,
 
-    /**
-     * Direction type that specifies the item to be the vertically at the
-     * moment of addition.
-     */
-    VERTICALLY
+  /** Direction type that specifies the item to be the vertically at the moment of addition. */
+  VERTICALLY
 }

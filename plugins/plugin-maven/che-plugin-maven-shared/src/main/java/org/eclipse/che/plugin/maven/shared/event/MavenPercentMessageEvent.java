@@ -10,10 +10,8 @@
  */
 package org.eclipse.che.plugin.maven.shared.event;
 
-/**
- * Event that describes Maven notification output.
- */
+/** Event that describes Maven notification output. */
 public interface MavenPercentMessageEvent extends MavenOutputEvent {
-    /** Returns percent of the project resolving. */
-    double getPercent();
+  /** Returns percent of the project resolving. */
+  double getPercent();
 }

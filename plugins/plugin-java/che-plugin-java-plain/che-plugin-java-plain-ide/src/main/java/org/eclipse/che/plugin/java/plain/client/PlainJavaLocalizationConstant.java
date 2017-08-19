@@ -19,12 +19,12 @@ import com.google.gwt.i18n.client.Messages;
  * @author Valeriy Svydenko
  */
 public interface PlainJavaLocalizationConstant extends Messages {
-    @Key("browse.button.name")
-    String browseButton();
+  @Key("browse.button.name")
+  String browseButton();
 
-    @Key("source.folder.attribute.label.name")
-    String sourceFolderAttribute();
+  @Key("source.folder.attribute.label.name")
+  String sourceFolderAttribute();
 
-    @Key("library.folder.attribute.label.name")
-    String libraryFolderAttribute();
+  @Key("library.folder.attribute.label.name")
+  String libraryFolderAttribute();
 }

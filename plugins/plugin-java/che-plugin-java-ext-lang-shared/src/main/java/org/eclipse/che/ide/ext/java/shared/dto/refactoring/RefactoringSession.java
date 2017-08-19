@@ -14,20 +14,23 @@ import org.eclipse.che.dto.shared.DTO;
 
 /**
  * Base interface for all refactoring DTO's.
+ *
  * @author Evgen Vidolob
  */
 @DTO
 public interface RefactoringSession {
 
-    /**
-     * Refactoring session id.
-     * @return the id of this session.
-     */
-    String getSessionId();
+  /**
+   * Refactoring session id.
+   *
+   * @return the id of this session.
+   */
+  String getSessionId();
 
-    /**
-     * Set id for this session.
-     * @param sessionId the id of this session.
-     */
-    void setSessionId(String sessionId);
+  /**
+   * Set id for this session.
+   *
+   * @param sessionId the id of this session.
+   */
+  void setSessionId(String sessionId);
 }

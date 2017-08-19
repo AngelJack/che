@@ -11,16 +11,13 @@
 package org.eclipse.che.ide.orion.compare;
 
 import com.google.gwt.inject.client.AbstractGinModule;
-
 import org.eclipse.che.ide.api.extension.ExtensionGinModule;
 
-/**
- * @author Evgen Vidolob
- */
+/** @author Evgen Vidolob */
 @ExtensionGinModule
 public class OrionCompareModule extends AbstractGinModule {
-    @Override
-    protected void configure() {
-        bind(CompareFactory.class).to(CompareFactoryImpl.class);
-    }
+  @Override
+  protected void configure() {
+    bind(CompareFactory.class).to(CompareFactoryImpl.class);
+  }
 }

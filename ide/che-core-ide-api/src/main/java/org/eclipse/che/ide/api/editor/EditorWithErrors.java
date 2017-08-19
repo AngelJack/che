@@ -11,19 +11,21 @@
 package org.eclipse.che.ide.api.editor;
 
 /**
- * Extension interface to editor. Add indication if editor has errors or warnings.
- * May use for change icons in editor tab.
+ * Extension interface to editor. Add indication if editor has errors or warnings. May use for
+ * change icons in editor tab.
  *
  * @author Evgen Vidolob
  */
 public interface EditorWithErrors {
-    int ERROR_STATE = 0x110;
+  int ERROR_STATE = 0x110;
 
-    EditorState getErrorState();
+  EditorState getErrorState();
 
-    void setErrorState(EditorState errorState);
+  void setErrorState(EditorState errorState);
 
-    public enum EditorState {
-        ERROR, WARNING, NONE
-    }
+  public enum EditorState {
+    ERROR,
+    WARNING,
+    NONE
+  }
 }

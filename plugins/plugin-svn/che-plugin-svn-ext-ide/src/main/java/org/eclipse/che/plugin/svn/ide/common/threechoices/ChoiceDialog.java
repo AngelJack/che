@@ -12,11 +12,11 @@ package org.eclipse.che.plugin.svn.ide.common.threechoices;
 
 /**
  * Interface to the choice dialog component.
- * 
+ *
  * @author Mickaël Leduque
  */
 public interface ChoiceDialog {
 
-    /** Operate the choice dialog: show it and manage user actions. */
-    void show();
+  /** Operate the choice dialog: show it and manage user actions. */
+  void show();
 }

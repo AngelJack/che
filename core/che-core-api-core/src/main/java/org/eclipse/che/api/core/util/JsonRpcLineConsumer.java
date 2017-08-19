@@ -10,40 +10,46 @@
  */
 package org.eclipse.che.api.core.util;
 
+import static org.slf4j.LoggerFactory.getLogger;
+
+import java.io.IOException;
 import org.eclipse.che.api.core.jsonrpc.commons.RequestTransmitter;
 import org.slf4j.Logger;
 
-import java.io.IOException;
-
-import static org.slf4j.LoggerFactory.getLogger;
-
 public class JsonRpcLineConsumer implements LineConsumer {
-    private static final Logger LOG = getLogger(JsonRpcLineConsumer.class);
+  private static final Logger LOG = getLogger(JsonRpcLineConsumer.class);
 
-    private final String                    method;
-    private final RequestTransmitter        transmitter;
-    private final JsonRpcEndpointIdProvider jsonRpcEndpointIdProvider;
+  private final String method;
+  private final RequestTransmitter transmitter;
+  private final JsonRpcEndpointIdProvider jsonRpcEndpointIdProvider;
 
-    public JsonRpcLineConsumer(RequestTransmitter transmitter, String method, JsonRpcEndpointIdProvider jsonRpcEndpointIdProvider) {
-        this.method = method;
-        this.transmitter = transmitter;
-        this.jsonRpcEndpointIdProvider = jsonRpcEndpointIdProvider;
+  public JsonRpcLineConsumer(
+      RequestTransmitter transmitter,
+      String method,
+      JsonRpcEndpointIdProvider jsonRpcEndpointIdProvider) {
+    this.method = method;
+    this.transmitter = transmitter;
+    this.jsonRpcEndpointIdProvider = jsonRpcEndpointIdProvider;
+  }
+
+  @Override
+  public void writeLine(String line) throws IOException {
+    try {
+      jsonRpcEndpointIdProvider
+          .get()
+          .forEach(
+              it ->
+                  transmitter
+                      .newRequest()
+                      .endpointId(it)
+                      .methodName(method)
+                      .paramsAsString(line)
+                      .sendAndSkipResult());
+    } catch (IllegalStateException e) {
+      LOG.error("Error trying to send a line: {}", line);
     }
+  }
 
-    @Override
-    public void writeLine(String line) throws IOException {
-        try {
-            jsonRpcEndpointIdProvider.get().forEach(it -> transmitter.newRequest()
-                                                                     .endpointId(it)
-                                                                     .methodName(method)
-                                                                     .paramsAsString(line)
-                                                                     .sendAndSkipResult());
-        } catch (IllegalStateException e) {
-            LOG.error("Error trying to send a line: {}", line);
-        }
-    }
-
-    @Override
-    public void close() throws IOException {
-    }
+  @Override
+  public void close() throws IOException {}
 }

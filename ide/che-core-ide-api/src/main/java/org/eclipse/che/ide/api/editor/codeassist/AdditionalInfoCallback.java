@@ -12,17 +12,16 @@ package org.eclipse.che.ide.api.editor.codeassist;
 
 import elemental.dom.Element;
 
-/**
- * Action triggered when completion proposal additional info must be displayed.
- */
+/** Action triggered when completion proposal additional info must be displayed. */
 public interface AdditionalInfoCallback {
 
-    /**
-     * Display the proposal additional info.
-     * @param pixelX the x coordinate
-     * @param pixelY the y coordinate
-     * @param info the info message to show
-     * @return the element used to display the information
-     */
-    Element onAdditionalInfoNeeded(float pixelX, float pixelY, Element infoWidget);
+  /**
+   * Display the proposal additional info.
+   *
+   * @param pixelX the x coordinate
+   * @param pixelY the y coordinate
+   * @param info the info message to show
+   * @return the element used to display the information
+   */
+  Element onAdditionalInfoNeeded(float pixelX, float pixelY, Element infoWidget);
 }

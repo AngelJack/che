@@ -13,16 +13,14 @@ package org.eclipse.che.api.project.server.type;
 import org.eclipse.che.api.core.ConflictException;
 import org.eclipse.che.api.core.rest.shared.dto.ServiceError;
 
-/**
- * @author gazarenkov
- */
+/** @author gazarenkov */
 public class ProjectTypeConstraintException extends ConflictException {
 
-    public ProjectTypeConstraintException(String message) {
-        super(message);
-    }
+  public ProjectTypeConstraintException(String message) {
+    super(message);
+  }
 
-    public ProjectTypeConstraintException(ServiceError serviceError) {
-        super(serviceError);
-    }
+  public ProjectTypeConstraintException(ServiceError serviceError) {
+    super(serviceError);
+  }
 }

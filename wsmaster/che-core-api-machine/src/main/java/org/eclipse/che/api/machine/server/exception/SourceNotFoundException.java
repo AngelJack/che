@@ -18,19 +18,19 @@ import org.eclipse.che.api.core.rest.shared.dto.ServiceError;
  * @author Anton Korneta
  */
 public class SourceNotFoundException extends MachineException {
-    public SourceNotFoundException(String message) {
-        super(message);
-    }
+  public SourceNotFoundException(String message) {
+    super(message);
+  }
 
-    public SourceNotFoundException(ServiceError serviceError) {
-        super(serviceError);
-    }
+  public SourceNotFoundException(ServiceError serviceError) {
+    super(serviceError);
+  }
 
-    public SourceNotFoundException(Throwable cause) {
-        super(cause);
-    }
+  public SourceNotFoundException(Throwable cause) {
+    super(cause);
+  }
 
-    public SourceNotFoundException(String message, Throwable cause) {
-        super(message, cause);
-    }
+  public SourceNotFoundException(String message, Throwable cause) {
+    super(message, cause);
+  }
 }

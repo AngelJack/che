@@ -17,11 +17,11 @@ package org.eclipse.che.core.db.schema;
  */
 public class SchemaInitializationException extends Exception {
 
-    public SchemaInitializationException(String message, Throwable cause) {
-        super(message, cause);
-    }
+  public SchemaInitializationException(String message, Throwable cause) {
+    super(message, cause);
+  }
 
-    public SchemaInitializationException(String message) {
-        super(message);
-    }
+  public SchemaInitializationException(String message) {
+    super(message);
+  }
 }

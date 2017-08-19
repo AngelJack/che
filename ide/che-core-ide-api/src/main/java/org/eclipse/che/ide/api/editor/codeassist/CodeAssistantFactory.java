@@ -13,17 +13,15 @@ package org.eclipse.che.ide.api.editor.codeassist;
 import org.eclipse.che.ide.api.editor.partition.DocumentPartitioner;
 import org.eclipse.che.ide.api.editor.texteditor.TextEditor;
 
-/**
- * Factory for {@link CodeAssistant} objects.
- */
+/** Factory for {@link CodeAssistant} objects. */
 public interface CodeAssistantFactory {
 
-    /**
-     * Create a {@link CodeAssistant} for the given editor.
-     * 
-     * @param textEditor  the editor
-     * @param partitioner the partitioner
-     * @return a {@link CodeAssistant}
-     */
-    CodeAssistant create(TextEditor textEditor, DocumentPartitioner partitioner);
+  /**
+   * Create a {@link CodeAssistant} for the given editor.
+   *
+   * @param textEditor the editor
+   * @param partitioner the partitioner
+   * @return a {@link CodeAssistant}
+   */
+  CodeAssistant create(TextEditor textEditor, DocumentPartitioner partitioner);
 }

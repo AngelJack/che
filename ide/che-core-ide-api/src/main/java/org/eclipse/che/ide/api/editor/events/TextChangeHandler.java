@@ -14,5 +14,5 @@ import com.google.gwt.event.shared.EventHandler;
 
 public interface TextChangeHandler extends EventHandler {
 
-    void onTextChange(TextChangeEvent event);
+  void onTextChange(TextChangeEvent event);
 }

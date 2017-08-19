@@ -18,33 +18,33 @@ import java.io.Serializable;
  * @author Evgen Vidolob
  */
 public class MavenActivationOS implements Serializable {
-    private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 1L;
 
-    private final String name;
-    private final String family;
-    private final String arch;
-    private final String version;
+  private final String name;
+  private final String family;
+  private final String arch;
+  private final String version;
 
-    public MavenActivationOS(String name, String family, String arch, String version) {
-        this.name = name;
-        this.family = family;
-        this.arch = arch;
-        this.version = version;
-    }
+  public MavenActivationOS(String name, String family, String arch, String version) {
+    this.name = name;
+    this.family = family;
+    this.arch = arch;
+    this.version = version;
+  }
 
-    public String getName() {
-        return name;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public String getFamily() {
-        return family;
-    }
+  public String getFamily() {
+    return family;
+  }
 
-    public String getArch() {
-        return arch;
-    }
+  public String getArch() {
+    return arch;
+  }
 
-    public String getVersion() {
-        return version;
-    }
+  public String getVersion() {
+    return version;
+  }
 }

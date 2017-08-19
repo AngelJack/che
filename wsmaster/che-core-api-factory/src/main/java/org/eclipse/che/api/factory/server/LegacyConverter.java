@@ -19,5 +19,5 @@ import org.eclipse.che.api.core.model.factory.Factory;
  * @author Alexander Garagatyi
  */
 public interface LegacyConverter {
-    void convert(Factory factory) throws ApiException;
+  void convert(Factory factory) throws ApiException;
 }

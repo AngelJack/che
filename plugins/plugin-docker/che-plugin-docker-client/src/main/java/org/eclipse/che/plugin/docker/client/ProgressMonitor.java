@@ -19,12 +19,11 @@ import org.eclipse.che.plugin.docker.client.json.ProgressStatus;
  * @author Alexander Garagatyi
  */
 public interface ProgressMonitor {
-    void updateProgress(ProgressStatus currentProgressStatus);
+  void updateProgress(ProgressStatus currentProgressStatus);
 
-    ProgressMonitor DEV_NULL = new ProgressMonitor() {
+  ProgressMonitor DEV_NULL =
+      new ProgressMonitor() {
         @Override
-        public void updateProgress(ProgressStatus currentProgressStatus) {
-        }
-    };
-
+        public void updateProgress(ProgressStatus currentProgressStatus) {}
+      };
 }

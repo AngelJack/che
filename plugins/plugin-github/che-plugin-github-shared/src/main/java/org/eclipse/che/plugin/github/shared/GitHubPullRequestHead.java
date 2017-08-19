@@ -14,36 +14,36 @@ import org.eclipse.che.dto.shared.DTO;
 
 @DTO
 public interface GitHubPullRequestHead {
-    /**
-     * Get pull request head label.
-     *
-     * @return {@link String} label
-     */
-    String getLabel();
+  /**
+   * Get pull request head label.
+   *
+   * @return {@link String} label
+   */
+  String getLabel();
 
-    void setLabel(String label);
+  void setLabel(String label);
 
-    GitHubPullRequestHead withLabel(String label);
+  GitHubPullRequestHead withLabel(String label);
 
-    /**
-     * Get pull request head ref.
-     *
-     * @return {@link String} ref
-     */
-    String getRef();
+  /**
+   * Get pull request head ref.
+   *
+   * @return {@link String} ref
+   */
+  String getRef();
 
-    void setRef(String ref);
+  void setRef(String ref);
 
-    GitHubPullRequestHead withRef(String ref);
+  GitHubPullRequestHead withRef(String ref);
 
-    /**
-     * Get pull request head sha.
-     *
-     * @return {@link String} sha
-     */
-    String getSha();
+  /**
+   * Get pull request head sha.
+   *
+   * @return {@link String} sha
+   */
+  String getSha();
 
-    void setSha(String sha);
+  void setSha(String sha);
 
-    GitHubPullRequestHead withSha(String sha);
+  GitHubPullRequestHead withSha(String sha);
 }

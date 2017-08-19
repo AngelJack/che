@@ -17,34 +17,31 @@ import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
-
+import javax.validation.constraints.NotNull;
 import org.eclipse.che.ide.ext.java.client.settings.property.PropertyWidget;
 
-import javax.validation.constraints.NotNull;
-
 /**
- * The class provides special panel to store special property widgets which allow setup compiler. Also the class contains methods
- * to control this panel.
+ * The class provides special panel to store special property widgets which allow setup compiler.
+ * Also the class contains methods to control this panel.
  *
  * @author Dmitry Shnurenko
  */
 public class ErrorWarningsViewImpl extends Composite implements ErrorWarningsView {
-    interface CompilerSetupViewImplUiBinder extends UiBinder<Widget, ErrorWarningsViewImpl> {
-    }
+  interface CompilerSetupViewImplUiBinder extends UiBinder<Widget, ErrorWarningsViewImpl> {}
 
-    private static final CompilerSetupViewImplUiBinder UI_BINDER = GWT.create(CompilerSetupViewImplUiBinder.class);
+  private static final CompilerSetupViewImplUiBinder UI_BINDER =
+      GWT.create(CompilerSetupViewImplUiBinder.class);
 
-    @UiField
-    FlowPanel properties;
+  @UiField FlowPanel properties;
 
-    @Inject
-    public ErrorWarningsViewImpl() {
-        initWidget(UI_BINDER.createAndBindUi(this));
-    }
+  @Inject
+  public ErrorWarningsViewImpl() {
+    initWidget(UI_BINDER.createAndBindUi(this));
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public void addProperty(@NotNull PropertyWidget propertyWidget) {
-        properties.add(propertyWidget);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public void addProperty(@NotNull PropertyWidget propertyWidget) {
+    properties.add(propertyWidget);
+  }
 }

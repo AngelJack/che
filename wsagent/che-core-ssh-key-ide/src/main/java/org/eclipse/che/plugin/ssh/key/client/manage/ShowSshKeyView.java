@@ -11,29 +11,20 @@
 package org.eclipse.che.plugin.ssh.key.client.manage;
 
 import com.google.inject.ImplementedBy;
-
-import org.eclipse.che.commons.annotation.Nullable;
-import org.eclipse.che.ide.api.mvp.View;
-import org.eclipse.che.ide.resource.Path;
-
 import javax.validation.constraints.NotNull;
+import org.eclipse.che.ide.api.mvp.View;
 
-/**
- * @author Dmitry Shnurenko
- */
+/** @author Dmitry Shnurenko */
 @ImplementedBy(ShowSshKeyViewImpl.class)
 public interface ShowSshKeyView extends View<ShowSshKeyView.ActionDelegate> {
 
-    /**
-     * The method displays 'show reference' dialog with passed parameters.
-     *
-     * @param name
-     *         of service
-     * @param key
-     *         content of key
-     */
-    void show(@NotNull String name, @NotNull String key);
+  /**
+   * The method displays 'show reference' dialog with passed parameters.
+   *
+   * @param name of service
+   * @param key content of key
+   */
+  void show(@NotNull String name, @NotNull String key);
 
-    interface ActionDelegate {
-    }
+  interface ActionDelegate {}
 }

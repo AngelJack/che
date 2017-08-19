@@ -19,5 +19,5 @@ import com.google.gwt.event.shared.HasHandlers;
  * @author "Mickaël Leduque"
  */
 public interface HasViewPortChangeHandlers extends HasHandlers {
-    HandlerRegistration addViewPortChangeHandler(ViewPortChangeHandler handler);
+  HandlerRegistration addViewPortChangeHandler(ViewPortChangeHandler handler);
 }

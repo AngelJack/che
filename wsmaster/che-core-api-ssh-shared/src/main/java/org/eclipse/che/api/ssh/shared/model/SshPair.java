@@ -18,25 +18,17 @@ import org.eclipse.che.commons.annotation.Nullable;
  * @author Sergii Leschenko
  */
 public interface SshPair {
-    /**
-     * Returns name service that use current ssh pair. It is mandatory.
-     */
-    String getService();
+  /** Returns name service that use current ssh pair. It is mandatory. */
+  String getService();
 
-    /**
-     * Returns name of ssh pair. It is mandatory.
-     */
-    String getName();
+  /** Returns name of ssh pair. It is mandatory. */
+  String getName();
 
-    /**
-     * Returns content of public key. It is optional
-     */
-    @Nullable
-    String getPublicKey();
+  /** Returns content of public key. It is optional */
+  @Nullable
+  String getPublicKey();
 
-    /**
-     * Returns content of private key. It is optional
-     */
-    @Nullable
-    String getPrivateKey();
+  /** Returns content of private key. It is optional */
+  @Nullable
+  String getPrivateKey();
 }

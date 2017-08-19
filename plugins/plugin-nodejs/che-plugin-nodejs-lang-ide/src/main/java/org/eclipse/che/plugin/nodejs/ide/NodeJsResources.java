@@ -11,7 +11,6 @@
 package org.eclipse.che.plugin.nodejs.ide;
 
 import com.google.gwt.resources.client.ClientBundle;
-
 import org.vectomatic.dom.svg.ui.SVGResource;
 
 /**
@@ -21,6 +20,6 @@ import org.vectomatic.dom.svg.ui.SVGResource;
  */
 public interface NodeJsResources extends ClientBundle {
 
-    @Source("icons/js.svg")
-    SVGResource jsIcon();
+  @Source("icons/js.svg")
+  SVGResource jsIcon();
 }

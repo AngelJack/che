@@ -10,22 +10,20 @@
  */
 package org.eclipse.che.plugin.typescript.dto;
 
+import static org.eclipse.che.api.core.factory.FactoryParameter.Obligation.OPTIONAL;
+
 import org.eclipse.che.api.core.factory.FactoryParameter;
 import org.eclipse.che.dto.shared.DTO;
 
-import static org.eclipse.che.api.core.factory.FactoryParameter.Obligation.OPTIONAL;
-
-/**
- * @author Florent Benoit
- */
+/** @author Florent Benoit */
 @DTO
 public interface MySuperClassDTO extends MySuperSuperClass {
 
-    @Override
-    @FactoryParameter(obligation = OPTIONAL)
-    String getName();
+  @Override
+  @FactoryParameter(obligation = OPTIONAL)
+  String getName();
 
-    void setName(String name);
-    MySuperClassDTO withName(String name);
+  void setName(String name);
 
+  MySuperClassDTO withName(String name);
 }

@@ -19,12 +19,11 @@ import java.io.OutputStream;
  * @author andrew00x
  */
 public interface OutputProvider {
-    /**
-     * Get writable output.
-     *
-     * @return writable output
-     * @throws IOException
-     *         if an i/o error occurs
-     */
-    OutputStream getOutputStream() throws IOException;
+  /**
+   * Get writable output.
+   *
+   * @return writable output
+   * @throws IOException if an i/o error occurs
+   */
+  OutputStream getOutputStream() throws IOException;
 }

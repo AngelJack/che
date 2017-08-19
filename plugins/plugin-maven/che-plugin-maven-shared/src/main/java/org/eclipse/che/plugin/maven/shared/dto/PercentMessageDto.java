@@ -12,15 +12,13 @@ package org.eclipse.che.plugin.maven.shared.dto;
 
 import org.eclipse.che.dto.shared.DTO;
 
-/**
- * Message for translating value of percent of resolving from <b>MavenServerNotifier</b>.
- */
+/** Message for translating value of percent of resolving from <b>MavenServerNotifier</b>. */
 @DTO
 public interface PercentMessageDto extends MavenOutputEventDto {
 
-    double getPercent();
+  double getPercent();
 
-    void setPercent(double percent);
+  void setPercent(double percent);
 
-    PercentMessageDto withPercent(double percent);
+  PercentMessageDto withPercent(double percent);
 }

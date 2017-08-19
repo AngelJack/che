@@ -11,18 +11,14 @@
 package org.eclipse.che.ide.rest;
 
 import com.google.inject.BindingAnnotation;
-
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-/**
- * @author Vitaly Parfonov
- */
+/** @author Vitaly Parfonov */
 @Deprecated
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.FIELD, ElementType.PARAMETER})
 @BindingAnnotation
-public @interface RestContext {
-}
+public @interface RestContext {}

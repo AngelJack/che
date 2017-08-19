@@ -16,14 +16,13 @@ import com.google.gwt.http.client.Response;
  * Job (asynchronous task) not found exception.
  *
  * @author <a href="mailto:azhuleva@exoplatform.com">Ann Shumilova</a>
- * @version $Id:  Mar 14, 2012 12:52:17 PM anya $
+ * @version $Id: Mar 14, 2012 12:52:17 PM anya $
  */
 @SuppressWarnings("serial")
 public class JobNotFoundException extends ServerException {
 
-    /** @param response */
-    public JobNotFoundException(Response response) {
-        super(response);
-    }
-
+  /** @param response */
+  public JobNotFoundException(Response response) {
+    super(response);
+  }
 }

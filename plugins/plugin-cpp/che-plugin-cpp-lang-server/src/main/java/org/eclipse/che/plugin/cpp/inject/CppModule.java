@@ -10,9 +10,10 @@
  */
 package org.eclipse.che.plugin.cpp.inject;
 
+import static com.google.inject.multibindings.Multibinder.newSetBinder;
+
 import com.google.inject.AbstractModule;
 import com.google.inject.multibindings.Multibinder;
-
 import org.eclipse.che.api.project.server.handlers.ProjectHandler;
 import org.eclipse.che.api.project.server.type.ProjectTypeDef;
 import org.eclipse.che.inject.DynaModule;
@@ -21,21 +22,19 @@ import org.eclipse.che.plugin.cpp.generator.CppProjectGenerator;
 import org.eclipse.che.plugin.cpp.projecttype.CProjectType;
 import org.eclipse.che.plugin.cpp.projecttype.CppProjectType;
 
-import static com.google.inject.multibindings.Multibinder.newSetBinder;
-
-/**
- * @author Vitaly Parfonov
- */
+/** @author Vitaly Parfonov */
 @DynaModule
 public class CppModule extends AbstractModule {
-    @Override
-    protected void configure() {
-        Multibinder<ProjectTypeDef> projectTypeMultibinder = Multibinder.newSetBinder(binder(), ProjectTypeDef.class);
-        projectTypeMultibinder.addBinding().to(CProjectType.class);
-        projectTypeMultibinder.addBinding().to(CppProjectType.class);
+  @Override
+  protected void configure() {
+    Multibinder<ProjectTypeDef> projectTypeMultibinder =
+        Multibinder.newSetBinder(binder(), ProjectTypeDef.class);
+    projectTypeMultibinder.addBinding().to(CProjectType.class);
+    projectTypeMultibinder.addBinding().to(CppProjectType.class);
 
-        Multibinder<ProjectHandler> projectHandlerMultibinder = newSetBinder(binder(), ProjectHandler.class);
-        projectHandlerMultibinder.addBinding().to(CppProjectGenerator.class);
-        projectHandlerMultibinder.addBinding().to(CProjectGenerator.class);
-    }
+    Multibinder<ProjectHandler> projectHandlerMultibinder =
+        newSetBinder(binder(), ProjectHandler.class);
+    projectHandlerMultibinder.addBinding().to(CppProjectGenerator.class);
+    projectHandlerMultibinder.addBinding().to(CProjectGenerator.class);
+  }
 }

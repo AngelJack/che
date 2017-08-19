@@ -25,15 +25,14 @@ import org.eclipse.che.ide.api.component.Component;
 @Singleton
 public class FontAwesomeInjector implements Component {
 
-    @Override
-    public void start(Callback<Component, Exception> callback) {
-        LinkElement link = Document.get().createLinkElement();
-        link.setRel("stylesheet");
-        link.setHref(GWT.getModuleBaseForStaticFiles() + "font-awesome-4.5.0/css/font-awesome.min.css");
+  @Override
+  public void start(Callback<Component, Exception> callback) {
+    LinkElement link = Document.get().createLinkElement();
+    link.setRel("stylesheet");
+    link.setHref(GWT.getModuleBaseForStaticFiles() + "font-awesome-4.5.0/css/font-awesome.min.css");
 
-        Document.get().getHead().appendChild(link);
+    Document.get().getHead().appendChild(link);
 
-        callback.onSuccess(this);
-    }
-
+    callback.onSuccess(this);
+  }
 }

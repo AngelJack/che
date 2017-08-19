@@ -20,5 +20,4 @@ import com.google.gwt.user.client.ui.Widget;
  * @author Kevin Pollet
  */
 @UiTemplate("CommitViewImpl.ui.xml")
-interface CommitViewUiBinder extends UiBinder<Widget, CommitViewImpl> {
-}
+interface CommitViewUiBinder extends UiBinder<Widget, CommitViewImpl> {}

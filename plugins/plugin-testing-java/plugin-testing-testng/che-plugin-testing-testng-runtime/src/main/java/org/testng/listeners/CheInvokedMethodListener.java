@@ -16,28 +16,28 @@ import org.testng.IInvokedMethodListener;
 import org.testng.ITestResult;
 
 /**
- * Listener for invoking before and after method actions by TestNG.
- * This listener will only be invoked for configuration and test methods.
+ * Listener for invoking before and after method actions by TestNG. This listener will only be
+ * invoked for configuration and test methods.
  */
 public class CheInvokedMethodListener implements IInvokedMethodListener {
 
-    private final CheTestNGListener delegate;
+  private final CheTestNGListener delegate;
 
-    public CheInvokedMethodListener(CheTestNGListener delegate) {
-        this.delegate = delegate;
-    }
+  public CheInvokedMethodListener(CheTestNGListener delegate) {
+    this.delegate = delegate;
+  }
 
-    @Override
-    public void beforeInvocation(IInvokedMethod method, ITestResult testResult) {
-        synchronized (delegate) {
-            if (!testResult.getMethod().isTest()) {
-                delegate.onConfigurationStart(testResult);
-            }
-        }
+  @Override
+  public void beforeInvocation(IInvokedMethod method, ITestResult testResult) {
+    synchronized (delegate) {
+      if (!testResult.getMethod().isTest()) {
+        delegate.onConfigurationStart(testResult);
+      }
     }
+  }
 
-    @Override
-    public void afterInvocation(IInvokedMethod method, ITestResult testResult) {
-        //ignore
-    }
+  @Override
+  public void afterInvocation(IInvokedMethod method, ITestResult testResult) {
+    //ignore
+  }
 }

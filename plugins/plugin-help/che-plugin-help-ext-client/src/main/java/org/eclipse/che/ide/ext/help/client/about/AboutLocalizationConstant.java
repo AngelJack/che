@@ -12,22 +12,21 @@ package org.eclipse.che.ide.ext.help.client.about;
 
 import com.google.gwt.i18n.client.Messages;
 
-
 /**
  * Localization for About Codenvy dialog.
  *
  * @author Ann Shumilova
  */
 public interface AboutLocalizationConstant extends Messages {
-    @Key("about.version")
-    String aboutVersion();
+  @Key("about.version")
+  String aboutVersion();
 
-    @Key("about.revision")
-    String aboutRevision();
+  @Key("about.revision")
+  String aboutRevision();
 
-    @Key("about.buildtime")
-    String aboutBuildTime();
+  @Key("about.buildtime")
+  String aboutBuildTime();
 
-    @Key("about.control.title")
-    String aboutControlTitle();
+  @Key("about.control.title")
+  String aboutControlTitle();
 }

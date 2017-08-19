@@ -17,6 +17,6 @@ package org.eclipse.che.ide.api.command;
  */
 public interface CommandGoal {
 
-    /** Returns goal ID. */
-    String getId();
+  /** Returns goal ID. */
+  String getId();
 }

@@ -21,33 +21,33 @@ import org.eclipse.che.dto.shared.DTO;
 @EventOrigin("machine")
 @DTO
 public interface MachineProcessEvent {
-    public enum EventType {
-        STARTED,
-        STOPPED,
-        ERROR
-    }
+  public enum EventType {
+    STARTED,
+    STOPPED,
+    ERROR
+  }
 
-    EventType getEventType();
+  EventType getEventType();
 
-    void setEventType(EventType eventType);
+  void setEventType(EventType eventType);
 
-    MachineProcessEvent withEventType(EventType eventType);
+  MachineProcessEvent withEventType(EventType eventType);
 
-    String getMachineId();
+  String getMachineId();
 
-    void setMachineId(String machineId);
+  void setMachineId(String machineId);
 
-    MachineProcessEvent withMachineId(String machineId);
+  MachineProcessEvent withMachineId(String machineId);
 
-    int getProcessId();
+  int getProcessId();
 
-    void setProcessId(int processId);
+  void setProcessId(int processId);
 
-    MachineProcessEvent withProcessId(int processId);
+  MachineProcessEvent withProcessId(int processId);
 
-    String getError();
+  String getError();
 
-    void setError(String error);
+  void setError(String error);
 
-    MachineProcessEvent withError(String error);
+  MachineProcessEvent withError(String error);
 }

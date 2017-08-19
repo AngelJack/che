@@ -12,15 +12,13 @@ package org.eclipse.che.maven.data;
 
 import java.io.Serializable;
 
-/**
- * @author Evgen Vidolob
- */
+/** @author Evgen Vidolob */
 public enum MavenProblemType implements Serializable {
-    DEPENDENCY,
-    PARENT,
-    SYNTAX,
-    STRUCTURE,
-    SETTINGS;
+  DEPENDENCY,
+  PARENT,
+  SYNTAX,
+  STRUCTURE,
+  SETTINGS;
 
-    private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 1L;
 }

@@ -20,11 +20,10 @@ package org.eclipse.che.plugin.pullrequest.client.parts.contribute;
  */
 public interface TextChangedHandler {
 
-    /**
-     * Called when title/comment/branch is changed
-     *
-     * @param newText
-     *         new text content
-     */
-    void onTextChanged(String newText);
+  /**
+   * Called when title/comment/branch is changed
+   *
+   * @param newText new text content
+   */
+  void onTextChanged(String newText);
 }

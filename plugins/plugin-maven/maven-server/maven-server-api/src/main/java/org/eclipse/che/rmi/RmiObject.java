@@ -20,38 +20,35 @@ import java.rmi.server.Unreferenced;
  */
 public class RmiObject implements Remote, Unreferenced {
 
-    /**
-     * Wraps all non "java.*" exceptions into {@link RuntimeException}
-     *
-     * @param t
-     *         exception which need wrap
-     * @return wrapped exception
-     */
-    public Throwable wrapException(Throwable t) {
-        boolean isJavaException = false;
-        Throwable ex = t;
-        while (ex != null) {
-            if (!ex.getClass().getName().startsWith("java.") && !isWellKnownException(ex)) {
-                isJavaException = true;
-            }
-            ex = ex.getCause();
-        }
-
-        if (isJavaException) {
-            RuntimeException runtimeException = new RuntimeException(t.getMessage());
-            runtimeException.setStackTrace(t.getStackTrace());
-            runtimeException.initCause(wrapException(t.getCause()));
-            ex = runtimeException;
-        }
-        return ex;
+  /**
+   * Wraps all non "java.*" exceptions into {@link RuntimeException}
+   *
+   * @param t exception which need wrap
+   * @return wrapped exception
+   */
+  public Throwable wrapException(Throwable t) {
+    boolean isJavaException = false;
+    Throwable ex = t;
+    while (ex != null) {
+      if (!ex.getClass().getName().startsWith("java.") && !isWellKnownException(ex)) {
+        isJavaException = true;
+      }
+      ex = ex.getCause();
     }
 
-    protected boolean isWellKnownException(Throwable t) {
-        return false;
+    if (isJavaException) {
+      RuntimeException runtimeException = new RuntimeException(t.getMessage());
+      runtimeException.setStackTrace(t.getStackTrace());
+      runtimeException.initCause(wrapException(t.getCause()));
+      ex = runtimeException;
     }
+    return ex;
+  }
 
-    @Override
-    public void unreferenced() {
+  protected boolean isWellKnownException(Throwable t) {
+    return false;
+  }
 
-    }
+  @Override
+  public void unreferenced() {}
 }

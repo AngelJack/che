@@ -10,19 +10,17 @@
  */
 package org.eclipse.che.plugin.java.plain.shared;
 
-/**
- * @author Valeriy Svydenko
- */
+/** @author Valeriy Svydenko */
 public final class PlainJavaProjectConstants {
-    public static String JAVAC_PROJECT_ID            = "javac";
-    public static String JAVAC_PROJECT_NAME          = "Java";
-    public static String DEFAULT_SOURCE_FOLDER_VALUE = "src";
-    public static String DEFAULT_OUTPUT_FOLDER_VALUE = "bin";
+  public static String JAVAC_PROJECT_ID = "javac";
+  public static String JAVAC_PROJECT_NAME = "Java";
+  public static String DEFAULT_SOURCE_FOLDER_VALUE = "src";
+  public static String DEFAULT_OUTPUT_FOLDER_VALUE = "bin";
 
-    public static String LIBRARY_FOLDER               = "java.library.folder";
-    public static String DEFAULT_LIBRARY_FOLDER_VALUE = "lib";
+  public static String LIBRARY_FOLDER = "java.library.folder";
+  public static String DEFAULT_LIBRARY_FOLDER_VALUE = "lib";
 
-    private PlainJavaProjectConstants() {
-        throw new UnsupportedOperationException("Unused constructor");
-    }
+  private PlainJavaProjectConstants() {
+    throw new UnsupportedOperationException("Unused constructor");
+  }
 }

@@ -11,38 +11,40 @@
 package org.eclipse.che.api.project.shared.dto;
 
 import com.google.common.annotations.Beta;
-
 import io.swagger.annotations.ApiModelProperty;
 import org.eclipse.che.dto.shared.DTO;
 
-/**
- *
- * @author Ori Libhaber
- */
+/** @author Ori Libhaber */
 @Beta
 @DTO
 public interface MoveOptions {
-    /**
-     * Get value of overWrite attribute
-     * @return overWrite attribute
-     */
-    @ApiModelProperty(value = "Overwrite if there's a conflict with file names", allowableValues = "true, false")
-    Boolean getOverWrite();
-    /**
-     * Set value of overWrite attribute
-     * @param overWrite is the value to set to overWrite attribute
-     */
-    void setOverWrite(Boolean overWrite);
-    /**
-     * Get value of name attribute
-     * @return name attribute
-     */
-    @ApiModelProperty("New file name")
-    String getName();
-    /**
-     * Set value of name attribute
-     * @param name is the value to set to name attribute
-     */
-    void setName(String name);
-    
+  /**
+   * Get value of overWrite attribute
+   *
+   * @return overWrite attribute
+   */
+  @ApiModelProperty(
+    value = "Overwrite if there's a conflict with file names",
+    allowableValues = "true, false"
+  )
+  Boolean getOverWrite();
+  /**
+   * Set value of overWrite attribute
+   *
+   * @param overWrite is the value to set to overWrite attribute
+   */
+  void setOverWrite(Boolean overWrite);
+  /**
+   * Get value of name attribute
+   *
+   * @return name attribute
+   */
+  @ApiModelProperty("New file name")
+  String getName();
+  /**
+   * Set value of name attribute
+   *
+   * @param name is the value to set to name attribute
+   */
+  void setName(String name);
 }

@@ -11,40 +11,41 @@
 package org.eclipse.che.api.core.jsonrpc.commons;
 
 /**
- * Represents JSON RPC response object. Can be constructed out of
- * stringified json object or by passing specific parameters.
+ * Represents JSON RPC response object. Can be constructed out of stringified json object or by
+ * passing specific parameters.
  */
 public class JsonRpcResponse {
-    private final String        id;
-    private final JsonRpcResult result;
-    private final JsonRpcError  error;
+  private final String id;
+  private final JsonRpcResult result;
+  private final JsonRpcError error;
 
-    public JsonRpcResponse(String id, JsonRpcResult result, JsonRpcError error) {
-        this.id = id;
-        this.result = result;
-        this.error = error;
-    }
-    public boolean hasId() {
-        return id != null;
-    }
+  public JsonRpcResponse(String id, JsonRpcResult result, JsonRpcError error) {
+    this.id = id;
+    this.result = result;
+    this.error = error;
+  }
 
-    public boolean hasError() {
-        return error != null;
-    }
+  public boolean hasId() {
+    return id != null;
+  }
 
-    public boolean hasResult() {
-        return result != null;
-    }
+  public boolean hasError() {
+    return error != null;
+  }
 
-    public JsonRpcError getError() {
-        return error;
-    }
+  public boolean hasResult() {
+    return result != null;
+  }
 
-    public String getId() {
-        return id;
-    }
+  public JsonRpcError getError() {
+    return error;
+  }
 
-    public JsonRpcResult getResult() {
-        return result;
-    }
+  public String getId() {
+    return id;
+  }
+
+  public JsonRpcResult getResult() {
+    return result;
+  }
 }

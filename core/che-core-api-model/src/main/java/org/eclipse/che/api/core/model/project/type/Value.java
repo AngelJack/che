@@ -14,23 +14,17 @@ import java.util.List;
 
 /**
  * Attribute value
+ *
  * @author gazarenkov
  */
 public interface Value {
 
-    /**
-     * @return value as String. If attribute has multiple values it returns first one.
-     */
-    String getString();
+  /** @return value as String. If attribute has multiple values it returns first one. */
+  String getString();
 
-    /**
-     * @return value as list of strings
-     */
-    List<String> getList();
+  /** @return value as list of strings */
+  List<String> getList();
 
-    /**
-     * @return whether the value is not initialized
-     */
-    boolean isEmpty();
-
+  /** @return whether the value is not initialized */
+  boolean isEmpty();
 }

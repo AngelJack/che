@@ -11,28 +11,24 @@
 package org.eclipse.che.ide.resources.selector;
 
 import com.google.inject.ImplementedBy;
-
+import java.util.List;
 import org.eclipse.che.ide.api.data.tree.Node;
 import org.eclipse.che.ide.api.mvp.View;
 import org.eclipse.che.ide.resource.Path;
 
-import java.util.List;
-
-/**
- * @author Vlad Zhukovskiy
- */
+/** @author Vlad Zhukovskiy */
 @ImplementedBy(SelectPathViewImpl.class)
 public interface SelectPathView extends View<SelectPathView.ActionDelegate> {
 
-    void setStructure(List<Node> nodes, boolean showFiles);
+  void setStructure(List<Node> nodes, boolean showFiles);
 
-    void show();
+  void show();
 
-    interface ActionDelegate {
-        void onPathSelected(Path path);
+  interface ActionDelegate {
+    void onPathSelected(Path path);
 
-        void onSubmit();
+    void onSubmit();
 
-        void onCancel();
-    }
+    void onCancel();
+  }
 }

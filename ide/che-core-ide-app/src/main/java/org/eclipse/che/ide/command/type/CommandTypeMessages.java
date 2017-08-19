@@ -19,9 +19,9 @@ import com.google.gwt.i18n.client.Messages;
  */
 public interface CommandTypeMessages extends Messages {
 
-    @Key("type.registry.message.already_registered")
-    String typeRegistryMessageAlreadyRegistered(String id);
+  @Key("type.registry.message.already_registered")
+  String typeRegistryMessageAlreadyRegistered(String id);
 
-    @Key("type.chooser.message.canceled")
-    String typeChooserMessageCanceled();
+  @Key("type.chooser.message.canceled")
+  String typeChooserMessageCanceled();
 }

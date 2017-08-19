@@ -12,80 +12,73 @@ package org.eclipse.che.ide.api.editor.gutter;
 
 import elemental.dom.Element;
 
-/**
- * Interface for components that expose a gutter.
- */
+/** Interface for components that expose a gutter. */
 public interface Gutter {
-    /**
-     * Adds a gutter item.
-     *
-     * @param lineStart
-     *         the first line of the item
-     * @param lineEnd
-     *         the last line of the item
-     * @param gutterId the gutter identifier
-     * @param element the (DOM) element to add
-     */
-    void addGutterItem(int lineStart, int lineEnd, String gutterId, Element element);
+  /**
+   * Adds a gutter item.
+   *
+   * @param lineStart the first line of the item
+   * @param lineEnd the last line of the item
+   * @param gutterId the gutter identifier
+   * @param element the (DOM) element to add
+   */
+  void addGutterItem(int lineStart, int lineEnd, String gutterId, Element element);
 
-    /**
-     * Adds a gutter item.
-     *
-     * @param lineStart
-     *         the first line of the item
-     * @param lineEnd
-     *         the last line of the item
-     * @param gutterId the gutter identifier
-     * @param element the (DOM) element to add
-     * @param lineCallback callback to call when the line is removed
-     */
-    void addGutterItem(int lineStart, int lineEnd, String gutterId, Element element, LineNumberingChangeCallback lineCallback);
+  /**
+   * Adds a gutter item.
+   *
+   * @param lineStart the first line of the item
+   * @param lineEnd the last line of the item
+   * @param gutterId the gutter identifier
+   * @param element the (DOM) element to add
+   * @param lineCallback callback to call when the line is removed
+   */
+  void addGutterItem(
+      int lineStart,
+      int lineEnd,
+      String gutterId,
+      Element element,
+      LineNumberingChangeCallback lineCallback);
 
-    /**
-     * Remove a gutter item.
-     * @param lineStart
-     *         the first line of the item
-     * @param lineEnd
-     *         the last line of the item
-     * @param gutterId the gutter
-     */
-    void removeGutterItem(int lineStart, int lineEnd, String gutterId);
+  /**
+   * Remove a gutter item.
+   *
+   * @param lineStart the first line of the item
+   * @param lineEnd the last line of the item
+   * @param gutterId the gutter
+   */
+  void removeGutterItem(int lineStart, int lineEnd, String gutterId);
 
-    /**
-     * Returns the gutter item at th given line for the given gutter (if present).
-     * @param lineStart
-     *         the first line of the item
-     * @param lineEnd
-     *         the last line of the item
-     * @param gutterId the gutter
-     * @return the gutter element or null
-     */
-    Element getGutterItem(int lineStart, int lineEnd, String gutterId);
+  /**
+   * Returns the gutter item at th given line for the given gutter (if present).
+   *
+   * @param lineStart the first line of the item
+   * @param lineEnd the last line of the item
+   * @param gutterId the gutter
+   * @return the gutter element or null
+   */
+  Element getGutterItem(int lineStart, int lineEnd, String gutterId);
 
-    /**
-     * Clears the given gutter. Removes all gutter items.
-     *
-     * @param gutterId the gutter identifier
-     */
-    void clearGutter(String gutterId);
+  /**
+   * Clears the given gutter. Removes all gutter items.
+   *
+   * @param gutterId the gutter identifier
+   */
+  void clearGutter(String gutterId);
 
-    /**
-     * Sets a gutter item. If any item exists then it has to be replaced.
-     *
-     * @param lineStart
-     *         the first line of the item
-     * @param lineEnd
-     *         the last line of the item
-     * @param gutterId
-     *         the gutter
-     * @param element
-     *         the (DOM) element to add
-     */
-    void setGutterItem(int lineStart, int lineEnd, String gutterId, Element element);
+  /**
+   * Sets a gutter item. If any item exists then it has to be replaced.
+   *
+   * @param lineStart the first line of the item
+   * @param lineEnd the last line of the item
+   * @param gutterId the gutter
+   * @param element the (DOM) element to add
+   */
+  void setGutterItem(int lineStart, int lineEnd, String gutterId, Element element);
 
-    /** Callback to be warned when line numbering changes (lines are removed or inserted). */
-    interface LineNumberingChangeCallback {
-        /** Method called when the line numbering changes. */
-        void onLineNumberingChange(int fromLine, int linesRemoved, int linesAdded);
-    }
+  /** Callback to be warned when line numbering changes (lines are removed or inserted). */
+  interface LineNumberingChangeCallback {
+    /** Method called when the line numbering changes. */
+    void onLineNumberingChange(int fromLine, int linesRemoved, int linesAdded);
+  }
 }

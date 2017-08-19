@@ -19,9 +19,9 @@ import java.util.List;
  */
 public interface EditorPropertiesSection {
 
-    /** Returns IDs of properties which the section contains */
-    public List<String> getProperties();
+  /** Returns IDs of properties which the section contains */
+  public List<String> getProperties();
 
-    /** Returns the title of editor's properties section */
-    public String getSectionTitle();
+  /** Returns the title of editor's properties section */
+  public String getSectionTitle();
 }

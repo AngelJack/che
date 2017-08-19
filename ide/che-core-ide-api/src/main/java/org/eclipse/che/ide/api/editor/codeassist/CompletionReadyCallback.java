@@ -12,13 +12,12 @@ package org.eclipse.che.ide.api.editor.codeassist;
 
 import java.util.List;
 
-/**
- * Callback used to be called when the completion proposals are computed.
- */
+/** Callback used to be called when the completion proposals are computed. */
 public interface CompletionReadyCallback {
-    /**
-     * Callback used to be called when the completion proposals are computed.
-     * @param proposals the proposals
-     */
-    void onCompletionReady(List<CompletionProposal> proposals);
+  /**
+   * Callback used to be called when the completion proposals are computed.
+   *
+   * @param proposals the proposals
+   */
+  void onCompletionReady(List<CompletionProposal> proposals);
 }

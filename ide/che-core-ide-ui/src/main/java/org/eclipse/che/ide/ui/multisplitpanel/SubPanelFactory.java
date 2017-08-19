@@ -19,9 +19,9 @@ import org.eclipse.che.commons.annotation.Nullable;
  */
 public interface SubPanelFactory {
 
-    /** Create new instance of {@link SubPanel}. */
-    SubPanel newPanel();
+  /** Create new instance of {@link SubPanel}. */
+  SubPanel newPanel();
 
-    /** For internal use only. Not intended to be used by client code. */
-    SubPanel newPanel(@Nullable SubPanel parentPanel);
+  /** For internal use only. Not intended to be used by client code. */
+  SubPanel newPanel(@Nullable SubPanel parentPanel);
 }

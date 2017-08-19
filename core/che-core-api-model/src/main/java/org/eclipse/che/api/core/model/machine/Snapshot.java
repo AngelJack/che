@@ -18,40 +18,26 @@ package org.eclipse.che.api.core.model.machine;
  */
 public interface Snapshot {
 
-    /**
-     * Unique identifier of snapshot
-     */
-    String getId();
+  /** Unique identifier of snapshot */
+  String getId();
 
-    /**
-     * Type of the instance implementation, e.g. docker
-     */
-    String getType();
+  /** Type of the instance implementation, e.g. docker */
+  String getType();
 
-    /**
-     * Creation date of the snapshot
-     */
-    long getCreationDate();
+  /** Creation date of the snapshot */
+  long getCreationDate();
 
-    boolean isDev();
+  boolean isDev();
 
-    /**
-     * Description of the snapshot
-     */
-    String getDescription();
+  /** Description of the snapshot */
+  String getDescription();
 
-    /**
-     * Id of workspace which machines is bound to snapshot
-     */
-    String getWorkspaceId();
+  /** Id of workspace which machines is bound to snapshot */
+  String getWorkspaceId();
 
-    /**
-     * Returns name of bound to this snapshot machine
-     */
-    String getMachineName();
+  /** Returns name of bound to this snapshot machine */
+  String getMachineName();
 
-    /**
-     * Returns name of environment which machine belongs to
-     */
-    String getEnvName();
+  /** Returns name of environment which machine belongs to */
+  String getEnvName();
 }

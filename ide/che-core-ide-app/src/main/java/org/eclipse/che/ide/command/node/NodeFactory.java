@@ -10,17 +10,18 @@
  */
 package org.eclipse.che.ide.command.node;
 
+import java.util.List;
 import org.eclipse.che.ide.api.command.CommandGoal;
 import org.eclipse.che.ide.api.command.CommandImpl;
-
-import java.util.List;
 
 /** Factory for different command tree nodes. */
 public interface NodeFactory {
 
-    CommandGoalNode newCommandGoalNode(CommandGoal data, List<? extends AbstractCommandNode> commands);
+  CommandGoalNode newCommandGoalNode(
+      CommandGoal data, List<? extends AbstractCommandNode> commands);
 
-    ExecutableCommandNode newExecutableCommandNode(CommandImpl command, ExecutableCommandNode.ActionDelegate actionDelegate);
+  ExecutableCommandNode newExecutableCommandNode(
+      CommandImpl command, ExecutableCommandNode.ActionDelegate actionDelegate);
 
-    CommandFileNode newCommandFileNode(CommandImpl data);
+  CommandFileNode newCommandFileNode(CommandImpl data);
 }

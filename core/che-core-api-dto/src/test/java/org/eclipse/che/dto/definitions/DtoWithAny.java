@@ -10,28 +10,27 @@
  */
 package org.eclipse.che.dto.definitions;
 
-import org.eclipse.che.dto.shared.DTO;
-
 import java.util.List;
+import org.eclipse.che.dto.shared.DTO;
 
 /**
  * Makes use of the 'any' (JsonElement) property type feature.
- * 
+ *
  * @author Tareq Sharafy (tareq.sharafy@sap.com)
  */
 @DTO
 public interface DtoWithAny {
-    int getId();
+  int getId();
 
-    Object getStuff();
+  Object getStuff();
 
-    void setStuff(Object stuff);
+  void setStuff(Object stuff);
 
-    DtoWithAny withStuff(Object stuff);
+  DtoWithAny withStuff(Object stuff);
 
-    List<Object> getObjects();
+  List<Object> getObjects();
 
-    void setObjects(List<Object> objects);
+  void setObjects(List<Object> objects);
 
-    DtoWithAny withObjects(List<Object> objects);
+  DtoWithAny withObjects(List<Object> objects);
 }

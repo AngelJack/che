@@ -10,40 +10,38 @@
  */
 package org.eclipse.che.plugin.openshift.client.kubernetes;
 
+import static org.testng.Assert.assertTrue;
+
 import io.fabric8.kubernetes.api.model.EnvVar;
-
-import org.testng.annotations.Test;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
-
-import static org.testng.Assert.assertTrue;
+import org.testng.annotations.Test;
 
 public class KubernetesEnvVarTest {
 
-    @Test
-    public void shouldReturnContainerEnvFromEnvVariableArray() {
-        // Given
-        String[] envVariables = {
-                "CHE_LOCAL_CONF_DIR=/mnt/che/conf",
-                "USER_TOKEN=dummy_token",
-                "CHE_API_ENDPOINT=http://172.17.0.4:8080/wsmaster/api",
-                "JAVA_OPTS=-Xms256m -Xmx2048m -Djava.security.egd=file:/dev/./urandom",
-                "CHE_WORKSPACE_ID=workspaceID",
-                "CHE_PROJECTS_ROOT=/projects",
-                "TOMCAT_HOME=/home/user/tomcat8",
-                "M2_HOME=/home/user/apache-maven-3.3.9",
-                "TERM=xterm",
-                "LANG=en_US.UTF-8"
-        };
+  @Test
+  public void shouldReturnContainerEnvFromEnvVariableArray() {
+    // Given
+    String[] envVariables = {
+      "CHE_LOCAL_CONF_DIR=/mnt/che/conf",
+      "USER_TOKEN=dummy_token",
+      "CHE_API_ENDPOINT=http://172.17.0.4:8080/wsmaster/api",
+      "JAVA_OPTS=-Xms256m -Xmx2048m -Djava.security.egd=file:/dev/./urandom",
+      "CHE_WORKSPACE_ID=workspaceID",
+      "CHE_PROJECTS_ROOT=/projects",
+      "TOMCAT_HOME=/home/user/tomcat8",
+      "M2_HOME=/home/user/apache-maven-3.3.9",
+      "TERM=xterm",
+      "LANG=en_US.UTF-8"
+    };
 
-        // When
-        List<EnvVar> env = KubernetesEnvVar.getEnvFrom(envVariables);
+    // When
+    List<EnvVar> env = KubernetesEnvVar.getEnvFrom(envVariables);
 
-        // Then
-        List<String> keysAndValues = env.stream().map(k -> k.getName() + "=" + k.getValue()).collect(Collectors.toList());
-        assertTrue(Arrays.stream(envVariables).allMatch(keysAndValues::contains));
-    }
-
+    // Then
+    List<String> keysAndValues =
+        env.stream().map(k -> k.getName() + "=" + k.getValue()).collect(Collectors.toList());
+    assertTrue(Arrays.stream(envVariables).allMatch(keysAndValues::contains));
+  }
 }

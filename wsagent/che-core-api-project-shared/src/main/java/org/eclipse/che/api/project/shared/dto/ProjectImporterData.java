@@ -10,10 +10,9 @@
  */
 package org.eclipse.che.api.project.shared.dto;
 
-import org.eclipse.che.dto.shared.DTO;
-
 import java.util.List;
 import java.util.Map;
+import org.eclipse.che.dto.shared.DTO;
 
 /**
  * Class for transfering project importers and general configuration
@@ -23,15 +22,15 @@ import java.util.Map;
 @DTO
 public interface ProjectImporterData {
 
-    List<ProjectImporterDescriptor> getImporters();
+  List<ProjectImporterDescriptor> getImporters();
 
-    void setImporters(List<ProjectImporterDescriptor> importers);
+  void setImporters(List<ProjectImporterDescriptor> importers);
 
-    ProjectImporterData withImporters(List<ProjectImporterDescriptor> importers);
+  ProjectImporterData withImporters(List<ProjectImporterDescriptor> importers);
 
-    Map<String, String> getConfiguration();
+  Map<String, String> getConfiguration();
 
-    void setConfiguration(Map<String, String> configuration);
+  void setConfiguration(Map<String, String> configuration);
 
-    ProjectImporterData withConfiguration(Map<String, String> configuration);
+  ProjectImporterData withConfiguration(Map<String, String> configuration);
 }

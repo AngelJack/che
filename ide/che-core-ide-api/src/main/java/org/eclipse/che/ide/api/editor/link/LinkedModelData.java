@@ -12,11 +12,9 @@ package org.eclipse.che.ide.api.editor.link;
 
 import java.util.List;
 
-/**
- * @author Evgen Vidolob
- */
+/** @author Evgen Vidolob */
 public interface LinkedModelData {
-    void setType(String type);
+  void setType(String type);
 
-    void setValues(List<String> values);
+  void setValues(List<String> values);
 }

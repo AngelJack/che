@@ -15,25 +15,25 @@ import org.eclipse.che.dto.shared.DTO;
 
 @DTO
 public interface GetProcessLogsRequestDto extends DtoWithPid {
-    GetProcessLogsRequestDto withPid(int pid);
+  GetProcessLogsRequestDto withPid(int pid);
 
-    String getFrom();
+  String getFrom();
 
-    GetProcessLogsRequestDto withFrom(String from);
+  GetProcessLogsRequestDto withFrom(String from);
 
-    String getTill();
+  String getTill();
 
-    GetProcessLogsRequestDto withTill(String till);
+  GetProcessLogsRequestDto withTill(String till);
 
-    String getFormat();
+  String getFormat();
 
-    GetProcessLogsRequestDto withFormat(String format);
+  GetProcessLogsRequestDto withFormat(String format);
 
-    int getLimit();
+  int getLimit();
 
-    GetProcessLogsRequestDto withLimit(int limit);
+  GetProcessLogsRequestDto withLimit(int limit);
 
-    int getSkip();
+  int getSkip();
 
-    GetProcessLogsRequestDto withSkip(int limit);
+  GetProcessLogsRequestDto withSkip(int limit);
 }

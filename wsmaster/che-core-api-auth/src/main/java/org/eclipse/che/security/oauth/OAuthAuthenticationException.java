@@ -12,11 +12,11 @@ package org.eclipse.che.security.oauth;
 
 @SuppressWarnings("serial")
 public final class OAuthAuthenticationException extends Exception {
-    public OAuthAuthenticationException(String message) {
-        super(message);
-    }
+  public OAuthAuthenticationException(String message) {
+    super(message);
+  }
 
-    public OAuthAuthenticationException(String message, Throwable cause) {
-        super(message, cause);
-    }
+  public OAuthAuthenticationException(String message, Throwable cause) {
+    super(message, cause);
+  }
 }

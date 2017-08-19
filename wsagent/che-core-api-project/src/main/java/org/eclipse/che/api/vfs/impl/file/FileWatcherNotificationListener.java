@@ -10,39 +10,39 @@
  */
 package org.eclipse.che.api.vfs.impl.file;
 
+import static com.google.common.collect.Lists.newArrayList;
+
+import java.util.Collections;
+import java.util.List;
 import org.eclipse.che.api.project.shared.dto.event.FileWatcherEventType;
 import org.eclipse.che.api.vfs.VirtualFile;
 import org.eclipse.che.api.vfs.VirtualFileFilter;
 
-import java.util.Collections;
-import java.util.List;
-
-import static com.google.common.collect.Lists.newArrayList;
-
 public abstract class FileWatcherNotificationListener {
-    private final List<VirtualFileFilter> eventsFilters;
+  private final List<VirtualFileFilter> eventsFilters;
 
-    public FileWatcherNotificationListener(VirtualFileFilter eventsFilter) {
-        this.eventsFilters = newArrayList(eventsFilter);
+  public FileWatcherNotificationListener(VirtualFileFilter eventsFilter) {
+    this.eventsFilters = newArrayList(eventsFilter);
+  }
+
+  public FileWatcherNotificationListener(
+      VirtualFileFilter eventsFilter, VirtualFileFilter... eventsFilters) {
+    this.eventsFilters = newArrayList(eventsFilter);
+    Collections.addAll(this.eventsFilters, eventsFilters);
+  }
+
+  public FileWatcherNotificationListener(List<VirtualFileFilter> eventsFilters) {
+    this.eventsFilters = eventsFilters;
+  }
+
+  public boolean shouldBeNotifiedFor(VirtualFile virtualFile) {
+    for (VirtualFileFilter filter : eventsFilters) {
+      if (!filter.accept(virtualFile)) {
+        return false;
+      }
     }
+    return true;
+  }
 
-    public FileWatcherNotificationListener(VirtualFileFilter eventsFilter, VirtualFileFilter... eventsFilters) {
-        this.eventsFilters = newArrayList(eventsFilter);
-        Collections.addAll(this.eventsFilters, eventsFilters);
-    }
-
-    public FileWatcherNotificationListener(List<VirtualFileFilter> eventsFilters) {
-        this.eventsFilters = eventsFilters;
-    }
-
-    public boolean shouldBeNotifiedFor(VirtualFile virtualFile) {
-        for (VirtualFileFilter filter : eventsFilters) {
-            if (!filter.accept(virtualFile)) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    public abstract void onFileWatcherEvent(VirtualFile virtualFile, FileWatcherEventType eventType);
+  public abstract void onFileWatcherEvent(VirtualFile virtualFile, FileWatcherEventType eventType);
 }

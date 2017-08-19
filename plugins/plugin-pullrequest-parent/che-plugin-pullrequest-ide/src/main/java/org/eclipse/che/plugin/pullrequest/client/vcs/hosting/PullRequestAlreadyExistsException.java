@@ -19,15 +19,14 @@ import javax.validation.constraints.NotNull;
  */
 public class PullRequestAlreadyExistsException extends Exception {
 
-    private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 1L;
 
-    /**
-     * Constructs an instance of {@link PullRequestAlreadyExistsException}.
-     *
-     * @param headBranch
-     *         the head branch name.
-     */
-    public PullRequestAlreadyExistsException(@NotNull final String headBranch) {
-        super("A pull request for " + headBranch + " already exists");
-    }
+  /**
+   * Constructs an instance of {@link PullRequestAlreadyExistsException}.
+   *
+   * @param headBranch the head branch name.
+   */
+  public PullRequestAlreadyExistsException(@NotNull final String headBranch) {
+    super("A pull request for " + headBranch + " already exists");
+  }
 }

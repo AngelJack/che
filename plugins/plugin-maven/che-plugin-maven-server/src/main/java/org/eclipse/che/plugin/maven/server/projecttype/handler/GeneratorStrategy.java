@@ -10,23 +10,19 @@
  */
 package org.eclipse.che.plugin.maven.server.projecttype.handler;
 
+import java.util.Map;
 import org.eclipse.che.api.core.ConflictException;
 import org.eclipse.che.api.core.ForbiddenException;
 import org.eclipse.che.api.core.ServerException;
-import org.eclipse.che.api.core.model.project.ProjectConfig;
-import org.eclipse.che.api.project.server.FolderEntry;
 import org.eclipse.che.api.project.server.type.AttributeValue;
 import org.eclipse.che.api.vfs.Path;
 
-import java.util.Map;
+/** @author Vitaly Parfonov */
+public interface GeneratorStrategy {
 
-/**
- * @author Vitaly Parfonov
- */
-public interface GeneratorStrategy  {
+  String getId();
 
-    String getId();
-
-    void generateProject(final Path projectPath, Map<String, AttributeValue> attributes, Map<String, String> options)
-            throws ForbiddenException, ConflictException, ServerException;
+  void generateProject(
+      final Path projectPath, Map<String, AttributeValue> attributes, Map<String, String> options)
+      throws ForbiddenException, ConflictException, ServerException;
 }

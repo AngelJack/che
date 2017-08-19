@@ -12,35 +12,33 @@ package org.eclipse.che.plugin.languageserver.ide.quickopen;
 
 import java.util.List;
 
-/**
- * @author Evgen Vidolob
- */
+/** @author Evgen Vidolob */
 public class QuickOpenModel {
-    private List<QuickOpenEntry> entries;
-    private Renderer renderer;
+  private List<QuickOpenEntry> entries;
+  private Renderer renderer;
 
-    @SuppressWarnings("unchecked")
-    public QuickOpenModel(List<? extends QuickOpenEntry> entries) {
-        this.entries = (List<QuickOpenEntry>)entries;
-    }
+  @SuppressWarnings("unchecked")
+  public QuickOpenModel(List<? extends QuickOpenEntry> entries) {
+    this.entries = (List<QuickOpenEntry>) entries;
+  }
 
-    public List<QuickOpenEntry> getEntries() {
-        return entries;
-    }
+  public List<QuickOpenEntry> getEntries() {
+    return entries;
+  }
 
-    public void setEntries(List<QuickOpenEntry> entries) {
-        this.entries = entries;
-    }
+  public void setEntries(List<QuickOpenEntry> entries) {
+    this.entries = entries;
+  }
 
-    public Renderer getRenderer() {
-        return renderer;
-    }
+  public Renderer getRenderer() {
+    return renderer;
+  }
 
-    public void setRenderer(Renderer renderer) {
-        this.renderer = renderer;
-    }
+  public void setRenderer(Renderer renderer) {
+    this.renderer = renderer;
+  }
 
-    public boolean run(QuickOpenEntry entry, QuickOpenEntry.Mode mode) {
-        return entry.run(mode);
-    }
+  public boolean run(QuickOpenEntry entry, QuickOpenEntry.Mode mode) {
+    return entry.run(mode);
+  }
 }

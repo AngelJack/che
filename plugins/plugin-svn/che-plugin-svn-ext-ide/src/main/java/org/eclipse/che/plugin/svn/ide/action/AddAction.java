@@ -12,32 +12,36 @@ package org.eclipse.che.plugin.svn.ide.action;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-
 import org.eclipse.che.ide.api.action.ActionEvent;
 import org.eclipse.che.ide.api.app.AppContext;
 import org.eclipse.che.plugin.svn.ide.SubversionExtensionLocalizationConstants;
 import org.eclipse.che.plugin.svn.ide.SubversionExtensionResources;
 import org.eclipse.che.plugin.svn.ide.add.AddPresenter;
 
-/**
- * Extension of {@link SubversionAction} for implementing the "svn add" command.
- */
+/** Extension of {@link SubversionAction} for implementing the "svn add" command. */
 @Singleton
 public class AddAction extends SubversionAction {
 
-    private final AddPresenter presenter;
+  private final AddPresenter presenter;
 
-    @Inject
-    public AddAction(AppContext appContext,
-                     SubversionExtensionLocalizationConstants constants,
-                     SubversionExtensionResources resources,
-                     AddPresenter presenter) {
-        super(constants.addTitle(), constants.addDescription(), resources.add(), appContext, constants, resources);
-        this.presenter = presenter;
-    }
+  @Inject
+  public AddAction(
+      AppContext appContext,
+      SubversionExtensionLocalizationConstants constants,
+      SubversionExtensionResources resources,
+      AddPresenter presenter) {
+    super(
+        constants.addTitle(),
+        constants.addDescription(),
+        resources.add(),
+        appContext,
+        constants,
+        resources);
+    this.presenter = presenter;
+  }
 
-    @Override
-    public void actionPerformed(final ActionEvent e) {
-        presenter.showAdd();
-    }
+  @Override
+  public void actionPerformed(final ActionEvent e) {
+    presenter.showAdd();
+  }
 }

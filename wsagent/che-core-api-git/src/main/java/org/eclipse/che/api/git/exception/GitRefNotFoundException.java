@@ -10,40 +10,34 @@
  */
 package org.eclipse.che.api.git.exception;
 
-/**
- * @author Yossi Balan (yossi.balan@sap.com)
- */
+/** @author Yossi Balan (yossi.balan@sap.com) */
 public class GitRefNotFoundException extends GitException {
 
-    /**
-     * Construct a new GitRefNotFoundException based on message
-     *
-     * @param message
-     *        error message
-     */
-    public GitRefNotFoundException(String message) {
-        super(message);
-    }
+  /**
+   * Construct a new GitRefNotFoundException based on message
+   *
+   * @param message error message
+   */
+  public GitRefNotFoundException(String message) {
+    super(message);
+  }
 
-    /**
-     * Construct a new GitRefNotFoundException based on cause
-     *
-     * @param cause
-     *        cause exception
-     */
-    public GitRefNotFoundException(Throwable cause) {
-        super(cause);
-    }
+  /**
+   * Construct a new GitRefNotFoundException based on cause
+   *
+   * @param cause cause exception
+   */
+  public GitRefNotFoundException(Throwable cause) {
+    super(cause);
+  }
 
-    /**
-     * Construct a new GitRefNotFoundException based on message and cause
-     *
-     * @param message
-     *        error message
-     * @param cause
-     *        cause exception
-     */
-    public GitRefNotFoundException(String message, Throwable cause) {
-        super(message, cause);
-    }
+  /**
+   * Construct a new GitRefNotFoundException based on message and cause
+   *
+   * @param message error message
+   * @param cause cause exception
+   */
+  public GitRefNotFoundException(String message, Throwable cause) {
+    super(message, cause);
+  }
 }

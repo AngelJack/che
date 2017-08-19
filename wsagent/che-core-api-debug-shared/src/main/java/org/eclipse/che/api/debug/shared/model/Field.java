@@ -10,27 +10,17 @@
  */
 package org.eclipse.che.api.debug.shared.model;
 
-/**
- * @author Anatoliy Bazko
- */
+/** @author Anatoliy Bazko */
 public interface Field extends Variable {
-    /**
-     * Indicates if field is final.
-     */
-    boolean isIsFinal();
+  /** Indicates if field is final. */
+  boolean isIsFinal();
 
-    /**
-     * Indicates if field is static.
-     */
-    boolean isIsStatic();
+  /** Indicates if field is static. */
+  boolean isIsStatic();
 
-    /**
-     * Indicates if field is transient.
-     */
-    boolean isIsTransient();
+  /** Indicates if field is transient. */
+  boolean isIsTransient();
 
-    /**
-     * Indicates if field is volatile.
-     */
-    boolean isIsVolatile();
+  /** Indicates if field is volatile. */
+  boolean isIsVolatile();
 }

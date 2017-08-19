@@ -10,9 +10,8 @@
  */
 package org.eclipse.che.core.db.jpa;
 
-import org.eclipse.che.core.db.DBErrorCode;
-
 import javax.persistence.RollbackException;
+import org.eclipse.che.core.db.DBErrorCode;
 
 /**
  * Extends the standard {@link RollbackException} with an error code from {@link DBErrorCode}.
@@ -21,14 +20,14 @@ import javax.persistence.RollbackException;
  */
 public class DetailedRollbackException extends RollbackException {
 
-    private DBErrorCode code;
+  private DBErrorCode code;
 
-    public DetailedRollbackException(String message, Throwable cause, DBErrorCode code) {
-        super(message, cause);
-        this.code = code;
-    }
+  public DetailedRollbackException(String message, Throwable cause, DBErrorCode code) {
+    super(message, cause);
+    this.code = code;
+  }
 
-    public DBErrorCode getCode() {
-        return code;
-    }
+  public DBErrorCode getCode() {
+    return code;
+  }
 }

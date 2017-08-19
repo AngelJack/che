@@ -12,23 +12,15 @@ package org.eclipse.che.api.debug.shared.model;
 
 import java.util.List;
 
-/**
- * @author Anatoliy Bazko
- */
+/** @author Anatoliy Bazko */
 public interface MutableVariable extends Variable {
 
-    /**
-     * The nested variables.
-     */
-    List<MutableVariable> getVariables();
+  /** The nested variables. */
+  List<MutableVariable> getVariables();
 
-    /**
-     * Sets the new variable value.
-     */
-    void setValue(String value);
+  /** Sets the new variable value. */
+  void setValue(String value);
 
-    /**
-     * Sets the new list of nested variables.
-     */
-    void setVariables(List<? extends Variable> variables);
+  /** Sets the new list of nested variables. */
+  void setVariables(List<? extends Variable> variables);
 }

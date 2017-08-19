@@ -10,37 +10,23 @@
  */
 package org.eclipse.che.api.debug.shared.model;
 
-/**
- * @author Anatoliy Bazko
- */
+/** @author Anatoliy Bazko */
 public interface Location {
-    /**
-     *  The target, e.g.: file, fqn, memory address etc.
-     */
-    String getTarget();
+  /** The target, e.g.: file, fqn, memory address etc. */
+  String getTarget();
 
-    /**
-     * The line number in a file or in a class.
-     */
-    int getLineNumber();
+  /** The line number in a file or in a class. */
+  int getLineNumber();
 
-    /**
-     * Returns path to the resource.
-     */
-    String getResourcePath();
+  /** Returns path to the resource. */
+  String getResourcePath();
 
-    /**
-     * Returns true if breakpoint resource is external resource, or false otherwise.
-     */
-    boolean isExternalResource();
+  /** Returns true if breakpoint resource is external resource, or false otherwise. */
+  boolean isExternalResource();
 
-    /**
-     * Returns external resource id in case if {@link #isExternalResource()} return true.
-     */
-    int getExternalResourceId();
+  /** Returns external resource id in case if {@link #isExternalResource()} return true. */
+  int getExternalResourceId();
 
-    /**
-     * Returns project path, for resource which we are debugging now.
-     */
-    String getResourceProjectPath();
+  /** Returns project path, for resource which we are debugging now. */
+  String getResourceProjectPath();
 }

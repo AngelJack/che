@@ -12,32 +12,27 @@ package org.eclipse.che.ide.editor.orion.client.jso;
 
 import com.google.gwt.core.client.JavaScriptObject;
 
-/**
- * @author Evgen Vidolob
- */
+/** @author Evgen Vidolob */
 public class OrionProblemOverlay extends JavaScriptObject {
-    protected OrionProblemOverlay() {
-    }
+  protected OrionProblemOverlay() {}
 
-    public final native void setDescription(String description) /*-{
+  public final native void setDescription(String description) /*-{
         this["description"] = description;
     }-*/;
 
-    public final native void setId(String id) /*-{
+  public final native void setId(String id) /*-{
         this["id"] = id;
     }-*/;
 
-    public final native void setStart(int offset) /*-{
+  public final native void setStart(int offset) /*-{
         this["start"]= offset;
     }-*/;
 
-    public final native void setEnd(int offset) /*-{
+  public final native void setEnd(int offset) /*-{
         this["end"]= offset;
     }-*/;
 
-    public final native void setSeverity(String severity) /*-{
+  public final native void setSeverity(String severity) /*-{
         this["severity"]= severity;
     }-*/;
-
-
 }

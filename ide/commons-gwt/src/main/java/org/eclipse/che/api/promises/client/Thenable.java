@@ -13,11 +13,10 @@ package org.eclipse.che.api.promises.client;
 /**
  * An ES6 <em>thenable</em> object.
  *
- * @param <A>
- *         the type of the argument
+ * @param <A> the type of the argument
  * @author Artem Zatsarynnyi
  */
 public interface Thenable<A> {
 
-    <B> Thenable<B> then(A arg);
+  <B> Thenable<B> then(A arg);
 }

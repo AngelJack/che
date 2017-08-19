@@ -10,39 +10,40 @@
  */
 package org.eclipse.che.api.core.rest;
 
+import static com.jayway.restassured.RestAssured.expect;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.core.Response;
 import org.everrest.assured.EverrestJetty;
 import org.hamcrest.Matchers;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.core.Response;
-
-import static com.jayway.restassured.RestAssured.expect;
-
 @Listeners(value = {EverrestJetty.class})
 public class RuntimeExceptionMapperTest {
-    @Path("/runtime-exception")
-    public static class RuntimeExceptionService {
-        @GET
-        @Path("/re-empty-msg")
-        public String reWithEmptyMessage() {
-            throw new NullPointerException();
-        }
+  @Path("/runtime-exception")
+  public static class RuntimeExceptionService {
+    @GET
+    @Path("/re-empty-msg")
+    public String reWithEmptyMessage() {
+      throw new NullPointerException();
     }
+  }
 
-    RuntimeExceptionService service;
+  RuntimeExceptionService service;
 
-    RuntimeExceptionMapper mapper;
+  RuntimeExceptionMapper mapper;
 
-    @Test
-    public void shouldHandleRuntimeException() {
-        final String expectedErrorMessage = "{\"message\":\"Internal Server Error occurred, error time:";
+  @Test
+  public void shouldHandleRuntimeException() {
+    final String expectedErrorMessage =
+        "{\"message\":\"Internal Server Error occurred, error time:";
 
-        expect()
-                .statusCode(Response.Status.INTERNAL_SERVER_ERROR.getStatusCode())
-                .body(Matchers.startsWith(expectedErrorMessage))
-                .when().get("/runtime-exception/re-empty-msg");
-    }
+    expect()
+        .statusCode(Response.Status.INTERNAL_SERVER_ERROR.getStatusCode())
+        .body(Matchers.startsWith(expectedErrorMessage))
+        .when()
+        .get("/runtime-exception/re-empty-msg");
+  }
 }

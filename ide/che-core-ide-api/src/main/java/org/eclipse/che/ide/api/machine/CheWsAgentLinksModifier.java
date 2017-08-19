@@ -20,12 +20,11 @@ import com.google.inject.Singleton;
 @Singleton
 public class CheWsAgentLinksModifier implements WsAgentURLModifier {
 
-    @Override
-    public void initialize(DevMachine devMachine) {
-    }
+  @Override
+  public void initialize(DevMachine devMachine) {}
 
-    @Override
-    public String modify(String agentUrl) {
-        return agentUrl;
-    }
+  @Override
+  public String modify(String agentUrl) {
+    return agentUrl;
+  }
 }

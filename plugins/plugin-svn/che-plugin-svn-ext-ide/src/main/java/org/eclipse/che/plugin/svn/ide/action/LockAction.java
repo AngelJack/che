@@ -12,32 +12,36 @@ package org.eclipse.che.plugin.svn.ide.action;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-
 import org.eclipse.che.ide.api.action.ActionEvent;
 import org.eclipse.che.ide.api.app.AppContext;
 import org.eclipse.che.plugin.svn.ide.SubversionExtensionLocalizationConstants;
 import org.eclipse.che.plugin.svn.ide.SubversionExtensionResources;
 import org.eclipse.che.plugin.svn.ide.lockunlock.LockUnlockPresenter;
 
-/**
- * Extension of {@link SubversionAction} for implementing the "svn lock" command.
- */
+/** Extension of {@link SubversionAction} for implementing the "svn lock" command. */
 @Singleton
 public class LockAction extends SubversionAction {
 
-    private final LockUnlockPresenter presenter;
+  private final LockUnlockPresenter presenter;
 
-    @Inject
-    public LockAction(AppContext appContext,
-                      LockUnlockPresenter presenter,
-                      SubversionExtensionLocalizationConstants constants,
-                      SubversionExtensionResources resources) {
-        super(constants.lockTitle(), constants.lockDescription(), resources.lock(), appContext, constants, resources);
-        this.presenter = presenter;
-    }
+  @Inject
+  public LockAction(
+      AppContext appContext,
+      LockUnlockPresenter presenter,
+      SubversionExtensionLocalizationConstants constants,
+      SubversionExtensionResources resources) {
+    super(
+        constants.lockTitle(),
+        constants.lockDescription(),
+        resources.lock(),
+        appContext,
+        constants,
+        resources);
+    this.presenter = presenter;
+  }
 
-    @Override
-    public void actionPerformed(final ActionEvent e) {
-        presenter.showLockDialog();
-    }
+  @Override
+  public void actionPerformed(final ActionEvent e) {
+    presenter.showLockDialog();
+  }
 }

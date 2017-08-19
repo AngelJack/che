@@ -12,11 +12,9 @@ package org.eclipse.che.ide.projectimport.wizard;
 
 import com.google.inject.Inject;
 import com.google.inject.assistedinject.Assisted;
-
+import javax.validation.constraints.NotNull;
 import org.eclipse.che.ide.api.project.MutableProjectConfig;
 import org.eclipse.che.ide.api.wizard.AbstractWizard;
-
-import javax.validation.constraints.NotNull;
 
 /**
  * Project import wizard used for importing a project.
@@ -25,18 +23,19 @@ import javax.validation.constraints.NotNull;
  */
 public class ImportWizard extends AbstractWizard<MutableProjectConfig> {
 
-    private final ProjectImporter projectImporter;
+  private final ProjectImporter projectImporter;
 
-    @Inject
-    public ImportWizard(@Assisted MutableProjectConfig projectConfig, ProjectImporter projectImporter) {
-        super(projectConfig);
+  @Inject
+  public ImportWizard(
+      @Assisted MutableProjectConfig projectConfig, ProjectImporter projectImporter) {
+    super(projectConfig);
 
-        this.projectImporter = projectImporter;
-    }
+    this.projectImporter = projectImporter;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public void complete(@NotNull CompleteCallback callback) {
-        projectImporter.importProject(callback, dataObject);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public void complete(@NotNull CompleteCallback callback) {
+    projectImporter.importProject(callback, dataObject);
+  }
 }

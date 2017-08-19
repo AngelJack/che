@@ -10,9 +10,7 @@
  */
 package org.eclipse.che.api.core.jsonrpc.commons;
 
-/**
- * Executes operation on timeout
- */
+/** Executes operation on timeout */
 public interface TimeoutActionRunner {
-    void schedule(int timeoutInMillis, Runnable runnable);
+  void schedule(int timeoutInMillis, Runnable runnable);
 }

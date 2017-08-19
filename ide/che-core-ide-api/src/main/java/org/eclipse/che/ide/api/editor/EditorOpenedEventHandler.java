@@ -19,11 +19,10 @@ import com.google.gwt.event.shared.EventHandler;
  */
 public interface EditorOpenedEventHandler extends EventHandler {
 
-    /**
-     * On editor opened.
-     *
-     * @param event
-     *         the event
-     */
-    void onEditorOpened(EditorOpenedEvent event);
+  /**
+   * On editor opened.
+   *
+   * @param event the event
+   */
+  void onEditorOpened(EditorOpenedEvent event);
 }

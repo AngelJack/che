@@ -12,15 +12,12 @@ package org.eclipse.che.ide.ui.cellview;
 
 import com.google.gwt.user.cellview.client.DataGrid;
 
-/**
- * @author Evgen Vidolob
- */
+/** @author Evgen Vidolob */
 public interface DataGridResources extends DataGrid.Resources {
 
-    public interface DataGridStyle extends DataGrid.Style {
-    }
+  public interface DataGridStyle extends DataGrid.Style {}
 
-    @Override
-    @Source({"dataGrid.css", "org/eclipse/che/ide/api/ui/style.css"})
-    DataGridStyle dataGridStyle();
+  @Override
+  @Source({"dataGrid.css", "org/eclipse/che/ide/api/ui/style.css"})
+  DataGridStyle dataGridStyle();
 }

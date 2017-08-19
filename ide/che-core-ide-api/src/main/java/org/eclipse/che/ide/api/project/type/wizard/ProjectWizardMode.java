@@ -19,31 +19,34 @@ import javax.validation.constraints.NotNull;
  */
 public enum ProjectWizardMode {
 
-    /** Project wizard opened for creating new project. */
-    CREATE("create"),
-    /** Project wizard opened for updating existing project or creating configuration for the existed folder. */
-    UPDATE("update"),
-    /** Project wizard opened for creating new project from template. */
-    IMPORT("import");
+  /** Project wizard opened for creating new project. */
+  CREATE("create"),
+  /**
+   * Project wizard opened for updating existing project or creating configuration for the existed
+   * folder.
+   */
+  UPDATE("update"),
+  /** Project wizard opened for creating new project from template. */
+  IMPORT("import");
 
-    private final String value;
+  private final String value;
 
-    ProjectWizardMode(String value) {
-        this.value = value;
+  ProjectWizardMode(String value) {
+    this.value = value;
+  }
+
+  public static ProjectWizardMode parse(@NotNull String mode) {
+    for (ProjectWizardMode wizardMode : values()) {
+      if (mode.equals(wizardMode.toString())) {
+        return wizardMode;
+      }
     }
 
-    public static ProjectWizardMode parse(@NotNull String mode) {
-        for (ProjectWizardMode wizardMode : values()) {
-            if (mode.equals(wizardMode.toString())) {
-                return wizardMode;
-            }
-        }
+    throw new IllegalArgumentException("Unknown value: " + mode);
+  }
 
-        throw new IllegalArgumentException("Unknown value: " + mode);
-    }
-
-    @Override
-    public String toString() {
-        return value;
-    }
+  @Override
+  public String toString() {
+    return value;
+  }
 }

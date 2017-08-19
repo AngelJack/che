@@ -13,16 +13,14 @@ package org.eclipse.che.plugin.maven.shared.dto;
 import org.eclipse.che.dto.shared.DTO;
 import org.eclipse.che.plugin.maven.shared.event.MavenOutputEvent;
 
-/**
- * DTO object which describes base maven output event.
- */
+/** DTO object which describes base maven output event. */
 @DTO
 public interface MavenOutputEventDto extends MavenOutputEvent {
 
-    TYPE getType();
+  TYPE getType();
 
-    /** Returns a type of the output event. */
-    void setType(TYPE type);
+  /** Returns a type of the output event. */
+  void setType(TYPE type);
 
-    MavenOutputEventDto withType(TYPE type);
+  MavenOutputEventDto withType(TYPE type);
 }

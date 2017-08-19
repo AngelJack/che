@@ -10,9 +10,8 @@
  */
 package org.eclipse.che.ide.ext.java.shared.dto;
 
-import org.eclipse.che.dto.shared.DTO;
-
 import java.util.List;
+import org.eclipse.che.dto.shared.DTO;
 
 /**
  * DTO represents the information about the imports for the organize imports process.
@@ -21,10 +20,10 @@ import java.util.List;
  */
 @DTO
 public interface ConflictImportDTO {
-    /** Returns list of the possible imports for the current conflict. */
-    List<String> getTypeMatches();
+  /** Returns list of the possible imports for the current conflict. */
+  List<String> getTypeMatches();
 
-    void setTypeMatches(List<String> typeMatches);
+  void setTypeMatches(List<String> typeMatches);
 
-    ConflictImportDTO withTypeMatches(List<String> typeMatches);
+  ConflictImportDTO withTypeMatches(List<String> typeMatches);
 }

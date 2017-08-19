@@ -12,11 +12,9 @@ package org.eclipse.che.ide.api.machine.execagent;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-
+import java.util.function.BiConsumer;
 import org.eclipse.che.api.core.jsonrpc.commons.RequestHandlerConfigurator;
 import org.eclipse.che.api.machine.shared.dto.execagent.event.ConnectedEventDto;
-
-import java.util.function.BiConsumer;
 
 /**
  * Handles 'connected' event, the event is fired when we firstly connect to exec agent.
@@ -26,17 +24,16 @@ import java.util.function.BiConsumer;
 @Singleton
 public class ConnectedEventHandler implements BiConsumer<String, ConnectedEventDto> {
 
-    @Inject
-    public void configureHandler(RequestHandlerConfigurator configurator) {
-        configurator.newConfiguration()
-                    .methodName("connected")
-                    .paramsAsDto(ConnectedEventDto.class)
-                    .noResult()
-                    .withBiConsumer(this);
-    }
+  @Inject
+  public void configureHandler(RequestHandlerConfigurator configurator) {
+    configurator
+        .newConfiguration()
+        .methodName("connected")
+        .paramsAsDto(ConnectedEventDto.class)
+        .noResult()
+        .withBiConsumer(this);
+  }
 
-    @Override
-    public void accept(String endpointId, ConnectedEventDto params) {
-
-    }
+  @Override
+  public void accept(String endpointId, ConnectedEventDto params) {}
 }

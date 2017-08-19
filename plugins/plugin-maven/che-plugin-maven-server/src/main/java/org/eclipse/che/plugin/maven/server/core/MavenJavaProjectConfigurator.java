@@ -13,11 +13,7 @@ package org.eclipse.che.plugin.maven.server.core;
 import org.eclipse.che.ide.maven.tools.Model;
 import org.eclipse.core.resources.IProject;
 
-/**
- * @author Evgen Vidolob
- */
+/** @author Evgen Vidolob */
 public class MavenJavaProjectConfigurator {
-    public void configure(IProject eProject, Model model) {
-
-    }
+  public void configure(IProject eProject, Model model) {}
 }

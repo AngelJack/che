@@ -20,12 +20,12 @@ import com.google.gwt.i18n.client.Messages;
  */
 public interface UILocalizationConstant extends Messages {
 
-    @DefaultMessage("OK")
-    String okButtonText();
+  @DefaultMessage("OK")
+  String okButtonText();
 
-    @DefaultMessage("Cancel")
-    String cancelButtonText();
+  @DefaultMessage("Cancel")
+  String cancelButtonText();
 
-    @DefaultMessage("Value is not valid")
-    String validationErrorMessage();
+  @DefaultMessage("Value is not valid")
+  String validationErrorMessage();
 }

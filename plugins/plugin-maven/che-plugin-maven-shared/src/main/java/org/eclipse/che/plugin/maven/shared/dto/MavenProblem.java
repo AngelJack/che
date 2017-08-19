@@ -20,23 +20,23 @@ import org.eclipse.che.dto.shared.DTO;
 @DTO
 public interface MavenProblem {
 
-    String getPomPath();
+  String getPomPath();
 
-    void setPomPath(String pomPath);
+  void setPomPath(String pomPath);
 
-    String getDescription();
+  String getDescription();
 
-    void setDescription(String description);
+  void setDescription(String description);
 
-    ProblemType getProblemType();
+  ProblemType getProblemType();
 
-    void setProblemType(ProblemType problemType);
+  void setProblemType(ProblemType problemType);
 
-    enum ProblemType {
-        DEPENDENCY,
-        PARENT,
-        SYNTAX,
-        STRUCTURE,
-        SETTINGS
-    }
+  enum ProblemType {
+    DEPENDENCY,
+    PARENT,
+    SYNTAX,
+    STRUCTURE,
+    SETTINGS
+  }
 }

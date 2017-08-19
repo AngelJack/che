@@ -21,8 +21,9 @@ import org.eclipse.che.api.machine.server.spi.InstanceProcess;
  * @author Alexander Garagatyi
  */
 public class NoOpAgentLaunchingChecker implements AgentLaunchingChecker {
-    @Override
-    public boolean isLaunched(Agent agent, InstanceProcess process, Instance machine) throws MachineException {
-        return true;
-    }
+  @Override
+  public boolean isLaunched(Agent agent, InstanceProcess process, Instance machine)
+      throws MachineException {
+    return true;
+  }
 }

@@ -19,11 +19,10 @@ import javax.validation.constraints.NotNull;
  */
 public interface AddTerminalClickHandler {
 
-    /**
-     * Will be called when user clicks 'Add new terminal' button
-     *
-     * @param machineId
-     *         id of machine in which the terminal will be added
-     */
-    void onAddTerminalClick(@NotNull String machineId);
+  /**
+   * Will be called when user clicks 'Add new terminal' button
+   *
+   * @param machineId id of machine in which the terminal will be added
+   */
+  void onAddTerminalClick(@NotNull String machineId);
 }

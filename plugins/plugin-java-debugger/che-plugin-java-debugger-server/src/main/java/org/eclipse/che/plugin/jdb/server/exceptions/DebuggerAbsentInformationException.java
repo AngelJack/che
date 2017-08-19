@@ -12,11 +12,9 @@ package org.eclipse.che.plugin.jdb.server.exceptions;
 
 import org.eclipse.che.api.debugger.server.exceptions.DebuggerException;
 
-/**
- * @author Anatoliy Bazko
- */
+/** @author Anatoliy Bazko */
 public class DebuggerAbsentInformationException extends DebuggerException {
-    public DebuggerAbsentInformationException(String message, Exception cause) {
-        super(message, cause);
-    }
+  public DebuggerAbsentInformationException(String message, Exception cause) {
+    super(message, cause);
+  }
 }

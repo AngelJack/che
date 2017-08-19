@@ -14,5 +14,4 @@ package org.eclipse.che.ide.actions;
  * @author <a href="mailto:evidolob@codenvy.com">Evgen Vidolob</a>
  * @version $Id:
  */
-public class DefaultGroupTest {
-}
+public class DefaultGroupTest {}

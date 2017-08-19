@@ -10,9 +10,7 @@
  */
 package org.eclipse.che.ide.ui.smartTree.presentation;
 
-/**
- * @author Vlad Zhukovskiy
- */
+/** @author Vlad Zhukovskiy */
 public class TextAttribute {
-    //TODO realize text style configuration
+  //TODO realize text style configuration
 }

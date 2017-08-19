@@ -18,12 +18,12 @@ import javax.ws.rs.core.UriBuilder;
  * @author <a href="mailto:andrew00x@gmail.com">Andrey Parfonov</a>
  */
 public interface ServiceContext {
-    /**
-     * Get UriBuilder which already contains base URI of RESTful application and URL pattern of RESTful service that produces this
-     * instance.
-     */
-    UriBuilder getServiceUriBuilder();
+  /**
+   * Get UriBuilder which already contains base URI of RESTful application and URL pattern of
+   * RESTful service that produces this instance.
+   */
+  UriBuilder getServiceUriBuilder();
 
-    /** Get UriBuilder which already contains base URI of RESTful application. */
-    UriBuilder getBaseUriBuilder();
+  /** Get UriBuilder which already contains base URI of RESTful application. */
+  UriBuilder getBaseUriBuilder();
 }

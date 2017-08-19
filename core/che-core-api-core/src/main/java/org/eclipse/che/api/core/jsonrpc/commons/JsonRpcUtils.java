@@ -10,12 +10,10 @@
  */
 package org.eclipse.che.api.core.jsonrpc.commons;
 
-/**
- * Simple utility class
- */
+/** Simple utility class */
 public class JsonRpcUtils {
-    @SuppressWarnings("unchecked")
-    public static <T> T cast(Object object) {
-        return (T)object;
-    }
+  @SuppressWarnings("unchecked")
+  public static <T> T cast(Object object) {
+    return (T) object;
+  }
 }

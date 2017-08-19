@@ -12,26 +12,23 @@ package org.eclipse.che.api.agent;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-
+import java.io.IOException;
 import org.eclipse.che.api.agent.shared.model.Agent;
 import org.eclipse.che.api.agent.shared.model.impl.BasicAgent;
-
-import java.io.IOException;
 
 /**
  * Unison agent.
  *
  * @see Agent
- *
  * @author Anatolii Bazko
  */
 @Singleton
 public class UnisonAgent extends BasicAgent {
-    private static final String AGENT_DESCRIPTOR = "org.eclipse.che.unison.json";
-    private static final String AGENT_SCRIPT     = "org.eclipse.che.unison.script.sh";
+  private static final String AGENT_DESCRIPTOR = "org.eclipse.che.unison.json";
+  private static final String AGENT_SCRIPT = "org.eclipse.che.unison.script.sh";
 
-    @Inject
-    public UnisonAgent() throws IOException {
-        super(AGENT_DESCRIPTOR, AGENT_SCRIPT);
-    }
+  @Inject
+  public UnisonAgent() throws IOException {
+    super(AGENT_DESCRIPTOR, AGENT_SCRIPT);
+  }
 }

@@ -20,24 +20,24 @@ import org.eclipse.che.dto.shared.DTO;
  */
 @DTO
 public interface ServerPropertiesDto extends ServerProperties {
-    @Override
-    String getPath();
+  @Override
+  String getPath();
 
-    void setPath(String path);
+  void setPath(String path);
 
-    ServerPropertiesDto withPath(String path);
+  ServerPropertiesDto withPath(String path);
 
-    @Override
-    String getInternalAddress();
+  @Override
+  String getInternalAddress();
 
-    void setInternalAddress(String internalAddress);
+  void setInternalAddress(String internalAddress);
 
-    ServerPropertiesDto withInternalAddress(String internalAddress);
+  ServerPropertiesDto withInternalAddress(String internalAddress);
 
-    @Override
-    String getInternalUrl();
+  @Override
+  String getInternalUrl();
 
-    void setInternalUrl(String internalUrl);
+  void setInternalUrl(String internalUrl);
 
-    ServerPropertiesDto withInternalUrl(String internalUrl);
+  ServerPropertiesDto withInternalUrl(String internalUrl);
 }

@@ -14,28 +14,29 @@ import javax.validation.constraints.NotNull;
 import org.eclipse.che.commons.annotation.Nullable;
 
 /**
- * Picks-up all bounded {@link ProjectWizardRegistrar}s to be able to return it for the particular project type ID.
+ * Picks-up all bounded {@link ProjectWizardRegistrar}s to be able to return it for the particular
+ * project type ID.
  *
  * @author Artem Zatsarynnyi
  */
 public interface ProjectWizardRegistry {
-    /**
-     * Get a {@link ProjectWizardRegistrar} for the specified project type or {@code null} if none.
-     *
-     * @param projectTypeId
-     *         the ID of the project type to get an appropriate {@link ProjectWizardRegistrar}
-     * @return {@link ProjectWizardRegistrar} for the specified project type ID or {@code null} if none
-     */
-    @Nullable
-    ProjectWizardRegistrar getWizardRegistrar(@NotNull String projectTypeId);
+  /**
+   * Get a {@link ProjectWizardRegistrar} for the specified project type or {@code null} if none.
+   *
+   * @param projectTypeId the ID of the project type to get an appropriate {@link
+   *     ProjectWizardRegistrar}
+   * @return {@link ProjectWizardRegistrar} for the specified project type ID or {@code null} if
+   *     none
+   */
+  @Nullable
+  ProjectWizardRegistrar getWizardRegistrar(@NotNull String projectTypeId);
 
-    /**
-     * Returns wizard category of the specified {@code projectTypeId} or {@code null} if none.
-     *
-     * @param projectTypeId
-     *         the ID of the project type to get it's wizard category
-     * @return wizard category of the specified {@code projectTypeId} or {@code null}
-     */
-    @Nullable
-    String getWizardCategory(@NotNull String projectTypeId);
+  /**
+   * Returns wizard category of the specified {@code projectTypeId} or {@code null} if none.
+   *
+   * @param projectTypeId the ID of the project type to get it's wizard category
+   * @return wizard category of the specified {@code projectTypeId} or {@code null}
+   */
+  @Nullable
+  String getWizardCategory(@NotNull String projectTypeId);
 }

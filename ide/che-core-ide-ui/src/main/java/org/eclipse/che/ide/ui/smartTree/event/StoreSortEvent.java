@@ -14,7 +14,6 @@ import com.google.gwt.event.shared.EventHandler;
 import com.google.gwt.event.shared.GwtEvent;
 import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.event.shared.HasHandlers;
-
 import org.eclipse.che.ide.ui.smartTree.event.StoreSortEvent.StoreSortHandler;
 
 /**
@@ -24,31 +23,31 @@ import org.eclipse.che.ide.ui.smartTree.event.StoreSortEvent.StoreSortHandler;
  */
 public final class StoreSortEvent extends GwtEvent<StoreSortHandler> {
 
-    public interface HasStoreSortHandler extends HasHandlers {
-        HandlerRegistration addStoreSortHandler(StoreSortHandler handler);
-    }
+  public interface HasStoreSortHandler extends HasHandlers {
+    HandlerRegistration addStoreSortHandler(StoreSortHandler handler);
+  }
 
-    public interface StoreSortHandler extends EventHandler {
-        void onSort(StoreSortEvent event);
-    }
+  public interface StoreSortHandler extends EventHandler {
+    void onSort(StoreSortEvent event);
+  }
 
-    private static Type<StoreSortHandler> TYPE;
+  private static Type<StoreSortHandler> TYPE;
 
-    public static Type<StoreSortHandler> getType() {
-        if (TYPE == null) {
-            TYPE = new Type<>();
-        }
-        return TYPE;
+  public static Type<StoreSortHandler> getType() {
+    if (TYPE == null) {
+      TYPE = new Type<>();
     }
+    return TYPE;
+  }
 
-    @Override
-    public Type<StoreSortHandler> getAssociatedType() {
-        return getType();
-    }
+  @Override
+  public Type<StoreSortHandler> getAssociatedType() {
+    return getType();
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    protected void dispatch(StoreSortHandler handler) {
-        handler.onSort(this);
-    }
+  /** {@inheritDoc} */
+  @Override
+  protected void dispatch(StoreSortHandler handler) {
+    handler.onSort(this);
+  }
 }

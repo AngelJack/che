@@ -14,9 +14,7 @@ import org.eclipse.che.api.promises.client.js.JsPromise;
 import org.eclipse.che.ide.editor.orion.client.jso.OrionHoverContextOverlay;
 import org.eclipse.che.ide.editor.orion.client.jso.OrionHoverOverlay;
 
-/**
- * @author Evgen Vidolob
- */
+/** @author Evgen Vidolob */
 public interface OrionHoverHandler {
-    JsPromise<OrionHoverOverlay> computeHover(OrionHoverContextOverlay context);
+  JsPromise<OrionHoverOverlay> computeHover(OrionHoverContextOverlay context);
 }

@@ -13,29 +13,24 @@ package org.eclipse.che.ide.factory.welcome;
 import org.eclipse.che.ide.api.mvp.View;
 import org.eclipse.che.ide.api.parts.base.BaseActionDelegate;
 
-/**
- * @author Vitaliy Guliy
- */
+/** @author Vitaliy Guliy */
 public interface GreetingPartView extends View<GreetingPartView.ActionDelegate> {
 
-    interface ActionDelegate extends BaseActionDelegate {
-    }
+  interface ActionDelegate extends BaseActionDelegate {}
 
-    /**
-     * Set title of greeting part.
-     *
-     * @param title
-     *         title that need to be set
-     */
-    void setTitle(String title);
+  /**
+   * Set title of greeting part.
+   *
+   * @param title title that need to be set
+   */
+  void setTitle(String title);
 
-    /**
-     * Sets new URL of greeting page.
-     *
-     * @param url
-     */
-    void showGreeting(String url);
+  /**
+   * Sets new URL of greeting page.
+   *
+   * @param url
+   */
+  void showGreeting(String url);
 
-    void setVisible(boolean visible);
-
+  void setVisible(boolean visible);
 }

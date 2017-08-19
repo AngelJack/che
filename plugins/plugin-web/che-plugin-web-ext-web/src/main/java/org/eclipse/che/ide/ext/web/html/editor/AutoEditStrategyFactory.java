@@ -14,15 +14,15 @@ import org.eclipse.che.ide.api.editor.changeintercept.TextChangeInterceptor;
 
 /**
  * Allows to define a new AutoEditStrategy based on text editor and content type.
- * 
+ *
  * @author Florent Benoit
  */
 public interface AutoEditStrategyFactory {
 
-    /**
-     * Build a new instance
-     * 
-     * @return a new strategy
-     */
-    TextChangeInterceptor build(String contentType);
+  /**
+   * Build a new instance
+   *
+   * @return a new strategy
+   */
+  TextChangeInterceptor build(String contentType);
 }

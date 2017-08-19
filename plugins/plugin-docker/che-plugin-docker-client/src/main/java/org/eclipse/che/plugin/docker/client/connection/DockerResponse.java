@@ -13,19 +13,17 @@ package org.eclipse.che.plugin.docker.client.connection;
 import java.io.IOException;
 import java.io.InputStream;
 
-/**
- * @author andrew00x
- */
+/** @author andrew00x */
 public interface DockerResponse {
-    int getStatus() throws IOException;
+  int getStatus() throws IOException;
 
-    int getContentLength() throws IOException;
+  int getContentLength() throws IOException;
 
-    String getContentType() throws IOException;
+  String getContentType() throws IOException;
 
-    String getHeader(String name) throws IOException;
+  String getHeader(String name) throws IOException;
 
-    String[] getHeaders(String name) throws IOException;
+  String[] getHeaders(String name) throws IOException;
 
-    InputStream getInputStream() throws IOException;
+  InputStream getInputStream() throws IOException;
 }

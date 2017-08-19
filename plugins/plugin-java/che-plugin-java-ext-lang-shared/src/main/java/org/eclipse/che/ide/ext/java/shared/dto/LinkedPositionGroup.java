@@ -10,21 +10,18 @@
  */
 package org.eclipse.che.ide.ext.java.shared.dto;
 
+import java.util.List;
 import org.eclipse.che.dto.shared.DTO;
 
-import java.util.List;
-
-/**
- * @author Evgen Vidolob
- */
+/** @author Evgen Vidolob */
 @DTO
 public interface LinkedPositionGroup {
 
-    void setData(LinkedData data);
+  void setData(LinkedData data);
 
-    LinkedData getData();
+  LinkedData getData();
 
-    void setPositions(List<Region> positions);
+  void setPositions(List<Region> positions);
 
-    List<Region> getPositions();
+  List<Region> getPositions();
 }

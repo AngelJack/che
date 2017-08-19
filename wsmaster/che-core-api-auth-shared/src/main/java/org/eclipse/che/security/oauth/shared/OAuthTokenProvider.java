@@ -10,22 +10,18 @@
  */
 package org.eclipse.che.security.oauth.shared;
 
-import org.eclipse.che.api.auth.shared.dto.OAuthToken;
-
 import java.io.IOException;
+import org.eclipse.che.api.auth.shared.dto.OAuthToken;
 
 /** Retrieves user token from OAuth providers. */
 public interface OAuthTokenProvider {
-    /**
-     * Get oauth token.
-     *
-     * @param oauthProviderName
-     *         - name of provider.
-     * @param userId
-     *         - user
-     * @return oauth token or <code>null</code>
-     * @throws IOException
-     *         if i/o error occurs when try to refresh expired oauth token
-     */
-    OAuthToken getToken(String oauthProviderName, String userId) throws IOException;
+  /**
+   * Get oauth token.
+   *
+   * @param oauthProviderName - name of provider.
+   * @param userId - user
+   * @return oauth token or <code>null</code>
+   * @throws IOException if i/o error occurs when try to refresh expired oauth token
+   */
+  OAuthToken getToken(String oauthProviderName, String userId) throws IOException;
 }

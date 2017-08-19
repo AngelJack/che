@@ -12,9 +12,7 @@ package org.eclipse.che.ide.api.event;
 
 import com.google.gwt.event.shared.EventHandler;
 
-/**
- * @author Evgen Vidolob
- */
+/** @author Evgen Vidolob */
 public interface HttpSessionDestroyedHandler extends EventHandler {
-    void onHttpSessionDestroyed(HttpSessionDestroyedEvent event);
+  void onHttpSessionDestroyed(HttpSessionDestroyedEvent event);
 }

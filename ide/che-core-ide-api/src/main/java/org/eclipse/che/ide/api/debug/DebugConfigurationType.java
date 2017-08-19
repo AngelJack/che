@@ -17,12 +17,15 @@ package org.eclipse.che.ide.api.debug;
  */
 public interface DebugConfigurationType {
 
-    /** Returns unique identifier for this debug configuration type. */
-    String getId();
+  /** Returns unique identifier for this debug configuration type. */
+  String getId();
 
-    /** Returns the display name of this debug configuration type. */
-    String getDisplayName();
+  /** Returns the display name of this debug configuration type. */
+  String getDisplayName();
 
-    /** Returns the {@link DebugConfigurationPage} that allows to edit debug configuration of this type. */
-    DebugConfigurationPage<? extends DebugConfiguration> getConfigurationPage();
+  /**
+   * Returns the {@link DebugConfigurationPage} that allows to edit debug configuration of this
+   * type.
+   */
+  DebugConfigurationPage<? extends DebugConfiguration> getConfigurationPage();
 }

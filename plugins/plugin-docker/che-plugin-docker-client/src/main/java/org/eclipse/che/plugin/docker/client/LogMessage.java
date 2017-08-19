@@ -10,38 +10,33 @@
  */
 package org.eclipse.che.plugin.docker.client;
 
-/**
- * @author andrew00x
- */
+/** @author andrew00x */
 public class LogMessage {
-    public enum Type {
-        STDIN,
-        STDOUT,
-        STDERR,
-        DOCKER
-    }
+  public enum Type {
+    STDIN,
+    STDOUT,
+    STDERR,
+    DOCKER
+  }
 
-    private final Type   type;
-    private final String content;
+  private final Type type;
+  private final String content;
 
-    public LogMessage(Type type, String content) {
-        this.type = type;
-        this.content = content;
-    }
+  public LogMessage(Type type, String content) {
+    this.type = type;
+    this.content = content;
+  }
 
-    public Type getType() {
-        return type;
-    }
+  public Type getType() {
+    return type;
+  }
 
-    public String getContent() {
-        return content;
-    }
+  public String getContent() {
+    return content;
+  }
 
-    @Override
-    public String toString() {
-        return "LogMessage{" +
-               "type=" + type +
-               ", content='" + content + '\'' +
-               '}';
-    }
+  @Override
+  public String toString() {
+    return "LogMessage{" + "type=" + type + ", content='" + content + '\'' + '}';
+  }
 }

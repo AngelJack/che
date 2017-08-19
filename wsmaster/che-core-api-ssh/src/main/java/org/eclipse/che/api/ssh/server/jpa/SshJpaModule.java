@@ -11,18 +11,15 @@
 package org.eclipse.che.api.ssh.server.jpa;
 
 import com.google.inject.AbstractModule;
-
 import org.eclipse.che.api.ssh.server.jpa.JpaSshDao.RemoveSshKeysBeforeUserRemovedEventSubscriber;
 import org.eclipse.che.api.ssh.server.spi.SshDao;
 
-/**
- * @author Yevhenii Voevodin
- */
+/** @author Yevhenii Voevodin */
 public class SshJpaModule extends AbstractModule {
 
-    @Override
-    protected void configure() {
-        bind(SshDao.class).to(JpaSshDao.class);
-        bind(RemoveSshKeysBeforeUserRemovedEventSubscriber.class).asEagerSingleton();
-    }
+  @Override
+  protected void configure() {
+    bind(SshDao.class).to(JpaSshDao.class);
+    bind(RemoveSshKeysBeforeUserRemovedEventSubscriber.class).asEagerSingleton();
+  }
 }

@@ -10,11 +10,11 @@
  */
 package org.eclipse.che.ide.actions.common;
 
+import static com.google.common.base.Preconditions.checkNotNull;
+
 import org.eclipse.che.ide.api.action.Action;
 import org.eclipse.che.ide.api.action.ActionEvent;
 import org.eclipse.che.ide.api.data.tree.TreeExpander;
-
-import static com.google.common.base.Preconditions.checkNotNull;
 
 /**
  * Base tree collapse action which consumes instance of {@link TreeExpander}.
@@ -25,29 +25,29 @@ import static com.google.common.base.Preconditions.checkNotNull;
  */
 public abstract class CollapseTreeAction extends Action {
 
-    public abstract TreeExpander getTreeExpander();
+  public abstract TreeExpander getTreeExpander();
 
-    public CollapseTreeAction() {
-        super("Collapse All");
+  public CollapseTreeAction() {
+    super("Collapse All");
+  }
+
+  @Override
+  public void actionPerformed(ActionEvent e) {
+    final TreeExpander treeExpander = getTreeExpander();
+
+    checkNotNull(treeExpander);
+
+    if (!treeExpander.isCollapseEnabled()) {
+      return;
     }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        final TreeExpander treeExpander = getTreeExpander();
+    treeExpander.collapseTree();
+  }
 
-        checkNotNull(treeExpander);
+  @Override
+  public void update(ActionEvent e) {
+    final TreeExpander treeExpander = getTreeExpander();
 
-        if (!treeExpander.isCollapseEnabled()) {
-            return;
-        }
-
-        treeExpander.collapseTree();
-    }
-
-    @Override
-    public void update(ActionEvent e) {
-        final TreeExpander treeExpander = getTreeExpander();
-
-        e.getPresentation().setEnabledAndVisible(treeExpander.isCollapseEnabled());
-    }
+    e.getPresentation().setEnabledAndVisible(treeExpander.isCollapseEnabled());
+  }
 }

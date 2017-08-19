@@ -13,14 +13,12 @@ package org.eclipse.che.api.debug.shared.dto.action;
 import org.eclipse.che.api.debug.shared.model.action.StepOverAction;
 import org.eclipse.che.dto.shared.DTO;
 
-/**
- * @author Anatoliy Bazko
- */
+/** @author Anatoliy Bazko */
 @DTO
 public interface StepOverActionDto extends ActionDto, StepOverAction {
-    TYPE getType();
+  TYPE getType();
 
-    void setType(TYPE type);
+  void setType(TYPE type);
 
-    StepOverActionDto withType(TYPE type);
+  StepOverActionDto withType(TYPE type);
 }

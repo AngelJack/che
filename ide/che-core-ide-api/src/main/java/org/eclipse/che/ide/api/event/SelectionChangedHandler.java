@@ -18,11 +18,10 @@ import com.google.gwt.event.shared.EventHandler;
  * @author Nikolay Zamosenchuk
  */
 public interface SelectionChangedHandler extends EventHandler {
-    /**
-     * Selection Changed
-     *
-     * @param event
-     */
-    void onSelectionChanged(SelectionChangedEvent event);
-
+  /**
+   * Selection Changed
+   *
+   * @param event
+   */
+  void onSelectionChanged(SelectionChangedEvent event);
 }

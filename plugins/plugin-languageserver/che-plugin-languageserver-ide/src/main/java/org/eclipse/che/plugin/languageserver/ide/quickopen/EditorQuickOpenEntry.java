@@ -20,28 +20,27 @@ import org.eclipse.che.plugin.languageserver.ide.util.OpenFileInEditorHelper;
  */
 public class EditorQuickOpenEntry extends QuickOpenEntry {
 
+  private final OpenFileInEditorHelper editorHelper;
 
-    private final OpenFileInEditorHelper editorHelper;
+  public EditorQuickOpenEntry(OpenFileInEditorHelper editorHelper) {
+    this.editorHelper = editorHelper;
+  }
 
-    public EditorQuickOpenEntry(OpenFileInEditorHelper editorHelper) {
-        this.editorHelper = editorHelper;
+  protected String getFilePath() {
+    return null;
+  }
+
+  protected TextRange getTextRange() {
+    return null;
+  }
+
+  @Override
+  public boolean run(Mode mode) {
+    if (mode == Mode.OPEN) {
+      String filePath = getFilePath();
+      editorHelper.openFile(filePath, getTextRange());
+      return true;
     }
-
-    protected String getFilePath() {
-        return null;
-    }
-
-    protected TextRange getTextRange() {
-        return null;
-    }
-
-    @Override
-    public boolean run(Mode mode) {
-        if (mode == Mode.OPEN) {
-            String filePath = getFilePath();
-            editorHelper.openFile(filePath, getTextRange());
-            return true;
-        }
-        return false;
-    }
+    return false;
+  }
 }

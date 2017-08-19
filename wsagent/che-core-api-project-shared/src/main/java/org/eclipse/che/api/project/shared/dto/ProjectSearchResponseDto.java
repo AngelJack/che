@@ -10,13 +10,12 @@
  */
 package org.eclipse.che.api.project.shared.dto;
 
-import org.eclipse.che.dto.shared.DTO;
-
 import java.util.List;
+import org.eclipse.che.dto.shared.DTO;
 
 @DTO
 public interface ProjectSearchResponseDto {
-    List<SearchResultDto> getItemReferences();
+  List<SearchResultDto> getItemReferences();
 
-    ProjectSearchResponseDto withItemReferences(List<SearchResultDto> itemReferences);
+  ProjectSearchResponseDto withItemReferences(List<SearchResultDto> itemReferences);
 }

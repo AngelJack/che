@@ -21,10 +21,10 @@ import org.eclipse.che.ide.api.parts.EditorPartStack;
 @Deprecated
 public interface EditorPartStackFactory {
 
-    /**
-     * Creates implementation of {@link EditorPartStack}.
-     *
-     * @return an instance of {@link EditorPartStack}
-     */
-    EditorPartStack create();
+  /**
+   * Creates implementation of {@link EditorPartStack}.
+   *
+   * @return an instance of {@link EditorPartStack}
+   */
+  EditorPartStack create();
 }

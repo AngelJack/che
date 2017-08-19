@@ -12,28 +12,25 @@ package org.eclipse.che.api.auth.shared.dto;
 
 import org.eclipse.che.dto.shared.DTO;
 
-/**
- * @author gazarenkov
- */
+/** @author gazarenkov */
 @DTO
 public interface Credentials {
 
-    String getRealm();
+  String getRealm();
 
-    void setRealm(String realm);
+  void setRealm(String realm);
 
-    Credentials withRealm(String realm);
+  Credentials withRealm(String realm);
 
-    String getUsername();
+  String getUsername();
 
-    void setUsername(String name);
+  void setUsername(String name);
 
-    Credentials withUsername(String name);
+  Credentials withUsername(String name);
 
-    String getPassword();
+  String getPassword();
 
-    void setPassword(String password);
+  void setPassword(String password);
 
-    Credentials withPassword(String password);
-
+  Credentials withPassword(String password);
 }

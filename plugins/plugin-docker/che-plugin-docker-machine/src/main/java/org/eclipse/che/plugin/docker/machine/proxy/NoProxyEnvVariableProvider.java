@@ -21,15 +21,14 @@ import javax.inject.Provider;
  */
 public class NoProxyEnvVariableProvider implements Provider<String> {
 
-    private static final String NO_PROXY = "no_proxy=";
+  private static final String NO_PROXY = "no_proxy=";
 
-    @Inject
-    @Named("che.workspace.no_proxy")
-    private String noProxy;
+  @Inject
+  @Named("che.workspace.no_proxy")
+  private String noProxy;
 
-    @Override
-    public String get() {
-        return noProxy.isEmpty() ? "" : NO_PROXY + noProxy;
-    }
-
+  @Override
+  public String get() {
+    return noProxy.isEmpty() ? "" : NO_PROXY + noProxy;
+  }
 }

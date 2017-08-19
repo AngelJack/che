@@ -12,18 +12,18 @@ package org.eclipse.che.plugin.maven.server.core;
 
 import com.google.inject.Provider;
 import com.google.inject.Singleton;
-
 import org.eclipse.core.resources.IWorkspace;
 import org.eclipse.core.resources.ResourcesPlugin;
 
 /**
  * Provider for {@link IWorkspace}
+ *
  * @author Evgen Vidolob
  */
 @Singleton
 public class EclipseWorkspaceProvider implements Provider<IWorkspace> {
-    @Override
-    public IWorkspace get() {
-        return ResourcesPlugin.getWorkspace();
-    }
+  @Override
+  public IWorkspace get() {
+    return ResourcesPlugin.getWorkspace();
+  }
 }

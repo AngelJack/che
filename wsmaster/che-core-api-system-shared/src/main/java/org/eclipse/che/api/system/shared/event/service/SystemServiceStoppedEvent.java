@@ -19,12 +19,12 @@ import org.eclipse.che.api.system.shared.event.EventType;
  */
 public class SystemServiceStoppedEvent extends SystemServiceEvent {
 
-    public SystemServiceStoppedEvent(String serviceName) {
-        super(serviceName);
-    }
+  public SystemServiceStoppedEvent(String serviceName) {
+    super(serviceName);
+  }
 
-    @Override
-    public EventType getType() {
-        return EventType.SERVICE_STOPPED;
-    }
+  @Override
+  public EventType getType() {
+    return EventType.SERVICE_STOPPED;
+  }
 }

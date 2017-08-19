@@ -12,14 +12,12 @@ package org.eclipse.che.api.core.model.project;
 
 import java.util.Map;
 
-/**
- * @author gazarenkov
- */
+/** @author gazarenkov */
 public interface SourceStorage {
 
-    String getType();
+  String getType();
 
-    String getLocation();
+  String getLocation();
 
-    Map<String, String> getParameters();
+  Map<String, String> getParameters();
 }

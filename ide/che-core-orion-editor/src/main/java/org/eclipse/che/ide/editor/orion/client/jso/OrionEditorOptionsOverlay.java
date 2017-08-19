@@ -19,24 +19,19 @@ import com.google.gwt.core.client.JavaScriptObject;
  */
 public class OrionEditorOptionsOverlay extends JavaScriptObject {
 
-    protected OrionEditorOptionsOverlay() {
-    }
+  protected OrionEditorOptionsOverlay() {}
 
-    /**
-     * Returns status reporter function.
-     * This function handles editor status messages.
-     */
-    public final native JavaScriptObject getStatusReporter() /*-{
+  /** Returns status reporter function. This function handles editor status messages. */
+  public final native JavaScriptObject getStatusReporter() /*-{
         return this.statusReporter;
     }-*/;
 
-    /**
-     * Set status reporter function.
-     *
-     * @param statusReporter
-     *         status reporter function.
-     */
-    public final native void setStatusReporter(JavaScriptObject statusReporter) /*-{
+  /**
+   * Set status reporter function.
+   *
+   * @param statusReporter status reporter function.
+   */
+  public final native void setStatusReporter(JavaScriptObject statusReporter) /*-{
         this.statusReporter = statusReporter;
     }-*/;
 }

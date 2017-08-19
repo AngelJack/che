@@ -17,24 +17,14 @@ package org.eclipse.che.ide.api.constraints;
  * @version $Id:
  */
 public enum Anchor {
-    /**
-     * Anchor type that specifies the action to be the first in the list at the
-     * moment of addition.
-     */
-    FIRST,
-    /**
-     * Anchor type that specifies the action to be the last in the list at the
-     * moment of addition.
-     */
-    LAST,
-    /**
-     * Anchor type that specifies the action to be placed before the relative
-     * action.
-     */
-    BEFORE,
-    /**
-     * Anchor type that specifies the action to be placed after the relative
-     * action.
-     */
-    AFTER
+  /**
+   * Anchor type that specifies the action to be the first in the list at the moment of addition.
+   */
+  FIRST,
+  /** Anchor type that specifies the action to be the last in the list at the moment of addition. */
+  LAST,
+  /** Anchor type that specifies the action to be placed before the relative action. */
+  BEFORE,
+  /** Anchor type that specifies the action to be placed after the relative action. */
+  AFTER
 }

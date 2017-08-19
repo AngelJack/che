@@ -19,15 +19,12 @@ import org.eclipse.che.ide.api.editor.reconciler.DirtyRegion;
  * @author Roman Nikitenko
  */
 public interface EditorWorkingCopySynchronizer {
-    /**
-     * Sends the text change of editor content to sync its working copy on server side.
-     *
-     * @param filePath
-     *         path to the file which content is needed to sync
-     * @param projectPath
-     *         the path to the project which contains the file to sync
-     * @param dirtyRegion
-     *         describes a document range which has been changed
-     */
-    JsonRpcPromise<Void> synchronize(String filePath, String projectPath, DirtyRegion dirtyRegion);
+  /**
+   * Sends the text change of editor content to sync its working copy on server side.
+   *
+   * @param filePath path to the file which content is needed to sync
+   * @param projectPath the path to the project which contains the file to sync
+   * @param dirtyRegion describes a document range which has been changed
+   */
+  JsonRpcPromise<Void> synchronize(String filePath, String projectPath, DirtyRegion dirtyRegion);
 }

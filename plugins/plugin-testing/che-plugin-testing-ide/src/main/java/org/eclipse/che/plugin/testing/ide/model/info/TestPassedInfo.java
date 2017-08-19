@@ -10,43 +10,40 @@
  */
 package org.eclipse.che.plugin.testing.ide.model.info;
 
-/**
- * Describes information about passed test.
- */
+/** Describes information about passed test. */
 public class TestPassedInfo extends AbstractTestStateInfo {
 
-    public static final TestPassedInfo INSTANCE = new TestPassedInfo();
+  public static final TestPassedInfo INSTANCE = new TestPassedInfo();
 
-    private TestPassedInfo() {
-    }
+  private TestPassedInfo() {}
 
-    @Override
-    public boolean isFinal() {
-        return false;
-    }
+  @Override
+  public boolean isFinal() {
+    return false;
+  }
 
-    @Override
-    public boolean isInProgress() {
-        return false;
-    }
+  @Override
+  public boolean isInProgress() {
+    return false;
+  }
 
-    @Override
-    public boolean isProblem() {
-        return false;
-    }
+  @Override
+  public boolean isProblem() {
+    return false;
+  }
 
-    @Override
-    public boolean wasLaunched() {
-        return true;
-    }
+  @Override
+  public boolean wasLaunched() {
+    return true;
+  }
 
-    @Override
-    public boolean wasTerminated() {
-        return false;
-    }
+  @Override
+  public boolean wasTerminated() {
+    return false;
+  }
 
-    @Override
-    public TestStateDescription getDescription() {
-        return TestStateDescription.PASSED;
-    }
+  @Override
+  public TestStateDescription getDescription() {
+    return TestStateDescription.PASSED;
+  }
 }

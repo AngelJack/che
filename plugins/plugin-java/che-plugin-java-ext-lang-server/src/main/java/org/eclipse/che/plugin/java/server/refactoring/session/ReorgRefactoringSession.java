@@ -14,20 +14,19 @@ import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.ltk.core.refactoring.Refactoring;
 import org.eclipse.ltk.core.refactoring.RefactoringStatus;
 
-/**
- * @author Evgen Vidolob
- */
+/** @author Evgen Vidolob */
 public abstract class ReorgRefactoringSession extends RefactoringSession {
 
-    public ReorgRefactoringSession(Refactoring refactoring) {
-        super(refactoring);
-    }
+  public ReorgRefactoringSession(Refactoring refactoring) {
+    super(refactoring);
+  }
 
-    /**
-     * Set and verify destination
-     * @param selected
-     * @return the resulting status
-     * @throws JavaModelException
-     */
-    public abstract RefactoringStatus verifyDestination(Object selected) throws JavaModelException;
+  /**
+   * Set and verify destination
+   *
+   * @param selected
+   * @return the resulting status
+   * @throws JavaModelException
+   */
+  public abstract RefactoringStatus verifyDestination(Object selected) throws JavaModelException;
 }

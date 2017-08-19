@@ -10,71 +10,65 @@
  */
 package org.eclipse.che.api.vfs.watcher;
 
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.Mock;
-import org.mockito.runners.MockitoJUnitRunner;
-
-import java.util.Optional;
-import java.util.function.Consumer;
-
 import static java.nio.file.StandardWatchEventKinds.ENTRY_CREATE;
 import static java.nio.file.StandardWatchEventKinds.ENTRY_DELETE;
 import static java.nio.file.StandardWatchEventKinds.ENTRY_MODIFY;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-/**
- * Tests for {@link FileWatcherOperation}
- */
+import java.util.Optional;
+import java.util.function.Consumer;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.mockito.runners.MockitoJUnitRunner;
+
+/** Tests for {@link FileWatcherOperation} */
 @RunWith(MockitoJUnitRunner.class)
 public class FileWatcherOperationTest {
-    private final static int ID = 0;
-    @Mock
-    Consumer<String> create;
-    @Mock
-    Consumer<String> modify;
-    @Mock
-    Consumer<String> delete;
+  private static final int ID = 0;
+  @Mock Consumer<String> create;
+  @Mock Consumer<String> modify;
+  @Mock Consumer<String> delete;
 
-    FileWatcherOperation operation;
+  FileWatcherOperation operation;
 
-    @Before
-    public void setUp() throws Exception {
-        operation = new FileWatcherOperation(ID, create, modify, delete);
+  @Before
+  public void setUp() throws Exception {
+    operation = new FileWatcherOperation(ID, create, modify, delete);
+  }
+
+  @Test
+  public void shouldProperlyGetCreateEventKindConsumer() throws Exception {
+    Optional<Consumer<String>> consumer = operation.get(ENTRY_CREATE);
+
+    assertTrue(consumer.isPresent());
+    if (consumer.isPresent()) {
+      Consumer<String> actual = consumer.get();
+      assertEquals(create, actual);
     }
+  }
 
-    @Test
-    public void shouldProperlyGetCreateEventKindConsumer() throws Exception {
-        Optional<Consumer<String>> consumer = operation.get(ENTRY_CREATE);
+  @Test
+  public void shouldProperlyGetModifyEventKindConsumer() throws Exception {
+    Optional<Consumer<String>> consumer = operation.get(ENTRY_MODIFY);
 
-        assertTrue(consumer.isPresent());
-        if (consumer.isPresent()) {
-            Consumer<String> actual = consumer.get();
-            assertEquals(create, actual);
-        }
+    assertTrue(consumer.isPresent());
+    if (consumer.isPresent()) {
+      Consumer<String> actual = consumer.get();
+      assertEquals(modify, actual);
     }
+  }
 
-    @Test
-    public void shouldProperlyGetModifyEventKindConsumer() throws Exception {
-        Optional<Consumer<String>> consumer = operation.get(ENTRY_MODIFY);
+  @Test
+  public void shouldProperlyGetDeleteEventKindConsumer() throws Exception {
+    Optional<Consumer<String>> consumer = operation.get(ENTRY_DELETE);
 
-        assertTrue(consumer.isPresent());
-        if (consumer.isPresent()) {
-            Consumer<String> actual = consumer.get();
-            assertEquals(modify, actual);
-        }
+    assertTrue(consumer.isPresent());
+    if (consumer.isPresent()) {
+      Consumer<String> actual = consumer.get();
+      assertEquals(delete, actual);
     }
-
-    @Test
-    public void shouldProperlyGetDeleteEventKindConsumer() throws Exception {
-        Optional<Consumer<String>> consumer = operation.get(ENTRY_DELETE);
-
-        assertTrue(consumer.isPresent());
-        if (consumer.isPresent()) {
-            Consumer<String> actual = consumer.get();
-            assertEquals(delete, actual);
-        }
-    }
+  }
 }

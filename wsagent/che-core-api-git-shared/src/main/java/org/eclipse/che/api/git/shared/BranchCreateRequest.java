@@ -19,17 +19,17 @@ import org.eclipse.che.dto.shared.DTO;
  */
 @DTO
 public interface BranchCreateRequest {
-    /** @return name of branch to be created */
-    String getName();
-    
-    void setName(String name);
-    
-    BranchCreateRequest withName(String name);
+  /** @return name of branch to be created */
+  String getName();
 
-    /** @return hash commit from which to start new branch. If <code>null</code> HEAD will be used */
-    String getStartPoint();
-    
-    void setStartPoint(String startPoint);
-    
-    BranchCreateRequest withStartPoint(String startPoint);
+  void setName(String name);
+
+  BranchCreateRequest withName(String name);
+
+  /** @return hash commit from which to start new branch. If <code>null</code> HEAD will be used */
+  String getStartPoint();
+
+  void setStartPoint(String startPoint);
+
+  BranchCreateRequest withStartPoint(String startPoint);
 }

@@ -14,31 +14,27 @@ import com.google.common.base.Predicate;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
 
-/**
- * Empty status that can render any widget
- */
+/** Empty status that can render any widget */
 public class StatusWidget<T extends Widget> implements EmptyStatus<T> {
 
+  private final IsWidget widget;
+  private Predicate<T> showPredicate;
+  private T parent;
 
-    private final IsWidget     widget;
-    private       Predicate<T> showPredicate;
-    private       T            parent;
+  public StatusWidget(IsWidget widget) {
+    this.widget = widget;
+  }
 
-    public StatusWidget(IsWidget widget) {
-        this.widget = widget;
+  @Override
+  public void paint() {
+    if (showPredicate.apply(parent)) {
+      parent.getElement().appendChild(widget.asWidget().getElement());
     }
+  }
 
-    @Override
-    public void paint() {
-        if (showPredicate.apply(parent)) {
-            parent.getElement().appendChild(widget.asWidget().getElement());
-        }
-    }
-
-    @Override
-    public void init(T widget, Predicate<T> showPredicate) {
-        parent = widget;
-        this.showPredicate = showPredicate;
-    }
-
+  @Override
+  public void init(T widget, Predicate<T> showPredicate) {
+    parent = widget;
+    this.showPredicate = showPredicate;
+  }
 }

@@ -17,8 +17,6 @@ package org.eclipse.che.ide.api.project.wizard;
  */
 public interface ImportProjectNotificationSubscriberFactory {
 
-    /**
-     * Provides instance of {@link ProjectNotificationSubscriber}
-     */
-    ProjectNotificationSubscriber createSubscriber();
+  /** Provides instance of {@link ProjectNotificationSubscriber} */
+  ProjectNotificationSubscriber createSubscriber();
 }

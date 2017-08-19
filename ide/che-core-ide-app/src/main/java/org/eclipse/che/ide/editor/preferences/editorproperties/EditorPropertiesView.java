@@ -20,6 +20,6 @@ import com.google.inject.ImplementedBy;
  * @author Roman Nikitenko
  */
 @ImplementedBy(EditorPropertiesViewImpl.class)
-public interface EditorPropertiesView extends IsWidget{
-    AcceptsOneWidget getEditorSectionsContainer();
+public interface EditorPropertiesView extends IsWidget {
+  AcceptsOneWidget getEditorSectionsContainer();
 }

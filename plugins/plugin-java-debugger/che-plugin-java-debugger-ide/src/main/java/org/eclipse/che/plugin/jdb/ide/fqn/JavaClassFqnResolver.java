@@ -11,11 +11,9 @@
 package org.eclipse.che.plugin.jdb.ide.fqn;
 
 import com.google.inject.Singleton;
-
+import javax.validation.constraints.NotNull;
 import org.eclipse.che.ide.api.resources.VirtualFile;
 import org.eclipse.che.plugin.debugger.ide.fqn.FqnResolver;
-
-import javax.validation.constraints.NotNull;
 
 /**
  * FQN resolver for {@link org.eclipse.che.ide.MimeType#APPLICATION_JAVA_CLASS} nodes.
@@ -25,9 +23,9 @@ import javax.validation.constraints.NotNull;
 @Singleton
 public class JavaClassFqnResolver implements FqnResolver {
 
-    @NotNull
-    @Override
-    public String resolveFqn(@NotNull final VirtualFile file) {
-        return file.getLocation().toString();
-    }
+  @NotNull
+  @Override
+  public String resolveFqn(@NotNull final VirtualFile file) {
+    return file.getLocation().toString();
+  }
 }

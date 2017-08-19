@@ -19,13 +19,9 @@ import java.util.Map;
  */
 public interface Action {
 
-    /**
-     * Returns the IDE specific identifier of action e.g. ('openFile', 'editFile')
-     */
-    String getId();
+  /** Returns the IDE specific identifier of action e.g. ('openFile', 'editFile') */
+  String getId();
 
-    /**
-     * Returns properties of this action instance
-     */
-    Map<String, String> getProperties();
+  /** Returns properties of this action instance */
+  Map<String, String> getProperties();
 }

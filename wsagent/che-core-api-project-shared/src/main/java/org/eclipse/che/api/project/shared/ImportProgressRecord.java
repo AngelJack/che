@@ -18,24 +18,24 @@ package org.eclipse.che.api.project.shared;
  */
 public interface ImportProgressRecord {
 
-    /**
-     * Record line number.
-     *
-     * @return record line number
-     */
-    int getNum();
+  /**
+   * Record line number.
+   *
+   * @return record line number
+   */
+  int getNum();
 
-    /**
-     * Record line.
-     *
-     * @return record line
-     */
-    String getLine();
+  /**
+   * Record line.
+   *
+   * @return record line
+   */
+  String getLine();
 
-    /**
-     * Return project name.
-     *
-     * @return project name
-     */
-    String getProjectName();
+  /**
+   * Return project name.
+   *
+   * @return project name
+   */
+  String getProjectName();
 }

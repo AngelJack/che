@@ -16,18 +16,17 @@ package org.eclipse.che.ide.api.data.tree.settings;
  * @author Vlad Zhukovskiy
  */
 public interface SettingsProvider {
-    /**
-     * Load settings from anywhere.
-     *
-     * @return node settings
-     */
-    NodeSettings getSettings();
+  /**
+   * Load settings from anywhere.
+   *
+   * @return node settings
+   */
+  NodeSettings getSettings();
 
-    /**
-     * Store node settings.
-     *
-     * @param settings
-     *         node settings
-     */
-    void setSettings(NodeSettings settings);
+  /**
+   * Store node settings.
+   *
+   * @param settings node settings
+   */
+  void setSettings(NodeSettings settings);
 }

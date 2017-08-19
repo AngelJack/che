@@ -12,10 +12,9 @@ package org.eclipse.che.requirejs.conf;
 
 public class PathsConfigProperty extends AssocitativeJsObject<String> {
 
-    protected PathsConfigProperty() {
-    }
+  protected PathsConfigProperty() {}
 
-    public static final native PathsConfigProperty create() /*-{
+  public static final native PathsConfigProperty create() /*-{
         return {};
     }-*/;
 }

@@ -12,7 +12,7 @@ package org.eclipse.che.api.debug.shared.model.event;
 
 /**
  * Event is generated when debugger disconnected
+ *
  * @author Anatoliy Bazko
  */
-public interface DisconnectEvent extends DebuggerEvent {
-}
+public interface DisconnectEvent extends DebuggerEvent {}

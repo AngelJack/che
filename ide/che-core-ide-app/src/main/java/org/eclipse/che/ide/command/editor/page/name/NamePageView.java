@@ -19,21 +19,20 @@ import org.eclipse.che.ide.api.mvp.View;
  */
 public interface NamePageView extends View<NamePageView.ActionDelegate> {
 
-    /** Sets the command's name value. */
-    void setCommandName(String name);
+  /** Sets the command's name value. */
+  void setCommandName(String name);
 
-    /** The action delegate for this view. */
-    interface ActionDelegate {
+  /** The action delegate for this view. */
+  interface ActionDelegate {
 
-        /**
-         * Called when command's name has been changed.
-         *
-         * @param name
-         *         changed value of the command's name
-         */
-        void onNameChanged(String name);
+    /**
+     * Called when command's name has been changed.
+     *
+     * @param name changed value of the command's name
+     */
+    void onNameChanged(String name);
 
-        /** Called when executing command is requested. */
-        void onCommandRun();
-    }
+    /** Called when executing command is requested. */
+    void onCommandRun();
+  }
 }

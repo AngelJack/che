@@ -20,11 +20,11 @@ import org.eclipse.che.ide.api.resources.Resource;
  * @author Valeriy Svydenko
  */
 public class JavaSourceRenameValidator implements RenamingSupport {
-    @Override
-    public boolean isRenameAllowed(Resource resource) {
-        boolean inSource = resource.getParentWithMarker(SourceFolderMarker.ID).isPresent();
-        boolean isJavaClass = resource.isFile() && "java".equals(((File)resource).getExtension());
+  @Override
+  public boolean isRenameAllowed(Resource resource) {
+    boolean inSource = resource.getParentWithMarker(SourceFolderMarker.ID).isPresent();
+    boolean isJavaClass = resource.isFile() && "java".equals(((File) resource).getExtension());
 
-        return !inSource || !resource.isFolder() && !isJavaClass;
-    }
+    return !inSource || !resource.isFolder() && !isJavaClass;
+  }
 }

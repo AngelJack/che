@@ -20,6 +20,6 @@ import org.eclipse.che.dto.shared.DTO;
  */
 @DTO
 public interface LogResponse extends Log {
-    /** @return the textLog text format of the log response */
-    String getTextLog();
+  /** @return the textLog text format of the log response */
+  String getTextLog();
 }

@@ -10,58 +10,54 @@
  */
 package org.eclipse.che.plugin.docker.client.params;
 
-import org.eclipse.che.plugin.docker.client.json.ContainerConfig;
-
-import org.testng.annotations.Test;
-
 import static org.mockito.Mockito.mock;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNull;
 
-/**
- * @author Mykola Morhun
- */
+import org.eclipse.che.plugin.docker.client.json.ContainerConfig;
+import org.testng.annotations.Test;
+
+/** @author Mykola Morhun */
 public class CreateContainerParamsTest {
 
-    private static final ContainerConfig CONTAINER_CONFIG = mock(ContainerConfig.class);
-    private static final String          CONTAINER_NAME   = "container";
+  private static final ContainerConfig CONTAINER_CONFIG = mock(ContainerConfig.class);
+  private static final String CONTAINER_NAME = "container";
 
-    private CreateContainerParams createContainerParams;
+  private CreateContainerParams createContainerParams;
 
-    @Test
-    public void shouldCreateParamsObjectWithRequiredParameters() {
-        createContainerParams = CreateContainerParams.create(CONTAINER_CONFIG);
+  @Test
+  public void shouldCreateParamsObjectWithRequiredParameters() {
+    createContainerParams = CreateContainerParams.create(CONTAINER_CONFIG);
 
-        assertEquals(createContainerParams.getContainerConfig(), CONTAINER_CONFIG);
+    assertEquals(createContainerParams.getContainerConfig(), CONTAINER_CONFIG);
 
-        assertNull(createContainerParams.getContainerName());
-    }
+    assertNull(createContainerParams.getContainerName());
+  }
 
-    @Test
-    public void shouldCreateParamsObjectWithAllPossibleParameters() {
-        createContainerParams = CreateContainerParams.create(CONTAINER_CONFIG)
-                                                     .withContainerName(CONTAINER_NAME);
+  @Test
+  public void shouldCreateParamsObjectWithAllPossibleParameters() {
+    createContainerParams =
+        CreateContainerParams.create(CONTAINER_CONFIG).withContainerName(CONTAINER_NAME);
 
-        assertEquals(createContainerParams.getContainerConfig(), CONTAINER_CONFIG);
-        assertEquals(createContainerParams.getContainerName(), CONTAINER_NAME);
-    }
+    assertEquals(createContainerParams.getContainerConfig(), CONTAINER_CONFIG);
+    assertEquals(createContainerParams.getContainerName(), CONTAINER_NAME);
+  }
 
-    @Test(expectedExceptions = NullPointerException.class)
-    public void shouldThrowNullPointerExceptionIfContainerConfigRequiredParameterIsNull() {
-        createContainerParams = CreateContainerParams.create(null);
-    }
+  @Test(expectedExceptions = NullPointerException.class)
+  public void shouldThrowNullPointerExceptionIfContainerConfigRequiredParameterIsNull() {
+    createContainerParams = CreateContainerParams.create(null);
+  }
 
-    @Test(expectedExceptions = NullPointerException.class)
-    public void shouldThrowNullPointerExceptionIfContainerRequiredParameterResetWithNull() {
-        createContainerParams = CreateContainerParams.create(CONTAINER_CONFIG)
-                                                     .withContainerConfig(null);
-    }
+  @Test(expectedExceptions = NullPointerException.class)
+  public void shouldThrowNullPointerExceptionIfContainerRequiredParameterResetWithNull() {
+    createContainerParams =
+        CreateContainerParams.create(CONTAINER_CONFIG).withContainerConfig(null);
+  }
 
-    @Test
-    public void containerNameParameterShouldEqualsNullIfItNotSet() {
-        createContainerParams = CreateContainerParams.create(CONTAINER_CONFIG);
+  @Test
+  public void containerNameParameterShouldEqualsNullIfItNotSet() {
+    createContainerParams = CreateContainerParams.create(CONTAINER_CONFIG);
 
-        assertNull(createContainerParams.getContainerName());
-    }
-
+    assertNull(createContainerParams.getContainerName());
+  }
 }

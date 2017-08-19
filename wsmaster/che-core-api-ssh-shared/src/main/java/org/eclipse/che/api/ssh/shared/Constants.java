@@ -16,11 +16,11 @@ package org.eclipse.che.api.ssh.shared;
  * @author Sergii Leschenko
  */
 public final class Constants {
-    public static final String LINK_REL_GENERATE_PAIR = "create pair";
-    public static final String LINK_REL_CREATE_PAIR   = "create pair";
-    public static final String LINK_REL_GET_PAIRS     = "get pairs";
-    public static final String LINK_REL_GET_PAIR      = "get pair";
-    public static final String LINK_REL_REMOVE_PAIR   = "remove pair";
+  public static final String LINK_REL_GENERATE_PAIR = "create pair";
+  public static final String LINK_REL_CREATE_PAIR = "create pair";
+  public static final String LINK_REL_GET_PAIRS = "get pairs";
+  public static final String LINK_REL_GET_PAIR = "get pair";
+  public static final String LINK_REL_REMOVE_PAIR = "remove pair";
 
-    private Constants() {}
+  private Constants() {}
 }

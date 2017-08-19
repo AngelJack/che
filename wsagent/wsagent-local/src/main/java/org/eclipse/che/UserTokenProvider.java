@@ -10,19 +10,17 @@
  */
 package org.eclipse.che;
 
-import com.google.inject.Provider;
-
 import static com.google.common.base.Strings.nullToEmpty;
 
-/**
- * @author Anton Korneta
- */
+import com.google.inject.Provider;
+
+/** @author Anton Korneta */
 public class UserTokenProvider implements Provider<String> {
 
-    public static final String USER_TOKEN = "USER_TOKEN";
+  public static final String USER_TOKEN = "USER_TOKEN";
 
-    @Override
-    public String get() {
-        return nullToEmpty(System.getenv(USER_TOKEN));
-    }
+  @Override
+  public String get() {
+    return nullToEmpty(System.getenv(USER_TOKEN));
+  }
 }

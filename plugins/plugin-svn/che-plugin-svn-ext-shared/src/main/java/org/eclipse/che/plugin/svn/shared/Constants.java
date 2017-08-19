@@ -10,9 +10,7 @@
  */
 package org.eclipse.che.plugin.svn.shared;
 
-/**
- * @author Vladyslav Zhukovskyi
- */
+/** @author Vladyslav Zhukovskyi */
 public class Constants {
-    public static final String REL_DOWNLOAD_EXPORT_PATH = "download exported path";
+  public static final String REL_DOWNLOAD_EXPORT_PATH = "download exported path";
 }

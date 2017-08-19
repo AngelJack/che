@@ -13,19 +13,16 @@ package org.eclipse.che.plugin.svn.shared;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Class that provides methods for parsing CLI output.
- */
+/** Class that provides methods for parsing CLI output. */
 public final class CLIOutputParser {
 
-    public static List<StatusItem> parseFilesStatus(final List<String> statusOutput) {
-        final List<StatusItem> statusItems = new ArrayList<>();
+  public static List<StatusItem> parseFilesStatus(final List<String> statusOutput) {
+    final List<StatusItem> statusItems = new ArrayList<>();
 
-        for (final String line : statusOutput) {
-            statusItems.add(new StatusItem(line));
-        }
-
-        return statusItems;
+    for (final String line : statusOutput) {
+      statusItems.add(new StatusItem(line));
     }
 
+    return statusItems;
+  }
 }

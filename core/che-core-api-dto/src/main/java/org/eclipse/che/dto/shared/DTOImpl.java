@@ -17,14 +17,14 @@ import java.lang.annotation.Target;
 
 /**
  * Internal annotation for marking generated implementations for DTO interfaces.
- * <p/>
- * Not expected to be used in any by developers directly.
+ *
+ * <p>Not expected to be used in any by developers directly.
  *
  * @author andrew00x
  */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface DTOImpl {
-    /** Type of DTO implementation,expected values are "client" or "server". */
-    String value();
+  /** Type of DTO implementation,expected values are "client" or "server". */
+  String value();
 }

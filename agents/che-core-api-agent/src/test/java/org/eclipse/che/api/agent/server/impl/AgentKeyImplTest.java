@@ -10,34 +10,32 @@
  */
 package org.eclipse.che.api.agent.server.impl;
 
+import static org.testng.AssertJUnit.assertEquals;
+
 import org.eclipse.che.api.agent.shared.model.impl.AgentKeyImpl;
 import org.testng.annotations.Test;
 
-import static org.testng.AssertJUnit.assertEquals;
-
-/**
- * @author Anatolii Bazko
- */
+/** @author Anatolii Bazko */
 public class AgentKeyImplTest {
 
-    @Test
-    public void testAgentKeyWithNameAndVersion() {
-        AgentKeyImpl agentKey = AgentKeyImpl.parse("id:1");
+  @Test
+  public void testAgentKeyWithNameAndVersion() {
+    AgentKeyImpl agentKey = AgentKeyImpl.parse("id:1");
 
-        assertEquals(agentKey.getId(), "id");
-        assertEquals(agentKey.getVersion(), "1");
-    }
+    assertEquals(agentKey.getId(), "id");
+    assertEquals(agentKey.getVersion(), "1");
+  }
 
-    @Test
-    public void testParseAgentKeyWithId() {
-        AgentKeyImpl agentKey = AgentKeyImpl.parse("id");
+  @Test
+  public void testParseAgentKeyWithId() {
+    AgentKeyImpl agentKey = AgentKeyImpl.parse("id");
 
-        assertEquals(agentKey.getId(), "id");
-        assertEquals(agentKey.getVersion(), "latest");
-    }
+    assertEquals(agentKey.getId(), "id");
+    assertEquals(agentKey.getVersion(), "latest");
+  }
 
-    @Test(expectedExceptions = IllegalArgumentException.class)
-    public void testParseAgentKeyFails() {
-        AgentKeyImpl.parse("id:1:2");
-    }
+  @Test(expectedExceptions = IllegalArgumentException.class)
+  public void testParseAgentKeyFails() {
+    AgentKeyImpl.parse("id:1:2");
+  }
 }

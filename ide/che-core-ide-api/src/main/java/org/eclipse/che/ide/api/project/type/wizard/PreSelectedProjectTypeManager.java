@@ -11,21 +11,19 @@
 package org.eclipse.che.ide.api.project.type.wizard;
 
 /**
- * Provides, to extensions, a way to set the default project type to be pre selected. Project wizards will use
- * {@link PreSelectedProjectTypeManager#getPreSelectedProjectTypeId()} to get the type to be preselected
+ * Provides, to extensions, a way to set the default project type to be pre selected. Project
+ * wizards will use {@link PreSelectedProjectTypeManager#getPreSelectedProjectTypeId()} to get the
+ * type to be preselected
  */
 public interface PreSelectedProjectTypeManager {
 
-    /**
-     * To be used by project wizards to get the project type to preselect when no type is selected.
-     *
-     * @return The project id or an empty string if none.
-     */
-    String getPreSelectedProjectTypeId();
+  /**
+   * To be used by project wizards to get the project type to preselect when no type is selected.
+   *
+   * @return The project id or an empty string if none.
+   */
+  String getPreSelectedProjectTypeId();
 
-    /**
-     * Set projectType to preselect. lowest priority value will get selected.
-     */
-    void setProjectTypeIdToPreselect(String projectTypeId, int priority);
-
+  /** Set projectType to preselect. lowest priority value will get selected. */
+  void setProjectTypeIdToPreselect(String projectTypeId, int priority);
 }

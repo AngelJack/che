@@ -19,9 +19,9 @@ import org.eclipse.che.ide.util.ListenerRegistrar.Remover;
  */
 public interface CursorModelWithHandler extends CursorModel {
 
-    Remover addCursorHandler(CursorHandler handler);
+  Remover addCursorHandler(CursorHandler handler);
 
-    interface CursorHandler {
-        void onCursorChange(int line, int column, boolean isExplicitChange);
-    }
+  interface CursorHandler {
+    void onCursorChange(int line, int column, boolean isExplicitChange);
+  }
 }

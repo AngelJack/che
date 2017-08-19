@@ -11,7 +11,6 @@
 package org.eclipse.che.ide.ext.java.client.refactoring.rename.wizard.similarnames;
 
 import com.google.inject.ImplementedBy;
-
 import org.eclipse.che.ide.api.mvp.View;
 import org.eclipse.che.ide.ext.java.shared.dto.refactoring.RenameSettings.MachStrategy;
 
@@ -22,14 +21,13 @@ import org.eclipse.che.ide.ext.java.shared.dto.refactoring.RenameSettings.MachSt
  */
 @ImplementedBy(SimilarNamesConfigurationViewImpl.class)
 interface SimilarNamesConfigurationView extends View<SimilarNamesConfigurationView.ActionDelegate> {
-    /** Hide Move panel. */
-    void hide();
+  /** Hide Move panel. */
+  void hide();
 
-    MachStrategy getMachStrategy();
+  MachStrategy getMachStrategy();
 
-    /** Show Similar Names Configuration panel. */
-    void show();
+  /** Show Similar Names Configuration panel. */
+  void show();
 
-    interface ActionDelegate {
-    }
+  interface ActionDelegate {}
 }

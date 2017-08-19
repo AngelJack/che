@@ -14,15 +14,15 @@ import org.eclipse.che.dto.shared.DTO;
 
 @DTO
 public interface FileStateUpdateDto {
-    FileWatcherEventType getType();
+  FileWatcherEventType getType();
 
-    FileStateUpdateDto withType(FileWatcherEventType type);
+  FileStateUpdateDto withType(FileWatcherEventType type);
 
-    String getPath();
+  String getPath();
 
-    FileStateUpdateDto withPath(String path);
+  FileStateUpdateDto withPath(String path);
 
-    String getHashCode();
+  String getHashCode();
 
-    FileStateUpdateDto withHashCode(String hashCode);
+  FileStateUpdateDto withHashCode(String hashCode);
 }

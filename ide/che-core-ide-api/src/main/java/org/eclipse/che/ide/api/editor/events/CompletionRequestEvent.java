@@ -11,21 +11,19 @@
 package org.eclipse.che.ide.api.editor.events;
 
 import com.google.gwt.event.shared.GwtEvent;
-/**
- * Events that correspond to external completion requests.
- */
+/** Events that correspond to external completion requests. */
 public class CompletionRequestEvent extends GwtEvent<CompletionRequestHandler> {
 
-    /** The type instance for this event. */
-    public static final Type<CompletionRequestHandler> TYPE = new Type<>();
+  /** The type instance for this event. */
+  public static final Type<CompletionRequestHandler> TYPE = new Type<>();
 
-    @Override
-    public Type<CompletionRequestHandler> getAssociatedType() {
-        return TYPE;
-    }
+  @Override
+  public Type<CompletionRequestHandler> getAssociatedType() {
+    return TYPE;
+  }
 
-    @Override
-    protected void dispatch(final CompletionRequestHandler handler) {
-        handler.onCompletionRequest(this);
-    }
+  @Override
+  protected void dispatch(final CompletionRequestHandler handler) {
+    handler.onCompletionRequest(this);
+  }
 }

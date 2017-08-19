@@ -20,37 +20,34 @@ import com.google.inject.ImplementedBy;
  */
 @ImplementedBy(BackgroundLoaderViewImpl.class)
 public interface BackgroundLoaderView extends IsWidget {
-    interface ActionDelegate {
-        /**
-         * Performs any actions appropriate in response to the user having clicked the status label.
-         * Show more detailed information about the process of resolving.
-         */
-        void showResolverInfo();
-    }
-
-    /** Sets the delegate to receive events from this view. */
-    void setDelegate(ActionDelegate delegate);
-
-    /** Hides the loader. */
-    void hide();
-
-    /** Shows the loader. */
-    void show();
-
+  interface ActionDelegate {
     /**
-     * Set label into loader which describes current state of loader.
-     *
-     * @param text
-     *         message of the status
+     * Performs any actions appropriate in response to the user having clicked the status label.
+     * Show more detailed information about the process of resolving.
      */
-    void setOperationLabel(String text);
+    void showResolverInfo();
+  }
 
-    /**
-     * Change the value of resolved modules of the project.
-     *
-     * @param percentage
-     *         value of resolved modules
-     */
-    void updateProgressBar(int percentage);
+  /** Sets the delegate to receive events from this view. */
+  void setDelegate(ActionDelegate delegate);
 
+  /** Hides the loader. */
+  void hide();
+
+  /** Shows the loader. */
+  void show();
+
+  /**
+   * Set label into loader which describes current state of loader.
+   *
+   * @param text message of the status
+   */
+  void setOperationLabel(String text);
+
+  /**
+   * Change the value of resolved modules of the project.
+   *
+   * @param percentage value of resolved modules
+   */
+  void updateProgressBar(int percentage);
 }

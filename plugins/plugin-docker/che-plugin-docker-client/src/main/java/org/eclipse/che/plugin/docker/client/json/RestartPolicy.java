@@ -10,44 +10,45 @@
  */
 package org.eclipse.che.plugin.docker.client.json;
 
-/**
- * @author Alexander Garagatyi
- */
+/** @author Alexander Garagatyi */
 public class RestartPolicy {
-    private String name;
-    private int    maximumRetryCount;
+  private String name;
+  private int maximumRetryCount;
 
-    public String getName() {
-        return name;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    public RestartPolicy withName(String name) {
-        this.name = name;
-        return this;
-    }
+  public RestartPolicy withName(String name) {
+    this.name = name;
+    return this;
+  }
 
-    public int getMaximumRetryCount() {
-        return maximumRetryCount;
-    }
+  public int getMaximumRetryCount() {
+    return maximumRetryCount;
+  }
 
-    public void setMaximumRetryCount(int maximumRetryCount) {
-        this.maximumRetryCount = maximumRetryCount;
-    }
+  public void setMaximumRetryCount(int maximumRetryCount) {
+    this.maximumRetryCount = maximumRetryCount;
+  }
 
-    public RestartPolicy withMaximumRetryCount(int maximumRetryCount) {
-        this.maximumRetryCount = maximumRetryCount;
-        return this;
-    }
+  public RestartPolicy withMaximumRetryCount(int maximumRetryCount) {
+    this.maximumRetryCount = maximumRetryCount;
+    return this;
+  }
 
-    @Override
-    public String toString() {
-        return "RestartPolicy{" +
-               "name='" + name + '\'' +
-               ", maximumRetryCount=" + maximumRetryCount +
-               '}';
-    }
+  @Override
+  public String toString() {
+    return "RestartPolicy{"
+        + "name='"
+        + name
+        + '\''
+        + ", maximumRetryCount="
+        + maximumRetryCount
+        + '}';
+  }
 }

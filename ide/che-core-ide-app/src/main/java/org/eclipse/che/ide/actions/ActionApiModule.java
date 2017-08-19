@@ -13,7 +13,6 @@ package org.eclipse.che.ide.actions;
 import com.google.gwt.inject.client.AbstractGinModule;
 import com.google.gwt.inject.client.multibindings.GinMapBinder;
 import com.google.inject.Singleton;
-
 import org.eclipse.che.ide.actions.find.FindActionView;
 import org.eclipse.che.ide.actions.find.FindActionViewImpl;
 import org.eclipse.che.ide.api.action.ActionManager;
@@ -27,15 +26,15 @@ import org.eclipse.che.ide.client.StartUpActionsProcessor;
  */
 public class ActionApiModule extends AbstractGinModule {
 
-    @Override
-    protected void configure() {
-        bind(ActionManager.class).to(ActionManagerImpl.class).in(Singleton.class);
+  @Override
+  protected void configure() {
+    bind(ActionManager.class).to(ActionManagerImpl.class).in(Singleton.class);
 
-        bind(StartUpActionsProcessor.class).in(Singleton.class);
-        GinMapBinder.newMapBinder(binder(), String.class, WsAgentComponent.class)
-                    .addBinding("Start-up actions processor")
-                    .to(StartUpActionsProcessor.class);
+    bind(StartUpActionsProcessor.class).in(Singleton.class);
+    GinMapBinder.newMapBinder(binder(), String.class, WsAgentComponent.class)
+        .addBinding("Start-up actions processor")
+        .to(StartUpActionsProcessor.class);
 
-        bind(FindActionView.class).to(FindActionViewImpl.class).in(Singleton.class);
-    }
+    bind(FindActionView.class).to(FindActionViewImpl.class).in(Singleton.class);
+  }
 }

@@ -10,9 +10,7 @@
  */
 package org.eclipse.che.ide.editor.orion.client.jso;
 
-
 public class OrionSelectionEventOverlay extends OrionEventOverlay {
 
-    protected OrionSelectionEventOverlay() {
-    }
+  protected OrionSelectionEventOverlay() {}
 }

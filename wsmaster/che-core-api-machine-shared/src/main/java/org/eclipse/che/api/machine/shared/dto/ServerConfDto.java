@@ -13,24 +13,22 @@ package org.eclipse.che.api.machine.shared.dto;
 import org.eclipse.che.api.core.model.machine.ServerConf;
 import org.eclipse.che.dto.shared.DTO;
 
-/**
- * @author Alexander Garagatyi
- */
+/** @author Alexander Garagatyi */
 @DTO
 public interface ServerConfDto extends ServerConf {
-    void setRef(String ref);
+  void setRef(String ref);
 
-    ServerConfDto withRef(String ref);
+  ServerConfDto withRef(String ref);
 
-    void setPort(String port);
+  void setPort(String port);
 
-    ServerConfDto withPort(String port);
+  ServerConfDto withPort(String port);
 
-    void setProtocol(String protocol);
+  void setProtocol(String protocol);
 
-    ServerConfDto withProtocol(String protocol);
+  ServerConfDto withProtocol(String protocol);
 
-    void setPath(String path);
+  void setPath(String path);
 
-    ServerConfDto withPath(String path);
+  ServerConfDto withPath(String path);
 }

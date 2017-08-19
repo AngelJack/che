@@ -12,20 +12,19 @@ package org.eclipse.che.api.promises.client;
 
 public class FunctionException extends Exception {
 
-    private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 1L;
 
-    public FunctionException() {
-    }
+  public FunctionException() {}
 
-    public FunctionException(String message) {
-        super(message);
-    }
+  public FunctionException(String message) {
+    super(message);
+  }
 
-    public FunctionException(Throwable cause) {
-        super(cause);
-    }
+  public FunctionException(Throwable cause) {
+    super(cause);
+  }
 
-    public FunctionException(String message, Throwable cause) {
-        super(message, cause);
-    }
+  public FunctionException(String message, Throwable cause) {
+    super(message, cause);
+  }
 }

@@ -12,10 +12,8 @@ package org.eclipse.che.ide.api.editor.events;
 
 import com.google.gwt.event.shared.EventHandler;
 
-/**
- * Handle event then editor fully initialized
- */
+/** Handle event then editor fully initialized */
 public interface DocumentReadyHandler extends EventHandler {
 
-    void onDocumentReady(DocumentReadyEvent event);
+  void onDocumentReady(DocumentReadyEvent event);
 }

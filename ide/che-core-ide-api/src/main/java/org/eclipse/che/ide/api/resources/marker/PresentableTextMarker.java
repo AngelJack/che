@@ -11,7 +11,6 @@
 package org.eclipse.che.ide.api.resources.marker;
 
 import com.google.common.annotations.Beta;
-
 import org.eclipse.che.ide.api.resources.Resource;
 
 /**
@@ -24,27 +23,27 @@ import org.eclipse.che.ide.api.resources.Resource;
 @Beta
 public class PresentableTextMarker implements Marker {
 
-    public static final String ID = "displayNameMarker";
+  public static final String ID = "displayNameMarker";
 
-    private String presentableText;
+  private String presentableText;
 
-    public PresentableTextMarker(String presentableText) {
-        this.presentableText = presentableText;
-    }
+  public PresentableTextMarker(String presentableText) {
+    this.presentableText = presentableText;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public String getType() {
-        return ID;
-    }
+  /** {@inheritDoc} */
+  @Override
+  public String getType() {
+    return ID;
+  }
 
-    /**
-     * Returns the human presentable text.
-     *
-     * @return the presentable text
-     * @since 4.4.0
-     */
-    public String getPresentableText() {
-        return presentableText;
-    }
+  /**
+   * Returns the human presentable text.
+   *
+   * @return the presentable text
+   * @since 4.4.0
+   */
+  public String getPresentableText() {
+    return presentableText;
+  }
 }

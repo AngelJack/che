@@ -20,13 +20,13 @@ import org.eclipse.che.core.db.cascade.event.RemoveEvent;
  */
 public class BeforeStackRemovedEvent extends RemoveEvent {
 
-    private final StackImpl stack;
+  private final StackImpl stack;
 
-    public BeforeStackRemovedEvent(StackImpl stack) {
-        this.stack = stack;
-    }
+  public BeforeStackRemovedEvent(StackImpl stack) {
+    this.stack = stack;
+  }
 
-    public StackImpl getStack() {
-        return stack;
-    }
+  public StackImpl getStack() {
+    return stack;
+  }
 }

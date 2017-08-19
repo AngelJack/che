@@ -12,10 +12,8 @@ package org.eclipse.che.api.core.model.project;
 
 import org.eclipse.che.api.core.model.project.fs.Folder;
 
-/**
- * @author gazarenkov
- */
+/** @author gazarenkov */
 public interface Project extends ProjectConfig {
 
-    Folder getRootFolder();
+  Folder getRootFolder();
 }

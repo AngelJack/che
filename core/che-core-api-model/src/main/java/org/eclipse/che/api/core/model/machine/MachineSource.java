@@ -10,24 +10,15 @@
  */
 package org.eclipse.che.api.core.model.machine;
 
-/**
- * @author gazarenkov
- */
+/** @author gazarenkov */
 public interface MachineSource {
 
-    /**
-     * Returns dockerfile, image, ssh-config, etc
-     */
-    String getType();
+  /** Returns dockerfile, image, ssh-config, etc */
+  String getType();
 
-    /**
-     * Returns URL or ID
-     */
-    String getLocation();
+  /** Returns URL or ID */
+  String getLocation();
 
-    /**
-     * @return content of the machine source. No need to use an external link.
-     */
-    String getContent();
-
+  /** @return content of the machine source. No need to use an external link. */
+  String getContent();
 }

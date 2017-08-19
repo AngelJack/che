@@ -22,27 +22,27 @@ import com.google.inject.Singleton;
  */
 @Singleton
 public class DownloadContainer {
-    private final static String TARGET = "download-frame";
+  private static final String TARGET = "download-frame";
 
-    private Frame frame;
+  private Frame frame;
 
-    @Inject
-    public DownloadContainer() {
-        frame = new Frame();
-        frame.getElement().setAttribute("name", TARGET);
-        frame.setSize("0px", "0px");
-        frame.setVisible(false);
-        frame.ensureDebugId(TARGET);
+  @Inject
+  public DownloadContainer() {
+    frame = new Frame();
+    frame.getElement().setAttribute("name", TARGET);
+    frame.setSize("0px", "0px");
+    frame.setVisible(false);
+    frame.ensureDebugId(TARGET);
 
-        RootLayoutPanel.get().add(frame);
-    }
+    RootLayoutPanel.get().add(frame);
+  }
 
-    /**
-     * Sets the URL of the resource to be downloaded.
-     *
-     * @param url the resource's new URL
-     */
-    public void setUrl(String url) {
-        frame.setUrl(url);
-    }
+  /**
+   * Sets the URL of the resource to be downloaded.
+   *
+   * @param url the resource's new URL
+   */
+  public void setUrl(String url) {
+    frame.setUrl(url);
+  }
 }

@@ -10,20 +10,18 @@
  */
 package org.eclipse.che.commons.xml;
 
-/**
- * @author Eugene Voevodin
- */
+/** @author Eugene Voevodin */
 public class XMLTreeException extends RuntimeException {
 
-    public static XMLTreeException wrap(Exception ex) {
-        return new XMLTreeException(ex.getMessage(), ex);
-    }
+  public static XMLTreeException wrap(Exception ex) {
+    return new XMLTreeException(ex.getMessage(), ex);
+  }
 
-    public XMLTreeException(String message) {
-        super(message);
-    }
+  public XMLTreeException(String message) {
+    super(message);
+  }
 
-    public XMLTreeException(String message, Throwable cause) {
-        super(message, cause);
-    }
+  public XMLTreeException(String message, Throwable cause) {
+    super(message, cause);
+  }
 }

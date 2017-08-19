@@ -10,12 +10,9 @@
  */
 package org.eclipse.che.ide.api.editor.texteditor;
 
-/**
- * @author Roman Nikitenko
- */
+/** @author Roman Nikitenko */
 public interface UndoableEditor {
 
-    /** Returns the component that handles undo and redo. */
-    HandlesUndoRedo getUndoRedo();
-
+  /** Returns the component that handles undo and redo. */
+  HandlesUndoRedo getUndoRedo();
 }

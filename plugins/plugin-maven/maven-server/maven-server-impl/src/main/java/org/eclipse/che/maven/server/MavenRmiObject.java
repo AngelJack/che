@@ -12,22 +12,20 @@ package org.eclipse.che.maven.server;
 
 import org.eclipse.che.rmi.RmiObject;
 
-/**
- * @author Evgen Vidolob
- */
+/** @author Evgen Vidolob */
 public class MavenRmiObject extends RmiObject {
 
-    @Override
-    protected boolean isWellKnownException(Throwable t) {
-        return t.getClass().getName().startsWith(getClass().getPackage().getName());
-    }
+  @Override
+  protected boolean isWellKnownException(Throwable t) {
+    return t.getClass().getName().startsWith(getClass().getPackage().getName());
+  }
 
-    public RuntimeException getRuntimeException(Throwable t) {
-        Throwable wrapped = wrapException(t);
-        if(wrapped instanceof RuntimeException){
-            return (RuntimeException)wrapped;
-        } else {
-            return new RuntimeException(wrapped);
-        }
+  public RuntimeException getRuntimeException(Throwable t) {
+    Throwable wrapped = wrapException(t);
+    if (wrapped instanceof RuntimeException) {
+      return (RuntimeException) wrapped;
+    } else {
+      return new RuntimeException(wrapped);
     }
+  }
 }

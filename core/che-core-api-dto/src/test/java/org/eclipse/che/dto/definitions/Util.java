@@ -15,11 +15,11 @@ package org.eclipse.che.dto.definitions;
  * @author Alexander Garagatyi
  */
 public class Util {
-    public static String addPrefix(DtoWithDelegate dto, String prefix) {
-        return prefix + dto.getFirstName();
-    }
+  public static String addPrefix(DtoWithDelegate dto, String prefix) {
+    return prefix + dto.getFirstName();
+  }
 
-    public static String getFullName(DtoWithDelegate dto) {
-        return dto.getFirstName() + dto.getLastName();
-    }
+  public static String getFullName(DtoWithDelegate dto) {
+    return dto.getFirstName() + dto.getLastName();
+  }
 }

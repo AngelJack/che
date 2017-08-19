@@ -24,41 +24,40 @@ import org.eclipse.lsp4j.TextDocumentSyncKind;
 @Singleton
 public class TextDocumentSynchronizeFactory {
 
-    private static final TextDocumentSynchronize NONE = new NoneSynchronize();
-    private final FullTextDocumentSynchronize        fullTextDocumentSynchronize;
-    private final IncrementalTextDocumentSynchronize incrementalTextDocumentSynchronize;
+  private static final TextDocumentSynchronize NONE = new NoneSynchronize();
+  private final FullTextDocumentSynchronize fullTextDocumentSynchronize;
+  private final IncrementalTextDocumentSynchronize incrementalTextDocumentSynchronize;
 
-    @Inject
-    public TextDocumentSynchronizeFactory(FullTextDocumentSynchronize fullTextDocumentSynchronize,
-                                          IncrementalTextDocumentSynchronize incrementalTextDocumentSynchronize) {
-        this.fullTextDocumentSynchronize = fullTextDocumentSynchronize;
-        this.incrementalTextDocumentSynchronize = incrementalTextDocumentSynchronize;
+  @Inject
+  public TextDocumentSynchronizeFactory(
+      FullTextDocumentSynchronize fullTextDocumentSynchronize,
+      IncrementalTextDocumentSynchronize incrementalTextDocumentSynchronize) {
+    this.fullTextDocumentSynchronize = fullTextDocumentSynchronize;
+    this.incrementalTextDocumentSynchronize = incrementalTextDocumentSynchronize;
+  }
+
+  public TextDocumentSynchronize getSynchronize(TextDocumentSyncKind kind) {
+    if (kind == null) {
+      // use NONE syncronizer if server doesn't require any
+      return NONE;
     }
-
-    public TextDocumentSynchronize getSynchronize(TextDocumentSyncKind kind) {
-        if (kind == null) {
-            // use NONE syncronizer if server doesn't require any
-            return NONE;
-        }
-        switch (kind) {
-            case None:
-                return NONE;
-            case Full:
-                return fullTextDocumentSynchronize;
-            case Incremental:
-                return incrementalTextDocumentSynchronize;
-            default:
-                throw new RuntimeException("Unsupported synchronization kind: " + kind);
-
-        }
+    switch (kind) {
+      case None:
+        return NONE;
+      case Full:
+        return fullTextDocumentSynchronize;
+      case Incremental:
+        return incrementalTextDocumentSynchronize;
+      default:
+        throw new RuntimeException("Unsupported synchronization kind: " + kind);
     }
+  }
 
-
-    private static class NoneSynchronize implements TextDocumentSynchronize {
-        @Override
-        public void syncTextDocument(Document document, TextPosition start, TextPosition end, String insertedText, int version) {
-            // no-op implementation
-        }
+  private static class NoneSynchronize implements TextDocumentSynchronize {
+    @Override
+    public void syncTextDocument(
+        Document document, TextPosition start, TextPosition end, String insertedText, int version) {
+      // no-op implementation
     }
+  }
 }
-

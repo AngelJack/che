@@ -12,23 +12,21 @@ package org.eclipse.che.junit.junit4;
 
 import org.eclipse.che.junit.TestingMessageHelper;
 
-/**
- * Main JUnit4 test runner.
- */
+/** Main JUnit4 test runner. */
 public class CheJUnitLauncher {
-    /**
-     * Main method which creates an instance of {@link org.junit.runner.JUnitCore}, adds custom listener and runs all tests.
-     *
-     * @param args
-     *         arrays of tests to be executed
-     */
-    public static void main(String[] args) {
-        if (args.length == 0) {
-            TestingMessageHelper.reporterAttached(System.out);
-            System.err.print("No test found to run.");
-        } else {
-            CheJUnitCoreRunner jUnitCore = new CheJUnitCoreRunner();
-            jUnitCore.run(args);
-        }
+  /**
+   * Main method which creates an instance of {@link org.junit.runner.JUnitCore}, adds custom
+   * listener and runs all tests.
+   *
+   * @param args arrays of tests to be executed
+   */
+  public static void main(String[] args) {
+    if (args.length == 0) {
+      TestingMessageHelper.reporterAttached(System.out);
+      System.err.print("No test found to run.");
+    } else {
+      CheJUnitCoreRunner jUnitCore = new CheJUnitCoreRunner();
+      jUnitCore.run(args);
     }
+  }
 }

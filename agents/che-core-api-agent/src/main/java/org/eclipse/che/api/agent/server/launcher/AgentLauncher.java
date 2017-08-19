@@ -20,33 +20,23 @@ import org.eclipse.che.api.machine.server.spi.Instance;
  *
  * @see Instance
  * @see Agent#getScript()
- *
  * @author Anatolii Bazko
  */
 public interface AgentLauncher {
 
-    /**
-     * @return the id of the agent that launcher is designed for
-     */
-    String getAgentId();
+  /** @return the id of the agent that launcher is designed for */
+  String getAgentId();
 
-    /**
-     * @return the machine type that launcher is designed for
-     */
-    String getMachineType();
+  /** @return the machine type that launcher is designed for */
+  String getMachineType();
 
-    /**
-     * Executes agents scripts over target machine.
-     * The machine should be started.
-     *
-     * @see Agent#getScript()
-     *
-     * @param machine
-     *      the machine instance
-     * @param agent
-     *      the agent
-     * @throws ServerException
-     *      if script execution failed
-     */
-    void launch(Instance machine, Agent agent) throws ServerException, AgentStartException;
+  /**
+   * Executes agents scripts over target machine. The machine should be started.
+   *
+   * @see Agent#getScript()
+   * @param machine the machine instance
+   * @param agent the agent
+   * @throws ServerException if script execution failed
+   */
+  void launch(Instance machine, Agent agent) throws ServerException, AgentStartException;
 }

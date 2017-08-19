@@ -11,18 +11,13 @@
 package org.eclipse.che.ide.util.storage;
 
 import com.google.inject.ImplementedBy;
-
 import org.eclipse.che.commons.annotation.Nullable;
 
-/**
- * @author Anatoliy Bazko
- */
+/** @author Anatoliy Bazko */
 @ImplementedBy(BrowserLocalStorageProviderImpl.class)
 public interface LocalStorageProvider {
 
-    /**
-     * Returns {@link LocalStorage} if it is supported or null otherwise.
-     */
-    @Nullable
-    LocalStorage get();
+  /** Returns {@link LocalStorage} if it is supported or null otherwise. */
+  @Nullable
+  LocalStorage get();
 }

@@ -20,29 +20,24 @@ import org.eclipse.che.api.machine.server.spi.InstanceNode;
  * @author Alexander Garagatyi
  */
 public interface DockerNode extends InstanceNode {
-    /**
-     * Bind the whole workspace on the Node.
-     *
-     * @throws EnvironmentException
-     *         if environment in abnormal state because of problem with machines
-     * @throws ServerException
-     *         if other error occurs on binding
-     */
-    void bindWorkspace() throws ServerException, EnvironmentException;
+  /**
+   * Bind the whole workspace on the Node.
+   *
+   * @throws EnvironmentException if environment in abnormal state because of problem with machines
+   * @throws ServerException if other error occurs on binding
+   */
+  void bindWorkspace() throws ServerException, EnvironmentException;
 
-    /**
-     * Unbind the workspace on Node.
-     *
-     * @throws ServerException
-     *         if error occurs on binding
-     */
-    void unbindWorkspace() throws ServerException;
+  /**
+   * Unbind the workspace on Node.
+   *
+   * @throws ServerException if error occurs on binding
+   */
+  void unbindWorkspace() throws ServerException;
 
-    @Override
-    String getHost();
+  @Override
+  String getHost();
 
-    /**
-     * Returns IP of the node where container is deployed.
-     */
-    String getIp();
+  /** Returns IP of the node where container is deployed. */
+  String getIp();
 }

@@ -12,9 +12,5 @@ package org.eclipse.che.ide.ext.web.js.editor;
 
 import org.eclipse.che.ide.api.editor.codeassist.CodeAssistProcessor;
 
-
-/**
- * @author Florent Benoit
- */
-public interface JsCodeAssistProcessor extends CodeAssistProcessor {
-}
+/** @author Florent Benoit */
+public interface JsCodeAssistProcessor extends CodeAssistProcessor {}

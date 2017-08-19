@@ -10,8 +10,5 @@
  */
 package org.eclipse.che.plugin.languageserver.ide.quickopen;
 
-/**
- * @author Evgen Vidolob
- */
-public interface Renderer {
-}
+/** @author Evgen Vidolob */
+public interface Renderer {}

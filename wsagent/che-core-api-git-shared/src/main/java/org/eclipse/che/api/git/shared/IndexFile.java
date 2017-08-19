@@ -19,17 +19,17 @@ import org.eclipse.che.dto.shared.DTO;
  */
 @DTO
 public interface IndexFile {
-    /** @return the indexed if <code>true</code> file is in index */
-    boolean isIndexed();
-    
-    void setIndexed(boolean indexed);
-    
-    IndexFile withIndexed(boolean indexed);
+  /** @return the indexed if <code>true</code> file is in index */
+  boolean isIndexed();
 
-    /** @return file path */
-    String getPath();
-    
-    void setPath(String path);
-    
-    IndexFile withPath(String path);
+  void setIndexed(boolean indexed);
+
+  IndexFile withIndexed(boolean indexed);
+
+  /** @return file path */
+  String getPath();
+
+  void setPath(String path);
+
+  IndexFile withPath(String path);
 }

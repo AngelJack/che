@@ -14,5 +14,5 @@ import com.google.gwt.event.shared.EventHandler;
 
 public interface AnnotationModelHandler extends EventHandler {
 
-    void onAnnotationModel(AnnotationModelEvent event);
+  void onAnnotationModel(AnnotationModelEvent event);
 }

@@ -20,9 +20,9 @@ import java.rmi.RemoteException;
  */
 public interface MavenServerLogger extends Remote {
 
-    void info(Throwable t) throws RemoteException;
+  void info(Throwable t) throws RemoteException;
 
-    void warning(Throwable t) throws RemoteException;
+  void warning(Throwable t) throws RemoteException;
 
-    void error(Throwable t) throws RemoteException;
+  void error(Throwable t) throws RemoteException;
 }

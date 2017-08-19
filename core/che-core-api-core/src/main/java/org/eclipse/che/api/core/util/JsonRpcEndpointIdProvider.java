@@ -13,5 +13,5 @@ package org.eclipse.che.api.core.util;
 import java.util.Set;
 
 public interface JsonRpcEndpointIdProvider {
-    Set<String> get();
+  Set<String> get();
 }

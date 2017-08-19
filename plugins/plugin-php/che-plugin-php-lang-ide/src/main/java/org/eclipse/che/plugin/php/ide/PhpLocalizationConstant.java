@@ -20,13 +20,11 @@ import com.google.gwt.i18n.client.Messages;
  */
 public interface PhpLocalizationConstant extends Messages {
 
+  @Key("php.action.create.php.file.title")
+  @DefaultMessage("PHP File")
+  String createPhpFileActionTitle();
 
-    @Key("php.action.create.php.file.title")
-    @DefaultMessage("PHP File")
-    String createPhpFileActionTitle();
-
-    @Key("php.action.create.php.file.description")
-    @DefaultMessage("Create PHP File")
-    String createPhpFileActionDescription();
-
+  @Key("php.action.create.php.file.description")
+  @DefaultMessage("Create PHP File")
+  String createPhpFileActionDescription();
 }

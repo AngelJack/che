@@ -11,11 +11,11 @@
 package org.eclipse.che.ide.websocket.impl;
 
 /**
- * Guice factory interface to create a web socket connection based on an URL
- * with all related dependencies injected
+ * Guice factory interface to create a web socket connection based on an URL with all related
+ * dependencies injected
  *
  * @author Dmitry Kuleshov
  */
 public interface WebSocketFactory {
-    WebSocketConnection create(String url);
+  WebSocketConnection create(String url);
 }

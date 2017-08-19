@@ -11,10 +11,9 @@
 package org.eclipse.che.ide.ext.java.shared.dto.model;
 
 /**
- * Represents an entire Java type root (either an <code>CompilationUnit</code>
- * or an <code>ClassFile</code>).
+ * Represents an entire Java type root (either an <code>CompilationUnit</code> or an <code>ClassFile
+ * </code>).
  *
  * @author Evgen Vidolob
  */
-public interface TypeRoot extends JavaElement, Openable {
-}
+public interface TypeRoot extends JavaElement, Openable {}

@@ -17,14 +17,9 @@ package org.eclipse.che.api.workspace.shared.stack;
  */
 public interface StackComponent {
 
-    /**
-     * Returns the name of the component.
-     * The name is unique per stack. (e.g. "jdk").
-     */
-    String getName();
+  /** Returns the name of the component. The name is unique per stack. (e.g. "jdk"). */
+  String getName();
 
-    /**
-     * Returns the version of the component. (e.g. "1.8")
-     */
-    String getVersion();
+  /** Returns the version of the component. (e.g. "1.8") */
+  String getVersion();
 }

@@ -12,26 +12,23 @@ package org.eclipse.che.api.agent;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-
+import java.io.IOException;
 import org.eclipse.che.api.agent.shared.model.Agent;
 import org.eclipse.che.api.agent.shared.model.impl.BasicAgent;
-
-import java.io.IOException;
 
 /**
  * Exec agent.
  *
  * @see Agent
- *
  * @author Anatolii Bazko
  */
 @Singleton
 public class ExecAgent extends BasicAgent {
-    private static final String AGENT_DESCRIPTOR = "org.eclipse.che.exec.json";
-    private static final String AGENT_SCRIPT     = "org.eclipse.che.exec.script.sh";
+  private static final String AGENT_DESCRIPTOR = "org.eclipse.che.exec.json";
+  private static final String AGENT_SCRIPT = "org.eclipse.che.exec.script.sh";
 
-    @Inject
-    public ExecAgent() throws IOException {
-        super(AGENT_DESCRIPTOR, AGENT_SCRIPT);
-    }
+  @Inject
+  public ExecAgent() throws IOException {
+    super(AGENT_DESCRIPTOR, AGENT_SCRIPT);
+  }
 }

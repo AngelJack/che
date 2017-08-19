@@ -17,8 +17,7 @@ package org.eclipse.che.activity.shared;
  */
 public final class Constants {
 
-    public static final String ACTIVITY_CHECKER     = "activity-checker";
+  public static final String ACTIVITY_CHECKER = "activity-checker";
 
-    private Constants() {
-    }
+  private Constants() {}
 }

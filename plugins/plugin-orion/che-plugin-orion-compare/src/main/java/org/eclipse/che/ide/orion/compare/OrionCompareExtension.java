@@ -12,17 +12,13 @@ package org.eclipse.che.ide.orion.compare;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-
 import org.eclipse.che.ide.api.extension.Extension;
 
-/**
- * @author Evgen Vidolob
- */
+/** @author Evgen Vidolob */
 @Extension(title = "Orion Compare", version = "1.0.0")
 @Singleton
 public class OrionCompareExtension {
 
-    @Inject
-    public OrionCompareExtension() {
-    }
+  @Inject
+  public OrionCompareExtension() {}
 }

@@ -10,12 +10,11 @@
  */
 package org.eclipse.che.plugin.docker.machine.ext.provider;
 
-import org.eclipse.che.plugin.docker.machine.DockerInstanceRuntimeInfo;
-
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.inject.Provider;
 import javax.inject.Singleton;
+import org.eclipse.che.plugin.docker.machine.DockerInstanceRuntimeInfo;
 
 /**
  * Add env variable to docker dev-machine with path to root folder of projects
@@ -24,12 +23,12 @@ import javax.inject.Singleton;
  */
 @Singleton
 public class ProjectsRootEnvVariableProvider implements Provider<String> {
-    @Inject
-    @Named("che.workspace.projects.storage")
-    private String projectFolderPath;
+  @Inject
+  @Named("che.workspace.projects.storage")
+  private String projectFolderPath;
 
-    @Override
-    public String get() {
-        return DockerInstanceRuntimeInfo.PROJECTS_ROOT_VARIABLE + '=' + projectFolderPath;
-    }
+  @Override
+  public String get() {
+    return DockerInstanceRuntimeInfo.PROJECTS_ROOT_VARIABLE + '=' + projectFolderPath;
+  }
 }

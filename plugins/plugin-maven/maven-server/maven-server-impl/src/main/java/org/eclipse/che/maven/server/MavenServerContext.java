@@ -11,24 +11,25 @@
 package org.eclipse.che.maven.server;
 
 /**
- *Maven server context, contains some top level configured components.
+ * Maven server context, contains some top level configured components.
  *
  * @author Evgen Vidolob
  */
 public class MavenServerContext {
-    private static MavenServerLogger           logger;
-    private static MavenServerDownloadListener listener;
+  private static MavenServerLogger logger;
+  private static MavenServerDownloadListener listener;
 
-    public static MavenServerLogger getLogger() {
-        return logger;
-    }
+  public static MavenServerLogger getLogger() {
+    return logger;
+  }
 
-    public static MavenServerDownloadListener getListener() {
-        return listener;
-    }
+  public static MavenServerDownloadListener getListener() {
+    return listener;
+  }
 
-    public static void setLoggerAndListener(MavenServerLogger logger, MavenServerDownloadListener listener) {
-        MavenServerContext.logger = logger;
-        MavenServerContext.listener = listener;
-    }
+  public static void setLoggerAndListener(
+      MavenServerLogger logger, MavenServerDownloadListener listener) {
+    MavenServerContext.logger = logger;
+    MavenServerContext.listener = listener;
+  }
 }

@@ -10,12 +10,13 @@
  */
 package org.eclipse.che.plugin.pullrequest.client.steps;
 
-import org.eclipse.che.plugin.pullrequest.client.workflow.Step;
 import com.google.inject.assistedinject.Assisted;
+import org.eclipse.che.plugin.pullrequest.client.workflow.Step;
 
 public interface PushBranchStepFactory {
 
-    PushBranchStep create(@Assisted("delegate") Step delegate,
-                          @Assisted("repositoryOwner") String repositoryOwner,
-                          @Assisted("repositoryName") String repositoryName);
+  PushBranchStep create(
+      @Assisted("delegate") Step delegate,
+      @Assisted("repositoryOwner") String repositoryOwner,
+      @Assisted("repositoryName") String repositoryName);
 }

@@ -12,10 +12,9 @@ package org.eclipse.che.requirejs.conf;
 
 public class MapItem extends AssocitativeJsObject<String> {
 
-    protected MapItem() {
-    }
+  protected MapItem() {}
 
-    public static final native MapItem create() /*-{
+  public static final native MapItem create() /*-{
         return {};
     }-*/;
 }

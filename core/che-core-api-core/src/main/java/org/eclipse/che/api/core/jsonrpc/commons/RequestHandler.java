@@ -10,9 +10,7 @@
  */
 package org.eclipse.che.api.core.jsonrpc.commons;
 
-/**
- * Handler corresponding to processing JSON RPC requests.
- */
+/** Handler corresponding to processing JSON RPC requests. */
 public interface RequestHandler {
-    JsonRpcResult handle(String endpointId, JsonRpcParams params) throws JsonRpcException;
+  JsonRpcResult handle(String endpointId, JsonRpcParams params) throws JsonRpcException;
 }

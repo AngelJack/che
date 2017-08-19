@@ -19,7 +19,7 @@ import java.util.List;
  */
 public interface Model {
 
-    List<? extends ModelComponent> getComponents();
+  List<? extends ModelComponent> getComponents();
 
-    ModelComponent getPrimary();
+  ModelComponent getPrimary();
 }

@@ -19,5 +19,5 @@ import org.eclipse.che.ide.websocket.events.WebSocketClosedEvent;
  */
 public interface ConnectionClosedInformer {
 
-    void onConnectionClosed(WebSocketClosedEvent event);
+  void onConnectionClosed(WebSocketClosedEvent event);
 }

@@ -10,20 +10,19 @@
  */
 package org.eclipse.che.plugin.testing.junit.server.inject;
 
-import com.google.inject.AbstractModule;
+import static com.google.inject.multibindings.Multibinder.newSetBinder;
 
+import com.google.inject.AbstractModule;
 import org.eclipse.che.inject.DynaModule;
 import org.eclipse.che.plugin.testing.junit.server.junit4.JUnit4TestRunner;
 
-import static com.google.inject.multibindings.Multibinder.newSetBinder;
-
-/**
- * @author Mirage Abeysekara
- */
+/** @author Mirage Abeysekara */
 @DynaModule
 public class JunitGuiceModule extends AbstractModule {
-    @Override
-    protected void configure() {
-        newSetBinder(binder(), org.eclipse.che.api.testing.server.framework.TestRunner.class).addBinding().to(JUnit4TestRunner.class);
-    }
+  @Override
+  protected void configure() {
+    newSetBinder(binder(), org.eclipse.che.api.testing.server.framework.TestRunner.class)
+        .addBinding()
+        .to(JUnit4TestRunner.class);
+  }
 }

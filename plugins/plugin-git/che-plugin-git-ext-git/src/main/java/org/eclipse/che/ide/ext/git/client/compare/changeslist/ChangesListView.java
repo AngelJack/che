@@ -19,31 +19,32 @@ import org.eclipse.che.ide.ext.git.client.compare.changespanel.ChangesPanelView;
  * @author Igor Vinokur
  */
 public interface ChangesListView extends View<ChangesListView.ActionDelegate> {
-    /** Needs for delegate some function into Changed list view. */
-    interface ActionDelegate {
-        /** Performs any actions appropriate in response to the user having pressed the 'Close' button. */
-        void onCloseClicked();
-
-        /** Performs any actions appropriate in response to the user having pressed the 'Compare' button. */
-        void onCompareClicked();
-    }
-
-    /** Close dialog. */
-    void close();
-
-    /** Show dialog. */
-    void showDialog();
+  /** Needs for delegate some function into Changed list view. */
+  interface ActionDelegate {
+    /**
+     * Performs any actions appropriate in response to the user having pressed the 'Close' button.
+     */
+    void onCloseClicked();
 
     /**
-     * Change the enable state of the compare button.
-     *
-     * @param enabled
-     *         <code>true</code> to enable the button, <code>false</code> to disable it
+     * Performs any actions appropriate in response to the user having pressed the 'Compare' button.
      */
-    void setEnableCompareButton(boolean enabled);
+    void onCompareClicked();
+  }
 
-    /**
-     * Initialize changes panel.
-     */
-    void setChangesPanelView(ChangesPanelView changesPanelView);
+  /** Close dialog. */
+  void close();
+
+  /** Show dialog. */
+  void showDialog();
+
+  /**
+   * Change the enable state of the compare button.
+   *
+   * @param enabled <code>true</code> to enable the button, <code>false</code> to disable it
+   */
+  void setEnableCompareButton(boolean enabled);
+
+  /** Initialize changes panel. */
+  void setChangesPanelView(ChangesPanelView changesPanelView);
 }

@@ -10,35 +10,30 @@
  */
 package org.eclipse.che.maven.server;
 
+import java.io.Serializable;
 import org.eclipse.che.maven.data.MavenExplicitProfiles;
 import org.eclipse.che.maven.data.MavenModel;
 
-import java.io.Serializable;
-
 /**
- * Describes an information after applying profiles.
- * Contains a maven model and a list of applied profiles.
+ * Describes an information after applying profiles. Contains a maven model and a list of applied
+ * profiles.
  */
 public class ProfileApplicationResult implements Serializable {
-    private final MavenModel myModel;
-    private final MavenExplicitProfiles myActivatedProfiles;
+  private final MavenModel myModel;
+  private final MavenExplicitProfiles myActivatedProfiles;
 
-    public ProfileApplicationResult(MavenModel model, MavenExplicitProfiles activatedProfiles) {
-        myModel = model;
-        myActivatedProfiles = activatedProfiles;
-    }
+  public ProfileApplicationResult(MavenModel model, MavenExplicitProfiles activatedProfiles) {
+    myModel = model;
+    myActivatedProfiles = activatedProfiles;
+  }
 
-    /**
-     * Returns a maven model which was modified after applying maven profiles.
-     */
-    public MavenModel getModel() {
-        return myModel;
-    }
+  /** Returns a maven model which was modified after applying maven profiles. */
+  public MavenModel getModel() {
+    return myModel;
+  }
 
-    /**
-     * Returns a list of activated profiles.
-     */
-    public MavenExplicitProfiles getActivatedProfiles() {
-        return myActivatedProfiles;
-    }
+  /** Returns a list of activated profiles. */
+  public MavenExplicitProfiles getActivatedProfiles() {
+    return myActivatedProfiles;
+  }
 }

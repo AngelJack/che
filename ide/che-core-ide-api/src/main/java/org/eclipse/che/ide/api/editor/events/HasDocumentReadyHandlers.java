@@ -13,9 +13,7 @@ package org.eclipse.che.ide.api.editor.events;
 import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.event.shared.HasHandlers;
 
-/**
- * Interface for components which handle {@link DocumentReadyEvent}.
- */
+/** Interface for components which handle {@link DocumentReadyEvent}. */
 public interface HasDocumentReadyHandlers extends HasHandlers {
-    HandlerRegistration addDocumentReadyHandler(DocumentReadyHandler handler);
+  HandlerRegistration addDocumentReadyHandler(DocumentReadyHandler handler);
 }

@@ -12,16 +12,14 @@ package org.eclipse.che.api.languageserver.exception;
 
 import org.eclipse.che.api.core.ServerException;
 
-/**
- * @author Anatoliy Bazko
- */
+/** @author Anatoliy Bazko */
 @SuppressWarnings("serial")
 public class LanguageServerException extends ServerException {
-    public LanguageServerException(String message) {
-        super(message);
-    }
+  public LanguageServerException(String message) {
+    super(message);
+  }
 
-    public LanguageServerException(String message, Throwable cause) {
-        super(message, cause);
-    }
+  public LanguageServerException(String message, Throwable cause) {
+    super(message, cause);
+  }
 }

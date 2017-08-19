@@ -16,29 +16,28 @@ package org.eclipse.che.api.core.rest;
  * @author andrew00x
  */
 public interface HttpOutputMessage extends OutputProvider {
-    /** Set HTTP status. */
-    void setStatus(int status);
+  /** Set HTTP status. */
+  void setStatus(int status);
 
-    /** Shortcut to set content-type header. The same may be none with method {@link #setHttpHeader(String, String)}. */
-    void setContentType(String contentType);
+  /**
+   * Shortcut to set content-type header. The same may be none with method {@link
+   * #setHttpHeader(String, String)}.
+   */
+  void setContentType(String contentType);
 
-    /**
-     * Add HTTP header.
-     *
-     * @param name
-     *         name of header
-     * @param value
-     *         value of header
-     */
-    void addHttpHeader(String name, String value);
+  /**
+   * Add HTTP header.
+   *
+   * @param name name of header
+   * @param value value of header
+   */
+  void addHttpHeader(String name, String value);
 
-    /**
-     * Set HTTP header. If the header had already been set, the new value overwrites the previous one.
-     *
-     * @param name
-     *         name of header
-     * @param value
-     *         value of header
-     */
-    void setHttpHeader(String name, String value);
+  /**
+   * Set HTTP header. If the header had already been set, the new value overwrites the previous one.
+   *
+   * @param name name of header
+   * @param value value of header
+   */
+  void setHttpHeader(String name, String value);
 }

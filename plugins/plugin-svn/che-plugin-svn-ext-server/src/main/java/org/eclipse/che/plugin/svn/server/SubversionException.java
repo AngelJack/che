@@ -12,17 +12,14 @@ package org.eclipse.che.plugin.svn.server;
 
 import org.eclipse.che.api.core.ServerException;
 
-/**
- * Exception for wrapping Subversion related exceptions.
- */
+/** Exception for wrapping Subversion related exceptions. */
 public class SubversionException extends ServerException {
 
-    public SubversionException(final String message) {
-        super(message);
-    }
+  public SubversionException(final String message) {
+    super(message);
+  }
 
-    public SubversionException(final Throwable throwable) {
-        super(throwable);
-    }
-
+  public SubversionException(final Throwable throwable) {
+    super(throwable);
+  }
 }

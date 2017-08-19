@@ -12,17 +12,16 @@ package org.eclipse.che.plugin.testing.ide.model.event;
 
 import org.eclipse.che.plugin.testing.ide.messages.TestSuiteStarted;
 
-/**
- * Event which informs about starting test suite.
- */
+/** Event which informs about starting test suite. */
 public class TestSuiteStartedEvent extends BaseStartEvent {
-    public TestSuiteStartedEvent(TestSuiteStarted testSuiteStarted) {
-        super(getNodeId(testSuiteStarted),
-                testSuiteStarted.getSuiteName(),
-                getParantNodeId(testSuiteStarted),
-                testSuiteStarted.getLocation(),
-                getNodeType(testSuiteStarted),
-                getNodeArg(testSuiteStarted),
-                isNodeRunning(testSuiteStarted));
-    }
+  public TestSuiteStartedEvent(TestSuiteStarted testSuiteStarted) {
+    super(
+        getNodeId(testSuiteStarted),
+        testSuiteStarted.getSuiteName(),
+        getParantNodeId(testSuiteStarted),
+        testSuiteStarted.getLocation(),
+        getNodeType(testSuiteStarted),
+        getNodeArg(testSuiteStarted),
+        isNodeRunning(testSuiteStarted));
+  }
 }

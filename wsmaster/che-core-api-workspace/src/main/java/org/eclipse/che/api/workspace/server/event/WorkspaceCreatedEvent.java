@@ -20,13 +20,13 @@ import org.eclipse.che.api.core.notification.EventOrigin;
  */
 @EventOrigin("workspace")
 public class WorkspaceCreatedEvent {
-    private final Workspace workspace;
+  private final Workspace workspace;
 
-    public WorkspaceCreatedEvent(Workspace workspace) {
-        this.workspace = workspace;
-    }
+  public WorkspaceCreatedEvent(Workspace workspace) {
+    this.workspace = workspace;
+  }
 
-    public Workspace getWorkspace() {
-        return workspace;
-    }
+  public Workspace getWorkspace() {
+    return workspace;
+  }
 }

@@ -20,28 +20,29 @@ import org.eclipse.che.ide.api.mvp.View;
  * @author Vlad Zhukovskyi
  */
 public interface ResetFilesView extends View<ResetFilesView.ActionDelegate> {
-    String FILES = "Files for commit";
+  String FILES = "Files for commit";
 
-    /** Needs for delegate some function into ResetFiles view. */
-    interface ActionDelegate {
-        /** Performs any actions appropriate in response to the user having pressed the Reset button. */
-        void onResetClicked();
-
-        /** Performs any actions appropriate in response to the user having pressed the Cancel button. */
-        void onCancelClicked();
-    }
+  /** Needs for delegate some function into ResetFiles view. */
+  interface ActionDelegate {
+    /** Performs any actions appropriate in response to the user having pressed the Reset button. */
+    void onResetClicked();
 
     /**
-     * Set indexed files into table on view.
-     *
-     * @param indexedFiles
-     *         indexed files
+     * Performs any actions appropriate in response to the user having pressed the Cancel button.
      */
-    void setIndexedFiles(IndexFile[] indexedFiles);
+    void onCancelClicked();
+  }
 
-    /** Close dialog. */
-    void close();
+  /**
+   * Set indexed files into table on view.
+   *
+   * @param indexedFiles indexed files
+   */
+  void setIndexedFiles(IndexFile[] indexedFiles);
 
-    /** Show dialog. */
-    void showDialog();
+  /** Close dialog. */
+  void close();
+
+  /** Show dialog. */
+  void showDialog();
 }

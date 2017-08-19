@@ -10,9 +10,9 @@
  */
 package org.eclipse.che.inject.lifecycle;
 
-import java.lang.reflect.Method;
-
 import static org.slf4j.LoggerFactory.getLogger;
+
+import java.lang.reflect.Method;
 
 /**
  * Helps to be more flexible when need handle errors of invocation destroy-methods.
@@ -20,10 +20,9 @@ import static org.slf4j.LoggerFactory.getLogger;
  * @author andrew00x
  */
 public interface DestroyErrorHandler {
-    void onError(Object instance, Method method, Throwable error);
+  void onError(Object instance, Method method, Throwable error);
 
-    /**
-     * Implementation of DestroyErrorHandler that log errors.
-     */
-    DestroyErrorHandler LOG_HANDLER = (instance, method, error) -> getLogger(instance.getClass()).error(error.getMessage(), error);
+  /** Implementation of DestroyErrorHandler that log errors. */
+  DestroyErrorHandler LOG_HANDLER =
+      (instance, method, error) -> getLogger(instance.getClass()).error(error.getMessage(), error);
 }

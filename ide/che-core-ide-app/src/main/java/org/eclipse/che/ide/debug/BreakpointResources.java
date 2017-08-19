@@ -13,22 +13,20 @@ package org.eclipse.che.ide.debug;
 import com.google.gwt.resources.client.ClientBundle;
 import com.google.gwt.resources.client.CssResource;
 
-/**
- * Resources interface for the breakpoints marks.
- */
+/** Resources interface for the breakpoints marks. */
 public interface BreakpointResources extends ClientBundle {
-    @Source({"breakpoint.css", "org/eclipse/che/ide/api/ui/style.css"})
-    Css getCss();
+  @Source({"breakpoint.css", "org/eclipse/che/ide/api/ui/style.css"})
+  Css getCss();
 
-    /** The CssResource interface for the breakpoints */
-    interface Css extends CssResource {
+  /** The CssResource interface for the breakpoints */
+  interface Css extends CssResource {
 
-        /** Returns the CSS class name for active breakpoint mark */
-        String active();
+    /** Returns the CSS class name for active breakpoint mark */
+    String active();
 
-        /** Returns the CSS class name for inactive breakpoint mark */
-        String inactive();
+    /** Returns the CSS class name for inactive breakpoint mark */
+    String inactive();
 
-        String breakpoint();
-    }
+    String breakpoint();
+  }
 }

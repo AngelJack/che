@@ -13,11 +13,9 @@ package org.eclipse.che.api.debug.shared.model.impl.action;
 import org.eclipse.che.api.debug.shared.model.action.Action;
 import org.eclipse.che.api.debug.shared.model.action.ResumeAction;
 
-/**
- * @author Anatoliy Bazko
- */
+/** @author Anatoliy Bazko */
 public class ResumeActionImpl extends ActionImpl implements ResumeAction {
-    public ResumeActionImpl() {
-        super(Action.TYPE.RESUME);
-    }
+  public ResumeActionImpl() {
+    super(Action.TYPE.RESUME);
+  }
 }

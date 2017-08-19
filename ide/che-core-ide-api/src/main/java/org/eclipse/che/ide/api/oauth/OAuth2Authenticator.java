@@ -11,18 +11,15 @@
 package org.eclipse.che.ide.api.oauth;
 
 import com.google.gwt.user.client.rpc.AsyncCallback;
-
 import org.eclipse.che.api.promises.client.Promise;
 import org.eclipse.che.security.oauth.OAuthStatus;
 
-/**
- * @author Roman Nikitenko
- */
+/** @author Roman Nikitenko */
 public interface OAuth2Authenticator {
 
-    void authenticate(String authenticationUrl, AsyncCallback<OAuthStatus> callback);
+  void authenticate(String authenticationUrl, AsyncCallback<OAuthStatus> callback);
 
-    Promise<OAuthStatus> authenticate(String authenticationUrl);
+  Promise<OAuthStatus> authenticate(String authenticationUrl);
 
-    String getProviderName();
+  String getProviderName();
 }

@@ -10,12 +10,11 @@
  */
 package org.eclipse.che.ide.websocket.events;
 
-
 /**
  * Handler closing WebSocket connection.
  *
  * @author Artem Zatsarynnyi
  */
 public interface ConnectionClosedHandler {
-    void onClose(WebSocketClosedEvent event);
+  void onClose(WebSocketClosedEvent event);
 }

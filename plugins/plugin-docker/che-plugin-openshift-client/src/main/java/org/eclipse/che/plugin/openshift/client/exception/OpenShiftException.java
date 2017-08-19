@@ -14,16 +14,15 @@ import java.io.IOException;
 
 public class OpenShiftException extends IOException {
 
-    public OpenShiftException(String message) {
-        super(message);
-    }
+  public OpenShiftException(String message) {
+    super(message);
+  }
 
-    public OpenShiftException(Throwable cause) {
-        super(cause);
-    }
+  public OpenShiftException(Throwable cause) {
+    super(cause);
+  }
 
-    public OpenShiftException(String message, Throwable cause) {
-        super(message, cause);
-    }
-
+  public OpenShiftException(String message, Throwable cause) {
+    super(message, cause);
+  }
 }

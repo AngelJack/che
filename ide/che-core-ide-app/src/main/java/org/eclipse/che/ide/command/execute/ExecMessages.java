@@ -19,6 +19,6 @@ import com.google.gwt.i18n.client.Messages;
  */
 public interface ExecMessages extends Messages {
 
-    @Key("action.commands.title")
-    String actionCommandsTitle();
+  @Key("action.commands.title")
+  String actionCommandsTitle();
 }

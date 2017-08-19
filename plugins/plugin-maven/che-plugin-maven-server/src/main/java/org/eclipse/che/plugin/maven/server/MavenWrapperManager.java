@@ -12,14 +12,12 @@ package org.eclipse.che.plugin.maven.server;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
 /**
- *
  * Manages and cache MavenServerWrapper instances
  *
  * @author Evgen Vidolob
@@ -27,43 +25,42 @@ import java.util.Set;
 @Singleton
 public class MavenWrapperManager {
 
+  private final MavenServerManager serverManager;
+  private final Map<ServerType, MavenServerWrapper> cache = new HashMap<>();
+  private final Set<MavenServerWrapper> usedServers = new HashSet<>();
 
-    private final MavenServerManager    serverManager;
-    private final Map<ServerType, MavenServerWrapper> cache = new HashMap<>();
-    private final Set<MavenServerWrapper> usedServers = new HashSet<>();
+  @Inject
+  public MavenWrapperManager(MavenServerManager serverManager) {
+    this.serverManager = serverManager;
+  }
 
-
-    @Inject
-    public MavenWrapperManager(MavenServerManager serverManager) {
-        this.serverManager = serverManager;
+  public synchronized MavenServerWrapper getMavenServer(ServerType type) {
+    MavenServerWrapper wrapper = cache.get(type);
+    if (wrapper == null) {
+      wrapper = serverManager.createMavenServer();
+      cache.put(type, wrapper);
     }
 
-    public synchronized MavenServerWrapper getMavenServer(ServerType type) {
-        MavenServerWrapper wrapper = cache.get(type);
-        if (wrapper == null) {
-            wrapper = serverManager.createMavenServer();
-            cache.put(type, wrapper);
-        }
-
-        if (usedServers.contains(wrapper)) {
-            //need to warn here
-            return serverManager.createMavenServer();
-        }
-
-        usedServers.add(wrapper);
-        return wrapper;
+    if (usedServers.contains(wrapper)) {
+      //need to warn here
+      return serverManager.createMavenServer();
     }
 
-    public synchronized void release(MavenServerWrapper wrapper) {
-        if (usedServers.contains(wrapper)) {
-            wrapper.reset();
-            usedServers.remove(wrapper);
-        } else {
-            wrapper.dispose();
-        }
-    }
+    usedServers.add(wrapper);
+    return wrapper;
+  }
 
-    public enum ServerType {
-        RESOLVE, DOWNLOAD
+  public synchronized void release(MavenServerWrapper wrapper) {
+    if (usedServers.contains(wrapper)) {
+      wrapper.reset();
+      usedServers.remove(wrapper);
+    } else {
+      wrapper.dispose();
     }
+  }
+
+  public enum ServerType {
+    RESOLVE,
+    DOWNLOAD
+  }
 }

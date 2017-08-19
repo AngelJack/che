@@ -19,25 +19,25 @@ import org.eclipse.che.dto.shared.DTO;
  */
 @DTO
 public interface ChangeInfo {
-    /** @return name of the change. */
-    ChangeName getName();
+  /** @return name of the change. */
+  ChangeName getName();
 
-    void setName(ChangeName name);
+  void setName(ChangeName name);
 
-    /** @return path of the resource before applying changes. */
-    String getOldPath();
+  /** @return path of the resource before applying changes. */
+  String getOldPath();
 
-    void setOldPath(String path);
+  void setOldPath(String path);
 
-    /** @return path of the resource after applying changes. */
-    String getPath();
+  /** @return path of the resource after applying changes. */
+  String getPath();
 
-    void setPath(String path);
+  void setPath(String path);
 
-    enum ChangeName {
-        RENAME_COMPILATION_UNIT,
-        RENAME_PACKAGE,
-        UPDATE,
-        MOVE
-    }
+  enum ChangeName {
+    RENAME_COMPILATION_UNIT,
+    RENAME_PACKAGE,
+    UPDATE,
+    MOVE
+  }
 }

@@ -19,10 +19,10 @@ import org.eclipse.che.ide.api.resources.File;
  * @author Vlad Zhukovskiy
  */
 public interface RecentFileList extends RecentList<File> {
-    /**
-     * Return recent file list user dialog.
-     *
-     * @return user dialog with recent file list
-     */
-    OpenRecentFilesPresenter getRecentViewDialog();
+  /**
+   * Return recent file list user dialog.
+   *
+   * @return user dialog with recent file list
+   */
+  OpenRecentFilesPresenter getRecentViewDialog();
 }

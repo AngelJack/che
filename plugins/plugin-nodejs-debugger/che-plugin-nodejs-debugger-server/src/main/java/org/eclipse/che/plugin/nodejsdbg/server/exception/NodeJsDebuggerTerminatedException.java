@@ -10,11 +10,9 @@
  */
 package org.eclipse.che.plugin.nodejsdbg.server.exception;
 
-/**
- * @author Anatoliy Bazko
- */
+/** @author Anatoliy Bazko */
 public class NodeJsDebuggerTerminatedException extends NodeJsDebuggerException {
-    public NodeJsDebuggerTerminatedException(String message) {
-        super(message);
-    }
+  public NodeJsDebuggerTerminatedException(String message) {
+    super(message);
+  }
 }

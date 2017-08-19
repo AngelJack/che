@@ -19,21 +19,21 @@ import com.google.gwt.i18n.client.Messages;
  */
 public interface PaletteMessages extends Messages {
 
-    @Key("action.show_palette.title")
-    String actionShowPaletteTitle();
+  @Key("action.show_palette.title")
+  String actionShowPaletteTitle();
 
-    @Key("action.show_palette.description")
-    String actionShowPaletteDescription();
+  @Key("action.show_palette.description")
+  String actionShowPaletteDescription();
 
-    @Key("view.title")
-    String viewTitle();
+  @Key("view.title")
+  String viewTitle();
 
-    @Key("view.filter.placeholder")
-    String filterPlaceholder();
+  @Key("view.filter.placeholder")
+  String filterPlaceholder();
 
-    @Key("view.hint.text")
-    String viewHintText();
+  @Key("view.hint.text")
+  String viewHintText();
 
-    @Key("message.no_machine")
-    String messageNoMachine();
+  @Key("message.no_machine")
+  String messageNoMachine();
 }

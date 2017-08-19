@@ -18,5 +18,5 @@ import com.google.gwt.event.shared.EventHandler;
  * @author "Mickaël Leduque"
  */
 public interface ViewPortChangeHandler extends EventHandler {
-    void onViewPortChange(ViewPortChangeEvent event);
+  void onViewPortChange(ViewPortChangeEvent event);
 }

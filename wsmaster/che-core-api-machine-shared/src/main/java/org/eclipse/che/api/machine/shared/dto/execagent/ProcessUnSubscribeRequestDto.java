@@ -15,13 +15,13 @@ import org.eclipse.che.dto.shared.DTO;
 
 @DTO
 public interface ProcessUnSubscribeRequestDto extends DtoWithPid {
-    ProcessUnSubscribeRequestDto withPid(int pid);
+  ProcessUnSubscribeRequestDto withPid(int pid);
 
-    String getEventTypes();
+  String getEventTypes();
 
-    ProcessUnSubscribeRequestDto withEventTypes(String eventTypes);
+  ProcessUnSubscribeRequestDto withEventTypes(String eventTypes);
 
-    String getAfter();
+  String getAfter();
 
-    ProcessUnSubscribeRequestDto withAfter(String after);
+  ProcessUnSubscribeRequestDto withAfter(String after);
 }

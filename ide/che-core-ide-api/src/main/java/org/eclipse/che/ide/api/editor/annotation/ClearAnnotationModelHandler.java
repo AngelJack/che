@@ -14,5 +14,5 @@ import com.google.gwt.event.shared.EventHandler;
 
 public interface ClearAnnotationModelHandler extends EventHandler {
 
-    void onClearModel(ClearAnnotationModelEvent event);
+  void onClearModel(ClearAnnotationModelEvent event);
 }

@@ -11,44 +11,44 @@
 package org.eclipse.che.api.user.server.jpa;
 
 import com.google.inject.persist.Transactional;
-
+import java.util.Collection;
+import javax.inject.Inject;
+import javax.inject.Provider;
+import javax.persistence.EntityManager;
 import org.eclipse.che.api.user.server.model.impl.UserImpl;
 import org.eclipse.che.commons.test.tck.repository.TckRepository;
 import org.eclipse.che.commons.test.tck.repository.TckRepositoryException;
 import org.eclipse.che.security.PasswordEncryptor;
 
-import javax.inject.Inject;
-import javax.inject.Provider;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import java.util.Collection;
-
 @Transactional
 public class UserJpaTckRepository implements TckRepository<UserImpl> {
 
-    @Inject
-    private Provider<EntityManager> managerProvider;
+  @Inject private Provider<EntityManager> managerProvider;
 
-    @Inject
-    private PasswordEncryptor encryptor;
+  @Inject private PasswordEncryptor encryptor;
 
-    @Override
-    public void createAll(Collection<? extends UserImpl> entities) throws TckRepositoryException {
-        final EntityManager manager = managerProvider.get();
-        entities.stream()
-                .map(user -> new UserImpl(user.getId(),
-                                          user.getEmail(),
-                                          user.getName(),
-                                          encryptor.encrypt(user.getPassword()),
-                                          user.getAliases()))
-                .forEach(manager::persist);
-    }
+  @Override
+  public void createAll(Collection<? extends UserImpl> entities) throws TckRepositoryException {
+    final EntityManager manager = managerProvider.get();
+    entities
+        .stream()
+        .map(
+            user ->
+                new UserImpl(
+                    user.getId(),
+                    user.getEmail(),
+                    user.getName(),
+                    encryptor.encrypt(user.getPassword()),
+                    user.getAliases()))
+        .forEach(manager::persist);
+  }
 
-    @Override
-    public void removeAll() throws TckRepositoryException {
-        managerProvider.get()
-                       .createQuery("SELECT u FROM Usr u", UserImpl.class)
-                       .getResultList()
-                       .forEach(managerProvider.get()::remove);
-    }
+  @Override
+  public void removeAll() throws TckRepositoryException {
+    managerProvider
+        .get()
+        .createQuery("SELECT u FROM Usr u", UserImpl.class)
+        .getResultList()
+        .forEach(managerProvider.get()::remove);
+  }
 }

@@ -20,28 +20,26 @@ import com.google.gwt.core.client.JsArrayString;
  */
 public interface RequirejsErrorHandler {
 
-    /**
-     * Called when a requirejs operation fails.
-     *
-     * @param error
-     *         the error object
-     */
-    void onError(RequireError error);
+  /**
+   * Called when a requirejs operation fails.
+   *
+   * @param error the error object
+   */
+  void onError(RequireError error);
 
-    class RequireError extends JavaScriptObject {
-        protected RequireError() {
-        }
+  class RequireError extends JavaScriptObject {
+    protected RequireError() {}
 
-        public final native String getRequireType() /*-{
+    public final native String getRequireType() /*-{
             return this.requireType;
         }-*/;
 
-        public final native JsArrayString getRequireModules() /*-{
+    public final native JsArrayString getRequireModules() /*-{
             return this.requireModules;
         }-*/;
 
-        public final native String getMessage() /*-{
+    public final native String getMessage() /*-{
             return this.message;
         }-*/;
-    }
+  }
 }

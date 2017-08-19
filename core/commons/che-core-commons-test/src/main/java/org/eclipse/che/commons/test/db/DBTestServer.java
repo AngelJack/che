@@ -19,33 +19,21 @@ import javax.sql.DataSource;
  */
 public interface DBTestServer {
 
-    /**
-     * Returns jdbc url to this server.
-     */
-    String getUrl();
+  /** Returns jdbc url to this server. */
+  String getUrl();
 
-    /**
-     * Returns the name of the user who can access this db server.
-     */
-    String getUser();
+  /** Returns the name of the user who can access this db server. */
+  String getUser();
 
-    /**
-     * Returns the password of the user returned by {@link #getUser()}.
-     */
-    String getPassword();
+  /** Returns the password of the user returned by {@link #getUser()}. */
+  String getPassword();
 
-    /**
-     * Returns server data source.
-     */
-    DataSource getDataSource();
+  /** Returns server data source. */
+  DataSource getDataSource();
 
-    /**
-     * Starts this test server.
-     */
-    void start();
+  /** Starts this test server. */
+  void start();
 
-    /**
-     * Shuts down this test server.
-     */
-    void shutdown();
+  /** Shuts down this test server. */
+  void shutdown();
 }

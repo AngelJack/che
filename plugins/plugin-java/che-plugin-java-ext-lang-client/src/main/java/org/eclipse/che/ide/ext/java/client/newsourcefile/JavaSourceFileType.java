@@ -16,19 +16,19 @@ package org.eclipse.che.ide.ext.java.client.newsourcefile;
  * @author Artem Zatsarynnyi
  */
 enum JavaSourceFileType {
-    CLASS("Class"),
-    INTERFACE("Interface"),
-    ENUM("Enum"),
-    ANNOTATION("Annotation");
+  CLASS("Class"),
+  INTERFACE("Interface"),
+  ENUM("Enum"),
+  ANNOTATION("Annotation");
 
-    private final String value;
+  private final String value;
 
-    private JavaSourceFileType(String value) {
-        this.value = value;
-    }
+  private JavaSourceFileType(String value) {
+    this.value = value;
+  }
 
-    @Override
-    public String toString() {
-        return value;
-    }
+  @Override
+  public String toString() {
+    return value;
+  }
 }

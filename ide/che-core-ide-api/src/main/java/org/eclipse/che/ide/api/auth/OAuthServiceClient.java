@@ -13,12 +13,9 @@ package org.eclipse.che.ide.api.auth;
 import org.eclipse.che.api.auth.shared.dto.OAuthToken;
 import org.eclipse.che.ide.rest.AsyncRequestCallback;
 
-/**
- * @author Sergii Leschenko
- */
+/** @author Sergii Leschenko */
 public interface OAuthServiceClient {
-    void invalidateToken(String oauthProvider, AsyncRequestCallback<Void> callback);
+  void invalidateToken(String oauthProvider, AsyncRequestCallback<Void> callback);
 
-    void getToken(String oauthProvider, AsyncRequestCallback<OAuthToken> callback);
-
+  void getToken(String oauthProvider, AsyncRequestCallback<OAuthToken> callback);
 }

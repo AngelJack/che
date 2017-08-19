@@ -10,10 +10,9 @@
  */
 package org.eclipse.che.api.machine.shared.dto.recipe;
 
+import java.util.List;
 import org.eclipse.che.api.machine.shared.ManagedRecipe;
 import org.eclipse.che.dto.shared.DTO;
-
-import java.util.List;
 
 /**
  * Describes new recipe
@@ -23,23 +22,23 @@ import java.util.List;
 @DTO
 public interface NewRecipe extends ManagedRecipe {
 
-    void setType(String type);
+  void setType(String type);
 
-    NewRecipe withType(String type);
+  NewRecipe withType(String type);
 
-    void setName(String name);
+  void setName(String name);
 
-    NewRecipe withName(String name);
+  NewRecipe withName(String name);
 
-    void setScript(String script);
+  void setScript(String script);
 
-    NewRecipe withScript(String script);
+  NewRecipe withScript(String script);
 
-    void setTags(List<String> tags);
+  void setTags(List<String> tags);
 
-    NewRecipe withTags(List<String> tags);
+  NewRecipe withTags(List<String> tags);
 
-    void setDescription(String description);
+  void setDescription(String description);
 
-    NewRecipe withDescription(String description);
+  NewRecipe withDescription(String description);
 }

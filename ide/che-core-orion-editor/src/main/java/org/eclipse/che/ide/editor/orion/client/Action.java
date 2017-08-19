@@ -12,5 +12,5 @@ package org.eclipse.che.ide.editor.orion.client;
 
 public interface Action {
 
-    boolean onAction();
+  boolean onAction();
 }

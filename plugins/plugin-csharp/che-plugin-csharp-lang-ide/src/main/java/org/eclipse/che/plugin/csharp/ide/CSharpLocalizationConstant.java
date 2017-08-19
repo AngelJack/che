@@ -20,13 +20,11 @@ import com.google.gwt.i18n.client.Messages;
  */
 public interface CSharpLocalizationConstant extends Messages {
 
+  @Key("csharp.action.create.csharp.file.title")
+  @DefaultMessage("New C# File")
+  String createCSharpFileActionTitle();
 
-    @Key("csharp.action.create.csharp.file.title")
-    @DefaultMessage("New C# File")
-    String createCSharpFileActionTitle();
-
-    @Key("csharp.action.create.csharp.file.description")
-    @DefaultMessage("Create C# File")
-    String createCSharpFileActionDescription();
-
+  @Key("csharp.action.create.csharp.file.description")
+  @DefaultMessage("Create C# File")
+  String createCSharpFileActionDescription();
 }

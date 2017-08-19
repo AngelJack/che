@@ -10,11 +10,10 @@
  */
 package org.eclipse.che.plugin.pullrequest.client.events;
 
+import com.google.gwt.event.shared.GwtEvent;
+import org.eclipse.che.api.core.model.project.ProjectConfig;
 import org.eclipse.che.plugin.pullrequest.client.workflow.Context;
 import org.eclipse.che.plugin.pullrequest.client.workflow.WorkflowExecutor;
-import com.google.gwt.event.shared.GwtEvent;
-
-import org.eclipse.che.api.core.model.project.ProjectConfig;
 
 /**
  * This event is fired when context is invalidated.
@@ -24,21 +23,21 @@ import org.eclipse.che.api.core.model.project.ProjectConfig;
  */
 public class ContextInvalidatedEvent extends GwtEvent<ContextInvalidatedHandler> {
 
-    public static final Type<ContextInvalidatedHandler> TYPE = new Type<>();
+  public static final Type<ContextInvalidatedHandler> TYPE = new Type<>();
 
-    private final Context context;
+  private final Context context;
 
-    public ContextInvalidatedEvent(final Context context) {
-        this.context = context;
-    }
+  public ContextInvalidatedEvent(final Context context) {
+    this.context = context;
+  }
 
-    @Override
-    public Type<ContextInvalidatedHandler> getAssociatedType() {
-        return TYPE;
-    }
+  @Override
+  public Type<ContextInvalidatedHandler> getAssociatedType() {
+    return TYPE;
+  }
 
-    @Override
-    protected void dispatch(ContextInvalidatedHandler handler) {
-        handler.onContextInvalidated(context);
-    }
+  @Override
+  protected void dispatch(ContextInvalidatedHandler handler) {
+    handler.onContextInvalidated(context);
+  }
 }

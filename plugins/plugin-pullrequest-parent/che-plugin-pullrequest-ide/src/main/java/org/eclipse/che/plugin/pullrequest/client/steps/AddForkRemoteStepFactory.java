@@ -10,13 +10,11 @@
  */
 package org.eclipse.che.plugin.pullrequest.client.steps;
 
-import org.eclipse.che.plugin.pullrequest.client.workflow.Step;
 import com.google.inject.assistedinject.Assisted;
+import org.eclipse.che.plugin.pullrequest.client.workflow.Step;
 
-/**
- * @author Mihail Kuznyetsov
- */
+/** @author Mihail Kuznyetsov */
 public interface AddForkRemoteStepFactory {
-    AddForkRemoteStep create(@Assisted("delegate") Step delegate,
-                             @Assisted("remoteUrl") String remoteUrl);
+  AddForkRemoteStep create(
+      @Assisted("delegate") Step delegate, @Assisted("remoteUrl") String remoteUrl);
 }

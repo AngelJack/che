@@ -20,19 +20,19 @@ import java.io.Writer;
  */
 public class WritableLineConsumer implements LineConsumer {
 
-    private final Writer writer;
+  private final Writer writer;
 
-    public WritableLineConsumer(Writer writer) {
-        this.writer = writer;
-    }
+  public WritableLineConsumer(Writer writer) {
+    this.writer = writer;
+  }
 
-    @Override
-    public void writeLine(String line) throws IOException {
-        writer.write(line);
-    }
+  @Override
+  public void writeLine(String line) throws IOException {
+    writer.write(line);
+  }
 
-    @Override
-    public void close() throws IOException {
-        writer.close();
-    }
+  @Override
+  public void close() throws IOException {
+    writer.close();
+  }
 }

@@ -17,15 +17,14 @@ import javax.validation.constraints.NotNull;
  */
 public class NoUserForkException extends Exception {
 
-    private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 1L;
 
-    /**
-     * Constructs an instance of {@link NoUserForkException}.
-     *
-     * @param user
-     *         the user.
-     */
-    public NoUserForkException(@NotNull final String user) {
-        super("No fork for user: " + user);
-    }
+  /**
+   * Constructs an instance of {@link NoUserForkException}.
+   *
+   * @param user the user.
+   */
+  public NoUserForkException(@NotNull final String user) {
+    super("No fork for user: " + user);
+  }
 }

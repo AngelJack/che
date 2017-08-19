@@ -13,21 +13,21 @@ package org.eclipse.che.ide.ui.button;
 import org.eclipse.che.ide.api.mvp.View;
 
 /**
- * The abstract representation of console button widget. It provides all needed method for this kind of button.
+ * The abstract representation of console button widget. It provides all needed method for this kind
+ * of button.
  *
  * @author Andrey Plotnikov
  */
 public interface ConsoleButton extends View<ConsoleButton.ActionDelegate> {
-    /**
-     * Changes check status of button.
-     *
-     * @param isChecked
-     *         check status of button that needs to be applied
-     */
-    void setCheckedStatus(boolean isChecked);
+  /**
+   * Changes check status of button.
+   *
+   * @param isChecked check status of button that needs to be applied
+   */
+  void setCheckedStatus(boolean isChecked);
 
-    interface ActionDelegate {
-        /** Performs some actions in response to user's clicking on the button panel. */
-        void onButtonClicked();
-    }
+  interface ActionDelegate {
+    /** Performs some actions in response to user's clicking on the button panel. */
+    void onButtonClicked();
+  }
 }

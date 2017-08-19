@@ -10,57 +10,57 @@
  */
 package org.eclipse.che.api.languageserver.registry;
 
+import static java.util.Collections.emptyList;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import static java.util.Collections.emptyList;
+public class LanguageServerDescription {
+  private final String id;
+  private final List<String> languageIds;
+  private final List<DocumentFilter> documentFilters;
 
-public class LanguageServerDescription  {
-    private final String id;
-    private final List<String> languageIds;
-    private final List<DocumentFilter> documentFilters;
+  /**
+   * The file name patters, format described there {@link
+   * java.nio.file.FileSystem#getPathMatcher(String)}
+   */
+  private List<String> fileWatchPatterns = emptyList();
 
-    /**
-     * The file name patters, format described there {@link java.nio.file.FileSystem#getPathMatcher(String)}
-     */
-    private List<String> fileWatchPatterns = emptyList();
+  public LanguageServerDescription(
+      String id, List<String> languageIds, List<DocumentFilter> documentFilters) {
+    this(id, languageIds, documentFilters, Collections.emptyList());
+  }
 
-    public LanguageServerDescription(String id, List<String> languageIds, List<DocumentFilter> documentFilters) {
-        this(id, languageIds, documentFilters, Collections.emptyList());
-    }
+  public LanguageServerDescription(
+      String id,
+      List<String> languageIds,
+      List<DocumentFilter> documentFilters,
+      List<String> fileWatchPatterns) {
+    this.id = id;
+    this.languageIds = languageIds;
+    this.documentFilters = documentFilters;
+    this.fileWatchPatterns = fileWatchPatterns;
+  }
 
-    public LanguageServerDescription(String id, List<String> languageIds, List<DocumentFilter> documentFilters, List<String> fileWatchPatterns) {
-        this.id = id;
-        this.languageIds = languageIds;
-        this.documentFilters = documentFilters;
-        this.fileWatchPatterns = fileWatchPatterns;
-    }
+  public String getId() {
+    return id;
+  }
 
-    public String getId() {
-        return id;
-    }
+  public List<String> getLanguageIds() {
+    return languageIds;
+  }
 
-    public List<String> getLanguageIds() {
-        return languageIds;
-    }
+  public List<DocumentFilter> getDocumentFilters() {
+    return documentFilters;
+  }
 
-    public List<DocumentFilter> getDocumentFilters() {
-        return documentFilters;
-    }
+  public List<String> getFileWatchPatterns() {
+    return fileWatchPatterns;
+  }
 
-
-    public List<String> getFileWatchPatterns() {
-        return fileWatchPatterns;
-    }
-
-    /**
-     * @param fileWatchPatterns
-     *             must not be null
-     */
-    public void setFileWatchPatterns(List<String> fileWatchPatterns) {
-        this.fileWatchPatterns = new ArrayList<>(fileWatchPatterns);
-    }
-
-
+  /** @param fileWatchPatterns must not be null */
+  public void setFileWatchPatterns(List<String> fileWatchPatterns) {
+    this.fileWatchPatterns = new ArrayList<>(fileWatchPatterns);
+  }
 }

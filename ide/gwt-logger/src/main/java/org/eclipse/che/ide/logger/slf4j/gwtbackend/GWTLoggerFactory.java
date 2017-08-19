@@ -10,29 +10,26 @@
  */
 package org.eclipse.che.ide.logger.slf4j.gwtbackend;
 
+import static org.slf4j.Logger.ROOT_LOGGER_NAME;
+
+import java.util.HashMap;
 import org.slf4j.ILoggerFactory;
 import org.slf4j.Logger;
 
-import java.util.HashMap;
-
-import static org.slf4j.Logger.ROOT_LOGGER_NAME;
-
-/**
- *
- */
+/** */
 public class GWTLoggerFactory implements ILoggerFactory {
-    private final HashMap<String, Logger> loggers = new HashMap<>();
+  private final HashMap<String, Logger> loggers = new HashMap<>();
 
-    @Override
-    public Logger getLogger(String name) {
-        if (name == null || ROOT_LOGGER_NAME.equalsIgnoreCase(name)) {
-            name = "";
-        }
-        Logger logger = loggers.get(name);
-        if (logger == null) {
-            logger = new GwtLoggerSlf4jBackend(name);
-            loggers.put(name, logger);
-        }
-        return logger;
+  @Override
+  public Logger getLogger(String name) {
+    if (name == null || ROOT_LOGGER_NAME.equalsIgnoreCase(name)) {
+      name = "";
     }
+    Logger logger = loggers.get(name);
+    if (logger == null) {
+      logger = new GwtLoggerSlf4jBackend(name);
+      loggers.put(name, logger);
+    }
+    return logger;
+  }
 }

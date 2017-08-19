@@ -14,15 +14,15 @@ import org.eclipse.che.dto.shared.DTO;
 
 @DTO
 public interface IssueComment {
-    String getId();
+  String getId();
 
-    IssueComment withId(String id);
+  IssueComment withId(String id);
 
-    String getUrl();
+  String getUrl();
 
-    IssueComment withUrl(String url);
+  IssueComment withUrl(String url);
 
-    String getBody();
+  String getBody();
 
-    IssueComment withBody(String body);
+  IssueComment withBody(String body);
 }

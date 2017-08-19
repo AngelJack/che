@@ -12,10 +12,8 @@ package org.eclipse.che.api.core.notification;
 
 import com.google.inject.ImplementedBy;
 
-/**
- * @author andrew00x
- */
+/** @author andrew00x */
 @ImplementedBy(EventOriginServerPropagationPolicy.class)
 public interface ServerEventPropagationPolicy {
-    boolean shouldPropagated(Object event);
+  boolean shouldPropagated(Object event);
 }

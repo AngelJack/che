@@ -19,10 +19,10 @@ import org.eclipse.che.dto.shared.DTO;
  */
 @DTO
 public interface MergeRequest {
-    /** @return commit to merge */
-    String getCommit();
-    
-    void setCommit(String commit);
-    
-    MergeRequest withCommit(String commit);
+  /** @return commit to merge */
+  String getCommit();
+
+  void setCommit(String commit);
+
+  MergeRequest withCommit(String commit);
 }

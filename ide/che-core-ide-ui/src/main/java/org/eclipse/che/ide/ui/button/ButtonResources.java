@@ -13,19 +13,17 @@ package org.eclipse.che.ide.ui.button;
 import com.google.gwt.resources.client.ClientBundle;
 import com.google.gwt.resources.client.CssResource;
 
-/**
- * @author Igor Vinokur
- */
+/** @author Igor Vinokur */
 public interface ButtonResources extends ClientBundle {
 
-    interface Css extends CssResource {
-        String activeConsoleButton();
+  interface Css extends CssResource {
+    String activeConsoleButton();
 
-        String mainButtonIcon();
+    String mainButtonIcon();
 
-        String whiteColor();
-    }
+    String whiteColor();
+  }
 
-    @Source("button.css")
-    Css buttonCss();
+  @Source("button.css")
+  Css buttonCss();
 }

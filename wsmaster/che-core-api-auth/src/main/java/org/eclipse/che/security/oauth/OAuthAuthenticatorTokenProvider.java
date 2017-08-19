@@ -10,30 +10,30 @@
  */
 package org.eclipse.che.security.oauth;
 
-import org.eclipse.che.security.oauth.shared.OAuthTokenProvider;
-import org.eclipse.che.api.auth.shared.dto.OAuthToken;
-
+import java.io.IOException;
 import javax.inject.Inject;
 import javax.inject.Singleton;
-import java.io.IOException;
+import org.eclipse.che.api.auth.shared.dto.OAuthToken;
+import org.eclipse.che.security.oauth.shared.OAuthTokenProvider;
 
 /** Retrieves oAuth token with help of OAuthAuthenticatorProvider. */
 @Singleton
 public class OAuthAuthenticatorTokenProvider implements OAuthTokenProvider {
-    private final OAuthAuthenticatorProvider oAuthAuthenticatorProvider;
+  private final OAuthAuthenticatorProvider oAuthAuthenticatorProvider;
 
-    @Inject
-    public OAuthAuthenticatorTokenProvider(OAuthAuthenticatorProvider oAuthAuthenticatorProvider) {
-        this.oAuthAuthenticatorProvider = oAuthAuthenticatorProvider;
-    }
+  @Inject
+  public OAuthAuthenticatorTokenProvider(OAuthAuthenticatorProvider oAuthAuthenticatorProvider) {
+    this.oAuthAuthenticatorProvider = oAuthAuthenticatorProvider;
+  }
 
-    @Override
-    public OAuthToken getToken(String oauthProviderName, String userId) throws IOException {
-        OAuthAuthenticator oAuthAuthenticator = oAuthAuthenticatorProvider.getAuthenticator(oauthProviderName);
-        OAuthToken token;
-        if (oAuthAuthenticator != null && (token = oAuthAuthenticator.getToken(userId)) != null) {
-            return token;
-        }
-        return null;
+  @Override
+  public OAuthToken getToken(String oauthProviderName, String userId) throws IOException {
+    OAuthAuthenticator oAuthAuthenticator =
+        oAuthAuthenticatorProvider.getAuthenticator(oauthProviderName);
+    OAuthToken token;
+    if (oAuthAuthenticator != null && (token = oAuthAuthenticator.getToken(userId)) != null) {
+      return token;
     }
+    return null;
+  }
 }

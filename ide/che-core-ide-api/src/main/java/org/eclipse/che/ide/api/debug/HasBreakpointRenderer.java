@@ -12,5 +12,5 @@ package org.eclipse.che.ide.api.debug;
 
 public interface HasBreakpointRenderer {
 
-    BreakpointRenderer getBreakpointRenderer();
+  BreakpointRenderer getBreakpointRenderer();
 }

@@ -10,10 +10,8 @@
  */
 package org.eclipse.che.plugin.languageserver.ide.location;
 
-/**
- * @author Evgen Vidolob
- */
+/** @author Evgen Vidolob */
 public interface OpenLocationPresenterFactory {
 
-    OpenLocationPresenter create(String title);
+  OpenLocationPresenter create(String title);
 }

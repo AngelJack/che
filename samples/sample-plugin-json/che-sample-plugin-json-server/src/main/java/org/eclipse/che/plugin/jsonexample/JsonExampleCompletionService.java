@@ -10,24 +10,22 @@
  */
 package org.eclipse.che.plugin.jsonexample;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
 import java.util.Arrays;
 import java.util.List;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
 
-/**
- * Simple service that returns a static list of strings.
- */
+/** Simple service that returns a static list of strings. */
 @Path("json-example-completions/")
 public class JsonExampleCompletionService {
 
-    /**
-     * Returns a static list of completable keywords.
-     *
-     * @return list of keywords
-     */
-    @GET
-    public List<String> completeKeywords() {
-        return Arrays.asList("weight", "height", "address");
-    }
+  /**
+   * Returns a static list of completable keywords.
+   *
+   * @return list of keywords
+   */
+  @GET
+  public List<String> completeKeywords() {
+    return Arrays.asList("weight", "height", "address");
+  }
 }

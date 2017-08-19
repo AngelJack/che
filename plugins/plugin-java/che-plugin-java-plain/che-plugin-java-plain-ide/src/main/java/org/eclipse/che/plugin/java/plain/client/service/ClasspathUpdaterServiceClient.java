@@ -11,11 +11,9 @@
 package org.eclipse.che.plugin.java.plain.client.service;
 
 import com.google.inject.ImplementedBy;
-
+import java.util.List;
 import org.eclipse.che.api.promises.client.Promise;
 import org.eclipse.che.ide.ext.java.shared.dto.classpath.ClasspathEntryDto;
-
-import java.util.List;
 
 /**
  * Interface for the service which updates classpath.
@@ -25,13 +23,11 @@ import java.util.List;
 @ImplementedBy(ClasspathUpdaterServiceClientImpl.class)
 public interface ClasspathUpdaterServiceClient {
 
-    /**
-     * Updates classpath.
-     *
-     * @param projectPath
-     *         path to the current project
-     * @param entries
-     *         list of the classpath entries
-     */
-    Promise<Void> setRawClasspath(String projectPath, List<ClasspathEntryDto> entries);
+  /**
+   * Updates classpath.
+   *
+   * @param projectPath path to the current project
+   * @param entries list of the classpath entries
+   */
+  Promise<Void> setRawClasspath(String projectPath, List<ClasspathEntryDto> entries);
 }

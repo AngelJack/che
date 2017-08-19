@@ -10,10 +10,9 @@
  */
 package org.eclipse.che.api.ssh.server.jpa;
 
-import org.eclipse.che.api.ssh.server.model.impl.SshPairImpl;
-
 import java.io.Serializable;
 import java.util.Objects;
+import org.eclipse.che.api.ssh.server.model.impl.SshPairImpl;
 
 /**
  * Primary key for {@link SshPairImpl} entity
@@ -21,47 +20,46 @@ import java.util.Objects;
  * @author Mihail Kuznyetsov
  */
 public class SshPairPrimaryKey implements Serializable {
-    private String owner;
-    private String service;
-    private String name;
+  private String owner;
+  private String service;
+  private String name;
 
-    public SshPairPrimaryKey() {
-    }
+  public SshPairPrimaryKey() {}
 
-    public SshPairPrimaryKey(String owner, String service, String name) {
-        this.owner = owner;
-        this.service = service;
-        this.name = name;
-    }
+  public SshPairPrimaryKey(String owner, String service, String name) {
+    this.owner = owner;
+    this.service = service;
+    this.name = name;
+  }
 
-    public String getOwner() {
-        return owner;
-    }
+  public String getOwner() {
+    return owner;
+  }
 
-    public String getService() {
-        return service;
-    }
+  public String getService() {
+    return service;
+  }
 
-    public String getName() {
-        return name;
-    }
+  public String getName() {
+    return name;
+  }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (!(obj instanceof SshPairPrimaryKey)) return false;
-        final SshPairPrimaryKey other = (SshPairPrimaryKey)obj;
-        return Objects.equals(owner, other.owner) &&
-               Objects.equals(service, other.service) &&
-               Objects.equals(name, other.name);
-    }
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj) return true;
+    if (!(obj instanceof SshPairPrimaryKey)) return false;
+    final SshPairPrimaryKey other = (SshPairPrimaryKey) obj;
+    return Objects.equals(owner, other.owner)
+        && Objects.equals(service, other.service)
+        && Objects.equals(name, other.name);
+  }
 
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 31 * hash + Objects.hashCode(owner);
-        hash = 31 * hash + Objects.hashCode(service);
-        hash = 31 * hash + Objects.hashCode(name);
-        return hash;
-    }
+  @Override
+  public int hashCode() {
+    int hash = 7;
+    hash = 31 * hash + Objects.hashCode(owner);
+    hash = 31 * hash + Objects.hashCode(service);
+    hash = 31 * hash + Objects.hashCode(name);
+    return hash;
+  }
 }

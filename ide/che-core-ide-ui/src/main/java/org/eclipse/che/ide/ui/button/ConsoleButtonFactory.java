@@ -10,23 +10,18 @@
  */
 package org.eclipse.che.ide.ui.button;
 
+import javax.validation.constraints.NotNull;
 import org.vectomatic.dom.svg.ui.SVGResource;
 
-import javax.validation.constraints.NotNull;
-
-/**
- * @author Igor Vinokur
- */
+/** @author Igor Vinokur */
 public interface ConsoleButtonFactory {
-    /**
-     * Creates console button widget with special icon.
-     *
-     * @param prompt
-     *         prompt for current button which is displayed on special popup widget
-     * @param resource
-     *         icon which need set to button
-     * @return an instance of {@link ConsoleButton}
-     */
-    @NotNull
-    ConsoleButton createConsoleButton(@NotNull String prompt, @NotNull SVGResource resource);
+  /**
+   * Creates console button widget with special icon.
+   *
+   * @param prompt prompt for current button which is displayed on special popup widget
+   * @param resource icon which need set to button
+   * @return an instance of {@link ConsoleButton}
+   */
+  @NotNull
+  ConsoleButton createConsoleButton(@NotNull String prompt, @NotNull SVGResource resource);
 }

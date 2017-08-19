@@ -20,23 +20,21 @@ import org.eclipse.che.api.core.ServerException;
  */
 public final class OAuthAuthenticationException extends ServerException {
 
-    /**
-     * Constructs an instance of {@link OAuthAuthenticationException}.
-     *
-     * @param message
-     *         the exception message.
-     */
-    public OAuthAuthenticationException(final String message) {
-        super(message);
-    }
+  /**
+   * Constructs an instance of {@link OAuthAuthenticationException}.
+   *
+   * @param message the exception message.
+   */
+  public OAuthAuthenticationException(final String message) {
+    super(message);
+  }
 
-    /**
-     * Constructs an instance of {@link OAuthAuthenticationException}.
-     *
-     * @param cause
-     *         the cause of the exception.
-     */
-    public OAuthAuthenticationException(final Throwable cause) {
-        super(cause);
-    }
+  /**
+   * Constructs an instance of {@link OAuthAuthenticationException}.
+   *
+   * @param cause the cause of the exception.
+   */
+  public OAuthAuthenticationException(final Throwable cause) {
+    super(cause);
+  }
 }

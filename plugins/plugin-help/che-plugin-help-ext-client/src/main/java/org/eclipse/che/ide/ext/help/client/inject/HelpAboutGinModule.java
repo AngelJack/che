@@ -10,19 +10,17 @@
  */
 package org.eclipse.che.ide.ext.help.client.inject;
 
+import com.google.gwt.inject.client.AbstractGinModule;
 import org.eclipse.che.ide.api.extension.ExtensionGinModule;
 import org.eclipse.che.ide.ext.help.client.about.AboutView;
 import org.eclipse.che.ide.ext.help.client.about.AboutViewImpl;
 
-import com.google.gwt.inject.client.AbstractGinModule;
-
 /** @author Vitalii Parfonov */
 @ExtensionGinModule
 public class HelpAboutGinModule extends AbstractGinModule {
-    /** {@inheritDoc} */
-    @Override
-    protected void configure() {
-        bind(AboutView.class).to(AboutViewImpl.class);
-
-    }
+  /** {@inheritDoc} */
+  @Override
+  protected void configure() {
+    bind(AboutView.class).to(AboutViewImpl.class);
+  }
 }

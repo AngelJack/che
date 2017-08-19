@@ -10,14 +10,11 @@
  */
 package org.eclipse.che.plugin.debugger.ide.fqn;
 
+import javax.validation.constraints.NotNull;
 import org.eclipse.che.ide.api.resources.VirtualFile;
 
-import javax.validation.constraints.NotNull;
-
-/**
- * @author Evgen Vidolob
- */
+/** @author Evgen Vidolob */
 public interface FqnResolver {
-    @NotNull
-    String resolveFqn(@NotNull VirtualFile file);
+  @NotNull
+  String resolveFqn(@NotNull VirtualFile file);
 }

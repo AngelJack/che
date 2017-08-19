@@ -10,9 +10,5 @@
  */
 package org.eclipse.che.api.git;
 
-
-/**
- * @author andrew00x
- */
-public abstract class DiffPage implements InfoPage {
-}
+/** @author andrew00x */
+public abstract class DiffPage implements InfoPage {}

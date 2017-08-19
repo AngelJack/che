@@ -13,21 +13,19 @@ package org.eclipse.che.api.agent.shared.dto;
 import org.eclipse.che.api.agent.shared.model.AgentKey;
 import org.eclipse.che.dto.shared.DTO;
 
-/**
- * @author Anatolii Bazko
- */
+/** @author Anatolii Bazko */
 @DTO
 public interface AgentKeyDto extends AgentKey {
 
-    String getName();
+  String getName();
 
-    void setName(String name);
+  void setName(String name);
 
-    AgentKeyDto withName(String name);
+  AgentKeyDto withName(String name);
 
-    String getVersion();
+  String getVersion();
 
-    void setVersion(String version);
+  void setVersion(String version);
 
-    AgentKeyDto withVersion(String version);
+  AgentKeyDto withVersion(String version);
 }

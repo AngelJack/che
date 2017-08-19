@@ -10,31 +10,27 @@
  */
 package org.eclipse.che.plugin.docker.client.json;
 
-/**
- * @author andrew00x
- */
+/** @author andrew00x */
 public class ContainerResource {
-    private String resource;
+  private String resource;
 
-    public String getResource() {
-        return resource;
-    }
+  public String getResource() {
+    return resource;
+  }
 
-    public void setResource(String resource) {
-        this.resource = resource;
-    }
+  public void setResource(String resource) {
+    this.resource = resource;
+  }
 
-    @Override
-    public String toString() {
-        return "ContainerResource{" +
-               "resource='" + resource + '\'' +
-               '}';
-    }
+  @Override
+  public String toString() {
+    return "ContainerResource{" + "resource='" + resource + '\'' + '}';
+  }
 
-    // -------------------
+  // -------------------
 
-    public ContainerResource withResource(String resource) {
-        this.resource = resource;
-        return this;
-    }
+  public ContainerResource withResource(String resource) {
+    this.resource = resource;
+    return this;
+  }
 }

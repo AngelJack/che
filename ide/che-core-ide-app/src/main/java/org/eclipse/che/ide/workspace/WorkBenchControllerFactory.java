@@ -12,24 +12,23 @@ package org.eclipse.che.ide.workspace;
 
 import com.google.gwt.user.client.ui.SimplePanel;
 import com.google.gwt.user.client.ui.SplitLayoutPanel;
-
 import javax.validation.constraints.NotNull;
 
 /**
- * Special factory for creating instances of {@link WorkBenchPartController}. Each call of factory method returns new instance.
+ * Special factory for creating instances of {@link WorkBenchPartController}. Each call of factory
+ * method returns new instance.
  *
  * @author Dmitry Shnurenko
  */
 public interface WorkBenchControllerFactory {
 
-    /**
-     * Creates special controller using throwing parameters.
-     *
-     * @param parentPanel
-     *         parent panel
-     * @param simplePanel
-     *         child panel,changes of which should be controlled
-     * @return an instance of {@link WorkBenchPartController}
-     */
-    WorkBenchPartController createController(@NotNull SplitLayoutPanel parentPanel, @NotNull SimplePanel simplePanel);
+  /**
+   * Creates special controller using throwing parameters.
+   *
+   * @param parentPanel parent panel
+   * @param simplePanel child panel,changes of which should be controlled
+   * @return an instance of {@link WorkBenchPartController}
+   */
+  WorkBenchPartController createController(
+      @NotNull SplitLayoutPanel parentPanel, @NotNull SimplePanel simplePanel);
 }

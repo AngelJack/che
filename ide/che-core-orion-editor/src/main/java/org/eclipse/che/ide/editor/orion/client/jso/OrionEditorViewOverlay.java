@@ -19,23 +19,21 @@ import com.google.gwt.core.client.JavaScriptObject;
  */
 public class OrionEditorViewOverlay extends JavaScriptObject {
 
-    protected OrionEditorViewOverlay() {
-    }
+  protected OrionEditorViewOverlay() {}
 
-    public final native void setContents(final String contents, final String contentType) /*-{
+  public final native void setContents(final String contents, final String contentType) /*-{
         this.setContents(contents, contentType);
     }-*/;
 
-    public final native OrionEditorOverlay getEditor() /*-{
+  public final native OrionEditorOverlay getEditor() /*-{
         return this.editor;
     }-*/;
 
-    public final native void updateSettings(JavaScriptObject settings) /*-{
+  public final native void updateSettings(JavaScriptObject settings) /*-{
         return this.updateSettings(settings);
     }-*/;
 
-    public final native void setReadonly(final boolean readonly) /*-{
+  public final native void setReadonly(final boolean readonly) /*-{
         this.readonly = readonly;
     }-*/;
-
 }

@@ -18,49 +18,44 @@ import java.util.List;
  * @author Vlad Zhukovskiy
  */
 public interface RecentList<T> {
-    /**
-     * Check whether recent list is empty.
-     *
-     * @return true if empty
-     */
-    boolean isEmpty();
+  /**
+   * Check whether recent list is empty.
+   *
+   * @return true if empty
+   */
+  boolean isEmpty();
 
-    /**
-     * Add abstract item to the recent list.
-     *
-     * @param item
-     *         item to add
-     * @return true if item has been added
-     */
-    boolean add(T item);
+  /**
+   * Add abstract item to the recent list.
+   *
+   * @param item item to add
+   * @return true if item has been added
+   */
+  boolean add(T item);
 
-    /**
-     * Remove abstract item from the recent list.
-     *
-     * @param item
-     *         item to remove
-     * @return true if item has been removed
-     */
-    boolean remove(T item);
+  /**
+   * Remove abstract item from the recent list.
+   *
+   * @param item item to remove
+   * @return true if item has been removed
+   */
+  boolean remove(T item);
 
-    /**
-     * Check if item contains in recent list.
-     *
-     * @param item
-     *         item to check
-     * @return true if contains
-     */
-    boolean contains(T item);
+  /**
+   * Check if item contains in recent list.
+   *
+   * @param item item to check
+   * @return true if contains
+   */
+  boolean contains(T item);
 
-    /**
-     * Get all recent list items.
-     *
-     * @return list of abstract items
-     */
-    List<T> getAll();
+  /**
+   * Get all recent list items.
+   *
+   * @return list of abstract items
+   */
+  List<T> getAll();
 
-    /**
-     * Clear recent list.
-     */
-    void clear();
+  /** Clear recent list. */
+  void clear();
 }

@@ -10,8 +10,8 @@
  */
 package org.eclipse.che.plugin.pullrequest.client.events;
 
-import org.eclipse.che.plugin.pullrequest.client.workflow.Context;
 import com.google.gwt.event.shared.EventHandler;
+import org.eclipse.che.plugin.pullrequest.client.workflow.Context;
 
 /**
  * Handler for the {@link ContextInvalidatedEvent}.
@@ -20,11 +20,10 @@ import com.google.gwt.event.shared.EventHandler;
  */
 public interface ContextInvalidatedHandler extends EventHandler {
 
-    /**
-     * Called when {@code context} is invalidated.
-     *
-     * @param context
-     *         invalidated context
-     */
-    void onContextInvalidated(final Context context);
+  /**
+   * Called when {@code context} is invalidated.
+   *
+   * @param context invalidated context
+   */
+  void onContextInvalidated(final Context context);
 }

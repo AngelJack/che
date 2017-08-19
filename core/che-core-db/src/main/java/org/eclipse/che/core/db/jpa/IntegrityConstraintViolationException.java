@@ -13,15 +13,15 @@ package org.eclipse.che.core.db.jpa;
 import org.eclipse.che.core.db.DBErrorCode;
 
 /**
- * Throws during inserts/updates entity that restricted by referential integrity
- * and given insert/update refers to non-existing entity.
+ * Throws during inserts/updates entity that restricted by referential integrity and given
+ * insert/update refers to non-existing entity.
  *
  * @author Anton Korneta
  * @see DBErrorCode#INTEGRITY_CONSTRAINT_VIOLATION
  */
 public class IntegrityConstraintViolationException extends DetailedRollbackException {
 
-    public IntegrityConstraintViolationException(String message, Throwable cause) {
-        super(message, cause, DBErrorCode.INTEGRITY_CONSTRAINT_VIOLATION);
-    }
+  public IntegrityConstraintViolationException(String message, Throwable cause) {
+    super(message, cause, DBErrorCode.INTEGRITY_CONSTRAINT_VIOLATION);
+  }
 }

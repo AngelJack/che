@@ -18,15 +18,15 @@ import com.google.gwt.i18n.client.Messages;
  */
 public interface TestNgLocalizationConstant extends Messages {
 
-    @Key("action.testNg.run.title")
-    String actionRunTestTitle();
+  @Key("action.testNg.run.title")
+  String actionRunTestTitle();
 
-    @Key("action.testNg.run.description")
-    String actionRunTestDescription();
+  @Key("action.testNg.run.description")
+  String actionRunTestDescription();
 
-    @Key("action.testNg.debug.title")
-    String actionDebugTestTitle();
+  @Key("action.testNg.debug.title")
+  String actionDebugTestTitle();
 
-    @Key("action.testNg.debug.description")
-    String actionDebugDescription();
+  @Key("action.testNg.debug.description")
+  String actionDebugDescription();
 }

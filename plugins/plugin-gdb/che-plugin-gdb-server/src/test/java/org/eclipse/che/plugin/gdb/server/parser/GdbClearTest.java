@@ -13,21 +13,19 @@ package org.eclipse.che.plugin.gdb.server.parser;
 import org.eclipse.che.plugin.gdb.server.exception.GdbParseException;
 import org.testng.annotations.Test;
 
-/**
- * @author Anatoliy Bazko
- */
+/** @author Anatoliy Bazko */
 public class GdbClearTest {
 
-    @Test
-    public void testParse() throws Exception {
-        GdbOutput gdbOutput = GdbOutput.of("Deleted breakpoint 1\n");
+  @Test
+  public void testParse() throws Exception {
+    GdbOutput gdbOutput = GdbOutput.of("Deleted breakpoint 1\n");
 
-        GdbClear.parse(gdbOutput);
-    }
+    GdbClear.parse(gdbOutput);
+  }
 
-    @Test(expectedExceptions = GdbParseException.class)
-    public void testParseFail() throws Exception {
-        GdbOutput gdbOutput = GdbOutput.of("some text");
-        GdbClear.parse(gdbOutput);
-    }
+  @Test(expectedExceptions = GdbParseException.class)
+  public void testParseFail() throws Exception {
+    GdbOutput gdbOutput = GdbOutput.of("some text");
+    GdbClear.parse(gdbOutput);
+  }
 }

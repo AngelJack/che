@@ -10,44 +10,38 @@
  */
 package org.eclipse.che.plugin.docker.client.json;
 
-/**
- * @author andrew00x
- */
+/** @author andrew00x */
 public class ProgressDetail {
-    private long start;
-    private long current;
-    private long total;
+  private long start;
+  private long current;
+  private long total;
 
-    public long getStart() {
-        return start;
-    }
+  public long getStart() {
+    return start;
+  }
 
-    public void setStart(long start) {
-        this.start = start;
-    }
+  public void setStart(long start) {
+    this.start = start;
+  }
 
-    public long getCurrent() {
-        return current;
-    }
+  public long getCurrent() {
+    return current;
+  }
 
-    public void setCurrent(long current) {
-        this.current = current;
-    }
+  public void setCurrent(long current) {
+    this.current = current;
+  }
 
-    public long getTotal() {
-        return total;
-    }
+  public long getTotal() {
+    return total;
+  }
 
-    public void setTotal(long total) {
-        this.total = total;
-    }
+  public void setTotal(long total) {
+    this.total = total;
+  }
 
-    @Override
-    public String toString() {
-        return "ProgressDetail{" +
-               "start=" + start +
-               ", current=" + current +
-               ", total=" + total +
-               '}';
-    }
+  @Override
+  public String toString() {
+    return "ProgressDetail{" + "start=" + start + ", current=" + current + ", total=" + total + '}';
+  }
 }

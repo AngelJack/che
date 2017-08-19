@@ -19,12 +19,11 @@ import org.eclipse.che.ide.processes.ProcessTreeNode;
  */
 public interface ConsoleTreeContextMenuFactory {
 
-    /**
-     * Creates new context menu for consoles tree.
-     *
-     * @param processTreeNode
-     * @return new context menu
-     */
-    ConsoleTreeContextMenu newContextMenu(ProcessTreeNode processTreeNode);
-
+  /**
+   * Creates new context menu for consoles tree.
+   *
+   * @param processTreeNode
+   * @return new context menu
+   */
+  ConsoleTreeContextMenu newContextMenu(ProcessTreeNode processTreeNode);
 }

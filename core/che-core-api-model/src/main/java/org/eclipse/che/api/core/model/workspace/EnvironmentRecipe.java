@@ -16,25 +16,15 @@ package org.eclipse.che.api.core.model.workspace;
  * @author Alexander Garagatyi
  */
 public interface EnvironmentRecipe {
-    /**
-     * Type of the environment, e.g. docker compose.
-     */
-    String getType();
+  /** Type of the environment, e.g. docker compose. */
+  String getType();
 
-    /**
-     * Content type of the environment recipe, e.g. application/x-yaml.
-     */
-    String getContentType();
+  /** Content type of the environment recipe, e.g. application/x-yaml. */
+  String getContentType();
 
-    /**
-     * Content of an environment recipe.
-     * Content and location fields are mutually exclusive.
-     */
-    String getContent();
+  /** Content of an environment recipe. Content and location fields are mutually exclusive. */
+  String getContent();
 
-    /**
-     * Location of an environment recipe.
-     * Content and location fields are mutually exclusive.
-     */
-    String getLocation();
+  /** Location of an environment recipe. Content and location fields are mutually exclusive. */
+  String getLocation();
 }

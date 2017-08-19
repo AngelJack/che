@@ -19,13 +19,14 @@ import org.eclipse.che.commons.annotation.Nullable;
  */
 public interface ResolvingProjectStateHolderRegistry {
 
-    /**
-     * Returns the state holder of Resolving project process for the specified project type or {@code null} if none.
-     *
-     * @param projectType
-     *         the project type for which you need to get corresponding holder
-     * @return the holder of Resolving project sate process for the specified project type or {@code null} if none
-     */
-    @Nullable
-    public ResolvingProjectStateHolder getResolvingProjectStateHolder(String projectType);
+  /**
+   * Returns the state holder of Resolving project process for the specified project type or {@code
+   * null} if none.
+   *
+   * @param projectType the project type for which you need to get corresponding holder
+   * @return the holder of Resolving project sate process for the specified project type or {@code
+   *     null} if none
+   */
+  @Nullable
+  public ResolvingProjectStateHolder getResolvingProjectStateHolder(String projectType);
 }

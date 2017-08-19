@@ -12,8 +12,6 @@ package org.eclipse.che.plugin.svn.ide.common;
 
 public interface SubversionOutputConsoleFactory {
 
-    /**
-     * Create an instance of {@link SubversionOutputConsole}
-     */
-    SubversionOutputConsole create(String title);
+  /** Create an instance of {@link SubversionOutputConsole} */
+  SubversionOutputConsole create(String title);
 }

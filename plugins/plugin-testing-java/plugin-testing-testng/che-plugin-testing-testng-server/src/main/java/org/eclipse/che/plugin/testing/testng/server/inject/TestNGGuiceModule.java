@@ -12,19 +12,16 @@ package org.eclipse.che.plugin.testing.testng.server.inject;
 
 import static com.google.inject.multibindings.Multibinder.newSetBinder;
 
+import com.google.inject.AbstractModule;
 import org.eclipse.che.api.testing.server.framework.TestRunner;
 import org.eclipse.che.inject.DynaModule;
 import org.eclipse.che.plugin.testing.testng.server.TestNGRunner;
 
-import com.google.inject.AbstractModule;
-
-/**
- * @author Mirage Abeysekara
- */
+/** @author Mirage Abeysekara */
 @DynaModule
 public class TestNGGuiceModule extends AbstractModule {
-    @Override
-    protected void configure() {
-        newSetBinder(binder(), TestRunner.class).addBinding().to(TestNGRunner.class);
-    }
+  @Override
+  protected void configure() {
+    newSetBinder(binder(), TestRunner.class).addBinding().to(TestNGRunner.class);
+  }
 }

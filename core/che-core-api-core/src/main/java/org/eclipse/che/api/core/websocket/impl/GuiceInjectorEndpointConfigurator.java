@@ -11,7 +11,6 @@
 package org.eclipse.che.api.core.websocket.impl;
 
 import com.google.inject.Injector;
-
 import javax.inject.Inject;
 import javax.websocket.server.ServerEndpointConfig;
 
@@ -21,10 +20,9 @@ import javax.websocket.server.ServerEndpointConfig;
  * @author Dmitry Kuleshov
  */
 public class GuiceInjectorEndpointConfigurator extends ServerEndpointConfig.Configurator {
-    @Inject
-    private static Injector injector;
+  @Inject private static Injector injector;
 
-    public <T> T getEndpointInstance(Class<T> endpointClass) {
-        return injector.getInstance(endpointClass);
-    }
+  public <T> T getEndpointInstance(Class<T> endpointClass) {
+    return injector.getInstance(endpointClass);
+  }
 }

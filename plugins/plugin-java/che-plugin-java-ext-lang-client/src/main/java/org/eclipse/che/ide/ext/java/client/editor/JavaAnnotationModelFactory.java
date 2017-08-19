@@ -12,15 +12,13 @@ package org.eclipse.che.ide.ext.java.client.editor;
 
 import org.eclipse.che.ide.api.editor.partition.DocumentPositionMap;
 
-/**
- * Factory for {@link JavaAnnotationModel} instances.
- */
+/** Factory for {@link JavaAnnotationModel} instances. */
 public interface JavaAnnotationModelFactory {
-    /**
-     * Builds an instance of {@link JavaAnnotationModel}.
-     * 
-     * @param docPositionMap a doc position map model
-     * @return a java annotation model
-     */
-    JavaAnnotationModel create(DocumentPositionMap docPositionMap);
+  /**
+   * Builds an instance of {@link JavaAnnotationModel}.
+   *
+   * @param docPositionMap a doc position map model
+   * @return a java annotation model
+   */
+  JavaAnnotationModel create(DocumentPositionMap docPositionMap);
 }

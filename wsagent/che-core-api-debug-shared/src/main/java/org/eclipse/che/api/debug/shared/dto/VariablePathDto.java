@@ -10,17 +10,16 @@
  */
 package org.eclipse.che.api.debug.shared.dto;
 
+import java.util.List;
 import org.eclipse.che.api.debug.shared.model.VariablePath;
 import org.eclipse.che.dto.shared.DTO;
-
-import java.util.List;
 
 /** @author andrew00x */
 @DTO
 public interface VariablePathDto extends VariablePath {
-    List<String> getPath();
+  List<String> getPath();
 
-    void setPath(List<String> path);
+  void setPath(List<String> path);
 
-    VariablePathDto withPath(List<String> path);
+  VariablePathDto withPath(List<String> path);
 }

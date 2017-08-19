@@ -14,13 +14,13 @@ import org.eclipse.che.dto.shared.DTO;
 
 @DTO
 public interface ProcessStdErrEventDto extends DtoWithPid {
-    ProcessStdErrEventDto withPid(int pid);
+  ProcessStdErrEventDto withPid(int pid);
 
-    String getTime();
+  String getTime();
 
-    ProcessStdErrEventDto withTime(String time);
+  ProcessStdErrEventDto withTime(String time);
 
-    String getText();
+  String getText();
 
-    ProcessStdErrEventDto withText(String text);
+  ProcessStdErrEventDto withText(String text);
 }

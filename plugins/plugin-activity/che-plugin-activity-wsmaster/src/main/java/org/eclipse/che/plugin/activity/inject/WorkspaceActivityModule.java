@@ -11,15 +11,14 @@
 package org.eclipse.che.plugin.activity.inject;
 
 import com.google.inject.AbstractModule;
-
 import org.eclipse.che.plugin.activity.WorkspaceActivityManager;
 import org.eclipse.che.plugin.activity.WorkspaceActivityService;
 
 public class WorkspaceActivityModule extends AbstractModule {
 
-    @Override
-    protected void configure() {
-        bind(WorkspaceActivityService.class);
-        bind(WorkspaceActivityManager.class);
-    }
+  @Override
+  protected void configure() {
+    bind(WorkspaceActivityService.class);
+    bind(WorkspaceActivityManager.class);
+  }
 }

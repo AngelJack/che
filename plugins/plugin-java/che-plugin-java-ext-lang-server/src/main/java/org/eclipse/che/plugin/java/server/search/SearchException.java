@@ -10,7 +10,6 @@
  */
 package org.eclipse.che.plugin.java.server.search;
 
-
 import org.eclipse.che.plugin.java.server.JdtException;
 
 /**
@@ -19,11 +18,11 @@ import org.eclipse.che.plugin.java.server.JdtException;
  * @author Evgen Vidolob
  */
 public class SearchException extends JdtException {
-    public SearchException(String message) {
-        super(message);
-    }
+  public SearchException(String message) {
+    super(message);
+  }
 
-    public SearchException(String message, Throwable cause) {
-        super(message, cause);
-    }
+  public SearchException(String message, Throwable cause) {
+    super(message, cause);
+  }
 }

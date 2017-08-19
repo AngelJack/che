@@ -10,9 +10,8 @@
  */
 package org.eclipse.che.ide.projectimport.wizard;
 
-import org.eclipse.che.ide.api.project.MutableProjectConfig;
-
 import javax.validation.constraints.NotNull;
+import org.eclipse.che.ide.api.project.MutableProjectConfig;
 
 /**
  * Helps to create new instances of {@link ImportWizard}.
@@ -20,5 +19,5 @@ import javax.validation.constraints.NotNull;
  * @author Artem Zatsarynnyi
  */
 public interface ImportWizardFactory {
-    ImportWizard newWizard(@NotNull MutableProjectConfig dataObject);
+  ImportWizard newWizard(@NotNull MutableProjectConfig dataObject);
 }

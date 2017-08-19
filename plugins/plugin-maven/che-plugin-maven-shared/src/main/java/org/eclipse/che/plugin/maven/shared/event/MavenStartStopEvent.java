@@ -10,10 +10,10 @@
  */
 package org.eclipse.che.plugin.maven.shared.event;
 
-/**
- * Event that describes Maven start notification.
- */
+/** Event that describes Maven start notification. */
 public interface MavenStartStopEvent extends MavenOutputEvent {
-    /** Returns {@code true} if the process of resolving is started otherwise returns {@code false}. */
-    boolean isStart();
+  /**
+   * Returns {@code true} if the process of resolving is started otherwise returns {@code false}.
+   */
+  boolean isStart();
 }

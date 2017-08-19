@@ -16,19 +16,18 @@ package org.eclipse.che.ide.ui.loaders.request;
  * @author Vlad Zhukovskiy
  */
 public interface LoaderFactory {
-    /**
-     * Create new loader with default message.
-     *
-     * @return new loader
-     */
-    MessageLoader newLoader();
+  /**
+   * Create new loader with default message.
+   *
+   * @return new loader
+   */
+  MessageLoader newLoader();
 
-    /**
-     * Create new loader with initial message.
-     *
-     * @param message
-     *         initial message
-     * @return new loader with initial message
-     */
-    MessageLoader newLoader(String message);
+  /**
+   * Create new loader with initial message.
+   *
+   * @param message initial message
+   * @return new loader with initial message
+   */
+  MessageLoader newLoader(String message);
 }

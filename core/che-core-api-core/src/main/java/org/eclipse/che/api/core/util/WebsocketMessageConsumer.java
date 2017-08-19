@@ -12,7 +12,6 @@ package org.eclipse.che.api.core.util;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-
 import java.io.IOException;
 
 /**
@@ -21,16 +20,16 @@ import java.io.IOException;
  * @author Alexander Garagatyi
  */
 public class WebsocketMessageConsumer<T> extends AbstractMessageConsumer<T> {
-    private static final Gson GSON = new GsonBuilder().disableHtmlEscaping().create();
+  private static final Gson GSON = new GsonBuilder().disableHtmlEscaping().create();
 
-    private final LineConsumer messageSender;
+  private final LineConsumer messageSender;
 
-    public WebsocketMessageConsumer(String channel) {
-        this.messageSender = new WebsocketLineConsumer(channel);
-    }
+  public WebsocketMessageConsumer(String channel) {
+    this.messageSender = new WebsocketLineConsumer(channel);
+  }
 
-    @Override
-    public void consume(T message) throws IOException {
-        messageSender.writeLine(GSON.toJson(message));
-    }
+  @Override
+  public void consume(T message) throws IOException {
+    messageSender.writeLine(GSON.toJson(message));
+  }
 }

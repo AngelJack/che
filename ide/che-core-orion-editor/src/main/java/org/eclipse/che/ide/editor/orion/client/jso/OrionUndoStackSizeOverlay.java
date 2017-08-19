@@ -14,15 +14,13 @@ import com.google.gwt.core.client.JavaScriptObject;
 
 public class OrionUndoStackSizeOverlay extends JavaScriptObject {
 
-    protected OrionUndoStackSizeOverlay() {
-    }
+  protected OrionUndoStackSizeOverlay() {}
 
-    public final native int getRedo() /*-{
+  public final native int getRedo() /*-{
         return this.redo;
     }-*/;
 
-
-    public final native int getUndo() /*-{
+  public final native int getUndo() /*-{
         return this.undo;
     }-*/;
 }

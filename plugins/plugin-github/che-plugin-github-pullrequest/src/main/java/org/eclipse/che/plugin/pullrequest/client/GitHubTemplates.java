@@ -18,15 +18,15 @@ import org.eclipse.che.plugin.pullrequest.client.vcs.hosting.HostingServiceTempl
  * @author Kevin Pollet
  */
 public interface GitHubTemplates extends HostingServiceTemplates {
-    @DefaultMessage("git@github.com:{0}/{1}.git")
-    String sshUrlTemplate(String username, String repository);
+  @DefaultMessage("git@github.com:{0}/{1}.git")
+  String sshUrlTemplate(String username, String repository);
 
-    @DefaultMessage("https://github.com/{0}/{1}.git")
-    String httpUrlTemplate(String username, String repository);
+  @DefaultMessage("https://github.com/{0}/{1}.git")
+  String httpUrlTemplate(String username, String repository);
 
-    @DefaultMessage("https://github.com/{0}/{1}/pull/{2}")
-    String pullRequestUrlTemplate(String username, String repository, String pullRequestNumber);
+  @DefaultMessage("https://github.com/{0}/{1}/pull/{2}")
+  String pullRequestUrlTemplate(String username, String repository, String pullRequestNumber);
 
-    @DefaultMessage("[![Review]({0}//{1}/factory/resources/factory-review.svg)]({2})")
-    String formattedReviewFactoryUrlTemplate(String protocol, String host, String reviewFactoryUrl);
+  @DefaultMessage("[![Review]({0}//{1}/factory/resources/factory-review.svg)]({2})")
+  String formattedReviewFactoryUrlTemplate(String protocol, String host, String reviewFactoryUrl);
 }

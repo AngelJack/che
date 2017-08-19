@@ -12,29 +12,26 @@ package org.eclipse.che.ide.ext.java.shared;
 
 import org.eclipse.che.dto.shared.DTO;
 
-/**
- * @author Evgen Vidolob
- */
+/** @author Evgen Vidolob */
 @DTO
 public interface OpenDeclarationDescriptor {
-    int getLibId();
+  int getLibId();
 
-    void setLibId(int libId);
+  void setLibId(int libId);
 
-    int getOffset();
+  int getOffset();
 
-    void setOffset(int offset);
+  void setOffset(int offset);
 
-    int getLength();
+  int getLength();
 
-    void setLength(int length);
+  void setLength(int length);
 
-    String getPath();
+  String getPath();
 
-    void setPath(String path);
+  void setPath(String path);
 
-    boolean isBinary();
+  boolean isBinary();
 
-    void setBinary(boolean binary);
-
+  void setBinary(boolean binary);
 }

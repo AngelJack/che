@@ -17,18 +17,12 @@ package org.eclipse.che.api.system.shared;
  */
 public enum SystemStatus {
 
-    /**
-     * The system is running, which means that it wasn't stopped via system API.
-     */
-    RUNNING,
+  /** The system is running, which means that it wasn't stopped via system API. */
+  RUNNING,
 
-    /**
-     * The system stops corresponding services and will be eventually {@link #READY_TO_SHUTDOWN}.
-     */
-    PREPARING_TO_SHUTDOWN,
+  /** The system stops corresponding services and will be eventually {@link #READY_TO_SHUTDOWN}. */
+  PREPARING_TO_SHUTDOWN,
 
-    /**
-     * All the necessary services are stopped, system is ready to be shut down.
-     */
-    READY_TO_SHUTDOWN
+  /** All the necessary services are stopped, system is ready to be shut down. */
+  READY_TO_SHUTDOWN
 }

@@ -17,18 +17,12 @@ package org.eclipse.che.api.core.model.factory;
  */
 public interface Ide {
 
-    /**
-     * Returns configuration of IDE on application loaded event
-     */
-    OnAppLoaded getOnAppLoaded();
+  /** Returns configuration of IDE on application loaded event */
+  OnAppLoaded getOnAppLoaded();
 
-    /**
-     * Returns configuration of IDE on application closed event
-     */
-    OnAppClosed getOnAppClosed();
+  /** Returns configuration of IDE on application closed event */
+  OnAppClosed getOnAppClosed();
 
-    /**
-     * Returns configuration of IDE on projects loaded event
-     */
-    OnProjectsLoaded getOnProjectsLoaded();
+  /** Returns configuration of IDE on projects loaded event */
+  OnProjectsLoaded getOnProjectsLoaded();
 }

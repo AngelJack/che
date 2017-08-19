@@ -16,33 +16,33 @@ import com.google.gwt.event.shared.GwtEvent;
 /** Event fired when process's output panel has been closed. */
 public class ProcessOutputClosedEvent extends GwtEvent<ProcessOutputClosedEvent.Handler> {
 
-    public static final Type<ProcessOutputClosedEvent.Handler> TYPE = new Type<>();
+  public static final Type<ProcessOutputClosedEvent.Handler> TYPE = new Type<>();
 
-    private final int pid;
+  private final int pid;
 
-    /** Creates new event with the given PID. */
-    public ProcessOutputClosedEvent(int pid) {
-        this.pid = pid;
-    }
+  /** Creates new event with the given PID. */
+  public ProcessOutputClosedEvent(int pid) {
+    this.pid = pid;
+  }
 
-    /** PID of the associated process. */
-    public int getPid() {
-        return pid;
-    }
+  /** PID of the associated process. */
+  public int getPid() {
+    return pid;
+  }
 
-    @Override
-    public Type<ProcessOutputClosedEvent.Handler> getAssociatedType() {
-        return TYPE;
-    }
+  @Override
+  public Type<ProcessOutputClosedEvent.Handler> getAssociatedType() {
+    return TYPE;
+  }
 
-    @Override
-    protected void dispatch(Handler handler) {
-        handler.onProcessOutputClosed(this);
-    }
+  @Override
+  protected void dispatch(Handler handler) {
+    handler.onProcessOutputClosed(this);
+  }
 
-    public interface Handler extends EventHandler {
+  public interface Handler extends EventHandler {
 
-        /** Called when process's output panel has been closed. */
-        void onProcessOutputClosed(ProcessOutputClosedEvent event);
-    }
+    /** Called when process's output panel has been closed. */
+    void onProcessOutputClosed(ProcessOutputClosedEvent event);
+  }
 }

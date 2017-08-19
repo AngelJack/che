@@ -10,46 +10,43 @@
  */
 package org.eclipse.che.api.ssh.shared.dto;
 
+import java.util.List;
 import org.eclipse.che.api.core.rest.shared.dto.Hyperlinks;
 import org.eclipse.che.api.core.rest.shared.dto.Link;
 import org.eclipse.che.api.ssh.shared.model.SshPair;
 import org.eclipse.che.dto.shared.DTO;
 
-import java.util.List;
-
-/**
- * @author Sergii Leschenko
- */
+/** @author Sergii Leschenko */
 @DTO
 public interface SshPairDto extends SshPair, Hyperlinks {
-    @Override
-    String getService();
+  @Override
+  String getService();
 
-    void setService(String service);
+  void setService(String service);
 
-    SshPairDto withService(String service);
+  SshPairDto withService(String service);
 
-    @Override
-    String getName();
+  @Override
+  String getName();
 
-    void setName(String name);
+  void setName(String name);
 
-    SshPairDto withName(String name);
+  SshPairDto withName(String name);
 
-    @Override
-    String getPublicKey();
+  @Override
+  String getPublicKey();
 
-    void setPublicKey(String publicKey);
+  void setPublicKey(String publicKey);
 
-    SshPairDto withPublicKey(String publicKey);
+  SshPairDto withPublicKey(String publicKey);
 
-    @Override
-    String getPrivateKey();
+  @Override
+  String getPrivateKey();
 
-    void setPrivateKey(String privateKey);
+  void setPrivateKey(String privateKey);
 
-    SshPairDto withPrivateKey(String privateKey);
+  SshPairDto withPrivateKey(String privateKey);
 
-    @Override
-    SshPairDto withLinks(List<Link> links);
+  @Override
+  SshPairDto withLinks(List<Link> links);
 }

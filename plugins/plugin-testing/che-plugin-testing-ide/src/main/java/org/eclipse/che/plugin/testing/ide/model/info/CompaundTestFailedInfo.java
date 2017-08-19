@@ -10,30 +10,27 @@
  */
 package org.eclipse.che.plugin.testing.ide.model.info;
 
-import org.eclipse.che.plugin.testing.ide.model.Printer;
-
 import java.util.ArrayList;
 import java.util.List;
+import org.eclipse.che.plugin.testing.ide.model.Printer;
 
-/**
- * Describes information about failed tests.
- */
+/** Describes information about failed tests. */
 public class CompaundTestFailedInfo extends TestFailedInfo {
 
-    private final List<TestFailedInfo> failedTests = new ArrayList<>();
+  private final List<TestFailedInfo> failedTests = new ArrayList<>();
 
-    public CompaundTestFailedInfo(String message, String stackTrace) {
-        super(message, stackTrace);
-    }
+  public CompaundTestFailedInfo(String message, String stackTrace) {
+    super(message, stackTrace);
+  }
 
-    public void addFailedTest(TestFailedInfo failedInfo) {
-        failedTests.add(failedInfo);
-    }
+  public void addFailedTest(TestFailedInfo failedInfo) {
+    failedTests.add(failedInfo);
+  }
 
-    @Override
-    public void print(Printer printer) {
-        for (TestFailedInfo failedTest : failedTests) {
-            failedTest.print(printer);
-        }
+  @Override
+  public void print(Printer printer) {
+    for (TestFailedInfo failedTest : failedTests) {
+      failedTest.print(printer);
     }
+  }
 }

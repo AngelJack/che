@@ -11,13 +11,10 @@
 package org.eclipse.che.api.core.notification;
 
 import com.google.inject.ImplementedBy;
-
 import java.net.URI;
 
-/**
- * @author andrew00x
- */
+/** @author andrew00x */
 @ImplementedBy(EventOriginClientPropagationPolicy.class)
 public interface ClientEventPropagationPolicy {
-    boolean shouldPropagated(URI uri, Object event);
+  boolean shouldPropagated(URI uri, Object event);
 }

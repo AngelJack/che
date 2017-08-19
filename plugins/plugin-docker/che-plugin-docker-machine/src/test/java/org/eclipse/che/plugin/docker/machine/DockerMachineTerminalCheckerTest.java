@@ -15,19 +15,14 @@ import org.mockito.testng.MockitoTestNGListener;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-
-/**
- * @author Max Shaposhnik
- *
- */
-
+/** @author Max Shaposhnik */
 @Listeners(value = {MockitoTestNGListener.class})
 public class DockerMachineTerminalCheckerTest {
 
-    @Test(expectedExceptions = RuntimeException.class)
-    public void shouldThrowRuntimeExceptionIfNoTerminalArchivePresent() {
-        DockerMachineTerminalChecker checker = new DockerMachineTerminalChecker("/no/such/path");
+  @Test(expectedExceptions = RuntimeException.class)
+  public void shouldThrowRuntimeExceptionIfNoTerminalArchivePresent() {
+    DockerMachineTerminalChecker checker = new DockerMachineTerminalChecker("/no/such/path");
 
-        checker.start();
-    }
+    checker.start();
+  }
 }

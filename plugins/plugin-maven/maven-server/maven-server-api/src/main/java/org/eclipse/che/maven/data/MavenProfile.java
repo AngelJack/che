@@ -16,36 +16,36 @@ package org.eclipse.che.maven.data;
  * @author Evgen Vidolob
  */
 public class MavenProfile extends MavenModelBase {
-    private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 1L;
 
-    private final String id;
-    private final String source;
-    private final MavenBuild build = new MavenBuild();
+  private final String id;
+  private final String source;
+  private final MavenBuild build = new MavenBuild();
 
-    private MavenActivation activation;
+  private MavenActivation activation;
 
-    public MavenProfile(String id, String source) {
-        this.id = id;
-        this.source = source;
-    }
+  public MavenProfile(String id, String source) {
+    this.id = id;
+    this.source = source;
+  }
 
-    public String getId() {
-        return id;
-    }
+  public String getId() {
+    return id;
+  }
 
-    public String getSource() {
-        return source;
-    }
+  public String getSource() {
+    return source;
+  }
 
-    public MavenBuild getBuild() {
-        return build;
-    }
+  public MavenBuild getBuild() {
+    return build;
+  }
 
-    public MavenActivation getActivation() {
-        return activation;
-    }
+  public MavenActivation getActivation() {
+    return activation;
+  }
 
-    public void setActivation(MavenActivation activation) {
-        this.activation = activation;
-    }
+  public void setActivation(MavenActivation activation) {
+    this.activation = activation;
+  }
 }

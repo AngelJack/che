@@ -19,46 +19,38 @@ import com.google.gwt.user.client.ui.DockLayoutPanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.inject.Inject;
 
-/**
- * Implementation of the {@link SchemaUrlPageView}.
- */
+/** Implementation of the {@link SchemaUrlPageView}. */
 class SchemaUrlPageViewImpl extends Composite implements SchemaUrlPageView {
 
-    @UiField
-    TextBox schemaUrl;
-    private SchemaUrlChangedDelegate delegate;
+  @UiField TextBox schemaUrl;
+  private SchemaUrlChangedDelegate delegate;
 
-    /**
-     * Constructor.
-     *
-     * @param uiBinder
-     *         the UI binder that initializes the page
-     */
-    @Inject
-    public SchemaUrlPageViewImpl(JsonExamplePageViewUiBinder uiBinder) {
-        initWidget(uiBinder.createAndBindUi(this));
-    }
+  /**
+   * Constructor.
+   *
+   * @param uiBinder the UI binder that initializes the page
+   */
+  @Inject
+  public SchemaUrlPageViewImpl(JsonExamplePageViewUiBinder uiBinder) {
+    initWidget(uiBinder.createAndBindUi(this));
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public void setDelegate(SchemaUrlChangedDelegate delegate) {
-        this.delegate = delegate;
-    }
+  /** {@inheritDoc} */
+  @Override
+  public void setDelegate(SchemaUrlChangedDelegate delegate) {
+    this.delegate = delegate;
+  }
 
-    /**
-     * Update handler for the schema URL field.
-     *
-     * @param event
-     *         the event that caused the schemaUrl field to update
-     */
-    @UiHandler("schemaUrl")
-    void onSchemaUrlChanged(KeyUpEvent event) {
-        delegate.schemaUrlChanged(schemaUrl.getValue());
-    }
+  /**
+   * Update handler for the schema URL field.
+   *
+   * @param event the event that caused the schemaUrl field to update
+   */
+  @UiHandler("schemaUrl")
+  void onSchemaUrlChanged(KeyUpEvent event) {
+    delegate.schemaUrlChanged(schemaUrl.getValue());
+  }
 
-    /**
-     * UI binder for our page.
-     */
-    interface JsonExamplePageViewUiBinder extends UiBinder<DockLayoutPanel, SchemaUrlPageViewImpl> {
-    }
+  /** UI binder for our page. */
+  interface JsonExamplePageViewUiBinder extends UiBinder<DockLayoutPanel, SchemaUrlPageViewImpl> {}
 }

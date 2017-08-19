@@ -17,16 +17,16 @@ package org.eclipse.che.plugin.jdb.ide;
  */
 public interface JavaDebuggerLocalizationConstant extends com.google.gwt.i18n.client.Messages {
 
-    /* JavaDebugConfigurationPage */
-    @Key("view.javaDebugConfigurationPage.notice")
-    String javaDebugConfigurationPageViewNotice();
+  /* JavaDebugConfigurationPage */
+  @Key("view.javaDebugConfigurationPage.notice")
+  String javaDebugConfigurationPageViewNotice();
 
-    @Key("view.javaDebugConfigurationPage.devHostCheckbox")
-    String javaDebugConfigurationPageViewDevHostCheckbox();
+  @Key("view.javaDebugConfigurationPage.devHostCheckbox")
+  String javaDebugConfigurationPageViewDevHostCheckbox();
 
-    @Key("view.javaDebugConfigurationPage.hostLabel")
-    String javaDebugConfigurationPageViewHostLabel();
+  @Key("view.javaDebugConfigurationPage.hostLabel")
+  String javaDebugConfigurationPageViewHostLabel();
 
-    @Key("view.javaDebugConfigurationPage.portLabel")
-    String javaDebugConfigurationPageViewPortLabel();
+  @Key("view.javaDebugConfigurationPage.portLabel")
+  String javaDebugConfigurationPageViewPortLabel();
 }

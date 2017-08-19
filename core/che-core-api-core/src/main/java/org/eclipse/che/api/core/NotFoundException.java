@@ -14,18 +14,18 @@ import org.eclipse.che.api.core.rest.shared.dto.ServiceError;
 
 /**
  * A {@code NotFoundException} is thrown if requested resource was not found.
- * <p/>
- * Typically in REST API such errors are converted in HTTP response with status 404.
+ *
+ * <p>Typically in REST API such errors are converted in HTTP response with status 404.
  *
  * @author andrew00x
  */
 @SuppressWarnings("serial")
 public class NotFoundException extends ApiException {
-    public NotFoundException(String message) {
-        super(message);
-    }
+  public NotFoundException(String message) {
+    super(message);
+  }
 
-    public NotFoundException(ServiceError serviceError) {
-        super(serviceError);
-    }
+  public NotFoundException(ServiceError serviceError) {
+    super(serviceError);
+  }
 }

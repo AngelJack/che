@@ -22,27 +22,25 @@ import org.eclipse.che.api.workspace.server.model.impl.ExtendedMachineImpl;
  * @author Alexander Garagatyi
  */
 public interface InfrastructureProvisioner {
-    /**
-     * Modifies environment config and internal environment representation with everything needed for infrastructure of workspace.
-     *
-     * @param envConfig
-     *         configuration of environment
-     * @param internalEnv
-     *         internal environment representation
-     * @throws EnvironmentException
-     *         if any error occurs
-     */
-    void provision(EnvironmentImpl envConfig, CheServicesEnvironmentImpl internalEnv) throws EnvironmentException;
+  /**
+   * Modifies environment config and internal environment representation with everything needed for
+   * infrastructure of workspace.
+   *
+   * @param envConfig configuration of environment
+   * @param internalEnv internal environment representation
+   * @throws EnvironmentException if any error occurs
+   */
+  void provision(EnvironmentImpl envConfig, CheServicesEnvironmentImpl internalEnv)
+      throws EnvironmentException;
 
-    /**
-     * Modifies machine config and internal machine representation with everything needed for infrastructure of workspace.
-     *
-     * @param machineConfig
-     *         configuration of machine
-     * @param internalMachine
-     *         internal machine representation
-     * @throws EnvironmentException
-     *         if any error occurs
-     */
-    void provision(ExtendedMachineImpl machineConfig, CheServiceImpl internalMachine) throws EnvironmentException;
+  /**
+   * Modifies machine config and internal machine representation with everything needed for
+   * infrastructure of workspace.
+   *
+   * @param machineConfig configuration of machine
+   * @param internalMachine internal machine representation
+   * @throws EnvironmentException if any error occurs
+   */
+  void provision(ExtendedMachineImpl machineConfig, CheServiceImpl internalMachine)
+      throws EnvironmentException;
 }

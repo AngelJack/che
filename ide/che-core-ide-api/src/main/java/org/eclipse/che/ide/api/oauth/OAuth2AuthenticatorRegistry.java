@@ -11,13 +11,13 @@
 package org.eclipse.che.ide.api.oauth;
 
 /**
- *  Authenticators registry.
+ * Authenticators registry.
  *
  * @author Vitalii Parfonov
  */
 public interface OAuth2AuthenticatorRegistry {
 
-    void registerAuthenticator(String providerName, OAuth2Authenticator oAuth2Authenticator);
+  void registerAuthenticator(String providerName, OAuth2Authenticator oAuth2Authenticator);
 
-    OAuth2Authenticator getAuthenticator(String providerName);
+  OAuth2Authenticator getAuthenticator(String providerName);
 }

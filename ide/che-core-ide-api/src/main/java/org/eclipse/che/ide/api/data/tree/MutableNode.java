@@ -16,11 +16,10 @@ package org.eclipse.che.ide.api.data.tree;
  * @author Vlad Zhukovskiy
  */
 public interface MutableNode {
-    /**
-     * Set current node status into leaf.
-     *
-     * @param leaf
-     *         true if node should be transformed into leaf
-     */
-    void setLeaf(boolean leaf);
+  /**
+   * Set current node status into leaf.
+   *
+   * @param leaf true if node should be transformed into leaf
+   */
+  void setLeaf(boolean leaf);
 }

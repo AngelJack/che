@@ -14,19 +14,19 @@ import com.sun.jdi.Value;
 
 /** @author andrew00x */
 public class ReadOnlyValue implements ExpressionValue {
-    private final Value value;
+  private final Value value;
 
-    public ReadOnlyValue(Value value) {
-        this.value = value;
-    }
+  public ReadOnlyValue(Value value) {
+    this.value = value;
+  }
 
-    @Override
-    public Value getValue() {
-        return value;
-    }
+  @Override
+  public Value getValue() {
+    return value;
+  }
 
-    @Override
-    public void setValue(Value value) {
-        throw new ExpressionException("Value is read only. ");
-    }
+  @Override
+  public void setValue(Value value) {
+    throw new ExpressionException("Value is read only. ");
+  }
 }

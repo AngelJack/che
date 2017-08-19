@@ -13,17 +13,16 @@ package org.eclipse.che.ide.dto;
 /**
  * Provides implementation of DTO interface.
  *
- * @param <DTO>
- *         the type of DTO interface which implementation this provider provides
+ * @param <DTO> the type of DTO interface which implementation this provider provides
  * @author Artem Zatsarynnyi
  */
 public interface DtoProvider<DTO> {
-    /** Get type of interface which implementation this provider provides. */
-    Class<? extends DTO> getImplClass();
+  /** Get type of interface which implementation this provider provides. */
+  Class<? extends DTO> getImplClass();
 
-    /** Provides implementation of DTO interface from the specified JSON string. */
-    DTO fromJson(String json);
+  /** Provides implementation of DTO interface from the specified JSON string. */
+  DTO fromJson(String json);
 
-    /** Get new implementation of DTO interface. */
-    DTO newInstance();
+  /** Get new implementation of DTO interface. */
+  DTO newInstance();
 }

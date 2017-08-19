@@ -23,20 +23,19 @@ import org.eclipse.che.ide.menu.ContextMenu;
  *
  * @author Vitaliy Guliy
  */
-
 public class ConsoleTreeContextMenu extends ContextMenu {
 
-    @Inject
-    public ConsoleTreeContextMenu(ActionManager actionManager,
-                                  KeyBindingAgent keyBindingAgent,
-                                  Provider<PerspectiveManager> managerProvider) {
-        super(actionManager, keyBindingAgent, managerProvider);
-    }
+  @Inject
+  public ConsoleTreeContextMenu(
+      ActionManager actionManager,
+      KeyBindingAgent keyBindingAgent,
+      Provider<PerspectiveManager> managerProvider) {
+    super(actionManager, keyBindingAgent, managerProvider);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    protected String getGroupMenu() {
-        return IdeActions.GROUP_CONSOLES_TREE_CONTEXT_MENU;
-    }
-
+  /** {@inheritDoc} */
+  @Override
+  protected String getGroupMenu() {
+    return IdeActions.GROUP_CONSOLES_TREE_CONTEXT_MENU;
+  }
 }

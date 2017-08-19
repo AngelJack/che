@@ -14,18 +14,17 @@ import org.eclipse.che.ide.api.editor.text.Position;
 
 public interface CursorModel {
 
-    /**
-     * Move cursor to offset.
-     *
-     * @param offset
-     *         the offset
-     */
-    void setCursorPosition(int offset);
+  /**
+   * Move cursor to offset.
+   *
+   * @param offset the offset
+   */
+  void setCursorPosition(int offset);
 
-    /**
-     * Get cursor position
-     *
-     * @return the position of cursor.
-     */
-    Position getCursorPosition();
+  /**
+   * Get cursor position
+   *
+   * @return the position of cursor.
+   */
+  Position getCursorPosition();
 }

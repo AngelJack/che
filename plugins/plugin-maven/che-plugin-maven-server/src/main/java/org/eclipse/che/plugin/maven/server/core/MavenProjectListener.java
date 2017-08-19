@@ -10,18 +10,16 @@
  */
 package org.eclipse.che.plugin.maven.server.core;
 
+import java.util.List;
+import java.util.Map;
 import org.eclipse.che.plugin.maven.server.core.project.MavenProject;
 import org.eclipse.che.plugin.maven.server.core.project.MavenProjectModifications;
 
-import java.util.List;
-import java.util.Map;
-
-/**
- * @author Evgen Vidolob
- */
+/** @author Evgen Vidolob */
 public interface MavenProjectListener {
 
-    void projectResolved(MavenProject project, MavenProjectModifications modifications);
+  void projectResolved(MavenProject project, MavenProjectModifications modifications);
 
-    void projectUpdated(Map<MavenProject, MavenProjectModifications> updated, List<MavenProject> removed);
+  void projectUpdated(
+      Map<MavenProject, MavenProjectModifications> updated, List<MavenProject> removed);
 }

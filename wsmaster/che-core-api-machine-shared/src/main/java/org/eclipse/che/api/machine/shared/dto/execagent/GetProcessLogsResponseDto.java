@@ -12,20 +12,18 @@ package org.eclipse.che.api.machine.shared.dto.execagent;
 
 import org.eclipse.che.dto.shared.DTO;
 
-/**
- * @author Dmitry Kuleshov
- */
+/** @author Dmitry Kuleshov */
 @DTO
 public interface GetProcessLogsResponseDto {
-    String getKind();
+  String getKind();
 
-    GetProcessLogsResponseDto withKind(String kind);
+  GetProcessLogsResponseDto withKind(String kind);
 
-    String getTime();
+  String getTime();
 
-    GetProcessLogsResponseDto withTime(String time);
+  GetProcessLogsResponseDto withTime(String time);
 
-    String getText();
+  String getText();
 
-    GetProcessLogsResponseDto withText(String text);
+  GetProcessLogsResponseDto withText(String text);
 }

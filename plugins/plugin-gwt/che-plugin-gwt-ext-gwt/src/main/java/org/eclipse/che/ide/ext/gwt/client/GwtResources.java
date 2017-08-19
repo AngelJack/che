@@ -11,7 +11,6 @@
 package org.eclipse.che.ide.ext.gwt.client;
 
 import com.google.gwt.resources.client.ClientBundle;
-
 import org.vectomatic.dom.svg.ui.SVGResource;
 
 /**
@@ -21,6 +20,6 @@ import org.vectomatic.dom.svg.ui.SVGResource;
  */
 public interface GwtResources extends ClientBundle {
 
-    @Source("images/gwt-command-type.svg")
-    SVGResource gwtCommandType();
+  @Source("images/gwt-command-type.svg")
+  SVGResource gwtCommandType();
 }

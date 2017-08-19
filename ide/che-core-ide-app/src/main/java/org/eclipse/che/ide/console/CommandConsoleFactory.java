@@ -11,19 +11,18 @@
 package org.eclipse.che.ide.console;
 
 import com.google.inject.name.Named;
-
 import org.eclipse.che.api.core.model.machine.Machine;
-import org.eclipse.che.ide.api.outputconsole.OutputConsole;
 import org.eclipse.che.ide.api.command.CommandImpl;
+import org.eclipse.che.ide.api.outputconsole.OutputConsole;
 
 /** @author Artem Zatsarynnyi */
 public interface CommandConsoleFactory {
 
-    /** Create the instance of {@link CommandOutputConsole} for the given {@code command}. */
-    @Named("command")
-    CommandOutputConsole create(CommandImpl command, Machine machine);
+  /** Create the instance of {@link CommandOutputConsole} for the given {@code command}. */
+  @Named("command")
+  CommandOutputConsole create(CommandImpl command, Machine machine);
 
-    /** Create the instance of {@link DefaultOutputConsole} for the given title. */
-    @Named("default")
-    OutputConsole create(String title);
+  /** Create the instance of {@link DefaultOutputConsole} for the given title. */
+  @Named("default")
+  OutputConsole create(String title);
 }

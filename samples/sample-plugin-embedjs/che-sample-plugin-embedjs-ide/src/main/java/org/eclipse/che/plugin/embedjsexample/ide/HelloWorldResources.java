@@ -16,9 +16,8 @@ import org.vectomatic.dom.svg.ui.SVGResource;
 
 public interface HelloWorldResources extends ClientBundle {
 
-    HelloWorldResources INSTANCE = GWT.create(HelloWorldResources.class);
+  HelloWorldResources INSTANCE = GWT.create(HelloWorldResources.class);
 
-    @Source("svg/icon.svg")
-    SVGResource icon();
-
+  @Source("svg/icon.svg")
+  SVGResource icon();
 }

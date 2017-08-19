@@ -16,5 +16,7 @@ package org.eclipse.che.commons.lang.execution;
  * @author Evgen Vidolob
  */
 public enum ProcessOutputType {
-    SYSTEM, STDOUT, STDERR
+  SYSTEM,
+  STDOUT,
+  STDERR
 }

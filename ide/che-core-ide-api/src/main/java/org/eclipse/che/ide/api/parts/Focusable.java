@@ -17,16 +17,13 @@ package org.eclipse.che.ide.api.parts;
  */
 public interface Focusable {
 
-    /**
-     * Explicitly focus/unfocus this view. Only one view can be focused at a time.
-     */
-    void setFocus(boolean focused);
+  /** Explicitly focus/unfocus this view. Only one view can be focused at a time. */
+  void setFocus(boolean focused);
 
-    /**
-     * Check is this view focused.
-     *
-     * @return <b>true</b> if view has focus, otherwise return <b>false</b>
-     */
-    boolean isFocused();
-
+  /**
+   * Check is this view focused.
+   *
+   * @return <b>true</b> if view has focus, otherwise return <b>false</b>
+   */
+  boolean isFocused();
 }

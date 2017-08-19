@@ -19,6 +19,9 @@ import org.eclipse.che.ide.api.command.CommandImpl;
  */
 public interface ExecuteCommandActionFactory {
 
-    /** Creates new instance of {@link ExecuteCommandAction} for executing the specified {@code command}. */
-    ExecuteCommandAction create(CommandImpl command);
+  /**
+   * Creates new instance of {@link ExecuteCommandAction} for executing the specified {@code
+   * command}.
+   */
+  ExecuteCommandAction create(CommandImpl command);
 }

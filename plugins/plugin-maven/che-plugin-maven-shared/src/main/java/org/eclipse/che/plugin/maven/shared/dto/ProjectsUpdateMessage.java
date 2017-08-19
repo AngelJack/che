@@ -10,22 +10,22 @@
  */
 package org.eclipse.che.plugin.maven.shared.dto;
 
-import org.eclipse.che.dto.shared.DTO;
-
 import java.util.List;
+import org.eclipse.che.dto.shared.DTO;
 
 /**
  * Contains changes in project model, after updating maven projects
+ *
  * @author Evgen Vidolob
  */
 @DTO
 public interface ProjectsUpdateMessage extends MavenOutputEventDto {
 
-    List<String> getUpdatedProjects();
+  List<String> getUpdatedProjects();
 
-    void setUpdatedProjects(List<String> updatedProjects);
+  void setUpdatedProjects(List<String> updatedProjects);
 
-    List<String> getDeletedProjects();
+  List<String> getDeletedProjects();
 
-    void setDeletedProjects(List<String> deletedProjects);
+  void setDeletedProjects(List<String> deletedProjects);
 }

@@ -12,18 +12,17 @@ package org.eclipse.che.plugin.nodejsdbg.server.exception;
 
 import static java.lang.Math.min;
 
-/**
- * @author Anatoliy Bazko
- */
+/** @author Anatoliy Bazko */
 @SuppressWarnings("serial")
 public class NodeJsDebuggerParseException extends NodeJsDebuggerException {
 
-    public static final int MAX_OUTPUT_LENGTH = 80;
+  public static final int MAX_OUTPUT_LENGTH = 80;
 
-    public NodeJsDebuggerParseException(Class clazz, String output) {
-        super("Can't parse '"
-              + output.substring(0, min(output.length(), MAX_OUTPUT_LENGTH))
-              + "' into "
-              + clazz.getSimpleName());
-    }
+  public NodeJsDebuggerParseException(Class clazz, String output) {
+    super(
+        "Can't parse '"
+            + output.substring(0, min(output.length(), MAX_OUTPUT_LENGTH))
+            + "' into "
+            + clazz.getSimpleName());
+  }
 }

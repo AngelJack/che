@@ -12,19 +12,22 @@ package org.eclipse.che.ide.orion.compare;
 
 /**
  * Factory for creating Compere widget configuration objects.
+ *
  * @author Evgen Vidolob
  */
 public interface CompareFactory {
 
-    /**
-     * Create new FileOption object.
-     * @return new file options.
-     */
-    FileOptions createFieOptions();
+  /**
+   * Create new FileOption object.
+   *
+   * @return new file options.
+   */
+  FileOptions createFieOptions();
 
-    /**
-     * Create new Compare configuration object.
-     * @return the compare configuration object.
-     */
-    CompareConfig createCompareConfig();
+  /**
+   * Create new Compare configuration object.
+   *
+   * @return the compare configuration object.
+   */
+  CompareConfig createCompareConfig();
 }

@@ -19,15 +19,15 @@ import com.google.gwt.i18n.client.Messages;
  */
 public interface NodeJsDebuggerLocalizationConstant extends Messages {
 
-    @Key("view.nodeJsDebuggerConfigurationPage.hostLabel")
-    String nodeJsDebuggerConfigurationPageViewHostLabel();
+  @Key("view.nodeJsDebuggerConfigurationPage.hostLabel")
+  String nodeJsDebuggerConfigurationPageViewHostLabel();
 
-    @Key("view.nodeJsDebuggerConfigurationPage.portLabel")
-    String nodeJsDebuggerConfigurationPageViewPortLabel();
+  @Key("view.nodeJsDebuggerConfigurationPage.portLabel")
+  String nodeJsDebuggerConfigurationPageViewPortLabel();
 
-    @Key("view.nodeJsDebuggerConfigurationPage.scriptLabel")
-    String nodeJsDebuggerConfigurationPageViewScriptLabel();
+  @Key("view.nodeJsDebuggerConfigurationPage.scriptLabel")
+  String nodeJsDebuggerConfigurationPageViewScriptLabel();
 
-    @Key("view.nodeJsDebuggerConfigurationPage.pidLabel")
-    String nodeJsDebuggerConfigurationPageViewPidLable();
+  @Key("view.nodeJsDebuggerConfigurationPage.pidLabel")
+  String nodeJsDebuggerConfigurationPageViewPidLable();
 }

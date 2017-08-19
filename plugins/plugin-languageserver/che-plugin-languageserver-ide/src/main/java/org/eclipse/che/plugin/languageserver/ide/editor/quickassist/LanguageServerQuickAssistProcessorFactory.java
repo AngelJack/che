@@ -12,9 +12,7 @@ package org.eclipse.che.plugin.languageserver.ide.editor.quickassist;
 
 import org.eclipse.che.ide.api.editor.EditorPartPresenter;
 
-/**
- * @author Thomas Mäder
- */
+/** @author Thomas Mäder */
 public interface LanguageServerQuickAssistProcessorFactory {
-    LanguageServerQuickAssistProcessor create(EditorPartPresenter editor);
+  LanguageServerQuickAssistProcessor create(EditorPartPresenter editor);
 }

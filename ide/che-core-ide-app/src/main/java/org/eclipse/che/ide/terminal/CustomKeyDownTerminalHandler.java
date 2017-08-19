@@ -18,10 +18,9 @@ import com.google.gwt.core.client.JavaScriptObject;
  * @author Alexander Andrienko
  */
 public class CustomKeyDownTerminalHandler extends JavaScriptObject {
-    protected CustomKeyDownTerminalHandler() {
-    }
+  protected CustomKeyDownTerminalHandler() {}
 
-    public static native CustomKeyDownTerminalHandler create() /*-{
+  public static native CustomKeyDownTerminalHandler create() /*-{
         return function(ev) {
             var C = 67;
             var V = 86;

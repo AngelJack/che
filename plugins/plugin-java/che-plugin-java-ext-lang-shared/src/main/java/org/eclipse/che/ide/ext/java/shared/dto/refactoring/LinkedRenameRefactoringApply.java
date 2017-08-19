@@ -14,20 +14,23 @@ import org.eclipse.che.dto.shared.DTO;
 
 /**
  * DTO for applying linked mode rename refactoring
+ *
  * @author Evgen Vidolob
  */
 @DTO
 public interface LinkedRenameRefactoringApply extends RefactoringSession {
 
-    /**
-     * Get new element name.
-     * @return the name
-     */
-    String getNewName();
+  /**
+   * Get new element name.
+   *
+   * @return the name
+   */
+  String getNewName();
 
-    /**
-     * Set new element name
-     * @param newName
-     */
-    void setNewName(String newName);
+  /**
+   * Set new element name
+   *
+   * @param newName
+   */
+  void setNewName(String newName);
 }

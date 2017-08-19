@@ -19,34 +19,34 @@ import java.util.Objects;
  */
 public class BaseCommandGoal implements CommandGoal {
 
-    private final String id;
+  private final String id;
 
-    public BaseCommandGoal(String id) {
-        this.id = id;
+  public BaseCommandGoal(String id) {
+    this.id = id;
+  }
+
+  @Override
+  public String getId() {
+    return id;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
     }
 
-    @Override
-    public String getId() {
-        return id;
+    if (!(o instanceof CommandGoal)) {
+      return false;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
+    CommandGoal other = (CommandGoal) o;
 
-        if (!(o instanceof CommandGoal)) {
-            return false;
-        }
+    return Objects.equals(getId(), other.getId());
+  }
 
-        CommandGoal other = (CommandGoal)o;
-
-        return Objects.equals(getId(), other.getId());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
+  @Override
+  public int hashCode() {
+    return Objects.hash(id);
+  }
 }

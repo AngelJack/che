@@ -25,27 +25,26 @@ import org.eclipse.che.ide.api.parts.WorkspaceAgent;
 @Singleton
 public class HelloWorldViewAction extends Action {
 
-    private WorkspaceAgent workspaceAgent;
-    private HelloWorldPresenter helloWorldPresenter;
+  private WorkspaceAgent workspaceAgent;
+  private HelloWorldPresenter helloWorldPresenter;
 
-    /**
-     * Constructor.
-     *
-     * @param workspaceAgent the {@link WorkspaceAgent} that will open our sample part
-     * @param helloWorldPresenter the {@link HelloWorldPresenter} displaying the view
-     *
-     */
-    @Inject
-    public HelloWorldViewAction(WorkspaceAgent workspaceAgent, HelloWorldPresenter helloWorldPresenter) {
-        super("Show Hello World View");
-        this.workspaceAgent = workspaceAgent;
-        this.helloWorldPresenter = helloWorldPresenter;
-    }
+  /**
+   * Constructor.
+   *
+   * @param workspaceAgent the {@link WorkspaceAgent} that will open our sample part
+   * @param helloWorldPresenter the {@link HelloWorldPresenter} displaying the view
+   */
+  @Inject
+  public HelloWorldViewAction(
+      WorkspaceAgent workspaceAgent, HelloWorldPresenter helloWorldPresenter) {
+    super("Show Hello World View");
+    this.workspaceAgent = workspaceAgent;
+    this.helloWorldPresenter = helloWorldPresenter;
+  }
 
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        workspaceAgent.openPart(helloWorldPresenter, PartStackType.INFORMATION);
-        workspaceAgent.setActivePart(helloWorldPresenter);
-    }
+  @Override
+  public void actionPerformed(ActionEvent e) {
+    workspaceAgent.openPart(helloWorldPresenter, PartStackType.INFORMATION);
+    workspaceAgent.setActivePart(helloWorldPresenter);
+  }
 }

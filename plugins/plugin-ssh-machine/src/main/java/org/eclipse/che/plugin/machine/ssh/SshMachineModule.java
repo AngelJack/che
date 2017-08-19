@@ -20,17 +20,18 @@ import com.google.inject.name.Names;
  * @author Alexander Garagatyi
  */
 public class SshMachineModule extends AbstractModule {
-    @Override
-    protected void configure() {
-        bind(SshMachineInstanceProvider.class);
+  @Override
+  protected void configure() {
+    bind(SshMachineInstanceProvider.class);
 
-        bind(SshMachineFactory.class);
+    bind(SshMachineFactory.class);
 
-        bindConstant().annotatedWith(Names.named("machine.ssh.server.terminal.location")).to("~/che");
+    bindConstant().annotatedWith(Names.named("machine.ssh.server.terminal.location")).to("~/che");
 
-        Multibinder<org.eclipse.che.api.core.model.machine.ServerConf> machineServers =
-                Multibinder.newSetBinder(binder(),
-                                         org.eclipse.che.api.core.model.machine.ServerConf.class,
-                                         Names.named("machine.ssh.machine_servers"));
-    }
+    Multibinder<org.eclipse.che.api.core.model.machine.ServerConf> machineServers =
+        Multibinder.newSetBinder(
+            binder(),
+            org.eclipse.che.api.core.model.machine.ServerConf.class,
+            Names.named("machine.ssh.machine_servers"));
+  }
 }

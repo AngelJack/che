@@ -12,13 +12,11 @@ package org.eclipse.che.plugin.maven.shared.event;
 
 import java.util.List;
 
-/**
- * Event that describes Maven notification output.
- */
+/** Event that describes Maven notification output. */
 public interface MavenUpdateEvent extends MavenOutputEvent {
-    /** Returns list of projects which were modified. */
-    List<String> getUpdatedProjects();
+  /** Returns list of projects which were modified. */
+  List<String> getUpdatedProjects();
 
-    /** Returns list of projects which were removed. */
-    List<String> getRemovedProjects();
+  /** Returns list of projects which were removed. */
+  List<String> getRemovedProjects();
 }

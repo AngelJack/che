@@ -19,7 +19,7 @@ import java.rmi.RemoteException;
  */
 public class RuntimeRemoteException extends RuntimeException {
 
-    public RuntimeRemoteException(RemoteException cause) {
-        super(cause);
-    }
+  public RuntimeRemoteException(RemoteException cause) {
+    super(cause);
+  }
 }

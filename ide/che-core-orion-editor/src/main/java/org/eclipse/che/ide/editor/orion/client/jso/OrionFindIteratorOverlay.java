@@ -14,14 +14,13 @@ import com.google.gwt.core.client.JavaScriptObject;
 
 public class OrionFindIteratorOverlay extends JavaScriptObject {
 
-    protected OrionFindIteratorOverlay() {
-    }
+  protected OrionFindIteratorOverlay() {}
 
-    public final native boolean hasNext() /*-{
+  public final native boolean hasNext() /*-{
         return this.hasNext();
     }-*/;
 
-    public final native OrionSelectionOverlay next() /*-{
+  public final native OrionSelectionOverlay next() /*-{
         return this.next();
     }-*/;
 }

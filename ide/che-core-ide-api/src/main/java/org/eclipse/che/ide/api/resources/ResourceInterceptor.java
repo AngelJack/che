@@ -14,9 +14,9 @@ import com.google.common.annotations.Beta;
 
 /**
  * Intercept resource which loads from the server and registers in internal client resource storage.
- * <p/>
- * This interface is designed to modifying the specific resource before it would be cached.
- * For example any extension may create own implementation and set up specific markers for the given
+ *
+ * <p>This interface is designed to modifying the specific resource before it would be cached. For
+ * example any extension may create own implementation and set up specific markers for the given
  * resource or any other operations specific to the resource.
  *
  * @author Vlad Zhukovskiy
@@ -25,28 +25,29 @@ import com.google.common.annotations.Beta;
 @Beta
 public interface ResourceInterceptor {
 
-    /**
-     * Intercepts given {@code resource} and returns it. Implementation is allowed to modify given {@code resource}.
-     *
-     * @param resource
-     *         the resource to intercept
-     * @return the modified resource
-     * @since 4.4.0
-     */
-    void intercept(Resource resource);
+  /**
+   * Intercepts given {@code resource} and returns it. Implementation is allowed to modify given
+   * {@code resource}.
+   *
+   * @param resource the resource to intercept
+   * @return the modified resource
+   * @since 4.4.0
+   */
+  void intercept(Resource resource);
 
-    /**
-     * Default implementation of {@link ResourceInterceptor} which is do nothing except returning given {@code resource}.
-     *
-     * @see ResourceInterceptor
-     * @since 4.4.0
-     */
-    class NoOpInterceptor implements ResourceInterceptor {
+  /**
+   * Default implementation of {@link ResourceInterceptor} which is do nothing except returning
+   * given {@code resource}.
+   *
+   * @see ResourceInterceptor
+   * @since 4.4.0
+   */
+  class NoOpInterceptor implements ResourceInterceptor {
 
-        /** {@inheritDoc} */
-        @Override
-        public void intercept(Resource resource) {
-//            stub
-        }
+    /** {@inheritDoc} */
+    @Override
+    public void intercept(Resource resource) {
+      //            stub
     }
+  }
 }

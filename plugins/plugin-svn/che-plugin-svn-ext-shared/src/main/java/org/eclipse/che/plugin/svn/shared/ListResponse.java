@@ -10,48 +10,49 @@
  */
 package org.eclipse.che.plugin.svn.shared;
 
-import org.eclipse.che.dto.shared.DTO;
-
-import javax.validation.constraints.NotNull;
 import java.util.List;
+import javax.validation.constraints.NotNull;
+import org.eclipse.che.dto.shared.DTO;
 
 @DTO
 public interface ListResponse {
 
-    /**************************************************************************
-     *
-     *  Subversion command
-     *
-     **************************************************************************/
+  /**
+   * ************************************************************************
+   *
+   * <p>Subversion command
+   *
+   * <p>************************************************************************
+   */
+  String getCommand();
 
-    String getCommand();
+  void setCommand(@NotNull final String command);
 
-    void setCommand(@NotNull final String command);
+  ListResponse withCommand(@NotNull final String command);
 
-    ListResponse withCommand(@NotNull final String command);
+  /**
+   * ************************************************************************
+   *
+   * <p>Execution output
+   *
+   * <p>************************************************************************
+   */
+  List<String> getOutput();
 
-    /**************************************************************************
-     *
-     *  Execution output
-     *
-     **************************************************************************/
+  void setOutput(@NotNull final List<String> output);
 
-    List<String> getOutput();
+  ListResponse withOutput(@NotNull final List<String> output);
 
-    void setOutput(@NotNull final List<String> output);
+  /**
+   * ************************************************************************
+   *
+   * <p>Error output
+   *
+   * <p>************************************************************************
+   */
+  List<String> getErrorOutput();
 
-    ListResponse withOutput(@NotNull final List<String> output);
+  void setErrorOutput(List<String> errorOutput);
 
-    /**************************************************************************
-     *
-     *  Error output
-     *
-     **************************************************************************/
-
-    List<String> getErrorOutput();
-
-    void setErrorOutput(List<String> errorOutput);
-
-    ListResponse withErrorOutput(List<String> errorOutput);
-
+  ListResponse withErrorOutput(List<String> errorOutput);
 }

@@ -12,7 +12,6 @@ package org.eclipse.che.ide.ui.loaders;
 
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.assistedinject.Assisted;
-
 import javax.validation.constraints.NotNull;
 
 /**
@@ -22,31 +21,26 @@ import javax.validation.constraints.NotNull;
  */
 public interface PopupLoaderFactory {
 
-    /**
-     * Creates an instance of PopupLoaderImpl
-     *
-     * @param title
-     *          loader title
-     * @param description
-     *          description
-     * @return
-     *          instance of PopupLoaderImpl
-     */
-    PopupLoaderImpl getPopup(@NotNull @Assisted("title") String title,
-                             @NotNull @Assisted("description") String description);
+  /**
+   * Creates an instance of PopupLoaderImpl
+   *
+   * @param title loader title
+   * @param description description
+   * @return instance of PopupLoaderImpl
+   */
+  PopupLoaderImpl getPopup(
+      @NotNull @Assisted("title") String title,
+      @NotNull @Assisted("description") String description);
 
-    /**
-     * Creates an instance of PopupLoaderImpl
-     *
-     * @param title
-     *          loader title
-     * @param description
-     *          description
-     * @return
-     *          instance of PopupLoaderImpl
-     */
-    PopupLoaderImpl getPopup(@NotNull @Assisted("title") String title,
-                             @NotNull @Assisted("description") String description,
-                             @NotNull @Assisted("widget") Widget content);
-
+  /**
+   * Creates an instance of PopupLoaderImpl
+   *
+   * @param title loader title
+   * @param description description
+   * @return instance of PopupLoaderImpl
+   */
+  PopupLoaderImpl getPopup(
+      @NotNull @Assisted("title") String title,
+      @NotNull @Assisted("description") String description,
+      @NotNull @Assisted("widget") Widget content);
 }

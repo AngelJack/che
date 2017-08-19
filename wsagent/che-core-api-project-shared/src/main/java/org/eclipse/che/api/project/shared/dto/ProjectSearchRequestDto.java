@@ -14,23 +14,23 @@ import org.eclipse.che.dto.shared.DTO;
 
 @DTO
 public interface ProjectSearchRequestDto {
-    String getPath();
+  String getPath();
 
-    ProjectSearchRequestDto withPath(String path);
+  ProjectSearchRequestDto withPath(String path);
 
-    String getName();
+  String getName();
 
-    ProjectSearchRequestDto withName(String name);
+  ProjectSearchRequestDto withName(String name);
 
-    String getText();
+  String getText();
 
-    ProjectSearchRequestDto withText(String text);
+  ProjectSearchRequestDto withText(String text);
 
-    int getMaxItems();
+  int getMaxItems();
 
-    ProjectSearchRequestDto withMaxItems(int maxItems);
+  ProjectSearchRequestDto withMaxItems(int maxItems);
 
-    int getSkipCount();
+  int getSkipCount();
 
-    ProjectSearchRequestDto withSkipCount(int skipCount);
+  ProjectSearchRequestDto withSkipCount(int skipCount);
 }

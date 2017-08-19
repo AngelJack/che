@@ -12,14 +12,12 @@ package org.eclipse.che.api.debug.shared.dto.event;
 
 import org.eclipse.che.dto.shared.DTO;
 
-/**
- * @author Anatoliy Bazko
- */
+/** @author Anatoliy Bazko */
 @DTO
 public interface DisconnectEventDto extends DebuggerEventDto {
-    TYPE getType();
+  TYPE getType();
 
-    void setType(TYPE type);
+  void setType(TYPE type);
 
-    DisconnectEventDto withType(TYPE type);
+  DisconnectEventDto withType(TYPE type);
 }

@@ -11,13 +11,12 @@
 package org.eclipse.che.plugin.gdb.ide;
 
 import com.google.gwt.resources.client.ClientBundle;
-
 import org.vectomatic.dom.svg.ui.SVGResource;
 
 /** @author Artem Zatsarynnyi */
 public interface GdbResources extends ClientBundle {
 
-    /** Returns the icon for GDB configurations. */
-    @Source("configuration/gdb-configuration-type.svg")
-    SVGResource gdbDebugConfigurationType();
+  /** Returns the icon for GDB configurations. */
+  @Source("configuration/gdb-configuration-type.svg")
+  SVGResource gdbDebugConfigurationType();
 }

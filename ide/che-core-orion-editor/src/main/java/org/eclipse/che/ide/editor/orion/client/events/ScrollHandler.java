@@ -14,9 +14,9 @@ import com.google.gwt.event.shared.EventHandler;
 
 /**
  * Handler for {@link ScrollEvent}.
- * 
+ *
  * @author "Mickaël Leduque"
  */
 public interface ScrollHandler extends EventHandler {
-    void onScroll(ScrollEvent event);
+  void onScroll(ScrollEvent event);
 }

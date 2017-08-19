@@ -10,8 +10,8 @@
  */
 package org.eclipse.che.ide.projecttype.wizard;
 
-import org.eclipse.che.ide.api.project.type.wizard.ProjectWizardMode;
 import org.eclipse.che.ide.api.project.MutableProjectConfig;
+import org.eclipse.che.ide.api.project.type.wizard.ProjectWizardMode;
 
 /**
  * Helps to create new instances of {@link ProjectWizard}.
@@ -20,5 +20,5 @@ import org.eclipse.che.ide.api.project.MutableProjectConfig;
  * @author Vlad Zhukovskyi
  */
 public interface ProjectWizardFactory {
-    ProjectWizard newWizard(MutableProjectConfig dataObject, ProjectWizardMode mode);
+  ProjectWizard newWizard(MutableProjectConfig dataObject, ProjectWizardMode mode);
 }

@@ -10,13 +10,13 @@
  */
 package org.eclipse.che.ide.api.notification;
 
-
 /**
- * State of notification. The notification has 2 states: a notification is read and a notification is unread.
+ * State of notification. The notification has 2 states: a notification is read and a notification
+ * is unread.
  *
  * @author Vlad Zhukovskiy
  */
 public enum ReadState {
-    READ,
-    UNREAD
+  READ,
+  UNREAD
 }

@@ -16,15 +16,15 @@ package org.eclipse.che.api.environment.server.exception;
  * @author Alexander Garagatyi
  */
 public class EnvironmentException extends Exception {
-    public EnvironmentException(String message) {
-        super(message);
-    }
+  public EnvironmentException(String message) {
+    super(message);
+  }
 
-    public EnvironmentException(String message, Throwable cause) {
-        super(message, cause);
-    }
+  public EnvironmentException(String message, Throwable cause) {
+    super(message, cause);
+  }
 
-    public EnvironmentException(Throwable cause) {
-        super(cause);
-    }
+  public EnvironmentException(Throwable cause) {
+    super(cause);
+  }
 }

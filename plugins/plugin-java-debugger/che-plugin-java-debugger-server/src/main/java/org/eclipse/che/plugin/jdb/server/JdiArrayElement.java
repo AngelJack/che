@@ -18,12 +18,11 @@ import org.eclipse.che.api.debugger.server.exceptions.DebuggerException;
  * @author andrew00x
  */
 public interface JdiArrayElement extends JdiVariable {
-    /**
-     * Get index of this element of array.
-     *
-     * @return index of this array element
-     * @throws DebuggerException
-     *         if an error occurs
-     */
-    int getIndex() throws DebuggerException;
+  /**
+   * Get index of this element of array.
+   *
+   * @return index of this array element
+   * @throws DebuggerException if an error occurs
+   */
+  int getIndex() throws DebuggerException;
 }

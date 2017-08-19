@@ -10,16 +10,13 @@
  */
 package org.eclipse.che.plugin.testing.ide.messages;
 
-/**
- * Data class represents test suite finished message.
- */
+/** Data class represents test suite finished message. */
 public class TestSuiteFinished extends BaseTestSuiteMessage {
 
-    TestSuiteFinished() {
-    }
+  TestSuiteFinished() {}
 
-    @Override
-    public void visit(TestingMessageVisitor visitor) {
-        visitor.visitTestSuiteFinished(this);
-    }
+  @Override
+  public void visit(TestingMessageVisitor visitor) {
+    visitor.visitTestSuiteFinished(this);
+  }
 }

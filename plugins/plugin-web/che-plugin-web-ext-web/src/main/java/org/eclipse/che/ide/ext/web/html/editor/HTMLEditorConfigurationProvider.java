@@ -11,35 +11,29 @@
 package org.eclipse.che.ide.ext.web.html.editor;
 
 import com.google.inject.Inject;
-
-import javax.inject.Provider;
 import java.util.Set;
+import javax.inject.Provider;
 
 /**
  * Guice Provider for HTML Editor configuration.
  *
  * @author Florent Benoit
  */
-
 public class HTMLEditorConfigurationProvider implements Provider<HtmlEditorConfiguration> {
 
-    /**
-     * Auto Edit strategies with HTML editor scope
-     */
-    @Inject(optional = true)
-    private Set<AutoEditStrategyFactory> autoEditStrategyFactories;
+  /** Auto Edit strategies with HTML editor scope */
+  @Inject(optional = true)
+  private Set<AutoEditStrategyFactory> autoEditStrategyFactories;
 
-    @Inject
-    private DefaultCodeAssistProcessor chainedCodeAssistProcessor;
+  @Inject private DefaultCodeAssistProcessor chainedCodeAssistProcessor;
 
-
-    /**
-     * Build a new instance of HtmlEditor Configuration
-     *
-     * @return
-     */
-    @Override
-    public HtmlEditorConfiguration get() {
-        return new HtmlEditorConfiguration(autoEditStrategyFactories, chainedCodeAssistProcessor);
-    }
+  /**
+   * Build a new instance of HtmlEditor Configuration
+   *
+   * @return
+   */
+  @Override
+  public HtmlEditorConfiguration get() {
+    return new HtmlEditorConfiguration(autoEditStrategyFactories, chainedCodeAssistProcessor);
+  }
 }

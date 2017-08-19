@@ -15,25 +15,25 @@ import org.eclipse.che.dto.shared.DTO;
 
 @DTO
 public interface GetProcessResponseDto extends DtoWithPid {
-    GetProcessResponseDto withPid(int pid);
+  GetProcessResponseDto withPid(int pid);
 
-    String getName();
+  String getName();
 
-    GetProcessResponseDto withName(String name);
+  GetProcessResponseDto withName(String name);
 
-    String getCommandLine();
+  String getCommandLine();
 
-    GetProcessResponseDto withCommandLine(String commandLine);
+  GetProcessResponseDto withCommandLine(String commandLine);
 
-    String getType();
+  String getType();
 
-    GetProcessResponseDto withType(String type);
+  GetProcessResponseDto withType(String type);
 
-    boolean isAlive();
+  boolean isAlive();
 
-    GetProcessResponseDto withAlive(boolean alive);
+  GetProcessResponseDto withAlive(boolean alive);
 
-    int getNativePid();
+  int getNativePid();
 
-    GetProcessResponseDto withNativePid(int nativePid);
+  GetProcessResponseDto withNativePid(int nativePid);
 }

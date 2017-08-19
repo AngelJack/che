@@ -11,7 +11,6 @@
 package org.eclipse.che.ide.command.editor.page.commandline;
 
 import com.google.inject.Inject;
-
 import org.eclipse.che.ide.api.editor.defaulteditor.EditorBuilder;
 import org.eclipse.che.ide.api.filetypes.FileTypeRegistry;
 import org.eclipse.che.ide.command.editor.EditorMessages;
@@ -28,35 +27,37 @@ import org.eclipse.che.ide.macro.chooser.MacroChooser;
  */
 public class CommandLinePage extends AbstractPageWithTextEditor {
 
-    @Inject
-    public CommandLinePage(PageWithTextEditorView view,
-                           EditorBuilder editorBuilder,
-                           FileTypeRegistry fileTypeRegistry,
-                           MacroChooser macroChooser,
-                           EditorMessages messages,
-                           MacroEditorConfiguration editorConfiguration) {
-        super(view,
-              editorBuilder,
-              fileTypeRegistry,
-              macroChooser,
-              messages.pageCommandLineTitle(),
-              editorConfiguration);
+  @Inject
+  public CommandLinePage(
+      PageWithTextEditorView view,
+      EditorBuilder editorBuilder,
+      FileTypeRegistry fileTypeRegistry,
+      MacroChooser macroChooser,
+      EditorMessages messages,
+      MacroEditorConfiguration editorConfiguration) {
+    super(
+        view,
+        editorBuilder,
+        fileTypeRegistry,
+        macroChooser,
+        messages.pageCommandLineTitle(),
+        editorConfiguration);
 
-        view.asWidget().getElement().setId("command_editor-command_line");
-    }
+    view.asWidget().getElement().setId("command_editor-command_line");
+  }
 
-    @Override
-    protected String getCommandPropertyValue() {
-        return editedCommand.getCommandLine();
-    }
+  @Override
+  protected String getCommandPropertyValue() {
+    return editedCommand.getCommandLine();
+  }
 
-    @Override
-    protected void updateCommandPropertyValue(String content) {
-        editedCommand.setCommandLine(content);
-    }
+  @Override
+  protected void updateCommandPropertyValue(String content) {
+    editedCommand.setCommandLine(content);
+  }
 
-    @Override
-    protected String getType() {
-        return ".sh";
-    }
+  @Override
+  protected String getType() {
+    return ".sh";
+  }
 }

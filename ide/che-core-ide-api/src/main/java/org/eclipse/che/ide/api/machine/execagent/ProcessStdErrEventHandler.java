@@ -11,12 +11,10 @@
 package org.eclipse.che.ide.api.machine.execagent;
 
 import com.google.inject.Inject;
-
+import javax.inject.Singleton;
 import org.eclipse.che.api.core.jsonrpc.commons.RequestHandlerConfigurator;
 import org.eclipse.che.api.machine.shared.dto.execagent.event.ProcessStdErrEventDto;
 import org.eclipse.che.ide.util.loging.Log;
-
-import javax.inject.Singleton;
 
 /**
  * Handles event fired by exec agent when process sent text to standard error
@@ -24,20 +22,22 @@ import javax.inject.Singleton;
  * @author Dmitry Kuleshov
  */
 @Singleton
-public class ProcessStdErrEventHandler extends AbstractExecAgentEventHandler<ProcessStdErrEventDto> {
+public class ProcessStdErrEventHandler
+    extends AbstractExecAgentEventHandler<ProcessStdErrEventDto> {
 
-    @Inject
-    public void configureHandler(RequestHandlerConfigurator configurator) {
-        configurator.newConfiguration()
-                    .methodName("process_stderr")
-                    .paramsAsDto(ProcessStdErrEventDto.class)
-                    .noResult()
-                    .withBiConsumer(this);
-    }
+  @Inject
+  public void configureHandler(RequestHandlerConfigurator configurator) {
+    configurator
+        .newConfiguration()
+        .methodName("process_stderr")
+        .paramsAsDto(ProcessStdErrEventDto.class)
+        .noResult()
+        .withBiConsumer(this);
+  }
 
-    @Override
-    public void accept(String endpointId, ProcessStdErrEventDto params) {
-        Log.debug(getClass(), "Handling process error output event. Params: " + params);
-        handle(endpointId, params);
-    }
+  @Override
+  public void accept(String endpointId, ProcessStdErrEventDto params) {
+    Log.debug(getClass(), "Handling process error output event. Params: " + params);
+    handle(endpointId, params);
+  }
 }

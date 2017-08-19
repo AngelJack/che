@@ -16,8 +16,6 @@ package org.eclipse.che.api.machine.server.spi;
  * @author Alexander Garagatyi
  */
 public interface InstanceNode {
-    /**
-     * Host of the server where machine is launched
-     */
-    String getHost();
+  /** Host of the server where machine is launched */
+  String getHost();
 }

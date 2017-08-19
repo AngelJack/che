@@ -14,26 +14,25 @@ import com.google.gwt.core.client.JavaScriptObject;
 
 public class OrionSelectionOverlay extends JavaScriptObject {
 
-    protected OrionSelectionOverlay() {
-    }
+  protected OrionSelectionOverlay() {}
 
-    // not sure it's an int
-    public final native int getStart() /*-{
+  // not sure it's an int
+  public final native int getStart() /*-{
         return this.start;
     }-*/;
 
-    // not sure it's an int
-    public final native void setStart(final int newValue) /*-{
+  // not sure it's an int
+  public final native void setStart(final int newValue) /*-{
         this.start = newValue;
     }-*/;
 
-    // not sure it's an int
-    public final native int getEnd() /*-{
+  // not sure it's an int
+  public final native int getEnd() /*-{
         return this.end;
     }-*/;
 
-    // not sure it's an int
-    public final native void setEnd(final int newValue) /*-{
+  // not sure it's an int
+  public final native void setEnd(final int newValue) /*-{
         this.end = newValue;
     }-*/;
 }

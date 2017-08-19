@@ -11,18 +11,15 @@
 package org.eclipse.che.plugin.serverservice.inject;
 
 import com.google.inject.AbstractModule;
-
 import org.eclipse.che.inject.DynaModule;
 import org.eclipse.che.plugin.serverservice.MyService;
 
-/**
- * Server service example Guice module for setting up a simple service.
- */
+/** Server service example Guice module for setting up a simple service. */
 @DynaModule
 public class ServerServiceGuiceModule extends AbstractModule {
 
-    @Override
-    protected void configure() {
-        bind(MyService.class);
-    }
+  @Override
+  protected void configure() {
+    bind(MyService.class);
+  }
 }

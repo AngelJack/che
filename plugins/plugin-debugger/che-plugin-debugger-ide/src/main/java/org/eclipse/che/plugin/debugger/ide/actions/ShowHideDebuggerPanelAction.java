@@ -11,7 +11,6 @@
 package org.eclipse.che.plugin.debugger.ide.actions;
 
 import com.google.inject.Inject;
-
 import org.eclipse.che.ide.api.action.Action;
 import org.eclipse.che.ide.api.action.ActionEvent;
 import org.eclipse.che.plugin.debugger.ide.DebuggerLocalizationConstant;
@@ -24,28 +23,27 @@ import org.eclipse.che.plugin.debugger.ide.debug.DebuggerPresenter;
  */
 public class ShowHideDebuggerPanelAction extends Action {
 
-    private final DebuggerPresenter debuggerPresenter;
+  private final DebuggerPresenter debuggerPresenter;
 
-    @Inject
-    public ShowHideDebuggerPanelAction(DebuggerPresenter debuggerPresenter,
-                                       DebuggerLocalizationConstant locale) {
-        super(locale.showHideDebuggerPanel(), locale.showHideDebuggerPanelDescription(), null, null);
+  @Inject
+  public ShowHideDebuggerPanelAction(
+      DebuggerPresenter debuggerPresenter, DebuggerLocalizationConstant locale) {
+    super(locale.showHideDebuggerPanel(), locale.showHideDebuggerPanelDescription(), null, null);
 
-        this.debuggerPresenter = debuggerPresenter;
+    this.debuggerPresenter = debuggerPresenter;
+  }
+
+  @Override
+  public void actionPerformed(ActionEvent e) {
+    if (debuggerPresenter.isDebuggerPanelPresent()) {
+      if (debuggerPresenter.isDebuggerPanelOpened()) {
+        debuggerPresenter.hideDebuggerPanel();
+      } else {
+        debuggerPresenter.showDebuggerPanel();
+      }
+    } else {
+      debuggerPresenter.showAndUpdateView();
+      debuggerPresenter.showDebuggerPanel();
     }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        if (debuggerPresenter.isDebuggerPanelPresent()) {
-            if (debuggerPresenter.isDebuggerPanelOpened()) {
-                debuggerPresenter.hideDebuggerPanel();
-            } else {
-                debuggerPresenter.showDebuggerPanel();
-            }
-        } else {
-            debuggerPresenter.showAndUpdateView();
-            debuggerPresenter.showDebuggerPanel();
-        }
-    }
-
+  }
 }

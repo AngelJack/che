@@ -19,38 +19,41 @@ import org.eclipse.che.api.core.notification.EventOrigin;
  */
 @EventOrigin("project")
 public class ProjectCreatedEvent {
-    private String workspaceId;
-    private String projectPath;
+  private String workspaceId;
+  private String projectPath;
 
-    public ProjectCreatedEvent(String workspaceId, String projectPath) {
-        this.workspaceId = workspaceId;
-        this.projectPath = projectPath;
-    }
+  public ProjectCreatedEvent(String workspaceId, String projectPath) {
+    this.workspaceId = workspaceId;
+    this.projectPath = projectPath;
+  }
 
-    public ProjectCreatedEvent() {
-    }
+  public ProjectCreatedEvent() {}
 
-    public String getWorkspaceId() {
-        return workspaceId;
-    }
+  public String getWorkspaceId() {
+    return workspaceId;
+  }
 
-    public String getProjectPath() {
-        return projectPath;
-    }
+  public String getProjectPath() {
+    return projectPath;
+  }
 
-    public void setWorkspaceId(String workspaceId) {
-        this.workspaceId = workspaceId;
-    }
+  public void setWorkspaceId(String workspaceId) {
+    this.workspaceId = workspaceId;
+  }
 
-    public void setProjectPath(String projectPath) {
-        this.projectPath = projectPath;
-    }
+  public void setProjectPath(String projectPath) {
+    this.projectPath = projectPath;
+  }
 
-    @Override
-    public String toString() {
-        return "ProjectCreatedEvent{" +
-               "workspaceId='" + workspaceId + '\'' +
-               ", projectPath='" + projectPath + '\'' +
-               '}';
-    }
+  @Override
+  public String toString() {
+    return "ProjectCreatedEvent{"
+        + "workspaceId='"
+        + workspaceId
+        + '\''
+        + ", projectPath='"
+        + projectPath
+        + '\''
+        + '}';
+  }
 }

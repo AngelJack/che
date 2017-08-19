@@ -10,9 +10,8 @@
  */
 package org.eclipse.che.plugin.docker.client.json;
 
-/**
-* @author andrew00x
-*/ /*
+/** @author andrew00x */
+/*
 From docker source code 'runconfig/config.go':
 ExposedPorts    map[nat.Port]struct{}
 
@@ -26,7 +25,7 @@ ExposedPorts in JSON response from docker remote API:
 It seems struct{} is reserved for future but it isn't in use for now.
 */
 public class ExposedPort {
-    public String toString() {
-        return "{}";
-    }
+  public String toString() {
+    return "{}";
+  }
 }

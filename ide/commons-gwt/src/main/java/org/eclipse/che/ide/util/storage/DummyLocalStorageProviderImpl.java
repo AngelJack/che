@@ -10,14 +10,11 @@
  */
 package org.eclipse.che.ide.util.storage;
 
-/**
- * Provides dummy implementation of the {@link LocalStorage}.
- * Preferably for testing purpose.
- */
-public class DummyLocalStorageProviderImpl implements LocalStorageProvider{
+/** Provides dummy implementation of the {@link LocalStorage}. Preferably for testing purpose. */
+public class DummyLocalStorageProviderImpl implements LocalStorageProvider {
 
-    @Override
-    public LocalStorage get() {
-        return new DummyLocalStorageImpl();
-    }
+  @Override
+  public LocalStorage get() {
+    return new DummyLocalStorageImpl();
+  }
 }

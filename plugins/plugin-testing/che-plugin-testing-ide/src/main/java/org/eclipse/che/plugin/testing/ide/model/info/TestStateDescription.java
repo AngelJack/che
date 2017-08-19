@@ -10,27 +10,25 @@
  */
 package org.eclipse.che.plugin.testing.ide.model.info;
 
-/**
- * Describes state of test.
- */
+/** Describes state of test. */
 public enum TestStateDescription {
-    SKIPPED("Skiped"),
-    COMPLETED("Completed"),
-    NOT_RUN("Not run"),
-    RUNNING("Running..."),
-    TERMINATED("Terminated"),
-    IGNORED("Ignored"),
-    FAILED("Failed"),
-    ERROR("Error"),
-    PASSED("Passed");
+  SKIPPED("Skiped"),
+  COMPLETED("Completed"),
+  NOT_RUN("Not run"),
+  RUNNING("Running..."),
+  TERMINATED("Terminated"),
+  IGNORED("Ignored"),
+  FAILED("Failed"),
+  ERROR("Error"),
+  PASSED("Passed");
 
-    private final String title;
+  private final String title;
 
-    TestStateDescription(String title) {
-        this.title = title;
-    }
+  TestStateDescription(String title) {
+    this.title = title;
+  }
 
-    public String getTitle() {
-        return title;
-    }
+  public String getTitle() {
+    return title;
+  }
 }

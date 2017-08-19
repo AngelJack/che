@@ -10,14 +10,11 @@
  */
 package org.eclipse.che.api.core.util;
 
-/**
- * A factory for {@link LineConsumer}
- */
+/** A factory for {@link LineConsumer} */
 @FunctionalInterface
 public interface LineConsumerFactory {
 
-    LineConsumer newLineConsumer();
+  LineConsumer newLineConsumer();
 
-    LineConsumerFactory NULL = () -> LineConsumer.DEV_NULL;
-
+  LineConsumerFactory NULL = () -> LineConsumer.DEV_NULL;
 }

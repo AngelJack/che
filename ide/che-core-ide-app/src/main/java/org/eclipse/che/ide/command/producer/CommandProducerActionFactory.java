@@ -20,6 +20,6 @@ import org.eclipse.che.ide.api.command.CommandProducer;
  */
 public interface CommandProducerActionFactory {
 
-    /** Creates action for executing command produced by the specified {@code commandProducer}. */
-    CommandProducerAction create(String name, CommandProducer commandProducer, Machine machine);
+  /** Creates action for executing command produced by the specified {@code commandProducer}. */
+  CommandProducerAction create(String name, CommandProducer commandProducer, Machine machine);
 }

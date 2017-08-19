@@ -10,18 +10,18 @@
  */
 package org.eclipse.che.ide.api.editor.quickfix;
 
-import org.eclipse.che.ide.api.editor.texteditor.TextEditor;
-
 import javax.validation.constraints.NotNull;
+import org.eclipse.che.ide.api.editor.texteditor.TextEditor;
 
 /** Factory of {@link QuickAssistAssistant}. */
 public interface QuickAssistantFactory {
 
-    /**
-     * Create a QuickAssist assistant instance.
-     * @param textEditor the related editor
-     * @return a new quick assist assistant
-     */
-    @NotNull
-    QuickAssistAssistant createQuickAssistant(TextEditor textEditor);
+  /**
+   * Create a QuickAssist assistant instance.
+   *
+   * @param textEditor the related editor
+   * @return a new quick assist assistant
+   */
+  @NotNull
+  QuickAssistAssistant createQuickAssistant(TextEditor textEditor);
 }

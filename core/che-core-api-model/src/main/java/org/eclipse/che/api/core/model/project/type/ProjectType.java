@@ -19,42 +19,28 @@ import java.util.List;
  */
 public interface ProjectType {
 
-    /**
-     * @return unique ID
-     */
-    String getId();
+  /** @return unique ID */
+  String getId();
 
-    /**
-     * @return project type display name
-     */
-    String getDisplayName();
+  /** @return project type display name */
+  String getDisplayName();
 
-    /**
-     * @return true if this project type can be mixed in
-     */
-    boolean isMixable();
+  /** @return true if this project type can be mixed in */
+  boolean isMixable();
 
-    /**
-     * @return true if this project type can be used as primary
-     */
-    boolean isPrimaryable();
+  /** @return true if this project type can be used as primary */
+  boolean isPrimaryable();
 
-    /**
-     * @return true if this project type explicitly stored as is in the project description
-     * otherwise it is considered as "runtime" and can be calculated runtime using
-     * defined mandatory attributes thanks to Value Provider mechanism
-     */
-    boolean isPersisted();
+  /**
+   * @return true if this project type explicitly stored as is in the project description otherwise
+   *     it is considered as "runtime" and can be calculated runtime using defined mandatory
+   *     attributes thanks to Value Provider mechanism
+   */
+  boolean isPersisted();
 
-    /**
-     * @return attributes
-     */
-    List<? extends Attribute> getAttributes();
+  /** @return attributes */
+  List<? extends Attribute> getAttributes();
 
-    /**
-     * @return parent project type IDs
-     */
-    List<String> getParents();
-
-
+  /** @return parent project type IDs */
+  List<String> getParents();
 }

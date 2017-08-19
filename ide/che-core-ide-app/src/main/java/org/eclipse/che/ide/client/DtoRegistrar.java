@@ -13,35 +13,33 @@ package org.eclipse.che.ide.client;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
 import com.google.inject.Singleton;
-
+import java.util.Map;
+import java.util.Map.Entry;
 import org.eclipse.che.ide.dto.DtoFactory;
 import org.eclipse.che.ide.dto.DtoFactoryVisitor;
 
-import java.util.Map;
-import java.util.Map.Entry;
-
 /**
- * Class responsible for register DTO providers. It uses {@link DtoFactoryVisitorRegistry} to acquire
- * {@link DtoFactoryVisitor}s.
+ * Class responsible for register DTO providers. It uses {@link DtoFactoryVisitorRegistry} to
+ * acquire {@link DtoFactoryVisitor}s.
  *
  * @author Artem Zatsarynnyi
  */
 @Singleton
 public class DtoRegistrar {
-    private final DtoFactory                dtoFactory;
-    private final DtoFactoryVisitorRegistry dtoFactoryVisitorRegistry;
+  private final DtoFactory dtoFactory;
+  private final DtoFactoryVisitorRegistry dtoFactoryVisitorRegistry;
 
-    @Inject
-    public DtoRegistrar(DtoFactory dtoFactory, DtoFactoryVisitorRegistry dtoFactoryVisitorRegistry) {
-        this.dtoFactory = dtoFactory;
-        this.dtoFactoryVisitorRegistry = dtoFactoryVisitorRegistry;
+  @Inject
+  public DtoRegistrar(DtoFactory dtoFactory, DtoFactoryVisitorRegistry dtoFactoryVisitorRegistry) {
+    this.dtoFactory = dtoFactory;
+    this.dtoFactoryVisitorRegistry = dtoFactoryVisitorRegistry;
+  }
+
+  public void registerDtoProviders() {
+    Map<String, Provider> dtoVisitors = dtoFactoryVisitorRegistry.getDtoFactoryVisitors();
+
+    for (Entry<String, Provider> entry : dtoVisitors.entrySet()) {
+      ((DtoFactoryVisitor) entry.getValue().get()).accept(dtoFactory);
     }
-
-    public void registerDtoProviders() {
-        Map<String, Provider> dtoVisitors = dtoFactoryVisitorRegistry.getDtoFactoryVisitors();
-
-        for (Entry<String, Provider> entry : dtoVisitors.entrySet()) {
-            ((DtoFactoryVisitor)entry.getValue().get()).accept(dtoFactory);
-        }
-    }
+  }
 }

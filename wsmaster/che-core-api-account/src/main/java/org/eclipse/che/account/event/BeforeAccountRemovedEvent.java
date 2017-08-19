@@ -20,14 +20,14 @@ import org.eclipse.che.core.db.cascade.event.RemoveEvent;
  */
 public class BeforeAccountRemovedEvent extends RemoveEvent {
 
-    private final AccountImpl account;
+  private final AccountImpl account;
 
-    public BeforeAccountRemovedEvent(AccountImpl account) {
-        this.account = account;
-    }
+  public BeforeAccountRemovedEvent(AccountImpl account) {
+    this.account = account;
+  }
 
-    /** Returns account which is going to be removed. */
-    public AccountImpl getAccount() {
-        return account;
-    }
+  /** Returns account which is going to be removed. */
+  public AccountImpl getAccount() {
+    return account;
+  }
 }

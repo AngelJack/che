@@ -12,15 +12,13 @@ package org.eclipse.che.plugin.nodejsdbg.server;
 
 import org.eclipse.che.plugin.nodejsdbg.server.exception.NodeJsDebuggerException;
 
-/**
- * @author Anatolii Bazko
- */
+/** @author Anatolii Bazko */
 public interface NodeJsProcessObserver {
 
-    /**
-     * Is occurred when a nodejs generates a new output.
-     *
-     * Returns {@code true} if no processing requires after.
-     */
-    boolean onOutputProduced(NodeJsOutput nodeJsOutput) throws NodeJsDebuggerException;
+  /**
+   * Is occurred when a nodejs generates a new output.
+   *
+   * <p>Returns {@code true} if no processing requires after.
+   */
+  boolean onOutputProduced(NodeJsOutput nodeJsOutput) throws NodeJsDebuggerException;
 }

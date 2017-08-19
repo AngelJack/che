@@ -10,17 +10,13 @@
  */
 package org.eclipse.che.ide.api.action;
 
-
 /** @author <a href="mailto:gavrikvetal@gmail.com">Vitaliy Gulyy</a> */
-
 public interface ActionSelectedHandler {
 
-    /**
-     * Do some actions when menu item will be selected.
-     *
-     * @param action
-     *         selected Action
-     */
-    void onActionSelected(Action action);
-
+  /**
+   * Do some actions when menu item will be selected.
+   *
+   * @param action selected Action
+   */
+  void onActionSelected(Action action);
 }

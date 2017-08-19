@@ -10,18 +10,17 @@
  */
 package org.eclipse.che.ide.ext.java.client.resource;
 
-import com.google.inject.Singleton;
+import static org.eclipse.che.ide.ext.java.client.util.JavaUtil.isJavaFile;
 
+import com.google.inject.Singleton;
 import org.eclipse.che.ide.api.resources.File;
 import org.eclipse.che.ide.api.resources.Resource;
 import org.eclipse.che.ide.api.resources.ResourceInterceptor;
 import org.eclipse.che.ide.api.resources.marker.PresentableTextMarker;
 
-import static org.eclipse.che.ide.ext.java.client.util.JavaUtil.isJavaFile;
-
 /**
- * Intercept java based files (.java), cut extension and adds the marker which is responsible for displaying presentable text
- * to the corresponding resource.
+ * Intercept java based files (.java), cut extension and adds the marker which is responsible for
+ * displaying presentable text to the corresponding resource.
  *
  * @author Vlad Zhukovskiy
  * @since 4.4.0
@@ -29,11 +28,11 @@ import static org.eclipse.che.ide.ext.java.client.util.JavaUtil.isJavaFile;
 @Singleton
 public class ClassInterceptor implements ResourceInterceptor {
 
-    /** {@inheritDoc} */
-    @Override
-    public void intercept(Resource resource) {
-        if (resource.isFile() && isJavaFile(resource)) {
-            resource.addMarker(new PresentableTextMarker(((File)resource).getNameWithoutExtension()));
-        }
+  /** {@inheritDoc} */
+  @Override
+  public void intercept(Resource resource) {
+    if (resource.isFile() && isJavaFile(resource)) {
+      resource.addMarker(new PresentableTextMarker(((File) resource).getNameWithoutExtension()));
     }
+  }
 }

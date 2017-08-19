@@ -19,13 +19,13 @@ import com.google.gwt.i18n.client.Messages;
  */
 public interface GwtLocalizationConstants extends Messages {
 
-    /* GwtCommandPageView */
-    @Key("view.gwtCommandPage.gwtModule.text")
-    String gwtCommandPageViewGwtModuleText();
+  /* GwtCommandPageView */
+  @Key("view.gwtCommandPage.gwtModule.text")
+  String gwtCommandPageViewGwtModuleText();
 
-    @Key("view.gwtCommandPage.gwtModule.hint")
-    String gwtCommandPageViewGwtModuleHint();
+  @Key("view.gwtCommandPage.gwtModule.hint")
+  String gwtCommandPageViewGwtModuleHint();
 
-    @Key("view.gwtCommandPage.codeServerAddress.text")
-    String gwtCommandPageViewCodeServerAddressText();
+  @Key("view.gwtCommandPage.codeServerAddress.text")
+  String gwtCommandPageViewCodeServerAddressText();
 }

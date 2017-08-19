@@ -16,5 +16,6 @@ package org.eclipse.che.ide.api.machine;
  * @author Roman Nikitenko.
  */
 public enum WsAgentState {
-    STARTED, STOPPED
+  STARTED,
+  STOPPED
 }

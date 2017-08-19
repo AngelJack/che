@@ -18,10 +18,10 @@ import com.google.gwt.dom.client.Element;
  * @author Evgen Vidolob
  */
 public interface HasNotificationPanel {
-    NotificationRemover addNotification(Element element);
+  NotificationRemover addNotification(Element element);
 
-    interface NotificationRemover {
-        /** Removes notification panel. */
-        void remove();
-    }
+  interface NotificationRemover {
+    /** Removes notification panel. */
+    void remove();
+  }
 }

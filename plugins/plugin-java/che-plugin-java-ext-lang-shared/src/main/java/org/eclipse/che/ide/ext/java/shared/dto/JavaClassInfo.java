@@ -20,13 +20,13 @@ import org.eclipse.che.dto.shared.DTO;
 @DTO
 public interface JavaClassInfo {
 
-    /** @return the FQN of java class */
-    String getFQN();
+  /** @return the FQN of java class */
+  String getFQN();
 
-    JavaClassInfo withFQN(String fqn);
+  JavaClassInfo withFQN(String fqn);
 
-    /** @return the project path */
-    String getProjectPath();
+  /** @return the project path */
+  String getProjectPath();
 
-    JavaClassInfo withProjectPath(String projectPath);
+  JavaClassInfo withProjectPath(String projectPath);
 }

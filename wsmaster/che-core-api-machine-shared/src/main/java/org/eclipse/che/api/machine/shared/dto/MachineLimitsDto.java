@@ -13,10 +13,8 @@ package org.eclipse.che.api.machine.shared.dto;
 import org.eclipse.che.api.core.model.machine.MachineLimits;
 import org.eclipse.che.dto.shared.DTO;
 
-/**
- * @author Alexander Garagatyi
- */
+/** @author Alexander Garagatyi */
 @DTO
 public interface MachineLimitsDto extends MachineLimits {
-    MachineLimitsDto withRam(int memorySizeMB);
+  MachineLimitsDto withRam(int memorySizeMB);
 }

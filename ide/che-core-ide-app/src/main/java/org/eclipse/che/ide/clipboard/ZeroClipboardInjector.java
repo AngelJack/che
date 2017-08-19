@@ -10,33 +10,33 @@
  */
 package org.eclipse.che.ide.clipboard;
 
-import org.eclipse.che.ide.api.component.Component;
-import org.eclipse.che.ide.util.loging.Log;
 import com.google.gwt.core.client.Callback;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.core.client.ScriptInjector;
 import com.google.inject.Singleton;
+import org.eclipse.che.ide.api.component.Component;
+import org.eclipse.che.ide.util.loging.Log;
 
-/**
- * @author Evgen Vidolob
- */
+/** @author Evgen Vidolob */
 @Singleton
 public class ZeroClipboardInjector implements Component {
 
-    @Override
-    public void start(Callback<Component, Exception> callback) {
-        // Inject ZeroClipboard script
-        ScriptInjector.fromUrl(GWT.getModuleBaseForStaticFiles() + "ZeroClipboard.min.js").setWindow(ScriptInjector.TOP_WINDOW)
-                      .setCallback(new Callback<Void, Exception>() {
-                          @Override
-                          public void onSuccess(Void result) {
-                          }
+  @Override
+  public void start(Callback<Component, Exception> callback) {
+    // Inject ZeroClipboard script
+    ScriptInjector.fromUrl(GWT.getModuleBaseForStaticFiles() + "ZeroClipboard.min.js")
+        .setWindow(ScriptInjector.TOP_WINDOW)
+        .setCallback(
+            new Callback<Void, Exception>() {
+              @Override
+              public void onSuccess(Void result) {}
 
-                          @Override
-                          public void onFailure(Exception e) {
-                              Log.error(getClass(), "Unable to inject ZeroClipboard.min.js", e);
-                          }
-                      }).inject();
-        callback.onSuccess(this);
-    }
+              @Override
+              public void onFailure(Exception e) {
+                Log.error(getClass(), "Unable to inject ZeroClipboard.min.js", e);
+              }
+            })
+        .inject();
+    callback.onSuccess(this);
+  }
 }

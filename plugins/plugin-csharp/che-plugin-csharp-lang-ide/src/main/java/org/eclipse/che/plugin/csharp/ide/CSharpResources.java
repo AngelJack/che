@@ -12,18 +12,15 @@ package org.eclipse.che.plugin.csharp.ide;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.resources.client.ClientBundle;
-
 import org.vectomatic.dom.svg.ui.SVGResource;
 
-/**
- * @author Anatolii Bazko
- */
+/** @author Anatolii Bazko */
 public interface CSharpResources extends ClientBundle {
-    CSharpResources INSTANCE = GWT.create(CSharpResources.class);
+  CSharpResources INSTANCE = GWT.create(CSharpResources.class);
 
-    @Source("svg/csharp_file.svg")
-    SVGResource csharpFile();
+  @Source("svg/csharp_file.svg")
+  SVGResource csharpFile();
 
-    @Source("svg/category.svg")
-    SVGResource category();
+  @Source("svg/category.svg")
+  SVGResource category();
 }

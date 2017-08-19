@@ -18,6 +18,6 @@ package org.eclipse.che.ide.api.dialogs;
  */
 public interface CancelCallback {
 
-    /** Action called when the user clicks on Cancel. */
-    void cancelled();
+  /** Action called when the user clicks on Cancel. */
+  void cancelled();
 }

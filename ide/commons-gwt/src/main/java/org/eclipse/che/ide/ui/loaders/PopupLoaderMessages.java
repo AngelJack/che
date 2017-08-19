@@ -19,43 +19,42 @@ import com.google.gwt.i18n.client.Messages;
  */
 public interface PopupLoaderMessages extends Messages {
 
-    @Key("startingWorkspaceRuntime.title")
-    String startingWorkspaceRuntime();
+  @Key("startingWorkspaceRuntime.title")
+  String startingWorkspaceRuntime();
 
-    @Key("startingWorkspaceRuntime.description")
-    String startingWorkspaceRuntimeDescription();
+  @Key("startingWorkspaceRuntime.description")
+  String startingWorkspaceRuntimeDescription();
 
-    @Key("startingWorkspaceAgent.title")
-    String startingWorkspaceAgent();
+  @Key("startingWorkspaceAgent.title")
+  String startingWorkspaceAgent();
 
-    @Key("startingWorkspaceAgent.description")
-    String startingWorkspaceAgentDescription();
+  @Key("startingWorkspaceAgent.description")
+  String startingWorkspaceAgentDescription();
 
-    @Key("stoppingWorkspace.title")
-    String stoppingWorkspace();
+  @Key("stoppingWorkspace.title")
+  String stoppingWorkspace();
 
-    @Key("stoppingWorkspace.description")
-    String stoppingWorkspaceDescription();
+  @Key("stoppingWorkspace.description")
+  String stoppingWorkspaceDescription();
 
-    @Key("creatingProject.title")
-    String creatingProject();
+  @Key("creatingProject.title")
+  String creatingProject();
 
-    @Key("creatingProject.description")
-    String creatingProjectDescription();
+  @Key("creatingProject.description")
+  String creatingProjectDescription();
 
-    @Key("snapshottingWorkspace.title")
-    String snapshottingWorkspace();
+  @Key("snapshottingWorkspace.title")
+  String snapshottingWorkspace();
 
-    @Key("snapshottingWorkspace.description")
-    String snapshottingWorkspaceDescription();
+  @Key("snapshottingWorkspace.description")
+  String snapshottingWorkspaceDescription();
 
-    @Key("workspaceStopped.title")
-    String workspaceStopped();
+  @Key("workspaceStopped.title")
+  String workspaceStopped();
 
-    @Key("workspaceStopped.description")
-    String workspaceStoppedDescription();
+  @Key("workspaceStopped.description")
+  String workspaceStoppedDescription();
 
-    @Key("downloadOutputs")
-    String downloadOutputs();
-
+  @Key("downloadOutputs")
+  String downloadOutputs();
 }

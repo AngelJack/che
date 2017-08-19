@@ -10,15 +10,13 @@
  */
 package org.eclipse.che.ide.api.project;
 
-import org.eclipse.che.ide.api.machine.DevMachine;
 import org.eclipse.che.api.project.shared.dto.ProjectImporterData;
+import org.eclipse.che.ide.api.machine.DevMachine;
 import org.eclipse.che.ide.rest.AsyncRequestCallback;
 
-
-/**
- * @author Vitaly Parfonov
- */
+/** @author Vitaly Parfonov */
 public interface ProjectImportersServiceClient {
 
-    void getProjectImporters(DevMachine devMachine, AsyncRequestCallback<ProjectImporterData> callback);
+  void getProjectImporters(
+      DevMachine devMachine, AsyncRequestCallback<ProjectImporterData> callback);
 }

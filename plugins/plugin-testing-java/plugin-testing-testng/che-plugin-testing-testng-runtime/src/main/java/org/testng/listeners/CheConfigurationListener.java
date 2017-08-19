@@ -14,35 +14,33 @@ import org.testng.CheTestNGListener;
 import org.testng.IConfigurationListener;
 import org.testng.ITestResult;
 
-/**
- * Listener for events related to configuration methods.
- */
+/** Listener for events related to configuration methods. */
 public class CheConfigurationListener implements IConfigurationListener {
 
-    private final CheTestNGListener delegate;
+  private final CheTestNGListener delegate;
 
-    private boolean ignoreStarted;
+  private boolean ignoreStarted;
 
-    public CheConfigurationListener(CheTestNGListener delegate) {
-        this.delegate = delegate;
-    }
+  public CheConfigurationListener(CheTestNGListener delegate) {
+    this.delegate = delegate;
+  }
 
-    @Override
-    public void onConfigurationSuccess(ITestResult itr) {
-        delegate.onConfigurationSuccess(itr, !ignoreStarted);
-    }
+  @Override
+  public void onConfigurationSuccess(ITestResult itr) {
+    delegate.onConfigurationSuccess(itr, !ignoreStarted);
+  }
 
-    @Override
-    public void onConfigurationFailure(ITestResult itr) {
-        delegate.onConfigurationFailure(itr, !ignoreStarted);
-    }
+  @Override
+  public void onConfigurationFailure(ITestResult itr) {
+    delegate.onConfigurationFailure(itr, !ignoreStarted);
+  }
 
-    @Override
-    public void onConfigurationSkip(ITestResult itr) {
-        //ignore
-    }
+  @Override
+  public void onConfigurationSkip(ITestResult itr) {
+    //ignore
+  }
 
-    public void setIgnoreStarted() {
-        ignoreStarted = true;
-    }
+  public void setIgnoreStarted() {
+    ignoreStarted = true;
+  }
 }

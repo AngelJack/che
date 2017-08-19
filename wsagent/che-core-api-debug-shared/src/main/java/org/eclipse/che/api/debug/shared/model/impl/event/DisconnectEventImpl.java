@@ -12,11 +12,9 @@ package org.eclipse.che.api.debug.shared.model.impl.event;
 
 import org.eclipse.che.api.debug.shared.model.event.DisconnectEvent;
 
-/**
- * @author Anatoliy Bazko
- */
+/** @author Anatoliy Bazko */
 public class DisconnectEventImpl extends DebuggerEventImpl implements DisconnectEvent {
-    public DisconnectEventImpl() {
-        super(DebuggerEventImpl.TYPE.DISCONNECT);
-    }
+  public DisconnectEventImpl() {
+    super(DebuggerEventImpl.TYPE.DISCONNECT);
+  }
 }

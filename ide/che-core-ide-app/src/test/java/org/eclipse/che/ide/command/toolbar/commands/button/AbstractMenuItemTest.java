@@ -10,6 +10,8 @@
  */
 package org.eclipse.che.ide.command.toolbar.commands.button;
 
+import static org.junit.Assert.assertEquals;
+
 import org.eclipse.che.ide.api.command.CommandImpl;
 import org.junit.Before;
 import org.junit.Test;
@@ -17,36 +19,33 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
-import static org.junit.Assert.assertEquals;
-
 /** Tests for {@link AbstractMenuItem}. */
 @RunWith(MockitoJUnitRunner.class)
 public class AbstractMenuItemTest {
 
-    @Mock
-    private CommandImpl command;
+  @Mock private CommandImpl command;
 
-    private AbstractMenuItem item;
+  private AbstractMenuItem item;
 
-    @Before
-    public void setUp() throws Exception {
-        item = new DummyMenuItem(command);
+  @Before
+  public void setUp() throws Exception {
+    item = new DummyMenuItem(command);
+  }
+
+  @Test
+  public void testGetCommand() throws Exception {
+    assertEquals(command, item.getCommand());
+  }
+
+  private static class DummyMenuItem extends AbstractMenuItem {
+
+    DummyMenuItem(CommandImpl command) {
+      super(command);
     }
 
-    @Test
-    public void testGetCommand() throws Exception {
-        assertEquals(command, item.getCommand());
+    @Override
+    public String getName() {
+      return null;
     }
-
-    private static class DummyMenuItem extends AbstractMenuItem {
-
-        DummyMenuItem(CommandImpl command) {
-            super(command);
-        }
-
-        @Override
-        public String getName() {
-            return null;
-        }
-    }
+  }
 }

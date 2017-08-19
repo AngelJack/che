@@ -21,12 +21,11 @@ import org.eclipse.che.ide.ext.java.shared.dto.search.FindUsagesResponse;
  */
 public interface JavaSearchService {
 
-    /**
-     * Invoke find usage request.
-     *
-     * @param request
-     *          the request parameters, contains project and file paths and cursor position
-     * @return find usages response
-     */
-    Promise<FindUsagesResponse> findUsages(FindUsagesRequest request);
+  /**
+   * Invoke find usage request.
+   *
+   * @param request the request parameters, contains project and file paths and cursor position
+   * @return find usages response
+   */
+  Promise<FindUsagesResponse> findUsages(FindUsagesRequest request);
 }

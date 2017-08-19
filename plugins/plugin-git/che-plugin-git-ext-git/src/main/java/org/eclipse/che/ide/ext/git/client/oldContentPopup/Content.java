@@ -10,10 +10,8 @@
  */
 package org.eclipse.che.ide.ext.git.client.oldContentPopup;
 
-/**
- * @author Evgen Vidolob
- */
+/** @author Evgen Vidolob */
 public interface Content {
 
-    void showDocumentation();
+  void showDocumentation();
 }

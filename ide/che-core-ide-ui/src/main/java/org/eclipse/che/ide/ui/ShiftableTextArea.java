@@ -12,7 +12,6 @@ package org.eclipse.che.ide.ui;
 
 import com.google.gwt.dom.client.NativeEvent;
 import com.google.gwt.user.client.ui.TextArea;
-
 import org.eclipse.che.ide.ui.smartTree.KeyboardNavigationHandler;
 
 /**
@@ -21,21 +20,21 @@ import org.eclipse.che.ide.ui.smartTree.KeyboardNavigationHandler;
  * @author Igor Vinokur
  */
 public class ShiftableTextArea extends TextArea {
-    public ShiftableTextArea() {
-        super();
-        initializeEnterKeyHandler();
-    }
+  public ShiftableTextArea() {
+    super();
+    initializeEnterKeyHandler();
+  }
 
-    private void initializeEnterKeyHandler() {
-        new KeyboardNavigationHandler(this) {
-            @Override
-            public void onEnter(NativeEvent evt) {
-                super.onEnter(evt);
+  private void initializeEnterKeyHandler() {
+    new KeyboardNavigationHandler(this) {
+      @Override
+      public void onEnter(NativeEvent evt) {
+        super.onEnter(evt);
 
-                int cursorPos = getCursorPos();
-                setText(new StringBuilder(getText()).insert(cursorPos, '\n').toString());
-                setCursorPos(cursorPos + 1);
-            }
-        };
-    }
+        int cursorPos = getCursorPos();
+        setText(new StringBuilder(getText()).insert(cursorPos, '\n').toString());
+        setCursorPos(cursorPos + 1);
+      }
+    };
+  }
 }

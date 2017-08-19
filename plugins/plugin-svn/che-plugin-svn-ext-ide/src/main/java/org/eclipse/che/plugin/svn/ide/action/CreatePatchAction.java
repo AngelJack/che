@@ -12,27 +12,29 @@ package org.eclipse.che.plugin.svn.ide.action;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-
 import org.eclipse.che.ide.api.action.ActionEvent;
 import org.eclipse.che.ide.api.app.AppContext;
 import org.eclipse.che.plugin.svn.ide.SubversionExtensionLocalizationConstants;
 import org.eclipse.che.plugin.svn.ide.SubversionExtensionResources;
 
-/**
- * Extension of {@link SubversionAction} for implementing the "svn diff" (create patch) command.
- */
+/** Extension of {@link SubversionAction} for implementing the "svn diff" (create patch) command. */
 @Singleton
 public class CreatePatchAction extends SubversionAction {
 
-    @Inject
-    public CreatePatchAction(AppContext appContext,
-                             SubversionExtensionLocalizationConstants constants,
-                             SubversionExtensionResources resources) {
-        super(constants.createPatchTitle(), constants.createPatchDescription(), resources.createPatch(), appContext, constants, resources);
-    }
+  @Inject
+  public CreatePatchAction(
+      AppContext appContext,
+      SubversionExtensionLocalizationConstants constants,
+      SubversionExtensionResources resources) {
+    super(
+        constants.createPatchTitle(),
+        constants.createPatchDescription(),
+        resources.createPatch(),
+        appContext,
+        constants,
+        resources);
+  }
 
-    @Override
-    public void actionPerformed(ActionEvent actionEvent) {
-
-    }
+  @Override
+  public void actionPerformed(ActionEvent actionEvent) {}
 }

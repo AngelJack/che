@@ -13,24 +13,24 @@ package org.eclipse.che.dto.definitions;
 import org.eclipse.che.dto.shared.DTO;
 
 /**
- * DTO for testing that the {@link org.eclipse.che.dto.generator.DtoGenerator}
- * correctly generates server implementations for simple DTO interface.
+ * DTO for testing that the {@link org.eclipse.che.dto.generator.DtoGenerator} correctly generates
+ * server implementations for simple DTO interface.
  *
  * @author Artem Zatsarynnyi
  */
 @DTO
 public interface SimpleDto {
-    int getId();
+  int getId();
 
-    SimpleDto withId(int id);
+  SimpleDto withId(int id);
 
-    String getName();
+  String getName();
 
-    SimpleDto withName(String name);
+  SimpleDto withName(String name);
 
-    String getDefault();
+  String getDefault();
 
-    void setDefault(String s);
+  void setDefault(String s);
 
-    SimpleDto withDefault(String s);
+  SimpleDto withDefault(String s);
 }

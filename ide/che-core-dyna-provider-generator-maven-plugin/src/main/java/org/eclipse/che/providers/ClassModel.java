@@ -11,27 +11,26 @@
 package org.eclipse.che.providers;
 
 /**
- * Data class for generator.
- * Holds class name and variable name for class.
+ * Data class for generator. Holds class name and variable name for class.
  *
  * @author Evgen Vidolob
  */
 public class ClassModel {
 
-    private String name;
+  private String name;
 
-    private String varName;
+  private String varName;
 
-    public ClassModel(Class<?> clazz) {
-        name = clazz.getName();
-        varName = clazz.getName().replaceAll("\\.", "_");
-    }
+  public ClassModel(Class<?> clazz) {
+    name = clazz.getName();
+    varName = clazz.getName().replaceAll("\\.", "_");
+  }
 
-    public String getName() {
-        return name;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public String getVarName() {
-        return varName;
-    }
+  public String getVarName() {
+    return varName;
+  }
 }

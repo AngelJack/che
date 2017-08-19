@@ -10,21 +10,18 @@
  */
 package org.eclipse.che.api.testing.server.messages;
 
+import java.util.HashMap;
+import java.util.Map;
 import org.eclipse.che.api.testing.shared.messages.TestingMessageNames;
 import org.eclipse.che.commons.lang.execution.ProcessOutputType;
 
-import java.util.HashMap;
-import java.util.Map;
-
-/**
- * Simple test message which contains text and type.
- */
+/** Simple test message which contains text and type. */
 public class UncapturedOutputMessage extends ServerTestingMessage {
-    public UncapturedOutputMessage(String text, ProcessOutputType outputType) {
-        super(TestingMessageNames.UNCAPTURED_OUTPUT);
-        Map<String, String> attributes = new HashMap<>();
-        attributes.put("output", text);
-        attributes.put("outputType", outputType.toString());
-        setAttributes(attributes);
-    }
+  public UncapturedOutputMessage(String text, ProcessOutputType outputType) {
+    super(TestingMessageNames.UNCAPTURED_OUTPUT);
+    Map<String, String> attributes = new HashMap<>();
+    attributes.put("output", text);
+    attributes.put("outputType", outputType.toString());
+    setAttributes(attributes);
+  }
 }

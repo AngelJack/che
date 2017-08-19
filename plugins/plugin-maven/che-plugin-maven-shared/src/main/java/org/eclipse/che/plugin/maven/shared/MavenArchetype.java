@@ -10,28 +10,23 @@
  */
 package org.eclipse.che.plugin.maven.shared;
 
-
 import java.util.Map;
 
-/**
- * @author Vitalii Parfonov
- */
-
+/** @author Vitalii Parfonov */
 public interface MavenArchetype {
 
-    /** Returns the archetype's groupId. */
-    String getGroupId();
+  /** Returns the archetype's groupId. */
+  String getGroupId();
 
-    /** Returns the archetype's artifactId. */
-    String getArtifactId();
+  /** Returns the archetype's artifactId. */
+  String getArtifactId();
 
-    /** Returns the archetype's version. */
-    String getVersion();
+  /** Returns the archetype's version. */
+  String getVersion();
 
-        /** Returns the repository where to find the archetype. */
-    String getRepository();
+  /** Returns the repository where to find the archetype. */
+  String getRepository();
 
-    /** Returns the additional properties for the archetype. */
-    Map<String, String> getProperties();
-
+  /** Returns the additional properties for the archetype. */
+  Map<String, String> getProperties();
 }

@@ -11,25 +11,22 @@
 package org.eclipse.che.ide.project.shared;
 
 import com.google.gwt.resources.client.ClientBundle;
-
 import org.vectomatic.dom.svg.ui.SVGResource;
 
-/**
- * @author Vlad Zhukovskiy
- */
+/** @author Vlad Zhukovskiy */
 public interface NodesResources extends ClientBundle {
-    @Source("file.svg")
-    SVGResource file();
+  @Source("file.svg")
+  SVGResource file();
 
-    @Source("hiddenSimpleFolder.svg")
-    SVGResource hiddenSimpleFolder();
+  @Source("hiddenSimpleFolder.svg")
+  SVGResource hiddenSimpleFolder();
 
-    @Source("notValidProjectFolder.svg")
-    SVGResource notValidProjectFolder();
+  @Source("notValidProjectFolder.svg")
+  SVGResource notValidProjectFolder();
 
-    @Source("projectFolder.svg")
-    SVGResource projectFolder();
+  @Source("projectFolder.svg")
+  SVGResource projectFolder();
 
-    @Source("simpleFolder.svg")
-    SVGResource simpleFolder();
+  @Source("simpleFolder.svg")
+  SVGResource simpleFolder();
 }

@@ -19,13 +19,13 @@ import org.eclipse.che.core.db.cascade.event.RemoveEvent;
  * @author Max Shaposhnik
  */
 public class BeforeRecipeRemovedEvent extends RemoveEvent {
-    private final RecipeImpl recipe;
+  private final RecipeImpl recipe;
 
-    public BeforeRecipeRemovedEvent(RecipeImpl recipe) {
-        this.recipe = recipe;
-    }
+  public BeforeRecipeRemovedEvent(RecipeImpl recipe) {
+    this.recipe = recipe;
+  }
 
-    public RecipeImpl getRecipe() {
-        return recipe;
-    }
+  public RecipeImpl getRecipe() {
+    return recipe;
+  }
 }

@@ -14,39 +14,39 @@ import org.eclipse.che.dto.shared.DTO;
 
 @DTO
 public interface PullRequest {
-    String getId();
+  String getId();
 
-    PullRequest withId(String id);
+  PullRequest withId(String id);
 
-    int getVersion();
+  int getVersion();
 
-    PullRequest withVersion(int version);
+  PullRequest withVersion(int version);
 
-    String getTitle();
+  String getTitle();
 
-    PullRequest withTitle(String title);
+  PullRequest withTitle(String title);
 
-    String getUrl();
+  String getUrl();
 
-    PullRequest withUrl(String url);
+  PullRequest withUrl(String url);
 
-    String getHtmlUrl();
+  String getHtmlUrl();
 
-    PullRequest withHtmlUrl(String htmlUrl);
+  PullRequest withHtmlUrl(String htmlUrl);
 
-    String getNumber();
+  String getNumber();
 
-    PullRequest withNumber(String number);
+  PullRequest withNumber(String number);
 
-    String getState();
+  String getState();
 
-    PullRequest withState(String state);
+  PullRequest withState(String state);
 
-    String getHeadRef();
+  String getHeadRef();
 
-    PullRequest withHeadRef(String head);
+  PullRequest withHeadRef(String head);
 
-    String getDescription();
+  String getDescription();
 
-    PullRequest withDescription(String description);
+  PullRequest withDescription(String description);
 }

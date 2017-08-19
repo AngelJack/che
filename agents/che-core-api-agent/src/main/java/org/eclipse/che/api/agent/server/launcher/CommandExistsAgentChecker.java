@@ -10,6 +10,8 @@
  */
 package org.eclipse.che.api.agent.server.launcher;
 
+import static java.lang.String.format;
+
 import org.eclipse.che.api.agent.shared.model.Agent;
 import org.eclipse.che.api.core.ConflictException;
 import org.eclipse.che.api.core.model.machine.Command;
@@ -19,36 +21,35 @@ import org.eclipse.che.api.machine.server.model.impl.CommandImpl;
 import org.eclipse.che.api.machine.server.spi.Instance;
 import org.eclipse.che.api.machine.server.spi.InstanceProcess;
 
-import static java.lang.String.format;
-
 /**
- * Verifies if agent installed a command with specific name.
- * It is an indicator that agent start had been finished.
+ * Verifies if agent installed a command with specific name. It is an indicator that agent start had
+ * been finished.
  *
  * @author Alexander Garagatyi
  */
 public class CommandExistsAgentChecker implements AgentLaunchingChecker {
 
-    private static final String CHECK_COMMAND = "command -v %1$s >/dev/null 2>&1 && echo 0 || echo 1";
-    private final String checkingCommand;
-    private       long   counter;
+  private static final String CHECK_COMMAND = "command -v %1$s >/dev/null 2>&1 && echo 0 || echo 1";
+  private final String checkingCommand;
+  private long counter;
 
-    public CommandExistsAgentChecker(String commandToCheck) {
-        this.checkingCommand = format(CHECK_COMMAND, commandToCheck);
+  public CommandExistsAgentChecker(String commandToCheck) {
+    this.checkingCommand = format(CHECK_COMMAND, commandToCheck);
+  }
+
+  @Override
+  public boolean isLaunched(Agent agent, InstanceProcess process, Instance machine)
+      throws MachineException {
+    Command command =
+        new CommandImpl(
+            format("Wait for %s, try %d", agent.getId(), ++counter), checkingCommand, "test");
+
+    try (ListLineConsumer lineConsumer = new ListLineConsumer()) {
+      InstanceProcess waitProcess = machine.createProcess(command, null);
+      waitProcess.start(lineConsumer);
+      return lineConsumer.getText().endsWith("[STDOUT] 0");
+    } catch (ConflictException e) {
+      throw new MachineException(e.getServiceError());
     }
-
-    @Override
-    public boolean isLaunched(Agent agent, InstanceProcess process, Instance machine) throws MachineException {
-        Command command = new CommandImpl(format("Wait for %s, try %d", agent.getId(), ++counter),
-                                          checkingCommand,
-                                          "test");
-
-        try (ListLineConsumer lineConsumer = new ListLineConsumer()) {
-            InstanceProcess waitProcess = machine.createProcess(command, null);
-            waitProcess.start(lineConsumer);
-            return lineConsumer.getText().endsWith("[STDOUT] 0");
-        } catch (ConflictException e) {
-            throw new MachineException(e.getServiceError());
-        }
-    }
+  }
 }

@@ -15,7 +15,7 @@ import java.util.Map;
 /**
  * Data interface represents all testing messages.
  *
- * Base format of messages is:
+ * <p>Base format of messages is:
  *
  * <pre>
  *  {"name":"message_name","attributes":{"attribute":"value"}}
@@ -23,8 +23,7 @@ import java.util.Map;
  */
 public interface TestingMessage {
 
-    String getName();
+  String getName();
 
-    Map<String, String> getAttributes();
-
+  Map<String, String> getAttributes();
 }

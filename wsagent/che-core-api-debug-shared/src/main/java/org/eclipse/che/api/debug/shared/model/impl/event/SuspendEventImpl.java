@@ -10,41 +10,39 @@
  */
 package org.eclipse.che.api.debug.shared.model.impl.event;
 
-import org.eclipse.che.api.debug.shared.model.event.SuspendEvent;
 import org.eclipse.che.api.debug.shared.model.Location;
 import org.eclipse.che.api.debug.shared.model.event.DebuggerEvent;
+import org.eclipse.che.api.debug.shared.model.event.SuspendEvent;
 
-/**
- * @author Anatoliy Bazko
- */
+/** @author Anatoliy Bazko */
 public class SuspendEventImpl extends DebuggerEventImpl implements SuspendEvent {
-    private final Location location;
+  private final Location location;
 
-    public SuspendEventImpl(Location location) {
-        super(DebuggerEvent.TYPE.SUSPEND);
-        this.location = location;
-    }
+  public SuspendEventImpl(Location location) {
+    super(DebuggerEvent.TYPE.SUSPEND);
+    this.location = location;
+  }
 
-    @Override
-    public Location getLocation() {
-        return location;
-    }
+  @Override
+  public Location getLocation() {
+    return location;
+  }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof SuspendEventImpl)) return false;
-        if (!super.equals(o)) return false;
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (!(o instanceof SuspendEventImpl)) return false;
+    if (!super.equals(o)) return false;
 
-        SuspendEventImpl that = (SuspendEventImpl)o;
+    SuspendEventImpl that = (SuspendEventImpl) o;
 
-        return !(location != null ? !location.equals(that.location) : that.location != null);
-    }
+    return !(location != null ? !location.equals(that.location) : that.location != null);
+  }
 
-    @Override
-    public int hashCode() {
-        int result = super.hashCode();
-        result = 31 * result + (location != null ? location.hashCode() : 0);
-        return result;
-    }
+  @Override
+  public int hashCode() {
+    int result = super.hashCode();
+    result = 31 * result + (location != null ? location.hashCode() : 0);
+    return result;
+  }
 }

@@ -14,13 +14,13 @@ import org.eclipse.che.dto.shared.DTO;
 
 /**
  * DTO for disable/enable corresponding refactoring change.
+ *
  * @author Evgen Vidolob
  */
 @DTO
 public interface ChangeEnabledState extends RefactoringChange {
 
-    boolean isEnabled();
+  boolean isEnabled();
 
-    void setEnabled(boolean enabled);
-
+  void setEnabled(boolean enabled);
 }

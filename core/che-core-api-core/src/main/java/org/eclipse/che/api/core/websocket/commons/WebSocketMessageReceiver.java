@@ -16,13 +16,11 @@ package org.eclipse.che.api.core.websocket.commons;
  * @author Dmitry Kuleshov
  */
 public interface WebSocketMessageReceiver {
-    /**
-     * Receives a message by a a web socket protocol.
-     *
-     * @param endpointId
-     *         identifier of an endpoint known to an transmitter implementation
-     * @param message
-     *         plain text message
-     */
-    void receive(String endpointId, String message);
+  /**
+   * Receives a message by a a web socket protocol.
+   *
+   * @param endpointId identifier of an endpoint known to an transmitter implementation
+   * @param message plain text message
+   */
+  void receive(String endpointId, String message);
 }

@@ -10,15 +10,13 @@
  */
 package org.eclipse.che.api.agent.server.exception;
 
-/**
- * @author Anatoliy Bazko
- */
+/** @author Anatoliy Bazko */
 public class AgentException extends Exception {
-    public AgentException(String message) {
-        super(message);
-    }
+  public AgentException(String message) {
+    super(message);
+  }
 
-    public AgentException(String message, Throwable cause) {
-        super(message, cause);
-    }
+  public AgentException(String message, Throwable cause) {
+    super(message, cause);
+  }
 }

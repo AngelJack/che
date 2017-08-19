@@ -11,7 +11,6 @@
 package org.eclipse.che.ide.api.event;
 
 import com.google.gwt.event.shared.GwtEvent;
-
 import org.eclipse.che.ide.api.parts.PartPresenter;
 
 /**
@@ -20,26 +19,26 @@ import org.eclipse.che.ide.api.parts.PartPresenter;
  * @author Nikolay Zamosenchuk
  */
 public class ActivePartChangedEvent extends GwtEvent<ActivePartChangedHandler> {
-    public static Type<ActivePartChangedHandler> TYPE = new Type<>();
+  public static Type<ActivePartChangedHandler> TYPE = new Type<>();
 
-    private final PartPresenter activePart;
+  private final PartPresenter activePart;
 
-    public ActivePartChangedEvent(PartPresenter activePart) {
-        this.activePart = activePart;
-    }
+  public ActivePartChangedEvent(PartPresenter activePart) {
+    this.activePart = activePart;
+  }
 
-    @Override
-    public Type<ActivePartChangedHandler> getAssociatedType() {
-        return TYPE;
-    }
+  @Override
+  public Type<ActivePartChangedHandler> getAssociatedType() {
+    return TYPE;
+  }
 
-    /** @return instance of Active Part */
-    public PartPresenter getActivePart() {
-        return activePart;
-    }
+  /** @return instance of Active Part */
+  public PartPresenter getActivePart() {
+    return activePart;
+  }
 
-    @Override
-    protected void dispatch(ActivePartChangedHandler handler) {
-        handler.onActivePartChanged(this);
-    }
+  @Override
+  protected void dispatch(ActivePartChangedHandler handler) {
+    handler.onActivePartChanged(this);
+  }
 }

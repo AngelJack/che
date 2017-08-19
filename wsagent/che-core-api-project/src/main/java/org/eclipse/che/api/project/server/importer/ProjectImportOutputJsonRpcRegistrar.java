@@ -10,16 +10,14 @@
  */
 package org.eclipse.che.api.project.server.importer;
 
-import org.eclipse.che.api.core.jsonrpc.commons.RequestHandlerConfigurator;
-
-import javax.inject.Inject;
-import javax.inject.Singleton;
-
-import java.util.Set;
-
 import static com.google.common.collect.Sets.newConcurrentHashSet;
 import static org.eclipse.che.api.project.shared.Constants.EVENT_IMPORT_OUTPUT_SUBSCRIBE;
 import static org.eclipse.che.api.project.shared.Constants.EVENT_IMPORT_OUTPUT_UN_SUBSCRIBE;
+
+import java.util.Set;
+import javax.inject.Inject;
+import javax.inject.Singleton;
+import org.eclipse.che.api.core.jsonrpc.commons.RequestHandlerConfigurator;
 
 /**
  * Endpoint registry for broadcasting project import events. Holds registered client's endpoint ids.
@@ -30,27 +28,29 @@ import static org.eclipse.che.api.project.shared.Constants.EVENT_IMPORT_OUTPUT_U
 @Singleton
 public class ProjectImportOutputJsonRpcRegistrar {
 
-    private final Set<String> endpointIds = newConcurrentHashSet();
+  private final Set<String> endpointIds = newConcurrentHashSet();
 
-    @Inject
-    private void configureSubscribeHandler(RequestHandlerConfigurator configurator) {
-        configurator.newConfiguration()
-                    .methodName(EVENT_IMPORT_OUTPUT_SUBSCRIBE)
-                    .noParams()
-                    .noResult()
-                    .withConsumer(endpointId -> endpointIds.add(endpointId));
-    }
+  @Inject
+  private void configureSubscribeHandler(RequestHandlerConfigurator configurator) {
+    configurator
+        .newConfiguration()
+        .methodName(EVENT_IMPORT_OUTPUT_SUBSCRIBE)
+        .noParams()
+        .noResult()
+        .withConsumer(endpointId -> endpointIds.add(endpointId));
+  }
 
-    @Inject
-    private void configureUnSubscribeHandler(RequestHandlerConfigurator configurator) {
-        configurator.newConfiguration()
-                    .methodName(EVENT_IMPORT_OUTPUT_UN_SUBSCRIBE)
-                    .noParams()
-                    .noResult()
-                    .withConsumer(endpointId -> endpointIds.remove(endpointId));
-    }
+  @Inject
+  private void configureUnSubscribeHandler(RequestHandlerConfigurator configurator) {
+    configurator
+        .newConfiguration()
+        .methodName(EVENT_IMPORT_OUTPUT_UN_SUBSCRIBE)
+        .noParams()
+        .noResult()
+        .withConsumer(endpointId -> endpointIds.remove(endpointId));
+  }
 
-    public Set<String> getRegisteredEndpoints() {
-        return newConcurrentHashSet(endpointIds);
-    }
+  public Set<String> getRegisteredEndpoints() {
+    return newConcurrentHashSet(endpointIds);
+  }
 }

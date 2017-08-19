@@ -10,25 +10,22 @@
  */
 package org.eclipse.che.api.project.shared.dto;
 
+import java.util.List;
 import org.eclipse.che.dto.shared.DTO;
 
-import java.util.List;
-
-/**
- * @author Vitalii Parfonov
- */
+/** @author Vitalii Parfonov */
 @DTO
 public interface SearchResultDto {
 
-    ItemReference getItemReference();
+  ItemReference getItemReference();
 
-    void setItemReference(ItemReference itemReference);
+  void setItemReference(ItemReference itemReference);
 
-    SearchResultDto withItemReference(ItemReference itemReference);
+  SearchResultDto withItemReference(ItemReference itemReference);
 
-    List<SearchOccurrenceDto> getSearchOccurrences();
+  List<SearchOccurrenceDto> getSearchOccurrences();
 
-    void setSearchOccurrences(List<SearchOccurrenceDto> searchOccurrences);
+  void setSearchOccurrences(List<SearchOccurrenceDto> searchOccurrences);
 
-    SearchResultDto withSearchOccurrences(List<SearchOccurrenceDto> searchOccurrences);
+  SearchResultDto withSearchOccurrences(List<SearchOccurrenceDto> searchOccurrences);
 }

@@ -13,14 +13,12 @@ package org.eclipse.che.api.debug.shared.dto.action;
 import org.eclipse.che.api.debug.shared.model.action.StepIntoAction;
 import org.eclipse.che.dto.shared.DTO;
 
-/**
- * @author Anatoliy Bazko
- */
+/** @author Anatoliy Bazko */
 @DTO
 public interface StepIntoActionDto extends ActionDto, StepIntoAction {
-    TYPE getType();
+  TYPE getType();
 
-    void setType(TYPE type);
+  void setType(TYPE type);
 
-    StepIntoActionDto withType(TYPE type);
+  StepIntoActionDto withType(TYPE type);
 }

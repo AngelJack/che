@@ -13,17 +13,14 @@ package org.eclipse.che.ide.machine;
 import org.eclipse.che.api.core.model.machine.Machine;
 import org.eclipse.che.api.promises.client.Promise;
 
-/**
- * @author Mihail Kuznyetsov.
- */
+/** @author Mihail Kuznyetsov. */
 public interface RecipeScriptDownloadServiceClient {
 
-    /**
-     * Fetch recipe script for machine source location
-     *
-     * @param machine
-     *         machine to fetch script for
-     * @return content of the recipe script
-     */
-    Promise<String> getRecipeScript(Machine machine);
+  /**
+   * Fetch recipe script for machine source location
+   *
+   * @param machine machine to fetch script for
+   * @return content of the recipe script
+   */
+  Promise<String> getRecipeScript(Machine machine);
 }

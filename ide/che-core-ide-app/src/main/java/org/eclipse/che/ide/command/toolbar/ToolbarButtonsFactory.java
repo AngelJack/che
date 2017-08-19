@@ -15,5 +15,5 @@ import com.google.gwt.safehtml.shared.SafeHtml;
 /** Factory for the buttons placed on Commands Toolbar. */
 public interface ToolbarButtonsFactory {
 
-    OpenCommandsPaletteButton createOpenPaletteButton(SafeHtml content);
+  OpenCommandsPaletteButton createOpenPaletteButton(SafeHtml content);
 }

@@ -13,17 +13,12 @@ package org.eclipse.che.api.promises.client;
 /**
  * Interface for a binary function: function that takes two arguments.
  *
- * @param <A1>
- *         the argument one type
- * @param <A2>
- *         the argument two type
- * @param <R>
- *         the result type
+ * @param <A1> the argument one type
+ * @param <A2> the argument two type
+ * @param <R> the result type
  */
 public interface BiFunction<A1, A2, R> {
 
-    /**
-     * Returns the result of applying this function to the given arguments.
-     */
-    R apply(A1 arg1, A2 arg2);
+  /** Returns the result of applying this function to the given arguments. */
+  R apply(A1 arg1, A2 arg2);
 }

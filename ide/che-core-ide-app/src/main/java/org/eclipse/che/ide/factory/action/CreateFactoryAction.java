@@ -12,36 +12,36 @@ package org.eclipse.che.ide.factory.action;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-
+import java.util.Collections;
+import javax.validation.constraints.NotNull;
 import org.eclipse.che.ide.CoreLocalizationConstant;
 import org.eclipse.che.ide.api.action.AbstractPerspectiveAction;
 import org.eclipse.che.ide.api.action.ActionEvent;
 import org.eclipse.che.ide.factory.configure.CreateFactoryPresenter;
 
-import javax.validation.constraints.NotNull;
-import java.util.Collections;
-
-/**
- * @author Anton Korneta
- */
+/** @author Anton Korneta */
 @Singleton
 public class CreateFactoryAction extends AbstractPerspectiveAction {
 
-    private final CreateFactoryPresenter presenter;
+  private final CreateFactoryPresenter presenter;
 
-    @Inject
-    public CreateFactoryAction(CreateFactoryPresenter presenter,
-                               CoreLocalizationConstant localizationConstant) {
-        super(Collections.singletonList("Project Perspective"), localizationConstant.createFactoryActionTitle(), null, null, null);
-        this.presenter = presenter;
-    }
+  @Inject
+  public CreateFactoryAction(
+      CreateFactoryPresenter presenter, CoreLocalizationConstant localizationConstant) {
+    super(
+        Collections.singletonList("Project Perspective"),
+        localizationConstant.createFactoryActionTitle(),
+        null,
+        null,
+        null);
+    this.presenter = presenter;
+  }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        presenter.showDialog();
-    }
+  @Override
+  public void actionPerformed(ActionEvent e) {
+    presenter.showDialog();
+  }
 
-    @Override
-    public void updateInPerspective(@NotNull ActionEvent event) {
-    }
+  @Override
+  public void updateInPerspective(@NotNull ActionEvent event) {}
 }

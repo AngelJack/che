@@ -20,13 +20,13 @@ import org.eclipse.che.core.db.cascade.event.RemoveEvent;
  */
 public class BeforeWorkspaceRemovedEvent extends RemoveEvent {
 
-    private final WorkspaceImpl workspace;
+  private final WorkspaceImpl workspace;
 
-    public BeforeWorkspaceRemovedEvent(WorkspaceImpl workspace) {
-        this.workspace = workspace;
-    }
+  public BeforeWorkspaceRemovedEvent(WorkspaceImpl workspace) {
+    this.workspace = workspace;
+  }
 
-    public WorkspaceImpl getWorkspace() {
-        return workspace;
-    }
+  public WorkspaceImpl getWorkspace() {
+    return workspace;
+  }
 }

@@ -13,31 +13,27 @@ package org.eclipse.che.plugin.testing.ide.model.event;
 import org.eclipse.che.commons.annotation.Nullable;
 import org.eclipse.che.plugin.testing.ide.messages.ClientTestingMessage;
 
-/**
- * Core event for the test events.
- */
+/** Core event for the test events. */
 public abstract class TestNodeEvent {
-    private String id;
-    private String name;
+  private String id;
+  private String name;
 
-    public TestNodeEvent(String id, String name) {
-        this.id = id;
-        this.name = name;
-    }
+  public TestNodeEvent(String id, String name) {
+    this.id = id;
+    this.name = name;
+  }
 
-    protected static String getNodeId(ClientTestingMessage message) {
-        return message.getAttributes().get("nodeId");
-    }
+  protected static String getNodeId(ClientTestingMessage message) {
+    return message.getAttributes().get("nodeId");
+  }
 
-    @Nullable
-    public String getId() {
-        return id;
-    }
+  @Nullable
+  public String getId() {
+    return id;
+  }
 
-    @Nullable
-    public String getName() {
-        return name;
-    }
-
-
+  @Nullable
+  public String getName() {
+    return name;
+  }
 }

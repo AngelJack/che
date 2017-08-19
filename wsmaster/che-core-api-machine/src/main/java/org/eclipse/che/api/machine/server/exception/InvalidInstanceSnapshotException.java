@@ -10,12 +10,10 @@
  */
 package org.eclipse.che.api.machine.server.exception;
 
-/**
- * @author gazarenkov
- */
+/** @author gazarenkov */
 @SuppressWarnings("serial")
 public class InvalidInstanceSnapshotException extends MachineException {
-    public InvalidInstanceSnapshotException(String message) {
-        super(message);
-    }
+  public InvalidInstanceSnapshotException(String message) {
+    super(message);
+  }
 }

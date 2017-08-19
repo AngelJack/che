@@ -10,10 +10,8 @@
  */
 package org.eclipse.che.ide.ext.java.client.documentation;
 
-/**
- * @author Evgen Vidolob
- */
+/** @author Evgen Vidolob */
 public interface QuickDocumentation {
 
-    void showDocumentation();
+  void showDocumentation();
 }

@@ -20,10 +20,10 @@ import org.eclipse.che.api.promises.client.Promise;
  */
 public interface AskCredentialsDialog {
 
-    /**
-     * Returns credentials from dialog.
-     *
-     * @return {@link Credentials} that contains user name and password
-     */
-    Promise<Credentials> askCredentials();
+  /**
+   * Returns credentials from dialog.
+   *
+   * @return {@link Credentials} that contains user name and password
+   */
+  Promise<Credentials> askCredentials();
 }

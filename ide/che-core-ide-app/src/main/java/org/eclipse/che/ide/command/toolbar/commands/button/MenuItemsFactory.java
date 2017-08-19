@@ -18,11 +18,11 @@ import org.eclipse.che.ide.ui.menubutton.MenuItem;
 /** Factory for {@link MenuItem}s for {@link ExecuteCommandButton}. */
 public interface MenuItemsFactory {
 
-    GuideItem newGuideItem(CommandGoal goal);
+  GuideItem newGuideItem(CommandGoal goal);
 
-    CommandItem newCommandItem(CommandImpl command);
+  CommandItem newCommandItem(CommandImpl command);
 
-    MachineItem newMachineItem(CommandImpl command, Machine machine);
+  MachineItem newMachineItem(CommandImpl command, Machine machine);
 
-    MachineItem newMachineItem(MachineItem item);
+  MachineItem newMachineItem(MachineItem item);
 }

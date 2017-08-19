@@ -14,23 +14,23 @@ import org.eclipse.che.dto.shared.DTO;
 
 @DTO
 public interface FileTrackingOperationDto {
-    String getPath();
+  String getPath();
 
-    FileTrackingOperationDto withPath(String path);
+  FileTrackingOperationDto withPath(String path);
 
-    String getOldPath();
+  String getOldPath();
 
-    FileTrackingOperationDto withOldPath(String oldPath);
+  FileTrackingOperationDto withOldPath(String oldPath);
 
-    Type getType();
+  Type getType();
 
-    FileTrackingOperationDto withType(Type type);
+  FileTrackingOperationDto withType(Type type);
 
-    enum Type {
-        START,
-        STOP,
-        SUSPEND,
-        RESUME,
-        MOVE
-    }
+  enum Type {
+    START,
+    STOP,
+    SUSPEND,
+    RESUME,
+    MOVE
+  }
 }

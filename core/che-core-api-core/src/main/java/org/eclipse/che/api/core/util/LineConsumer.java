@@ -20,8 +20,8 @@ import java.io.IOException;
  * @see AbstractLineConsumer
  */
 public interface LineConsumer extends Closeable {
-    /** Consumes single line. */
-    void writeLine(String line) throws IOException;
+  /** Consumes single line. */
+  void writeLine(String line) throws IOException;
 
-    LineConsumer DEV_NULL = new AbstractLineConsumer() {};
+  LineConsumer DEV_NULL = new AbstractLineConsumer() {};
 }

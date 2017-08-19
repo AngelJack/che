@@ -15,36 +15,30 @@ import org.eclipse.che.dto.shared.DTO;
 @DTO
 public interface Edition {
 
-    /**
-     * First line of the edited region.
-     */
-    int getBeginLine();
+  /** First line of the edited region. */
+  int getBeginLine();
 
-    void setBeginLine(int startLine);
+  void setBeginLine(int startLine);
 
-    Edition withBeginLine(int startLine);
+  Edition withBeginLine(int startLine);
 
-    /**
-     * Last line of the edited region.
-     */
-    int getEndLine();
+  /** Last line of the edited region. */
+  int getEndLine();
 
-    void setEndLine(int endLine);
+  void setEndLine(int endLine);
 
-    Edition withEndLine(int endLine);
+  Edition withEndLine(int endLine);
 
-    /**
-     * Status of the edition e.g. insertion, modification, deletion.
-     */
-    Type getType();
+  /** Status of the edition e.g. insertion, modification, deletion. */
+  Type getType();
 
-    void setType(Type type);
+  void setType(Type type);
 
-    Edition withType(Type type);
+  Edition withType(Type type);
 
-    enum Type {
-        INSERTION,
-        MODIFICATION,
-        DELETION
-    }
+  enum Type {
+    INSERTION,
+    MODIFICATION,
+    DELETION
+  }
 }

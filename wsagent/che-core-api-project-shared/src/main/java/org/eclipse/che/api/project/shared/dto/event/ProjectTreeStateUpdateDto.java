@@ -14,11 +14,11 @@ import org.eclipse.che.dto.shared.DTO;
 
 @DTO
 public interface ProjectTreeStateUpdateDto {
-    String getPath();
+  String getPath();
 
-    ProjectTreeStateUpdateDto withPath(String path);
+  ProjectTreeStateUpdateDto withPath(String path);
 
-    FileWatcherEventType getType();
+  FileWatcherEventType getType();
 
-    ProjectTreeStateUpdateDto withType(FileWatcherEventType type);
+  ProjectTreeStateUpdateDto withType(FileWatcherEventType type);
 }

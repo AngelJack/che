@@ -10,10 +10,8 @@
  */
 package org.eclipse.che.dto.shared;
 
+import java.util.List;
 import org.eclipse.che.dto.server.JsonSerializable;
 
-import java.util.List;
-
 /** Abstraction for list of JSON values. */
-public interface JsonArray<T> extends List<T>, JsonSerializable {
-}
+public interface JsonArray<T> extends List<T>, JsonSerializable {}

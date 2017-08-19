@@ -13,11 +13,9 @@ package org.eclipse.che.api.debug.shared.model.impl.action;
 import org.eclipse.che.api.debug.shared.model.action.Action;
 import org.eclipse.che.api.debug.shared.model.action.StepOutAction;
 
-/**
- * @author Anatoliy Bazko
- */
+/** @author Anatoliy Bazko */
 public class StepOutActionImpl extends ActionImpl implements StepOutAction {
-    public StepOutActionImpl() {
-        super(Action.TYPE.STEP_OUT);
-    }
+  public StepOutActionImpl() {
+    super(Action.TYPE.STEP_OUT);
+  }
 }

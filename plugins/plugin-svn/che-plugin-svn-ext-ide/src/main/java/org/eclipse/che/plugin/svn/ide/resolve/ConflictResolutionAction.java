@@ -11,44 +11,42 @@
 package org.eclipse.che.plugin.svn.ide.resolve;
 
 public enum ConflictResolutionAction {
+  POSTPONE("postpone"),
+  BASE("base"),
+  WORKING("working"),
+  MINE_FULL("mine-full"),
+  THEIRS_FULL("theirs-full"),
+  MINE_CONFLICT("mine-conflict"),
+  THEIRS_CONFLICT("theirs-conflict");
 
-    POSTPONE("postpone"),
-    BASE("base"),
-    WORKING("working"),
-    MINE_FULL("mine-full"),
-    THEIRS_FULL("theirs-full"),
-    MINE_CONFLICT("mine-conflict"),
-    THEIRS_CONFLICT("theirs-conflict");
+  private String text;
 
-    private String text;
+  ConflictResolutionAction(String text) {
+    this.text = text;
+  }
 
-    ConflictResolutionAction(String text) {
-        this.text = text;
+  public String getText() {
+    return text;
+  }
+
+  public static ConflictResolutionAction getEnum(String text) {
+    switch (text) {
+      case "postpone":
+        return POSTPONE;
+      case "base":
+        return BASE;
+      case "working":
+        return WORKING;
+      case "mine-full":
+        return MINE_FULL;
+      case "theirs-full":
+        return THEIRS_FULL;
+      case "mine-conflict":
+        return MINE_CONFLICT;
+      case "theirs-conflict":
+        return THEIRS_CONFLICT;
+      default:
+        return null;
     }
-
-    public String getText() {
-        return text;
-    }
-
-    public static ConflictResolutionAction getEnum(String text) {
-        switch (text) {
-            case "postpone":
-                return POSTPONE;
-            case "base":
-                return BASE;
-            case "working":
-                return WORKING;
-            case "mine-full":
-                return MINE_FULL;
-            case "theirs-full":
-                return THEIRS_FULL;
-            case "mine-conflict":
-                return MINE_CONFLICT;
-            case "theirs-conflict":
-                return THEIRS_CONFLICT;
-            default:
-                return null;
-        }
-    }
-
+  }
 }

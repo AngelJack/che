@@ -13,16 +13,15 @@ package org.eclipse.che.git.impl;
 import org.testng.annotations.DataProvider;
 
 /**
- * Implementations have to provide DataProvider with real GitConnectionFactoryProvider.
- * This class are NOT packaged to the test-jar.
+ * Implementations have to provide DataProvider with real GitConnectionFactoryProvider. This class
+ * are NOT packaged to the test-jar.
  *
  * @author Sergii Kabashniuk
  */
 public class GitConnectionFactoryProvider {
 
-
-    @DataProvider(name = "GitConnectionFactory")
-    public static Object[][] createConnection() {
-        throw new UnsupportedOperationException();
-    }
+  @DataProvider(name = "GitConnectionFactory")
+  public static Object[][] createConnection() {
+    throw new UnsupportedOperationException();
+  }
 }

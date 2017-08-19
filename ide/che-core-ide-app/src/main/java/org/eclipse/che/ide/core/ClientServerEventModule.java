@@ -12,7 +12,6 @@ package org.eclipse.che.ide.core;
 
 import com.google.gwt.inject.client.AbstractGinModule;
 import com.google.inject.Singleton;
-
 import org.eclipse.che.ide.api.event.ng.ClientServerEventService;
 import org.eclipse.che.ide.api.event.ng.ClientServerEventServiceImpl;
 import org.eclipse.che.ide.api.event.ng.EditorFileStatusNotificationOperation;
@@ -27,21 +26,20 @@ import org.eclipse.che.ide.api.event.ng.ProjectTreeStateNotificationOperation;
  */
 public class ClientServerEventModule extends AbstractGinModule {
 
-    @Override
-    protected void configure() {
-        bind(FileOpenCloseEventListener.class).asEagerSingleton();
-        bind(ClientServerEventService.class).to(ClientServerEventServiceImpl.class).in(Singleton.class);
+  @Override
+  protected void configure() {
+    bind(FileOpenCloseEventListener.class).asEagerSingleton();
+    bind(ClientServerEventService.class).to(ClientServerEventServiceImpl.class).in(Singleton.class);
 
-        notificationOperations();
-        requestFunctions();
-    }
+    notificationOperations();
+    requestFunctions();
+  }
 
-    private void requestFunctions() {
-    }
+  private void requestFunctions() {}
 
-    private void notificationOperations() {
-        bind(EditorFileStatusNotificationOperation.class).asEagerSingleton();
-        bind(ProjectTreeStateNotificationOperation.class).asEagerSingleton();
-        bind(FileWatcherExcludesOperation.class).asEagerSingleton();
-    }
+  private void notificationOperations() {
+    bind(EditorFileStatusNotificationOperation.class).asEagerSingleton();
+    bind(ProjectTreeStateNotificationOperation.class).asEagerSingleton();
+    bind(FileWatcherExcludesOperation.class).asEagerSingleton();
+  }
 }

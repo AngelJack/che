@@ -17,8 +17,7 @@ package org.eclipse.che.plugin.docker.client.exception;
  */
 public class ContainerNotFoundException extends DockerException {
 
-    public ContainerNotFoundException(String message) {
-        super(message, 404);
-    }
-
+  public ContainerNotFoundException(String message) {
+    super(message, 404);
+  }
 }

@@ -19,12 +19,10 @@ import org.eclipse.che.dto.shared.DTO;
  */
 @DTO
 public interface NewSnapshotDescriptor {
-    /**
-     * Description of machine saved in snapshot
-     */
-    String getDescription();
+  /** Description of machine saved in snapshot */
+  String getDescription();
 
-    void setDescription(String description);
+  void setDescription(String description);
 
-    NewSnapshotDescriptor withDescription(String description);
+  NewSnapshotDescriptor withDescription(String description);
 }

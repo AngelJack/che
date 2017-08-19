@@ -11,18 +11,15 @@
 package org.eclipse.che.api.machine.server.jpa;
 
 import com.google.inject.AbstractModule;
-
 import org.eclipse.che.api.machine.server.spi.RecipeDao;
 import org.eclipse.che.api.machine.server.spi.SnapshotDao;
 
-/**
- * @author Yevhenii Voevodin
- */
+/** @author Yevhenii Voevodin */
 public class MachineJpaModule extends AbstractModule {
 
-    @Override
-    protected void configure() {
-        bind(RecipeDao.class).to(JpaRecipeDao.class);
-        bind(SnapshotDao.class).to(JpaSnapshotDao.class);
-    }
+  @Override
+  protected void configure() {
+    bind(RecipeDao.class).to(JpaRecipeDao.class);
+    bind(SnapshotDao.class).to(JpaSnapshotDao.class);
+  }
 }

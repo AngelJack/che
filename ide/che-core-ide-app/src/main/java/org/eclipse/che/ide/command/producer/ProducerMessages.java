@@ -19,9 +19,9 @@ import com.google.gwt.i18n.client.Messages;
  */
 public interface ProducerMessages extends Messages {
 
-    @Key("action.commands.title")
-    String actionCommandsTitle();
+  @Key("action.commands.title")
+  String actionCommandsTitle();
 
-    @Key("action.commands.description")
-    String actionCommandsDescription();
+  @Key("action.commands.description")
+  String actionCommandsDescription();
 }

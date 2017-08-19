@@ -10,19 +10,12 @@
  */
 package org.eclipse.che.ide.debug;
 
-/**
- * @author Anatoliy Bazko
- */
+/** @author Anatoliy Bazko */
 public interface DebuggerObservable {
 
-    /**
-     * Adds observer.
-     */
-    void addObserver(DebuggerObserver observer);
+  /** Adds observer. */
+  void addObserver(DebuggerObserver observer);
 
-    /**
-     * Removes observer.
-     */
-    void removeObserver(DebuggerObserver observer);
-
+  /** Removes observer. */
+  void removeObserver(DebuggerObserver observer);
 }

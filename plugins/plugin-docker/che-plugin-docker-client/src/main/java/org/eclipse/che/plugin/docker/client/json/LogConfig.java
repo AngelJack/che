@@ -13,34 +13,29 @@ package org.eclipse.che.plugin.docker.client.json;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * @author Alexander Garagatyi
- */
+/** @author Alexander Garagatyi */
 public class LogConfig {
-    private String type;
-    private Map<String, String> config = new HashMap<>();
+  private String type;
+  private Map<String, String> config = new HashMap<>();
 
-    public String getType() {
-        return type;
-    }
+  public String getType() {
+    return type;
+  }
 
-    public void setType(String type) {
-        this.type = type;
-    }
+  public void setType(String type) {
+    this.type = type;
+  }
 
-    public Map<String, String> getConfig() {
-        return config;
-    }
+  public Map<String, String> getConfig() {
+    return config;
+  }
 
-    public void setConfig(Map<String, String> config) {
-        this.config = config;
-    }
+  public void setConfig(Map<String, String> config) {
+    this.config = config;
+  }
 
-    @Override
-    public String toString() {
-        return "LogConfig{" +
-               "type='" + type + '\'' +
-               ", config=" + config +
-               '}';
-    }
+  @Override
+  public String toString() {
+    return "LogConfig{" + "type='" + type + '\'' + ", config=" + config + '}';
+  }
 }

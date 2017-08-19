@@ -14,14 +14,14 @@ import org.eclipse.che.dto.shared.DTO;
 
 @DTO
 public interface GitHubIssueCommentInput {
-    /**
-     * Get comment body.
-     *
-     * @return {@link String} body
-     */
-    String getBody();
+  /**
+   * Get comment body.
+   *
+   * @return {@link String} body
+   */
+  String getBody();
 
-    void setBody(String body);
+  void setBody(String body);
 
-    GitHubIssueCommentInput withBody(String body);
+  GitHubIssueCommentInput withBody(String body);
 }

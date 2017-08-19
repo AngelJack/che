@@ -20,10 +20,10 @@ import java.util.Map;
  */
 public interface ExtensionRegistry {
 
-    /**
-     * Returns the map of Extension ID to {@link ExtensionDescription}.
-     *
-     * @return
-     */
-    Map<String, ExtensionDescription> getExtensionDescriptions();
+  /**
+   * Returns the map of Extension ID to {@link ExtensionDescription}.
+   *
+   * @return
+   */
+  Map<String, ExtensionDescription> getExtensionDescriptions();
 }

@@ -14,12 +14,12 @@ import com.google.gwt.i18n.client.Constants;
 
 public interface KeymodeDisplayConstants extends Constants {
 
-    @DefaultStringValue("Default")
-    String defaultKeymap();
+  @DefaultStringValue("Default")
+  String defaultKeymap();
 
-    @DefaultStringValue("Emacs")
-    String emacs();
+  @DefaultStringValue("Emacs")
+  String emacs();
 
-    @DefaultStringValue("Vi")
-    String vi();
+  @DefaultStringValue("Vi")
+  String vi();
 }

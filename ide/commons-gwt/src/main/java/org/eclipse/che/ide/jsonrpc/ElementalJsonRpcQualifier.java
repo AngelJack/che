@@ -13,38 +13,37 @@ package org.eclipse.che.ide.jsonrpc;
 import elemental.json.JsonException;
 import elemental.json.JsonFactory;
 import elemental.json.JsonObject;
-import org.eclipse.che.api.core.jsonrpc.commons.JsonRpcQualifier;
-
 import javax.inject.Inject;
 import javax.inject.Singleton;
+import org.eclipse.che.api.core.jsonrpc.commons.JsonRpcQualifier;
 
 @Singleton
 public class ElementalJsonRpcQualifier implements JsonRpcQualifier {
-    private final JsonFactory jsonFactory;
+  private final JsonFactory jsonFactory;
 
-    @Inject
-    public ElementalJsonRpcQualifier(JsonFactory jsonFactory) {
-        this.jsonFactory = jsonFactory;
-    }
+  @Inject
+  public ElementalJsonRpcQualifier(JsonFactory jsonFactory) {
+    this.jsonFactory = jsonFactory;
+  }
 
-    @Override
-    public boolean isValidJson(String message) {
-        try {
-            jsonFactory.parse(message);
-            return true;
-        } catch (JsonException e) {
-            return false;
-        }
+  @Override
+  public boolean isValidJson(String message) {
+    try {
+      jsonFactory.parse(message);
+      return true;
+    } catch (JsonException e) {
+      return false;
     }
+  }
 
-    @Override
-    public boolean isJsonRpcRequest(String message) {
-        JsonObject jsonObject = jsonFactory.parse(message);
-        return jsonObject.hasKey("method");
-    }
+  @Override
+  public boolean isJsonRpcRequest(String message) {
+    JsonObject jsonObject = jsonFactory.parse(message);
+    return jsonObject.hasKey("method");
+  }
 
-    @Override
-    public boolean isJsonRpcResponse(String message) {
-        return !isJsonRpcRequest(message);
-    }
+  @Override
+  public boolean isJsonRpcResponse(String message) {
+    return !isJsonRpcRequest(message);
+  }
 }

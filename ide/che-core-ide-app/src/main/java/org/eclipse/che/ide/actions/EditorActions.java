@@ -16,12 +16,12 @@ package org.eclipse.che.ide.actions;
  * @author Roman Nikitenko
  */
 public final class EditorActions {
-    public static final String CLOSE                   = "closeEditor";
-    public static final String CLOSE_ALL               = "closeAllEditors";
-    public static final String CLOSE_ALL_EXCEPT_PINNED = "closeAllEditorExceptPinned";
-    public static final String CLOSE_OTHER             = "closeOtherEditorExceptCurrent";
-    public static final String REOPEN_CLOSED           = "reopenClosedEditorTab";
-    public static final String PIN_TAB                 = "pinEditorTab";
-    public static final String SPLIT_HORIZONTALLY      = "splitHorizontally";
-    public static final String SPLIT_VERTICALLY        = "splitVertically";
+  public static final String CLOSE = "closeEditor";
+  public static final String CLOSE_ALL = "closeAllEditors";
+  public static final String CLOSE_ALL_EXCEPT_PINNED = "closeAllEditorExceptPinned";
+  public static final String CLOSE_OTHER = "closeOtherEditorExceptCurrent";
+  public static final String REOPEN_CLOSED = "reopenClosedEditorTab";
+  public static final String PIN_TAB = "pinEditorTab";
+  public static final String SPLIT_HORIZONTALLY = "splitHorizontally";
+  public static final String SPLIT_VERTICALLY = "splitVertically";
 }

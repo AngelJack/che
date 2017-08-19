@@ -14,19 +14,21 @@ import com.google.gwt.core.client.JavaScriptObject;
 
 /**
  * Wrapper for UiUtils that convert keyBinding to readable line
+ *
  * @author Alexander Andrienko
  */
 public class UiUtilsOverlay extends JavaScriptObject {
-    protected UiUtilsOverlay() {
-    }
+  protected UiUtilsOverlay() {}
 
-    /**
-     * Convert keyBindings to readable line
-     * @param uiUtilsModule uiUtilsModule that convert keyBindings to readable line
-     * @param keyBinding target
-     * @return readable line
-     */
-    public static final native String getUserKeyString(JavaScriptObject uiUtilsModule, OrionKeyBindingOverlay keyBinding) /*-{
+  /**
+   * Convert keyBindings to readable line
+   *
+   * @param uiUtilsModule uiUtilsModule that convert keyBindings to readable line
+   * @param keyBinding target
+   * @return readable line
+   */
+  public static final native String getUserKeyString(
+      JavaScriptObject uiUtilsModule, OrionKeyBindingOverlay keyBinding) /*-{
         return uiUtilsModule.getUserKeyString(keyBinding);
     }-*/;
 }

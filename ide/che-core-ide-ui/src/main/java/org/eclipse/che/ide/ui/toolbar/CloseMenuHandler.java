@@ -11,10 +11,8 @@
 package org.eclipse.che.ide.ui.toolbar;
 
 /** @author <a href="mailto:gavrikvetal@gmail.com">Vitaliy Gulyy</a> */
-
 public interface CloseMenuHandler {
 
-    /** Implement closing of all opened popups when user will click outside of all of them */
-    void onCloseMenu();
-
+  /** Implement closing of all opened popups when user will click outside of all of them */
+  void onCloseMenu();
 }

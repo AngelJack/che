@@ -26,16 +26,17 @@ import org.eclipse.che.plugin.nativeaccessexample.ide.action.RunNativeCommandAct
 @Singleton
 public class NativeAccessExampleExtension {
 
-    @Inject
-    private void configureActions(final ActionManager actionManager,
-                                  final RunNativeCommandAction runNativenCommandAction) {
+  @Inject
+  private void configureActions(
+      final ActionManager actionManager, final RunNativeCommandAction runNativenCommandAction) {
 
-        DefaultActionGroup mainContextMenuGroup = (DefaultActionGroup)actionManager.getAction("resourceOperation");
-        DefaultActionGroup naGroup = new DefaultActionGroup("Native Access Example", true, actionManager);
-        mainContextMenuGroup.add(naGroup);
+    DefaultActionGroup mainContextMenuGroup =
+        (DefaultActionGroup) actionManager.getAction("resourceOperation");
+    DefaultActionGroup naGroup =
+        new DefaultActionGroup("Native Access Example", true, actionManager);
+    mainContextMenuGroup.add(naGroup);
 
-        actionManager.registerAction(runNativenCommandAction.ACTION_ID, runNativenCommandAction);
-        naGroup.addAction(runNativenCommandAction);
-    }
-
+    actionManager.registerAction(runNativenCommandAction.ACTION_ID, runNativenCommandAction);
+    naGroup.addAction(runNativenCommandAction);
+  }
 }

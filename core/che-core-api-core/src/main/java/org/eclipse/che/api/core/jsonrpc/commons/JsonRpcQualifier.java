@@ -11,9 +11,9 @@
 package org.eclipse.che.api.core.jsonrpc.commons;
 
 public interface JsonRpcQualifier {
-    boolean isValidJson(String message);
+  boolean isValidJson(String message);
 
-    boolean isJsonRpcRequest(String message);
+  boolean isJsonRpcRequest(String message);
 
-    boolean isJsonRpcResponse(String message);
+  boolean isJsonRpcResponse(String message);
 }

@@ -20,15 +20,15 @@ import javax.ws.rs.core.Response;
  * @author andrew00x
  */
 public final class HtmlErrorFormatter {
-    public static void sendErrorAsHTML(Exception e) {
-        // GWT framework (used on client side) requires result in HTML format if use HTML forms.
-        throw new WebApplicationException(Response.ok(formatAsHtml(e.getMessage()), MediaType.TEXT_HTML).build());
-    }
+  public static void sendErrorAsHTML(Exception e) {
+    // GWT framework (used on client side) requires result in HTML format if use HTML forms.
+    throw new WebApplicationException(
+        Response.ok(formatAsHtml(e.getMessage()), MediaType.TEXT_HTML).build());
+  }
 
-    private static String formatAsHtml(String message) {
-        return String.format("<pre>message: %s</pre>", message);
-    }
+  private static String formatAsHtml(String message) {
+    return String.format("<pre>message: %s</pre>", message);
+  }
 
-    private HtmlErrorFormatter() {
-    }
+  private HtmlErrorFormatter() {}
 }

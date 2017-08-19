@@ -19,34 +19,37 @@ import com.sun.jdi.Value;
 
 /** @author andrew00x */
 public class InstanceValue implements ExpressionValue {
-    private final ObjectReference instance;
-    private final Field           field;
-    private       Value           value;
+  private final ObjectReference instance;
+  private final Field field;
+  private Value value;
 
-    public InstanceValue(ObjectReference instance, Field field) {
-        this.instance = instance;
-        this.field = field;
-    }
+  public InstanceValue(ObjectReference instance, Field field) {
+    this.instance = instance;
+    this.field = field;
+  }
 
-    @Override
-    public Value getValue() {
-        if (value == null) {
-            try {
-                value = instance.getValue(field);
-            } catch (IllegalArgumentException e) {
-                throw new ExpressionException(e.getMessage(), e);
-            }
-        }
-        return value;
+  @Override
+  public Value getValue() {
+    if (value == null) {
+      try {
+        value = instance.getValue(field);
+      } catch (IllegalArgumentException e) {
+        throw new ExpressionException(e.getMessage(), e);
+      }
     }
+    return value;
+  }
 
-    @Override
-    public void setValue(Value value) {
-        try {
-            instance.setValue(field, value);
-        } catch (InvalidTypeException | ClassNotLoadedException | VMCannotBeModifiedException | IllegalArgumentException e) {
-            throw new ExpressionException(e.getMessage(), e);
-        }
-        this.value = value;
+  @Override
+  public void setValue(Value value) {
+    try {
+      instance.setValue(field, value);
+    } catch (InvalidTypeException
+        | ClassNotLoadedException
+        | VMCannotBeModifiedException
+        | IllegalArgumentException e) {
+      throw new ExpressionException(e.getMessage(), e);
     }
+    this.value = value;
+  }
 }

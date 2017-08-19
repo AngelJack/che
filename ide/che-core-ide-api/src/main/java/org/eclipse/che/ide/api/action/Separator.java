@@ -16,29 +16,29 @@ package org.eclipse.che.ide.api.action;
  * @author Evgen Vidolob
  */
 public class Separator extends Action {
-    private static final Separator ourInstance = new Separator();
+  private static final Separator ourInstance = new Separator();
 
-    private String myText;
+  private String myText;
 
-    public Separator() {
-        //It is necessary because otherwise we have some problems with myText==null after compiling GWT
-        this(null);
-    }
+  public Separator() {
+    //It is necessary because otherwise we have some problems with myText==null after compiling GWT
+    this(null);
+  }
 
-    public Separator(final String text) {
-        myText = text;
-    }
+  public Separator(final String text) {
+    myText = text;
+  }
 
-    public String getText() {
-        return myText;
-    }
+  public String getText() {
+    return myText;
+  }
 
-    public static Separator getInstance() {
-        return ourInstance;
-    }
+  public static Separator getInstance() {
+    return ourInstance;
+  }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException();
-    }
+  @Override
+  public void actionPerformed(ActionEvent e) {
+    throw new UnsupportedOperationException();
+  }
 }

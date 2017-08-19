@@ -16,11 +16,10 @@ package org.eclipse.che.ide.websocket.events;
  * @author Artem Zatsarynnyi
  */
 public interface MessageReceivedHandler {
-    /**
-     * Perform actions, when a WebSocket message was received.
-     *
-     * @param event
-     *         {@link MessageReceivedEvent}
-     */
-    void onMessageReceived(MessageReceivedEvent event);
+  /**
+   * Perform actions, when a WebSocket message was received.
+   *
+   * @param event {@link MessageReceivedEvent}
+   */
+  void onMessageReceived(MessageReceivedEvent event);
 }

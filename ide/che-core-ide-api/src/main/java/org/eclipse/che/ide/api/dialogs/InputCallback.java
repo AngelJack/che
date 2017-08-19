@@ -17,11 +17,10 @@ package org.eclipse.che.ide.api.dialogs;
  */
 public interface InputCallback {
 
-    /**
-     * Action called when the user clicks on OK.
-     *
-     * @param value
-     *         the string typed into input dialog
-     */
-    void accepted(String value);
+  /**
+   * Action called when the user clicks on OK.
+   *
+   * @param value the string typed into input dialog
+   */
+  void accepted(String value);
 }

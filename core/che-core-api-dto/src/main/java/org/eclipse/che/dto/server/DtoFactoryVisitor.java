@@ -11,12 +11,13 @@
 package org.eclipse.che.dto.server;
 
 /**
- * Visitor pattern. Generally needed to register DtoProviders by generated code in DtoFactory. Class which contains generated code for
- * server side implements this interface. When DtoFactory class is loaded it looks up for all implementation of this interface and calls
- * method {@link #accept(DtoFactory)}.
+ * Visitor pattern. Generally needed to register DtoProviders by generated code in DtoFactory. Class
+ * which contains generated code for server side implements this interface. When DtoFactory class is
+ * loaded it looks up for all implementation of this interface and calls method {@link
+ * #accept(DtoFactory)}.
  *
  * @author andrew00x
  */
 public interface DtoFactoryVisitor {
-    void accept(DtoFactory dtoFactory);
+  void accept(DtoFactory dtoFactory);
 }

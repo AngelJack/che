@@ -19,14 +19,12 @@ import org.eclipse.che.plugin.svn.server.SubversionException;
  */
 public interface RepositoryUrlProvider {
 
-    /**
-     * Detects repository url based on location.
-     *
-     * @param projectPath
-     *      the absolute project path
-     * @return the repository url of the given project
-     * @throws SubversionException
-     *      if any error occurs
-     */
-    String getRepositoryUrl(String projectPath) throws SubversionException;
+  /**
+   * Detects repository url based on location.
+   *
+   * @param projectPath the absolute project path
+   * @return the repository url of the given project
+   * @throws SubversionException if any error occurs
+   */
+  String getRepositoryUrl(String projectPath) throws SubversionException;
 }

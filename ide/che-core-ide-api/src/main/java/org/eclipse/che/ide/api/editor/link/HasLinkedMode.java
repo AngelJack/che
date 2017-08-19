@@ -11,16 +11,17 @@
 package org.eclipse.che.ide.api.editor.link;
 
 /**
- *  Interface for editor that supports linked mode
+ * Interface for editor that supports linked mode
+ *
  * @author Evgen Vidolob
  */
 public interface HasLinkedMode {
 
-    LinkedMode getLinkedMode();
+  LinkedMode getLinkedMode();
 
-    LinkedModel createLinkedModel();
+  LinkedModel createLinkedModel();
 
-    LinkedModelGroup createLinkedGroup();
+  LinkedModelGroup createLinkedGroup();
 
-    LinkedModelData createLinkedModelData();
+  LinkedModelData createLinkedModelData();
 }

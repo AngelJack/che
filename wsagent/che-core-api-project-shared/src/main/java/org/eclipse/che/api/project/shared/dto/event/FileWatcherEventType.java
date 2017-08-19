@@ -10,9 +10,9 @@
  */
 package org.eclipse.che.api.project.shared.dto.event;
 
-/**
- * @author andrew00x
- */
+/** @author andrew00x */
 public enum FileWatcherEventType {
-    CREATED, DELETED, MODIFIED
+  CREATED,
+  DELETED,
+  MODIFIED
 }

@@ -13,43 +13,42 @@ package org.eclipse.che.ide.ext.java.client.project.classpath.valueproviders.pag
 import org.vectomatic.dom.svg.ui.SVGResource;
 
 /**
- * Abstract base implementation for all java project properties page implementations.
- * It's simpler to get started using Properties.
+ * Abstract base implementation for all java project properties page implementations. It's simpler
+ * to get started using Properties.
  *
  * @author Valeriy Svydenko
  */
 public abstract class AbstractClasspathPagePresenter implements ClasspathPagePresenter {
 
-    private String      title;
-    private String      category;
-    private SVGResource icon;
+  private String title;
+  private String category;
+  private SVGResource icon;
 
-    protected DirtyStateListener delegate;
+  protected DirtyStateListener delegate;
 
-    public AbstractClasspathPagePresenter(String title, String category, SVGResource icon) {
-        this.title = title;
-        this.category = category;
-        this.icon = icon;
-    }
+  public AbstractClasspathPagePresenter(String title, String category, SVGResource icon) {
+    this.title = title;
+    this.category = category;
+    this.icon = icon;
+  }
 
-    @Override
-    public void setUpdateDelegate(DirtyStateListener delegate) {
-        this.delegate = delegate;
-    }
+  @Override
+  public void setUpdateDelegate(DirtyStateListener delegate) {
+    this.delegate = delegate;
+  }
 
-    @Override
-    public String getCategory() {
-        return category;
-    }
+  @Override
+  public String getCategory() {
+    return category;
+  }
 
-    @Override
-    public String getTitle() {
-        return title;
-    }
+  @Override
+  public String getTitle() {
+    return title;
+  }
 
-    @Override
-    public SVGResource getIcon() {
-        return icon;
-    }
-
+  @Override
+  public SVGResource getIcon() {
+    return icon;
+  }
 }

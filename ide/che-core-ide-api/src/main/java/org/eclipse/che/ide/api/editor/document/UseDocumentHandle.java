@@ -16,15 +16,17 @@ package org.eclipse.che.ide.api.editor.document;
  */
 public interface UseDocumentHandle {
 
-    /**
-     * Set the document handle.
-     * @param handle the handle
-     */
-    void setDocumentHandle(DocumentHandle handle);
+  /**
+   * Set the document handle.
+   *
+   * @param handle the handle
+   */
+  void setDocumentHandle(DocumentHandle handle);
 
-    /**
-     * Returns the document handle.
-     * @return the handle
-     */
-    DocumentHandle getDocumentHandle();
+  /**
+   * Returns the document handle.
+   *
+   * @return the handle
+   */
+  DocumentHandle getDocumentHandle();
 }

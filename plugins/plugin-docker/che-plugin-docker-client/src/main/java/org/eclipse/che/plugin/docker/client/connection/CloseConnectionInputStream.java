@@ -19,46 +19,47 @@ import java.io.InputStream;
  * @author Anton Korneta
  */
 public class CloseConnectionInputStream extends InputStream {
-    private final InputStream      is;
-    private final DockerConnection connection;
+  private final InputStream is;
+  private final DockerConnection connection;
 
-    public CloseConnectionInputStream(InputStream is, DockerConnection connection) throws IOException {
-        if (is == null) {
-            if (connection != null) {
-                connection.close();
-            }
-            throw new IOException("InputStream required");
-        }
-        if (connection == null) {
-            is.close();
-            throw new IOException("DockerConnection required");
-        }
-
-        this.is = is;
-        this.connection = connection;
+  public CloseConnectionInputStream(InputStream is, DockerConnection connection)
+      throws IOException {
+    if (is == null) {
+      if (connection != null) {
+        connection.close();
+      }
+      throw new IOException("InputStream required");
+    }
+    if (connection == null) {
+      is.close();
+      throw new IOException("DockerConnection required");
     }
 
-    @Override
-    public int read() throws IOException {
-        return is.read();
-    }
+    this.is = is;
+    this.connection = connection;
+  }
 
-    @Override
-    public int read(byte[] b) throws IOException {
-        return is.read(b);
-    }
+  @Override
+  public int read() throws IOException {
+    return is.read();
+  }
 
-    @Override
-    public int read(byte[] b, int off, int len) throws IOException {
-        return is.read(b, off, len);
-    }
+  @Override
+  public int read(byte[] b) throws IOException {
+    return is.read(b);
+  }
 
-    @Override
-    public void close() throws IOException {
-        try {
-            is.close();
-        } finally {
-            connection.close();
-        }
+  @Override
+  public int read(byte[] b, int off, int len) throws IOException {
+    return is.read(b, off, len);
+  }
+
+  @Override
+  public void close() throws IOException {
+    try {
+      is.close();
+    } finally {
+      connection.close();
     }
+  }
 }

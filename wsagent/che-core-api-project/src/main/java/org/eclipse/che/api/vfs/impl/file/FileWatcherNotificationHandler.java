@@ -10,22 +10,24 @@
  */
 package org.eclipse.che.api.vfs.impl.file;
 
+import java.io.File;
 import org.eclipse.che.api.project.shared.dto.event.FileWatcherEventType;
 
-import java.io.File;
-
 /**
- * @deprecated VFS components are now considered deprecated and will be replaced by standard JDK routines.
+ * @deprecated VFS components are now considered deprecated and will be replaced by standard JDK
+ *     routines.
  */
 @Deprecated
 public interface FileWatcherNotificationHandler {
-    void handleFileWatcherEvent(FileWatcherEventType eventType, File watchRoot, String subPath, boolean isDir);
+  void handleFileWatcherEvent(
+      FileWatcherEventType eventType, File watchRoot, String subPath, boolean isDir);
 
-    void started(File watchRoot);
+  void started(File watchRoot);
 
-    void errorOccurred(File watchRoot, Throwable cause);
+  void errorOccurred(File watchRoot, Throwable cause);
 
-    boolean addNotificationListener(FileWatcherNotificationListener fileWatcherNotificationListener);
+  boolean addNotificationListener(FileWatcherNotificationListener fileWatcherNotificationListener);
 
-    boolean removeNotificationListener(FileWatcherNotificationListener fileWatcherNotificationListener);
+  boolean removeNotificationListener(
+      FileWatcherNotificationListener fileWatcherNotificationListener);
 }

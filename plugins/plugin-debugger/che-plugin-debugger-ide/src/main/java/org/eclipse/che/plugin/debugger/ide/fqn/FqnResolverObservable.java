@@ -10,18 +10,12 @@
  */
 package org.eclipse.che.plugin.debugger.ide.fqn;
 
-/**
- * @author Anatoliy Bazko
- */
+/** @author Anatoliy Bazko */
 public interface FqnResolverObservable {
 
-    /**
-     * Adds new listener.
-     */
-    void addFqnResolverObserver(FqnResolverObserver fqnResolverObserver);
+  /** Adds new listener. */
+  void addFqnResolverObserver(FqnResolverObserver fqnResolverObserver);
 
-    /**
-     * Removes listener.
-     */
-    void removeFqnResolverObserver(FqnResolverObserver fqnResolverObserver);
+  /** Removes listener. */
+  void removeFqnResolverObserver(FqnResolverObserver fqnResolverObserver);
 }

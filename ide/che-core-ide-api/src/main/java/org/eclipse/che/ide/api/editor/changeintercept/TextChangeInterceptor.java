@@ -14,16 +14,17 @@ import org.eclipse.che.ide.api.editor.document.ReadOnlyDocument;
 
 /**
  * Interface for components that modify changes in the text.<br>
- * The interceptor should only modify the content using its return value (meaning it should not directly
- * access the odcument or editor to do changes).
+ * The interceptor should only modify the content using its return value (meaning it should not
+ * directly access the odcument or editor to do changes).
  */
 public interface TextChangeInterceptor {
 
-    /**
-     * Process a change in the editor text.
-     * @param change the incoming change
-     * @param the read-only version of the document
-     * @return the new version of the change (null doesn't modify the change)
-     */
-    TextChange processChange(TextChange change, ReadOnlyDocument document);
+  /**
+   * Process a change in the editor text.
+   *
+   * @param change the incoming change
+   * @param the read-only version of the document
+   * @return the new version of the change (null doesn't modify the change)
+   */
+  TextChange processChange(TextChange change, ReadOnlyDocument document);
 }

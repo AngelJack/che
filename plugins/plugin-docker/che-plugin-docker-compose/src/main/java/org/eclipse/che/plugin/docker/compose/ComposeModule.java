@@ -12,19 +12,15 @@ package org.eclipse.che.plugin.docker.compose;
 
 import com.google.inject.AbstractModule;
 import com.google.inject.multibindings.MapBinder;
-
 import org.eclipse.che.api.environment.server.TypeSpecificEnvironmentParser;
 import org.eclipse.che.plugin.docker.compose.yaml.ComposeEnvironmentParser;
 
-/**
- * @author Alexander Andrienko
- */
+/** @author Alexander Andrienko */
 public class ComposeModule extends AbstractModule {
-    @Override
-    protected void configure() {
-        MapBinder<String, TypeSpecificEnvironmentParser> envParserMapBinder = MapBinder.newMapBinder(binder(),
-                                                                                                     String.class,
-                                                                                                     TypeSpecificEnvironmentParser.class);
-        envParserMapBinder.addBinding("compose").to(ComposeEnvironmentParser.class);
-    }
+  @Override
+  protected void configure() {
+    MapBinder<String, TypeSpecificEnvironmentParser> envParserMapBinder =
+        MapBinder.newMapBinder(binder(), String.class, TypeSpecificEnvironmentParser.class);
+    envParserMapBinder.addBinding("compose").to(ComposeEnvironmentParser.class);
+  }
 }

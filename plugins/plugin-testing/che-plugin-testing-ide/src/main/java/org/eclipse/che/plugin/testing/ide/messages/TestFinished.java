@@ -10,29 +10,25 @@
  */
 package org.eclipse.che.plugin.testing.ide.messages;
 
-/**
- * Data class represents test finished message.
- */
+/** Data class represents test finished message. */
 public class TestFinished extends BaseTestMessage {
 
-    TestFinished() {
-    }
+  TestFinished() {}
 
-    @Override
-    public void visit(TestingMessageVisitor visitor) {
-        visitor.visitTestFinished(this);
-    }
+  @Override
+  public void visit(TestingMessageVisitor visitor) {
+    visitor.visitTestFinished(this);
+  }
 
-    public Integer getTestDuration() {
-        try {
-            String duration = getAttributeValue("duration");
-            if (duration == null) {
-                return 0;
-            }
-            return Integer.valueOf(duration);
-        } catch (NumberFormatException e) {
-            return 0;
-        }
-
+  public Integer getTestDuration() {
+    try {
+      String duration = getAttributeValue("duration");
+      if (duration == null) {
+        return 0;
+      }
+      return Integer.valueOf(duration);
+    } catch (NumberFormatException e) {
+      return 0;
     }
+  }
 }

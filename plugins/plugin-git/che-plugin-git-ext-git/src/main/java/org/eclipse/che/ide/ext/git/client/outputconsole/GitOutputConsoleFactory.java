@@ -13,6 +13,6 @@ package org.eclipse.che.ide.ext.git.client.outputconsole;
 /** @author Roman Nikitenko */
 public interface GitOutputConsoleFactory {
 
-    /** Create the instance of {@link GitOutputConsole} */
-    GitOutputConsole create(String title);
+  /** Create the instance of {@link GitOutputConsole} */
+  GitOutputConsole create(String title);
 }

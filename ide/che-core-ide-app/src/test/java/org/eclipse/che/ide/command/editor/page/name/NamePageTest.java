@@ -10,6 +10,12 @@
  */
 package org.eclipse.che.ide.command.editor.page.name;
 
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Matchers.eq;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
 import org.eclipse.che.ide.api.command.CommandExecutor;
 import org.eclipse.che.ide.api.command.CommandImpl;
 import org.eclipse.che.ide.command.editor.EditorMessages;
@@ -21,68 +27,55 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
-import static org.junit.Assert.assertEquals;
-import static org.mockito.Matchers.eq;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
-
 /** Tests for {@link NamePage}. */
 @RunWith(MockitoJUnitRunner.class)
 public class NamePageTest {
 
-    private static final String COMMAND_NAME = "build";
+  private static final String COMMAND_NAME = "build";
 
-    @Mock
-    private NamePageView    view;
-    @Mock
-    private EditorMessages  messages;
-    @Mock
-    private CommandExecutor commandExecutor;
+  @Mock private NamePageView view;
+  @Mock private EditorMessages messages;
+  @Mock private CommandExecutor commandExecutor;
 
-    @InjectMocks
-    private NamePage page;
+  @InjectMocks private NamePage page;
 
-    @Mock
-    private DirtyStateListener dirtyStateListener;
-    @Mock
-    private CommandImpl        editedCommand;
+  @Mock private DirtyStateListener dirtyStateListener;
+  @Mock private CommandImpl editedCommand;
 
-    @Before
-    public void setUp() throws Exception {
-        when(editedCommand.getName()).thenReturn(COMMAND_NAME);
+  @Before
+  public void setUp() throws Exception {
+    when(editedCommand.getName()).thenReturn(COMMAND_NAME);
 
-        page.setDirtyStateListener(dirtyStateListener);
-        page.edit(editedCommand);
-    }
+    page.setDirtyStateListener(dirtyStateListener);
+    page.edit(editedCommand);
+  }
 
-    @Test
-    public void shouldSetViewDelegate() throws Exception {
-        verify(view).setDelegate(page);
-    }
+  @Test
+  public void shouldSetViewDelegate() throws Exception {
+    verify(view).setDelegate(page);
+  }
 
-    @Test
-    public void shouldInitializeView() throws Exception {
-        verify(view).setCommandName(eq(COMMAND_NAME));
-    }
+  @Test
+  public void shouldInitializeView() throws Exception {
+    verify(view).setCommandName(eq(COMMAND_NAME));
+  }
 
-    @Test
-    public void shouldReturnView() throws Exception {
-        assertEquals(view, page.getView());
-    }
+  @Test
+  public void shouldReturnView() throws Exception {
+    assertEquals(view, page.getView());
+  }
 
-    @Test
-    public void shouldNotifyListenerWhenNameChanged() throws Exception {
-        page.onNameChanged("mvn");
+  @Test
+  public void shouldNotifyListenerWhenNameChanged() throws Exception {
+    page.onNameChanged("mvn");
 
-        verify(dirtyStateListener, times(2)).onDirtyStateChanged();
-    }
+    verify(dirtyStateListener, times(2)).onDirtyStateChanged();
+  }
 
-    @Test
-    public void shouldExecuteCommandWhenTestingRequested() throws Exception {
-        page.onCommandRun();
+  @Test
+  public void shouldExecuteCommandWhenTestingRequested() throws Exception {
+    page.onCommandRun();
 
-        verify(commandExecutor).executeCommand(editedCommand);
-    }
-
+    verify(commandExecutor).executeCommand(editedCommand);
+  }
 }

@@ -10,10 +10,10 @@
  */
 package org.eclipse.che.ide.menu;
 
-import org.eclipse.che.ide.api.mvp.Presenter;
 import com.google.gwt.user.client.ui.AcceptsOneWidget;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
+import org.eclipse.che.ide.api.mvp.Presenter;
 
 /**
  * Manages status panel group items, their runtime visibility and enabled state.
@@ -23,21 +23,21 @@ import com.google.inject.Singleton;
 @Singleton
 public class StatusPanelGroupPresenter implements Presenter, StatusPanelGroupView.ActionDelegate {
 
-    private final StatusPanelGroupView view;
+  private final StatusPanelGroupView view;
 
-    /**
-     * Bottom Menu Presenter requires View implementation
-     *
-     * @param view
-     */
-    @Inject
-    public StatusPanelGroupPresenter(StatusPanelGroupView view) {
-        this.view = view;
-        this.view.setDelegate(this);
-    }
+  /**
+   * Bottom Menu Presenter requires View implementation
+   *
+   * @param view
+   */
+  @Inject
+  public StatusPanelGroupPresenter(StatusPanelGroupView view) {
+    this.view = view;
+    this.view.setDelegate(this);
+  }
 
-    @Override
-    public void go(AcceptsOneWidget container) {
-        container.setWidget(view);
-    }
+  @Override
+  public void go(AcceptsOneWidget container) {
+    container.setWidget(view);
+  }
 }

@@ -11,19 +11,17 @@
 package org.eclipse.che.plugin.pullrequest.client.vcs.hosting;
 
 /**
- * Exception raised when there is no {@link VcsHostingService} implementation for the
- * current project.
+ * Exception raised when there is no {@link VcsHostingService} implementation for the current
+ * project.
  *
  * @author Kevin Pollet
  */
 public class NoVcsHostingServiceImplementationException extends Exception {
 
-    private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 1L;
 
-    /**
-     * Constructs an instance of {@link NoVcsHostingServiceImplementationException}.
-     */
-    public NoVcsHostingServiceImplementationException() {
-        super("No implementation of the VcsHostingService for the current project");
-    }
+  /** Constructs an instance of {@link NoVcsHostingServiceImplementationException}. */
+  public NoVcsHostingServiceImplementationException() {
+    super("No implementation of the VcsHostingService for the current project");
+  }
 }

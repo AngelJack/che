@@ -10,9 +10,7 @@
  */
 package org.eclipse.che.ide.api.data.tree.settings;
 
-/**
- * @author Vlad Zhukovskiy
- */
+/** @author Vlad Zhukovskiy */
 public interface HasSettings {
-    NodeSettings getSettings();
+  NodeSettings getSettings();
 }

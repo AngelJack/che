@@ -11,7 +11,6 @@
 package org.eclipse.che.api.project.shared.dto.event;
 
 import com.google.common.annotations.Beta;
-
 import org.eclipse.che.dto.shared.DTO;
 
 /**
@@ -23,16 +22,16 @@ import org.eclipse.che.dto.shared.DTO;
 @Beta
 @DTO
 public interface GitCheckoutEventDto {
-    Type getType();
+  Type getType();
 
-    String getName();
+  String getName();
 
-    GitCheckoutEventDto withType(Type type);
+  GitCheckoutEventDto withType(Type type);
 
-    GitCheckoutEventDto withName(String name);
+  GitCheckoutEventDto withName(String name);
 
-    enum Type {
-        BRANCH,
-        REVISION,
-    }
+  enum Type {
+    BRANCH,
+    REVISION,
+  }
 }

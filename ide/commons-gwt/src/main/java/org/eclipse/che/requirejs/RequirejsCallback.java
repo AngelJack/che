@@ -19,11 +19,10 @@ import com.google.gwt.core.client.JsArray;
  */
 public interface RequirejsCallback {
 
-    /**
-     * Executed when the required modules are loaded
-     *
-     * @param modules
-     *         the module instances
-     */
-    void onReady(JsArray<RequirejsModule> modules);
+  /**
+   * Executed when the required modules are loaded
+   *
+   * @param modules the module instances
+   */
+  void onReady(JsArray<RequirejsModule> modules);
 }

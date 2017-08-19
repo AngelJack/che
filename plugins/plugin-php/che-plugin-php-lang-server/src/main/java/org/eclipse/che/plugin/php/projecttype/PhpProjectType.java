@@ -11,18 +11,18 @@
 package org.eclipse.che.plugin.php.projecttype;
 
 import com.google.inject.Inject;
-
 import org.eclipse.che.api.project.server.type.ProjectTypeDef;
 import org.eclipse.che.plugin.php.shared.Constants;
 
 /**
  * PHP project type
+ *
  * @author Kaloyan Raev
  */
 public class PhpProjectType extends ProjectTypeDef {
-    @Inject
-    public PhpProjectType() {
-        super(Constants.PHP_PROJECT_TYPE_ID, "PHP", true, false, true);
-        addConstantDefinition(Constants.LANGUAGE, "language", Constants.PHP_LANG);
-    }
+  @Inject
+  public PhpProjectType() {
+    super(Constants.PHP_PROJECT_TYPE_ID, "PHP", true, false, true);
+    addConstantDefinition(Constants.LANGUAGE, "language", Constants.PHP_LANG);
+  }
 }

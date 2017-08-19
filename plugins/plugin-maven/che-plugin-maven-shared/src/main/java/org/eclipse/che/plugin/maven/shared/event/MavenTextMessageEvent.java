@@ -10,10 +10,8 @@
  */
 package org.eclipse.che.plugin.maven.shared.event;
 
-/**
- * Event that describes Maven notification output.
- */
+/** Event that describes Maven notification output. */
 public interface MavenTextMessageEvent extends MavenOutputEvent {
-    /** Returns text message. */
-    String getMessage();
+  /** Returns text message. */
+  String getMessage();
 }

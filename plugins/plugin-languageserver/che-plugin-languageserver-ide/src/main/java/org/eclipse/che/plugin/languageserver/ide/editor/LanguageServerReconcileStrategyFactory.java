@@ -12,9 +12,7 @@ package org.eclipse.che.plugin.languageserver.ide.editor;
 
 import org.eclipse.lsp4j.ServerCapabilities;
 
-/**
- * @author Evgen Vidolob
- */
+/** @author Evgen Vidolob */
 public interface LanguageServerReconcileStrategyFactory {
-    LanguageServerReconcileStrategy build(ServerCapabilities serverCapabilities);
+  LanguageServerReconcileStrategy build(ServerCapabilities serverCapabilities);
 }

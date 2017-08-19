@@ -10,33 +10,30 @@
  */
 package org.eclipse.che.commons.lang.execution;
 
+import static java.util.Collections.unmodifiableList;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import static java.util.Collections.unmodifiableList;
-
-/**
- * Represent and configure program parameters
- */
+/** Represent and configure program parameters */
 public class ParametersList {
-    private final List<String> parameters = new ArrayList<>();
+  private final List<String> parameters = new ArrayList<>();
 
-    public void add(String name, String value) {
-        parameters.add(name);
-        parameters.add(value);
-    }
+  public void add(String name, String value) {
+    parameters.add(name);
+    parameters.add(value);
+  }
 
-    /**
-     * Adds a parameter without name.
-     *
-     * @param value
-     *         value of the parameter
-     */
-    public void add(String value) {
-        parameters.add(value);
-    }
+  /**
+   * Adds a parameter without name.
+   *
+   * @param value value of the parameter
+   */
+  public void add(String value) {
+    parameters.add(value);
+  }
 
-    public List<String> getParameters() {
-        return unmodifiableList(parameters);
-    }
+  public List<String> getParameters() {
+    return unmodifiableList(parameters);
+  }
 }

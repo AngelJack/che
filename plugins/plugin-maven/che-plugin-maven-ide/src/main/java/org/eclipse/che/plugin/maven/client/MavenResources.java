@@ -12,7 +12,6 @@ package org.eclipse.che.plugin.maven.client;
 
 import com.google.gwt.resources.client.ClientBundle;
 import com.google.gwt.resources.client.CssResource;
-
 import org.vectomatic.dom.svg.ui.SVGResource;
 
 /**
@@ -21,21 +20,21 @@ import org.vectomatic.dom.svg.ui.SVGResource;
  * @author Ann Shumilova
  */
 public interface MavenResources extends ClientBundle {
-    @Source("maven.svg")
-    SVGResource maven();
+  @Source("maven.svg")
+  SVGResource maven();
 
-    @Source("command/maven-command-type.svg")
-    SVGResource mavenCommandType();
+  @Source("command/maven-command-type.svg")
+  SVGResource mavenCommandType();
 
-    @Source({"Maven.css", "org/eclipse/che/ide/api/ui/style.css"})
-    MavenCss css();
+  @Source({"Maven.css", "org/eclipse/che/ide/api/ui/style.css"})
+  MavenCss css();
 
-    interface MavenCss extends CssResource {
+  interface MavenCss extends CssResource {
 
-        String editorInfoPanel();
+    String editorInfoPanel();
 
-        String downloadLink();
+    String downloadLink();
 
-        String editorMessage();
-    }
+    String editorMessage();
+  }
 }

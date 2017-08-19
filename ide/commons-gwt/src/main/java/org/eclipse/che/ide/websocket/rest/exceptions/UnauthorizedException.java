@@ -20,9 +20,7 @@ import org.eclipse.che.ide.websocket.Message;
 @SuppressWarnings("serial")
 public class UnauthorizedException extends ServerException {
 
-    public UnauthorizedException(Message message) {
-        super(message);
-    }
-
-
+  public UnauthorizedException(Message message) {
+    super(message);
+  }
 }

@@ -10,9 +10,8 @@
  */
 package org.eclipse.che.plugin.github.factory.resolver;
 
-import org.eclipse.che.plugin.urlfactory.URLChecker;
-
 import javax.inject.Inject;
+import org.eclipse.che.plugin.urlfactory.URLChecker;
 
 /**
  * Support old dockerfila and factory filenames;
@@ -21,23 +20,23 @@ import javax.inject.Inject;
  */
 public class LegacyGithubURLParser extends GithubURLParserImpl {
 
-    private URLChecker urlChecker;
+  private URLChecker urlChecker;
 
-    @Inject
-    public LegacyGithubURLParser(URLChecker urlChecker) {
-        this.urlChecker = urlChecker;
+  @Inject
+  public LegacyGithubURLParser(URLChecker urlChecker) {
+    this.urlChecker = urlChecker;
+  }
+
+  @Override
+  public GithubUrl parse(String url) {
+    GithubUrl githubUrl = super.parse(url);
+    if (!urlChecker.exists(githubUrl.dockerFileLocation())) {
+      githubUrl.withDockerfileFilename(".codenvy.dockerfile");
     }
 
-    @Override
-    public GithubUrl parse(String url) {
-        GithubUrl githubUrl = super.parse(url);
-        if (!urlChecker.exists(githubUrl.dockerFileLocation())) {
-            githubUrl.withDockerfileFilename(".codenvy.dockerfile");
-        }
-
-        if (!urlChecker.exists(githubUrl.factoryJsonFileLocation())) {
-            githubUrl.withFactoryFilename(".codenvy.json");
-        }
-        return githubUrl;
+    if (!urlChecker.exists(githubUrl.factoryJsonFileLocation())) {
+      githubUrl.withFactoryFilename(".codenvy.json");
     }
+    return githubUrl;
+  }
 }

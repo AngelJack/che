@@ -10,16 +10,14 @@
  */
 package org.eclipse.che.plugin.testing.ide.model.info;
 
-/**
- * Describes error information about test.
- */
+/** Describes error information about test. */
 public class TestErrorInfo extends TestFailedInfo {
-    public TestErrorInfo(String message, String stackTrace) {
-        super(message, stackTrace);
-    }
+  public TestErrorInfo(String message, String stackTrace) {
+    super(message, stackTrace);
+  }
 
-    @Override
-    public TestStateDescription getDescription() {
-        return TestStateDescription.ERROR;
-    }
+  @Override
+  public TestStateDescription getDescription() {
+    return TestStateDescription.ERROR;
+  }
 }

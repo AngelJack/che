@@ -17,9 +17,9 @@ package org.eclipse.che.api.core.notification;
  * @see EventService
  */
 public interface EventSubscriber<T> {
-    /**
-     * Receives notification that an event has been published to the EventService.
-     * If the method throws an unchecked exception it is ignored.
-     */
-    void onEvent(T event);
+  /**
+   * Receives notification that an event has been published to the EventService. If the method
+   * throws an unchecked exception it is ignored.
+   */
+  void onEvent(T event);
 }

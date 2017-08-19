@@ -17,18 +17,19 @@ import org.eclipse.che.ide.api.mvp.View;
  *
  * @author Anatolii Bazko
  */
-public interface NodeJsDebuggerConfigurationPageView extends View<NodeJsDebuggerConfigurationPageView.ActionDelegate> {
+public interface NodeJsDebuggerConfigurationPageView
+    extends View<NodeJsDebuggerConfigurationPageView.ActionDelegate> {
 
-    /** Returns path to the binary. */
-    String getScriptPath();
+  /** Returns path to the binary. */
+  String getScriptPath();
 
-    /** Sets path to the binary. */
-    void setScriptPath(String path);
+  /** Sets path to the binary. */
+  void setScriptPath(String path);
 
-    /** Action handler for the view's controls. */
-    interface ActionDelegate {
+  /** Action handler for the view's controls. */
+  interface ActionDelegate {
 
-        /** Called when 'Binary Path' has been changed. */
-        void onScriptPathChanged();
-    }
+    /** Called when 'Binary Path' has been changed. */
+    void onScriptPathChanged();
+  }
 }

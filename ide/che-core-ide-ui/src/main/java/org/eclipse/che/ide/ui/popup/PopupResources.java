@@ -16,24 +16,23 @@ import com.google.gwt.resources.client.CssResource;
 /** Resources for the popup window component. */
 public interface PopupResources extends ClientBundle {
 
-    /** The CSS resource for the popup window component. */
-    @Source({"popup.css", "org/eclipse/che/ide/api/ui/style.css"})
+  /** The CSS resource for the popup window component. */
+  @Source({"popup.css", "org/eclipse/che/ide/api/ui/style.css"})
+  PopupStyle popupStyle();
 
-    PopupStyle popupStyle();
+  /** The CSS resource interface for the popup window component. */
+  interface PopupStyle extends CssResource {
 
-    /** The CSS resource interface for the popup window component. */
-    interface PopupStyle extends CssResource {
+    String popup();
 
-        String popup();
+    String header();
 
-        String header();
+    String body();
 
-        String body();
+    String item();
 
-        String item();
+    String icon();
 
-        String icon();
-
-        String label();
-    }
+    String label();
+  }
 }

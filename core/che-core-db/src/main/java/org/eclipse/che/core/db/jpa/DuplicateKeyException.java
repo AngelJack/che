@@ -20,7 +20,7 @@ import org.eclipse.che.core.db.DBErrorCode;
  */
 public class DuplicateKeyException extends DetailedRollbackException {
 
-    public DuplicateKeyException(String message, Throwable cause) {
-        super(message, cause, DBErrorCode.DUPLICATE_KEY);
-    }
+  public DuplicateKeyException(String message, Throwable cause) {
+    super(message, cause, DBErrorCode.DUPLICATE_KEY);
+  }
 }

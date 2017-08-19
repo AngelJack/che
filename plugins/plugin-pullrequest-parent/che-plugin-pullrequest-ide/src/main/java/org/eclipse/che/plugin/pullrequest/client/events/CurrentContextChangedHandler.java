@@ -10,8 +10,8 @@
  */
 package org.eclipse.che.plugin.pullrequest.client.events;
 
-import org.eclipse.che.plugin.pullrequest.client.workflow.Context;
 import com.google.gwt.event.shared.EventHandler;
+import org.eclipse.che.plugin.pullrequest.client.workflow.Context;
 
 /**
  * Handler for {@link CurrentContextChangedEvent}.
@@ -20,11 +20,10 @@ import com.google.gwt.event.shared.EventHandler;
  */
 public interface CurrentContextChangedHandler extends EventHandler {
 
-    /**
-     * Called when the current context changed.
-     *
-     * @param context
-     *         new context
-     */
-    void onContextChanged(final Context context);
+  /**
+   * Called when the current context changed.
+   *
+   * @param context new context
+   */
+  void onContextChanged(final Context context);
 }

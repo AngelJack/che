@@ -16,23 +16,23 @@ package org.eclipse.che.api.core.util;
  * @author andrew00x
  */
 public final class CancellableProcessWrapper implements Cancellable {
-    private final Process  process;
-    private final Callback callback;
+  private final Process process;
+  private final Callback callback;
 
-    public CancellableProcessWrapper(Process process) {
-        this(process, null);
-    }
+  public CancellableProcessWrapper(Process process) {
+    this(process, null);
+  }
 
-    public CancellableProcessWrapper(Process process, Callback callback) {
-        this.process = process;
-        this.callback = callback;
-    }
+  public CancellableProcessWrapper(Process process, Callback callback) {
+    this.process = process;
+    this.callback = callback;
+  }
 
-    @Override
-    public void cancel() {
-        ProcessUtil.kill(process);
-        if (callback != null) {
-            callback.cancelled(this);
-        }
+  @Override
+  public void cancel() {
+    ProcessUtil.kill(process);
+    if (callback != null) {
+      callback.cancelled(this);
     }
+  }
 }

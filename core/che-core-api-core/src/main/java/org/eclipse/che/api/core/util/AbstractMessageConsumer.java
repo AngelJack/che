@@ -18,9 +18,9 @@ import java.io.IOException;
  * @author Alexander Garagatyi
  */
 public class AbstractMessageConsumer<T> implements MessageConsumer<T> {
-    @Override
-    public void consume(T message) throws IOException {}
+  @Override
+  public void consume(T message) throws IOException {}
 
-    @Override
-    public void close() throws IOException {}
+  @Override
+  public void close() throws IOException {}
 }

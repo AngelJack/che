@@ -16,32 +16,30 @@ import org.eclipse.jdt.internal.corext.refactoring.reorg.ReorgDestinationFactory
 import org.eclipse.ltk.core.refactoring.Refactoring;
 import org.eclipse.ltk.core.refactoring.RefactoringStatus;
 
-/**
- * @author Evgen Vidolob
- */
+/** @author Evgen Vidolob */
 public class MoveRefactoringSession extends ReorgRefactoringSession {
 
-    JavaMoveProcessor processor;
+  JavaMoveProcessor processor;
 
-    public MoveRefactoringSession(Refactoring refactoring, JavaMoveProcessor processor) {
-        super(refactoring);
-        this.processor = processor;
-    }
+  public MoveRefactoringSession(Refactoring refactoring, JavaMoveProcessor processor) {
+    super(refactoring);
+    this.processor = processor;
+  }
 
-    @Override
-    public RefactoringStatus verifyDestination(Object selected) throws JavaModelException {
-        return processor.setDestination(ReorgDestinationFactory.createDestination(selected));
-    }
+  @Override
+  public RefactoringStatus verifyDestination(Object selected) throws JavaModelException {
+    return processor.setDestination(ReorgDestinationFactory.createDestination(selected));
+  }
 
-    public void setUpdateQualifiedNames(boolean update) {
-        processor.setUpdateQualifiedNames(update);
-    }
+  public void setUpdateQualifiedNames(boolean update) {
+    processor.setUpdateQualifiedNames(update);
+  }
 
-    public void setUpdateReferences(boolean update) {
-        processor.setUpdateReferences(update);
-    }
+  public void setUpdateReferences(boolean update) {
+    processor.setUpdateReferences(update);
+  }
 
-    public void setFilePatterns(String patterns) {
-        processor.setFilePatterns(patterns);
-    }
+  public void setFilePatterns(String patterns) {
+    processor.setFilePatterns(patterns);
+  }
 }

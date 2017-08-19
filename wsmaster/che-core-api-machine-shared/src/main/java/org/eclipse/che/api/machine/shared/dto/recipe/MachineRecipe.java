@@ -21,11 +21,11 @@ import org.eclipse.che.dto.shared.DTO;
 @DTO
 public interface MachineRecipe extends Recipe {
 
-    void setType(String type);
+  void setType(String type);
 
-    MachineRecipe withType(String type);
+  MachineRecipe withType(String type);
 
-    void setScript(String script);
+  void setScript(String script);
 
-    MachineRecipe withScript(String script);
+  MachineRecipe withScript(String script);
 }

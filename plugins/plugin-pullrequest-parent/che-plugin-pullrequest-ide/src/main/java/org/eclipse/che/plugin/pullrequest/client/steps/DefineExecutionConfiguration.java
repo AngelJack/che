@@ -21,9 +21,10 @@ import org.eclipse.che.plugin.pullrequest.client.workflow.WorkflowExecutor;
  */
 public class DefineExecutionConfiguration implements Step {
 
-    @Override
-    public void execute(WorkflowExecutor executor, Context context) {
-        context.setForkAvailable(!context.getOriginRepositoryOwner().equals(context.getHostUserLogin()));
-        executor.done(this, context);
-    }
+  @Override
+  public void execute(WorkflowExecutor executor, Context context) {
+    context.setForkAvailable(
+        !context.getOriginRepositoryOwner().equals(context.getHostUserLogin()));
+    executor.done(this, context);
+  }
 }

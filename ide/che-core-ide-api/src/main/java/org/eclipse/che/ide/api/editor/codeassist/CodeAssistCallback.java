@@ -14,6 +14,6 @@ import java.util.List;
 
 /** Callback interface for code assistant requests. */
 public interface CodeAssistCallback {
-    /** Called when the completion proposals are computed. */
-   void proposalComputed(List<CompletionProposal> proposals);
+  /** Called when the completion proposals are computed. */
+  void proposalComputed(List<CompletionProposal> proposals);
 }

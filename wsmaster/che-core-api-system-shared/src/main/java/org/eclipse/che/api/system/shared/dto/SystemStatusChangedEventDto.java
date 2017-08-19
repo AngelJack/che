@@ -24,17 +24,17 @@ import org.eclipse.che.dto.shared.DTO;
 @EventOrigin("system")
 public interface SystemStatusChangedEventDto extends SystemEventDto {
 
-    /** Returns new status of the system. */
-    SystemStatus getStatus();
+  /** Returns new status of the system. */
+  SystemStatus getStatus();
 
-    void setStatus(SystemStatus status);
+  void setStatus(SystemStatus status);
 
-    SystemStatusChangedEventDto withStatus(SystemStatus status);
+  SystemStatusChangedEventDto withStatus(SystemStatus status);
 
-    /** Returns the previous status of the system. */
-    SystemStatus getPrevStatus();
+  /** Returns the previous status of the system. */
+  SystemStatus getPrevStatus();
 
-    void setPrevStatus(SystemStatus prevStatus);
+  void setPrevStatus(SystemStatus prevStatus);
 
-    SystemStatusChangedEventDto withPrevStatus(SystemStatus prevStatus);
+  SystemStatusChangedEventDto withPrevStatus(SystemStatus prevStatus);
 }

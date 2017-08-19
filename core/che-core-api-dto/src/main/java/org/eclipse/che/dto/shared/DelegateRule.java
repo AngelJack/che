@@ -24,7 +24,7 @@ import java.lang.annotation.Target;
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface DelegateRule {
-    Class<?> type();
+  Class<?> type();
 
-    String method();
+  String method();
 }

@@ -12,19 +12,15 @@ package org.eclipse.che.plugin.python.ide;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.resources.client.ClientBundle;
-
 import org.vectomatic.dom.svg.ui.SVGResource;
 
-/**
- * @author Valeriy Svydenko
- */
+/** @author Valeriy Svydenko */
 public interface PythonResources extends ClientBundle {
-    PythonResources INSTANCE = GWT.create(PythonResources.class);
+  PythonResources INSTANCE = GWT.create(PythonResources.class);
 
-    @Source("svg/python.svg")
-    SVGResource pythonFile();
+  @Source("svg/python.svg")
+  SVGResource pythonFile();
 
-    @Source("svg/python.svg")
-    SVGResource category();
-
+  @Source("svg/python.svg")
+  SVGResource category();
 }

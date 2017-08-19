@@ -14,54 +14,53 @@ import org.eclipse.che.api.core.ApiException;
 
 @SuppressWarnings("serial")
 public class AuthenticationException extends ApiException {
-    /**
-     * Response status if any exception occurs,
-     * <br>
-     * Default value: 400
-     */
-    int responseStatus;
+  /**
+   * Response status if any exception occurs, <br>
+   * Default value: 400
+   */
+  int responseStatus;
 
-    public AuthenticationException() {
-        this(400);
-    }
+  public AuthenticationException() {
+    this(400);
+  }
 
-    public AuthenticationException(String message, Throwable cause) {
-        this(400, message, cause);
-    }
+  public AuthenticationException(String message, Throwable cause) {
+    this(400, message, cause);
+  }
 
-    public AuthenticationException(String message) {
-        this(400, message);
-    }
+  public AuthenticationException(String message) {
+    this(400, message);
+  }
 
-    public AuthenticationException(Throwable cause) {
-        this(400, cause);
-    }
+  public AuthenticationException(Throwable cause) {
+    this(400, cause);
+  }
 
-    public AuthenticationException(int responseStatus) {
-        super("Authentication failed.");
-        this.responseStatus = responseStatus;
-    }
+  public AuthenticationException(int responseStatus) {
+    super("Authentication failed.");
+    this.responseStatus = responseStatus;
+  }
 
-    public AuthenticationException(int responseStatus, String message, Throwable cause) {
-        super(message, cause);
-        this.responseStatus = responseStatus;
-    }
+  public AuthenticationException(int responseStatus, String message, Throwable cause) {
+    super(message, cause);
+    this.responseStatus = responseStatus;
+  }
 
-    public AuthenticationException(int responseStatus, String message) {
-        super(message);
-        this.responseStatus = responseStatus;
-    }
+  public AuthenticationException(int responseStatus, String message) {
+    super(message);
+    this.responseStatus = responseStatus;
+  }
 
-    public AuthenticationException(int responseStatus, Throwable cause) {
-        super(cause);
-        this.responseStatus = responseStatus;
-    }
+  public AuthenticationException(int responseStatus, Throwable cause) {
+    super(cause);
+    this.responseStatus = responseStatus;
+  }
 
-    public int getResponseStatus() {
-        return responseStatus;
-    }
+  public int getResponseStatus() {
+    return responseStatus;
+  }
 
-    public void setResponseStatus(int responseStatus) {
-        this.responseStatus = responseStatus;
-    }
+  public void setResponseStatus(int responseStatus) {
+    this.responseStatus = responseStatus;
+  }
 }

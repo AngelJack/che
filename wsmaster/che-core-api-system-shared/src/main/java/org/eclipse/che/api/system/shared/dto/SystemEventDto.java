@@ -24,7 +24,7 @@ import org.eclipse.che.dto.shared.DTO;
 @EventOrigin("system")
 public interface SystemEventDto extends SystemEvent {
 
-    void setType(EventType type);
+  void setType(EventType type);
 
-    SystemEventDto withType(EventType type);
+  SystemEventDto withType(EventType type);
 }

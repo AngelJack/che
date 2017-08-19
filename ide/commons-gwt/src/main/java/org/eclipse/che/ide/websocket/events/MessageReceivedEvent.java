@@ -16,20 +16,19 @@ package org.eclipse.che.ide.websocket.events;
  * @author Artem Zatsarynnyi
  */
 public class MessageReceivedEvent {
-    /** Received message. */
-    private String message;
+  /** Received message. */
+  private String message;
 
-    public MessageReceivedEvent(String message) {
-        this.message = message;
-    }
+  public MessageReceivedEvent(String message) {
+    this.message = message;
+  }
 
-    /**
-     * Returns message.
-     *
-     * @return message
-     */
-    public String getMessage() {
-        return message;
-    }
-
+  /**
+   * Returns message.
+   *
+   * @return message
+   */
+  public String getMessage() {
+    return message;
+  }
 }

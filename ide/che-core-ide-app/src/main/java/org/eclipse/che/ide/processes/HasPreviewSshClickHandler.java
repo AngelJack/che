@@ -11,7 +11,8 @@
 package org.eclipse.che.ide.processes;
 
 /**
- * An object that implements this interface provides registration for {@link PreviewSshClickHandler} instances.
+ * An object that implements this interface provides registration for {@link PreviewSshClickHandler}
+ * instances.
  *
  * @author Vlad Zhukovskyi
  * @see PreviewSshClickHandler
@@ -19,11 +20,10 @@ package org.eclipse.che.ide.processes;
  */
 public interface HasPreviewSshClickHandler {
 
-    /**
-     * Adds a {@link PreviewSshClickHandler} handler.
-     *
-     * @param handler
-     *         the preview ssh click handler
-     */
-    void addPreviewSshClickHandler(PreviewSshClickHandler handler);
+  /**
+   * Adds a {@link PreviewSshClickHandler} handler.
+   *
+   * @param handler the preview ssh click handler
+   */
+  void addPreviewSshClickHandler(PreviewSshClickHandler handler);
 }

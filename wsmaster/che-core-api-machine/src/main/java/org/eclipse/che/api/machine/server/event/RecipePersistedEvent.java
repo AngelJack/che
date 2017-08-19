@@ -21,13 +21,13 @@ import org.eclipse.che.core.db.cascade.event.PersistEvent;
  */
 @EventOrigin("recipe")
 public class RecipePersistedEvent extends PersistEvent {
-    private final ManagedRecipe recipe;
+  private final ManagedRecipe recipe;
 
-    public RecipePersistedEvent(ManagedRecipe recipe) {
-        this.recipe = recipe;
-    }
+  public RecipePersistedEvent(ManagedRecipe recipe) {
+    this.recipe = recipe;
+  }
 
-    public ManagedRecipe getRecipe() {
-        return recipe;
-    }
+  public ManagedRecipe getRecipe() {
+    return recipe;
+  }
 }

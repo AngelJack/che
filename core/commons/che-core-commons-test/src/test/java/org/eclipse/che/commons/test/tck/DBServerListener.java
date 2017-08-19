@@ -13,18 +13,18 @@ package org.eclipse.che.commons.test.tck;
 import org.testng.ITestContext;
 
 /**
- * Listener representing fake db server url injection for testing "attributes sharing"
- * using {@link ITestContext} test suite instance.
+ * Listener representing fake db server url injection for testing "attributes sharing" using {@link
+ * ITestContext} test suite instance.
  *
  * @author Yevhenii Voevodin
  */
 public class DBServerListener extends TestListenerAdapter {
 
-    public static final String DB_SERVER_URL_ATTRIBUTE_NAME = "db_server_url";
-    public static final String DB_SERVER_URL                = "localhost:12345";
+  public static final String DB_SERVER_URL_ATTRIBUTE_NAME = "db_server_url";
+  public static final String DB_SERVER_URL = "localhost:12345";
 
-    @Override
-    public void onStart(ITestContext context) {
-        context.setAttribute(DB_SERVER_URL_ATTRIBUTE_NAME, DB_SERVER_URL);
-    }
+  @Override
+  public void onStart(ITestContext context) {
+    context.setAttribute(DB_SERVER_URL_ATTRIBUTE_NAME, DB_SERVER_URL);
+  }
 }

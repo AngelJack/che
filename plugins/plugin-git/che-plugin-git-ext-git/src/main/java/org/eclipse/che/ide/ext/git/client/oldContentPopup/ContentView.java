@@ -11,18 +11,15 @@
 package org.eclipse.che.ide.ext.git.client.oldContentPopup;
 
 import com.google.inject.ImplementedBy;
-
 import org.eclipse.che.ide.api.mvp.View;
 
-/**
- * @author Evgen Vidolob
- */
+/** @author Evgen Vidolob */
 @ImplementedBy(ContentViewImpl.class)
 public interface ContentView extends View<ContentView.ActionDelegate> {
-    void show(String url, int x, int y);
+  void show(String url, int x, int y);
 
-    interface ActionDelegate{
+  interface ActionDelegate {
 
-        void onCloseView();
-    }
+    void onCloseView();
+  }
 }

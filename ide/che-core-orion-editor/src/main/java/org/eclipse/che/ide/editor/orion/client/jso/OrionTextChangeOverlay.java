@@ -14,38 +14,33 @@ import com.google.gwt.core.client.JavaScriptObject;
 
 public class OrionTextChangeOverlay extends JavaScriptObject {
 
-    protected OrionTextChangeOverlay() {
-    }
+  protected OrionTextChangeOverlay() {}
 
-    public final native int getStart() /*-{
+  public final native int getStart() /*-{
         return this.start;
     }-*/;
 
-
-    public final native int getEnd() /*-{
+  public final native int getEnd() /*-{
         return this.end;
     }-*/;
 
-
-    public final native String getText() /*-{
+  public final native String getText() /*-{
         return this.text;
     }-*/;
 
-    public final native void setStart(int start) /*-{
+  public final native void setStart(int start) /*-{
         this.start = start;
     }-*/;
 
-
-    public final native void setEnd(int end) /*-{
+  public final native void setEnd(int end) /*-{
         this.end = end;
     }-*/;
 
-
-    public final native void setText(String text) /*-{
+  public final native void setText(String text) /*-{
         this.text = text;
     }-*/;
 
-    public static final native OrionTextChangeOverlay create() /*-{
+  public static final native OrionTextChangeOverlay create() /*-{
         return {};
     }-*/;
 }

@@ -26,14 +26,16 @@ import org.eclipse.che.ide.api.parts.PerspectiveManager;
 @Singleton
 public class PartMenu extends ContextMenu {
 
-    @Inject
-    public PartMenu(ActionManager actionManager, KeyBindingAgent keyBindingAgent, Provider<PerspectiveManager> managerProvider) {
-        super(actionManager, keyBindingAgent, managerProvider);
-    }
+  @Inject
+  public PartMenu(
+      ActionManager actionManager,
+      KeyBindingAgent keyBindingAgent,
+      Provider<PerspectiveManager> managerProvider) {
+    super(actionManager, keyBindingAgent, managerProvider);
+  }
 
-    @Override
-    protected String getGroupMenu() {
-        return IdeActions.GROUP_PART_MENU;
-    }
-
+  @Override
+  protected String getGroupMenu() {
+    return IdeActions.GROUP_PART_MENU;
+  }
 }

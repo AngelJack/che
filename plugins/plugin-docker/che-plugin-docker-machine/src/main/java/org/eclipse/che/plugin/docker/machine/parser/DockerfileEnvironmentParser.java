@@ -10,14 +10,14 @@
  */
 package org.eclipse.che.plugin.docker.machine.parser;
 
+import static java.lang.String.format;
+
 import org.eclipse.che.api.core.ServerException;
 import org.eclipse.che.api.core.model.workspace.Environment;
 import org.eclipse.che.api.core.model.workspace.EnvironmentRecipe;
 import org.eclipse.che.api.environment.server.model.CheServiceBuildContextImpl;
 import org.eclipse.che.api.environment.server.model.CheServiceImpl;
 import org.eclipse.che.api.environment.server.model.CheServicesEnvironmentImpl;
-
-import static java.lang.String.format;
 
 /**
  * Dockerfile specific environment parser.
@@ -27,31 +27,35 @@ import static java.lang.String.format;
  */
 public class DockerfileEnvironmentParser extends DockerEnvironmentParser {
 
-    @Override
-    public CheServicesEnvironmentImpl parse(Environment environment) throws IllegalArgumentException, ServerException {
-        EnvironmentRecipe recipe = environment.getRecipe();
+  @Override
+  public CheServicesEnvironmentImpl parse(Environment environment)
+      throws IllegalArgumentException, ServerException {
+    EnvironmentRecipe recipe = environment.getRecipe();
 
-        if (!"dockerfile".equals(recipe.getType())) {
-            throw new IllegalArgumentException(format("Dockerfile environment parser doesn't support recipe type '%s'",
-                                                      recipe.getType()));
-        }
-
-        if (!"text/x-dockerfile".equals(recipe.getContentType())) {
-            throw new IllegalArgumentException(format("Content type '%s' of recipe of environment is unsupported." +
-                                                      " Supported values are: text/x-dockerfile",
-                                                      recipe.getContentType()));
-        }
-
-        CheServicesEnvironmentImpl cheServiceEnv = new CheServicesEnvironmentImpl();
-        CheServiceImpl service = new CheServiceImpl();
-        cheServiceEnv.getServices().put(getMachineName(environment), service);
-
-        if (recipe.getLocation() != null) {
-            service.setBuild(new CheServiceBuildContextImpl().withContext(recipe.getLocation()));
-        } else {
-            service.setBuild(new CheServiceBuildContextImpl().withDockerfileContent(recipe.getContent()));
-        }
-
-        return cheServiceEnv;
+    if (!"dockerfile".equals(recipe.getType())) {
+      throw new IllegalArgumentException(
+          format(
+              "Dockerfile environment parser doesn't support recipe type '%s'", recipe.getType()));
     }
+
+    if (!"text/x-dockerfile".equals(recipe.getContentType())) {
+      throw new IllegalArgumentException(
+          format(
+              "Content type '%s' of recipe of environment is unsupported."
+                  + " Supported values are: text/x-dockerfile",
+              recipe.getContentType()));
+    }
+
+    CheServicesEnvironmentImpl cheServiceEnv = new CheServicesEnvironmentImpl();
+    CheServiceImpl service = new CheServiceImpl();
+    cheServiceEnv.getServices().put(getMachineName(environment), service);
+
+    if (recipe.getLocation() != null) {
+      service.setBuild(new CheServiceBuildContextImpl().withContext(recipe.getLocation()));
+    } else {
+      service.setBuild(new CheServiceBuildContextImpl().withDockerfileContent(recipe.getContent()));
+    }
+
+    return cheServiceEnv;
+  }
 }

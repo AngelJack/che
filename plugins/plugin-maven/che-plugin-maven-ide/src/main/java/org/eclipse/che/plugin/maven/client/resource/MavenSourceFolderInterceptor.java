@@ -12,29 +12,24 @@ package org.eclipse.che.plugin.maven.client.resource;
 
 import com.google.common.annotations.Beta;
 import com.google.inject.Singleton;
-
 import org.eclipse.che.ide.ext.java.client.resource.SourceFolderInterceptor;
 import org.eclipse.che.ide.ext.java.shared.ContentRoot;
 import org.eclipse.che.plugin.maven.shared.MavenAttributes;
 
-
-/**
- * @author Vlad Zhukovskiy
- */
+/** @author Vlad Zhukovskiy */
 @Beta
 @Singleton
 public class MavenSourceFolderInterceptor extends SourceFolderInterceptor {
 
-    public MavenSourceFolderInterceptor() {
-    }
+  public MavenSourceFolderInterceptor() {}
 
-    @Override
-    protected ContentRoot getContentRoot() {
-        return ContentRoot.TEST_SOURCE;
-    }
+  @Override
+  protected ContentRoot getContentRoot() {
+    return ContentRoot.TEST_SOURCE;
+  }
 
-    @Override
-    protected String getAttribute() {
-        return MavenAttributes.TEST_SOURCE_FOLDER;
-    }
+  @Override
+  protected String getAttribute() {
+    return MavenAttributes.TEST_SOURCE_FOLDER;
+  }
 }

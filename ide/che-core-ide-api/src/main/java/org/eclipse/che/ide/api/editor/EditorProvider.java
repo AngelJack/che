@@ -16,20 +16,16 @@ package org.eclipse.che.ide.api.editor;
  * @author Evgen Vidolob
  */
 public interface EditorProvider {
-    /**
-     * @return the id of this editor
-     */
-    String getId();
+  /** @return the id of this editor */
+  String getId();
 
-    /**
-     * @return the description of this editor
-     */
-    String getDescription();
+  /** @return the description of this editor */
+  String getDescription();
 
-    /**
-     * Every call this method should return new instance.
-     *
-     * @return new instance of {@link EditorPartPresenter}
-     */
-    EditorPartPresenter getEditor();
+  /**
+   * Every call this method should return new instance.
+   *
+   * @return new instance of {@link EditorPartPresenter}
+   */
+  EditorPartPresenter getEditor();
 }

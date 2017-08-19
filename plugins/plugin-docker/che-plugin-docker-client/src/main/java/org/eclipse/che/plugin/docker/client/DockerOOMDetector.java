@@ -20,35 +20,31 @@ import com.google.inject.ImplementedBy;
 @ImplementedBy(DockerOOMDetector.NoOpDockerOOMDetector.class)
 public interface DockerOOMDetector {
 
-    /**
-     * Stops detection of OOM for specified container.
-     *
-     * @param container
-     *         container id to stop OOM detection for
-     */
-    void stopDetection(String container);
+  /**
+   * Stops detection of OOM for specified container.
+   *
+   * @param container container id to stop OOM detection for
+   */
+  void stopDetection(String container);
 
-    /**
-     * Starts detection of OOM for specified container.
-     * Does nothing if container is under OOM detection already.
-     * Also puts message about OOM to processor of container logs.
-     *
-     * @param container
-     *         container id to stop OOM detection for
-     * @param startContainerLogProcessor
-     *         processor of container logs to put message about OOM detection
-     */
-    void startDetection(String container, MessageProcessor<LogMessage> startContainerLogProcessor);
+  /**
+   * Starts detection of OOM for specified container. Does nothing if container is under OOM
+   * detection already. Also puts message about OOM to processor of container logs.
+   *
+   * @param container container id to stop OOM detection for
+   * @param startContainerLogProcessor processor of container logs to put message about OOM
+   *     detection
+   */
+  void startDetection(String container, MessageProcessor<LogMessage> startContainerLogProcessor);
 
-    DockerOOMDetector NOOP_DETECTOR = new NoOpDockerOOMDetector();
+  DockerOOMDetector NOOP_DETECTOR = new NoOpDockerOOMDetector();
 
-    class NoOpDockerOOMDetector implements DockerOOMDetector {
-        @Override
-        public void stopDetection(String container) {
-        }
+  class NoOpDockerOOMDetector implements DockerOOMDetector {
+    @Override
+    public void stopDetection(String container) {}
 
-        @Override
-        public void startDetection(String container, MessageProcessor<LogMessage> startContainerLogProcessor) {
-        }
-    }
+    @Override
+    public void startDetection(
+        String container, MessageProcessor<LogMessage> startContainerLogProcessor) {}
+  }
 }

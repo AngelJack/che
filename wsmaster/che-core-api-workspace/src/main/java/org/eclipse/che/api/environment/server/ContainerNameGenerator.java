@@ -20,20 +20,14 @@ import org.eclipse.che.api.core.model.machine.MachineConfig;
  */
 public interface ContainerNameGenerator {
 
-    /**
-     * Returns generated name for container.
-     *
-     * @param workspaceId
-     *         unique workspace id, see more (@link WorkspaceConfig#getId)
-     * @param machineId
-     *         unique machine id, see more {@link Machine#getId()}
-     * @param ownerName
-     *         name of the user who is docker container owner
-     * @param machineName
-     *         name of the workspace machine, see more {@link MachineConfig#getName()}
-     */
-    String generateContainerName(String workspaceId,
-                                 String machineId,
-                                 String ownerName,
-                                 String machineName);
+  /**
+   * Returns generated name for container.
+   *
+   * @param workspaceId unique workspace id, see more (@link WorkspaceConfig#getId)
+   * @param machineId unique machine id, see more {@link Machine#getId()}
+   * @param ownerName name of the user who is docker container owner
+   * @param machineName name of the workspace machine, see more {@link MachineConfig#getName()}
+   */
+  String generateContainerName(
+      String workspaceId, String machineId, String ownerName, String machineName);
 }

@@ -11,18 +11,15 @@
 package org.eclipse.che.ide.factory.welcome.preferences;
 
 import com.google.gwt.user.client.ui.HasValue;
-
 import org.eclipse.che.ide.api.mvp.View;
 
-/**
- * @author Vitaliy Guliy
- */
-public interface ShowWelcomePreferencePageView extends View<ShowWelcomePreferencePageView.ActionDelegate> {
+/** @author Vitaliy Guliy */
+public interface ShowWelcomePreferencePageView
+    extends View<ShowWelcomePreferencePageView.ActionDelegate> {
 
-    interface ActionDelegate {
-        void onDirtyChanged();
-    }
+  interface ActionDelegate {
+    void onDirtyChanged();
+  }
 
-    HasValue<Boolean> welcomeField();
-
+  HasValue<Boolean> welcomeField();
 }

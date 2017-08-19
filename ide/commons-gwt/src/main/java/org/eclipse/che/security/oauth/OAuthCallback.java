@@ -10,9 +10,7 @@
  */
 package org.eclipse.che.security.oauth;
 
-/**
- * @author Vladislav Zhukovskii
- */
+/** @author Vladislav Zhukovskii */
 public interface OAuthCallback {
-    void onAuthenticated(OAuthStatus authStatus);
+  void onAuthenticated(OAuthStatus authStatus);
 }

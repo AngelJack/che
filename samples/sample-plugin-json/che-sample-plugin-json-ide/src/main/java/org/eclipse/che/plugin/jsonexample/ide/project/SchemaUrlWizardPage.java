@@ -12,32 +12,27 @@ package org.eclipse.che.plugin.jsonexample.ide.project;
 
 import com.google.gwt.user.client.ui.AcceptsOneWidget;
 import com.google.inject.Inject;
-
-import org.eclipse.che.api.workspace.shared.dto.ProjectConfigDto;
 import org.eclipse.che.ide.api.project.MutableProjectConfig;
 import org.eclipse.che.ide.api.wizard.AbstractWizardPage;
 
-/**
- * Simple wizard page that contains the {@link SchemaUrlPageView}.
- */
+/** Simple wizard page that contains the {@link SchemaUrlPageView}. */
 public class SchemaUrlWizardPage extends AbstractWizardPage<MutableProjectConfig> {
 
-    private final SchemaUrlPageViewImpl view;
+  private final SchemaUrlPageViewImpl view;
 
-    /**
-     * Constructor.
-     *
-     * @param view
-     *         the view to be displayed.
-     */
-    @Inject
-    public SchemaUrlWizardPage(SchemaUrlPageViewImpl view) {
-        this.view = view;
-    }
+  /**
+   * Constructor.
+   *
+   * @param view the view to be displayed.
+   */
+  @Inject
+  public SchemaUrlWizardPage(SchemaUrlPageViewImpl view) {
+    this.view = view;
+  }
 
-    @Override
-    public void go(AcceptsOneWidget container) {
-        container.setWidget(view);
-        view.setDelegate(new SchemaUrlChangedDelegate(dataObject));
-    }
+  @Override
+  public void go(AcceptsOneWidget container) {
+    container.setWidget(view);
+    view.setDelegate(new SchemaUrlChangedDelegate(dataObject));
+  }
 }

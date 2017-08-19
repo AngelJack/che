@@ -10,9 +10,8 @@
  */
 package org.eclipse.che.plugin.svn.shared;
 
-import org.eclipse.che.dto.shared.DTO;
-
 import javax.validation.constraints.NotNull;
+import org.eclipse.che.dto.shared.DTO;
 
 /**
  * Set properties on files, directories, or revisions.
@@ -21,46 +20,44 @@ import javax.validation.constraints.NotNull;
  */
 @DTO
 public interface PropertySetRequest extends PropertyRequest {
-    /**
-     * Property value.
-     *
-     * @return property value
-     */
-    String getValue();
+  /**
+   * Property value.
+   *
+   * @return property value
+   */
+  String getValue();
 
-    /**
-     * Property value.
-     *
-     * @param value
-     *         property value
-     */
-    void setValue(String value);
+  /**
+   * Property value.
+   *
+   * @param value property value
+   */
+  void setValue(String value);
 
-    /**
-     * Property value.
-     *
-     * @param value
-     *         property value
-     */
-    PropertySetRequest withValue(String value);
+  /**
+   * Property value.
+   *
+   * @param value property value
+   */
+  PropertySetRequest withValue(String value);
 
-    /** {@inheritDoc} */
-    @Override
-    PropertySetRequest withProjectPath(@NotNull final String projectPath);
+  /** {@inheritDoc} */
+  @Override
+  PropertySetRequest withProjectPath(@NotNull final String projectPath);
 
-    /** {@inheritDoc} */
-    @Override
-    PropertySetRequest withName(String name);
+  /** {@inheritDoc} */
+  @Override
+  PropertySetRequest withName(String name);
 
-    /** {@inheritDoc} */
-    @Override
-    PropertySetRequest withDepth(Depth depth);
+  /** {@inheritDoc} */
+  @Override
+  PropertySetRequest withDepth(Depth depth);
 
-    /** {@inheritDoc} */
-    @Override
-    PropertySetRequest withForce(boolean force);
+  /** {@inheritDoc} */
+  @Override
+  PropertySetRequest withForce(boolean force);
 
-    /** {@inheritDoc} */
-    @Override
-    PropertySetRequest withPath(String path);
+  /** {@inheritDoc} */
+  @Override
+  PropertySetRequest withPath(String path);
 }

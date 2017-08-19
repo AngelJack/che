@@ -12,9 +12,7 @@ package org.eclipse.che.ide.api.oauth;
 
 import com.google.common.base.Joiner;
 import com.google.gwt.user.client.Window;
-
 import java.util.List;
-
 
 /**
  * Constructs URL's to OAUth authentication depending on current host and rest context.
@@ -23,26 +21,29 @@ import java.util.List;
  */
 public class OAuth2AuthenticatorUrlProvider {
 
-    private final static String oAuthServicePath = "/oauth/authenticate";
+  private static final String oAuthServicePath = "/oauth/authenticate";
 
-    public static String get(String restContext, String authenticatePath) {
-        return restContext + authenticatePath + "&redirect_after_login=" + redirect();
-    }
+  public static String get(String restContext, String authenticatePath) {
+    return restContext + authenticatePath + "&redirect_after_login=" + redirect();
+  }
 
+  public static String get(
+      String restContext, String providerName, String userId, List<String> scopes) {
+    final String scope = Joiner.on(',').join(scopes);
 
-    public static String get(String restContext, String providerName, String userId, List<String> scopes) {
-        final String scope = Joiner.on(',').join(scopes);
+    return restContext
+        + oAuthServicePath
+        + "?oauth_provider="
+        + providerName
+        + "&scope="
+        + scope
+        + "&userId="
+        + userId
+        + "&redirect_after_login="
+        + redirect();
+  }
 
-        return restContext + oAuthServicePath + "?oauth_provider=" + providerName +
-                                                "&scope=" + scope +
-                                                "&userId=" + userId +
-                                                "&redirect_after_login=" + redirect();
-    }
-
-    private static String redirect() {
-        return Window.Location.getProtocol() + "//" + Window.Location.getHost() + "/ws/";
-    }
-
-
-
+  private static String redirect() {
+    return Window.Location.getProtocol() + "//" + Window.Location.getHost() + "/ws/";
+  }
 }

@@ -13,9 +13,6 @@ package org.eclipse.che.commons.annotation;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
-/**
- * @author Mihail Kuznyetsov
- */
+/** @author Mihail Kuznyetsov */
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Nullable {
-}
+public @interface Nullable {}

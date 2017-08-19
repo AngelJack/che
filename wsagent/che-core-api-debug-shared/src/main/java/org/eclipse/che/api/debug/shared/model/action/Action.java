@@ -10,18 +10,16 @@
  */
 package org.eclipse.che.api.debug.shared.model.action;
 
-/**
- * @author Anatoliy Bazko
- */
+/** @author Anatoliy Bazko */
 public interface Action {
-    TYPE getType();
+  TYPE getType();
 
-    enum TYPE {
-        STEP_INTO,
-        STEP_OUT,
-        STEP_OVER,
-        START,
-        RESUME,
-        SUSPEND
-    }
+  enum TYPE {
+    STEP_INTO,
+    STEP_OUT,
+    STEP_OVER,
+    START,
+    RESUME,
+    SUSPEND
+  }
 }

@@ -19,12 +19,11 @@ import org.vectomatic.dom.svg.ui.SVGResource;
  * @author Vlad Zhukovskiy
  */
 public interface NodeIconProvider {
-    /**
-     * Resolve icon based on given {@code resource}.
-     *
-     * @param resource
-     *         the resource to resolve icon
-     * @return icon or null if icons for this extension doesn't exist
-     */
-    SVGResource getIcon(Resource resource);
+  /**
+   * Resolve icon based on given {@code resource}.
+   *
+   * @param resource the resource to resolve icon
+   * @return icon or null if icons for this extension doesn't exist
+   */
+  SVGResource getIcon(Resource resource);
 }

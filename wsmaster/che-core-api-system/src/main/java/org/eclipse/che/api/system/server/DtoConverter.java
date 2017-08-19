@@ -27,57 +27,53 @@ import org.eclipse.che.dto.server.DtoFactory;
  */
 public final class DtoConverter {
 
-    /**
-     * Creates {@link SystemStatusChangedEventDto} from event.
-     */
-    public static SystemStatusChangedEventDto asDto(SystemStatusChangedEvent event) {
-        SystemStatusChangedEventDto dto = DtoFactory.newDto(SystemStatusChangedEventDto.class);
-        dto.setType(event.getType());
-        dto.setStatus(event.getStatus());
-        dto.setPrevStatus(event.getPrevStatus());
-        return dto;
-    }
+  /** Creates {@link SystemStatusChangedEventDto} from event. */
+  public static SystemStatusChangedEventDto asDto(SystemStatusChangedEvent event) {
+    SystemStatusChangedEventDto dto = DtoFactory.newDto(SystemStatusChangedEventDto.class);
+    dto.setType(event.getType());
+    dto.setStatus(event.getStatus());
+    dto.setPrevStatus(event.getPrevStatus());
+    return dto;
+  }
 
-    /**
-     * Creates {@link SystemServiceEventDto} from event.
-     */
-    public static SystemServiceEventDto asDto(SystemServiceEvent event) {
-        SystemServiceEventDto dto = DtoFactory.newDto(SystemServiceEventDto.class);
-        dto.setService(event.getServiceName());
-        dto.setType(event.getType());
-        return dto;
-    }
+  /** Creates {@link SystemServiceEventDto} from event. */
+  public static SystemServiceEventDto asDto(SystemServiceEvent event) {
+    SystemServiceEventDto dto = DtoFactory.newDto(SystemServiceEventDto.class);
+    dto.setService(event.getServiceName());
+    dto.setType(event.getType());
+    return dto;
+  }
 
-    /**
-     * Creates {@link SystemServiceItemStoppedEventDto} from event.
-     */
-    public static SystemServiceItemStoppedEventDto asDto(SystemServiceItemStoppedEvent event) {
-        SystemServiceItemStoppedEventDto dto = DtoFactory.newDto(SystemServiceItemStoppedEventDto.class);
-        dto.setService(event.getServiceName());
-        dto.setType(event.getType());
-        dto.setCurrent(event.getCurrent());
-        dto.setTotal(event.getTotal());
-        dto.setItem(event.getItem());
-        return dto;
-    }
+  /** Creates {@link SystemServiceItemStoppedEventDto} from event. */
+  public static SystemServiceItemStoppedEventDto asDto(SystemServiceItemStoppedEvent event) {
+    SystemServiceItemStoppedEventDto dto =
+        DtoFactory.newDto(SystemServiceItemStoppedEventDto.class);
+    dto.setService(event.getServiceName());
+    dto.setType(event.getType());
+    dto.setCurrent(event.getCurrent());
+    dto.setTotal(event.getTotal());
+    dto.setItem(event.getItem());
+    return dto;
+  }
 
-    /**
-     * Converts given event to the corresponding DTO, if event type
-     * is unknown throws {@link IllegalArgumentException}.
-     */
-    public static SystemEventDto asDto(SystemEvent event) {
-        switch (event.getType()) {
-            case STATUS_CHANGED:
-                return asDto((SystemStatusChangedEvent)event);
-            case SERVICE_ITEM_STOPPED:
-                return asDto((SystemServiceItemStoppedEvent)event);
-            case SERVICE_STOPPED:
-            case STOPPING_SERVICE:
-                return asDto((SystemServiceEvent)event);
-            default:
-                throw new IllegalArgumentException("Can't convert event to dto, event type '" + event.getType() + "' is unknown");
-        }
+  /**
+   * Converts given event to the corresponding DTO, if event type is unknown throws {@link
+   * IllegalArgumentException}.
+   */
+  public static SystemEventDto asDto(SystemEvent event) {
+    switch (event.getType()) {
+      case STATUS_CHANGED:
+        return asDto((SystemStatusChangedEvent) event);
+      case SERVICE_ITEM_STOPPED:
+        return asDto((SystemServiceItemStoppedEvent) event);
+      case SERVICE_STOPPED:
+      case STOPPING_SERVICE:
+        return asDto((SystemServiceEvent) event);
+      default:
+        throw new IllegalArgumentException(
+            "Can't convert event to dto, event type '" + event.getType() + "' is unknown");
     }
+  }
 
-    private DtoConverter() {}
+  private DtoConverter() {}
 }

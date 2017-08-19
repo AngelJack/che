@@ -12,7 +12,6 @@ package org.eclipse.che.ide.editor.orion.client;
 
 import com.google.inject.Inject;
 import com.google.inject.Provider;
-
 import org.eclipse.che.ide.api.editor.defaulteditor.EditorBuilder;
 import org.eclipse.che.ide.api.editor.editorconfig.DefaultTextEditorConfiguration;
 import org.eclipse.che.ide.api.editor.texteditor.TextEditor;
@@ -24,18 +23,17 @@ import org.eclipse.che.ide.api.editor.texteditor.TextEditor;
  */
 public class OrionEditorBuilder implements EditorBuilder {
 
+  private final Provider<OrionEditorPresenter> orionTextEditorProvider;
 
-    private final Provider<OrionEditorPresenter> orionTextEditorProvider;
+  @Inject
+  public OrionEditorBuilder(Provider<OrionEditorPresenter> orionTextEditorProvider) {
+    this.orionTextEditorProvider = orionTextEditorProvider;
+  }
 
-    @Inject
-    public OrionEditorBuilder(Provider<OrionEditorPresenter> orionTextEditorProvider) {
-        this.orionTextEditorProvider = orionTextEditorProvider;
-    }
-
-    @Override
-    public TextEditor buildEditor() {
-        final OrionEditorPresenter editor = orionTextEditorProvider.get();
-        editor.initialize(new DefaultTextEditorConfiguration());
-        return editor;
-    }
+  @Override
+  public TextEditor buildEditor() {
+    final OrionEditorPresenter editor = orionTextEditorProvider.get();
+    editor.initialize(new DefaultTextEditorConfiguration());
+    return editor;
+  }
 }

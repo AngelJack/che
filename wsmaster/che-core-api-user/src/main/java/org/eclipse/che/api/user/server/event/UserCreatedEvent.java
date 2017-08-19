@@ -22,11 +22,13 @@ import org.eclipse.che.api.user.server.model.impl.UserImpl;
 @EventOrigin("user")
 public class UserCreatedEvent {
 
-    private final User user;
+  private final User user;
 
-    public UserCreatedEvent(User user) {this.user = user;}
+  public UserCreatedEvent(User user) {
+    this.user = user;
+  }
 
-    public User getUser() {
-        return user;
-    }
+  public User getUser() {
+    return user;
+  }
 }

@@ -14,13 +14,13 @@ import org.eclipse.che.dto.shared.DTO;
 
 /**
  * DTO for validate new element name during rename refactoring.
+ *
  * @author Evgen Vidolob
  */
 @DTO
-public interface ValidateNewName extends RefactoringSession{
+public interface ValidateNewName extends RefactoringSession {
 
-    String getNewName();
+  String getNewName();
 
-    void setNewName(String newName);
-
+  void setNewName(String newName);
 }

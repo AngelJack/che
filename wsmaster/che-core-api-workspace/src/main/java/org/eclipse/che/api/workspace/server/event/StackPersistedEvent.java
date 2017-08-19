@@ -22,13 +22,13 @@ import org.eclipse.che.core.db.cascade.event.PersistEvent;
 @EventOrigin("stack")
 public class StackPersistedEvent extends PersistEvent {
 
-    private final Stack stack;
+  private final Stack stack;
 
-    public StackPersistedEvent(Stack stack) {
-        this.stack = stack;
-    }
+  public StackPersistedEvent(Stack stack) {
+    this.stack = stack;
+  }
 
-    public Stack getStack() {
-        return stack;
-    }
+  public Stack getStack() {
+    return stack;
+  }
 }

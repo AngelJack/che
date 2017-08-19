@@ -17,8 +17,8 @@ package org.eclipse.che.ide.editor.orion.client.inject;
  */
 public class JavaHighlightingOrionPlugin implements OrionPlugin {
 
-    @Override
-    public String getRelPath() {
-        return "cheJavaHighlightingPlugin/plugin.html";
-    }
+  @Override
+  public String getRelPath() {
+    return "cheJavaHighlightingPlugin/plugin.html";
+  }
 }

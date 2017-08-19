@@ -17,16 +17,13 @@ package org.eclipse.che.ide.api.vcs;
  */
 public interface HasVcsStatus {
 
-    /**
-     * Returns VCS status attribute of the resource.
-     */
-    VcsStatus getVcsStatus();
+  /** Returns VCS status attribute of the resource. */
+  VcsStatus getVcsStatus();
 
-    /**
-     * Set VCS status attribute to the resource.
-     *
-     * @param vcsStatus
-     *         VCS status to set
-     */
-    void setVcsStatus(VcsStatus vcsStatus);
+  /**
+   * Set VCS status attribute to the resource.
+   *
+   * @param vcsStatus VCS status to set
+   */
+  void setVcsStatus(VcsStatus vcsStatus);
 }

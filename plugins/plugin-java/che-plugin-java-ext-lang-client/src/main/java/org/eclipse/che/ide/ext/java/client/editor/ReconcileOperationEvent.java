@@ -12,7 +12,6 @@ package org.eclipse.che.ide.ext.java.client.editor;
 
 import com.google.gwt.event.shared.EventHandler;
 import com.google.gwt.event.shared.GwtEvent;
-
 import org.eclipse.che.ide.ext.java.shared.dto.ReconcileResult;
 
 /**
@@ -20,33 +19,33 @@ import org.eclipse.che.ide.ext.java.shared.dto.ReconcileResult;
  *
  * @author Roman Nikitenko
  */
-public class ReconcileOperationEvent extends GwtEvent<ReconcileOperationEvent.ReconcileOperationHandler> {
-    public static Type<ReconcileOperationHandler> TYPE = new Type<>();
+public class ReconcileOperationEvent
+    extends GwtEvent<ReconcileOperationEvent.ReconcileOperationHandler> {
+  public static Type<ReconcileOperationHandler> TYPE = new Type<>();
 
-    private final ReconcileResult reconcileResult;
+  private final ReconcileResult reconcileResult;
 
-    /**
-     * Creates an event which contains result of reconcile operation
-     *
-     * @param reconcileResult
-     *         info about result of reconcile operation
-     */
-    public ReconcileOperationEvent(ReconcileResult reconcileResult) {
-        this.reconcileResult = reconcileResult;
-    }
+  /**
+   * Creates an event which contains result of reconcile operation
+   *
+   * @param reconcileResult info about result of reconcile operation
+   */
+  public ReconcileOperationEvent(ReconcileResult reconcileResult) {
+    this.reconcileResult = reconcileResult;
+  }
 
-    @Override
-    public Type<ReconcileOperationHandler> getAssociatedType() {
-        return TYPE;
-    }
+  @Override
+  public Type<ReconcileOperationHandler> getAssociatedType() {
+    return TYPE;
+  }
 
-    @Override
-    protected void dispatch(ReconcileOperationHandler handler) {
-        handler.onReconcileOperation(reconcileResult);
-    }
+  @Override
+  protected void dispatch(ReconcileOperationHandler handler) {
+    handler.onReconcileOperation(reconcileResult);
+  }
 
-    /** Apples result of reconcile operation */
-    public interface ReconcileOperationHandler extends EventHandler {
-        void onReconcileOperation(ReconcileResult result);
-    }
+  /** Apples result of reconcile operation */
+  public interface ReconcileOperationHandler extends EventHandler {
+    void onReconcileOperation(ReconcileResult result);
+  }
 }

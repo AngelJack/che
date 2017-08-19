@@ -10,58 +10,55 @@
  */
 package org.eclipse.che.plugin.svn.shared;
 
+import java.util.List;
+import javax.validation.constraints.NotNull;
 import org.eclipse.che.dto.shared.DTO;
 
-import javax.validation.constraints.NotNull;
-import java.util.List;
-
-/**
- * Parameter object for cleanup requests.
- */
+/** Parameter object for cleanup requests. */
 @DTO
 public interface CleanupRequest {
 
-    /**
-     * Sets the list of paths to clean
-     * 
-     * @param paths the paths
-     */
-    void setPaths(List<String> paths);
+  /**
+   * Sets the list of paths to clean
+   *
+   * @param paths the paths
+   */
+  void setPaths(List<String> paths);
 
-    /**
-     * Sets the list of paths to clean
-     * 
-     * @param paths the paths
-     * @return this object
-     */
-    CleanupRequest withPaths(List<String> paths);
+  /**
+   * Sets the list of paths to clean
+   *
+   * @param paths the paths
+   * @return this object
+   */
+  CleanupRequest withPaths(List<String> paths);
 
-    /**
-     * Returns the list of paths to clean.
-     * 
-     * @return the paths
-     */
-    List<String> getPaths();
+  /**
+   * Returns the list of paths to clean.
+   *
+   * @return the paths
+   */
+  List<String> getPaths();
 
-    /**
-     * Returns the project path.
-     * 
-     * @return the project path
-     */
-    String getProjectPath();
+  /**
+   * Returns the project path.
+   *
+   * @return the project path
+   */
+  String getProjectPath();
 
-    /**
-     * Sets the project path.
-     * 
-     * @param projectPath the new value
-     */
-    void setProjectPath(@NotNull final String projectPath);
+  /**
+   * Sets the project path.
+   *
+   * @param projectPath the new value
+   */
+  void setProjectPath(@NotNull final String projectPath);
 
-    /**
-     * Sets the project path.
-     * 
-     * @param projectPath the new value
-     * @return this object
-     */
-    CleanupRequest withProjectPath(@NotNull final String projectPath);
+  /**
+   * Sets the project path.
+   *
+   * @param projectPath the new value
+   * @return this object
+   */
+  CleanupRequest withProjectPath(@NotNull final String projectPath);
 }

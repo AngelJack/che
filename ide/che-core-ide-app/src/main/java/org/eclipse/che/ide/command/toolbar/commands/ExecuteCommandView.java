@@ -10,34 +10,33 @@
  */
 package org.eclipse.che.ide.command.toolbar.commands;
 
+import java.util.Set;
 import org.eclipse.che.api.core.model.machine.Machine;
 import org.eclipse.che.ide.api.command.CommandGoal;
 import org.eclipse.che.ide.api.command.CommandImpl;
 import org.eclipse.che.ide.api.mvp.View;
 
-import java.util.Set;
-
 /** View for {@link ExecuteCommandPresenter}. */
 public interface ExecuteCommandView extends View<ExecuteCommandView.ActionDelegate> {
 
-    /** Set command goals which commands may be added to the view. */
-    void setGoals(Set<CommandGoal> goals);
+  /** Set command goals which commands may be added to the view. */
+  void setGoals(Set<CommandGoal> goals);
 
-    /** Add command to the view. */
-    void addCommand(CommandImpl command);
+  /** Add command to the view. */
+  void addCommand(CommandImpl command);
 
-    /** Remove command from the view. */
-    void removeCommand(CommandImpl command);
+  /** Remove command from the view. */
+  void removeCommand(CommandImpl command);
 
-    interface ActionDelegate {
+  interface ActionDelegate {
 
-        /** Called when command execution has been requested. */
-        void onCommandExecute(CommandImpl command);
+    /** Called when command execution has been requested. */
+    void onCommandExecute(CommandImpl command);
 
-        /** Called when command execution has been requested on the specified machine. */
-        void onCommandExecute(CommandImpl command, Machine machine);
+    /** Called when command execution has been requested on the specified machine. */
+    void onCommandExecute(CommandImpl command, Machine machine);
 
-        /** Called when guide of commands creation has been requested. */
-        void onGuide(CommandGoal goal);
-    }
+    /** Called when guide of commands creation has been requested. */
+    void onGuide(CommandGoal goal);
+  }
 }

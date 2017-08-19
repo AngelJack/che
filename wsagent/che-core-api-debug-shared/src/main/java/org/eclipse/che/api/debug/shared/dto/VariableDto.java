@@ -10,53 +10,52 @@
  */
 package org.eclipse.che.api.debug.shared.dto;
 
+import java.util.List;
 import org.eclipse.che.api.debug.shared.model.Variable;
 import org.eclipse.che.dto.shared.DTO;
-
-import java.util.List;
 
 /** @author andrew00x */
 @DTO
 public interface VariableDto extends Variable {
-    String getName();
+  String getName();
 
-    void setName(String name);
+  void setName(String name);
 
-    VariableDto withName(String name);
+  VariableDto withName(String name);
 
-    boolean isExistInformation();
+  boolean isExistInformation();
 
-    void setExistInformation(boolean existInformation);
+  void setExistInformation(boolean existInformation);
 
-    VariableDto withExistInformation(boolean existInformation);
+  VariableDto withExistInformation(boolean existInformation);
 
-    String getValue();
+  String getValue();
 
-    void setValue(String value);
+  void setValue(String value);
 
-    VariableDto withValue(String value);
+  VariableDto withValue(String value);
 
-    String getType();
+  String getType();
 
-    void setType(String type);
+  void setType(String type);
 
-    VariableDto withType(String type);
+  VariableDto withType(String type);
 
-    VariablePathDto getVariablePath();
+  VariablePathDto getVariablePath();
 
-    void setVariablePath(VariablePathDto variablePath);
+  void setVariablePath(VariablePathDto variablePath);
 
-    VariableDto withVariablePath(VariablePathDto variablePath);
+  VariableDto withVariablePath(VariablePathDto variablePath);
 
-    boolean isPrimitive();
+  boolean isPrimitive();
 
-    void setPrimitive(boolean primitive);
+  void setPrimitive(boolean primitive);
 
-    VariableDto withPrimitive(boolean primitive);
+  VariableDto withPrimitive(boolean primitive);
 
-    List<VariableDto> getVariables();
+  List<VariableDto> getVariables();
 
-    void setVariables(List<VariableDto> variables);
+  void setVariables(List<VariableDto> variables);
 
-    VariableDto withVariables(List<VariableDto> variables);
+  VariableDto withVariables(List<VariableDto> variables);
 }

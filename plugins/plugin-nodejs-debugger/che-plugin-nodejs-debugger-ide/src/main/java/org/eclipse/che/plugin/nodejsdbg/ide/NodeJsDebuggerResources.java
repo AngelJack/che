@@ -11,15 +11,12 @@
 package org.eclipse.che.plugin.nodejsdbg.ide;
 
 import com.google.gwt.resources.client.ClientBundle;
-
 import org.vectomatic.dom.svg.ui.SVGResource;
 
-/**
- * @author Anatolii Bazko
- */
+/** @author Anatolii Bazko */
 public interface NodeJsDebuggerResources extends ClientBundle {
 
-    /** Returns the icon for NodeJs debugger configurations. */
-    @Source("configuration/nodejs-debugger-configuration-type.svg")
-    SVGResource nodeJsDebugConfigurationType();
+  /** Returns the icon for NodeJs debugger configurations. */
+  @Source("configuration/nodejs-debugger-configuration-type.svg")
+  SVGResource nodeJsDebugConfigurationType();
 }

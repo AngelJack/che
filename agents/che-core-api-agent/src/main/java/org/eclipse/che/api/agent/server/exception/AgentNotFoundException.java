@@ -10,15 +10,13 @@
  */
 package org.eclipse.che.api.agent.server.exception;
 
-/**
- * @author Anatolii Bazko
- */
+/** @author Anatolii Bazko */
 public class AgentNotFoundException extends AgentException {
-    public AgentNotFoundException(String message) {
-        super(message);
-    }
+  public AgentNotFoundException(String message) {
+    super(message);
+  }
 
-    public AgentNotFoundException(String message, Throwable cause) {
-        super(message, cause);
-    }
+  public AgentNotFoundException(String message, Throwable cause) {
+    super(message, cause);
+  }
 }

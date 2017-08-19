@@ -12,18 +12,17 @@ package org.eclipse.che.plugin.gdb.server;
 
 import com.google.inject.AbstractModule;
 import com.google.inject.multibindings.Multibinder;
-
 import org.eclipse.che.api.debugger.server.DebuggerFactory;
 import org.eclipse.che.inject.DynaModule;
 
-/**
- * @author Anatoliy Bazko
- */
+/** @author Anatoliy Bazko */
 @DynaModule
 public class GdbDebuggerModule extends AbstractModule {
 
-    @Override
-    protected void configure() {
-        Multibinder.newSetBinder(binder(), DebuggerFactory.class).addBinding().to(GdbDebuggerFactory.class);
-    }
+  @Override
+  protected void configure() {
+    Multibinder.newSetBinder(binder(), DebuggerFactory.class)
+        .addBinding()
+        .to(GdbDebuggerFactory.class);
+  }
 }

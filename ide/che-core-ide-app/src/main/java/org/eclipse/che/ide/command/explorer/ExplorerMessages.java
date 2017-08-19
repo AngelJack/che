@@ -19,27 +19,27 @@ import com.google.gwt.i18n.client.Messages;
  */
 public interface ExplorerMessages extends Messages {
 
-    @Key("explorer.part.title")
-    String partTitle();
+  @Key("explorer.part.title")
+  String partTitle();
 
-    @Key("explorer.part.tooltip")
-    String partTooltip();
+  @Key("explorer.part.tooltip")
+  String partTooltip();
 
-    @Key("explorer.view.title")
-    String viewTitle();
+  @Key("explorer.view.title")
+  String viewTitle();
 
-    @Key("explorer.message.unable_create")
-    String unableCreate();
+  @Key("explorer.message.unable_create")
+  String unableCreate();
 
-    @Key("explorer.message.unable_duplicate")
-    String unableDuplicate();
+  @Key("explorer.message.unable_duplicate")
+  String unableDuplicate();
 
-    @Key("explorer.message.unable_remove")
-    String unableRemove();
+  @Key("explorer.message.unable_remove")
+  String unableRemove();
 
-    @Key("explorer.remove_confirmation.title")
-    String removeCommandConfirmationTitle();
+  @Key("explorer.remove_confirmation.title")
+  String removeCommandConfirmationTitle();
 
-    @Key("explorer.remove_confirmation.message")
-    String removeCommandConfirmationMessage(String commandName);
+  @Key("explorer.remove_confirmation.message")
+  String removeCommandConfirmationMessage(String commandName);
 }

@@ -12,10 +12,8 @@ package org.eclipse.che.ide.ui.status;
 
 import javax.validation.constraints.NotNull;
 
-/**
- * @author Vlad Zhukovskiy
- */
+/** @author Vlad Zhukovskiy */
 public interface ComponentWithEmptyStatus {
-    @NotNull
-    EmptyStatus getEmptyStatus();
+  @NotNull
+  EmptyStatus getEmptyStatus();
 }

@@ -15,13 +15,13 @@ package org.eclipse.che.ide.util.loging;
  * @version $Id:
  */
 interface Logger {
-    void debug(Class<?> clazz, Object... args);
+  void debug(Class<?> clazz, Object... args);
 
-    void error(Class<?> clazz, Object... args);
+  void error(Class<?> clazz, Object... args);
 
-    void info(Class<?> clazz, Object... args);
+  void info(Class<?> clazz, Object... args);
 
-    void warn(Class<?> clazz, Object... args);
+  void warn(Class<?> clazz, Object... args);
 
-    boolean isLoggingEnabled();
+  boolean isLoggingEnabled();
 }

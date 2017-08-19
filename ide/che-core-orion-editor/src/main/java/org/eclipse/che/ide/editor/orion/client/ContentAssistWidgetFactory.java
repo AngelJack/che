@@ -12,9 +12,7 @@ package org.eclipse.che.ide.editor.orion.client;
 
 import org.eclipse.che.ide.editor.orion.client.jso.OrionKeyModeOverlay;
 
-/**
- * @author Evgen Vidolob
- */
+/** @author Evgen Vidolob */
 public interface ContentAssistWidgetFactory {
-    ContentAssistWidget create(OrionEditorWidget editor, OrionKeyModeOverlay assistMode);
+  ContentAssistWidget create(OrionEditorWidget editor, OrionKeyModeOverlay assistMode);
 }

@@ -11,26 +11,24 @@
 package org.eclipse.che.api.core.jsonrpc.commons;
 
 /**
- * Marshals outgoing JSON RPC requests and responses to a string
- * representation, used to separate the business logic and the platform/parser
- * specific logic that is responsible for parsing/composing json rpc entities.
+ * Marshals outgoing JSON RPC requests and responses to a string representation, used to separate
+ * the business logic and the platform/parser specific logic that is responsible for
+ * parsing/composing json rpc entities.
  */
 public interface JsonRpcMarshaller {
-    /**
-     * Serializes JSON RPC response object into a string
-     *
-     * @param response
-     *         response
-     * @return string representation
-     */
-    String marshall(JsonRpcResponse response);
+  /**
+   * Serializes JSON RPC response object into a string
+   *
+   * @param response response
+   * @return string representation
+   */
+  String marshall(JsonRpcResponse response);
 
-    /**
-     * Serializes JSON RPC request object into a string
-     *
-     * @param request
-     *         request
-     * @return string representation
-     */
-    String marshall(JsonRpcRequest request);
+  /**
+   * Serializes JSON RPC request object into a string
+   *
+   * @param request request
+   * @return string representation
+   */
+  String marshall(JsonRpcRequest request);
 }

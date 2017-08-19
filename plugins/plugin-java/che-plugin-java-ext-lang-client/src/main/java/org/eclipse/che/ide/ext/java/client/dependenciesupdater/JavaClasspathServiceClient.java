@@ -22,13 +22,11 @@ import org.eclipse.che.ide.websocket.rest.RequestCallback;
 /* Never used will be removed in next release */
 public interface JavaClasspathServiceClient {
 
-    /**
-     * Update project dependencies.
-     *
-     * @param projectPath
-     *         path to the project to update its dependencies
-     * @param callback
-     *         the callback to use for the response
-     */
-    void updateDependencies(String projectPath, RequestCallback<ClassPathBuilderResult> callback);
+  /**
+   * Update project dependencies.
+   *
+   * @param projectPath path to the project to update its dependencies
+   * @param callback the callback to use for the response
+   */
+  void updateDependencies(String projectPath, RequestCallback<ClassPathBuilderResult> callback);
 }

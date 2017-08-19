@@ -12,16 +12,11 @@ package org.eclipse.che.ide.ui.cellview;
 
 import com.google.gwt.user.cellview.client.CellTable;
 
-/**
- * @author Evgen Vidolob
- */
+/** @author Evgen Vidolob */
 public interface CellTableResources extends CellTable.Resources {
-    public interface CellTableStyle extends CellTable.Style {
-    }
+  public interface CellTableStyle extends CellTable.Style {}
 
-
-    @Override
-    @Source({"cellTable.css", "org/eclipse/che/ide/api/ui/style.css"})
-    CellTableStyle cellTableStyle();
-
+  @Override
+  @Source({"cellTable.css", "org/eclipse/che/ide/api/ui/style.css"})
+  CellTableStyle cellTableStyle();
 }

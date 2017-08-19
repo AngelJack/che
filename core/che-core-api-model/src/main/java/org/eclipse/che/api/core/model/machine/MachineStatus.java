@@ -13,8 +13,10 @@ package org.eclipse.che.api.core.model.machine;
 /**
  * Describes status of a machine
  *
-* @author andrew00x
-*/
+ * @author andrew00x
+ */
 public enum MachineStatus {
-    CREATING, RUNNING, DESTROYING
+  CREATING,
+  RUNNING,
+  DESTROYING
 }

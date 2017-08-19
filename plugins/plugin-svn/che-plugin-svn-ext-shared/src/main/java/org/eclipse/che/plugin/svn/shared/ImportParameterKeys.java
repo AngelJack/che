@@ -12,9 +12,8 @@ package org.eclipse.che.plugin.svn.shared;
 
 public final class ImportParameterKeys {
 
-    private ImportParameterKeys() {
-    }
+  private ImportParameterKeys() {}
 
-    public static final String PARAMETER_USERNAME = "username";
-    public static final String PARAMETER_PASSWORD = "password";
+  public static final String PARAMETER_USERNAME = "username";
+  public static final String PARAMETER_PASSWORD = "password";
 }

@@ -20,27 +20,25 @@ import org.eclipse.che.dto.shared.DTO;
 @DTO
 public interface ImportDeclaration extends JavaElement {
 
-    /**
-     * Returns the name that has been imported.
-     * For an on-demand import, this includes the trailing <code>".*"</code>.
-     * For example, for the statement <code>"import java.util.*"</code>,
-     * this returns <code>"java.util.*"</code>.
-     * For the statement <code>"import java.util.Hashtable"</code>,
-     * this returns <code>"java.util.Hashtable"</code>.
-     *
-     * @return the name that has been imported
-     */
-    String getElementName();
+  /**
+   * Returns the name that has been imported. For an on-demand import, this includes the trailing
+   * <code>".*"</code>. For example, for the statement <code>"import java.util.*"</code>, this
+   * returns <code>"java.util.*"</code>. For the statement <code>"import java.util.Hashtable"</code>
+   * , this returns <code>"java.util.Hashtable"</code>.
+   *
+   * @return the name that has been imported
+   */
+  String getElementName();
 
-    void setElementName(String elementName);
+  void setElementName(String elementName);
 
-    /**
-     * Returns the modifier flags for this import. The flags can be examined using class
-     * <code>Flags</code>. Only the static flag is meaningful for import declarations.
-     *
-     * @return the modifier flags for this import
-     */
-    int getFlags();
+  /**
+   * Returns the modifier flags for this import. The flags can be examined using class <code>Flags
+   * </code>. Only the static flag is meaningful for import declarations.
+   *
+   * @return the modifier flags for this import
+   */
+  int getFlags();
 
-    void setFlags(int flags);
+  void setFlags(int flags);
 }

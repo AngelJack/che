@@ -14,13 +14,13 @@ package org.eclipse.che.api.vfs;
  * Filter for virtual files.
  *
  * @author andrew00x
- *
- * @deprecated VFS components are now considered deprecated and will be replaced by standard JDK routines.
+ * @deprecated VFS components are now considered deprecated and will be replaced by standard JDK
+ *     routines.
  */
 @Deprecated
 public interface VirtualFileFilter {
-    /** Tests whether specified file should be included in result. */
-    boolean accept(VirtualFile file);
+  /** Tests whether specified file should be included in result. */
+  boolean accept(VirtualFile file);
 
-    VirtualFileFilter ACCEPT_ALL = file -> true;
+  VirtualFileFilter ACCEPT_ALL = file -> true;
 }

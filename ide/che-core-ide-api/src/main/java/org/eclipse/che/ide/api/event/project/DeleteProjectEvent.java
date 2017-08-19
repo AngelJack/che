@@ -11,36 +11,36 @@
 package org.eclipse.che.ide.api.event.project;
 
 import com.google.gwt.event.shared.GwtEvent;
-
 import org.eclipse.che.api.workspace.shared.dto.ProjectConfigDto;
 
 /**
- * The class store information about deleted project. This event should be fired when we delete project.
+ * The class store information about deleted project. This event should be fired when we delete
+ * project.
  *
  * @author Dmitry Shnurenko
  */
 public class DeleteProjectEvent extends GwtEvent<DeleteProjectHandler> {
 
-    public static Type<DeleteProjectHandler> TYPE = new Type<>();
+  public static Type<DeleteProjectHandler> TYPE = new Type<>();
 
-    private final ProjectConfigDto configDto;
+  private final ProjectConfigDto configDto;
 
-    public DeleteProjectEvent(ProjectConfigDto configDto) {
-        this.configDto = configDto;
-    }
+  public DeleteProjectEvent(ProjectConfigDto configDto) {
+    this.configDto = configDto;
+  }
 
-    /** Returns project descriptor. It contains information about project. */
-    public ProjectConfigDto getProjectConfig() {
-        return configDto;
-    }
+  /** Returns project descriptor. It contains information about project. */
+  public ProjectConfigDto getProjectConfig() {
+    return configDto;
+  }
 
-    @Override
-    public Type<DeleteProjectHandler> getAssociatedType() {
-        return TYPE;
-    }
+  @Override
+  public Type<DeleteProjectHandler> getAssociatedType() {
+    return TYPE;
+  }
 
-    @Override
-    protected void dispatch(DeleteProjectHandler handler) {
-        handler.onProjectDeleted(this);
-    }
+  @Override
+  protected void dispatch(DeleteProjectHandler handler) {
+    handler.onProjectDeleted(this);
+  }
 }

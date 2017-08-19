@@ -14,18 +14,21 @@ import javax.validation.constraints.NotNull;
 import org.eclipse.che.commons.annotation.Nullable;
 
 /**
- * Picks-up all bounded {@link ImportWizardRegistrar}s to be able to return it for the particular project importer ID.
+ * Picks-up all bounded {@link ImportWizardRegistrar}s to be able to return it for the particular
+ * project importer ID.
  *
  * @author Artem Zatsarynnyi
  */
 public interface ImportWizardRegistry {
-    /**
-     * Get an {@link ImportWizardRegistrar} for the specified project importer or {@code null} if none.
-     *
-     * @param importerId
-     *         the ID of the project importer to get an appropriate {@link ImportWizardRegistrar}
-     * @return {@link ImportWizardRegistrar} for the specified project importer ID or {@code null} if none
-     */
-    @Nullable
-    ImportWizardRegistrar getWizardRegistrar(@NotNull String importerId);
+  /**
+   * Get an {@link ImportWizardRegistrar} for the specified project importer or {@code null} if
+   * none.
+   *
+   * @param importerId the ID of the project importer to get an appropriate {@link
+   *     ImportWizardRegistrar}
+   * @return {@link ImportWizardRegistrar} for the specified project importer ID or {@code null} if
+   *     none
+   */
+  @Nullable
+  ImportWizardRegistrar getWizardRegistrar(@NotNull String importerId);
 }

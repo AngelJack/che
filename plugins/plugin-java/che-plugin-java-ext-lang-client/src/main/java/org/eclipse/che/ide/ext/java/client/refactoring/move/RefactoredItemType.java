@@ -10,9 +10,9 @@
  */
 package org.eclipse.che.ide.ext.java.client.refactoring.move;
 
-/**
- * @author Dmitry Shnurenko
- */
+/** @author Dmitry Shnurenko */
 public enum RefactoredItemType {
-    COMPILATION_UNIT, PACKAGE, JAVA_ELEMENT
+  COMPILATION_UNIT,
+  PACKAGE,
+  JAVA_ELEMENT
 }

@@ -18,61 +18,64 @@ import java.util.Objects;
  * @author Alexander Garagatyi
  */
 public class ConnectContainer {
-    private String         container;
-    private EndpointConfig endpointConfig;
+  private String container;
+  private EndpointConfig endpointConfig;
 
-    public String getContainer() {
-        return container;
-    }
+  public String getContainer() {
+    return container;
+  }
 
-    public void setContainer(String container) {
-        this.container = container;
-    }
+  public void setContainer(String container) {
+    this.container = container;
+  }
 
-    public ConnectContainer withContainer(String container) {
-        this.container = container;
-        return this;
-    }
+  public ConnectContainer withContainer(String container) {
+    this.container = container;
+    return this;
+  }
 
-    public EndpointConfig getEndpointConfig() {
-        return endpointConfig;
-    }
+  public EndpointConfig getEndpointConfig() {
+    return endpointConfig;
+  }
 
-    public void setEndpointConfig(EndpointConfig endpointConfig) {
-        this.endpointConfig = endpointConfig;
-    }
+  public void setEndpointConfig(EndpointConfig endpointConfig) {
+    this.endpointConfig = endpointConfig;
+  }
 
-    public ConnectContainer withEndpointConfig(EndpointConfig endpointConfig) {
-        this.endpointConfig = endpointConfig;
-        return this;
-    }
+  public ConnectContainer withEndpointConfig(EndpointConfig endpointConfig) {
+    this.endpointConfig = endpointConfig;
+    return this;
+  }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof ConnectContainer)) {
-            return false;
-        }
-        final ConnectContainer that = (ConnectContainer)obj;
-        return Objects.equals(container, that.container)
-               && Objects.equals(endpointConfig, that.endpointConfig);
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj) {
+      return true;
     }
+    if (!(obj instanceof ConnectContainer)) {
+      return false;
+    }
+    final ConnectContainer that = (ConnectContainer) obj;
+    return Objects.equals(container, that.container)
+        && Objects.equals(endpointConfig, that.endpointConfig);
+  }
 
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 31 * hash + Objects.hashCode(container);
-        hash = 31 * hash + Objects.hashCode(endpointConfig);
-        return hash;
-    }
+  @Override
+  public int hashCode() {
+    int hash = 7;
+    hash = 31 * hash + Objects.hashCode(container);
+    hash = 31 * hash + Objects.hashCode(endpointConfig);
+    return hash;
+  }
 
-    @Override
-    public String toString() {
-        return "ConnectContainer{" +
-               "container='" + container + '\'' +
-               ", endpointConfig=" + endpointConfig +
-               '}';
-    }
+  @Override
+  public String toString() {
+    return "ConnectContainer{"
+        + "container='"
+        + container
+        + '\''
+        + ", endpointConfig="
+        + endpointConfig
+        + '}';
+  }
 }

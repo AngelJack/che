@@ -16,6 +16,6 @@ package org.eclipse.che.ide.ext.git.client.compare.changespanel;
  * @author Igor Vinokur
  */
 public enum ViewMode {
-    LIST,
-    TREE
+  LIST,
+  TREE
 }

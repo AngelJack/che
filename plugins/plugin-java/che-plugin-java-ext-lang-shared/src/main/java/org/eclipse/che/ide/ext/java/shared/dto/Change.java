@@ -21,24 +21,24 @@ import org.eclipse.che.dto.shared.DTO;
 @DTO
 public interface Change {
 
-    /** Returns the offset of the change. */
-    int getOffset();
+  /** Returns the offset of the change. */
+  int getOffset();
 
-    void setOffset(int offset);
+  void setOffset(int offset);
 
-    Change withOffset(int offset);
+  Change withOffset(int offset);
 
-    /** Returns length of the text change. */
-    int getLength();
+  /** Returns length of the text change. */
+  int getLength();
 
-    void setLength(int length);
+  void setLength(int length);
 
-    Change withLength(int length);
+  Change withLength(int length);
 
-    /** Returns text of the change. */
-    String getText();
+  /** Returns text of the change. */
+  String getText();
 
-    void setText(String text);
+  void setText(String text);
 
-    Change withText(String text);
+  Change withText(String text);
 }

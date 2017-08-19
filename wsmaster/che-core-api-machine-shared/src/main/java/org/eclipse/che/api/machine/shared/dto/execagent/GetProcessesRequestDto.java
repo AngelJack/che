@@ -14,7 +14,7 @@ import org.eclipse.che.dto.shared.DTO;
 
 @DTO
 public interface GetProcessesRequestDto {
-    boolean isAll();
+  boolean isAll();
 
-    GetProcessesRequestDto withAll(boolean all);
+  GetProcessesRequestDto withAll(boolean all);
 }

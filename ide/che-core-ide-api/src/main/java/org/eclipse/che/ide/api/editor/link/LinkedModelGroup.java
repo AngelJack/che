@@ -10,16 +10,13 @@
  */
 package org.eclipse.che.ide.api.editor.link;
 
+import java.util.List;
 import org.eclipse.che.ide.api.editor.text.Position;
 
-import java.util.List;
-
-/**
- * @author Evgen Vidolob
- */
+/** @author Evgen Vidolob */
 public interface LinkedModelGroup {
 
-    void setData(LinkedModelData data);
+  void setData(LinkedModelData data);
 
-    void setPositions(List<Position> positions);
+  void setPositions(List<Position> positions);
 }

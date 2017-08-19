@@ -20,20 +20,18 @@ import org.eclipse.che.api.core.notification.EventOrigin;
 @EventOrigin("project")
 public class ProjectDeletedEvent {
 
-    private String projectPath;
+  private String projectPath;
 
-    public ProjectDeletedEvent(String projectPath) {
-        this.projectPath = projectPath;
-    }
+  public ProjectDeletedEvent(String projectPath) {
+    this.projectPath = projectPath;
+  }
 
-    public String getProjectPath() {
-        return projectPath;
-    }
+  public String getProjectPath() {
+    return projectPath;
+  }
 
-    @Override
-    public String toString() {
-        return "ProjectDeletedEvent{" +
-               "projectPath='" + projectPath + '\'' +
-               '}';
-    }
+  @Override
+  public String toString() {
+    return "ProjectDeletedEvent{" + "projectPath='" + projectPath + '\'' + '}';
+  }
 }

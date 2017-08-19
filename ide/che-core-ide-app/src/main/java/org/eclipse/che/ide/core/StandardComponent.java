@@ -14,38 +14,37 @@ import com.google.gwt.core.client.Callback;
 import com.google.gwt.core.client.Scheduler;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-
 import org.eclipse.che.ide.api.component.Component;
 import org.eclipse.che.ide.util.loging.Log;
 
-/**
- * @author Evgen Vidolob
- */
+/** @author Evgen Vidolob */
 @Singleton
 public class StandardComponent implements Component {
 
-    private final StandardComponentInitializer initializer;
+  private final StandardComponentInitializer initializer;
 
-    @Inject
-    public StandardComponent(StandardComponentInitializer initializer) {
-        this.initializer = initializer;
+  @Inject
+  public StandardComponent(StandardComponentInitializer initializer) {
+    this.initializer = initializer;
+  }
+
+  @Override
+  public void start(final Callback<Component, Exception> callback) {
+    // initialize standard components
+    try {
+      initializer.initialize();
+    } catch (Exception e) {
+      Log.error(StandardComponent.class, e);
     }
 
-    @Override
-    public void start(final Callback<Component, Exception> callback) {
-        // initialize standard components
-        try {
-            initializer.initialize();
-        } catch (Exception e) {
-            Log.error(StandardComponent.class, e);
-        }
-
-        // Finalization of starting components
-        Scheduler.get().scheduleDeferred(new Scheduler.ScheduledCommand() {
-            @Override
-            public void execute() {
+    // Finalization of starting components
+    Scheduler.get()
+        .scheduleDeferred(
+            new Scheduler.ScheduledCommand() {
+              @Override
+              public void execute() {
                 callback.onSuccess(StandardComponent.this);
-            }
-        });
-    }
+              }
+            });
+  }
 }

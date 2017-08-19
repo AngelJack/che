@@ -15,22 +15,21 @@ import com.google.gwt.core.client.JsArrayString;
 
 public class MapConfigProperty extends JavaScriptObject {
 
-    protected MapConfigProperty() {
-    }
+  protected MapConfigProperty() {}
 
-    public final native MapConfigProperty create() /*-{
+  public final native MapConfigProperty create() /*-{
         return {};
     }-*/;
 
-    public final native MapItem getMap(String prefix) /*-{
+  public final native MapItem getMap(String prefix) /*-{
         return this[prefix];
     }-*/;
 
-    public final native void setMap(String prefix, MapItem map) /*-{
+  public final native void setMap(String prefix, MapItem map) /*-{
         this[prefix] = map;
     }-*/;
 
-    public final native JsArrayString getPrefixes() /*-{
+  public final native JsArrayString getPrefixes() /*-{
         return this.getOwnPropertyNames();
     }-*/;
 }

@@ -13,11 +13,9 @@ package org.eclipse.che.api.debug.shared.model.impl.action;
 import org.eclipse.che.api.debug.shared.model.action.Action;
 import org.eclipse.che.api.debug.shared.model.action.StepIntoAction;
 
-/**
- * @author Anatoliy Bazko
- */
+/** @author Anatoliy Bazko */
 public class StepIntoActionImpl extends ActionImpl implements StepIntoAction {
-    public StepIntoActionImpl() {
-        super(Action.TYPE.STEP_INTO);
-    }
+  public StepIntoActionImpl() {
+    super(Action.TYPE.STEP_INTO);
+  }
 }

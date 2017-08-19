@@ -14,24 +14,22 @@ import org.eclipse.che.dto.shared.DTO;
 
 /**
  * DTO that represents creation refactoring change.
+ *
  * @author Evgen Vidolob
  */
 @DTO
 public interface ChangeCreationResult {
 
-    /**
-     *
-     * @return true if wizard can show preview page or finish refactoring. if false wizard must show error page.
-     */
-    boolean isCanShowPreviewPage();
+  /**
+   * @return true if wizard can show preview page or finish refactoring. if false wizard must show
+   *     error page.
+   */
+  boolean isCanShowPreviewPage();
 
-    void setCanShowPreviewPage(boolean preview);
+  void setCanShowPreviewPage(boolean preview);
 
-    /**
-     * @return status of creation refactoring change.
-     */
-    RefactoringStatus getStatus();
+  /** @return status of creation refactoring change. */
+  RefactoringStatus getStatus();
 
-    void setStatus(RefactoringStatus status);
-
+  void setStatus(RefactoringStatus status);
 }

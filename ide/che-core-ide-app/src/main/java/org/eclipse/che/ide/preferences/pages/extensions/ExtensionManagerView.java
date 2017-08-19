@@ -10,16 +10,14 @@
  */
 package org.eclipse.che.ide.preferences.pages.extensions;
 
+import java.util.List;
 import org.eclipse.che.ide.api.extension.ExtensionDescription;
 import org.eclipse.che.ide.api.mvp.View;
-
-import java.util.List;
 
 /** @author Evgen Vidolob */
 public interface ExtensionManagerView extends View<ExtensionManagerView.ActionDelegate> {
 
-    void setExtensions(List<ExtensionDescription> extensions);
+  void setExtensions(List<ExtensionDescription> extensions);
 
-    interface ActionDelegate {
-    }
+  interface ActionDelegate {}
 }

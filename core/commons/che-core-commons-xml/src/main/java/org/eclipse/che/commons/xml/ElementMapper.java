@@ -10,10 +10,8 @@
  */
 package org.eclipse.che.commons.xml;
 
-/**
- * @author Eugene Voevodin
- */
+/** @author Eugene Voevodin */
 public interface ElementMapper<T> {
 
-    T map(Element element);
+  T map(Element element);
 }

@@ -14,21 +14,22 @@ import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
 
 /**
- * Mockito Answer that applies a given function to the first argument of 
- * the answer InvocationOnMock argument.
+ * Mockito Answer that applies a given function to the first argument of the answer InvocationOnMock
+ * argument.
  *
  * @author David Festal
  */
 public class FunctionAnswer<ArgumentType, Return> implements Answer<Return> {
-    private java.util.function.Function<ArgumentType, Return> apply;
-    public FunctionAnswer(java.util.function.Function<ArgumentType, Return> apply) {
-        this.apply = apply;
-    }
-    
-    @Override
-    public Return answer(InvocationOnMock invocation) throws Throwable {
-        @SuppressWarnings("unchecked")
-        ArgumentType arg = (ArgumentType)invocation.getArguments()[0];
-        return apply.apply(arg);
-    }
+  private java.util.function.Function<ArgumentType, Return> apply;
+
+  public FunctionAnswer(java.util.function.Function<ArgumentType, Return> apply) {
+    this.apply = apply;
+  }
+
+  @Override
+  public Return answer(InvocationOnMock invocation) throws Throwable {
+    @SuppressWarnings("unchecked")
+    ArgumentType arg = (ArgumentType) invocation.getArguments()[0];
+    return apply.apply(arg);
+  }
 }

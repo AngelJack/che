@@ -19,19 +19,17 @@ import com.google.gwt.event.shared.EventHandler;
  */
 public interface WsAgentStateHandler extends EventHandler {
 
-    /**
-     * Called when ws-agent has been started.
-     *
-     * @param event
-     *         the fired {@link WsAgentStateEvent}
-     */
-    void onWsAgentStarted(WsAgentStateEvent event);
+  /**
+   * Called when ws-agent has been started.
+   *
+   * @param event the fired {@link WsAgentStateEvent}
+   */
+  void onWsAgentStarted(WsAgentStateEvent event);
 
-    /**
-     * Called when ws-agent has been stopped.
-     *
-     * @param event
-     *         the fired {@link WsAgentStateEvent}
-     */
-    void onWsAgentStopped(WsAgentStateEvent event);
+  /**
+   * Called when ws-agent has been stopped.
+   *
+   * @param event the fired {@link WsAgentStateEvent}
+   */
+  void onWsAgentStopped(WsAgentStateEvent event);
 }

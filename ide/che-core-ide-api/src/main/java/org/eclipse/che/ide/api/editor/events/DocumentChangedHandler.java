@@ -14,5 +14,5 @@ import com.google.gwt.event.shared.EventHandler;
 
 public interface DocumentChangedHandler extends EventHandler {
 
-    void onDocumentChanged(DocumentChangedEvent event);
+  void onDocumentChanged(DocumentChangedEvent event);
 }

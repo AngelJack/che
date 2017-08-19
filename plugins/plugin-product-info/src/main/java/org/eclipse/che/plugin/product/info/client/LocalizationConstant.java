@@ -12,7 +12,6 @@ package org.eclipse.che.plugin.product.info.client;
 
 import com.google.gwt.i18n.client.Messages;
 
-
 /**
  * Che product information constant.
  *
@@ -21,18 +20,18 @@ import com.google.gwt.i18n.client.Messages;
  */
 public interface LocalizationConstant extends Messages {
 
-    @Key("che.tab.title")
-    String cheTabTitle();
+  @Key("che.tab.title")
+  String cheTabTitle();
 
-    @Key("che.tab.title.with.workspace.name")
-    String cheTabTitle(String workspaceName);
+  @Key("che.tab.title.with.workspace.name")
+  String cheTabTitle(String workspaceName);
 
-    @Key("get.support.link")
-    String getSupportLink();
+  @Key("get.support.link")
+  String getSupportLink();
 
-    @Key("get.product.name")
-    String getProductName();
+  @Key("get.product.name")
+  String getProductName();
 
-    @Key("support.title")
-    String supportTitle();
+  @Key("support.title")
+  String supportTitle();
 }

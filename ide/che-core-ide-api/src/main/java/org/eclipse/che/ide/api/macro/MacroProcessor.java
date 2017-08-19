@@ -20,13 +20,11 @@ import org.eclipse.che.api.promises.client.Promise;
  */
 public interface MacroProcessor {
 
-    /**
-     * Expands all known macros in the given string.
-     * If macro is unknown it will be skipped.
-     *
-     * @param text
-     *         string which may contain macros
-     * @return a promise that resolves to the given {@code text} with expanded macros
-     */
-    Promise<String> expandMacros(String text);
+  /**
+   * Expands all known macros in the given string. If macro is unknown it will be skipped.
+   *
+   * @param text string which may contain macros
+   * @return a promise that resolves to the given {@code text} with expanded macros
+   */
+  Promise<String> expandMacros(String text);
 }

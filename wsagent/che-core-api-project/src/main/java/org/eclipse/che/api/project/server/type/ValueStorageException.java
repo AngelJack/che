@@ -14,17 +14,18 @@ import org.eclipse.che.api.core.ConflictException;
 import org.eclipse.che.api.core.rest.shared.dto.ServiceError;
 
 /**
- * Thrown when source of persisted value is invalid. For instance file not found or can not be read when expected.
+ * Thrown when source of persisted value is invalid. For instance file not found or can not be read
+ * when expected.
  *
  * @author gazarenkov
  */
 public class ValueStorageException extends ConflictException {
 
-    public ValueStorageException(String message) {
-        super(message);
-    }
+  public ValueStorageException(String message) {
+    super(message);
+  }
 
-    public ValueStorageException(ServiceError serviceError) {
-        super(serviceError);
-    }
+  public ValueStorageException(ServiceError serviceError) {
+    super(serviceError);
+  }
 }

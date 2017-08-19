@@ -20,7 +20,7 @@ import org.eclipse.che.dto.shared.DTO;
 @DTO
 public interface ModelComponentDto extends ModelComponent {
 
-    void setName(String name);
+  void setName(String name);
 
-    ModelComponentDto withName(String name);
+  ModelComponentDto withName(String name);
 }

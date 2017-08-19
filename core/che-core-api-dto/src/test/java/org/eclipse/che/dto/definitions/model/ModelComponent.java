@@ -17,5 +17,5 @@ package org.eclipse.che.dto.definitions.model;
  */
 public interface ModelComponent {
 
-    String getName();
+  String getName();
 }

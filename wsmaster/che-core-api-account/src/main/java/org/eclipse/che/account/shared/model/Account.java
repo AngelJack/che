@@ -10,22 +10,14 @@
  */
 package org.eclipse.che.account.shared.model;
 
-/**
- * @author Sergii Leschenko
- */
+/** @author Sergii Leschenko */
 public interface Account {
-    /**
-     * Returns account id
-     */
-    String getId();
+  /** Returns account id */
+  String getId();
 
-    /**
-     * Returns name of account
-     */
-    String getName();
+  /** Returns name of account */
+  String getName();
 
-    /**
-     * Returns type of account
-     */
-    String getType();
+  /** Returns type of account */
+  String getType();
 }

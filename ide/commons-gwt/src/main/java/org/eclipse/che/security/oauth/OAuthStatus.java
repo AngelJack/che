@@ -10,34 +10,32 @@
  */
 package org.eclipse.che.security.oauth;
 
-/**
- * @author Vladislav Zhukovskii
- */
+/** @author Vladislav Zhukovskii */
 public enum OAuthStatus {
-    /** If OAuth window manually closed by user. */
-    NOT_PERFORMED(1),
+  /** If OAuth window manually closed by user. */
+  NOT_PERFORMED(1),
 
-    /** If some problem according while user try to login. */
-    FAILED(2),
+  /** If some problem according while user try to login. */
+  FAILED(2),
 
-    /** If user has successfully logged in. */
-    LOGGED_IN(3),
+  /** If user has successfully logged in. */
+  LOGGED_IN(3),
 
-    /** If user has successfully logged out. */
-    LOGGED_OUT(4);
+  /** If user has successfully logged out. */
+  LOGGED_OUT(4);
 
-    private final int value;
+  private final int value;
 
-    private OAuthStatus(int value) {
-        this.value = value;
+  private OAuthStatus(int value) {
+    this.value = value;
+  }
+
+  public static OAuthStatus fromValue(int value) {
+    for (OAuthStatus v : OAuthStatus.values()) {
+      if (v.value == value) {
+        return v;
+      }
     }
-
-    public static OAuthStatus fromValue(int value) {
-        for (OAuthStatus v : OAuthStatus.values()) {
-            if (v.value == value) {
-                return v;
-            }
-        }
-        throw new IllegalArgumentException("Invalid value '" + value + "' ");
-    }
+    throw new IllegalArgumentException("Invalid value '" + value + "' ");
+  }
 }

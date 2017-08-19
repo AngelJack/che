@@ -18,21 +18,21 @@ import java.io.Serializable;
  * @author Evgen Vidolob
  */
 public class MavenActivationProperty implements Serializable {
-    private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 1L;
 
-    private final String name;
-    private final String value;
+  private final String name;
+  private final String value;
 
-    public MavenActivationProperty(String name, String value) {
-        this.name = name;
-        this.value = value;
-    }
+  public MavenActivationProperty(String name, String value) {
+    this.name = name;
+    this.value = value;
+  }
 
-    public String getName() {
-        return name;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public String getValue() {
-        return value;
-    }
+  public String getValue() {
+    return value;
+  }
 }

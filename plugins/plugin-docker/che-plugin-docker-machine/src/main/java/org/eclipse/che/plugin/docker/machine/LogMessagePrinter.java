@@ -10,40 +10,36 @@
  */
 package org.eclipse.che.plugin.docker.machine;
 
+import java.io.IOException;
+import org.eclipse.che.api.core.util.LineConsumer;
 import org.eclipse.che.plugin.docker.client.LogMessage;
 import org.eclipse.che.plugin.docker.client.LogMessageFormatter;
-
-import org.eclipse.che.api.core.util.LineConsumer;
 import org.eclipse.che.plugin.docker.client.MessageProcessor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.IOException;
-
-/**
- * @author andrew00x
- */
+/** @author andrew00x */
 public class LogMessagePrinter implements MessageProcessor<LogMessage> {
-    private static final Logger LOG = LoggerFactory.getLogger(LogMessagePrinter.class);
+  private static final Logger LOG = LoggerFactory.getLogger(LogMessagePrinter.class);
 
-    private final LineConsumer        output;
-    private final LogMessageFormatter formatter;
+  private final LineConsumer output;
+  private final LogMessageFormatter formatter;
 
-    public LogMessagePrinter(LineConsumer output, LogMessageFormatter formatter) {
-        this.output = output;
-        this.formatter = formatter;
+  public LogMessagePrinter(LineConsumer output, LogMessageFormatter formatter) {
+    this.output = output;
+    this.formatter = formatter;
+  }
+
+  public LogMessagePrinter(LineConsumer output) {
+    this(output, LogMessageFormatter.DEFAULT);
+  }
+
+  @Override
+  public void process(LogMessage logMessage) {
+    try {
+      output.writeLine(formatter.format(logMessage));
+    } catch (IOException e) {
+      LOG.error(e.getMessage(), e);
     }
-
-    public LogMessagePrinter(LineConsumer output) {
-        this(output, LogMessageFormatter.DEFAULT);
-    }
-
-    @Override
-    public void process(LogMessage logMessage) {
-        try {
-            output.writeLine(formatter.format(logMessage));
-        } catch (IOException e) {
-            LOG.error(e.getMessage(), e);
-        }
-    }
+  }
 }

@@ -21,15 +21,15 @@ import org.eclipse.che.ide.ui.multisplitpanel.SubPanel;
  */
 public class SplitVerticallyAction extends Action {
 
-    private final SubPanel subPanel;
+  private final SubPanel subPanel;
 
-    public SplitVerticallyAction(SubPanel subPanel) {
-        super("Split Pane In Two Columns", "Split Pane In Two Columns", null, null);
-        this.subPanel = subPanel;
-    }
+  public SplitVerticallyAction(SubPanel subPanel) {
+    super("Split Pane In Two Columns", "Split Pane In Two Columns", null, null);
+    this.subPanel = subPanel;
+  }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        subPanel.splitVertically();
-    }
+  @Override
+  public void actionPerformed(ActionEvent e) {
+    subPanel.splitVertically();
+  }
 }

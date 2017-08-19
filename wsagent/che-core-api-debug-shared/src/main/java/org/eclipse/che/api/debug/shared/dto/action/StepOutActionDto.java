@@ -13,14 +13,12 @@ package org.eclipse.che.api.debug.shared.dto.action;
 import org.eclipse.che.api.debug.shared.model.action.StepOutAction;
 import org.eclipse.che.dto.shared.DTO;
 
-/**
- * @author Anatoliy Bazko
- */
+/** @author Anatoliy Bazko */
 @DTO
 public interface StepOutActionDto extends ActionDto, StepOutAction {
-    TYPE getType();
+  TYPE getType();
 
-    void setType(TYPE type);
+  void setType(TYPE type);
 
-    StepOutActionDto withType(TYPE type);
+  StepOutActionDto withType(TYPE type);
 }

@@ -10,15 +10,12 @@
  */
 package org.eclipse.che.maven.server;
 
+import java.rmi.RemoteException;
 import org.eclipse.che.rmi.RmiServer;
 
-import java.rmi.RemoteException;
-
-/**
- * @author Evgen Vidolob
- */
+/** @author Evgen Vidolob */
 public class MavenServerMain extends RmiServer {
-    public static void main(String[] args) throws RemoteException {
-        start(new MavenRemoteServerImpl());
-    }
+  public static void main(String[] args) throws RemoteException {
+    start(new MavenRemoteServerImpl());
+  }
 }

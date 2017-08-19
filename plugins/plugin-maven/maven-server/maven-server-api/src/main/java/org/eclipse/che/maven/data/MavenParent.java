@@ -18,21 +18,21 @@ import java.io.Serializable;
  * @author Evgen Vidolob
  */
 public class MavenParent implements Serializable {
-    private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 1L;
 
-    private final MavenKey mavenKey;
-    private final String   relativePath;
+  private final MavenKey mavenKey;
+  private final String relativePath;
 
-    public MavenParent(MavenKey mavenKey, String relativePath) {
-        this.mavenKey = mavenKey;
-        this.relativePath = relativePath;
-    }
+  public MavenParent(MavenKey mavenKey, String relativePath) {
+    this.mavenKey = mavenKey;
+    this.relativePath = relativePath;
+  }
 
-    public MavenKey getMavenKey() {
-        return mavenKey;
-    }
+  public MavenKey getMavenKey() {
+    return mavenKey;
+  }
 
-    public String getRelativePath() {
-        return relativePath;
-    }
+  public String getRelativePath() {
+    return relativePath;
+  }
 }

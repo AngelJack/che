@@ -10,13 +10,13 @@
  */
 package org.eclipse.che.plugin.docker.machine.parser;
 
+import static java.lang.String.format;
+
 import org.eclipse.che.api.core.ServerException;
 import org.eclipse.che.api.core.model.workspace.Environment;
 import org.eclipse.che.api.core.model.workspace.EnvironmentRecipe;
 import org.eclipse.che.api.environment.server.model.CheServiceImpl;
 import org.eclipse.che.api.environment.server.model.CheServicesEnvironmentImpl;
-
-import static java.lang.String.format;
 
 /**
  * Docker image specific environment parser.
@@ -26,21 +26,24 @@ import static java.lang.String.format;
  */
 public class DockerImageEnvironmentParser extends DockerEnvironmentParser {
 
-    @Override
-    public CheServicesEnvironmentImpl parse(Environment environment) throws IllegalArgumentException, ServerException {
-        EnvironmentRecipe recipe = environment.getRecipe();
+  @Override
+  public CheServicesEnvironmentImpl parse(Environment environment)
+      throws IllegalArgumentException, ServerException {
+    EnvironmentRecipe recipe = environment.getRecipe();
 
-        if (!"dockerimage".equals(recipe.getType())) {
-            throw new IllegalArgumentException(format("Docker image environment parser doesn't support recipe type '%s'",
-                                                      recipe.getType()));
-        }
-
-        CheServicesEnvironmentImpl cheServiceEnv = new CheServicesEnvironmentImpl();
-        CheServiceImpl service = new CheServiceImpl();
-        cheServiceEnv.getServices().put(getMachineName(environment), service);
-
-        service.setImage(recipe.getLocation());
-
-        return cheServiceEnv;
+    if (!"dockerimage".equals(recipe.getType())) {
+      throw new IllegalArgumentException(
+          format(
+              "Docker image environment parser doesn't support recipe type '%s'",
+              recipe.getType()));
     }
+
+    CheServicesEnvironmentImpl cheServiceEnv = new CheServicesEnvironmentImpl();
+    CheServiceImpl service = new CheServiceImpl();
+    cheServiceEnv.getServices().put(getMachineName(environment), service);
+
+    service.setImage(recipe.getLocation());
+
+    return cheServiceEnv;
+  }
 }

@@ -20,37 +20,40 @@ import com.sun.jdi.Value;
 
 /** @author andrew00x */
 public class StaticValue implements ExpressionValue {
-    private final ReferenceType klass;
-    private final Field         field;
-    private       Value         value;
+  private final ReferenceType klass;
+  private final Field field;
+  private Value value;
 
-    public StaticValue(ReferenceType klass, Field field) {
-        this.klass = klass;
-        this.field = field;
-    }
+  public StaticValue(ReferenceType klass, Field field) {
+    this.klass = klass;
+    this.field = field;
+  }
 
-    @Override
-    public Value getValue() {
-        if (value == null) {
-            try {
-                value = klass.getValue(field);
-            } catch (IllegalArgumentException e) {
-                throw new ExpressionException(e.getMessage(), e);
-            }
-        }
-        return value;
+  @Override
+  public Value getValue() {
+    if (value == null) {
+      try {
+        value = klass.getValue(field);
+      } catch (IllegalArgumentException e) {
+        throw new ExpressionException(e.getMessage(), e);
+      }
     }
+    return value;
+  }
 
-    @Override
-    public void setValue(Value value) {
-        if (!(klass instanceof ClassType)) {
-            throw new ExpressionException("Unable update field " + field.name());
-        }
-        try {
-            ((ClassType)klass).setValue(field, value);
-        } catch (InvalidTypeException | ClassNotLoadedException | VMCannotBeModifiedException | IllegalArgumentException e) {
-            throw new ExpressionException(e.getMessage(), e);
-        }
-        this.value = value;
+  @Override
+  public void setValue(Value value) {
+    if (!(klass instanceof ClassType)) {
+      throw new ExpressionException("Unable update field " + field.name());
     }
+    try {
+      ((ClassType) klass).setValue(field, value);
+    } catch (InvalidTypeException
+        | ClassNotLoadedException
+        | VMCannotBeModifiedException
+        | IllegalArgumentException e) {
+      throw new ExpressionException(e.getMessage(), e);
+    }
+    this.value = value;
+  }
 }

@@ -12,9 +12,9 @@ package org.eclipse.che.api.core.rest.shared;
 
 /** @author <a href="mailto:andrew00x@gmail.com">Andrey Parfonov</a> */
 public enum ParameterType {
-    String,
-    Number,
-    Boolean,
-    Array,
-    Object
+  String,
+  Number,
+  Boolean,
+  Array,
+  Object
 }

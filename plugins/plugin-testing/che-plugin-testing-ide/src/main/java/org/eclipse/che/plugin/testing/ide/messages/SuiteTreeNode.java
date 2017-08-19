@@ -10,21 +10,18 @@
  */
 package org.eclipse.che.plugin.testing.ide.messages;
 
-/**
- * Data class represents test suite tree node message.
- */
+/** Data class represents test suite tree node message. */
 public class SuiteTreeNode extends BaseTestSuiteMessage {
 
-    SuiteTreeNode() {
-    }
+  SuiteTreeNode() {}
 
-    @Override
-    public void visit(TestingMessageVisitor visitor) {
-        visitor.visitSuiteTreeNode(this);
-    }
+  @Override
+  public void visit(TestingMessageVisitor visitor) {
+    visitor.visitSuiteTreeNode(this);
+  }
 
-    /** @return test suite location */
-    public String getLocation() {
-        return getAttributeValue("location");
-    }
+  /** @return test suite location */
+  public String getLocation() {
+    return getAttributeValue("location");
+  }
 }

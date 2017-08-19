@@ -14,5 +14,5 @@ import org.eclipse.che.ide.api.editor.texteditor.TextEditor;
 
 public interface EditorBuilder {
 
-    TextEditor buildEditor();
+  TextEditor buildEditor();
 }

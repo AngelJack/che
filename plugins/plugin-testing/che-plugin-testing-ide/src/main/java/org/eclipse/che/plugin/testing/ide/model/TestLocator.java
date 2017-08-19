@@ -12,18 +12,16 @@ package org.eclipse.che.plugin.testing.ide.model;
 
 import org.eclipse.che.ide.resource.Path;
 
-/**
- * Locator of the test.
- */
+/** Locator of the test. */
 public interface TestLocator {
 
-    TestLocation getTestLocatio(String locationUrl);
+  TestLocation getTestLocatio(String locationUrl);
 
-    interface TestLocation {
-        /** Returns path of the test class. */
-        Path getFilePath();
+  interface TestLocation {
+    /** Returns path of the test class. */
+    Path getFilePath();
 
-        /** Returns offset of the test. */
-        int getOffset();
-    }
+    /** Returns offset of the test. */
+    int getOffset();
+  }
 }

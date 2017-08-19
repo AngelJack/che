@@ -15,11 +15,12 @@ import com.google.gwt.user.client.ui.Widget;
 
 /**
  * Simple wrapper to create GWT Widget from DOM Elemen
+ *
  * @author Evgen Vidolob
  */
 public class ElementWidget extends Widget {
 
-    public ElementWidget(Element element) {
-        setElement(element);
-    }
+  public ElementWidget(Element element) {
+    setElement(element);
+  }
 }

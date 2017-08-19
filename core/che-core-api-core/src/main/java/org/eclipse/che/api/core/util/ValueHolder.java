@@ -16,20 +16,19 @@ package org.eclipse.che.api.core.util;
  * @author andrew00x
  */
 public final class ValueHolder<T> {
-    private T value;
+  private T value;
 
-    public ValueHolder(T value) {
-        this.value = value;
-    }
+  public ValueHolder(T value) {
+    this.value = value;
+  }
 
-    public ValueHolder() {
-    }
+  public ValueHolder() {}
 
-    public synchronized T get() {
-        return value;
-    }
+  public synchronized T get() {
+    return value;
+  }
 
-    public synchronized void set(T value) {
-        this.value = value;
-    }
+  public synchronized void set(T value) {
+    this.value = value;
+  }
 }

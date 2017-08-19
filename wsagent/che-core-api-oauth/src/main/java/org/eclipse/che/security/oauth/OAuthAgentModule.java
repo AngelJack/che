@@ -11,21 +11,19 @@
 package org.eclipse.che.security.oauth;
 
 import com.google.inject.AbstractModule;
-
+import org.eclipse.che.security.oauth.oauth1.RemoteOAuthAuthorizationHeaderProvider;
 import org.eclipse.che.security.oauth.shared.OAuthAuthorizationHeaderProvider;
 import org.eclipse.che.security.oauth.shared.OAuthTokenProvider;
-import org.eclipse.che.security.oauth.oauth1.RemoteOAuthAuthorizationHeaderProvider;
 
 /**
- * Represent single guice module
- * that bind classes to get out tokens from workspace agent.
+ * Represent single guice module that bind classes to get out tokens from workspace agent.
  *
  * @author Sergii Kabashniuk
  */
 public class OAuthAgentModule extends AbstractModule {
-    @Override
-    protected void configure() {
-        bind(OAuthTokenProvider.class).to(RemoteOAuthTokenProvider.class);
-        bind(OAuthAuthorizationHeaderProvider.class).to(RemoteOAuthAuthorizationHeaderProvider.class);
-    }
+  @Override
+  protected void configure() {
+    bind(OAuthTokenProvider.class).to(RemoteOAuthTokenProvider.class);
+    bind(OAuthAuthorizationHeaderProvider.class).to(RemoteOAuthAuthorizationHeaderProvider.class);
+  }
 }

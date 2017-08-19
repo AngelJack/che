@@ -13,30 +13,26 @@ package org.eclipse.che.ide.editor.orion.client.jso;
 import com.google.gwt.core.client.JavaScriptObject;
 
 /**
- * The 'Occurrence Object' for Orion occurrences
- * See <a href="https://wiki.eclipse.org/Orion/Documentation/Developer_Guide/Plugging_into_the_editor#orion.edit.occurrences">Orion Occurrences</a>
+ * The 'Occurrence Object' for Orion occurrences See <a
+ * href="https://wiki.eclipse.org/Orion/Documentation/Developer_Guide/Plugging_into_the_editor#orion.edit.occurrences">Orion
+ * Occurrences</a>
  *
  * @author Xavier Coulon, Red Hat
  */
-public class OrionOccurrenceContextOverlay extends JavaScriptObject{
-    protected OrionOccurrenceContextOverlay() {}
+public class OrionOccurrenceContextOverlay extends JavaScriptObject {
+  protected OrionOccurrenceContextOverlay() {}
 
-    public final native String getContentType() /*-{
+  public final native String getContentType() /*-{
     	return this.contentType;
 	}-*/;
-    
-    /**
-     * @return The offset into the file for the start of the occurrence.
-     */
-    public final native int getStart() /*-{
+
+  /** @return The offset into the file for the start of the occurrence. */
+  public final native int getStart() /*-{
         return this.selection.start;
     }-*/;
 
-    /**
-     * @return The offset into the file for the end of the occurrence.
-     */
-    public final native int getEnd() /*-{
+  /** @return The offset into the file for the end of the occurrence. */
+  public final native int getEnd() /*-{
         return this.selection.end;
     }-*/;
 }
-

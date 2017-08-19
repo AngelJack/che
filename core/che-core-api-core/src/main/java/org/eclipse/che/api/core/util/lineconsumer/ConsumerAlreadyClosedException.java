@@ -18,7 +18,7 @@ import java.io.IOException;
  * @author Mykola Morhun
  */
 public class ConsumerAlreadyClosedException extends IOException {
-    public ConsumerAlreadyClosedException(String message) {
-        super(message);
-    }
+  public ConsumerAlreadyClosedException(String message) {
+    super(message);
+  }
 }

@@ -15,5 +15,5 @@ import org.eclipse.che.dto.shared.DTO;
 
 @DTO
 public interface GetProcessRequestDto extends DtoWithPid {
-    GetProcessRequestDto withPid(int pid);
+  GetProcessRequestDto withPid(int pid);
 }

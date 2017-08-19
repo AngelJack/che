@@ -17,6 +17,5 @@ package org.eclipse.che.commons.lang.execution;
  */
 public interface ProcessExecutor {
 
-    ProcessHandler execute() throws ExecutionException;
-
+  ProcessHandler execute() throws ExecutionException;
 }

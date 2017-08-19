@@ -29,41 +29,39 @@ import com.google.inject.Inject;
  */
 public class NamePageViewImpl extends Composite implements NamePageView {
 
-    private static final NamePageViewImplUiBinder UI_BINDER = GWT.create(NamePageViewImplUiBinder.class);
+  private static final NamePageViewImplUiBinder UI_BINDER =
+      GWT.create(NamePageViewImplUiBinder.class);
 
-    @UiField
-    TextBox commandName;
+  @UiField TextBox commandName;
 
-    @UiField
-    Button runButton;
+  @UiField Button runButton;
 
-    private ActionDelegate delegate;
+  private ActionDelegate delegate;
 
-    @Inject
-    public NamePageViewImpl() {
-        initWidget(UI_BINDER.createAndBindUi(this));
-    }
+  @Inject
+  public NamePageViewImpl() {
+    initWidget(UI_BINDER.createAndBindUi(this));
+  }
 
-    @Override
-    public void setDelegate(ActionDelegate delegate) {
-        this.delegate = delegate;
-    }
+  @Override
+  public void setDelegate(ActionDelegate delegate) {
+    this.delegate = delegate;
+  }
 
-    @Override
-    public void setCommandName(String name) {
-        commandName.setValue(name);
-    }
+  @Override
+  public void setCommandName(String name) {
+    commandName.setValue(name);
+  }
 
-    @UiHandler({"commandName"})
-    void onNameChanged(KeyUpEvent event) {
-        delegate.onNameChanged(commandName.getValue());
-    }
+  @UiHandler({"commandName"})
+  void onNameChanged(KeyUpEvent event) {
+    delegate.onNameChanged(commandName.getValue());
+  }
 
-    @UiHandler("runButton")
-    public void handleRunButton(ClickEvent clickEvent) {
-        delegate.onCommandRun();
-    }
+  @UiHandler("runButton")
+  public void handleRunButton(ClickEvent clickEvent) {
+    delegate.onCommandRun();
+  }
 
-    interface NamePageViewImplUiBinder extends UiBinder<Widget, NamePageViewImpl> {
-    }
+  interface NamePageViewImplUiBinder extends UiBinder<Widget, NamePageViewImpl> {}
 }

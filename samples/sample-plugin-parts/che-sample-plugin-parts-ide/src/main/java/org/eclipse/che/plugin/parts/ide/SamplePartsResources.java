@@ -12,7 +12,6 @@ package org.eclipse.che.plugin.parts.ide;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.resources.client.ClientBundle;
-
 import org.vectomatic.dom.svg.ui.SVGResource;
 
 /**
@@ -22,16 +21,14 @@ import org.vectomatic.dom.svg.ui.SVGResource;
  */
 public interface SamplePartsResources extends ClientBundle {
 
-    /**
-     * Singleton instance.
-     */
-    SamplePartsResources INSTANCE = GWT.create(SamplePartsResources.class);
+  /** Singleton instance. */
+  SamplePartsResources INSTANCE = GWT.create(SamplePartsResources.class);
 
-    /**
-     * Declares an icon.
-     *
-     * @return the icon
-     */
-    @Source("icons/my.svg")
-    SVGResource icon();
+  /**
+   * Declares an icon.
+   *
+   * @return the icon
+   */
+  @Source("icons/my.svg")
+  SVGResource icon();
 }

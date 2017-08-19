@@ -18,5 +18,5 @@ import com.google.gwt.event.shared.EventHandler;
  * @author "Mickaël Leduque"
  */
 public interface GutterClickHandler extends EventHandler {
-    void onGutterClick(GutterClickEvent event);
+  void onGutterClick(GutterClickEvent event);
 }

@@ -10,15 +10,14 @@
  */
 package org.eclipse.che.ide.jsonrpc;
 
-import org.eclipse.che.api.core.jsonrpc.commons.RequestProcessor;
-
 import javax.inject.Singleton;
+import org.eclipse.che.api.core.jsonrpc.commons.RequestProcessor;
 
 @Singleton
 public class ClientSideRequestProcessor implements RequestProcessor {
 
-    @Override
-    public void process(Runnable runnable) {
-        runnable.run();
-    }
+  @Override
+  public void process(Runnable runnable) {
+    runnable.run();
+  }
 }

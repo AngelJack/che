@@ -10,14 +10,13 @@
  */
 package org.eclipse.che.plugin.traefik;
 
-import com.google.inject.AbstractModule;
-
-import org.eclipse.che.plugin.docker.client.DockerConnector;
-
 import static com.google.inject.matcher.Matchers.subclassesOf;
 import static java.lang.Boolean.parseBoolean;
 import static java.lang.System.getenv;
 import static org.eclipse.che.inject.Matchers.names;
+
+import com.google.inject.AbstractModule;
+import org.eclipse.che.plugin.docker.client.DockerConnector;
 
 /**
  * The Module for Traefik components.
@@ -26,19 +25,20 @@ import static org.eclipse.che.inject.Matchers.names;
  */
 public class TraefikDockerModule extends AbstractModule {
 
-    /**
-     * Configure the traefik components
-     */
-    @Override
-    protected void configure() {
+  /** Configure the traefik components */
+  @Override
+  protected void configure() {
 
-        // add logic only if plug-in is enabled.
-        if (parseBoolean(getenv("CHE_PLUGIN_TRAEFIK_ENABLED"))) {
-            // add an interceptor to intercept createContainer calls and then get the final labels
-            final TraefikCreateContainerInterceptor traefikCreateContainerInterceptor = new TraefikCreateContainerInterceptor();
-            requestInjection(traefikCreateContainerInterceptor);
-            bindInterceptor(subclassesOf(DockerConnector.class), names("createContainer"), traefikCreateContainerInterceptor);
-
-        }
+    // add logic only if plug-in is enabled.
+    if (parseBoolean(getenv("CHE_PLUGIN_TRAEFIK_ENABLED"))) {
+      // add an interceptor to intercept createContainer calls and then get the final labels
+      final TraefikCreateContainerInterceptor traefikCreateContainerInterceptor =
+          new TraefikCreateContainerInterceptor();
+      requestInjection(traefikCreateContainerInterceptor);
+      bindInterceptor(
+          subclassesOf(DockerConnector.class),
+          names("createContainer"),
+          traefikCreateContainerInterceptor);
     }
+  }
 }

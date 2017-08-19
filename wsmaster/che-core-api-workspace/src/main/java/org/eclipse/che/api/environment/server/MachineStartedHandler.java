@@ -18,14 +18,14 @@ import org.eclipse.che.api.machine.server.spi.Instance;
 import org.eclipse.che.commons.annotation.Nullable;
 
 /**
- * Used in couple with {@link CheEnvironmentEngine#start} method to
- * allow sequential handling and interruption of the start process.
+ * Used in couple with {@link CheEnvironmentEngine#start} method to allow sequential handling and
+ * interruption of the start process.
  *
  * <p>This interface is a part of a contract for {@link CheEnvironmentEngine}.
  *
  * @author Yevhenii Voevodin
  */
 public interface MachineStartedHandler {
-    void started(Instance machine, @Nullable ExtendedMachine machineFromEnvironment)
-            throws EnvironmentException, ServerException, AgentException;
+  void started(Instance machine, @Nullable ExtendedMachine machineFromEnvironment)
+      throws EnvironmentException, ServerException, AgentException;
 }

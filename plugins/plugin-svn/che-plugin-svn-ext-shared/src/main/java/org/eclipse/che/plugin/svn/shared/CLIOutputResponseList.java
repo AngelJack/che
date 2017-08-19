@@ -10,19 +10,16 @@
  */
 package org.eclipse.che.plugin.svn.shared;
 
-import org.eclipse.che.dto.shared.DTO;
-
 import java.util.List;
+import org.eclipse.che.dto.shared.DTO;
 
 @DTO
 public interface CLIOutputResponseList {
 
-    /**
-     * @return {@link java.util.List} the list of repositories
-     */
-    List<CLIOutputResponse> getCLIOutputResponses();
-    
-    void setCLIOutputResponses(List<CLIOutputResponse> outputResponses);
+  /** @return {@link java.util.List} the list of repositories */
+  List<CLIOutputResponse> getCLIOutputResponses();
 
-    CLIOutputResponseList withCLIOutputResponses(List<CLIOutputResponse> outputResponses);
+  void setCLIOutputResponses(List<CLIOutputResponse> outputResponses);
+
+  CLIOutputResponseList withCLIOutputResponses(List<CLIOutputResponse> outputResponses);
 }

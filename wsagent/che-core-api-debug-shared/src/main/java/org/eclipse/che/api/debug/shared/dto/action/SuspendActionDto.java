@@ -13,14 +13,12 @@ package org.eclipse.che.api.debug.shared.dto.action;
 import org.eclipse.che.api.debug.shared.model.action.SuspendAction;
 import org.eclipse.che.dto.shared.DTO;
 
-/**
- * @author Anatoliy Bazko
- */
+/** @author Anatoliy Bazko */
 @DTO
 public interface SuspendActionDto extends ActionDto, SuspendAction {
-    TYPE getType();
+  TYPE getType();
 
-    void setType(TYPE type);
+  void setType(TYPE type);
 
-    SuspendActionDto withType(TYPE type);
+  SuspendActionDto withType(TYPE type);
 }

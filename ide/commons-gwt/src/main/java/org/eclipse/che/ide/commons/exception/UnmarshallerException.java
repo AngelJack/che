@@ -18,14 +18,13 @@ package org.eclipse.che.ide.commons.exception;
 @SuppressWarnings("serial")
 public class UnmarshallerException extends Exception {
 
-    /**
-     * Creates an Instance of {@link UnauthorizedException} with message and root cause
-     *
-     * @param message
-     * @param cause
-     */
-    public UnmarshallerException(String message, Throwable cause) {
-        super(message, cause);
-    }
-
+  /**
+   * Creates an Instance of {@link UnauthorizedException} with message and root cause
+   *
+   * @param message
+   * @param cause
+   */
+  public UnmarshallerException(String message, Throwable cause) {
+    super(message, cause);
+  }
 }

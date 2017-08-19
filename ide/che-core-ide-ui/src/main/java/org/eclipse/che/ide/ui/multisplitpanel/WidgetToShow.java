@@ -11,7 +11,6 @@
 package org.eclipse.che.ide.ui.multisplitpanel;
 
 import com.google.gwt.user.client.ui.IsWidget;
-
 import org.vectomatic.dom.svg.ui.SVGResource;
 
 /**
@@ -21,12 +20,12 @@ import org.vectomatic.dom.svg.ui.SVGResource;
  */
 public interface WidgetToShow {
 
-    /** Returns widget to display on the panel. */
-    IsWidget getWidget();
+  /** Returns widget to display on the panel. */
+  IsWidget getWidget();
 
-    /** Returns the text for displaying as corresponding tab title. */
-    String getTitle();
+  /** Returns the text for displaying as corresponding tab title. */
+  String getTitle();
 
-    /** Returns the associated icon for displaying on the corresponding tab. */
-    SVGResource getIcon();
+  /** Returns the associated icon for displaying on the corresponding tab. */
+  SVGResource getIcon();
 }

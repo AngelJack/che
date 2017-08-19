@@ -12,26 +12,21 @@ package org.eclipse.che.ide.api.editor.texteditor;
 
 import org.eclipse.che.ide.api.editor.keymap.KeyBinding;
 
-/**
- * Interface for components that handles key bindings.
- */
+/** Interface for components that handles key bindings. */
 public interface HasKeyBindings {
 
-    /**
-     * Adds a key bindings.
-     *
-     * @param keyBinding
-     *         the new binding
-     */
-    void addKeyBinding(KeyBinding keyBinding);
+  /**
+   * Adds a key bindings.
+   *
+   * @param keyBinding the new binding
+   */
+  void addKeyBinding(KeyBinding keyBinding);
 
-    /**
-     * Adds a key bindings.
-     *
-     * @param keyBinding
-     *         the new binding
-     * @param actionDescription
-     *         action description
-     */
-    void addKeyBinding(KeyBinding keyBinding, String actionDescription);
+  /**
+   * Adds a key bindings.
+   *
+   * @param keyBinding the new binding
+   * @param actionDescription action description
+   */
+  void addKeyBinding(KeyBinding keyBinding, String actionDescription);
 }

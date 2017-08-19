@@ -20,16 +20,16 @@ import org.eclipse.che.api.core.ServerException;
  * @author Sergii Leschenko
  */
 public abstract class RemoveEvent extends CascadeEvent {
-    @Override
-    public void propagateException() throws ServerException {
-        if (context.isFailed()) {
-            try {
-                throw context.getCause();
-            } catch (ServerException e) {
-                throw e;
-            } catch (Exception e) {
-                throw new ServerException(e.getLocalizedMessage(), e);
-            }
-        }
+  @Override
+  public void propagateException() throws ServerException {
+    if (context.isFailed()) {
+      try {
+        throw context.getCause();
+      } catch (ServerException e) {
+        throw e;
+      } catch (Exception e) {
+        throw new ServerException(e.getLocalizedMessage(), e);
+      }
     }
+  }
 }

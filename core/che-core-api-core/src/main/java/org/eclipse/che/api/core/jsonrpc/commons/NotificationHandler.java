@@ -11,9 +11,8 @@
 package org.eclipse.che.api.core.jsonrpc.commons;
 
 /**
- * Handler corresponding to processing JSON RPC requests that have no ID
- * specified (notifications).
+ * Handler corresponding to processing JSON RPC requests that have no ID specified (notifications).
  */
 public interface NotificationHandler {
-    void handle(String endpointId, JsonRpcParams params) throws JsonRpcException;
+  void handle(String endpointId, JsonRpcParams params) throws JsonRpcException;
 }

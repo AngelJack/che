@@ -10,22 +10,17 @@
  */
 package org.eclipse.che.core.internal.resources;
 
-/**
- * @author Evgen Vidolob
- */
+/** @author Evgen Vidolob */
 public class ResourceInfo {
 
-    private int type;
+  private int type;
 
-    public ResourceInfo(int type) {
-        this.type = type;
-    }
+  public ResourceInfo(int type) {
+    this.type = type;
+  }
 
-    /**
-     * Returns the type setting for this info.  Valid values are
-     * FILE, FOLDER, PROJECT,
-     */
-    public int getType() {
-        return type;
-    }
+  /** Returns the type setting for this info. Valid values are FILE, FOLDER, PROJECT, */
+  public int getType() {
+    return type;
+  }
 }

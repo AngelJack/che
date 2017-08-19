@@ -16,5 +16,5 @@ package org.eclipse.che.ide.websocket.events;
  * @author Artem Zatsarynnyi
  */
 public interface ConnectionOpenedHandler {
-    void onOpen();
+  void onOpen();
 }

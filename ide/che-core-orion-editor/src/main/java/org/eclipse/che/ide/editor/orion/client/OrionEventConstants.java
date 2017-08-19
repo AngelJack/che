@@ -12,17 +12,17 @@ package org.eclipse.che.ide.editor.orion.client;
 
 public interface OrionEventConstants {
 
-    /* not complete atm */
-    String MODEL_CHANGED_EVENT = "ModelChanged";
-    String MODEL_CHANING_EVENT = "ModelChanging";
-    String SELECTION_EVENT     = "Selection";
-    String FOCUS_EVENT         = "Focus";
-    String BLUR_EVENT          = "Blur";
-    String KEYDOWN_EVENT       = "KeyDown";
-    String KEYPRESS_EVENT      = "KeyPress";
-    String KEYUP_EVENT         = "KeyUp";
-    String DESTROY_EVENT       = "Destroy";
-    String CONTEXT_MENU_EVENT  = "ContextMenu";
-    String SCROLL_EVENT        = "Scroll";
-    String RULER_CLICK_EVENT   = "RulerClick";
+  /* not complete atm */
+  String MODEL_CHANGED_EVENT = "ModelChanged";
+  String MODEL_CHANING_EVENT = "ModelChanging";
+  String SELECTION_EVENT = "Selection";
+  String FOCUS_EVENT = "Focus";
+  String BLUR_EVENT = "Blur";
+  String KEYDOWN_EVENT = "KeyDown";
+  String KEYPRESS_EVENT = "KeyPress";
+  String KEYUP_EVENT = "KeyUp";
+  String DESTROY_EVENT = "Destroy";
+  String CONTEXT_MENU_EVENT = "ContextMenu";
+  String SCROLL_EVENT = "Scroll";
+  String RULER_CLICK_EVENT = "RulerClick";
 }

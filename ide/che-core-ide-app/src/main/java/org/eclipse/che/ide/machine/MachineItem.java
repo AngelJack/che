@@ -12,7 +12,6 @@ package org.eclipse.che.ide.machine;
 
 import com.google.inject.Inject;
 import com.google.inject.assistedinject.Assisted;
-
 import org.eclipse.che.api.machine.shared.dto.MachineDto;
 import org.eclipse.che.ide.api.machine.MachineEntityImpl;
 
@@ -24,9 +23,8 @@ import org.eclipse.che.ide.api.machine.MachineEntityImpl;
  */
 public class MachineItem extends MachineEntityImpl {
 
-    @Inject
-    public MachineItem(@Assisted MachineDto descriptor) {
-        super(descriptor);
-    }
-
+  @Inject
+  public MachineItem(@Assisted MachineDto descriptor) {
+    super(descriptor);
+  }
 }

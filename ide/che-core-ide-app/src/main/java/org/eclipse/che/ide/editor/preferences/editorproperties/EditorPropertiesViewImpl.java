@@ -26,22 +26,22 @@ import com.google.gwt.user.client.ui.Widget;
  */
 public class EditorPropertiesViewImpl extends Composite implements EditorPropertiesView {
 
-    private static final EditorPropertiesSectionViewImplUiBinder UI_BINDER = GWT.create(EditorPropertiesSectionViewImplUiBinder.class);
+  private static final EditorPropertiesSectionViewImplUiBinder UI_BINDER =
+      GWT.create(EditorPropertiesSectionViewImplUiBinder.class);
 
-    @UiField
-    FlowPanel sectionsPanel;
+  @UiField FlowPanel sectionsPanel;
 
-    public EditorPropertiesViewImpl() {
-        initWidget(UI_BINDER.createAndBindUi(this));
-    }
+  public EditorPropertiesViewImpl() {
+    initWidget(UI_BINDER.createAndBindUi(this));
+  }
 
-    @Override
-    public AcceptsOneWidget getEditorSectionsContainer() {
-        SimplePanel container = new SimplePanel();
-        sectionsPanel.add(container);
-        return container;
-    }
+  @Override
+  public AcceptsOneWidget getEditorSectionsContainer() {
+    SimplePanel container = new SimplePanel();
+    sectionsPanel.add(container);
+    return container;
+  }
 
-    interface EditorPropertiesSectionViewImplUiBinder extends UiBinder<Widget, EditorPropertiesViewImpl> {
-    }
+  interface EditorPropertiesSectionViewImplUiBinder
+      extends UiBinder<Widget, EditorPropertiesViewImpl> {}
 }

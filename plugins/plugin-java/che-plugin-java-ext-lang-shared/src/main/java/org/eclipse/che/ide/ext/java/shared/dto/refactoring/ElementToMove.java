@@ -14,23 +14,23 @@ import org.eclipse.che.dto.shared.DTO;
 
 /**
  * Represents java compilation unit or package
+ *
  * @author Evgen Vidolob
  */
 @DTO
 public interface ElementToMove {
-    /**
-     * Workspace path for package or FQN for compilation unit
-     * @return path or FQN
-     */
-    String getPath();
+  /**
+   * Workspace path for package or FQN for compilation unit
+   *
+   * @return path or FQN
+   */
+  String getPath();
 
-    void setPath(String path);
+  void setPath(String path);
 
-    /**
-     * @return true if this element is package and false if compilation unit
-     */
-    //TODO due limitation in DTO generator we can't name method 'isPackage'
-    boolean isPack();
+  /** @return true if this element is package and false if compilation unit */
+  //TODO due limitation in DTO generator we can't name method 'isPackage'
+  boolean isPack();
 
-    void setPack(boolean pack);
+  void setPack(boolean pack);
 }

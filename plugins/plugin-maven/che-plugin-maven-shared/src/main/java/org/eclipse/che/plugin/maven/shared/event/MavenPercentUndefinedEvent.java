@@ -10,9 +10,7 @@
  */
 package org.eclipse.che.plugin.maven.shared.event;
 
-/**
- * Event that describes Maven start notification.
- */
+/** Event that describes Maven start notification. */
 public interface MavenPercentUndefinedEvent extends MavenOutputEvent {
-    boolean isPercentUndefined();
+  boolean isPercentUndefined();
 }

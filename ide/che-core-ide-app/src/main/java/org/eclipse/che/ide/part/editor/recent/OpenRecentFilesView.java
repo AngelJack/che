@@ -11,11 +11,9 @@
 package org.eclipse.che.ide.part.editor.recent;
 
 import com.google.inject.ImplementedBy;
-
+import java.util.List;
 import org.eclipse.che.ide.api.mvp.View;
 import org.eclipse.che.ide.resources.tree.FileNode;
-
-import java.util.List;
 
 /**
  * View for the {@link OpenRecentFilesPresenter}.
@@ -25,24 +23,18 @@ import java.util.List;
 @ImplementedBy(OpenRecentFileViewImpl.class)
 public interface OpenRecentFilesView extends View<OpenRecentFilesView.ActionDelegate> {
 
-    /**
-     * Set recent file list.
-     *
-     * @param recentFiles
-     *         recent file list
-     */
-    void setRecentFiles(List<FileNode> recentFiles);
+  /**
+   * Set recent file list.
+   *
+   * @param recentFiles recent file list
+   */
+  void setRecentFiles(List<FileNode> recentFiles);
 
-    /**
-     * Clear recent file list.
-     */
-    void clearRecentFiles();
+  /** Clear recent file list. */
+  void clearRecentFiles();
 
-    /**
-     * Show dialog.
-     */
-    void show();
+  /** Show dialog. */
+  void show();
 
-    interface ActionDelegate {
-    }
+  interface ActionDelegate {}
 }

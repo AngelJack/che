@@ -13,6 +13,6 @@ package org.eclipse.che.ide.api.editor.editorconfig;
 /** Interface for update operations on the editor. */
 public interface EditorUpdateAction {
 
-    /** Refresh action. */
-    void doRefresh();
+  /** Refresh action. */
+  void doRefresh();
 }

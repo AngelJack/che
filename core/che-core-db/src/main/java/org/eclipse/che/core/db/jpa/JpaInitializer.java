@@ -11,7 +11,6 @@
 package org.eclipse.che.core.db.jpa;
 
 import com.google.inject.ImplementedBy;
-
 import org.eclipse.che.core.db.jpa.guice.GuiceJpaInitializer;
 
 /**
@@ -22,6 +21,6 @@ import org.eclipse.che.core.db.jpa.guice.GuiceJpaInitializer;
 @ImplementedBy(GuiceJpaInitializer.class)
 public interface JpaInitializer {
 
-    /** Initialized jpa components. */
-    void init();
+  /** Initialized jpa components. */
+  void init();
 }

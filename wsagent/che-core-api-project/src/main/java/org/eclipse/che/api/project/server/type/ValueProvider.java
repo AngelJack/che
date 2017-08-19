@@ -20,19 +20,18 @@ import java.util.List;
  */
 public interface ValueProvider {
 
-    /** Gets values. */
-    List<String> getValues(String attributeName) throws ValueStorageException;
+  /** Gets values. */
+  List<String> getValues(String attributeName) throws ValueStorageException;
 
-    /**
-     * Sets values
-     * @param attributeName - name
-     * @param values - values
-     * @throws ValueStorageException
-     */
-    void setValues(String attributeName, List<String> values) throws ValueStorageException;
+  /**
+   * Sets values
+   *
+   * @param attributeName - name
+   * @param values - values
+   * @throws ValueStorageException
+   */
+  void setValues(String attributeName, List<String> values) throws ValueStorageException;
 
-    /**
-     * @return whether this Value Provider intended to initialize values
-     */
-    boolean isSettable();
+  /** @return whether this Value Provider intended to initialize values */
+  boolean isSettable();
 }

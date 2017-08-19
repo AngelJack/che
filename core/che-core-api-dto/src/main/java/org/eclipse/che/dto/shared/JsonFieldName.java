@@ -10,21 +10,20 @@
  */
 package org.eclipse.che.dto.shared;
 
+import com.google.common.annotations.Beta;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-import com.google.common.annotations.Beta;
-
 /**
  * Use a custom name for the JSON element that corresponds to a class field
- * 
+ *
  * @author Tareq Sharafy (tareq.sharafy@sap.com)
  */
 @Beta
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface JsonFieldName {
-    String value();
+  String value();
 }

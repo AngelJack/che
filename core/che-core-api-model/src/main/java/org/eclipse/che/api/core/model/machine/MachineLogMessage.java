@@ -16,13 +16,9 @@ package org.eclipse.che.api.core.model.machine;
  * @author Alexander Garagatyi
  */
 public interface MachineLogMessage {
-    /**
-     * Content of log message
-     */
-    String getContent();
+  /** Content of log message */
+  String getContent();
 
-    /**
-     * Machine name
-     */
-    String getMachineName();
+  /** Machine name */
+  String getMachineName();
 }

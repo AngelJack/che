@@ -11,27 +11,27 @@
 package org.eclipse.che.ide.api.editor.signature;
 
 import com.google.common.base.Optional;
-
 import javax.validation.constraints.NotNull;
 
 /**
- * Represent a parameter of callable signature.
- * Parameter can have label and optional documentation.
+ * Represent a parameter of callable signature. Parameter can have label and optional documentation.
  *
  * @author Evgen Vidolob
  */
 public interface ParameterInfo {
 
-    /**
-     * The label of this parameter. Used for UI.
-     * @return the parameter label.
-     */
-    @NotNull
-    String getLabel();
+  /**
+   * The label of this parameter. Used for UI.
+   *
+   * @return the parameter label.
+   */
+  @NotNull
+  String getLabel();
 
-    /**
-     * The documentation of this parameter.
-     * @return the human-readable documentation string.
-     */
-    Optional<String> getDocumentation();
+  /**
+   * The documentation of this parameter.
+   *
+   * @return the human-readable documentation string.
+   */
+  Optional<String> getDocumentation();
 }

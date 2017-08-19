@@ -12,10 +12,8 @@ package org.eclipse.che.plugin.languageserver.ide.editor;
 
 import org.eclipse.che.ide.api.editor.partition.DocumentPositionMap;
 
-/**
- * @author Evgen Vidolob
- */
+/** @author Evgen Vidolob */
 public interface LanguageServerAnnotationModelFactory {
 
-    LanguageServerAnnotationModel get(DocumentPositionMap documentPositionMap);
+  LanguageServerAnnotationModel get(DocumentPositionMap documentPositionMap);
 }

@@ -10,13 +10,9 @@
  */
 package org.eclipse.che.plugin.debugger.ide.fqn;
 
-/**
- * @author Anatoliy Bazko
- */
+/** @author Anatoliy Bazko */
 public interface FqnResolverObserver {
 
-    /**
-     * Is invoked when a new resolver added to the factory.
-     */
-    void onFqnResolverAdded(FqnResolver fqnResolver);
+  /** Is invoked when a new resolver added to the factory. */
+  void onFqnResolverAdded(FqnResolver fqnResolver);
 }

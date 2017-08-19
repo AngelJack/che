@@ -11,7 +11,6 @@
 package org.eclipse.che.plugin.debugger.ide.debug;
 
 import com.google.inject.BindingAnnotation;
-
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -25,5 +24,4 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.FIELD, ElementType.PARAMETER, ElementType.METHOD, ElementType.TYPE})
 @BindingAnnotation
-public @interface DebuggerToolbar {
-}
+public @interface DebuggerToolbar {}

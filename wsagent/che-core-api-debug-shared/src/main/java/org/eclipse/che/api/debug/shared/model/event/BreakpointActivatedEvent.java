@@ -18,5 +18,5 @@ import org.eclipse.che.api.debug.shared.model.Breakpoint;
  * @author Anatoliy Bazko
  */
 public interface BreakpointActivatedEvent extends DebuggerEvent {
-    Breakpoint getBreakpoint();
+  Breakpoint getBreakpoint();
 }

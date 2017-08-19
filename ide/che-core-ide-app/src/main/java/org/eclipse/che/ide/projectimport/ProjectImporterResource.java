@@ -12,18 +12,18 @@ package org.eclipse.che.ide.projectimport;
 
 import com.google.gwt.resources.client.ClientBundle;
 import com.google.gwt.resources.client.CssResource;
-
 import org.eclipse.che.ide.projectimport.zip.ZipImporterPageViewImpl;
 
-/**
- * @author Roman Nikitenko
- */
+/** @author Roman Nikitenko */
 public interface ProjectImporterResource extends ClientBundle {
 
-    interface Css extends CssResource {
-        String inputError();
-    }
+  interface Css extends CssResource {
+    String inputError();
+  }
 
-    @Source({"org/eclipse/che/ide/projectimport/ImporterPage.css", "org/eclipse/che/ide/api/ui/style.css"})
-    ZipImporterPageViewImpl.Style zipImporterPageStyle();
+  @Source({
+    "org/eclipse/che/ide/projectimport/ImporterPage.css",
+    "org/eclipse/che/ide/api/ui/style.css"
+  })
+  ZipImporterPageViewImpl.Style zipImporterPageStyle();
 }

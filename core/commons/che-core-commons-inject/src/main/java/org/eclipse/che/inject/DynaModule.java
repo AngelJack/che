@@ -15,13 +15,11 @@ import java.lang.annotation.RetentionPolicy;
 
 /**
  * Marker annotation for dynamically created modules.
- * <p>
- * {@link CheBootstrap} automatically finds and loads Guice modules (subclasses
- * of {@link com.google.inject.Module}) annotated with &#064DynaModule.
- * </p>
+ *
+ * <p>{@link CheBootstrap} automatically finds and loads Guice modules (subclasses of {@link
+ * com.google.inject.Module}) annotated with &#064DynaModule.
  *
  * @author gazarenkov
  */
 @Retention(RetentionPolicy.RUNTIME)
-public @interface DynaModule {
-}
+public @interface DynaModule {}

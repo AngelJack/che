@@ -19,18 +19,17 @@ import java.util.Map;
  * @author Vlad Zhukovskiy
  */
 public interface HasAttributes {
-    /**
-     * Get attributes.
-     *
-     * @return attributes map
-     */
-    Map<String, List<String>> getAttributes();
+  /**
+   * Get attributes.
+   *
+   * @return attributes map
+   */
+  Map<String, List<String>> getAttributes();
 
-    /**
-     * Store attributes.
-     *
-     * @param attributes
-     *         attributes map
-     */
-    void setAttributes(Map<String, List<String>> attributes);
+  /**
+   * Store attributes.
+   *
+   * @param attributes attributes map
+   */
+  void setAttributes(Map<String, List<String>> attributes);
 }

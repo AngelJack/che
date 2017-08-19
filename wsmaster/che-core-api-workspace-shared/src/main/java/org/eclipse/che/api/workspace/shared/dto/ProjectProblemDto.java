@@ -12,22 +12,19 @@ package org.eclipse.che.api.workspace.shared.dto;
 
 import org.eclipse.che.dto.shared.DTO;
 
-/**
- * @author Sergii Kabashniuk
- */
+/** @author Sergii Kabashniuk */
 @DTO
-public interface ProjectProblemDto  {
+public interface ProjectProblemDto {
 
+  int getCode();
 
-    int getCode();
+  void setCode(int status);
 
-    void setCode(int status);
+  ProjectProblemDto withCode(int status);
 
-    ProjectProblemDto withCode(int status);
+  String getMessage();
 
-    String getMessage();
+  void setMessage(String message);
 
-    void setMessage(String message);
-
-    ProjectProblemDto withMessage(String message);
+  ProjectProblemDto withMessage(String message);
 }

@@ -10,16 +10,13 @@
  */
 package org.eclipse.che.plugin.testing.ide.messages;
 
-/**
- * Data class represents test reporter message.
- */
+/** Data class represents test reporter message. */
 public class TestReporterAttached extends ClientTestingMessage {
 
-    TestReporterAttached() {
-    }
+  TestReporterAttached() {}
 
-    @Override
-    public void visit(TestingMessageVisitor visitor) {
-        visitor.visitTestReporterAttached(this);
-    }
+  @Override
+  public void visit(TestingMessageVisitor visitor) {
+    visitor.visitTestReporterAttached(this);
+  }
 }

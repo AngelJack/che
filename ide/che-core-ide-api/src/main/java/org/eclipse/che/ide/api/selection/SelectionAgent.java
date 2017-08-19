@@ -10,25 +10,24 @@
  */
 package org.eclipse.che.ide.api.selection;
 
+import com.google.web.bindery.event.shared.EventBus;
 import org.eclipse.che.ide.api.event.SelectionChangedEvent;
 import org.eclipse.che.ide.api.extension.SDK;
-import com.google.web.bindery.event.shared.EventBus;
 
 /**
  * Selection API allows to provide a way of data-based communication, when Parts provide a static
- * access to the data selected in active Part.
- * In order to listen to dynamic Selection changes, please subscribe to {@link SelectionChangedEvent}
- * on {@link EventBus}.
+ * access to the data selected in active Part. In order to listen to dynamic Selection changes,
+ * please subscribe to {@link SelectionChangedEvent} on {@link EventBus}.
  *
  * @author Nikolay Zamosenchuk
  */
 @SDK(title = "ide.api.ui.selection")
 public interface SelectionAgent {
 
-    /**
-     * Provides a way of getting current app-wide Selection.
-     *
-     * @return
-     */
-    Selection<?> getSelection();
+  /**
+   * Provides a way of getting current app-wide Selection.
+   *
+   * @return
+   */
+  Selection<?> getSelection();
 }

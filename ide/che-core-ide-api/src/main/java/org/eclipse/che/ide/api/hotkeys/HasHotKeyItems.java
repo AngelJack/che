@@ -13,14 +13,16 @@ package org.eclipse.che.ide.api.hotkeys;
 import java.util.List;
 
 /**
- * Interface for components that return hotKeys list  
+ * Interface for components that return hotKeys list
+ *
  * @author Alexander Andrienko
  */
 public interface HasHotKeyItems {
-    
-    /**
-     * Get hotKeys list 
-     * @return hotKeys list
-     */
-    List<HotKeyItem> getHotKeys();
+
+  /**
+   * Get hotKeys list
+   *
+   * @return hotKeys list
+   */
+  List<HotKeyItem> getHotKeys();
 }

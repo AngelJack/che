@@ -12,20 +12,18 @@ package org.eclipse.che.plugin.docker.client.json;
 
 /** @author andrew00x */
 public class ContainerExitStatus {
-    private int statusCode;
+  private int statusCode;
 
-    public int getStatusCode() {
-        return statusCode;
-    }
+  public int getStatusCode() {
+    return statusCode;
+  }
 
-    public void setStatusCode(int statusCode) {
-        this.statusCode = statusCode;
-    }
+  public void setStatusCode(int statusCode) {
+    this.statusCode = statusCode;
+  }
 
-    @Override
-    public String toString() {
-        return "ContainerExitStatus{" +
-               "statusCode=" + statusCode +
-               '}';
-    }
+  @Override
+  public String toString() {
+    return "ContainerExitStatus{" + "statusCode=" + statusCode + '}';
+  }
 }

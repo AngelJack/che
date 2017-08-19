@@ -10,9 +10,8 @@
  */
 package org.eclipse.che.ide.api.editor.filetype;
 
-import org.eclipse.che.ide.api.resources.VirtualFile;
-
 import java.util.List;
+import org.eclipse.che.ide.api.resources.VirtualFile;
 
 /**
  * An interface for a file identification service.
@@ -21,12 +20,11 @@ import java.util.List;
  */
 public interface FileTypeIdentifier {
 
-    /**
-     * Returns a list of possible content types for the file.
-     *
-     * @param file
-     *         the file to identify
-     * @return a list of content type or null if identification failed
-     */
-    List<String> identifyType(VirtualFile file);
+  /**
+   * Returns a list of possible content types for the file.
+   *
+   * @param file the file to identify
+   * @return a list of content type or null if identification failed
+   */
+  List<String> identifyType(VirtualFile file);
 }

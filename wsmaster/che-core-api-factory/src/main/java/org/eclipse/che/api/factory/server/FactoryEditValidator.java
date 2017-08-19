@@ -15,21 +15,19 @@ import org.eclipse.che.api.core.ServerException;
 import org.eclipse.che.api.core.model.factory.Factory;
 
 /**
- * This validator ensures that a factory can be edited by a user that has the associated rights (author or account owner)
+ * This validator ensures that a factory can be edited by a user that has the associated rights
+ * (author or account owner)
  *
  * @author Florent Benoit
  */
 public interface FactoryEditValidator {
 
-    /**
-     * Validates given factory by checking the current user is granted to edit the factory.
-     *
-     * @param factory
-     *         factory object to validate
-     * @throws ForbiddenException
-     *         when the current user is not granted to edit the factory
-     * @throws ServerException
-     *         when any other error occurs
-     */
-    void validate(Factory factory) throws ForbiddenException, ServerException;
+  /**
+   * Validates given factory by checking the current user is granted to edit the factory.
+   *
+   * @param factory factory object to validate
+   * @throws ForbiddenException when the current user is not granted to edit the factory
+   * @throws ServerException when any other error occurs
+   */
+  void validate(Factory factory) throws ForbiddenException, ServerException;
 }

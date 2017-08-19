@@ -13,19 +13,18 @@ package org.eclipse.che.ide.ui.smartTree.presentation;
 import javax.validation.constraints.NotNull;
 
 /**
- * Indicates that specified node can has presentation to allow customize various
- * parameters, e.g. node icon, presentable text, info text, etc.
+ * Indicates that specified node can has presentation to allow customize various parameters, e.g.
+ * node icon, presentable text, info text, etc.
  *
  * @author Vlad Zhukovskiy
  */
 public interface HasPresentation {
-    /**
-     * Method called during node rendering.
-     *
-     * @param presentation
-     *         node presentation
-     */
-    void updatePresentation(@NotNull NodePresentation presentation);
+  /**
+   * Method called during node rendering.
+   *
+   * @param presentation node presentation
+   */
+  void updatePresentation(@NotNull NodePresentation presentation);
 
-    NodePresentation getPresentation(boolean update);
+  NodePresentation getPresentation(boolean update);
 }

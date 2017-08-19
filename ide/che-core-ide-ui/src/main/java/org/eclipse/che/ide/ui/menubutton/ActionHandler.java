@@ -13,11 +13,10 @@ package org.eclipse.che.ide.ui.menubutton;
 /** Handles actions on {@link MenuItem}s. */
 public interface ActionHandler {
 
-    /**
-     * Called when action on the {@code item} has been requested.
-     *
-     * @param item
-     *         the item on which action has been requested
-     */
-    void onAction(MenuItem item);
+  /**
+   * Called when action on the {@code item} has been requested.
+   *
+   * @param item the item on which action has been requested
+   */
+  void onAction(MenuItem item);
 }

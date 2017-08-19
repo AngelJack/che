@@ -10,9 +10,8 @@
  */
 package org.eclipse.che.ide.part.widgets.panemenu;
 
-import org.eclipse.che.ide.api.mvp.View;
-
 import javax.validation.constraints.NotNull;
+import org.eclipse.che.ide.api.mvp.View;
 
 /**
  * Contract to implementations of item for displaying in {@link EditorPaneMenu}
@@ -22,20 +21,19 @@ import javax.validation.constraints.NotNull;
  */
 public interface EditorPaneMenuItem<T> extends View<EditorPaneMenuItem.ActionDelegate<T>> {
 
-    /** Returns associated data. */
-    T getData();
+  /** Returns associated data. */
+  T getData();
 
-    interface ActionDelegate<T> {
+  interface ActionDelegate<T> {
 
-        /** Handle clicking on item */
-        void onItemClicked(@NotNull EditorPaneMenuItem<T> item);
+    /** Handle clicking on item */
+    void onItemClicked(@NotNull EditorPaneMenuItem<T> item);
 
-        /**
-         * Handle clicking on close button
-         *
-         * @param item
-         *         item to close
-         */
-        void onCloseButtonClicked(@NotNull EditorPaneMenuItem<T> item);
-    }
+    /**
+     * Handle clicking on close button
+     *
+     * @param item item to close
+     */
+    void onCloseButtonClicked(@NotNull EditorPaneMenuItem<T> item);
+  }
 }

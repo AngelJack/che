@@ -10,11 +10,9 @@
  */
 package org.eclipse.che.api.debugger.server.exceptions;
 
-/**
- * @author Anatoliy Bazko
- */
+/** @author Anatoliy Bazko */
 public class DebuggerNotFoundException extends DebuggerException {
-    public DebuggerNotFoundException(String message) {
-        super(message);
-    }
+  public DebuggerNotFoundException(String message) {
+    super(message);
+  }
 }

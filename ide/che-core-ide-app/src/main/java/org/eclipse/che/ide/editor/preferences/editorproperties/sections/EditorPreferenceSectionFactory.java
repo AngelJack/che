@@ -10,9 +10,8 @@
  */
 package org.eclipse.che.ide.editor.preferences.editorproperties.sections;
 
-import org.eclipse.che.ide.editor.preferences.EditorPreferenceSection;
-
 import java.util.List;
+import org.eclipse.che.ide.editor.preferences.EditorPreferenceSection;
 
 /**
  * The factory which creates instances of {@link EditorPropertiesSection}.
@@ -21,14 +20,12 @@ import java.util.List;
  */
 public interface EditorPreferenceSectionFactory {
 
-    /**
-     * Creates one of implementations of {@link EditorPropertiesSection}.
-     *
-     * @param title
-     *         title of editor's properties section
-     * @param propertiesIds
-     *         IDs of properties which will be added to the section
-     * @return an instance of {@link EditorPropertiesSection}
-     */
-    EditorPreferenceSection create(String title, List<String> propertiesIds);
+  /**
+   * Creates one of implementations of {@link EditorPropertiesSection}.
+   *
+   * @param title title of editor's properties section
+   * @param propertiesIds IDs of properties which will be added to the section
+   * @return an instance of {@link EditorPropertiesSection}
+   */
+  EditorPreferenceSection create(String title, List<String> propertiesIds);
 }

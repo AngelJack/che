@@ -10,32 +10,32 @@
  */
 package org.eclipse.che.ide.ext.java.shared.dto.refactoring;
 
-import org.eclipse.che.dto.shared.DTO;
-
 import java.util.List;
+import org.eclipse.che.dto.shared.DTO;
 
 /**
  * DTO for creating move refactoring session
+ *
  * @author Evgen Vidolob
  */
 @DTO
 public interface CreateMoveRefactoring {
 
-    /**
-     * Gets elements that will be moved.
-     *
-     * @return the elements
-     */
-    List<ElementToMove> getElements();
+  /**
+   * Gets elements that will be moved.
+   *
+   * @return the elements
+   */
+  List<ElementToMove> getElements();
 
-    void setElements(List<ElementToMove> elements);
+  void setElements(List<ElementToMove> elements);
 
-    /**
-     * Gets project path.
-     *
-     * @return the project path
-     */
-    String getProjectPath();
+  /**
+   * Gets project path.
+   *
+   * @return the project path
+   */
+  String getProjectPath();
 
-    void setProjectPath(String projectPath);
+  void setProjectPath(String projectPath);
 }

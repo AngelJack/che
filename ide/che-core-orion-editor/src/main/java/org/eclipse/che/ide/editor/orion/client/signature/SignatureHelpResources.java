@@ -12,52 +12,49 @@ package org.eclipse.che.ide.editor.orion.client.signature;
 
 import com.google.gwt.resources.client.ClientBundle;
 import com.google.gwt.resources.client.CssResource;
-
 import org.vectomatic.dom.svg.ui.SVGResource;
 
-/**
- * @author Evgen Vidolob
- */
+/** @author Evgen Vidolob */
 public interface SignatureHelpResources extends ClientBundle {
 
-    @Source("SignatureHelp.css")
-    SignatureHelpCss css();
+  @Source("SignatureHelp.css")
+  SignatureHelpCss css();
 
-    @Source("arrow.svg")
-    SVGResource arrow();
+  @Source("arrow.svg")
+  SVGResource arrow();
 
-    interface SignatureHelpCss extends CssResource {
+  interface SignatureHelpCss extends CssResource {
 
-        String next();
+    String next();
 
-        String visible();
+    String visible();
 
-        String buttons();
+    String buttons();
 
-        String overloads();
+    String overloads();
 
-        String previous();
+    String previous();
 
-        String documentation();
+    String documentation();
 
-        String multiple();
+    String multiple();
 
-        String active();
+    String active();
 
-        String main();
+    String main();
 
-        String wrapper();
+    String wrapper();
 
-        @ClassName("documentation-parameter")
-        String documentationParameter();
+    @ClassName("documentation-parameter")
+    String documentationParameter();
 
-        String signatures();
+    String signatures();
 
-        String button();
+    String button();
 
-        @ClassName("parameter-hints-widget")
-        String parameterHintsWidget();
+    @ClassName("parameter-hints-widget")
+    String parameterHintsWidget();
 
-        String parameter();
-    }
+    String parameter();
+  }
 }

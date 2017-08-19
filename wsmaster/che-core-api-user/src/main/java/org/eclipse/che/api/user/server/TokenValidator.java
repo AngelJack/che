@@ -21,12 +21,11 @@ import org.eclipse.che.api.core.model.user.User;
  */
 public interface TokenValidator {
 
-    /**
-     * Validates {@code token}.
-     *
-     * @return user email
-     * @throws ConflictException
-     *         when token is not valid
-     */
-    User validateToken(String token) throws ConflictException;
+  /**
+   * Validates {@code token}.
+   *
+   * @return user email
+   * @throws ConflictException when token is not valid
+   */
+  User validateToken(String token) throws ConflictException;
 }

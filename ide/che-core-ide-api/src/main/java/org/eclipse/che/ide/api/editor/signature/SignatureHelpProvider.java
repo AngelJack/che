@@ -11,12 +11,10 @@
 package org.eclipse.che.ide.api.editor.signature;
 
 import com.google.common.base.Optional;
-
+import javax.validation.constraints.NotNull;
 import org.eclipse.che.api.promises.client.Promise;
 import org.eclipse.che.ide.api.editor.document.Document;
 import org.eclipse.che.ide.api.editor.texteditor.TextEditor;
-
-import javax.validation.constraints.NotNull;
 
 /**
  * Calculates signature information at cursor position.
@@ -25,24 +23,19 @@ import javax.validation.constraints.NotNull;
  */
 public interface SignatureHelpProvider {
 
-    /**
-     * Requests to provide signature information
-     * @param document
-     *              the document where request called
-     * @param offset
-     *              the offset where request called
-     * @return the promise.
-     */
-    @NotNull
-    Promise<Optional<SignatureHelp>> signatureHelp(Document document, int offset);
+  /**
+   * Requests to provide signature information
+   *
+   * @param document the document where request called
+   * @param offset the offset where request called
+   * @return the promise.
+   */
+  @NotNull
+  Promise<Optional<SignatureHelp>> signatureHelp(Document document, int offset);
 
-    /**
-     * Installs the SignatureHelpProvider on the given text view.
-     */
-    void install(TextEditor editor);
+  /** Installs the SignatureHelpProvider on the given text view. */
+  void install(TextEditor editor);
 
-    /**
-     * Removes the SignatureHelpProvider from the text view it has previously been installed on.
-     */
-    void uninstall();
+  /** Removes the SignatureHelpProvider from the text view it has previously been installed on. */
+  void uninstall();
 }

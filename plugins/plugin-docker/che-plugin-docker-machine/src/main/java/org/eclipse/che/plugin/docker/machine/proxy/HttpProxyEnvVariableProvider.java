@@ -21,15 +21,14 @@ import javax.inject.Provider;
  */
 public class HttpProxyEnvVariableProvider implements Provider<String> {
 
-    private static final String HTTP_PROXY = "http_proxy=";
+  private static final String HTTP_PROXY = "http_proxy=";
 
-    @Inject
-    @Named("che.workspace.http_proxy")
-    private String httpProxy;
+  @Inject
+  @Named("che.workspace.http_proxy")
+  private String httpProxy;
 
-    @Override
-    public String get() {
-        return httpProxy.isEmpty() ? "" : HTTP_PROXY + httpProxy;
-    }
-
+  @Override
+  public String get() {
+    return httpProxy.isEmpty() ? "" : HTTP_PROXY + httpProxy;
+  }
 }

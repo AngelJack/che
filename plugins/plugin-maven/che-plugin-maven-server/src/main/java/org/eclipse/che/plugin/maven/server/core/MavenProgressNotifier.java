@@ -13,21 +13,21 @@ package org.eclipse.che.plugin.maven.server.core;
 /**
  * Notification interface, mostly used for notification of maven artifact downloading process.
  *
- * WARNING: All implementation of this interface MUST be thread safe.
+ * <p>WARNING: All implementation of this interface MUST be thread safe.
  *
  * @author Evgen Vidolob
  */
 public interface MavenProgressNotifier {
 
-    void setText(String text);
+  void setText(String text);
 
-    void setPercent(double percent);
+  void setPercent(double percent);
 
-    void setPercentUndefined(boolean undefined);
+  void setPercentUndefined(boolean undefined);
 
-    boolean isCanceled();
+  boolean isCanceled();
 
-    void start();
+  void start();
 
-    void stop();
+  void stop();
 }

@@ -19,10 +19,9 @@ import org.eclipse.che.ide.api.parts.PartStackView;
  */
 public interface TabItemWithMarks extends PartStackView.TabItem {
 
-    /** Add error mark for Tab title */
-    void setErrorMark(boolean isVisible);
+  /** Add error mark for Tab title */
+  void setErrorMark(boolean isVisible);
 
-    /** Add warning mark for Tab title */
-    void setWarningMark(boolean isVisible);
-
+  /** Add warning mark for Tab title */
+  void setWarningMark(boolean isVisible);
 }

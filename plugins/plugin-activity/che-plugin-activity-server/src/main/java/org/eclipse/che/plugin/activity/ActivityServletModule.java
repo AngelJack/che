@@ -11,17 +11,14 @@
 package org.eclipse.che.plugin.activity;
 
 import com.google.inject.servlet.ServletModule;
-
 import org.eclipse.che.inject.DynaModule;
 
-/**
- * @author Mihail Kuznyetsov
- */
+/** @author Mihail Kuznyetsov */
 @DynaModule
 public class ActivityServletModule extends ServletModule {
 
-    @Override
-    protected void configureServlets() {
-        filter("/*").through(org.eclipse.che.plugin.activity.LastAccessTimeFilter.class);
-    }
+  @Override
+  protected void configureServlets() {
+    filter("/*").through(org.eclipse.che.plugin.activity.LastAccessTimeFilter.class);
+  }
 }

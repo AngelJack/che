@@ -10,20 +10,16 @@
  */
 package org.eclipse.che.api.git.shared;
 
+import java.util.Map;
 import org.eclipse.che.dto.shared.DTO;
 
-import java.util.Map;
-
-/**
- * @author andrew00x
- */
+/** @author andrew00x */
 @DTO
 public interface ConfigRequest {
 
-    Map<String, String> getConfigEntries();
+  Map<String, String> getConfigEntries();
 
-    void setConfigEntries(Map<String, String> configEntries);
+  void setConfigEntries(Map<String, String> configEntries);
 
-    ConfigRequest withConfigEntries(Map<String, String> configEntries);
-
+  ConfigRequest withConfigEntries(Map<String, String> configEntries);
 }

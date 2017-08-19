@@ -19,11 +19,11 @@ import org.eclipse.che.api.core.rest.shared.dto.ServiceError;
  * @author Alexander Garagatyi
  */
 public class EnvironmentNotRunningException extends NotFoundException {
-    public EnvironmentNotRunningException(String message) {
-        super(message);
-    }
+  public EnvironmentNotRunningException(String message) {
+    super(message);
+  }
 
-    public EnvironmentNotRunningException(ServiceError serviceError) {
-        super(serviceError);
-    }
+  public EnvironmentNotRunningException(ServiceError serviceError) {
+    super(serviceError);
+  }
 }

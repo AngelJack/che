@@ -12,16 +12,16 @@ package org.eclipse.che.api.core.util;
 
 /** @author andrew00x */
 abstract class ProcessManager {
-    static ProcessManager newInstance() {
-        if (SystemInfo.isUnix()) {
-            return new UnixProcessManager();
-        }
-        return new DefaultProcessManager();
+  static ProcessManager newInstance() {
+    if (SystemInfo.isUnix()) {
+      return new UnixProcessManager();
     }
+    return new DefaultProcessManager();
+  }
 
-    abstract void kill(Process process);
+  abstract void kill(Process process);
 
-    abstract boolean isAlive(Process process);
+  abstract boolean isAlive(Process process);
 
-    abstract int system(String command);
+  abstract int system(String command);
 }

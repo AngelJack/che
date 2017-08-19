@@ -19,23 +19,23 @@ import org.eclipse.che.dto.shared.DTO;
  */
 @DTO
 public interface TagCreateRequest {
-    /** @return name of tag to create */
-    String getName();
-    
-    void setName(String name);
+  /** @return name of tag to create */
+  String getName();
 
-    /** @return commit to make tag. If <code>null</code> then HEAD is used */
-    String getCommit();
-    
-    void setCommit(String commit);
+  void setName(String name);
 
-    /** @return message for tag */
-    String getMessage();
-    
-    void setMessage(String message);
+  /** @return commit to make tag. If <code>null</code> then HEAD is used */
+  String getCommit();
 
-    /** @return force create tag operation */
-    boolean isForce();
-    
-    void setForce(boolean isForce);
+  void setCommit(String commit);
+
+  /** @return message for tag */
+  String getMessage();
+
+  void setMessage(String message);
+
+  /** @return force create tag operation */
+  boolean isForce();
+
+  void setForce(boolean isForce);
 }

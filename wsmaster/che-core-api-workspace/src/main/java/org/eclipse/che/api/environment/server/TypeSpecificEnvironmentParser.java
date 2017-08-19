@@ -15,24 +15,20 @@ import org.eclipse.che.api.core.model.workspace.Environment;
 import org.eclipse.che.api.environment.server.model.CheServicesEnvironmentImpl;
 
 /**
- * Parser for creating {@link CheServicesEnvironmentImpl} with parameters
- * defined in the {@link Environment}.
+ * Parser for creating {@link CheServicesEnvironmentImpl} with parameters defined in the {@link
+ * Environment}.
  *
  * @author Alexander Andrienko
  */
 public interface TypeSpecificEnvironmentParser {
-    /**
-     * Returns {@link CheServicesEnvironmentImpl} with parameters parsed
-     * from {@link Environment}.
-     *
-     * @param environment
-     *         environment to parsing
-     * @throws IllegalArgumentException
-     *         in case invalid argument in the {@link Environment}
-     * @throws ServerException
-     *         when parsing fails due to some internal server error or
-     *         inability to parse environment due to other reasons
-     */
-    CheServicesEnvironmentImpl parse(Environment environment) throws IllegalArgumentException,
-                                                                     ServerException;
+  /**
+   * Returns {@link CheServicesEnvironmentImpl} with parameters parsed from {@link Environment}.
+   *
+   * @param environment environment to parsing
+   * @throws IllegalArgumentException in case invalid argument in the {@link Environment}
+   * @throws ServerException when parsing fails due to some internal server error or inability to
+   *     parse environment due to other reasons
+   */
+  CheServicesEnvironmentImpl parse(Environment environment)
+      throws IllegalArgumentException, ServerException;
 }

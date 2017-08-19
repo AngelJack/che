@@ -10,33 +10,30 @@
  */
 package org.eclipse.che.api.workspace.shared.dto;
 
+import static org.eclipse.che.api.core.factory.FactoryParameter.Obligation.MANDATORY;
+
+import java.util.Map;
 import org.eclipse.che.api.core.factory.FactoryParameter;
 import org.eclipse.che.api.core.model.workspace.Environment;
 import org.eclipse.che.dto.shared.DTO;
 
-import java.util.Map;
-
-import static org.eclipse.che.api.core.factory.FactoryParameter.Obligation.MANDATORY;
-
-/**
- * @author Alexander Garagatyi
- */
+/** @author Alexander Garagatyi */
 @DTO
 public interface EnvironmentDto extends Environment {
 
-    @Override
-    @FactoryParameter(obligation = MANDATORY)
-    EnvironmentRecipeDto getRecipe();
+  @Override
+  @FactoryParameter(obligation = MANDATORY)
+  EnvironmentRecipeDto getRecipe();
 
-    void setRecipe(EnvironmentRecipeDto recipe);
+  void setRecipe(EnvironmentRecipeDto recipe);
 
-    EnvironmentDto withRecipe(EnvironmentRecipeDto recipe);
+  EnvironmentDto withRecipe(EnvironmentRecipeDto recipe);
 
-    @Override
-    @FactoryParameter(obligation = MANDATORY)
-    Map<String, ExtendedMachineDto> getMachines();
+  @Override
+  @FactoryParameter(obligation = MANDATORY)
+  Map<String, ExtendedMachineDto> getMachines();
 
-    void setMachines(Map<String, ExtendedMachineDto> machines);
+  void setMachines(Map<String, ExtendedMachineDto> machines);
 
-    EnvironmentDto withMachines(Map<String, ExtendedMachineDto> machines);
+  EnvironmentDto withMachines(Map<String, ExtendedMachineDto> machines);
 }

@@ -11,7 +11,6 @@
 package org.eclipse.che.ide.command.editor;
 
 import com.google.gwt.user.client.ui.IsWidget;
-
 import org.eclipse.che.ide.api.mvp.View;
 
 /**
@@ -21,31 +20,28 @@ import org.eclipse.che.ide.api.mvp.View;
  */
 public interface CommandEditorView extends View<CommandEditorView.ActionDelegate> {
 
-    /**
-     * Add page to the view. New page will be added to the top.
-     *
-     * @param page
-     *         page to add
-     * @param title
-     *         text that should be used as page's title
-     */
-    void addPage(IsWidget page, String title);
+  /**
+   * Add page to the view. New page will be added to the top.
+   *
+   * @param page page to add
+   * @param title text that should be used as page's title
+   */
+  void addPage(IsWidget page, String title);
 
-    /**
-     * Set whether saving command is enabled or not.
-     *
-     * @param enable
-     *         {@code true} if command saving is enabled and {@code false} otherwise
-     */
-    void setSaveEnabled(boolean enable);
+  /**
+   * Set whether saving command is enabled or not.
+   *
+   * @param enable {@code true} if command saving is enabled and {@code false} otherwise
+   */
+  void setSaveEnabled(boolean enable);
 
-    /** The action delegate for this view. */
-    interface ActionDelegate {
+  /** The action delegate for this view. */
+  interface ActionDelegate {
 
-        /** Called when reverting command changes is requested. */
-        void onCommandCancel();
+    /** Called when reverting command changes is requested. */
+    void onCommandCancel();
 
-        /** Called when saving command is requested. */
-        void onCommandSave();
-    }
+    /** Called when saving command is requested. */
+    void onCommandSave();
+  }
 }

@@ -12,21 +12,17 @@ package org.eclipse.che.everrest;
 
 import static org.eclipse.che.everrest.ServerContainerInitializeListener.ENVIRONMENT_CONTEXT;
 
-import org.everrest.websockets.WSConnectionImpl;
-
+import java.util.Map;
 import javax.websocket.EndpointConfig;
 import javax.websocket.Session;
-import java.util.Map;
+import org.everrest.websockets.WSConnectionImpl;
 
-/**
- * @author Sergii Kabashniuk
- */
+/** @author Sergii Kabashniuk */
 public class CheWSConnection extends WSConnectionImpl {
-    @Override
-    public void onOpen(Session session, EndpointConfig config) {
-        final Map<String, Object> userProperties = config.getUserProperties();
-        setAttribute(ENVIRONMENT_CONTEXT, userProperties.get(ENVIRONMENT_CONTEXT));
-        super.onOpen(session, config);
-
-    }
+  @Override
+  public void onOpen(Session session, EndpointConfig config) {
+    final Map<String, Object> userProperties = config.getUserProperties();
+    setAttribute(ENVIRONMENT_CONTEXT, userProperties.get(ENVIRONMENT_CONTEXT));
+    super.onOpen(session, config);
+  }
 }

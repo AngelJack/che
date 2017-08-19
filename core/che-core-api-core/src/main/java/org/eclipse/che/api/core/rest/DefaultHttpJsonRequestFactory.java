@@ -10,10 +10,9 @@
  */
 package org.eclipse.che.api.core.rest;
 
-import org.eclipse.che.api.core.rest.shared.dto.Link;
-
 import javax.inject.Singleton;
 import javax.validation.constraints.NotNull;
+import org.eclipse.che.api.core.rest.shared.dto.Link;
 
 /**
  * Creates {@link DefaultHttpJsonRequest} instances.
@@ -23,13 +22,13 @@ import javax.validation.constraints.NotNull;
 @Singleton
 public class DefaultHttpJsonRequestFactory implements HttpJsonRequestFactory {
 
-    @Override
-    public HttpJsonRequest fromUrl(@NotNull String url) {
-        return new DefaultHttpJsonRequest(url);
-    }
+  @Override
+  public HttpJsonRequest fromUrl(@NotNull String url) {
+    return new DefaultHttpJsonRequest(url);
+  }
 
-    @Override
-    public HttpJsonRequest fromLink(@NotNull Link link) {
-        return new DefaultHttpJsonRequest(link);
-    }
+  @Override
+  public HttpJsonRequest fromLink(@NotNull Link link) {
+    return new DefaultHttpJsonRequest(link);
+  }
 }

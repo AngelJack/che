@@ -14,18 +14,17 @@ import com.google.inject.AbstractModule;
 import com.google.inject.TypeLiteral;
 import com.google.inject.matcher.Matchers;
 import com.google.inject.spi.TypeConverter;
-
 import java.io.File;
 
 /** @author andrew00x */
 public class FileConverter extends AbstractModule implements TypeConverter {
-    @Override
-    public Object convert(String value, TypeLiteral<?> toType) {
-        return new File(value);
-    }
+  @Override
+  public Object convert(String value, TypeLiteral<?> toType) {
+    return new File(value);
+  }
 
-    @Override
-    protected void configure() {
-        convertToTypes(Matchers.only(TypeLiteral.get(File.class)), this);
-    }
+  @Override
+  protected void configure() {
+    convertToTypes(Matchers.only(TypeLiteral.get(File.class)), this);
+  }
 }

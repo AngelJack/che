@@ -15,50 +15,47 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-/**
- * Listener for test running.
- */
+/** Listener for test running. */
 public class CheTestListener implements ITestListener {
 
-    private final CheTestNGListener delegate;
+  private final CheTestNGListener delegate;
 
-    public CheTestListener(CheTestNGListener delegate) {
-        this.delegate = delegate;
-    }
+  public CheTestListener(CheTestNGListener delegate) {
+    this.delegate = delegate;
+  }
 
+  @Override
+  public void onTestStart(ITestResult result) {
+    delegate.onTestStart(result);
+  }
 
-    @Override
-    public void onTestStart(ITestResult result) {
-        delegate.onTestStart(result);
-    }
+  @Override
+  public void onTestSuccess(ITestResult result) {
+    delegate.onTestSuccess(result);
+  }
 
-    @Override
-    public void onTestSuccess(ITestResult result) {
-        delegate.onTestSuccess(result);
-    }
+  @Override
+  public void onTestFailure(ITestResult result) {
+    delegate.onTestFailure(result);
+  }
 
-    @Override
-    public void onTestFailure(ITestResult result) {
-        delegate.onTestFailure(result);
-    }
+  @Override
+  public void onTestSkipped(ITestResult result) {
+    delegate.onTestSkipped(result);
+  }
 
-    @Override
-    public void onTestSkipped(ITestResult result) {
-        delegate.onTestSkipped(result);
-    }
+  @Override
+  public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
+    delegate.onTestFailedButWithinSuccessPercentage(result);
+  }
 
-    @Override
-    public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
-        delegate.onTestFailedButWithinSuccessPercentage(result);
-    }
+  @Override
+  public void onStart(ITestContext context) {
+    //ignore
+  }
 
-    @Override
-    public void onStart(ITestContext context) {
-        //ignore
-    }
-
-    @Override
-    public void onFinish(ITestContext context) {
-        //ignore
-    }
+  @Override
+  public void onFinish(ITestContext context) {
+    //ignore
+  }
 }

@@ -19,10 +19,9 @@ import com.google.gwt.i18n.client.Messages;
  * @author Valeriy Svydenko
  */
 public interface PythonLocalizationConstant extends Messages {
-    @Key("python.action.create.file.title")
-    String createPythonFileActionTitle();
+  @Key("python.action.create.file.title")
+  String createPythonFileActionTitle();
 
-    @Key("python.action.create.file.description")
-    String createPythonFileActionDescription();
-
+  @Key("python.action.create.file.description")
+  String createPythonFileActionDescription();
 }

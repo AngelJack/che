@@ -10,13 +10,10 @@
  */
 package org.eclipse.che.api.debug.shared.model.action;
 
+import java.util.List;
 import org.eclipse.che.api.debug.shared.model.Breakpoint;
 
-import java.util.List;
-
-/**
- * @author Anatoliy Bazko
- */
+/** @author Anatoliy Bazko */
 public interface StartAction extends Action {
-    List<? extends Breakpoint> getBreakpoints();
+  List<? extends Breakpoint> getBreakpoints();
 }

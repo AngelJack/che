@@ -10,18 +10,12 @@
  */
 package org.eclipse.che.plugin.nodejsdbg.server;
 
-/**
- * @author Anatolii Bazko
- */
+/** @author Anatolii Bazko */
 public interface NodeJsProcessObservable {
 
-    /**
-     * Adds observer.
-     */
-    void addObserver(NodeJsProcessObserver observer);
+  /** Adds observer. */
+  void addObserver(NodeJsProcessObserver observer);
 
-    /**
-     * Removes observer.
-     */
-    void removeObserver(NodeJsProcessObserver observer);
+  /** Removes observer. */
+  void removeObserver(NodeJsProcessObserver observer);
 }

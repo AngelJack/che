@@ -15,41 +15,42 @@ import org.eclipse.che.ide.ext.java.shared.dto.LinkedModeModel;
 
 /**
  * Answer for {@link CreateRenameRefactoring}
+ *
  * @author Evgen Vidolob
  * @author Vleriy Svydenko
  */
 @DTO
 public interface RenameRefactoringSession extends RefactoringSession {
 
-    /**
-     * Rename refactoring wizard type
-     * @return the wizard type
-     */
-    RenameWizard getWizardType();
+  /**
+   * Rename refactoring wizard type
+   *
+   * @return the wizard type
+   */
+  RenameWizard getWizardType();
 
-    void setWizardType(RenameWizard type);
+  void setWizardType(RenameWizard type);
 
-    /**@return name of the renaming element*/
-    String getOldName();
+  /** @return name of the renaming element */
+  String getOldName();
 
-    void setOldName(String name);
+  void setOldName(String name);
 
-    /**
-     * Linked edit model, not null if refactoring performed from editor and wizard is not necessary.
-     */
-    LinkedModeModel getLinkedModeModel();
+  /**
+   * Linked edit model, not null if refactoring performed from editor and wizard is not necessary.
+   */
+  LinkedModeModel getLinkedModeModel();
 
-    void setLinkedModeModel(LinkedModeModel model);
+  void setLinkedModeModel(LinkedModeModel model);
 
-
-    enum RenameWizard {
-        PACKAGE,
-        COMPILATION_UNIT,
-        TYPE,
-        FIELD,
-        ENUM_CONSTANT,
-        TYPE_PARAMETER,
-        METHOD,
-        LOCAL_VARIABLE
-    }
+  enum RenameWizard {
+    PACKAGE,
+    COMPILATION_UNIT,
+    TYPE,
+    FIELD,
+    ENUM_CONSTANT,
+    TYPE_PARAMETER,
+    METHOD,
+    LOCAL_VARIABLE
+  }
 }

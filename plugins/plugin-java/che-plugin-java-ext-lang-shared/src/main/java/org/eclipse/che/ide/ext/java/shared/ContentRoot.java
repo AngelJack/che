@@ -10,12 +10,10 @@
  */
 package org.eclipse.che.ide.ext.java.shared;
 
-/**
- * @author Vlad Zhukovskiy
- */
+/** @author Vlad Zhukovskiy */
 public enum ContentRoot {
-    SOURCE,
-    TEST_SOURCE,
-    RESOURCE,
-    TEST_RESOURCE
+  SOURCE,
+  TEST_SOURCE,
+  RESOURCE,
+  TEST_RESOURCE
 }

@@ -18,15 +18,15 @@ import com.google.gwt.i18n.client.Messages;
  */
 public interface JUnitTestLocalizationConstant extends Messages {
 
-    @Key("action.run.title")
-    String actionRunTestTitle();
+  @Key("action.run.title")
+  String actionRunTestTitle();
 
-    @Key("action.run.description")
-    String actionRunTestDescription();
+  @Key("action.run.description")
+  String actionRunTestDescription();
 
-    @Key("action.debug.title")
-    String actionDebugTestTitle();
+  @Key("action.debug.title")
+  String actionDebugTestTitle();
 
-    @Key("action.debug.description")
-    String actionDebugDescription();
+  @Key("action.debug.description")
+  String actionDebugDescription();
 }

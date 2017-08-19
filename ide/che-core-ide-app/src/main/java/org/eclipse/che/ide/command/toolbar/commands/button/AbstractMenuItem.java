@@ -16,13 +16,13 @@ import org.eclipse.che.ide.ui.menubutton.MenuItem;
 /** An abstract {@link MenuItem} for {@link ExecuteCommandButton}s. */
 public abstract class AbstractMenuItem implements MenuItem {
 
-    private final CommandImpl command;
+  private final CommandImpl command;
 
-    protected AbstractMenuItem(CommandImpl command) {
-        this.command = command;
-    }
+  protected AbstractMenuItem(CommandImpl command) {
+    this.command = command;
+  }
 
-    public CommandImpl getCommand() {
-        return command;
-    }
+  public CommandImpl getCommand() {
+    return command;
+  }
 }

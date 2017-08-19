@@ -11,7 +11,6 @@
 package org.eclipse.che.ide.ui.smartTree.handler;
 
 import com.google.gwt.event.shared.HandlerRegistration;
-
 import java.util.HashSet;
 import java.util.Set;
 
@@ -22,25 +21,24 @@ import java.util.Set;
  */
 public class GroupingHandlerRegistration implements HandlerRegistration {
 
-    private Set<HandlerRegistration> registrations;
+  private Set<HandlerRegistration> registrations;
 
-    public GroupingHandlerRegistration() {
-        registrations = new HashSet<>();
+  public GroupingHandlerRegistration() {
+    registrations = new HashSet<>();
+  }
+
+  public void add(HandlerRegistration registration) {
+    registrations.add(registration);
+  }
+
+  public Set<HandlerRegistration> getRegistrations() {
+    return registrations;
+  }
+
+  public void removeHandler() {
+    for (HandlerRegistration r : registrations) {
+      r.removeHandler();
     }
-
-    public void add(HandlerRegistration registration) {
-        registrations.add(registration);
-    }
-
-    public Set<HandlerRegistration> getRegistrations() {
-        return registrations;
-    }
-
-    public void removeHandler() {
-        for (HandlerRegistration r : registrations) {
-            r.removeHandler();
-        }
-        registrations.clear();
-    }
-
+    registrations.clear();
+  }
 }

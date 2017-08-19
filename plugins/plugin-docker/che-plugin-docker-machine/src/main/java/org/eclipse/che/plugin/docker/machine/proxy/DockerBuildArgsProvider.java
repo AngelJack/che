@@ -10,12 +10,12 @@
  */
 package org.eclipse.che.plugin.docker.machine.proxy;
 
-import javax.inject.Inject;
-import javax.inject.Provider;
-import javax.inject.Singleton;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import javax.inject.Inject;
+import javax.inject.Provider;
+import javax.inject.Singleton;
 
 /**
  * Provides docker build arguments with proxy settings.
@@ -24,28 +24,29 @@ import java.util.Map;
  */
 @Singleton
 public class DockerBuildArgsProvider implements Provider<Map<String, String>> {
-    private final Map<String, String> buildArgs;
+  private final Map<String, String> buildArgs;
 
-    @Inject
-    public DockerBuildArgsProvider(HttpProxyEnvVariableProvider httpProxy,
-                                   HttpsProxyEnvVariableProvider httpsProxy,
-                                   NoProxyEnvVariableProvider noProxy) {
-        Map<String, String> buildArgs = new HashMap<>();
-        splitVarAndAdd(httpProxy.get(), buildArgs);
-        splitVarAndAdd(httpsProxy.get(), buildArgs);
-        splitVarAndAdd(noProxy.get(), buildArgs);
-        this.buildArgs = Collections.unmodifiableMap(buildArgs);
-    }
+  @Inject
+  public DockerBuildArgsProvider(
+      HttpProxyEnvVariableProvider httpProxy,
+      HttpsProxyEnvVariableProvider httpsProxy,
+      NoProxyEnvVariableProvider noProxy) {
+    Map<String, String> buildArgs = new HashMap<>();
+    splitVarAndAdd(httpProxy.get(), buildArgs);
+    splitVarAndAdd(httpsProxy.get(), buildArgs);
+    splitVarAndAdd(noProxy.get(), buildArgs);
+    this.buildArgs = Collections.unmodifiableMap(buildArgs);
+  }
 
-    private void splitVarAndAdd(String envVariable, Map<String, String> splitVariables) {
-        if (!envVariable.isEmpty()) {
-            String[] keyValue = envVariable.split("=", 2);
-            splitVariables.put(keyValue[0], keyValue[1]);
-        }
+  private void splitVarAndAdd(String envVariable, Map<String, String> splitVariables) {
+    if (!envVariable.isEmpty()) {
+      String[] keyValue = envVariable.split("=", 2);
+      splitVariables.put(keyValue[0], keyValue[1]);
     }
+  }
 
-    @Override
-    public Map<String, String> get() {
-        return buildArgs;
-    }
+  @Override
+  public Map<String, String> get() {
+    return buildArgs;
+  }
 }

@@ -10,12 +10,10 @@
  */
 package org.eclipse.che.ide.api.project;
 
-
+import java.util.List;
+import javax.validation.constraints.NotNull;
 import org.eclipse.che.api.project.templates.shared.dto.ProjectTemplateDescriptor;
 import org.eclipse.che.ide.rest.AsyncRequestCallback;
-
-import javax.validation.constraints.NotNull;
-import java.util.List;
 
 /**
  * Client for Project Template service.
@@ -23,21 +21,20 @@ import java.util.List;
  * @author Artem Zatsarynnyi
  */
 public interface ProjectTemplateServiceClient {
-    /**
-     * Get information about all registered project templates for the specified {@code projectTypeId}.
-     *
-     * @param tags
-     *         tags which associated with project templates
-     * @param callback
-     *         the callback to use for the response
-     */
-    void getProjectTemplates(@NotNull List<String> tags, @NotNull AsyncRequestCallback<List<ProjectTemplateDescriptor>> callback);
+  /**
+   * Get information about all registered project templates for the specified {@code projectTypeId}.
+   *
+   * @param tags tags which associated with project templates
+   * @param callback the callback to use for the response
+   */
+  void getProjectTemplates(
+      @NotNull List<String> tags,
+      @NotNull AsyncRequestCallback<List<ProjectTemplateDescriptor>> callback);
 
-    /**
-     * Get information about all registered project templates.
-     *
-     * @param callback
-     *         the callback to use for the response
-     */
-    void getProjectTemplates(@NotNull AsyncRequestCallback<List<ProjectTemplateDescriptor>> callback);
+  /**
+   * Get information about all registered project templates.
+   *
+   * @param callback the callback to use for the response
+   */
+  void getProjectTemplates(@NotNull AsyncRequestCallback<List<ProjectTemplateDescriptor>> callback);
 }

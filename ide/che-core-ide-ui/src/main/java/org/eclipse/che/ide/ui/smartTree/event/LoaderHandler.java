@@ -10,24 +10,31 @@
  */
 package org.eclipse.che.ide.ui.smartTree.event;
 
-import com.google.gwt.event.shared.HandlerRegistration;
+import static org.eclipse.che.ide.ui.smartTree.event.BeforeLoadEvent.HasBeforeLoadHandlers;
 
+import com.google.gwt.event.shared.HandlerRegistration;
 import org.eclipse.che.ide.ui.smartTree.event.BeforeLoadEvent.BeforeLoadHandler;
 import org.eclipse.che.ide.ui.smartTree.event.LoadEvent.HasLoadHandlers;
 import org.eclipse.che.ide.ui.smartTree.event.LoadExceptionEvent.HasLoadExceptionHandlers;
 import org.eclipse.che.ide.ui.smartTree.event.LoadExceptionEvent.LoadExceptionHandler;
 
-import static org.eclipse.che.ide.ui.smartTree.event.BeforeLoadEvent.HasBeforeLoadHandlers;
-
 /**
- * Aggregating handler interface for {@link BeforeLoadEvent}, {@link LoadExceptionEvent}, {@link LoadEvent}.
+ * Aggregating handler interface for {@link BeforeLoadEvent}, {@link LoadExceptionEvent}, {@link
+ * LoadEvent}.
  *
  * @author Vlad Zhukovskiy
  */
-public interface LoaderHandler extends BeforeLoadHandler, LoadExceptionHandler, LoadEvent.LoadHandler, PostLoadEvent.PostLoadHandler {
+public interface LoaderHandler
+    extends BeforeLoadHandler,
+        LoadExceptionHandler,
+        LoadEvent.LoadHandler,
+        PostLoadEvent.PostLoadHandler {
 
-    public interface HasLoaderHandlers extends HasLoadHandlers, HasLoadExceptionHandlers, HasBeforeLoadHandlers,
-                                               PostLoadEvent.HasPostLoadHandlers {
-        public HandlerRegistration addLoaderHandler(LoaderHandler handler);
-    }
+  public interface HasLoaderHandlers
+      extends HasLoadHandlers,
+          HasLoadExceptionHandlers,
+          HasBeforeLoadHandlers,
+          PostLoadEvent.HasPostLoadHandlers {
+    public HandlerRegistration addLoaderHandler(LoaderHandler handler);
+  }
 }

@@ -10,7 +10,6 @@
  */
 package org.eclipse.che.plugin.parts.ide.helloworldview;
 
-
 import org.eclipse.che.ide.api.mvp.View;
 import org.eclipse.che.ide.api.parts.base.BaseActionDelegate;
 
@@ -21,17 +20,13 @@ import org.eclipse.che.ide.api.parts.base.BaseActionDelegate;
  */
 public interface HelloWorldView extends View<HelloWorldView.ActionDelegate> {
 
-    /**
-     * Make this view visible.
-     *
-     * @param visible whether the view is visible
-     */
-    void setVisible(boolean visible);
+  /**
+   * Make this view visible.
+   *
+   * @param visible whether the view is visible
+   */
+  void setVisible(boolean visible);
 
-    /**
-     * Empty action delegate.
-     */
-    interface ActionDelegate extends BaseActionDelegate {
-
-    }
+  /** Empty action delegate. */
+  interface ActionDelegate extends BaseActionDelegate {}
 }

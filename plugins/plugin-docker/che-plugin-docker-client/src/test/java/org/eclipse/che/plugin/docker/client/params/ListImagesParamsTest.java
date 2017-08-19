@@ -10,33 +10,28 @@
  */
 package org.eclipse.che.plugin.docker.client.params;
 
-import org.eclipse.che.plugin.docker.client.json.Filters;
-import org.testng.annotations.Test;
-
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-/**
- * @author Mykola Morhun
- */
+import org.eclipse.che.plugin.docker.client.json.Filters;
+import org.testng.annotations.Test;
+
+/** @author Mykola Morhun */
 public class ListImagesParamsTest {
 
-    private static final boolean WITH_ALL = true;
-    private static final boolean WITH_DIGEST = true;
-    private static final Filters FILTERS = new Filters().withFilter("reference", "imageName");
+  private static final boolean WITH_ALL = true;
+  private static final boolean WITH_DIGEST = true;
+  private static final Filters FILTERS = new Filters().withFilter("reference", "imageName");
 
-    private ListImagesParams listImagesParams;
+  private ListImagesParams listImagesParams;
 
-    @Test
-    public void shouldCreateParamsObjectWithAllPossibleParameters() {
-        listImagesParams = ListImagesParams.create()
-                                           .withAll(WITH_ALL)
-                                           .withDigestst(WITH_DIGEST)
-                                           .withFilters(FILTERS);
+  @Test
+  public void shouldCreateParamsObjectWithAllPossibleParameters() {
+    listImagesParams =
+        ListImagesParams.create().withAll(WITH_ALL).withDigestst(WITH_DIGEST).withFilters(FILTERS);
 
-        assertTrue(listImagesParams.getAll() == WITH_ALL);
-        assertTrue(listImagesParams.getDigests() == WITH_DIGEST);
-        assertEquals(listImagesParams.getFilters(), FILTERS);
-    }
-
+    assertTrue(listImagesParams.getAll() == WITH_ALL);
+    assertTrue(listImagesParams.getDigests() == WITH_DIGEST);
+    assertEquals(listImagesParams.getFilters(), FILTERS);
+  }
 }

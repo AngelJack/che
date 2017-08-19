@@ -10,6 +10,9 @@
  */
 package org.eclipse.che.ide.websocket.impl;
 
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
 import org.eclipse.che.api.core.websocket.commons.WebSocketMessageReceiver;
 import org.junit.After;
 import org.junit.Before;
@@ -19,46 +22,36 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
-
 /**
  * Tests for {@link WebSocketDispatcher}
  *
  * @author Dmitry Kuleshov
  */
-
 @RunWith(MockitoJUnitRunner.class)
 public class WebSocketDispatcherTest {
-    @Mock
-    private WebSocketMessageReceiver receiver;
-    @Mock
-    private UrlResolver              urlResolver;
-    @InjectMocks
-    private WebSocketDispatcher      dispatcher;
+  @Mock private WebSocketMessageReceiver receiver;
+  @Mock private UrlResolver urlResolver;
+  @InjectMocks private WebSocketDispatcher dispatcher;
 
-    @Before
-    public void setUp() throws Exception {
-        when(urlResolver.resolve("url")).thenReturn("id");
-    }
+  @Before
+  public void setUp() throws Exception {
+    when(urlResolver.resolve("url")).thenReturn("id");
+  }
 
-    @After
-    public void tearDown() throws Exception {
+  @After
+  public void tearDown() throws Exception {}
 
-    }
+  @Test
+  public void shouldResolveUrlOnDispatch() {
+    dispatcher.dispatch("url", "message");
 
-    @Test
-    public void shouldResolveUrlOnDispatch() {
-        dispatcher.dispatch("url", "message");
+    verify(urlResolver).resolve("url");
+  }
 
-        verify(urlResolver).resolve("url");
-    }
+  @Test
+  public void shouldRunReceiveOnDispatch() {
+    dispatcher.dispatch("url", "message");
 
-    @Test
-    public void shouldRunReceiveOnDispatch(){
-        dispatcher.dispatch("url", "message");
-
-        verify(receiver).receive("id", "message");
-    }
-
+    verify(receiver).receive("id", "message");
+  }
 }

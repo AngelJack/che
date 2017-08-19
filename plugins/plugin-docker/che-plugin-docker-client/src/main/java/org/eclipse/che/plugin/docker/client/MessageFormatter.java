@@ -16,5 +16,5 @@ package org.eclipse.che.plugin.docker.client;
  * @author Alexander Garagatyi
  */
 public interface MessageFormatter<T> {
-    String format(T message);
+  String format(T message);
 }

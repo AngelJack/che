@@ -10,9 +10,11 @@
  */
 package org.eclipse.che.ide.ext.java.client.search;
 
+import static org.eclipse.che.ide.MimeType.APPLICATION_JSON;
+import static org.eclipse.che.ide.rest.HTTPHeader.CONTENT_TYPE;
+
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-
 import org.eclipse.che.api.promises.client.Promise;
 import org.eclipse.che.ide.api.app.AppContext;
 import org.eclipse.che.ide.ext.java.shared.dto.search.FindUsagesRequest;
@@ -22,9 +24,6 @@ import org.eclipse.che.ide.rest.DtoUnmarshallerFactory;
 import org.eclipse.che.ide.ui.loaders.request.LoaderFactory;
 import org.eclipse.che.ide.ui.loaders.request.MessageLoader;
 
-import static org.eclipse.che.ide.MimeType.APPLICATION_JSON;
-import static org.eclipse.che.ide.rest.HTTPHeader.CONTENT_TYPE;
-
 /**
  * Default implementation for <code>JavaSearchService</code>
  *
@@ -33,27 +32,29 @@ import static org.eclipse.che.ide.rest.HTTPHeader.CONTENT_TYPE;
 @Singleton
 public class JavaSearchServiceRest implements JavaSearchService {
 
-    private final AsyncRequestFactory    asyncRequestFactory;
-    private final DtoUnmarshallerFactory unmarshallerFactory;
-    private       MessageLoader          loader;
-    private final String                 pathToService;
+  private final AsyncRequestFactory asyncRequestFactory;
+  private final DtoUnmarshallerFactory unmarshallerFactory;
+  private MessageLoader loader;
+  private final String pathToService;
 
-    @Inject
-    public JavaSearchServiceRest(AsyncRequestFactory asyncRequestFactory,
-                                 DtoUnmarshallerFactory unmarshallerFactory,
-                                 LoaderFactory loaderFactory,
-                                 AppContext appContext) {
-        this.asyncRequestFactory = asyncRequestFactory;
-        this.unmarshallerFactory = unmarshallerFactory;
-        this.loader = loaderFactory.newLoader();
-        this.pathToService = appContext.getDevMachine().getWsAgentBaseUrl() + "/jdt/search/";
-    }
+  @Inject
+  public JavaSearchServiceRest(
+      AsyncRequestFactory asyncRequestFactory,
+      DtoUnmarshallerFactory unmarshallerFactory,
+      LoaderFactory loaderFactory,
+      AppContext appContext) {
+    this.asyncRequestFactory = asyncRequestFactory;
+    this.unmarshallerFactory = unmarshallerFactory;
+    this.loader = loaderFactory.newLoader();
+    this.pathToService = appContext.getDevMachine().getWsAgentBaseUrl() + "/jdt/search/";
+  }
 
-    @Override
-    public Promise<FindUsagesResponse> findUsages(final FindUsagesRequest request) {
-        return asyncRequestFactory.createPostRequest(pathToService + "find/usages", request)
-                                  .header(CONTENT_TYPE, APPLICATION_JSON)
-                                  .loader(loader)
-                                  .send(unmarshallerFactory.newUnmarshaller(FindUsagesResponse.class));
-    }
+  @Override
+  public Promise<FindUsagesResponse> findUsages(final FindUsagesRequest request) {
+    return asyncRequestFactory
+        .createPostRequest(pathToService + "find/usages", request)
+        .header(CONTENT_TYPE, APPLICATION_JSON)
+        .loader(loader)
+        .send(unmarshallerFactory.newUnmarshaller(FindUsagesResponse.class));
+  }
 }

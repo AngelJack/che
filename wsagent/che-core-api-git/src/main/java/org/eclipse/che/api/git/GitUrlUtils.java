@@ -19,14 +19,13 @@ import java.util.regex.Pattern;
  * @author Kevin Pollet
  */
 public class GitUrlUtils {
-    public static final Pattern GIT_SSH_URL_PATTERN =
-            Pattern.compile("((((git|ssh)://)(([^\\\\/@:]+@)??)[^\\\\/@:]+)|([^\\\\/@:]+@[^\\\\/@:]+))(:|/)[^\\\\@:]+");
+  public static final Pattern GIT_SSH_URL_PATTERN =
+      Pattern.compile(
+          "((((git|ssh)://)(([^\\\\/@:]+@)??)[^\\\\/@:]+)|([^\\\\/@:]+@[^\\\\/@:]+))(:|/)[^\\\\@:]+");
 
-    private GitUrlUtils() {
+  private GitUrlUtils() {}
 
-    }
-
-    public static boolean isSSH(String url) {
-        return url != null && GIT_SSH_URL_PATTERN.matcher(url).matches();
-    }
+  public static boolean isSSH(String url) {
+    return url != null && GIT_SSH_URL_PATTERN.matcher(url).matches();
+  }
 }

@@ -12,7 +12,6 @@ package org.eclipse.che.ide.ext.java.client.refactoring.rename.wizard.similarnam
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-
 import org.eclipse.che.ide.ext.java.client.refactoring.rename.wizard.similarnames.SimilarNamesConfigurationView.ActionDelegate;
 import org.eclipse.che.ide.ext.java.shared.dto.refactoring.RenameSettings.MachStrategy;
 
@@ -23,23 +22,21 @@ import org.eclipse.che.ide.ext.java.shared.dto.refactoring.RenameSettings.MachSt
  */
 @Singleton
 public class SimilarNamesConfigurationPresenter implements ActionDelegate {
-    private final SimilarNamesConfigurationView view;
+  private final SimilarNamesConfigurationView view;
 
-    @Inject
-    public SimilarNamesConfigurationPresenter(SimilarNamesConfigurationView view) {
-        this.view = view;
-        this.view.setDelegate(this);
-    }
+  @Inject
+  public SimilarNamesConfigurationPresenter(SimilarNamesConfigurationView view) {
+    this.view = view;
+    this.view.setDelegate(this);
+  }
 
-    /**
-     * Show Move panel with the special information.
-     */
-    public void show() {
-        view.show();
-    }
+  /** Show Move panel with the special information. */
+  public void show() {
+    view.show();
+  }
 
-    /**@return selected value of mach strategy.*/
-    public MachStrategy getMachStrategy() {
-        return view.getMachStrategy();
-    }
+  /** @return selected value of mach strategy. */
+  public MachStrategy getMachStrategy() {
+    return view.getMachStrategy();
+  }
 }

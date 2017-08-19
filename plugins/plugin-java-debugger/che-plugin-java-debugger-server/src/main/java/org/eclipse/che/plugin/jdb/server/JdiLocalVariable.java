@@ -15,5 +15,4 @@ package org.eclipse.che.plugin.jdb.server;
  *
  * @author andrew00x
  */
-public interface JdiLocalVariable extends JdiVariable {
-}
+public interface JdiLocalVariable extends JdiVariable {}

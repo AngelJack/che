@@ -13,34 +13,32 @@ package org.eclipse.che.api.git.shared;
 import org.eclipse.che.api.core.notification.EventOrigin;
 import org.eclipse.che.dto.shared.DTO;
 
-/**
- * @author Anton Korneta.
- */
+/** @author Anton Korneta. */
 @EventOrigin("gitcheckout")
 @DTO
 public interface GitCheckoutEvent {
 
-    boolean isCheckoutOnly();
+  boolean isCheckoutOnly();
 
-    void setCheckoutOnly(boolean checkoutOnly);
+  void setCheckoutOnly(boolean checkoutOnly);
 
-    GitCheckoutEvent withCheckoutOnly(boolean checkoutOnly);
+  GitCheckoutEvent withCheckoutOnly(boolean checkoutOnly);
 
-    String getBranchRef();
+  String getBranchRef();
 
-    void setBranchRef(String branchRef);
+  void setBranchRef(String branchRef);
 
-    GitCheckoutEvent withBranchRef(String branchRef);
+  GitCheckoutEvent withBranchRef(String branchRef);
 
-    String getWorkspaceId();
+  String getWorkspaceId();
 
-    void setWorkspaceId(String workspaceId);
+  void setWorkspaceId(String workspaceId);
 
-    GitCheckoutEvent withWorkspaceId(String workspaceId);
+  GitCheckoutEvent withWorkspaceId(String workspaceId);
 
-    String getProjectName();
+  String getProjectName();
 
-    void setProjectName(String projectName);
+  void setProjectName(String projectName);
 
-    GitCheckoutEvent withProjectName(String projectName);
+  GitCheckoutEvent withProjectName(String projectName);
 }

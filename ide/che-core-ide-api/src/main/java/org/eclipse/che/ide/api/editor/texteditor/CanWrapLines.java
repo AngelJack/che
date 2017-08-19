@@ -17,16 +17,13 @@ package org.eclipse.che.ide.api.editor.texteditor;
  */
 public interface CanWrapLines {
 
-    /**
-     * Determines whether line wrapping is active.
-     *
-     * @return <b>true</b> when line wrapping is active
-     */
-    boolean isWrapLines();
+  /**
+   * Determines whether line wrapping is active.
+   *
+   * @return <b>true</b> when line wrapping is active
+   */
+  boolean isWrapLines();
 
-    /**
-     * Toggles line wrapping mode.
-     */
-    void toggleWrapLines();
-
+  /** Toggles line wrapping mode. */
+  void toggleWrapLines();
 }

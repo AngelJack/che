@@ -12,7 +12,6 @@ package org.eclipse.che.ide.ext.plugins.client;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-
 import org.eclipse.che.ide.api.extension.Extension;
 
 /**
@@ -24,7 +23,6 @@ import org.eclipse.che.ide.api.extension.Extension;
 @Extension(title = "GWT support for Che", version = "1.0.0")
 public class GwtCheExtension {
 
-    @Inject
-    public GwtCheExtension() {
-    }
+  @Inject
+  public GwtCheExtension() {}
 }

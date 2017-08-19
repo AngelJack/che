@@ -16,11 +16,11 @@ package org.eclipse.che.api.agent.server.exception;
  * @author Alexander Garagatyi
  */
 public class AgentStartException extends AgentException {
-    public AgentStartException(String message) {
-        super(message);
-    }
+  public AgentStartException(String message) {
+    super(message);
+  }
 
-    public AgentStartException(String message, Throwable cause) {
-        super(message, cause);
-    }
+  public AgentStartException(String message, Throwable cause) {
+    super(message, cause);
+  }
 }

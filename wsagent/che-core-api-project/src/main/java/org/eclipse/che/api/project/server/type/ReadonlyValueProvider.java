@@ -13,20 +13,20 @@ package org.eclipse.che.api.project.server.type;
 import java.util.List;
 
 /**
- * Value provider to read the values.
- * Initializing
+ * Value provider to read the values. Initializing
  *
  * @author gazarenkov
  */
 public abstract class ReadonlyValueProvider implements ValueProvider {
 
-    @Override
-    public final void setValues(String attributeName, List<String> values) throws ValueStorageException {
-        throw new ValueStorageException("Value Provider is read only");
-    }
+  @Override
+  public final void setValues(String attributeName, List<String> values)
+      throws ValueStorageException {
+    throw new ValueStorageException("Value Provider is read only");
+  }
 
-    @Override
-    public final boolean isSettable() {
-        return false;
-    }
+  @Override
+  public final boolean isSettable() {
+    return false;
+  }
 }

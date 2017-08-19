@@ -11,7 +11,10 @@
 package org.eclipse.che.plugin.java.server.rest;
 
 import com.google.inject.Inject;
-
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import org.eclipse.che.ide.ext.java.shared.dto.ReconcileResult;
 import org.eclipse.che.jdt.javaeditor.JavaReconciler;
 import org.eclipse.jdt.core.IJavaProject;
@@ -19,27 +22,20 @@ import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.internal.core.JavaModel;
 import org.eclipse.jdt.internal.core.JavaModelManager;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
-
-/**
- * @author Evgen Vidolob
- */
+/** @author Evgen Vidolob */
 @Path("java/reconcile")
 public class JavaReconcileService {
 
-    private static final JavaModel model = JavaModelManager.getJavaModelManager().getJavaModel();
+  private static final JavaModel model = JavaModelManager.getJavaModelManager().getJavaModel();
 
-    @Inject
-    private JavaReconciler reconciler;
+  @Inject private JavaReconciler reconciler;
 
-    @GET
-    @Produces("application/json")
-    public ReconcileResult reconcile(@QueryParam("projectpath") String projectPath, @QueryParam("fqn") String fqn)
-            throws JavaModelException {
-        IJavaProject javaProject = model.getJavaProject(projectPath);
-        return reconciler.reconcile(javaProject, fqn);
-    }
+  @GET
+  @Produces("application/json")
+  public ReconcileResult reconcile(
+      @QueryParam("projectpath") String projectPath, @QueryParam("fqn") String fqn)
+      throws JavaModelException {
+    IJavaProject javaProject = model.getJavaProject(projectPath);
+    return reconciler.reconcile(javaProject, fqn);
+  }
 }

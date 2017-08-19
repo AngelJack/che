@@ -14,16 +14,14 @@ import org.eclipse.che.ide.api.editor.partition.DocumentPartitioner;
 import org.eclipse.che.ide.api.editor.reconciler.Reconciler;
 import org.eclipse.che.ide.api.editor.reconciler.ReconcilerWithAutoSave;
 
-/**
- * @author Evgen Vidolob
- */
+/** @author Evgen Vidolob */
 public class AutoSaveTextEditorConfiguration extends DefaultTextEditorConfiguration {
 
-    private ReconcilerWithAutoSave reconcilerWithAutoSave =
-            new ReconcilerWithAutoSave(DocumentPartitioner.DEFAULT_CONTENT_TYPE, getPartitioner());
+  private ReconcilerWithAutoSave reconcilerWithAutoSave =
+      new ReconcilerWithAutoSave(DocumentPartitioner.DEFAULT_CONTENT_TYPE, getPartitioner());
 
-    @Override
-    public Reconciler getReconciler() {
-        return reconcilerWithAutoSave;
-    }
+  @Override
+  public Reconciler getReconciler() {
+    return reconcilerWithAutoSave;
+  }
 }

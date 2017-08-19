@@ -12,41 +12,39 @@ package org.eclipse.che.plugin.jdb.server.expression;
 
 /** @author andrew00x */
 public abstract class ExpressionParser {
-    private final String expression;
+  private final String expression;
 
-    protected ExpressionParser(String expression) {
-        this.expression = expression;
-    }
+  protected ExpressionParser(String expression) {
+    this.expression = expression;
+  }
 
-    /**
-     * Create new instance of parser for specified Java expression.
-     *
-     * @param expression
-     *         Java language expression
-     * @return concrete implementation of ExpressionParser
-     */
-    public static ExpressionParser newInstance(String expression) {
-        // At the moment create instance of ANTLRExpressionParser directly.
-        return new ANTLRExpressionParser(expression);
-    }
+  /**
+   * Create new instance of parser for specified Java expression.
+   *
+   * @param expression Java language expression
+   * @return concrete implementation of ExpressionParser
+   */
+  public static ExpressionParser newInstance(String expression) {
+    // At the moment create instance of ANTLRExpressionParser directly.
+    return new ANTLRExpressionParser(expression);
+  }
 
-    /**
-     * Get expression for this parser.
-     *
-     * @return expression
-     */
-    public String getExpression() {
-        return expression;
-    }
+  /**
+   * Get expression for this parser.
+   *
+   * @return expression
+   */
+  public String getExpression() {
+    return expression;
+  }
 
-    /**
-     * Evaluate expression.
-     *
-     * @param ev
-     *         Evaluator
-     * @return result of evaluation
-     * @throws ExpressionException
-     *         if specified expression is invalid or another error occurs when try to evaluate expression
-     */
-    public abstract com.sun.jdi.Value evaluate(Evaluator ev);
+  /**
+   * Evaluate expression.
+   *
+   * @param ev Evaluator
+   * @return result of evaluation
+   * @throws ExpressionException if specified expression is invalid or another error occurs when try
+   *     to evaluate expression
+   */
+  public abstract com.sun.jdi.Value evaluate(Evaluator ev);
 }

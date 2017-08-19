@@ -10,20 +10,17 @@
  */
 package org.eclipse.che.plugin.testing.ide.messages;
 
-/**
- * Data class represents test suite started message.
- */
+/** Data class represents test suite started message. */
 public class TestSuiteStarted extends BaseTestSuiteMessage {
 
-    TestSuiteStarted() {
-    }
+  TestSuiteStarted() {}
 
-    @Override
-    public void visit(TestingMessageVisitor visitor) {
-        visitor.visitTestSuiteStarted(this);
-    }
+  @Override
+  public void visit(TestingMessageVisitor visitor) {
+    visitor.visitTestSuiteStarted(this);
+  }
 
-    public String getLocation() {
-        return getAttributeValue("location");
-    }
+  public String getLocation() {
+    return getAttributeValue("location");
+  }
 }

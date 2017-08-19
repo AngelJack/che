@@ -10,9 +10,7 @@
  */
 package org.eclipse.che.dto.definitions;
 
-/**
- * @author Alexander Garagatyi
- */
+/** @author Alexander Garagatyi */
 public interface TestInterface {
-    String getFullName();
+  String getFullName();
 }

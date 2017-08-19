@@ -19,19 +19,19 @@ import org.eclipse.che.api.core.rest.shared.dto.ServiceError;
  * @author Stéphane Daviet
  */
 public class DockerFileException extends ApiException {
-    public DockerFileException(ServiceError serviceError) {
-        super(serviceError);
-    }
+  public DockerFileException(ServiceError serviceError) {
+    super(serviceError);
+  }
 
-    public DockerFileException(String message) {
-        super(message);
-    }
+  public DockerFileException(String message) {
+    super(message);
+  }
 
-    public DockerFileException(String message, Throwable cause) {
-        super(message, cause);
-    }
+  public DockerFileException(String message, Throwable cause) {
+    super(message, cause);
+  }
 
-    public DockerFileException(Throwable cause) {
-        super(cause);
-    }
+  public DockerFileException(Throwable cause) {
+    super(cause);
+  }
 }

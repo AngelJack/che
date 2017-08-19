@@ -10,10 +10,8 @@
  */
 package org.eclipse.che.dto.shared;
 
+import java.util.Map;
 import org.eclipse.che.dto.server.JsonSerializable;
 
-import java.util.Map;
-
 /** Abstraction for map of JSON values. */
-public interface JsonStringMap<T> extends Map<String, T>, JsonSerializable {
-}
+public interface JsonStringMap<T> extends Map<String, T>, JsonSerializable {}

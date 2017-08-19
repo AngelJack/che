@@ -10,21 +10,20 @@
  */
 package org.eclipse.che.plugin.java.testing;
 
-import com.google.inject.AbstractModule;
-
-import org.eclipse.che.inject.DynaModule;
-
 import static com.google.inject.multibindings.Multibinder.newSetBinder;
 
-/**
- * @author Mirage Abeysekara
- */
+import com.google.inject.AbstractModule;
+import org.eclipse.che.inject.DynaModule;
+
+/** @author Mirage Abeysekara */
 @DynaModule
 @Deprecated
 public class TestClasspathGuiceModule extends AbstractModule {
-    @Override
-    protected void configure() {
-        newSetBinder(binder(), TestClasspathProvider.class);
-        newSetBinder(binder(), TestClasspathProvider.class).addBinding().to(MavenTestClasspathProvider.class);
-    }
+  @Override
+  protected void configure() {
+    newSetBinder(binder(), TestClasspathProvider.class);
+    newSetBinder(binder(), TestClasspathProvider.class)
+        .addBinding()
+        .to(MavenTestClasspathProvider.class);
+  }
 }

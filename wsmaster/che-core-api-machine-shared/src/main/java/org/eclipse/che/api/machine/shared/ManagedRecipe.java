@@ -10,10 +10,8 @@
  */
 package org.eclipse.che.api.machine.shared;
 
-
-import org.eclipse.che.api.core.model.machine.Recipe;
-
 import java.util.List;
+import org.eclipse.che.api.core.model.machine.Recipe;
 
 /**
  * Serves as base model for Recipe API.
@@ -22,28 +20,18 @@ import java.util.List;
  */
 public interface ManagedRecipe extends Recipe {
 
-    /**
-     * Returns recipe identifier.
-     */
-    String getId();
+  /** Returns recipe identifier. */
+  String getId();
 
-    /**
-     * Returns recipe name.
-     */
-    String getName();
+  /** Returns recipe name. */
+  String getName();
 
-    /**
-     * Returns identifier of user who is the recipe creator.
-     */
-    String getCreator();
+  /** Returns identifier of user who is the recipe creator. */
+  String getCreator();
 
-    /**
-     * Returns recipe tags (i.e. 'java'). Tags used for recipes search.
-     */
-    List<String> getTags();
+  /** Returns recipe tags (i.e. 'java'). Tags used for recipes search. */
+  List<String> getTags();
 
-    /**
-     * Returns recipe description.
-     */
-    String getDescription();
+  /** Returns recipe description. */
+  String getDescription();
 }

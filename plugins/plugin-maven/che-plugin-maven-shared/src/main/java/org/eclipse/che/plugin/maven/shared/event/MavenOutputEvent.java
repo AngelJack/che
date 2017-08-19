@@ -10,18 +10,16 @@
  */
 package org.eclipse.che.plugin.maven.shared.event;
 
-/**
- * Base maven output event.
- */
+/** Base maven output event. */
 public interface MavenOutputEvent {
-    /**Returns typ of the event. */
-    TYPE getType();
+  /** Returns typ of the event. */
+  TYPE getType();
 
-    enum TYPE {
-        START_STOP,
-        PERCENT,
-        PERCENT_UNDEFINED,
-        UPDATE,
-        TEXT
-    }
+  enum TYPE {
+    START_STOP,
+    PERCENT,
+    PERCENT_UNDEFINED,
+    UPDATE,
+    TEXT
+  }
 }

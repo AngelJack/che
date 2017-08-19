@@ -20,22 +20,21 @@ import org.eclipse.che.api.promises.client.Promise;
 @SuppressWarnings("unchecked")
 public class ThrottledDelayer<T> extends Delayer<Promise<T>> {
 
-    private final Throttler throttler;
+  private final Throttler throttler;
 
-    public ThrottledDelayer(int defaultDelay) {
-        super(defaultDelay);
-        throttler = new Throttler();
-    }
+  public ThrottledDelayer(int defaultDelay) {
+    super(defaultDelay);
+    throttler = new Throttler();
+  }
 
-
-    @Override
-    public Promise trigger(final Task<Promise<T>> task) {
-        return super.trigger(new Task<Promise<T>>() {
-            @Override
-            public Promise<T> run() {
-                return throttler.queue(task);
-            }
+  @Override
+  public Promise trigger(final Task<Promise<T>> task) {
+    return super.trigger(
+        new Task<Promise<T>>() {
+          @Override
+          public Promise<T> run() {
+            return throttler.queue(task);
+          }
         });
-    }
-
+  }
 }

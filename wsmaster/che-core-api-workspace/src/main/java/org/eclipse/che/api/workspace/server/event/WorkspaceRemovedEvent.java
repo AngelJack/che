@@ -22,13 +22,13 @@ import org.eclipse.che.api.core.notification.EventOrigin;
 @EventOrigin("workspace")
 public class WorkspaceRemovedEvent {
 
-    private final Workspace workspace;
+  private final Workspace workspace;
 
-    public WorkspaceRemovedEvent(Workspace workspace) {
-        this.workspace = workspace;
-    }
+  public WorkspaceRemovedEvent(Workspace workspace) {
+    this.workspace = workspace;
+  }
 
-    public Workspace getWorkspace() {
-        return workspace;
-    }
+  public Workspace getWorkspace() {
+    return workspace;
+  }
 }

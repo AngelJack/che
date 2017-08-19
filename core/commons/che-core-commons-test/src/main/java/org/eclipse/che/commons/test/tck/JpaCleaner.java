@@ -15,22 +15,22 @@ import javax.inject.Provider;
 import javax.persistence.EntityManagerFactory;
 
 /**
- * This class is designed to close {@link EntityManagerFactory}
- * on finish of tck test with jpa implementation.
+ * This class is designed to close {@link EntityManagerFactory} on finish of tck test with jpa
+ * implementation.
  *
- * <p/>
- * Examples of usage:<br>
+ * <p>Examples of usage:<br>
  * <code>bind(TckResourcesCleaner.class).to(JpaCleaner.class)</code><br>
- * <code>bind(TckResourcesCleaner.class).annotatedWith(Names.named(MyTckTest.class.getName())).to(JpaCleaner.class);</code>
+ * <code>
+ * bind(TckResourcesCleaner.class).annotatedWith(Names.named(MyTckTest.class.getName())).to(JpaCleaner.class);
+ * </code>
  *
  * @author Sergii Leschenko
  */
 public class JpaCleaner implements TckResourcesCleaner {
-    @Inject
-    private Provider<EntityManagerFactory> entityManagerFactory;
+  @Inject private Provider<EntityManagerFactory> entityManagerFactory;
 
-    @Override
-    public void clean() {
-        entityManagerFactory.get().close();
-    }
+  @Override
+  public void clean() {
+    entityManagerFactory.get().close();
+  }
 }

@@ -22,20 +22,20 @@ import java.io.IOException;
  * @see FileLock
  */
 public class FileLockSerializer implements DataSerializer<FileLock> {
-    @Override
-    public void write(DataOutput output, FileLock lock) throws IOException {
-        output.writeUTF(lock.getLockToken());
-        output.writeLong(lock.getExpired());
-    }
+  @Override
+  public void write(DataOutput output, FileLock lock) throws IOException {
+    output.writeUTF(lock.getLockToken());
+    output.writeLong(lock.getExpired());
+  }
 
-    @Override
-    public FileLock read(DataInput input) throws IOException {
-        String lockToken = input.readUTF();
-        long expired = Long.MAX_VALUE;
-        try {
-            expired = input.readLong();
-        } catch (EOFException ignored) {
-        }
-        return new FileLock(lockToken, expired);
+  @Override
+  public FileLock read(DataInput input) throws IOException {
+    String lockToken = input.readUTF();
+    long expired = Long.MAX_VALUE;
+    try {
+      expired = input.readLong();
+    } catch (EOFException ignored) {
     }
+    return new FileLock(lockToken, expired);
+  }
 }

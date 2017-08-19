@@ -12,33 +12,31 @@ package org.eclipse.che.api.debug.shared.model.impl.action;
 
 import org.eclipse.che.api.debug.shared.model.action.Action;
 
-/**
- * @author Anatoliy Bazko
- */
+/** @author Anatoliy Bazko */
 public class ActionImpl implements Action {
-    private final TYPE type;
+  private final TYPE type;
 
-    public ActionImpl(TYPE type) {
-        this.type = type;
-    }
+  public ActionImpl(TYPE type) {
+    this.type = type;
+  }
 
-    @Override
-    public TYPE getType() {
-        return type;
-    }
+  @Override
+  public TYPE getType() {
+    return type;
+  }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof ActionImpl)) return false;
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (!(o instanceof ActionImpl)) return false;
 
-        ActionImpl action = (ActionImpl)o;
+    ActionImpl action = (ActionImpl) o;
 
-        return type == action.type;
-    }
+    return type == action.type;
+  }
 
-    @Override
-    public int hashCode() {
-        return type != null ? type.hashCode() : 0;
-    }
+  @Override
+  public int hashCode() {
+    return type != null ? type.hashCode() : 0;
+  }
 }

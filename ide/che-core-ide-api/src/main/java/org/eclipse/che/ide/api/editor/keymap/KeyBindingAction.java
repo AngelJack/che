@@ -10,11 +10,9 @@
  */
 package org.eclipse.che.ide.api.editor.keymap;
 
-/**
- * An action executed on a keybinding in the editor.
- */
+/** An action executed on a keybinding in the editor. */
 public interface KeyBindingAction {
 
-    /** The triggered action. */
-    boolean action();
+  /** The triggered action. */
+  boolean action();
 }

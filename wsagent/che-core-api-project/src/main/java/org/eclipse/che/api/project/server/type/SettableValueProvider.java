@@ -10,13 +10,11 @@
  */
 package org.eclipse.che.api.project.server.type;
 
-/**
- * @author gazarenkov
- */
+/** @author gazarenkov */
 public abstract class SettableValueProvider implements ValueProvider {
 
-    @Override
-    public final boolean isSettable() {
-        return true;
-    }
+  @Override
+  public final boolean isSettable() {
+    return true;
+  }
 }

@@ -20,11 +20,11 @@ import org.eclipse.che.dto.shared.DTO;
 @DTO
 public interface PullResponse {
 
-    /** set output message */
-    void setCommandOutput(String commandOutput);
+  /** set output message */
+  void setCommandOutput(String commandOutput);
 
-    /** @return output message */
-    String getCommandOutput();
+  /** @return output message */
+  String getCommandOutput();
 
-    PullResponse withCommandOutput(String commandOutput);
+  PullResponse withCommandOutput(String commandOutput);
 }

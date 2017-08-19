@@ -12,18 +12,17 @@ package org.eclipse.che.plugin.java.plain.client.inject;
 
 import com.google.gwt.inject.client.AbstractGinModule;
 import com.google.gwt.inject.client.multibindings.GinMultibinder;
-
 import org.eclipse.che.ide.api.extension.ExtensionGinModule;
 import org.eclipse.che.ide.api.project.type.wizard.ProjectWizardRegistrar;
 import org.eclipse.che.plugin.java.plain.client.wizard.PlainJavaProjectWizardRegistrar;
 
-/**
- * @author Valeriy Svydenko
- */
+/** @author Valeriy Svydenko */
 @ExtensionGinModule
 public class PlainJavaGinModule extends AbstractGinModule {
-    @Override
-    protected void configure() {
-        GinMultibinder.newSetBinder(binder(), ProjectWizardRegistrar.class).addBinding().to(PlainJavaProjectWizardRegistrar.class);
-    }
+  @Override
+  protected void configure() {
+    GinMultibinder.newSetBinder(binder(), ProjectWizardRegistrar.class)
+        .addBinding()
+        .to(PlainJavaProjectWizardRegistrar.class);
+  }
 }

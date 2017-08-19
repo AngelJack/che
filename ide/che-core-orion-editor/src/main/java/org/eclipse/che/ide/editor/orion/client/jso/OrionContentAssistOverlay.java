@@ -19,21 +19,20 @@ import com.google.gwt.core.client.JavaScriptObject;
  */
 public class OrionContentAssistOverlay extends JavaScriptObject {
 
-    protected OrionContentAssistOverlay() {
-    }
+  protected OrionContentAssistOverlay() {}
 
-    /** Checks whether the content assist is active or not. */
-    public final native boolean isActive() /*-{
+  /** Checks whether the content assist is active or not. */
+  public final native boolean isActive() /*-{
         return this.isActive();
     }-*/;
 
-    /** Activates the content assist. */
-    public final native void activate() /*-{
+  /** Activates the content assist. */
+  public final native void activate() /*-{
         this.activate();
     }-*/;
 
-    /** Deactivates the content assist. */
-    public final native void deactivate() /*-{
+  /** Deactivates the content assist. */
+  public final native void deactivate() /*-{
         this.deactivate();
     }-*/;
 }

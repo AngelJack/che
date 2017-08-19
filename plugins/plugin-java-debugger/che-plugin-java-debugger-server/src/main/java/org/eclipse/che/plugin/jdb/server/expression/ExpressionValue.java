@@ -14,7 +14,7 @@ import com.sun.jdi.Value;
 
 /** @author andrew00x */
 public interface ExpressionValue {
-    Value getValue();
+  Value getValue();
 
-    void setValue(Value value);
+  void setValue(Value value);
 }

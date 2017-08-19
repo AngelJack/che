@@ -15,10 +15,11 @@ import java.util.List;
 /** Component that associates {@link TextChangeInterceptor}s to a content type. */
 public interface ChangeInterceptorProvider {
 
-    /**
-     * Returns the change interceptors for the content type.
-     * @param contentType the content type
-     * @return the change interceptors
-     */
-    List<TextChangeInterceptor> getInterceptors(String contentType);
+  /**
+   * Returns the change interceptors for the content type.
+   *
+   * @param contentType the content type
+   * @return the change interceptors
+   */
+  List<TextChangeInterceptor> getInterceptors(String contentType);
 }

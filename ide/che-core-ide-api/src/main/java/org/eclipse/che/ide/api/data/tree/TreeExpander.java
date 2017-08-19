@@ -21,27 +21,23 @@ import com.google.common.annotations.Beta;
 @Beta
 public interface TreeExpander {
 
-    /**
-     * Perform tree expand in case if {@link #isExpandEnabled()} returns {@code true}.
-     */
-    void expandTree();
+  /** Perform tree expand in case if {@link #isExpandEnabled()} returns {@code true}. */
+  void expandTree();
 
-    /**
-     * Returns {@code true} in case if tree expand is possible.
-     *
-     * @return {@code true} in case if tree expand is possible, otherwise {@code false}
-     */
-    boolean isExpandEnabled();
+  /**
+   * Returns {@code true} in case if tree expand is possible.
+   *
+   * @return {@code true} in case if tree expand is possible, otherwise {@code false}
+   */
+  boolean isExpandEnabled();
 
-    /**
-     * Perform tree collapse in case if {@link #isCollapseEnabled()} returns {@code true}.
-     */
-    void collapseTree();
+  /** Perform tree collapse in case if {@link #isCollapseEnabled()} returns {@code true}. */
+  void collapseTree();
 
-    /**
-     * Returns {@code true} in case if tree collapse is possible.
-     *
-     * @return {@code true} in case if tree collapse is possible, otherwise {@code false}
-     */
-    boolean isCollapseEnabled();
+  /**
+   * Returns {@code true} in case if tree collapse is possible.
+   *
+   * @return {@code true} in case if tree collapse is possible, otherwise {@code false}
+   */
+  boolean isCollapseEnabled();
 }

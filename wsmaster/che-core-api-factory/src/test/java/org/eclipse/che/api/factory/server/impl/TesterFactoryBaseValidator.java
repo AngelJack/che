@@ -10,11 +10,8 @@
  */
 package org.eclipse.che.api.factory.server.impl;
 
-/**
- * @author Sergii Kabashniuk
- */
+/** @author Sergii Kabashniuk */
 public class TesterFactoryBaseValidator extends FactoryBaseValidator {
 
-    public TesterFactoryBaseValidator() {
-    }
+  public TesterFactoryBaseValidator() {}
 }

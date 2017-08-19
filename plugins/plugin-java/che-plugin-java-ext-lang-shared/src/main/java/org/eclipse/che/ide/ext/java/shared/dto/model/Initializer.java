@@ -19,5 +19,5 @@ import org.eclipse.che.dto.shared.DTO;
  */
 @DTO
 public interface Initializer extends Member {
-    // interface used as a marker: defines no member
+  // interface used as a marker: defines no member
 }

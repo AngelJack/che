@@ -17,29 +17,23 @@ package org.eclipse.che.ide.rest;
  */
 public interface AsyncRequestLoader {
 
-    /**
-     * Show loader.
-     */
-    void show();
+  /** Show loader. */
+  void show();
 
-    /**
-     * Show loader with specific message.
-     *
-     * @param message
-     *         loader message
-     */
-    void show(String message);
+  /**
+   * Show loader with specific message.
+   *
+   * @param message loader message
+   */
+  void show(String message);
 
-    /**
-     * Hide loader.
-     */
-    void hide();
+  /** Hide loader. */
+  void hide();
 
-    /**
-     * Set message to current loader.
-     *
-     * @param message
-     *         loader message
-     */
-    void setMessage(String message);
+  /**
+   * Set message to current loader.
+   *
+   * @param message loader message
+   */
+  void setMessage(String message);
 }

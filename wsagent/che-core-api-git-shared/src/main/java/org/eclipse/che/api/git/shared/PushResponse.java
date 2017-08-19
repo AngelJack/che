@@ -10,9 +10,9 @@
  */
 package org.eclipse.che.api.git.shared;
 
-import org.eclipse.che.dto.shared.DTO;
 import java.util.List;
 import java.util.Map;
+import org.eclipse.che.dto.shared.DTO;
 
 /**
  * Info received from push response
@@ -22,19 +22,19 @@ import java.util.Map;
 @DTO
 public interface PushResponse {
 
-    /** set output message */
-    void setCommandOutput(String commandOutput);
+  /** set output message */
+  void setCommandOutput(String commandOutput);
 
-    /** @return output message */
-    String getCommandOutput();
+  /** @return output message */
+  String getCommandOutput();
 
-    PushResponse withCommandOutput(String commandOutput);
+  PushResponse withCommandOutput(String commandOutput);
 
-    /** set list of push updates */
-    void setUpdates(List<Map<String, String>> updates);
+  /** set list of push updates */
+  void setUpdates(List<Map<String, String>> updates);
 
-    /** @return list of push updates */
-    List<Map<String, String>> getUpdates();
+  /** @return list of push updates */
+  List<Map<String, String>> getUpdates();
 
-    PushResponse withUpdates(List<Map<String, String>> updates);
+  PushResponse withUpdates(List<Map<String, String>> updates);
 }

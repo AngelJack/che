@@ -14,11 +14,11 @@ import com.google.gwt.inject.client.AbstractGinModule;
 
 public class WorkspaceEventsModule extends AbstractGinModule {
 
-    @Override
-    protected void configure() {
-        bind(EnvironmentOutputHandler.class).asEagerSingleton();
-        bind(EnvironmentStatusEventHandler.class).asEagerSingleton();
-        bind(WorkspaceAgentOutputHandler.class).asEagerSingleton();
-        bind(WorkspaceStatusEventHandler.class).asEagerSingleton();
-    }
+  @Override
+  protected void configure() {
+    bind(EnvironmentOutputHandler.class).asEagerSingleton();
+    bind(EnvironmentStatusEventHandler.class).asEagerSingleton();
+    bind(WorkspaceAgentOutputHandler.class).asEagerSingleton();
+    bind(WorkspaceStatusEventHandler.class).asEagerSingleton();
+  }
 }

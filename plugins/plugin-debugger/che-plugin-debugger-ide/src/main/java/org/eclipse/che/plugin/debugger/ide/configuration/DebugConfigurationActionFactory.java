@@ -19,5 +19,5 @@ import org.eclipse.che.ide.api.debug.DebugConfiguration;
  * @author Artem Zatsarynnyi
  */
 public interface DebugConfigurationActionFactory {
-    Action createAction(DebugConfiguration configuration);
+  Action createAction(DebugConfiguration configuration);
 }

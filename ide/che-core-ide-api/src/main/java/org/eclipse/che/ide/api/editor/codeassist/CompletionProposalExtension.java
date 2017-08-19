@@ -13,15 +13,15 @@ package org.eclipse.che.ide.api.editor.codeassist;
 import org.eclipse.che.ide.api.editor.codeassist.CompletionProposal.CompletionCallback;
 
 /**
- * Extends {@link CompletionProposal} with the following
- * function:
+ * Extends {@link CompletionProposal} with the following function:
+ *
  * <ul>
- * <li>Allow computation of the Completion with replacing or inserting text .</li>
+ *   <li>Allow computation of the Completion with replacing or inserting text .
  * </ul>
  *
  * @author Evgen Vidolob
  */
 public interface CompletionProposalExtension {
 
-    void getCompletion(boolean insert, CompletionCallback callback);
+  void getCompletion(boolean insert, CompletionCallback callback);
 }

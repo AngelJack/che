@@ -10,17 +10,14 @@
  */
 package org.eclipse.che.account.api;
 
+import com.google.inject.AbstractModule;
 import org.eclipse.che.account.spi.AccountDao;
 import org.eclipse.che.account.spi.jpa.JpaAccountDao;
 
-import com.google.inject.AbstractModule;
-
-/**
- * @author Sergii Leschenko
- */
+/** @author Sergii Leschenko */
 public class AccountModule extends AbstractModule {
-    @Override
-    protected void configure() {
-        bind(AccountDao.class).to(JpaAccountDao.class);
-    }
+  @Override
+  protected void configure() {
+    bind(AccountDao.class).to(JpaAccountDao.class);
+  }
 }

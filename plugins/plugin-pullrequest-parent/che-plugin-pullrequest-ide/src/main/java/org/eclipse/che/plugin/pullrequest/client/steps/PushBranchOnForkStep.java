@@ -10,12 +10,11 @@
  */
 package org.eclipse.che.plugin.pullrequest.client.steps;
 
+import com.google.inject.Singleton;
+import javax.inject.Inject;
 import org.eclipse.che.plugin.pullrequest.client.workflow.Context;
 import org.eclipse.che.plugin.pullrequest.client.workflow.Step;
 import org.eclipse.che.plugin.pullrequest.client.workflow.WorkflowExecutor;
-import com.google.inject.Singleton;
-
-import javax.inject.Inject;
 
 /**
  * Push the local contribution branch on the user fork.
@@ -25,18 +24,17 @@ import javax.inject.Inject;
 @Singleton
 public class PushBranchOnForkStep implements Step {
 
-    private final PushBranchStepFactory pushBranchStepFactory;
+  private final PushBranchStepFactory pushBranchStepFactory;
 
-    @Inject
-    public PushBranchOnForkStep(PushBranchStepFactory pushBranchStepFactory) {
-        this.pushBranchStepFactory = pushBranchStepFactory;
-    }
+  @Inject
+  public PushBranchOnForkStep(PushBranchStepFactory pushBranchStepFactory) {
+    this.pushBranchStepFactory = pushBranchStepFactory;
+  }
 
-    @Override
-    public void execute(final WorkflowExecutor executor, final Context context) {
-        pushBranchStepFactory.create(this,
-                                     context.getHostUserLogin(),
-                                     context.getForkedRepositoryName())
-                             .execute(executor, context);
-    }
+  @Override
+  public void execute(final WorkflowExecutor executor, final Context context) {
+    pushBranchStepFactory
+        .create(this, context.getHostUserLogin(), context.getForkedRepositoryName())
+        .execute(executor, context);
+  }
 }

@@ -11,9 +11,7 @@
 package org.eclipse.che.ide.api.factory;
 
 import com.google.gwt.event.shared.GwtEvent;
-
 import org.eclipse.che.api.factory.shared.dto.FactoryDto;
-
 
 /**
  * Event then indicate that factory accepted. Means that projects are imported, actions applied
@@ -22,26 +20,25 @@ import org.eclipse.che.api.factory.shared.dto.FactoryDto;
  */
 public class FactoryAcceptedEvent extends GwtEvent<FactoryAcceptedHandler> {
 
-    private FactoryDto factory;
+  private FactoryDto factory;
 
-    public FactoryAcceptedEvent(FactoryDto factory) {
-        this.factory = factory;
-    }
+  public FactoryAcceptedEvent(FactoryDto factory) {
+    this.factory = factory;
+  }
 
-    public static Type<FactoryAcceptedHandler> TYPE = new Type<>();
+  public static Type<FactoryAcceptedHandler> TYPE = new Type<>();
 
-    @Override
-    public Type<FactoryAcceptedHandler> getAssociatedType() {
-        return TYPE;
-    }
+  @Override
+  public Type<FactoryAcceptedHandler> getAssociatedType() {
+    return TYPE;
+  }
 
-    @Override
-    protected void dispatch(FactoryAcceptedHandler handler) {
-        handler.onFactoryAccepted(this);
+  @Override
+  protected void dispatch(FactoryAcceptedHandler handler) {
+    handler.onFactoryAccepted(this);
+  }
 
-    }
-
-    public FactoryDto getFactory() {
-        return factory;
-    }
+  public FactoryDto getFactory() {
+    return factory;
+  }
 }

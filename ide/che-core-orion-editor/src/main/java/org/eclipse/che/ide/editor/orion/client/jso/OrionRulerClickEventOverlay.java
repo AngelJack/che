@@ -13,16 +13,15 @@ package org.eclipse.che.ide.editor.orion.client.jso;
 /** Overlay over orion ruler click events */
 public class OrionRulerClickEventOverlay extends OrionEventOverlay {
 
-    /** JSO mandated protected constructor. */
-    protected OrionRulerClickEventOverlay() {
-    }
+  /** JSO mandated protected constructor. */
+  protected OrionRulerClickEventOverlay() {}
 
-    /**
-     * Returns the line number where event was occurred.
-     *
-     * @return the line number
-     */
-    public final native int getLineIndex() /*-{
+  /**
+   * Returns the line number where event was occurred.
+   *
+   * @return the line number
+   */
+  public final native int getLineIndex() /*-{
         return this.lineIndex;
     }-*/;
 }

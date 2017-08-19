@@ -10,24 +10,20 @@
  */
 package org.eclipse.che.plugin.docker.client.json;
 
-/**
- * @author andrew00x
- */
+/** @author andrew00x */
 public class ExecCreated {
-    private String id;
+  private String id;
 
-    public String getId() {
-        return id;
-    }
+  public String getId() {
+    return id;
+  }
 
-    public void setId(String id) {
-        this.id = id;
-    }
+  public void setId(String id) {
+    this.id = id;
+  }
 
-    @Override
-    public String toString() {
-        return "ExecCreated{" +
-               "id='" + id + '\'' +
-               '}';
-    }
+  @Override
+  public String toString() {
+    return "ExecCreated{" + "id='" + id + '\'' + '}';
+  }
 }

@@ -19,11 +19,10 @@ import com.google.gwt.event.shared.EventHandler;
  */
 public interface CreateProjectHandler extends EventHandler {
 
-    /**
-     * Performs some actions when user creates a project.
-     *
-     * @param event
-     *         contains information about created project
-     */
-    void onProjectCreated(CreateProjectEvent event);
+  /**
+   * Performs some actions when user creates a project.
+   *
+   * @param event contains information about created project
+   */
+  void onProjectCreated(CreateProjectEvent event);
 }

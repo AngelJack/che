@@ -20,13 +20,12 @@ import org.eclipse.che.ide.api.mvp.View;
  */
 public interface WorkspaceWidget extends View<WorkspaceWidget.ActionDelegate> {
 
-    interface ActionDelegate {
-        /**
-         * Performs some actions when user clicks on workspace widget.
-         *
-         * @param workspace
-         *         workspace which was selected
-         */
-        void onWorkspaceSelected(WorkspaceDto workspace);
-    }
+  interface ActionDelegate {
+    /**
+     * Performs some actions when user clicks on workspace widget.
+     *
+     * @param workspace workspace which was selected
+     */
+    void onWorkspaceSelected(WorkspaceDto workspace);
+  }
 }

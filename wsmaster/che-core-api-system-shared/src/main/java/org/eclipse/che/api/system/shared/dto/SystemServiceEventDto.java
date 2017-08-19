@@ -20,12 +20,10 @@ import org.eclipse.che.dto.shared.DTO;
 @DTO
 public interface SystemServiceEventDto extends SystemEventDto {
 
-    /**
-     * Returns the name of the service described by this event.
-     */
-    String getService();
+  /** Returns the name of the service described by this event. */
+  String getService();
 
-    void setService(String service);
+  void setService(String service);
 
-    SystemServiceEventDto withService(String service);
+  SystemServiceEventDto withService(String service);
 }

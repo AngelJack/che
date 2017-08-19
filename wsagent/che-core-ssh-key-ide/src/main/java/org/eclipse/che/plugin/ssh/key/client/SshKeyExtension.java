@@ -12,7 +12,6 @@ package org.eclipse.che.plugin.ssh.key.client;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-
 import org.eclipse.che.ide.api.extension.Extension;
 
 /**
@@ -23,7 +22,6 @@ import org.eclipse.che.ide.api.extension.Extension;
 @Singleton
 @Extension(title = "SSH key", version = "4.0.0")
 public class SshKeyExtension {
-    @Inject
-    public SshKeyExtension() {
-    }
+  @Inject
+  public SshKeyExtension() {}
 }

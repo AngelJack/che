@@ -19,18 +19,12 @@ import java.util.List;
  */
 public interface BreakpointManager extends BreakpointManagerObservable {
 
-    /**
-     * Toggle / untoggle breakpoint.
-     */
-    void changeBreakpointState(int lineNumber);
+  /** Toggle / untoggle breakpoint. */
+  void changeBreakpointState(int lineNumber);
 
-    /**
-     * @return all breakpoints
-     */
-    List<Breakpoint> getBreakpointList();
+  /** @return all breakpoints */
+  List<Breakpoint> getBreakpointList();
 
-    /**
-     * Removes all breakpoints.
-     */
-    void deleteAllBreakpoints();
+  /** Removes all breakpoints. */
+  void deleteAllBreakpoints();
 }

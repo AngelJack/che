@@ -12,42 +12,39 @@ package org.eclipse.che.plugin.pullrequest.client;
 
 import com.google.gwt.resources.client.ClientBundle;
 import com.google.gwt.resources.client.CssResource;
-
 import org.vectomatic.dom.svg.ui.SVGResource;
 
-/**
- * Contributor plugin resources.
- */
+/** Contributor plugin resources. */
 public interface ContributeResources extends ClientBundle {
-    @Source({"Contribute.css", "org/eclipse/che/ide/api/ui/style.css"})
-    ContributeCss contributeCss();
+  @Source({"Contribute.css", "org/eclipse/che/ide/api/ui/style.css"})
+  ContributeCss contributeCss();
 
-    @Source("images/refresh.svg")
-    SVGResource refreshIcon();
+  @Source("images/refresh.svg")
+  SVGResource refreshIcon();
 
-    interface ContributeCss extends CssResource {
-        String blueButton();
+  interface ContributeCss extends CssResource {
+    String blueButton();
 
-        String openOnVcsButton();
+    String openOnVcsButton();
 
-        String errorMessage();
+    String errorMessage();
 
-        String inputError();
+    String inputError();
 
-        String inputField();
+    String inputField();
 
-        String statusSteps();
+    String statusSteps();
 
-        String stepLabel();
+    String stepLabel();
 
-        String checkIcon();
+    String checkIcon();
 
-        String errorIcon();
+    String errorIcon();
 
-        String stepLabelRow();
+    String stepLabelRow();
 
-        String statusTitleStepLabel();
+    String statusTitleStepLabel();
 
-        String statusIndexStepLabel();
-    }
+    String statusIndexStepLabel();
+  }
 }

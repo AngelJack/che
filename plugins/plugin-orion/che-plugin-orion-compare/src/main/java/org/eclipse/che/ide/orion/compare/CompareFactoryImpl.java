@@ -11,27 +11,24 @@
 package org.eclipse.che.ide.orion.compare;
 
 import com.google.inject.Singleton;
-
 import org.eclipse.che.ide.orion.compare.jso.CompareConfigJs;
 import org.eclipse.che.ide.orion.compare.jso.FileOptionsJs;
 
 /**
- * Implementation for {@link CompareFactory}.
- * This implementation creates JSO objects.
+ * Implementation for {@link CompareFactory}. This implementation creates JSO objects.
  *
  * @author Evgen Vidolob
  */
 @Singleton
 class CompareFactoryImpl implements CompareFactory {
 
+  @Override
+  public FileOptions createFieOptions() {
+    return FileOptionsJs.createObject().<FileOptionsJs>cast();
+  }
 
-    @Override
-    public FileOptions createFieOptions() {
-        return FileOptionsJs.createObject().<FileOptionsJs>cast();
-    }
-
-    @Override
-    public CompareConfig createCompareConfig() {
-        return CompareConfigJs.createObject().<CompareConfigJs>cast();
-    }
+  @Override
+  public CompareConfig createCompareConfig() {
+    return CompareConfigJs.createObject().<CompareConfigJs>cast();
+  }
 }

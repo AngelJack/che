@@ -12,5 +12,5 @@ package org.eclipse.che.ide.websocket.events;
 
 /** Handler errors occurred during WebSocket connection. */
 public interface ConnectionErrorHandler {
-    void onError();
+  void onError();
 }

@@ -11,12 +11,7 @@
 package org.eclipse.che.ide.ext.ssh.client;
 
 import com.google.gwt.resources.client.ClientBundle;
-import com.google.gwt.resources.client.ImageResource;
 
-import org.vectomatic.dom.svg.ui.SVGResource;
 
-/**
- * @author Evgen Vidolob
- */
-public interface SshResources extends ClientBundle {
-}
+/** @author Evgen Vidolob */
+public interface SshResources extends ClientBundle {}

@@ -10,9 +10,8 @@
  */
 package org.eclipse.che.ide.api.debug;
 
-import org.eclipse.che.api.promises.client.Promise;
-
 import java.util.List;
+import org.eclipse.che.api.promises.client.Promise;
 
 /**
  * Preserves and loads breakpoints for the active workspace.
@@ -21,48 +20,41 @@ import java.util.List;
  */
 public interface BreakpointStorage {
 
-    /**
-     * Preserves breakpoints into a storage.
-     *
-     * @param breakpoints
-     *      the list of the breakpoints
-     */
-    void addAll(List<Breakpoint> breakpoints);
+  /**
+   * Preserves breakpoints into a storage.
+   *
+   * @param breakpoints the list of the breakpoints
+   */
+  void addAll(List<Breakpoint> breakpoints);
 
-    /**
-     * Preserve a single breakpoints into a storage.
-     *
-     * @param breakpoint
-     *      the breakpoint
-     */
-    void add(Breakpoint breakpoint);
+  /**
+   * Preserve a single breakpoints into a storage.
+   *
+   * @param breakpoint the breakpoint
+   */
+  void add(Breakpoint breakpoint);
 
-    /**
-     * Removes breakpoints out of the storage.
-     *
-     * @param breakpoint
-     *      the breakpoint
-     */
-    void delete(Breakpoint breakpoint);
+  /**
+   * Removes breakpoints out of the storage.
+   *
+   * @param breakpoint the breakpoint
+   */
+  void delete(Breakpoint breakpoint);
 
+  /**
+   * Removes breakpoints out of the storage.
+   *
+   * @param breakpoints the list of the breakpoints
+   */
+  void deleteAll(List<Breakpoint> breakpoints);
 
-    /**
-     * Removes breakpoints out of the storage.
-     *
-     * @param breakpoints
-     *      the list of the breakpoints
-     */
-    void deleteAll(List<Breakpoint> breakpoints);
+  /** Clears storage. */
+  void clear();
 
-    /**
-     * Clears storage.
-     */
-    void clear();
-
-    /**
-     * Loads all breakpoints out of the storage.
-     *
-     * @return the list of the breakpoints
-     */
-    Promise<List<Breakpoint>> readAll();
+  /**
+   * Loads all breakpoints out of the storage.
+   *
+   * @return the list of the breakpoints
+   */
+  Promise<List<Breakpoint>> readAll();
 }

@@ -12,9 +12,9 @@ package org.eclipse.che.ide.rest;
 
 /** Marshaller of a request body to be passed to server */
 public interface Marshallable {
-    /**
-     * @return serialized object
-     *         Note: the marshaller should have prepared object inside or be the object itself
-     */
-    String marshal();
+  /**
+   * @return serialized object Note: the marshaller should have prepared object inside or be the
+   *     object itself
+   */
+  String marshal();
 }

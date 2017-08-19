@@ -10,16 +10,13 @@
  */
 package org.eclipse.che.plugin.docker.client;
 
-/**
- * @author Alexander Garagatyi
- */
+/** @author Alexander Garagatyi */
 public interface MessageProcessor<T> {
-    void process(T message);
+  void process(T message);
 
-    MessageProcessor DEV_NULL = new MessageProcessor() {
+  MessageProcessor DEV_NULL =
+      new MessageProcessor() {
         @Override
-        public void process(Object Message) {
-        }
-    };
-
+        public void process(Object Message) {}
+      };
 }

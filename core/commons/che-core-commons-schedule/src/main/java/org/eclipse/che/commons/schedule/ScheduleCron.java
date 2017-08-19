@@ -10,28 +10,22 @@
  */
 package org.eclipse.che.commons.schedule;
 
-
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Mark method for execution periodic action  according to the cron expression.
- * See more {@link org.eclipse.che.commons.schedule.executor.CronExpression}
+ * Mark method for execution periodic action according to the cron expression. See more {@link
+ * org.eclipse.che.commons.schedule.executor.CronExpression}
  */
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface ScheduleCron {
 
-    /**
-     * @return - cron expression.
-     */
-    String cron() default "";
+  /** @return - cron expression. */
+  String cron() default "";
 
-    /**
-     * @return name of guice parameter with cron expression.
-     */
-    String cronParameterName() default "";
-
+  /** @return name of guice parameter with cron expression. */
+  String cronParameterName() default "";
 }

@@ -10,19 +10,12 @@
  */
 package org.eclipse.che.ide.api.debug;
 
-/**
- * @author Anatoliy Bazko
- */
+/** @author Anatoliy Bazko */
 public interface BreakpointManagerObservable {
 
-    /**
-     * Adds observer.
-     */
-    void addObserver(BreakpointManagerObserver observer);
+  /** Adds observer. */
+  void addObserver(BreakpointManagerObserver observer);
 
-    /**
-     * Removes observer.
-     */
-    void removeObserver(BreakpointManagerObserver observer);
-
+  /** Removes observer. */
+  void removeObserver(BreakpointManagerObserver observer);
 }

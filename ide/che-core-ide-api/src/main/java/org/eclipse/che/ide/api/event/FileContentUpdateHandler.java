@@ -12,15 +12,12 @@ package org.eclipse.che.ide.api.event;
 
 import com.google.gwt.event.shared.EventHandler;
 
-/**
- * Handles file content chage events.
- */
+/** Handles file content chage events. */
 public interface FileContentUpdateHandler extends EventHandler {
-    /**
-     * The file content has changed/
-     * 
-     * @param event the event
-     */
-    void onFileContentUpdate(FileContentUpdateEvent event);
-
+  /**
+   * The file content has changed/
+   *
+   * @param event the event
+   */
+  void onFileContentUpdate(FileContentUpdateEvent event);
 }

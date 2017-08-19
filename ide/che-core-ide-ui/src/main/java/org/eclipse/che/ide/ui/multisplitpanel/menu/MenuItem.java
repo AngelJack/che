@@ -19,15 +19,15 @@ import org.eclipse.che.ide.api.mvp.View;
  */
 public interface MenuItem<T> extends View<MenuItem.ActionDelegate> {
 
-    /** Returns associated data. */
-    T getData();
+  /** Returns associated data. */
+  T getData();
 
-    interface ActionDelegate {
+  interface ActionDelegate {
 
-        /** Called when {@code menuItem} has been selected. */
-        void onItemSelected(MenuItem menuItem);
+    /** Called when {@code menuItem} has been selected. */
+    void onItemSelected(MenuItem menuItem);
 
-        /** Called when {@code menuItem} is going to be closed. */
-        void onItemClosing(MenuItem menuItem);
-    }
+    /** Called when {@code menuItem} is going to be closed. */
+    void onItemClosing(MenuItem menuItem);
+  }
 }

@@ -12,5 +12,5 @@ package org.eclipse.che.ide.websocket.events;
 
 /** Handler for receiving replies to messages you sent on the message bus. */
 public interface ReplyHandler {
-    void onReply(String message);
+  void onReply(String message);
 }

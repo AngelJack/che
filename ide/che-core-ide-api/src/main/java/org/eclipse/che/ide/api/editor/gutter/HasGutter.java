@@ -10,14 +10,13 @@
  */
 package org.eclipse.che.ide.api.editor.gutter;
 
-/**
- * Interface for components that manage a gutter.
- */
+/** Interface for components that manage a gutter. */
 public interface HasGutter {
 
-    /**
-     * Returns the gutter.
-     * @return the gutter
-     */
-    Gutter getGutter();
+  /**
+   * Returns the gutter.
+   *
+   * @return the gutter
+   */
+  Gutter getGutter();
 }

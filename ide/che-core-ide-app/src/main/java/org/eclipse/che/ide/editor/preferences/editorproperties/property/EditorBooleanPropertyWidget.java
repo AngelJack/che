@@ -17,36 +17,38 @@ import com.google.gwt.json.client.JSONValue;
 import com.google.gwt.user.client.ui.CheckBox;
 
 /**
- * The class provides methods to create and control property's widget which contains name and boolean value of property.
+ * The class provides methods to create and control property's widget which contains name and
+ * boolean value of property.
  *
  * @author Roman Nikitenko
  */
-public class EditorBooleanPropertyWidget extends EditorPropertyBaseWidget implements ValueChangeHandler<Boolean> {
-    CheckBox propertyValueBox;
+public class EditorBooleanPropertyWidget extends EditorPropertyBaseWidget
+    implements ValueChangeHandler<Boolean> {
+  CheckBox propertyValueBox;
 
-    public EditorBooleanPropertyWidget(String name, boolean value) {
-        propertyName.setText(name);
+  public EditorBooleanPropertyWidget(String name, boolean value) {
+    propertyName.setText(name);
 
-        propertyValueBox = new CheckBox();
-        propertyValueBox.setValue(value);
-        propertyValueBox.addValueChangeHandler(this);
-        valuePanel.add(propertyValueBox);
+    propertyValueBox = new CheckBox();
+    propertyValueBox.setValue(value);
+    propertyValueBox.addValueChangeHandler(this);
+    valuePanel.add(propertyValueBox);
+  }
+
+  @Override
+  public JSONValue getValue() {
+    return JSONBoolean.getInstance(propertyValueBox.getValue());
+  }
+
+  @Override
+  public void setValue(JSONValue value) {
+    if (value != null && value.isBoolean() != null) {
+      propertyValueBox.setValue(value.isBoolean().booleanValue());
     }
+  }
 
-    @Override
-    public JSONValue getValue() {
-        return JSONBoolean.getInstance(propertyValueBox.getValue());
-    }
-
-    @Override
-    public void setValue(JSONValue value) {
-        if (value != null && value.isBoolean() != null) {
-            propertyValueBox.setValue(value.isBoolean().booleanValue());
-        }
-    }
-
-    @Override
-    public void onValueChange(ValueChangeEvent event) {
-        delegate.onPropertyChanged();
-    }
+  @Override
+  public void onValueChange(ValueChangeEvent event) {
+    delegate.onPropertyChanged();
+  }
 }

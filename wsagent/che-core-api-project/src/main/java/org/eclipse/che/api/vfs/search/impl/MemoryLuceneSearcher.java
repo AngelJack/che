@@ -14,20 +14,19 @@ import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.RAMDirectory;
 import org.eclipse.che.api.vfs.VirtualFileFilter;
 
-/**
- * In-memory implementation of LuceneSearcher.
- */
+/** In-memory implementation of LuceneSearcher. */
 public class MemoryLuceneSearcher extends LuceneSearcher {
-    MemoryLuceneSearcher(AbstractLuceneSearcherProvider.CloseCallback closeCallback) {
-        super(closeCallback);
-    }
+  MemoryLuceneSearcher(AbstractLuceneSearcherProvider.CloseCallback closeCallback) {
+    super(closeCallback);
+  }
 
-    MemoryLuceneSearcher(VirtualFileFilter filter, AbstractLuceneSearcherProvider.CloseCallback closeCallback) {
-        super(filter, closeCallback);
-    }
+  MemoryLuceneSearcher(
+      VirtualFileFilter filter, AbstractLuceneSearcherProvider.CloseCallback closeCallback) {
+    super(filter, closeCallback);
+  }
 
-    @Override
-    protected Directory makeDirectory() {
-        return new RAMDirectory();
-    }
+  @Override
+  protected Directory makeDirectory() {
+    return new RAMDirectory();
+  }
 }

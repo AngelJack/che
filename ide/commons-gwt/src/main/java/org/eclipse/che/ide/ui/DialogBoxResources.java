@@ -18,11 +18,9 @@ import com.google.gwt.resources.client.CssResource;
  * @version $Id:
  */
 public interface DialogBoxResources extends ClientBundle {
-    public interface Css extends CssResource{
+  public interface Css extends CssResource {}
 
-    }
-
-    @Source({"DialogBox.css","org/eclipse/che/ide/api/ui/style.css"})
-    @CssResource.NotStrict
-    Css dialogBox();
+  @Source({"DialogBox.css", "org/eclipse/che/ide/api/ui/style.css"})
+  @CssResource.NotStrict
+  Css dialogBox();
 }

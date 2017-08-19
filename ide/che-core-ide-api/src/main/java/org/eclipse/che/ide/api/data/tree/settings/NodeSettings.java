@@ -16,28 +16,29 @@ package org.eclipse.che.ide.api.data.tree.settings;
  * @author Vlad Zhukovskiy
  */
 public interface NodeSettings {
-    boolean isShowHiddenFiles();
+  boolean isShowHiddenFiles();
 
-    boolean isFoldersAlwaysOnTop();
+  boolean isFoldersAlwaysOnTop();
 
-    void setShowHiddenFiles(boolean show);
+  void setShowHiddenFiles(boolean show);
 
-    NodeSettings DEFAULT_SETTINGS = new NodeSettings() {
+  NodeSettings DEFAULT_SETTINGS =
+      new NodeSettings() {
         boolean showHiddenFiles;
 
         @Override
         public boolean isShowHiddenFiles() {
-            return showHiddenFiles;
+          return showHiddenFiles;
         }
 
         @Override
         public void setShowHiddenFiles(boolean show) {
-            this.showHiddenFiles = show;
+          this.showHiddenFiles = show;
         }
 
         @Override
         public boolean isFoldersAlwaysOnTop() {
-            return false;
+          return false;
         }
-    };
+      };
 }

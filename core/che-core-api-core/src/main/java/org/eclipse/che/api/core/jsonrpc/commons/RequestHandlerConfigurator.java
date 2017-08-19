@@ -10,12 +10,9 @@
  */
 package org.eclipse.che.api.core.jsonrpc.commons;
 
-
 import org.eclipse.che.api.core.jsonrpc.commons.reception.MethodNameConfigurator;
 
-/**
- * Factory to provide facilities for dynamic configuring request handlers.
- */
+/** Factory to provide facilities for dynamic configuring request handlers. */
 public interface RequestHandlerConfigurator {
-    MethodNameConfigurator newConfiguration();
+  MethodNameConfigurator newConfiguration();
 }

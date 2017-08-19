@@ -26,16 +26,15 @@ import org.eclipse.che.plugin.filetype.ide.MyResources;
 @ExtensionGinModule
 public class MyGinModule extends AbstractGinModule {
 
-    @Override
-    protected void configure() {
-        //Nothing to do here, yet
-    }
+  @Override
+  protected void configure() {
+    //Nothing to do here, yet
+  }
 
-    @Provides
-    @Singleton
-    @Named("MyFileType")
-    protected FileType provideMyFile() {
-        return new FileType(MyResources.INSTANCE.icon(), "my");
-    }
-
+  @Provides
+  @Singleton
+  @Named("MyFileType")
+  protected FileType provideMyFile() {
+    return new FileType(MyResources.INSTANCE.icon(), "my");
+  }
 }

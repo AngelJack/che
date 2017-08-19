@@ -18,17 +18,16 @@ import com.google.gwt.event.shared.GwtEvent;
  * @author "Mickaël Leduque"
  */
 public class CursorActivityEvent extends GwtEvent<CursorActivityHandler> {
-    /** Type instance for the event. */
-    public static final Type<CursorActivityHandler> TYPE = new Type<>();
+  /** Type instance for the event. */
+  public static final Type<CursorActivityHandler> TYPE = new Type<>();
 
-    @Override
-    public Type<CursorActivityHandler> getAssociatedType() {
-        return TYPE;
-    }
+  @Override
+  public Type<CursorActivityHandler> getAssociatedType() {
+    return TYPE;
+  }
 
-    @Override
-    protected void dispatch(final CursorActivityHandler handler) {
-        handler.onCursorActivity(this);
-    }
-
+  @Override
+  protected void dispatch(final CursorActivityHandler handler) {
+    handler.onCursorActivity(this);
+  }
 }

@@ -10,9 +10,7 @@
  */
 package org.eclipse.che.plugin.docker.client.json;
 
-/**
- * @author andrew00x
- */
+/** @author andrew00x */
 /*
 From docker source code 'runconfig/config.go':
 Volumes         map[string]struct{}
@@ -27,18 +25,18 @@ Volumes in JSON response from docker remote API:
 It seems struct{} is reserved for future but it isn't in use for now.
 */
 public class Volume {
-    public String toString() {
-        return "{}";
-    }
+  public String toString() {
+    return "{}";
+  }
 
-    @Override
-    public int hashCode() {
-        return 19;
-    }
+  @Override
+  public int hashCode() {
+    return 19;
+  }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        return o instanceof Volume;
-    }
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    return o instanceof Volume;
+  }
 }

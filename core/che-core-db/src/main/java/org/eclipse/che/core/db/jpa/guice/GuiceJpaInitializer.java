@@ -11,32 +11,29 @@
 package org.eclipse.che.core.db.jpa.guice;
 
 import com.google.inject.persist.PersistService;
-
+import javax.inject.Inject;
 import org.eclipse.che.core.db.jpa.JpaInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.inject.Inject;
-
 /**
- * Should be bound as eager singleton.
- * See <a href="https://github.com/google/guice/wiki/JPA">doc</a>
+ * Should be bound as eager singleton. See <a
+ * href="https://github.com/google/guice/wiki/JPA">doc</a>
  *
  * @author Yevhenii Voevodin
  * @author Anton Korneta
  */
 public class GuiceJpaInitializer implements JpaInitializer {
 
-    private static final Logger LOG = LoggerFactory.getLogger(GuiceJpaInitializer.class);
+  private static final Logger LOG = LoggerFactory.getLogger(GuiceJpaInitializer.class);
 
-    @Inject
-    private PersistService persistService;
+  @Inject private PersistService persistService;
 
-    public void init() {
-        try {
-            persistService.start();
-        } catch (Exception x) {
-            LOG.error(x.getLocalizedMessage(), x);
-        }
+  public void init() {
+    try {
+      persistService.start();
+    } catch (Exception x) {
+      LOG.error(x.getLocalizedMessage(), x);
     }
+  }
 }

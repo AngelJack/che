@@ -11,7 +11,7 @@
 package org.eclipse.che.ide.api.vcs;
 
 public enum EditionType {
-    INSERTION,
-    MODIFICATION,
-    DELETION
+  INSERTION,
+  MODIFICATION,
+  DELETION
 }

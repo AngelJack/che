@@ -15,6 +15,6 @@ import org.eclipse.che.ide.api.editor.EditorPartPresenter;
 /** Factory for {@link JavaCodeAssistProcessor} instances. */
 public interface JavaCodeAssistProcessorFactory {
 
-    /** Create a {@link JavaCodeAssistProcessor}. */
-    JavaCodeAssistProcessor create(EditorPartPresenter editor);
+  /** Create a {@link JavaCodeAssistProcessor}. */
+  JavaCodeAssistProcessor create(EditorPartPresenter editor);
 }

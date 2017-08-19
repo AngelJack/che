@@ -10,16 +10,13 @@
  */
 package org.eclipse.che.ide.ext.java.shared.dto;
 
+import java.util.List;
 import org.eclipse.che.dto.shared.DTO;
 
-import java.util.List;
-
-/**
- * @author Evgen Vidolob
- */
+/** @author Evgen Vidolob */
 @DTO
 public interface LinkedData {
-    void setValues(List<String> values);
+  void setValues(List<String> values);
 
-    List<String> getValues();
+  List<String> getValues();
 }

@@ -19,11 +19,11 @@ import java.util.EventListener;
  */
 public interface ProcessListener extends EventListener {
 
-    void onStart(ProcessEvent event);
+  void onStart(ProcessEvent event);
 
-    void onText(ProcessEvent event, ProcessOutputType outputType);
+  void onText(ProcessEvent event, ProcessOutputType outputType);
 
-    void onProcessTerminated(ProcessEvent event);
+  void onProcessTerminated(ProcessEvent event);
 
-    void onProcessWillTerminate(ProcessEvent event);
+  void onProcessWillTerminate(ProcessEvent event);
 }

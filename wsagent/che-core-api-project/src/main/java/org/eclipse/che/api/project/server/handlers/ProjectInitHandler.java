@@ -24,20 +24,16 @@ import org.eclipse.che.api.project.server.ProjectRegistry;
  */
 public interface ProjectInitHandler extends ProjectHandler {
 
-    /**
-     * Handler to be fired after initialization of project.
-     *
-     * @param registry
-     *         project registry
-     * @param projectFolder
-     *         base project folder
-     * @throws ServerException
-     * @throws ForbiddenException
-     * @throws ConflictException
-     * @throws NotFoundException
-     */
-    void onProjectInitialized(ProjectRegistry registry, FolderEntry projectFolder) throws ServerException,
-                                                                                          ForbiddenException,
-                                                                                          ConflictException,
-                                                                                          NotFoundException;
+  /**
+   * Handler to be fired after initialization of project.
+   *
+   * @param registry project registry
+   * @param projectFolder base project folder
+   * @throws ServerException
+   * @throws ForbiddenException
+   * @throws ConflictException
+   * @throws NotFoundException
+   */
+  void onProjectInitialized(ProjectRegistry registry, FolderEntry projectFolder)
+      throws ServerException, ForbiddenException, ConflictException, NotFoundException;
 }

@@ -12,18 +12,17 @@ package org.eclipse.che.ide.api.editor.gutter;
 
 public final class Gutters {
 
-    private Gutters() {
-    }
+  private Gutters() {}
 
-    /** Logical identifer for the breakpoints gutter. */
-    public static final String BREAKPOINTS_GUTTER = "breakpoints";
+  /** Logical identifer for the breakpoints gutter. */
+  public static final String BREAKPOINTS_GUTTER = "breakpoints";
 
-    /** Logical identifer for the vcs editions gutter. */
-    public static final String EDITIONS_GUTTER = "editions";
+  /** Logical identifer for the vcs editions gutter. */
+  public static final String EDITIONS_GUTTER = "editions";
 
-    /** Logical identifer for the line number gutter. */
-    public static final String LINE_NUMBERS_GUTTER = "lineNumbers";
+  /** Logical identifer for the line number gutter. */
+  public static final String LINE_NUMBERS_GUTTER = "lineNumbers";
 
-    /** Logical identifer for the annotations gutter. */
-    public static final String ANNOTATION_GUTTER = "annotation";
+  /** Logical identifer for the annotations gutter. */
+  public static final String ANNOTATION_GUTTER = "annotation";
 }

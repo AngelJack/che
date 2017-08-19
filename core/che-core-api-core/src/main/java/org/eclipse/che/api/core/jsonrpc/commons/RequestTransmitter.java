@@ -12,9 +12,7 @@ package org.eclipse.che.api.core.jsonrpc.commons;
 
 import org.eclipse.che.api.core.jsonrpc.commons.transmission.EndpointIdConfigurator;
 
-/**
- * Simple factory that provides facilities to manually build JSON RPC requests
- */
+/** Simple factory that provides facilities to manually build JSON RPC requests */
 public interface RequestTransmitter {
-    EndpointIdConfigurator newRequest();
+  EndpointIdConfigurator newRequest();
 }

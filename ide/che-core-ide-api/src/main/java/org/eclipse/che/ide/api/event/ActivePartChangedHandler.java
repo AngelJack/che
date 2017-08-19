@@ -18,11 +18,10 @@ import com.google.gwt.event.shared.EventHandler;
  * @author Nikolay Zamosenchuk
  */
 public interface ActivePartChangedHandler extends EventHandler {
-    /**
-     * Active part have changed
-     *
-     * @param event
-     */
-    void onActivePartChanged(ActivePartChangedEvent event);
-
+  /**
+   * Active part have changed
+   *
+   * @param event
+   */
+  void onActivePartChanged(ActivePartChangedEvent event);
 }

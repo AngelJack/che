@@ -12,27 +12,25 @@ package org.eclipse.che.api.testing.server.handler;
 
 import org.eclipse.che.api.testing.shared.TestingOutput;
 
-/**
- * @author David Festal
- */
+/** @author David Festal */
 @Deprecated
 public class TestingOutputImpl implements TestingOutput {
 
-    public TestingOutputImpl(String output, LineType lineType) {
-        this.output = output;
-        this.lineType = lineType;
-    }
+  public TestingOutputImpl(String output, LineType lineType) {
+    this.output = output;
+    this.lineType = lineType;
+  }
 
-    private String   output;
-    private LineType lineType;
+  private String output;
+  private LineType lineType;
 
-    @Override
-    public String getOutput() {
-        return output;
-    }
+  @Override
+  public String getOutput() {
+    return output;
+  }
 
-    @Override
-    public LineType getState() {
-        return lineType;
-    }
+  @Override
+  public LineType getState() {
+    return lineType;
+  }
 }

@@ -17,22 +17,22 @@ package org.eclipse.che.plugin.gdb.ide;
  */
 public interface GdbLocalizationConstant extends com.google.gwt.i18n.client.Messages {
 
-    /* GdbConfigurationPage */
-    @Key("view.gdbConfigurationPage.hostLabel")
-    String gdbConfigurationPageViewHostLabel();
+  /* GdbConfigurationPage */
+  @Key("view.gdbConfigurationPage.hostLabel")
+  String gdbConfigurationPageViewHostLabel();
 
-    @Key("view.gdbConfigurationPage.portLabel")
-    String gdbConfigurationPageViewPortLabel();
+  @Key("view.gdbConfigurationPage.portLabel")
+  String gdbConfigurationPageViewPortLabel();
 
-    @Key("view.gdbConfigurationPage.binPathLabel")
-    String gdbConfigurationPageViewBinPathLabel();
+  @Key("view.gdbConfigurationPage.binPathLabel")
+  String gdbConfigurationPageViewBinPathLabel();
 
-    @Key("view.gdbConfigurationPage.binPathDescription")
-    String gdbConfigurationPageViewBinPathDescription();
+  @Key("view.gdbConfigurationPage.binPathDescription")
+  String gdbConfigurationPageViewBinPathDescription();
 
-    @Key("view.gdbConfigurationPage.devHostCheckbox")
-    String gdbConfigurationPageViewDevMachineCheckbox();
+  @Key("view.gdbConfigurationPage.devHostCheckbox")
+  String gdbConfigurationPageViewDevMachineCheckbox();
 
-    @Key("gdbDebugger.message.suspendToActivateBreakpoints")
-    String messageSuspendToActivateBreakpoints();
+  @Key("gdbDebugger.message.suspendToActivateBreakpoints")
+  String messageSuspendToActivateBreakpoints();
 }

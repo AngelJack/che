@@ -22,19 +22,23 @@ import org.eclipse.lsp4j.ServerCapabilities;
 @Singleton
 public class LanguageServerInitializationHandler {
 
-    @Inject
-    public LanguageServerInitializationHandler(RequestHandlerConfigurator requestHandlerConfigurator, LanguageServerRegistry registry) {
-        requestHandlerConfigurator.newConfiguration()
-                                  .methodName("languageServer/initialize")
-                                  .paramsAsString()
-                                  .resultAsDto(ServerCapabilitiesDto.class)
-                                  .withFunction(path -> {
-                                      try {
-                                          ServerCapabilities capabilities = registry.initialize(LanguageServiceUtils.prefixURI(path));
-                                          return capabilities == null ? null : new ServerCapabilitiesDto(capabilities);
-                                      } catch (LanguageServerException e) {
-                                          throw new JsonRpcException(-27000, e.getMessage());
-                                      }
-                                  });
-    }
+  @Inject
+  public LanguageServerInitializationHandler(
+      RequestHandlerConfigurator requestHandlerConfigurator, LanguageServerRegistry registry) {
+    requestHandlerConfigurator
+        .newConfiguration()
+        .methodName("languageServer/initialize")
+        .paramsAsString()
+        .resultAsDto(ServerCapabilitiesDto.class)
+        .withFunction(
+            path -> {
+              try {
+                ServerCapabilities capabilities =
+                    registry.initialize(LanguageServiceUtils.prefixURI(path));
+                return capabilities == null ? null : new ServerCapabilitiesDto(capabilities);
+              } catch (LanguageServerException e) {
+                throw new JsonRpcException(-27000, e.getMessage());
+              }
+            });
+  }
 }

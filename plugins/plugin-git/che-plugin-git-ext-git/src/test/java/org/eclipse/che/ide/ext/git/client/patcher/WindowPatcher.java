@@ -21,23 +21,23 @@ import com.googlecode.gwt.test.patchers.PatchMethod;
  */
 @PatchClass(Window.class)
 public class WindowPatcher {
-    public static final String RETURNED_MESSAGE = "returned text";
+  public static final String RETURNED_MESSAGE = "returned text";
 
-    /** Patch prompt method. */
-    @PatchMethod(override = true)
-    public static String prompt(String msg, String initialValue) {
-        return RETURNED_MESSAGE;
-    }
+  /** Patch prompt method. */
+  @PatchMethod(override = true)
+  public static String prompt(String msg, String initialValue) {
+    return RETURNED_MESSAGE;
+  }
 
-    /** Patch confirm method. */
-    @PatchMethod(override = true)
-    public static boolean confirm(String msg) {
-        return true;
-    }
+  /** Patch confirm method. */
+  @PatchMethod(override = true)
+  public static boolean confirm(String msg) {
+    return true;
+  }
 
-    /** Patch alert method. */
-    @PatchMethod(override = true)
-    public static void alert(String msg) {
-        // do nothing
-    }
+  /** Patch alert method. */
+  @PatchMethod(override = true)
+  public static void alert(String msg) {
+    // do nothing
+  }
 }

@@ -12,17 +12,11 @@ package org.eclipse.che.api.debug.shared.model;
 
 import java.util.List;
 
-/**
- * @author Anatoliy Bazko
- */
+/** @author Anatoliy Bazko */
 public interface StackFrameDump {
-    /**
-     * The list of fields.
-     */
-    List<? extends Field> getFields();
+  /** The list of fields. */
+  List<? extends Field> getFields();
 
-    /**
-     * The list of local variables.
-     */
-    List<? extends Variable> getVariables();
+  /** The list of local variables. */
+  List<? extends Variable> getVariables();
 }

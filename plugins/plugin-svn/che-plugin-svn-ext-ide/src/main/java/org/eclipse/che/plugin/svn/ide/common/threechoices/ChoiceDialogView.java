@@ -14,46 +14,46 @@ import com.google.gwt.user.client.ui.IsWidget;
 
 /**
  * The view interface for the choice dialog component.
- * 
+ *
  * @author Mickaël Leduque
  * @author Artem Zatsarynnyy
  */
 public interface ChoiceDialogView {
 
-    /** Sets the action delegate. */
-    void setDelegate(ActionDelegate delegate);
+  /** Sets the action delegate. */
+  void setDelegate(ActionDelegate delegate);
 
-    /** Displays the dialog window. */
-    void showDialog();
+  /** Displays the dialog window. */
+  void showDialog();
 
-    /** Closes the dialog window. */
-    void closeDialog();
+  /** Closes the dialog window. */
+  void closeDialog();
 
-    /** Fill the window with its content. */
-    void setContent(IsWidget content);
+  /** Fill the window with its content. */
+  void setContent(IsWidget content);
 
-    /** Sets the window title. */
-    void setTitle(String title);
+  /** Sets the window title. */
+  void setTitle(String title);
 
-    /** Sets the text of the first choice. */
-    void setFirstChoiceLabel(String firstChoiceLabel);
+  /** Sets the text of the first choice. */
+  void setFirstChoiceLabel(String firstChoiceLabel);
 
-    /** Sets the text of the second choice. */
-    void setSecondChoiceLabel(String secondChoiceLabel);
+  /** Sets the text of the second choice. */
+  void setSecondChoiceLabel(String secondChoiceLabel);
 
-    /** Sets the text of the third choice. */
-    void setThirdChoiceLabel(String thirdChoiceLabel);
+  /** Sets the text of the third choice. */
+  void setThirdChoiceLabel(String thirdChoiceLabel);
 
-    /** The interface for the action delegate. */
-    public interface ActionDelegate {
+  /** The interface for the action delegate. */
+  public interface ActionDelegate {
 
-        /** Defines what's done when the user clicks the first choice. */
-        void firstChoiceClicked();
+    /** Defines what's done when the user clicks the first choice. */
+    void firstChoiceClicked();
 
-        /** Defines what's done when the user clicks the second choice. */
-        void secondChoiceClicked();
+    /** Defines what's done when the user clicks the second choice. */
+    void secondChoiceClicked();
 
-        /** Defines what's done when the user clicks the third choice. */
-        void thirdChoiceClicked();
-    }
+    /** Defines what's done when the user clicks the third choice. */
+    void thirdChoiceClicked();
+  }
 }

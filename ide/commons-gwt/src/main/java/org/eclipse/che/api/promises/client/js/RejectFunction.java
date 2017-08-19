@@ -11,15 +11,13 @@
 package org.eclipse.che.api.promises.client.js;
 
 import com.google.gwt.core.client.JavaScriptObject;
-
 import org.eclipse.che.api.promises.client.PromiseError;
 
 public class RejectFunction extends JavaScriptObject {
 
-    protected RejectFunction() {
-    }
+  protected RejectFunction() {}
 
-    public final native void apply(PromiseError error) /*-{
+  public final native void apply(PromiseError error) /*-{
         this(error);
     }-*/;
 }

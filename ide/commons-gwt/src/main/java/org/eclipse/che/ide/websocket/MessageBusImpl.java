@@ -21,11 +21,15 @@ import static com.google.gwt.user.client.Window.Location.getProtocol;
  */
 public class MessageBusImpl extends AbstractMessageBus {
 
-    public MessageBusImpl() {
-        super((getProtocol().equals("https:") ? "wss://" : "ws://") + getHost() + getRestContext() + "/ws");
-    }
+  public MessageBusImpl() {
+    super(
+        (getProtocol().equals("https:") ? "wss://" : "ws://")
+            + getHost()
+            + getRestContext()
+            + "/ws");
+  }
 
-    private static native String getRestContext() /*-{
+  private static native String getRestContext() /*-{
         if ($wnd.IDE && $wnd.IDE.config) {
             return $wnd.IDE.config.restContext;
         } else {

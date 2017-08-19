@@ -13,9 +13,7 @@ package org.eclipse.che.api.factory.server;
 import org.eclipse.che.api.core.ConflictException;
 import org.eclipse.che.api.core.factory.FactoryParameter;
 
-/**
- * @author Alexander Garagatyi
- */
+/** @author Alexander Garagatyi */
 public interface FactoryParameterValidator<T> {
-    void validate(T arg, FactoryParameter.Version version) throws ConflictException;
+  void validate(T arg, FactoryParameter.Version version) throws ConflictException;
 }

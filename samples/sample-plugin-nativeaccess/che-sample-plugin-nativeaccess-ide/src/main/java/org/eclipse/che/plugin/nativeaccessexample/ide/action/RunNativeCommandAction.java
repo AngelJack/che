@@ -17,26 +17,23 @@ import org.eclipse.che.ide.api.action.ActionEvent;
 import org.eclipse.che.ide.util.loging.Log;
 import org.eclipse.che.plugin.nativeaccessexample.machine.client.command.CommandManager;
 
-/**
- * Action for opening a part which embeds javascript code.
- */
+/** Action for opening a part which embeds javascript code. */
 @Singleton
 public class RunNativeCommandAction extends Action {
 
-    public final static String ACTION_ID = "runNativeCommandSAction";
+  public static final String ACTION_ID = "runNativeCommandSAction";
 
-    private CommandManager commandManager;
+  private CommandManager commandManager;
 
-    @Inject
-    public RunNativeCommandAction(CommandManager commandManager) {
-        super("Run native command demo");
-        this.commandManager = commandManager;
-    }
+  @Inject
+  public RunNativeCommandAction(CommandManager commandManager) {
+    super("Run native command demo");
+    this.commandManager = commandManager;
+  }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        Log.warn(getClass(), "Executing native command...");
-        commandManager.execute("cd && touch che-was-here");
-    }
-
+  @Override
+  public void actionPerformed(ActionEvent e) {
+    Log.warn(getClass(), "Executing native command...");
+    commandManager.execute("cd && touch che-was-here");
+  }
 }

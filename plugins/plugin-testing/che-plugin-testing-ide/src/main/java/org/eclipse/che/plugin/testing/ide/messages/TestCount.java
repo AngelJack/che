@@ -12,27 +12,23 @@ package org.eclipse.che.plugin.testing.ide.messages;
 
 import org.eclipse.che.ide.util.loging.Log;
 
-/**
- * Data class represents test count.
- */
+/** Data class represents test count. */
 public class TestCount extends ClientTestingMessage {
 
-    TestCount() {
-    }
+  TestCount() {}
 
-    @Override
-    public void visit(TestingMessageVisitor visitor) {
-        visitor.visitTestCount(this);
-    }
+  @Override
+  public void visit(TestingMessageVisitor visitor) {
+    visitor.visitTestCount(this);
+  }
 
-    public Integer getCount() {
-        int result = 0;
-        try {
-            result = Integer.parseInt(getAttributeValue("count"));
-        } catch (NumberFormatException e) {
-            Log.error(getClass(), e.getMessage(), e);
-        }
-        return result;
+  public Integer getCount() {
+    int result = 0;
+    try {
+      result = Integer.parseInt(getAttributeValue("count"));
+    } catch (NumberFormatException e) {
+      Log.error(getClass(), e.getMessage(), e);
     }
-
+    return result;
+  }
 }

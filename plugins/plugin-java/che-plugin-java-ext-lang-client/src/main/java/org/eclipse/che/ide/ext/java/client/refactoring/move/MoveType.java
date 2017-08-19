@@ -10,9 +10,8 @@
  */
 package org.eclipse.che.ide.ext.java.client.refactoring.move;
 
-/**
- * @author Dmitry Shnurenko
- */
+/** @author Dmitry Shnurenko */
 public enum MoveType {
-    DRAG_N_DROP, REFACTOR_MENU
+  DRAG_N_DROP,
+  REFACTOR_MENU
 }

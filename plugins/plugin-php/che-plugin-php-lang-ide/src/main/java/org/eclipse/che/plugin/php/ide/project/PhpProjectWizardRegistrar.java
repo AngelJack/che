@@ -11,17 +11,13 @@
 package org.eclipse.che.plugin.php.ide.project;
 
 import com.google.inject.Provider;
-
+import java.util.ArrayList;
+import java.util.List;
+import javax.validation.constraints.NotNull;
 import org.eclipse.che.ide.api.project.MutableProjectConfig;
 import org.eclipse.che.ide.api.project.type.wizard.ProjectWizardRegistrar;
 import org.eclipse.che.ide.api.wizard.WizardPage;
 import org.eclipse.che.plugin.php.shared.Constants;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.validation.constraints.NotNull;
-
 
 /**
  * Provides information for registering PHP_PROJECT_TYPE_ID project type into project wizard.
@@ -30,24 +26,24 @@ import javax.validation.constraints.NotNull;
  */
 public class PhpProjectWizardRegistrar implements ProjectWizardRegistrar {
 
-    private final List<Provider<? extends WizardPage<MutableProjectConfig>>> wizardPages;
+  private final List<Provider<? extends WizardPage<MutableProjectConfig>>> wizardPages;
 
-    public PhpProjectWizardRegistrar() {
-        wizardPages = new ArrayList<>();
-    }
+  public PhpProjectWizardRegistrar() {
+    wizardPages = new ArrayList<>();
+  }
 
-    @NotNull
-    public String getProjectTypeId() {
-        return Constants.PHP_PROJECT_TYPE_ID;
-    }
+  @NotNull
+  public String getProjectTypeId() {
+    return Constants.PHP_PROJECT_TYPE_ID;
+  }
 
-    @NotNull
-    public String getCategory() {
-        return Constants.PHP_CATEGORY;
-    }
+  @NotNull
+  public String getCategory() {
+    return Constants.PHP_CATEGORY;
+  }
 
-    @NotNull
-    public List<Provider<? extends WizardPage<MutableProjectConfig>>> getWizardPages() {
-        return wizardPages;
-    }
+  @NotNull
+  public List<Provider<? extends WizardPage<MutableProjectConfig>>> getWizardPages() {
+    return wizardPages;
+  }
 }

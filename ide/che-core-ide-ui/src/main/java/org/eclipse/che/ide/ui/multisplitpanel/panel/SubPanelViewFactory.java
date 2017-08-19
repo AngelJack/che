@@ -22,8 +22,9 @@ import org.eclipse.che.ide.ui.multisplitpanel.actions.SplitVerticallyAction;
  */
 public interface SubPanelViewFactory {
 
-    SubPanelView createView(ClosePaneAction closePaneAction,
-                            RemoveAllWidgetsInPaneAction removeAllWidgetsInPaneAction,
-                            SplitHorizontallyAction splitHorizontallyAction,
-                            SplitVerticallyAction splitVerticallyAction);
+  SubPanelView createView(
+      ClosePaneAction closePaneAction,
+      RemoveAllWidgetsInPaneAction removeAllWidgetsInPaneAction,
+      SplitHorizontallyAction splitHorizontallyAction,
+      SplitVerticallyAction splitVerticallyAction);
 }

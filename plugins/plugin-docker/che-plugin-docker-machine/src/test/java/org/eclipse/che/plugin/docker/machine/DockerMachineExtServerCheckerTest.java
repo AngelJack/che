@@ -15,20 +15,14 @@ import org.mockito.testng.MockitoTestNGListener;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-
-/**
- * @author Max Shaposhnik
- *
- */
-
+/** @author Max Shaposhnik */
 @Listeners(value = {MockitoTestNGListener.class})
 public class DockerMachineExtServerCheckerTest {
 
+  @Test(expectedExceptions = RuntimeException.class)
+  public void shouldThrowRuntimeExceptionIfNoExtServerArchivePresent() {
+    DockerMachineExtServerChecker checker = new DockerMachineExtServerChecker("/no/such/path");
 
-    @Test(expectedExceptions = RuntimeException.class)
-    public void shouldThrowRuntimeExceptionIfNoExtServerArchivePresent() {
-        DockerMachineExtServerChecker checker = new DockerMachineExtServerChecker("/no/such/path");
-
-        checker.start();
-    }
+    checker.start();
+  }
 }

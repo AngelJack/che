@@ -11,7 +11,6 @@
 package org.eclipse.che.wsagent.server;
 
 import com.google.inject.servlet.ServletModule;
-
 import org.eclipse.che.inject.DynaModule;
 import org.everrest.websockets.WSConnectionTracker;
 
@@ -22,8 +21,8 @@ import org.everrest.websockets.WSConnectionTracker;
  */
 @DynaModule
 public class WsAgentServletModule extends ServletModule {
-    @Override
-    protected void configureServlets() {
-        getServletContext().addListener(new WSConnectionTracker());
-    }
+  @Override
+  protected void configureServlets() {
+    getServletContext().addListener(new WSConnectionTracker());
+  }
 }

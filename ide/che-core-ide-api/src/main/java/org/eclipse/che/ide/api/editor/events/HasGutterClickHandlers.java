@@ -19,5 +19,5 @@ import com.google.gwt.event.shared.HasHandlers;
  * @author "Mickaël Leduque"
  */
 public interface HasGutterClickHandlers extends HasHandlers {
-    HandlerRegistration addGutterClickHandler(GutterClickHandler handler);
+  HandlerRegistration addGutterClickHandler(GutterClickHandler handler);
 }

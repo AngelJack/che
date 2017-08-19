@@ -14,6 +14,5 @@ import com.google.gwt.core.client.JavaScriptObject;
 
 public class OrionEventOverlay extends JavaScriptObject {
 
-    protected OrionEventOverlay() {
-    }
+  protected OrionEventOverlay() {}
 }

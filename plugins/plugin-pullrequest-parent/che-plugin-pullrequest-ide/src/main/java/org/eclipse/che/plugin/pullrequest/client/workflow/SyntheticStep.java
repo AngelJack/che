@@ -13,8 +13,8 @@ package org.eclipse.che.plugin.pullrequest.client.workflow;
 import org.eclipse.che.plugin.pullrequest.client.events.StepEvent;
 
 /**
- * This is a marker interface.
- * {@link WorkflowExecutor} won't fire {@link StepEvent} for such kind of steps.
+ * This is a marker interface. {@link WorkflowExecutor} won't fire {@link StepEvent} for such kind
+ * of steps.
  *
  * @author Yevhenii Voevodin
  */

@@ -11,7 +11,6 @@
 package org.eclipse.che.api.ssh.server.jpa;
 
 import com.google.inject.TypeLiteral;
-
 import org.eclipse.che.account.spi.AccountImpl;
 import org.eclipse.che.api.ssh.server.model.impl.SshPairImpl;
 import org.eclipse.che.api.ssh.server.spi.SshDao;
@@ -35,20 +34,25 @@ import org.h2.Driver;
  */
 public class SshTckModule extends TckModule {
 
-    @Override
-    protected void configure() {
-        H2DBTestServer server = H2DBTestServer.startDefault();
-        install(new PersistTestModuleBuilder().setDriver(Driver.class)
-                                              .runningOn(server)
-                                              .addEntityClasses(SshPairImpl.class, UserImpl.class, AccountImpl.class)
-                                              .setExceptionHandler(H2ExceptionHandler.class)
-                                              .build());
-        bind(DBInitializer.class).asEagerSingleton();
-        bind(SchemaInitializer.class).toInstance(new FlywaySchemaInitializer(server.getDataSource(), "che-schema"));
-        bind(TckResourcesCleaner.class).toInstance(new H2JpaCleaner(server));
+  @Override
+  protected void configure() {
+    H2DBTestServer server = H2DBTestServer.startDefault();
+    install(
+        new PersistTestModuleBuilder()
+            .setDriver(Driver.class)
+            .runningOn(server)
+            .addEntityClasses(SshPairImpl.class, UserImpl.class, AccountImpl.class)
+            .setExceptionHandler(H2ExceptionHandler.class)
+            .build());
+    bind(DBInitializer.class).asEagerSingleton();
+    bind(SchemaInitializer.class)
+        .toInstance(new FlywaySchemaInitializer(server.getDataSource(), "che-schema"));
+    bind(TckResourcesCleaner.class).toInstance(new H2JpaCleaner(server));
 
-        bind(SshDao.class).to(JpaSshDao.class);
-        bind(new TypeLiteral<TckRepository<SshPairImpl>>() {}).toInstance(new JpaTckRepository<>(SshPairImpl.class));
-        bind(new TypeLiteral<TckRepository<UserImpl>>() {}).toInstance(new JpaTckRepository<>(UserImpl.class));
-    }
+    bind(SshDao.class).to(JpaSshDao.class);
+    bind(new TypeLiteral<TckRepository<SshPairImpl>>() {})
+        .toInstance(new JpaTckRepository<>(SshPairImpl.class));
+    bind(new TypeLiteral<TckRepository<UserImpl>>() {})
+        .toInstance(new JpaTckRepository<>(UserImpl.class));
+  }
 }

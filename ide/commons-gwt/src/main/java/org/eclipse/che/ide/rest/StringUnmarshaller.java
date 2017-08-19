@@ -18,17 +18,17 @@ import com.google.gwt.http.client.Response;
  * @author Vitaly Parfonov
  */
 public class StringUnmarshaller implements Unmarshallable<String> {
-    protected String builder;
+  protected String builder;
 
-    /** {@inheritDoc} */
-    @Override
-    public void unmarshal(Response response) {
-        builder = response.getText();
-    }
+  /** {@inheritDoc} */
+  @Override
+  public void unmarshal(Response response) {
+    builder = response.getText();
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public String getPayload() {
-        return builder;
-    }
+  /** {@inheritDoc} */
+  @Override
+  public String getPayload() {
+    return builder;
+  }
 }

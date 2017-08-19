@@ -13,46 +13,39 @@ package org.eclipse.che.plugin.docker.client;
 import java.util.Arrays;
 import java.util.Objects;
 
-/**
- * @author andrew00x
- */
+/** @author andrew00x */
 public class Exec {
-    private final String[] command;
-    private final String   id;
+  private final String[] command;
+  private final String id;
 
-    public Exec(String[] command, String id) {
-        this.command = command;
-        this.id = id;
-    }
+  public Exec(String[] command, String id) {
+    this.command = command;
+    this.id = id;
+  }
 
-    public String[] getCommand() {
-        return command;
-    }
+  public String[] getCommand() {
+    return command;
+  }
 
-    public String getId() {
-        return id;
-    }
+  public String getId() {
+    return id;
+  }
 
-    @Override
-    public String toString() {
-        return "Exec{" +
-               "command=" + Arrays.toString(command) +
-               ", id='" + id + '\'' +
-               '}';
-    }
+  @Override
+  public String toString() {
+    return "Exec{" + "command=" + Arrays.toString(command) + ", id='" + id + '\'' + '}';
+  }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Exec exec = (Exec)o;
-        return Arrays.equals(command, exec.command) &&
-               Objects.equals(id, exec.id);
-    }
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Exec exec = (Exec) o;
+    return Arrays.equals(command, exec.command) && Objects.equals(id, exec.id);
+  }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(Arrays.hashCode(command), id);
-    }
-
+  @Override
+  public int hashCode() {
+    return Objects.hash(Arrays.hashCode(command), id);
+  }
 }

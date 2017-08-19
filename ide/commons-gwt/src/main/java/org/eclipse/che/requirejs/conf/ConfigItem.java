@@ -14,10 +14,9 @@ import com.google.gwt.core.client.JavaScriptObject;
 
 public class ConfigItem extends AssocitativeJsObject<JavaScriptObject> {
 
-    protected ConfigItem() {
-    }
+  protected ConfigItem() {}
 
-    public static final native ConfigItem create() /*-{
+  public static final native ConfigItem create() /*-{
         return {};
     }-*/;
 }

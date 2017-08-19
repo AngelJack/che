@@ -10,66 +10,61 @@
  */
 package org.eclipse.che.plugin.docker.client.params;
 
-import javax.validation.constraints.NotNull;
-
-import java.util.Objects;
-
 import static java.util.Objects.requireNonNull;
 
+import java.util.Objects;
+import javax.validation.constraints.NotNull;
+
 /**
- * Arguments holder for {@link org.eclipse.che.plugin.docker.client.DockerConnector#startContainer(StartContainerParams)}.
+ * Arguments holder for {@link
+ * org.eclipse.che.plugin.docker.client.DockerConnector#startContainer(StartContainerParams)}.
  *
  * @author Mykola Morhun
  */
 public class StartContainerParams {
 
-    private String container;
+  private String container;
 
-    /**
-     * Creates arguments holder with required parameters.
-     *
-     * @param container
-     *         id or name of container to start
-     * @return arguments holder with required parameters
-     * @throws NullPointerException
-     *         if {@code container} is null
-     */
-    public static StartContainerParams create(@NotNull String container) {
-        return new StartContainerParams().withContainer(container);
-    }
+  /**
+   * Creates arguments holder with required parameters.
+   *
+   * @param container id or name of container to start
+   * @return arguments holder with required parameters
+   * @throws NullPointerException if {@code container} is null
+   */
+  public static StartContainerParams create(@NotNull String container) {
+    return new StartContainerParams().withContainer(container);
+  }
 
-    private StartContainerParams() {}
+  private StartContainerParams() {}
 
-    /**
-     * Adds container to this parameters.
-     *
-     * @param container
-     *         id or name of container to start
-     * @return this params instance
-     * @throws NullPointerException
-     *         if {@code container} is null
-     */
-    public StartContainerParams withContainer(@NotNull String container) {
-        requireNonNull(container);
-        this.container = container;
-        return this;
-    }
+  /**
+   * Adds container to this parameters.
+   *
+   * @param container id or name of container to start
+   * @return this params instance
+   * @throws NullPointerException if {@code container} is null
+   */
+  public StartContainerParams withContainer(@NotNull String container) {
+    requireNonNull(container);
+    this.container = container;
+    return this;
+  }
 
-    public String getContainer() {
-        return container;
-    }
+  public String getContainer() {
+    return container;
+  }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        StartContainerParams that = (StartContainerParams)o;
-        return Objects.equals(container, that.container);
-    }
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    StartContainerParams that = (StartContainerParams) o;
+    return Objects.equals(container, that.container);
+  }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(container);
-    }
-
+  @Override
+  public int hashCode() {
+    return Objects.hash(container);
+  }
 }

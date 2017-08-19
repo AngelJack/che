@@ -11,19 +11,14 @@
 package org.eclipse.che.api.agent.shared.model;
 
 /**
- * A pair of id and version of the agent.
- * Version part is not mandatory.
+ * A pair of id and version of the agent. Version part is not mandatory.
  *
  * @author Anatolii Bazko
  */
 public interface AgentKey {
-    /**
-     * @return the id of the agent
-     */
-    String getId();
+  /** @return the id of the agent */
+  String getId();
 
-    /**
-     * @return the version of the agent
-     */
-    String getVersion();
+  /** @return the version of the agent */
+  String getVersion();
 }

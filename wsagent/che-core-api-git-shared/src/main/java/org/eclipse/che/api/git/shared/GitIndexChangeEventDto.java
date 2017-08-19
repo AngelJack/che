@@ -10,22 +10,21 @@
  */
 package org.eclipse.che.api.git.shared;
 
-import org.eclipse.che.dto.shared.DTO;
-
 import java.util.List;
 import java.util.Map;
+import org.eclipse.che.dto.shared.DTO;
 
 @DTO
 public interface GitIndexChangeEventDto {
-    Status getStatus();
+  Status getStatus();
 
-    void setStatus(Status status);
+  void setStatus(Status status);
 
-    GitIndexChangeEventDto withStatus(Status status);
+  GitIndexChangeEventDto withStatus(Status status);
 
-    Map<String, List<Edition>> getModifiedFiles();
+  Map<String, List<Edition>> getModifiedFiles();
 
-    void setModifiedFiles(Map<String, List<Edition>> modifiedFiles);
+  void setModifiedFiles(Map<String, List<Edition>> modifiedFiles);
 
-    GitIndexChangeEventDto withModifiedFiles(Map<String, List<Edition>> modifiedFiles);
+  GitIndexChangeEventDto withModifiedFiles(Map<String, List<Edition>> modifiedFiles);
 }

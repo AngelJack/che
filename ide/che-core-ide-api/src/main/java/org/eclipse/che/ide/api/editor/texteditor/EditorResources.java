@@ -16,20 +16,19 @@ import com.google.gwt.resources.client.CssResource;
 /** Resources interface for the editor. */
 public interface EditorResources extends ClientBundle {
 
-    /** CssResource for the editor. */
-    interface EditorCss extends CssResource {
+  /** CssResource for the editor. */
+  interface EditorCss extends CssResource {
 
-        /** Style added to warnings. */
-        String lineWarning();
+    /** Style added to warnings. */
+    String lineWarning();
 
-        /** Style added to errors. */
-        String lineError();
+    /** Style added to errors. */
+    String lineError();
 
-        /** Style added to the current breakpoint line. */
-        String debugLine();
-    }
+    /** Style added to the current breakpoint line. */
+    String debugLine();
+  }
 
-    @Source({"Editor.css", "org/eclipse/che/ide/api/ui/style.css"})
-    EditorCss editorCss();
-
+  @Source({"Editor.css", "org/eclipse/che/ide/api/ui/style.css"})
+  EditorCss editorCss();
 }

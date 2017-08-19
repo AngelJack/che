@@ -18,6 +18,6 @@ package org.eclipse.che.ide.api.dialogs;
  */
 public interface ConfirmCallback {
 
-    /** Action called when the user click on OK. */
-    void accepted();
+  /** Action called when the user click on OK. */
+  void accepted();
 }

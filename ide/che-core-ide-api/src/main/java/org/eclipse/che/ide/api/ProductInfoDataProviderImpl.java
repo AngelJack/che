@@ -12,43 +12,40 @@ package org.eclipse.che.ide.api;
 
 import org.vectomatic.dom.svg.ui.SVGResource;
 
-/**
- * @author Vitalii Parfonov
- */
-
+/** @author Vitalii Parfonov */
 public class ProductInfoDataProviderImpl implements ProductInfoDataProvider {
-    @Override
-    public String getName() {
-        return "Che";
-    }
+  @Override
+  public String getName() {
+    return "Che";
+  }
 
-    @Override
-    public String getSupportLink() {
-        return "";
-    }
+  @Override
+  public String getSupportLink() {
+    return "";
+  }
 
-    @Override
-    public String getDocumentTitle() {
-        return "";
-    }
+  @Override
+  public String getDocumentTitle() {
+    return "";
+  }
 
-    @Override
-    public String getDocumentTitle(String workspaceName) {
-        return workspaceName;
-    }
+  @Override
+  public String getDocumentTitle(String workspaceName) {
+    return workspaceName;
+  }
 
-    @Override
-    public SVGResource getLogo() {
-        return null;
-    }
+  @Override
+  public SVGResource getLogo() {
+    return null;
+  }
 
-    @Override
-    public SVGResource getWaterMarkLogo() {
-        return null;
-    }
+  @Override
+  public SVGResource getWaterMarkLogo() {
+    return null;
+  }
 
-    @Override
-    public String getSupportTitle() {
-        return "";
-    }
+  @Override
+  public String getSupportTitle() {
+    return "";
+  }
 }

@@ -10,29 +10,30 @@
  */
 package org.eclipse.che.api.core.util;
 
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.TimeUnit;
-
 /** @author <a href="mailto:andrew00x@gmail.com">Andrey Parfonov</a> */
 public class WatchdogTest {
-    @Test
-    public void testWatchDog() throws Exception {
-        final CountDownLatch latch = new CountDownLatch(1);
-        final boolean[] cancel = new boolean[]{false};
-        final Cancellable myCancellable = new Cancellable() {
-            @Override
-            public void cancel() throws Exception {
-                cancel[0] = true;
-                latch.countDown();
-            }
+  @Test
+  public void testWatchDog() throws Exception {
+    final CountDownLatch latch = new CountDownLatch(1);
+    final boolean[] cancel = new boolean[] {false};
+    final Cancellable myCancellable =
+        new Cancellable() {
+          @Override
+          public void cancel() throws Exception {
+            cancel[0] = true;
+            latch.countDown();
+          }
         };
 
-        final Watchdog watchdog = new Watchdog(1, TimeUnit.SECONDS); // wait 1 sec then cancel myCancellable
-        watchdog.start(myCancellable);
-        latch.await(2, TimeUnit.SECONDS); // wait 2 sec
-        Assert.assertTrue(cancel[0], "cancellation failed"); // should be cancelled
-    }
+    final Watchdog watchdog =
+        new Watchdog(1, TimeUnit.SECONDS); // wait 1 sec then cancel myCancellable
+    watchdog.start(myCancellable);
+    latch.await(2, TimeUnit.SECONDS); // wait 2 sec
+    Assert.assertTrue(cancel[0], "cancellation failed"); // should be cancelled
+  }
 }

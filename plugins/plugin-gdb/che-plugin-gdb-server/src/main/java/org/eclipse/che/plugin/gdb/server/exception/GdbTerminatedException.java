@@ -10,15 +10,13 @@
  */
 package org.eclipse.che.plugin.gdb.server.exception;
 
-/**
- * @author Anatoliy Bazko
- */
+/** @author Anatoliy Bazko */
 public class GdbTerminatedException extends GdbException {
-    public GdbTerminatedException(String message) {
-        super(message);
-    }
+  public GdbTerminatedException(String message) {
+    super(message);
+  }
 
-    public GdbTerminatedException(String message, Exception cause) {
-        super(message, cause);
-    }
+  public GdbTerminatedException(String message, Exception cause) {
+    super(message, cause);
+  }
 }

@@ -22,15 +22,15 @@ import javax.ws.rs.PathParam;
 @Path("hello")
 public class MyService {
 
-    /**
-     * Returns a greeting message.
-     *
-     * @param name the parameter
-     * @return a greeting message
-     */
-    @GET
-    @Path("{name}")
-    public String sayHello(@PathParam("name") String name) {
-        return "Hello " + name + "!";
-    }
+  /**
+   * Returns a greeting message.
+   *
+   * @param name the parameter
+   * @return a greeting message
+   */
+  @GET
+  @Path("{name}")
+  public String sayHello(@PathParam("name") String name) {
+    return "Hello " + name + "!";
+  }
 }

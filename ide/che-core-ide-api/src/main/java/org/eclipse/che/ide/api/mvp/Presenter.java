@@ -14,16 +14,16 @@ import com.google.gwt.user.client.ui.AcceptsOneWidget;
 
 /**
  * Common interface for Presenters that are responsible for driving the UI
- * <p/>
  *
- * @author Nikolay Zamosenchuk
- *         Jul 24, 2012
+ * <p>
+ *
+ * @author Nikolay Zamosenchuk Jul 24, 2012
  */
 public interface Presenter {
-    /**
-     * Allows presenter to expose it's view to the container.
-     *
-     * @param container
-     */
-    void go(final AcceptsOneWidget container);
+  /**
+   * Allows presenter to expose it's view to the container.
+   *
+   * @param container
+   */
+  void go(final AcceptsOneWidget container);
 }

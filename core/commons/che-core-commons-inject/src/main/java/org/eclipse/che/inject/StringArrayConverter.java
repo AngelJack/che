@@ -16,20 +16,19 @@ import com.google.inject.AbstractModule;
 import com.google.inject.TypeLiteral;
 import com.google.inject.matcher.Matchers;
 import com.google.inject.spi.TypeConverter;
-
 import java.util.regex.Pattern;
 
 /** @author andrew00x */
 public class StringArrayConverter extends AbstractModule implements TypeConverter {
-    private static final Pattern PATTERN = Pattern.compile(" *, *");
+  private static final Pattern PATTERN = Pattern.compile(" *, *");
 
-    @Override
-    public Object convert(String value, TypeLiteral<?> toType) {
-        return Iterables.toArray(Splitter.on(PATTERN).split(value), String.class);
-    }
+  @Override
+  public Object convert(String value, TypeLiteral<?> toType) {
+    return Iterables.toArray(Splitter.on(PATTERN).split(value), String.class);
+  }
 
-    @Override
-    protected void configure() {
-        convertToTypes(Matchers.only(TypeLiteral.get(String[].class)), this);
-    }
+  @Override
+  protected void configure() {
+    convertToTypes(Matchers.only(TypeLiteral.get(String[].class)), this);
+  }
 }

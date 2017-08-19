@@ -17,6 +17,6 @@ package org.eclipse.che.ide.command.execute;
  */
 public interface GoalPopUpGroupFactory {
 
-    /** Creates new {@link GoalPopUpGroup} for the command goal with the given {@code id}. */
-    GoalPopUpGroup create(String id);
+  /** Creates new {@link GoalPopUpGroup} for the command goal with the given {@code id}. */
+  GoalPopUpGroup create(String id);
 }

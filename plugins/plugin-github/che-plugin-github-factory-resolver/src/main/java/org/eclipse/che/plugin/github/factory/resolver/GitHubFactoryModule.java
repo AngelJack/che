@@ -11,16 +11,13 @@
 package org.eclipse.che.plugin.github.factory.resolver;
 
 import com.google.inject.AbstractModule;
-
 import org.eclipse.che.inject.DynaModule;
 
-/**
- * @author Max Shaposhnik (mshaposhnik@codenvy.com)
- */
+/** @author Max Shaposhnik (mshaposhnik@codenvy.com) */
 @DynaModule
 public class GitHubFactoryModule extends AbstractModule {
-    @Override
-    protected void configure() {
-        bind(GithubURLParser.class).to(LegacyGithubURLParser.class);
-    }
+  @Override
+  protected void configure() {
+    bind(GithubURLParser.class).to(LegacyGithubURLParser.class);
+  }
 }

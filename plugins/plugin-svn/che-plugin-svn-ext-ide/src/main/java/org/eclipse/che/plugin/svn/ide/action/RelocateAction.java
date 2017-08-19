@@ -12,27 +12,29 @@ package org.eclipse.che.plugin.svn.ide.action;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-
 import org.eclipse.che.ide.api.action.ActionEvent;
 import org.eclipse.che.ide.api.app.AppContext;
 import org.eclipse.che.plugin.svn.ide.SubversionExtensionLocalizationConstants;
 import org.eclipse.che.plugin.svn.ide.SubversionExtensionResources;
 
-/**
- * Extension of {@link SubversionAction} for implementing the "svn relocate" command.
- */
+/** Extension of {@link SubversionAction} for implementing the "svn relocate" command. */
 @Singleton
 public class RelocateAction extends SubversionAction {
 
-    @Inject
-    public RelocateAction(AppContext appContext,
-                          SubversionExtensionLocalizationConstants constants,
-                          SubversionExtensionResources resources) {
-        super(constants.relocateTitle(), constants.relocateDescription(), resources.relocate(), appContext, constants, resources);
-    }
+  @Inject
+  public RelocateAction(
+      AppContext appContext,
+      SubversionExtensionLocalizationConstants constants,
+      SubversionExtensionResources resources) {
+    super(
+        constants.relocateTitle(),
+        constants.relocateDescription(),
+        resources.relocate(),
+        appContext,
+        constants,
+        resources);
+  }
 
-    @Override
-    public void actionPerformed(ActionEvent actionEvent) {
-
-    }
+  @Override
+  public void actionPerformed(ActionEvent actionEvent) {}
 }

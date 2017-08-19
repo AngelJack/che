@@ -14,32 +14,30 @@ import com.google.gwt.event.shared.EventHandler;
 import com.google.gwt.event.shared.GwtEvent;
 import org.eclipse.che.ide.api.editor.texteditor.TextEditor;
 
-/**
- * Event fired when java reconsiler finish work
- */
+/** Event fired when java reconsiler finish work */
 public class JavaReconsilerEvent extends GwtEvent<JavaReconsilerEvent.JavaReconsilerHandler> {
-    public static final Type<JavaReconsilerHandler> TYPE = new Type<>();
-    private final TextEditor editor;
+  public static final Type<JavaReconsilerHandler> TYPE = new Type<>();
+  private final TextEditor editor;
 
-    public JavaReconsilerEvent(TextEditor editor) {
-        this.editor = editor;
-    }
+  public JavaReconsilerEvent(TextEditor editor) {
+    this.editor = editor;
+  }
 
-    public TextEditor getEditor() {
-        return editor;
-    }
+  public TextEditor getEditor() {
+    return editor;
+  }
 
-    @Override
-    public Type<JavaReconsilerHandler> getAssociatedType() {
-        return TYPE;
-    }
+  @Override
+  public Type<JavaReconsilerHandler> getAssociatedType() {
+    return TYPE;
+  }
 
-    @Override
-    protected void dispatch(JavaReconsilerHandler handler) {
-        handler.onJavaResonsile(this);
-    }
+  @Override
+  protected void dispatch(JavaReconsilerHandler handler) {
+    handler.onJavaResonsile(this);
+  }
 
-    public interface JavaReconsilerHandler extends EventHandler {
-        void onJavaResonsile(JavaReconsilerEvent event);
-    }
+  public interface JavaReconsilerHandler extends EventHandler {
+    void onJavaResonsile(JavaReconsilerEvent event);
+  }
 }

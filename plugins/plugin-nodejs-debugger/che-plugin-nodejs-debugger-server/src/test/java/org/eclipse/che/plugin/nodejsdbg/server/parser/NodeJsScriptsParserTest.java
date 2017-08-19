@@ -10,38 +10,34 @@
  */
 package org.eclipse.che.plugin.nodejsdbg.server.parser;
 
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
+
+import java.util.Map;
 import org.eclipse.che.plugin.nodejsdbg.server.NodeJsOutput;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.util.Map;
-
-import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
-
-/**
- * @author Anatolii Bazko
- */
+/** @author Anatolii Bazko */
 public class NodeJsScriptsParserTest {
 
-    private NodeJsScriptsParser parser;
+  private NodeJsScriptsParser parser;
 
-    @BeforeMethod
-    public void setUp() throws Exception {
-        parser = new NodeJsScriptsParser();
-    }
+  @BeforeMethod
+  public void setUp() throws Exception {
+    parser = new NodeJsScriptsParser();
+  }
 
-    @Test
-    public void testParseScriptCommand() throws Exception {
-        NodeJsOutput output = NodeJsOutput.of("  35: bootstrap_node.js\n" +
-                                              "* 63: app.js\n");
+  @Test
+  public void testParseScriptCommand() throws Exception {
+    NodeJsOutput output = NodeJsOutput.of("  35: bootstrap_node.js\n" + "* 63: app.js\n");
 
-        assertTrue(parser.match(output));
+    assertTrue(parser.match(output));
 
-        Map<Integer, String> scripts = parser.parse(output).getAll();
+    Map<Integer, String> scripts = parser.parse(output).getAll();
 
-        assertEquals(scripts.size(), 2);
-        assertEquals(scripts.get(35), "bootstrap_node.js");
-        assertEquals(scripts.get(63), "app.js");
-    }
+    assertEquals(scripts.size(), 2);
+    assertEquals(scripts.get(35), "bootstrap_node.js");
+    assertEquals(scripts.get(63), "app.js");
+  }
 }

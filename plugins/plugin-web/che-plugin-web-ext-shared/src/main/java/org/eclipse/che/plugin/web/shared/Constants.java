@@ -10,25 +10,22 @@
  */
 package org.eclipse.che.plugin.web.shared;
 
-/**
- * Shared constants for Web plugin
- */
+/** Shared constants for Web plugin */
 public final class Constants {
 
-    public static final String LANGUAGE  = "language";
+  public static final String LANGUAGE = "language";
 
-    /** TS Project Type ID */
-    public static String TS_PROJECT_TYPE_ID = "typescript";
+  /** TS Project Type ID */
+  public static String TS_PROJECT_TYPE_ID = "typescript";
 
-    /** TS Language */
-    public static String TS_LANG = "typescript";
+  /** TS Language */
+  public static String TS_LANG = "typescript";
 
-    /** Default extension for TS files */
-    public static String TS_EXT = "ts";
+  /** Default extension for TS files */
+  public static String TS_EXT = "ts";
 
-    /** TypeScript file mime type*/
-    public static final String TS_MIME_TYPE = "application/typescript";
+  /** TypeScript file mime type */
+  public static final String TS_MIME_TYPE = "application/typescript";
 
-    private Constants() {
-    }
+  private Constants() {}
 }

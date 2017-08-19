@@ -10,26 +10,22 @@
  */
 package org.eclipse.che.plugin.gdb.server.parser;
 
-import org.testng.annotations.Test;
-
-import java.util.Map;
-
 import static org.testng.Assert.assertEquals;
 
-/**
- * @author Anatoliy Bazko
- */
+import java.util.Map;
+import org.testng.annotations.Test;
+
+/** @author Anatoliy Bazko */
 public class GdbInfoLocalsTest {
 
-    @Test
-    public void testParse() throws Exception {
-        GdbOutput gdbOutput = GdbOutput.of("i = 0\n" +
-                                           "j = 34");
+  @Test
+  public void testParse() throws Exception {
+    GdbOutput gdbOutput = GdbOutput.of("i = 0\n" + "j = 34");
 
-        GdbInfoLocals gdbInfoLocals = GdbInfoLocals.parse(gdbOutput);
+    GdbInfoLocals gdbInfoLocals = GdbInfoLocals.parse(gdbOutput);
 
-        Map<String, String> variables = gdbInfoLocals.getVariables();
-        assertEquals(variables.get("i"), "0");
-        assertEquals(variables.get("j"), "34");
-    }
+    Map<String, String> variables = gdbInfoLocals.getVariables();
+    assertEquals(variables.get("i"), "0");
+    assertEquals(variables.get("j"), "34");
+  }
 }

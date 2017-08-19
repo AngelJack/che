@@ -15,5 +15,4 @@ package org.eclipse.che.ide.ui.dropdown;
  *
  * @see BaseListItem
  */
-public interface DropdownListItem {
-}
+public interface DropdownListItem {}

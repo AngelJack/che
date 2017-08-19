@@ -19,5 +19,5 @@ import com.google.gwt.event.shared.HasHandlers;
  * @author "Mickaël Leduque"
  */
 public interface HasBeforeSelectionChangeHandlers extends HasHandlers {
-    HandlerRegistration addBeforeSelectionChangeHandler(BeforeSelectionChangeHandler handler);
+  HandlerRegistration addBeforeSelectionChangeHandler(BeforeSelectionChangeHandler handler);
 }

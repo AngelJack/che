@@ -13,78 +13,73 @@ package org.eclipse.che.ide.ext.git.client.oldContentPopup;
 import com.google.common.base.Optional;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-
 import org.eclipse.che.ide.api.app.AppContext;
 import org.eclipse.che.ide.api.editor.EditorAgent;
 import org.eclipse.che.ide.api.editor.EditorPartPresenter;
 import org.eclipse.che.ide.api.editor.position.PositionConverter;
 import org.eclipse.che.ide.api.editor.texteditor.TextEditor;
 import org.eclipse.che.ide.api.machine.WsAgentURLModifier;
-import org.eclipse.che.ide.api.resources.Container;
 import org.eclipse.che.ide.api.resources.Project;
 import org.eclipse.che.ide.api.resources.Resource;
 import org.eclipse.che.ide.util.loging.Log;
 
-/**
- * @author Evgen Vidolob
- */
+/** @author Evgen Vidolob */
 @Singleton
 public class ContentPresenter implements Content, ContentView.ActionDelegate {
 
-    private final ContentView        view;
-    private final AppContext         appContext;
-    private final EditorAgent        editorAgent;
-    private final WsAgentURLModifier agentURLDecorator;
+  private final ContentView view;
+  private final AppContext appContext;
+  private final EditorAgent editorAgent;
+  private final WsAgentURLModifier agentURLDecorator;
 
-    @Inject
-    public ContentPresenter(ContentView view,
-                            AppContext appContext,
-                            EditorAgent editorAgent,
-                            WsAgentURLModifier linksDecorator) {
-        this.view = view;
-        this.appContext = appContext;
-        this.editorAgent = editorAgent;
-        this.agentURLDecorator = linksDecorator;
+  @Inject
+  public ContentPresenter(
+      ContentView view,
+      AppContext appContext,
+      EditorAgent editorAgent,
+      WsAgentURLModifier linksDecorator) {
+    this.view = view;
+    this.appContext = appContext;
+    this.editorAgent = editorAgent;
+    this.agentURLDecorator = linksDecorator;
+  }
+
+  @Override
+  public void showDocumentation() {
+    EditorPartPresenter activeEditor = editorAgent.getActiveEditor();
+    if (activeEditor == null) {
+      return;
     }
 
-    @Override
-    public void showDocumentation() {
-        EditorPartPresenter activeEditor = editorAgent.getActiveEditor();
-        if (activeEditor == null) {
-            return;
-        }
-
-        if (!(activeEditor instanceof TextEditor)) {
-            Log.error(getClass(), "Quick Document support only TextEditor as editor");
-            return;
-        }
-
-        TextEditor editor = ((TextEditor)activeEditor);
-        int offset = editor.getCursorOffset();
-        final PositionConverter.PixelCoordinates coordinates = editor.getPositionConverter().offsetToPixel(offset);
-
-        final Resource resource = appContext.getResource();
-
-        if (resource != null) {
-            final Optional<Project> project = resource.getRelatedProject();
-
-////            final Optional<Resource> srcFolder = resource.getParentWithMarker(SourceFolderMarker.ID);
-////
-////            if (!srcFolder.isPresent()) {
-////                return;
-////            }
-////
-////            final String fqn = JavaUtil.resolveFQN((Container)srcFolder.get(), resource);
-//
-//            final String docUrl = appContext.getDevMachine().getWsAgentBaseUrl() + "/java/javadoc/find?fqn=" + fqn + "&projectpath=" + project.get().getLocation() + "&offset=" + offset;
-
-            view.show("url", coordinates.getX(), coordinates.getY());
-        }
-
-
+    if (!(activeEditor instanceof TextEditor)) {
+      Log.error(getClass(), "Quick Document support only TextEditor as editor");
+      return;
     }
 
-    @Override
-    public void onCloseView() {
+    TextEditor editor = ((TextEditor) activeEditor);
+    int offset = editor.getCursorOffset();
+    final PositionConverter.PixelCoordinates coordinates =
+        editor.getPositionConverter().offsetToPixel(offset);
+
+    final Resource resource = appContext.getResource();
+
+    if (resource != null) {
+      final Optional<Project> project = resource.getRelatedProject();
+
+      ////            final Optional<Resource> srcFolder = resource.getParentWithMarker(SourceFolderMarker.ID);
+      ////
+      ////            if (!srcFolder.isPresent()) {
+      ////                return;
+      ////            }
+      ////
+      ////            final String fqn = JavaUtil.resolveFQN((Container)srcFolder.get(), resource);
+      //
+      //            final String docUrl = appContext.getDevMachine().getWsAgentBaseUrl() + "/java/javadoc/find?fqn=" + fqn + "&projectpath=" + project.get().getLocation() + "&offset=" + offset;
+
+      view.show("url", coordinates.getX(), coordinates.getY());
     }
+  }
+
+  @Override
+  public void onCloseView() {}
 }

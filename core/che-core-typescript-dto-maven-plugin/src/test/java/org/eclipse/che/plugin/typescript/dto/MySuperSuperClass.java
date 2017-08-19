@@ -10,11 +10,8 @@
  */
 package org.eclipse.che.plugin.typescript.dto;
 
-/**
- * @author Florent Benoit
- */
+/** @author Florent Benoit */
 public interface MySuperSuperClass {
 
-    String getName();
-
+  String getName();
 }

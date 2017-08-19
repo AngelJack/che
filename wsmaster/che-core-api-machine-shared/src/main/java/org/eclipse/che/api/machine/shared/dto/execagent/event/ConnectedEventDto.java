@@ -14,15 +14,15 @@ import org.eclipse.che.dto.shared.DTO;
 
 @DTO
 public interface ConnectedEventDto {
-    String getTime();
+  String getTime();
 
-    ConnectedEventDto withTime(String time);
+  ConnectedEventDto withTime(String time);
 
-    String getChannel();
+  String getChannel();
 
-    ConnectedEventDto withChannel(String channel);
+  ConnectedEventDto withChannel(String channel);
 
-    String getText();
+  String getText();
 
-    ConnectedEventDto withText(String text);
+  ConnectedEventDto withText(String text);
 }

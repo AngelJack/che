@@ -12,11 +12,9 @@ package org.eclipse.che.ide.resources.selector;
 
 import org.eclipse.che.ide.resource.Path;
 
-/**
- * @author Vlad Zhukovskiy
- */
+/** @author Vlad Zhukovskiy */
 public interface SelectionPathHandler {
-    void onPathSelected(Path path);
+  void onPathSelected(Path path);
 
-    void onSelectionCancelled();
+  void onSelectionCancelled();
 }

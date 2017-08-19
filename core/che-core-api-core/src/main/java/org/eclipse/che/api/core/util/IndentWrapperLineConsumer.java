@@ -19,21 +19,21 @@ import java.io.IOException;
  */
 public class IndentWrapperLineConsumer implements LineConsumer {
 
-    private final LineConsumer lineConsumer;
+  private final LineConsumer lineConsumer;
 
-    public IndentWrapperLineConsumer(LineConsumer lineConsumer) {
-        this.lineConsumer = lineConsumer;
-    }
+  public IndentWrapperLineConsumer(LineConsumer lineConsumer) {
+    this.lineConsumer = lineConsumer;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public void writeLine(String line) throws IOException {
-        lineConsumer.writeLine(line + System.lineSeparator());
-    }
+  /** {@inheritDoc} */
+  @Override
+  public void writeLine(String line) throws IOException {
+    lineConsumer.writeLine(line + System.lineSeparator());
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public void close() throws IOException {
-        lineConsumer.close();
-    }
+  /** {@inheritDoc} */
+  @Override
+  public void close() throws IOException {
+    lineConsumer.close();
+  }
 }

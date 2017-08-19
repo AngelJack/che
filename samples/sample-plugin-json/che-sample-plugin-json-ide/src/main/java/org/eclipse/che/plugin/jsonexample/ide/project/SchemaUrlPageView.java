@@ -12,9 +12,5 @@ package org.eclipse.che.plugin.jsonexample.ide.project;
 
 import org.eclipse.che.ide.api.mvp.View;
 
-/**
- * Simple view for entering a URL that points to a JSON schema.
- */
-public interface SchemaUrlPageView extends View<SchemaUrlChangedDelegate> {
-
-}
+/** Simple view for entering a URL that points to a JSON schema. */
+public interface SchemaUrlPageView extends View<SchemaUrlChangedDelegate> {}

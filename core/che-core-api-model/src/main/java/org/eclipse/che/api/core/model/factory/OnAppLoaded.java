@@ -19,8 +19,6 @@ import java.util.List;
  */
 public interface OnAppLoaded {
 
-    /**
-     * Returns actions for current event.
-     */
-    List<? extends Action> getActions();
+  /** Returns actions for current event. */
+  List<? extends Action> getActions();
 }

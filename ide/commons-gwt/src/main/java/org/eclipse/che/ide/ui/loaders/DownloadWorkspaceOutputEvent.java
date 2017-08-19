@@ -20,22 +20,20 @@ import com.google.gwt.event.shared.GwtEvent;
  */
 public class DownloadWorkspaceOutputEvent extends GwtEvent<DownloadWorkspaceOutputEvent.Handler> {
 
-    public interface Handler extends EventHandler {
+  public interface Handler extends EventHandler {
 
-        void onDownloadWorkspaceOutput(DownloadWorkspaceOutputEvent event);
+    void onDownloadWorkspaceOutput(DownloadWorkspaceOutputEvent event);
+  }
 
-    }
+  public static final Type<Handler> TYPE = new Type<>();
 
-    public static final Type<Handler> TYPE = new Type<>();
+  @Override
+  public Type<Handler> getAssociatedType() {
+    return TYPE;
+  }
 
-    @Override
-    public Type<Handler> getAssociatedType() {
-        return TYPE;
-    }
-
-    @Override
-    protected void dispatch(Handler handler) {
-        handler.onDownloadWorkspaceOutput(this);
-    }
-
+  @Override
+  protected void dispatch(Handler handler) {
+    handler.onDownloadWorkspaceOutput(this);
+  }
 }

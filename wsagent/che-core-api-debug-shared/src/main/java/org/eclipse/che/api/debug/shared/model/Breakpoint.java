@@ -10,22 +10,14 @@
  */
 package org.eclipse.che.api.debug.shared.model;
 
-/**
- * @author Anatoliy Bazko
- */
+/** @author Anatoliy Bazko */
 public interface Breakpoint {
-    /**
-     * The location of the breakpoint.
-     */
-    Location getLocation();
+  /** The location of the breakpoint. */
+  Location getLocation();
 
-    /**
-     * Indicates if it is enabled or not.
-     */
-    boolean isEnabled();
+  /** Indicates if it is enabled or not. */
+  boolean isEnabled();
 
-    /**
-     * The condition.
-     */
-    String getCondition();
+  /** The condition. */
+  String getCondition();
 }

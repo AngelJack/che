@@ -11,17 +11,16 @@
 package org.eclipse.che.api.core.websocket.impl;
 
 import com.google.inject.AbstractModule;
-
 import org.eclipse.che.api.core.jsonrpc.commons.JsonRpcMessageReceiver;
 import org.eclipse.che.api.core.websocket.commons.WebSocketMessageReceiver;
 import org.eclipse.che.api.core.websocket.commons.WebSocketMessageTransmitter;
 
 public class WebSocketModule extends AbstractModule {
-    @Override
-    protected void configure() {
-        requestStaticInjection(GuiceInjectorEndpointConfigurator.class);
+  @Override
+  protected void configure() {
+    requestStaticInjection(GuiceInjectorEndpointConfigurator.class);
 
-        bind(WebSocketMessageReceiver.class).to(JsonRpcMessageReceiver.class);
-        bind(WebSocketMessageTransmitter.class).to(BasicWebSocketMessageTransmitter.class);
-    }
+    bind(WebSocketMessageReceiver.class).to(JsonRpcMessageReceiver.class);
+    bind(WebSocketMessageTransmitter.class).to(BasicWebSocketMessageTransmitter.class);
+  }
 }

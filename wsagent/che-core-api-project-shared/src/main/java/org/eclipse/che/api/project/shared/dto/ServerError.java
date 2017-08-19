@@ -19,11 +19,11 @@ import org.eclipse.che.dto.shared.DTO;
  */
 @DTO
 public interface ServerError {
-    int getCode();
+  int getCode();
 
-    ServerError withCode(int errorCode);
+  ServerError withCode(int errorCode);
 
-    String getMessage();
+  String getMessage();
 
-    ServerError withMessage(String errorMessage);
+  ServerError withMessage(String errorMessage);
 }

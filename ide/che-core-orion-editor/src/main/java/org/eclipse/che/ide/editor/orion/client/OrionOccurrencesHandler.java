@@ -14,9 +14,7 @@ import org.eclipse.che.api.promises.client.js.JsPromise;
 import org.eclipse.che.ide.editor.orion.client.jso.OrionOccurrenceContextOverlay;
 import org.eclipse.che.ide.editor.orion.client.jso.OrionOccurrenceOverlay;
 
-/**
- * @author Xavier Coulon, Red Hat
- */
+/** @author Xavier Coulon, Red Hat */
 public interface OrionOccurrencesHandler {
-	JsPromise<OrionOccurrenceOverlay[]> computeOccurrences(OrionOccurrenceContextOverlay context);
+  JsPromise<OrionOccurrenceOverlay[]> computeOccurrences(OrionOccurrenceContextOverlay context);
 }

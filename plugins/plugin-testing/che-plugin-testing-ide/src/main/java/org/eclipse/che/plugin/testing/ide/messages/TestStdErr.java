@@ -10,20 +10,17 @@
  */
 package org.eclipse.che.plugin.testing.ide.messages;
 
-/**
- * Data class represents test error message.
- */
+/** Data class represents test error message. */
 public class TestStdErr extends BaseTestMessage {
 
-    TestStdErr() {
-    }
+  TestStdErr() {}
 
-    @Override
-    public void visit(TestingMessageVisitor visitor) {
-        visitor.visitTestStdErr(this);
-    }
+  @Override
+  public void visit(TestingMessageVisitor visitor) {
+    visitor.visitTestStdErr(this);
+  }
 
-    public String getErr() {
-        return getAttributeValue("out");
-    }
+  public String getErr() {
+    return getAttributeValue("out");
+  }
 }

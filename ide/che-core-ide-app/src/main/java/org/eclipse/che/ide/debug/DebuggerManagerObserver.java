@@ -12,13 +12,9 @@ package org.eclipse.che.ide.debug;
 
 import org.eclipse.che.commons.annotation.Nullable;
 
-/**
- * @author Anatoliy Bazko
- */
+/** @author Anatoliy Bazko */
 public interface DebuggerManagerObserver extends DebuggerObserver {
 
-    /**
-     * Event happens when new active debugger is set.
-     */
-    void onActiveDebuggerChanged(@Nullable Debugger activeDebugger);
+  /** Event happens when new active debugger is set. */
+  void onActiveDebuggerChanged(@Nullable Debugger activeDebugger);
 }

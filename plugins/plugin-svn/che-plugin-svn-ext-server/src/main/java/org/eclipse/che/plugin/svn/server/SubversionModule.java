@@ -12,7 +12,6 @@ package org.eclipse.che.plugin.svn.server;
 
 import com.google.inject.AbstractModule;
 import com.google.inject.multibindings.Multibinder;
-
 import org.eclipse.che.api.project.server.importer.ProjectImporter;
 import org.eclipse.che.api.project.server.type.ProjectTypeDef;
 import org.eclipse.che.api.project.server.type.ValueProviderFactory;
@@ -29,15 +28,21 @@ import org.eclipse.che.plugin.svn.server.rest.SubversionService;
 @DynaModule
 public class SubversionModule extends AbstractModule {
 
-    @Override
-    protected void configure() {
-        Multibinder.newSetBinder(binder(), ProjectImporter.class).addBinding().to(SubversionProjectImporter.class);
-        Multibinder.newSetBinder(binder(), ProjectTypeDef.class).addBinding().to(SubversionProjectType.class);
-        Multibinder.newSetBinder(binder(), ValueProviderFactory.class).addBinding().to(SubversionValueProviderFactory.class);
+  @Override
+  protected void configure() {
+    Multibinder.newSetBinder(binder(), ProjectImporter.class)
+        .addBinding()
+        .to(SubversionProjectImporter.class);
+    Multibinder.newSetBinder(binder(), ProjectTypeDef.class)
+        .addBinding()
+        .to(SubversionProjectType.class);
+    Multibinder.newSetBinder(binder(), ValueProviderFactory.class)
+        .addBinding()
+        .to(SubversionValueProviderFactory.class);
 
-        bind(SubversionService.class);
-        bind(RepositoryUrlProvider.class).to(RepositoryUrlProviderImpl.class);
+    bind(SubversionService.class);
+    bind(RepositoryUrlProvider.class).to(RepositoryUrlProviderImpl.class);
 
-        bind(SubversionConfigurationChecker.class).asEagerSingleton();
-    }
+    bind(SubversionConfigurationChecker.class).asEagerSingleton();
+  }
 }

@@ -19,18 +19,18 @@ import org.eclipse.che.ide.api.mvp.View;
  */
 public interface DiffViewerView extends View<DiffViewerView.ActionDelegate> {
 
-    /** Action handler for the view actions/controls. */
-    interface ActionDelegate {
-        /** Perform actions when close button clicked. */
-        void onCloseClicked();
-    }
+  /** Action handler for the view actions/controls. */
+  interface ActionDelegate {
+    /** Perform actions when close button clicked. */
+    void onCloseClicked();
+  }
 
-    /** Display diff for current file in console */
-    void showDiff(String content);
+  /** Display diff for current file in console */
+  void showDiff(String content);
 
-    /** Perform actions when close window performed. */
-    void onClose();
+  /** Perform actions when close window performed. */
+  void onClose();
 
-    /** Perform actions when open window performed. */
-    void onShow();
+  /** Perform actions when open window performed. */
+  void onShow();
 }

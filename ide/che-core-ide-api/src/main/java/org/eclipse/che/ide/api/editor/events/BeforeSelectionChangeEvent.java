@@ -18,17 +18,16 @@ import com.google.gwt.event.shared.GwtEvent;
  * @author "Mickaël Leduque"
  */
 public class BeforeSelectionChangeEvent extends GwtEvent<BeforeSelectionChangeHandler> {
-    /** The type instance for this event. */
-    public static final Type<BeforeSelectionChangeHandler> TYPE = new Type<>();
+  /** The type instance for this event. */
+  public static final Type<BeforeSelectionChangeHandler> TYPE = new Type<>();
 
-    @Override
-    public Type<BeforeSelectionChangeHandler> getAssociatedType() {
-        return TYPE;
-    }
+  @Override
+  public Type<BeforeSelectionChangeHandler> getAssociatedType() {
+    return TYPE;
+  }
 
-    @Override
-    protected void dispatch(final BeforeSelectionChangeHandler handler) {
-        handler.onBeforeSelectionChange(this);
-    }
-
+  @Override
+  protected void dispatch(final BeforeSelectionChangeHandler handler) {
+    handler.onBeforeSelectionChange(this);
+  }
 }

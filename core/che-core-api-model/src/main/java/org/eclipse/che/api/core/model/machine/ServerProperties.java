@@ -19,26 +19,23 @@ import org.eclipse.che.commons.annotation.Nullable;
  */
 public interface ServerProperties {
 
-    /**
-     * Path to access the server.
-     */
-    @Nullable
-    String getPath();
+  /** Path to access the server. */
+  @Nullable
+  String getPath();
 
-    /**
-     * Internal address of the server in form <b>host:port</b>.
-     * <p>
-     * Used by wsmaster to communicate with the server
-     */
-    @Nullable
-    String getInternalAddress();
+  /**
+   * Internal address of the server in form <b>host:port</b>.
+   *
+   * <p>Used by wsmaster to communicate with the server
+   */
+  @Nullable
+  String getInternalAddress();
 
-
-    /**
-     * Internal Url of the server, e.g.&nbsp;http://localhost:8080.
-     * <p>
-     * Used by wsmaster to comunicate with the server
-     */
-    @Nullable
-    String getInternalUrl();
+  /**
+   * Internal Url of the server, e.g.&nbsp;http://localhost:8080.
+   *
+   * <p>Used by wsmaster to comunicate with the server
+   */
+  @Nullable
+  String getInternalUrl();
 }

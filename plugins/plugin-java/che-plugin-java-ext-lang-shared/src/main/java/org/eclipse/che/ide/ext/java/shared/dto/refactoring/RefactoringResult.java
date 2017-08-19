@@ -10,21 +10,20 @@
  */
 package org.eclipse.che.ide.ext.java.shared.dto.refactoring;
 
+import java.util.List;
 import org.eclipse.che.dto.shared.DTO;
 
-import java.util.List;
-
 /**
- * A <code>RefactoringResult</code> object represents the result of a
- * refactoring operation. It manages a list of <code>ChangeInfo</code> objects.
- * Each <code>ChangeInfo</code> object describes one change that was applied.
+ * A <code>RefactoringResult</code> object represents the result of a refactoring operation. It
+ * manages a list of <code>ChangeInfo</code> objects. Each <code>ChangeInfo</code> object describes
+ * one change that was applied.
  *
  * @author Valeriy Svydenko
  */
 @DTO
 public interface RefactoringResult extends RefactoringStatus {
-    /** @return list of the changes which were applied. */
-    List<ChangeInfo> getChanges();
+  /** @return list of the changes which were applied. */
+  List<ChangeInfo> getChanges();
 
-    void setChanges(List<ChangeInfo> changes);
+  void setChanges(List<ChangeInfo> changes);
 }

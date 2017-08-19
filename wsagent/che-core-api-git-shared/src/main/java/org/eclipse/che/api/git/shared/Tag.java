@@ -19,8 +19,8 @@ import org.eclipse.che.dto.shared.DTO;
  */
 @DTO
 public interface Tag {
-    /** @return tag name */
-    String getName();
-    
-    Tag withName(String name);
+  /** @return tag name */
+  String getName();
+
+  Tag withName(String name);
 }

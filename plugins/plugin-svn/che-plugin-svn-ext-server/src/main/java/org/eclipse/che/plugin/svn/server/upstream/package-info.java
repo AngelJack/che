@@ -11,7 +11,7 @@
 /**
  * This package contains classes/utilities that should be provided upstream but currently are not.
  *
- * <b>Note:</b> Most of the content in this package is copied verbatim from the upstream Git extension.  Code is cleaned
- * up and modified where necessary.
+ * <p><b>Note:</b> Most of the content in this package is copied verbatim from the upstream Git
+ * extension. Code is cleaned up and modified where necessary.
  */
 package org.eclipse.che.plugin.svn.server.upstream;

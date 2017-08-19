@@ -10,7 +10,6 @@
  */
 package org.eclipse.che.api.debugger.server.exceptions;
 
-
 import org.eclipse.che.api.core.ServerException;
 
 /**
@@ -19,11 +18,11 @@ import org.eclipse.che.api.core.ServerException;
  * @author Anatoliy Bazko
  */
 public class DebuggerException extends ServerException {
-    public DebuggerException(String message) {
-        super(message);
-    }
+  public DebuggerException(String message) {
+    super(message);
+  }
 
-    public DebuggerException(String message, Exception cause) {
-        super(message, cause);
-    }
+  public DebuggerException(String message, Exception cause) {
+    super(message, cause);
+  }
 }

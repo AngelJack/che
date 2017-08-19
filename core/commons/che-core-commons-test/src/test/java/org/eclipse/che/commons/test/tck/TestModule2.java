@@ -10,17 +10,16 @@
  */
 package org.eclipse.che.commons.test.tck;
 
-import org.eclipse.che.commons.test.tck.TckComponentsTest.DBUrlProvider;
-
 import static org.eclipse.che.commons.test.tck.DBServerListener.DB_SERVER_URL_ATTRIBUTE_NAME;
 
-/**
- * @author Yevhenii Voevodin
- */
+import org.eclipse.che.commons.test.tck.TckComponentsTest.DBUrlProvider;
+
+/** @author Yevhenii Voevodin */
 public class TestModule2 extends TckModule {
 
-    @Override
-    public void configure() {
-        bind(DBUrlProvider.class).toInstance(() -> getTestContext().getAttribute(DB_SERVER_URL_ATTRIBUTE_NAME).toString());
-    }
+  @Override
+  public void configure() {
+    bind(DBUrlProvider.class)
+        .toInstance(() -> getTestContext().getAttribute(DB_SERVER_URL_ATTRIBUTE_NAME).toString());
+  }
 }

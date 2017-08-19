@@ -17,13 +17,9 @@ package org.eclipse.che.api.core.model.factory;
  */
 public interface Author {
 
-    /**
-     * Identifier of the user who created factory, it is mandatory
-     */
-    String getUserId();
+  /** Identifier of the user who created factory, it is mandatory */
+  String getUserId();
 
-    /**
-     * Creation time of factory, set by the server (in milliseconds, from Unix epoch, no timezone)
-     */
-    Long getCreated();
+  /** Creation time of factory, set by the server (in milliseconds, from Unix epoch, no timezone) */
+  Long getCreated();
 }

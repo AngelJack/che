@@ -10,16 +10,13 @@
  */
 package org.eclipse.che.plugin.testing.ide.model;
 
-/**
- * Interface add ability to print information to the output.
- */
+/** Interface add ability to print information to the output. */
 public interface Printable {
 
-    /**
-     * Prints information to the output.
-     *
-     * @param printer
-     *         object which should print information
-     */
-    void print(Printer printer);
+  /**
+   * Prints information to the output.
+   *
+   * @param printer object which should print information
+   */
+  void print(Printer printer);
 }

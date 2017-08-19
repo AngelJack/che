@@ -12,16 +12,14 @@ package org.eclipse.che.plugin.maven.shared.dto;
 
 import org.eclipse.che.dto.shared.DTO;
 
-/**
- * Message for translating text message from <b>MavenServerNotifier</b>
- */
+/** Message for translating text message from <b>MavenServerNotifier</b> */
 @DTO
 public interface TextMessageDto extends MavenOutputEventDto {
 
-    String getText();
+  String getText();
 
-    /** Returns text message of the output event. */
-    void setText(String text);
+  /** Returns text message of the output event. */
+  void setText(String text);
 
-    TextMessageDto withText(String text);
+  TextMessageDto withText(String text);
 }

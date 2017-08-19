@@ -18,5 +18,5 @@ import com.google.gwt.event.shared.EventHandler;
  * @author "Mickaël Leduque"
  */
 public interface BeforeSelectionChangeHandler extends EventHandler {
-    void onBeforeSelectionChange(BeforeSelectionChangeEvent event);
+  void onBeforeSelectionChange(BeforeSelectionChangeEvent event);
 }

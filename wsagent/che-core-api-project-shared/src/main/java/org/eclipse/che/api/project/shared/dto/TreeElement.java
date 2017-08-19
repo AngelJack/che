@@ -10,24 +10,21 @@
  */
 package org.eclipse.che.api.project.shared.dto;
 
+import java.util.List;
 import org.eclipse.che.dto.shared.DTO;
 
-import java.util.List;
-
-/**
- * @author andrew00x
- */
+/** @author andrew00x */
 @DTO
 public interface TreeElement {
-    ItemReference getNode();
+  ItemReference getNode();
 
-    void setNode(ItemReference node);
+  void setNode(ItemReference node);
 
-    TreeElement withNode(ItemReference node);
+  TreeElement withNode(ItemReference node);
 
-    List<TreeElement> getChildren();
+  List<TreeElement> getChildren();
 
-    void setChildren(List<TreeElement> children);
+  void setChildren(List<TreeElement> children);
 
-    TreeElement withChildren(List<TreeElement> children);
+  TreeElement withChildren(List<TreeElement> children);
 }

@@ -19,17 +19,16 @@ import javax.validation.constraints.NotNull;
  */
 public class NoCommitsInPullRequestException extends Exception {
 
-    private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 1L;
 
-    /**
-     * Constructs an instance of {@link NoCommitsInPullRequestException}.
-     *
-     * @param headBranch
-     *         the head branch name.
-     * @param baseBranch
-     *         the base branch name.
-     */
-    public NoCommitsInPullRequestException(@NotNull final String headBranch, @NotNull final String baseBranch) {
-        super("No commits between " + baseBranch + " and " + headBranch);
-    }
+  /**
+   * Constructs an instance of {@link NoCommitsInPullRequestException}.
+   *
+   * @param headBranch the head branch name.
+   * @param baseBranch the base branch name.
+   */
+  public NoCommitsInPullRequestException(
+      @NotNull final String headBranch, @NotNull final String baseBranch) {
+    super("No commits between " + baseBranch + " and " + headBranch);
+  }
 }

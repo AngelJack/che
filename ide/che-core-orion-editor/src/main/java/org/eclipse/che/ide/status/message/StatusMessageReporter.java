@@ -14,39 +14,34 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Reporter to notify all interested objects about Orion
- * editor status message.
+ * Reporter to notify all interested objects about Orion editor status message.
  *
  * @author Alexander Andrienko
  */
 public class StatusMessageReporter {
 
-    private List<StatusMessageObserver> observers = new ArrayList<>();
+  private List<StatusMessageObserver> observers = new ArrayList<>();
 
-    /**
-     * Register {@code observer}.
-     *
-     * @param observer
-     *         object to notify about new editor status message.
-     */
-    public void registerObserver(StatusMessageObserver observer) {
-        observers.add(observer);
-    }
+  /**
+   * Register {@code observer}.
+   *
+   * @param observer object to notify about new editor status message.
+   */
+  public void registerObserver(StatusMessageObserver observer) {
+    observers.add(observer);
+  }
 
-    /**
-     * Notify all observers about new editor status message.
-     *
-     * @param message
-     *         message about editor status.
-     * @param type
-     *         message type
-     * @param isAccessible
-     *         specified for orion attribute, describes screen
-     *         reader ability to read new status message.
-     */
-    public void notifyObservers(String message, String type, boolean isAccessible) {
-        for (StatusMessageObserver observer : observers) {
-            observer.update(new StatusMessage(message, type, isAccessible));
-        }
+  /**
+   * Notify all observers about new editor status message.
+   *
+   * @param message message about editor status.
+   * @param type message type
+   * @param isAccessible specified for orion attribute, describes screen reader ability to read new
+   *     status message.
+   */
+  public void notifyObservers(String message, String type, boolean isAccessible) {
+    for (StatusMessageObserver observer : observers) {
+      observer.update(new StatusMessage(message, type, isAccessible));
     }
+  }
 }

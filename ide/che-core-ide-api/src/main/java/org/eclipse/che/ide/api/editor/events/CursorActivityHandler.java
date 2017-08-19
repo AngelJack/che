@@ -19,11 +19,10 @@ import com.google.gwt.event.shared.EventHandler;
  */
 public interface CursorActivityHandler extends EventHandler {
 
-    /**
-     * Action triggered by the event.
-     *
-     * @param event
-     *         the event
-     */
-    void onCursorActivity(CursorActivityEvent event);
+  /**
+   * Action triggered by the event.
+   *
+   * @param event the event
+   */
+  void onCursorActivity(CursorActivityEvent event);
 }

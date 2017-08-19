@@ -10,21 +10,19 @@
  */
 package org.eclipse.che.plugin.gdb.server.parser;
 
-import org.testng.annotations.Test;
-
 import static org.testng.Assert.assertEquals;
 
-/**
- * @author Anatoliy Bazko
- */
+import org.testng.annotations.Test;
+
+/** @author Anatoliy Bazko */
 public class GdbPTypeTest {
 
-    @Test
-    public void testParse() throws Exception {
-        GdbOutput gdbOutput = GdbOutput.of("type = int\n");
+  @Test
+  public void testParse() throws Exception {
+    GdbOutput gdbOutput = GdbOutput.of("type = int\n");
 
-        GdbPType gdbPType = GdbPType.parse(gdbOutput);
+    GdbPType gdbPType = GdbPType.parse(gdbOutput);
 
-        assertEquals(gdbPType.getType(), "int");
-    }
+    assertEquals(gdbPType.getType(), "int");
+  }
 }

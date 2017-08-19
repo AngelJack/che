@@ -18,9 +18,9 @@ import java.io.IOException;
  * @author Alexander Garagatyi
  */
 public abstract class AbstractLineConsumer implements LineConsumer {
-    @Override
-    public void writeLine(String line) throws IOException {}
+  @Override
+  public void writeLine(String line) throws IOException {}
 
-    @Override
-    public void close() throws IOException {}
+  @Override
+  public void close() throws IOException {}
 }

@@ -16,24 +16,22 @@ import org.eclipse.che.api.machine.server.model.impl.MachineImpl;
 import org.eclipse.che.api.machine.server.model.impl.MachineRuntimeInfoImpl;
 import org.eclipse.che.api.machine.server.spi.Instance;
 
-/**
- * @author Alexander Garagatyi
- */
+/** @author Alexander Garagatyi */
 public abstract class AbstractInstance extends MachineImpl implements Instance {
-    public AbstractInstance(Machine machine) {
-        super(machine);
-    }
+  public AbstractInstance(Machine machine) {
+    super(machine);
+  }
 
-    @Override
-    public synchronized MachineStatus getStatus() {
-        return super.getStatus();
-    }
+  @Override
+  public synchronized MachineStatus getStatus() {
+    return super.getStatus();
+  }
 
-    @Override
-    public synchronized void setStatus(MachineStatus status) {
-        super.setStatus(status);
-    }
+  @Override
+  public synchronized void setStatus(MachineStatus status) {
+    super.setStatus(status);
+  }
 
-    @Override
-    public abstract MachineRuntimeInfoImpl getRuntime();
+  @Override
+  public abstract MachineRuntimeInfoImpl getRuntime();
 }

@@ -10,16 +10,13 @@
  */
 package org.eclipse.che.api.git.shared;
 
+import java.util.List;
 import org.eclipse.che.dto.shared.DTO;
 
-import java.util.List;
-
-/**
- * @author andrew00x
- */
+/** @author andrew00x */
 @DTO
 public interface Commiters {
-    List<GitUser> getCommiters();
-    
-    Commiters withCommiters(List<GitUser> commiters);
+  List<GitUser> getCommiters();
+
+  Commiters withCommiters(List<GitUser> commiters);
 }

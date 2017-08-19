@@ -17,13 +17,12 @@ package org.eclipse.che.ide.api.extension;
  */
 public @interface Extension {
 
-    /** @return Extension version */
-    String version() default "1.0";
+  /** @return Extension version */
+  String version() default "1.0";
 
-    /** @return Extension title */
-    String title();
+  /** @return Extension title */
+  String title();
 
-    /** @return Extension brief description */
-    String description() default "";
-
+  /** @return Extension brief description */
+  String description() default "";
 }

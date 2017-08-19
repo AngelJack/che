@@ -11,7 +11,6 @@
 package org.eclipse.che.plugin.pullrequest.client.events;
 
 import com.google.gwt.event.shared.EventHandler;
-
 import javax.validation.constraints.NotNull;
 
 /**
@@ -20,19 +19,17 @@ import javax.validation.constraints.NotNull;
  * @author Kevin Pollet
  */
 public interface StepHandler extends EventHandler {
-    /**
-     * Called when a step is successfully done.
-     *
-     * @param event
-     *         the step event.
-     */
-    void onStepDone(@NotNull StepEvent event);
+  /**
+   * Called when a step is successfully done.
+   *
+   * @param event the step event.
+   */
+  void onStepDone(@NotNull StepEvent event);
 
-    /**
-     * Called when a step is in error.
-     *
-     * @param event
-     *         the step event.
-     */
-    void onStepError(@NotNull StepEvent event);
+  /**
+   * Called when a step is in error.
+   *
+   * @param event the step event.
+   */
+  void onStepError(@NotNull StepEvent event);
 }

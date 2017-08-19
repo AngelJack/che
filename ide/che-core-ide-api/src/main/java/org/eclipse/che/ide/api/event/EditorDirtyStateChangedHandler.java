@@ -20,11 +20,10 @@ import com.google.gwt.event.shared.EventHandler;
  */
 public interface EditorDirtyStateChangedHandler extends EventHandler {
 
-    /**
-     * Editor became dirty, containing unsaved changes, or got saved
-     *
-     * @param event
-     */
-    void onEditorDirtyStateChanged(EditorDirtyStateChangedEvent event);
-
+  /**
+   * Editor became dirty, containing unsaved changes, or got saved
+   *
+   * @param event
+   */
+  void onEditorDirtyStateChanged(EditorDirtyStateChangedEvent event);
 }

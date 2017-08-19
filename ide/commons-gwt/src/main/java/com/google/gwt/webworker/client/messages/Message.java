@@ -16,9 +16,9 @@ package com.google.gwt.webworker.client.messages;
  * @author <a href="mailto:evidolob@codenvy.com">Evgen Vidolob</a>
  */
 public interface Message {
-    int    NON_ROUTABLE_TYPE = -2;
-    String TYPE_FIELD        = "_type";
+  int NON_ROUTABLE_TYPE = -2;
+  String TYPE_FIELD = "_type";
 
-    /** Every DTO needs to report a type for the purposes of routing messages on the client. */
-    int getType();
+  /** Every DTO needs to report a type for the purposes of routing messages on the client. */
+  int getType();
 }

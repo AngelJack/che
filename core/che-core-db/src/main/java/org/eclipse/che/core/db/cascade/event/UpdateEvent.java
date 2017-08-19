@@ -17,22 +17,22 @@ import org.eclipse.che.api.core.ServerException;
 /**
  * Cascade event about an entity updating.
  *
- * <p>{@link NotFoundException}, {@link ConflictException} or {@link ServerException}
- * can be rethrown during exception propagating.
+ * <p>{@link NotFoundException}, {@link ConflictException} or {@link ServerException} can be
+ * rethrown during exception propagating.
  *
  * @author Sergii Leschenko
  */
 public abstract class UpdateEvent extends CascadeEvent {
-    @Override
-    public void propagateException() throws NotFoundException, ConflictException, ServerException {
-        if (context.isFailed()) {
-            try {
-                throw context.getCause();
-            } catch (NotFoundException | ConflictException | ServerException e) {
-                throw e;
-            } catch (Exception e) {
-                throw new ServerException(e.getLocalizedMessage(), e);
-            }
-        }
+  @Override
+  public void propagateException() throws NotFoundException, ConflictException, ServerException {
+    if (context.isFailed()) {
+      try {
+        throw context.getCause();
+      } catch (NotFoundException | ConflictException | ServerException e) {
+        throw e;
+      } catch (Exception e) {
+        throw new ServerException(e.getLocalizedMessage(), e);
+      }
     }
+  }
 }

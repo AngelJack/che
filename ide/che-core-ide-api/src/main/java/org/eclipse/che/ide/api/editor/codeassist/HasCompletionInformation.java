@@ -10,9 +10,7 @@
  */
 package org.eclipse.che.ide.api.editor.codeassist;
 
-/**
- * @author Evgen Vidolob
- */
+/** @author Evgen Vidolob */
 public interface HasCompletionInformation {
-    void showCompletionInformation();
+  void showCompletionInformation();
 }

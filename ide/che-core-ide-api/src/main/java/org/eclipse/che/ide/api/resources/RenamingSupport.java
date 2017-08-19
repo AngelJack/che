@@ -16,6 +16,6 @@ package org.eclipse.che.ide.api.resources;
  * @author Valeriy Svydenko
  */
 public interface RenamingSupport {
-    /** Returns {@code} true if renaming is allowed otherwise {@code} false */
-    boolean isRenameAllowed(Resource resource);
+  /** Returns {@code} true if renaming is allowed otherwise {@code} false */
+  boolean isRenameAllowed(Resource resource);
 }

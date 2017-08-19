@@ -13,5 +13,5 @@ package org.eclipse.che.ide.ui.menubutton;
 /** Item for {@link MenuButton}. */
 public interface MenuItem {
 
-    String getName();
+  String getName();
 }

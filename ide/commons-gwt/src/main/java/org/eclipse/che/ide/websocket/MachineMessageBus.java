@@ -10,12 +10,10 @@
  */
 package org.eclipse.che.ide.websocket;
 
-/**
- * @author Dmitry Shnurenko
- */
+/** @author Dmitry Shnurenko */
 public class MachineMessageBus extends AbstractMessageBus {
 
-    public MachineMessageBus(String workspaceUrl) {
-        super(workspaceUrl);
-    }
+  public MachineMessageBus(String workspaceUrl) {
+    super(workspaceUrl);
+  }
 }

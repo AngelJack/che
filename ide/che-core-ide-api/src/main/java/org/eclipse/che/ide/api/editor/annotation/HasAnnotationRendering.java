@@ -14,9 +14,10 @@ import org.eclipse.che.ide.api.editor.document.DocumentHandle;
 
 /**
  * Interface for objects that may render annotations.
+ *
  * @author Evgen Vidolob
  */
 public interface HasAnnotationRendering {
 
-    void configure(AnnotationModel model, DocumentHandle document);
+  void configure(AnnotationModel model, DocumentHandle document);
 }

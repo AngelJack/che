@@ -10,12 +10,11 @@
  */
 package org.eclipse.che.plugin.pullrequest.client.steps;
 
+import com.google.inject.Singleton;
+import javax.inject.Inject;
 import org.eclipse.che.plugin.pullrequest.client.workflow.Context;
 import org.eclipse.che.plugin.pullrequest.client.workflow.Step;
 import org.eclipse.che.plugin.pullrequest.client.workflow.WorkflowExecutor;
-import com.google.inject.Singleton;
-
-import javax.inject.Inject;
 
 /**
  * Push the local contribution branch to origin repository
@@ -25,21 +24,20 @@ import javax.inject.Inject;
 @Singleton
 public class PushBranchOnOriginStep implements Step {
 
-    private final static String ORIGIN_REMOTE_NAME = "origin";
+  private static final String ORIGIN_REMOTE_NAME = "origin";
 
-    private final PushBranchStepFactory pushBranchStepFactory;
+  private final PushBranchStepFactory pushBranchStepFactory;
 
-    @Inject
-    public PushBranchOnOriginStep(PushBranchStepFactory pushBranchStepFactory) {
-        this.pushBranchStepFactory = pushBranchStepFactory;
-    }
+  @Inject
+  public PushBranchOnOriginStep(PushBranchStepFactory pushBranchStepFactory) {
+    this.pushBranchStepFactory = pushBranchStepFactory;
+  }
 
-    @Override
-    public void execute(final WorkflowExecutor executor, final Context context) {
-        context.setForkedRemoteName(ORIGIN_REMOTE_NAME);
-        pushBranchStepFactory.create(this,
-                                     context.getOriginRepositoryOwner(),
-                                     context.getOriginRepositoryName())
-                             .execute(executor, context);
-    }
+  @Override
+  public void execute(final WorkflowExecutor executor, final Context context) {
+    context.setForkedRemoteName(ORIGIN_REMOTE_NAME);
+    pushBranchStepFactory
+        .create(this, context.getOriginRepositoryOwner(), context.getOriginRepositoryName())
+        .execute(executor, context);
+  }
 }

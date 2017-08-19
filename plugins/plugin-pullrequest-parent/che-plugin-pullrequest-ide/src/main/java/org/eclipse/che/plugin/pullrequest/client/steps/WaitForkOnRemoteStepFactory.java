@@ -12,9 +12,7 @@ package org.eclipse.che.plugin.pullrequest.client.steps;
 
 import org.eclipse.che.plugin.pullrequest.client.workflow.Step;
 
-/**
- * Factory for {@link WaitForkOnRemoteStep}.
- */
+/** Factory for {@link WaitForkOnRemoteStep}. */
 public interface WaitForkOnRemoteStepFactory {
-    WaitForkOnRemoteStep create(Step nextStep);
+  WaitForkOnRemoteStep create(Step nextStep);
 }

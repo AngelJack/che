@@ -12,13 +12,11 @@ package org.eclipse.che.plugin.maven.shared.dto;
 
 import org.eclipse.che.dto.shared.DTO;
 
-/**
- * Message for translating value of percent undefined from <b>MavenServerNotifier</b>.
- */
+/** Message for translating value of percent undefined from <b>MavenServerNotifier</b>. */
 @DTO
 public interface PercentUndefinedMessageDto extends MavenOutputEventDto {
 
-    boolean isPercentUndefined();
+  boolean isPercentUndefined();
 
-    void setPercentUndefined(boolean percentUndefined);
+  void setPercentUndefined(boolean percentUndefined);
 }

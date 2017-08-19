@@ -19,7 +19,6 @@ import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.Widget;
-
 import org.eclipse.che.ide.api.action.Action;
 import org.vectomatic.dom.svg.ui.SVGImage;
 import org.vectomatic.dom.svg.ui.SVGResource;
@@ -31,47 +30,47 @@ import org.vectomatic.dom.svg.ui.SVGResource;
  */
 public class MenuItemActionWidget extends Composite implements MenuItem<Action> {
 
-    private static final MenuItemActionWidgetUiBinder UI_BINDER = GWT.create(MenuItemActionWidgetUiBinder.class);
+  private static final MenuItemActionWidgetUiBinder UI_BINDER =
+      GWT.create(MenuItemActionWidgetUiBinder.class);
 
-    @UiField
-    FlowPanel iconPanel;
-    @UiField
-    Label     title;
+  @UiField FlowPanel iconPanel;
+  @UiField Label title;
 
-    private Action         action;
-    private ActionDelegate delegate;
+  private Action action;
+  private ActionDelegate delegate;
 
-    public MenuItemActionWidget(Action action) {
-        initWidget(UI_BINDER.createAndBindUi(this));
-        this.action = action;
+  public MenuItemActionWidget(Action action) {
+    initWidget(UI_BINDER.createAndBindUi(this));
+    this.action = action;
 
-        final SVGResource actionIcon = action.getTemplatePresentation().getSVGResource();
-        if (actionIcon != null) {
-            iconPanel.add(new SVGImage(actionIcon));
-        }
+    final SVGResource actionIcon = action.getTemplatePresentation().getSVGResource();
+    if (actionIcon != null) {
+      iconPanel.add(new SVGImage(actionIcon));
+    }
 
-        title.setText(action.getTemplatePresentation().getText());
+    title.setText(action.getTemplatePresentation().getText());
 
-        addDomHandler(new ClickHandler() {
-            @Override
-            public void onClick(ClickEvent event) {
-                if (delegate != null) {
-                    delegate.onItemSelected(MenuItemActionWidget.this);
-                }
+    addDomHandler(
+        new ClickHandler() {
+          @Override
+          public void onClick(ClickEvent event) {
+            if (delegate != null) {
+              delegate.onItemSelected(MenuItemActionWidget.this);
             }
-        }, ClickEvent.getType());
-    }
+          }
+        },
+        ClickEvent.getType());
+  }
 
-    @Override
-    public void setDelegate(ActionDelegate delegate) {
-        this.delegate = delegate;
-    }
+  @Override
+  public void setDelegate(ActionDelegate delegate) {
+    this.delegate = delegate;
+  }
 
-    @Override
-    public Action getData() {
-        return action;
-    }
+  @Override
+  public Action getData() {
+    return action;
+  }
 
-    interface MenuItemActionWidgetUiBinder extends UiBinder<Widget, MenuItemActionWidget> {
-    }
+  interface MenuItemActionWidgetUiBinder extends UiBinder<Widget, MenuItemActionWidget> {}
 }

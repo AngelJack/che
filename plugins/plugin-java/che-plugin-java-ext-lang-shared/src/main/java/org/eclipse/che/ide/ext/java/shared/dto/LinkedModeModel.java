@@ -10,21 +10,18 @@
  */
 package org.eclipse.che.ide.ext.java.shared.dto;
 
+import java.util.List;
 import org.eclipse.che.dto.shared.DTO;
 
-import java.util.List;
-
-/**
- * @author Evgen Vidolob
- */
+/** @author Evgen Vidolob */
 @DTO
 public interface LinkedModeModel {
 
-    void setGroups(List<LinkedPositionGroup> groups);
+  void setGroups(List<LinkedPositionGroup> groups);
 
-    List<LinkedPositionGroup> getGroups();
+  List<LinkedPositionGroup> getGroups();
 
-    void setEscapePosition(int offset);
+  void setEscapePosition(int offset);
 
-    int getEscapePosition();
+  int getEscapePosition();
 }

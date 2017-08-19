@@ -10,18 +10,13 @@
  */
 package org.eclipse.che.plugin.svn.shared;
 
-/**
- * Client/server shared class for the subversion mixin type constant.
- */
+/** Client/server shared class for the subversion mixin type constant. */
 public final class SubversionTypeConstant {
 
-    private SubversionTypeConstant() {
-    }
+  private SubversionTypeConstant() {}
 
-    public static final String SUBVERSION_MIXIN_TYPE = "subversion";
+  public static final String SUBVERSION_MIXIN_TYPE = "subversion";
 
-    /**
-     * Attribute name for the respoitory URL.
-     */
-    public static final String SUBVERSION_ATTRIBUTE_REPOSITORY_URL = "svn.repository.url";
+  /** Attribute name for the respoitory URL. */
+  public static final String SUBVERSION_ATTRIBUTE_REPOSITORY_URL = "svn.repository.url";
 }

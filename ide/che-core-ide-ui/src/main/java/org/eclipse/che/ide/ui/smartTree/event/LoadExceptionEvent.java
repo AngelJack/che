@@ -13,7 +13,6 @@ package org.eclipse.che.ide.ui.smartTree.event;
 import com.google.gwt.event.shared.EventHandler;
 import com.google.gwt.event.shared.GwtEvent;
 import com.google.gwt.event.shared.HandlerRegistration;
-
 import org.eclipse.che.ide.api.data.tree.Node;
 import org.eclipse.che.ide.ui.smartTree.event.LoadExceptionEvent.LoadExceptionHandler;
 
@@ -24,47 +23,47 @@ import org.eclipse.che.ide.ui.smartTree.event.LoadExceptionEvent.LoadExceptionHa
  */
 public class LoadExceptionEvent extends GwtEvent<LoadExceptionHandler> {
 
-    public interface HasLoadExceptionHandlers {
-        public HandlerRegistration addLoadExceptionHandler(LoadExceptionHandler handler);
+  public interface HasLoadExceptionHandlers {
+    public HandlerRegistration addLoadExceptionHandler(LoadExceptionHandler handler);
+  }
+
+  public interface LoadExceptionHandler extends EventHandler {
+    void onLoadException(LoadExceptionEvent event);
+  }
+
+  private static Type<LoadExceptionHandler> TYPE;
+
+  public static Type<LoadExceptionHandler> getType() {
+    if (TYPE == null) {
+      TYPE = new Type<>();
     }
+    return TYPE;
+  }
 
-    public interface LoadExceptionHandler extends EventHandler {
-        void onLoadException(LoadExceptionEvent event);
-    }
+  private Node requestedNode;
+  private Throwable exception;
 
-    private static Type<LoadExceptionHandler> TYPE;
+  public LoadExceptionEvent(Node requestedNode, Throwable exception) {
+    this.requestedNode = requestedNode;
+    this.exception = exception;
+  }
 
-    public static Type<LoadExceptionHandler> getType() {
-        if (TYPE == null) {
-            TYPE = new Type<>();
-        }
-        return TYPE;
-    }
+  @Override
+  public Type<LoadExceptionHandler> getAssociatedType() {
+    return TYPE;
+  }
 
-    private Node      requestedNode;
-    private Throwable exception;
+  public Throwable getException() {
+    return exception;
+  }
 
-    public LoadExceptionEvent(Node requestedNode, Throwable exception) {
-        this.requestedNode = requestedNode;
-        this.exception = exception;
-    }
+  public Node getRequestedNode() {
+    return requestedNode;
+  }
 
-    @Override
-    public Type<LoadExceptionHandler> getAssociatedType() {
-        return TYPE;
-    }
-
-    public Throwable getException() {
-        return exception;
-    }
-
-    public Node getRequestedNode() {
-        return requestedNode;
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    protected void dispatch(LoadExceptionHandler handler) {
-        handler.onLoadException(this);
-    }
+  /** {@inheritDoc} */
+  @Override
+  protected void dispatch(LoadExceptionHandler handler) {
+    handler.onLoadException(this);
+  }
 }

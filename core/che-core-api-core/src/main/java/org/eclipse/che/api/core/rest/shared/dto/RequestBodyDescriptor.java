@@ -19,20 +19,19 @@ import org.eclipse.che.dto.shared.DTO;
  */
 @DTO
 public interface RequestBodyDescriptor {
-    /**
-     * Get optional description of request body.
-     *
-     * @return optional description of request body
-     */
-    String getDescription();
+  /**
+   * Get optional description of request body.
+   *
+   * @return optional description of request body
+   */
+  String getDescription();
 
-    RequestBodyDescriptor withDescription(String description);
+  RequestBodyDescriptor withDescription(String description);
 
-    /**
-     * Set optional description of request body.
-     *
-     * @param description
-     *         optional description of request body
-     */
-    void setDescription(String description);
+  /**
+   * Set optional description of request body.
+   *
+   * @param description optional description of request body
+   */
+  void setDescription(String description);
 }

@@ -19,12 +19,11 @@ import com.google.gwt.event.shared.HasHandlers;
  * @author "Mickaël Leduque"
  */
 public interface HasCursorActivityHandlers extends HasHandlers {
-    /**
-     * Add a {@link CursorActivityHandler}.
-     *
-     * @param handler
-     *         the handler to add
-     * @return a handler used to remove the handler
-     */
-    HandlerRegistration addCursorActivityHandler(CursorActivityHandler handler);
+  /**
+   * Add a {@link CursorActivityHandler}.
+   *
+   * @param handler the handler to add
+   * @return a handler used to remove the handler
+   */
+  HandlerRegistration addCursorActivityHandler(CursorActivityHandler handler);
 }

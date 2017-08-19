@@ -18,35 +18,23 @@ import org.eclipse.che.commons.annotation.Nullable;
  * @author Anatoliy Bazko
  */
 public interface DebuggerInfo {
-    /**
-     * The host where debugger is connected to.
-     */
-    @Nullable
-    String getHost();
+  /** The host where debugger is connected to. */
+  @Nullable
+  String getHost();
 
-    /**
-     * The port where debugger is connected to.
-     */
-    int getPort();
+  /** The port where debugger is connected to. */
+  int getPort();
 
-    /**
-     * The debugger name.
-     */
-    String getName();
+  /** The debugger name. */
+  String getName();
 
-    /**
-     * The debugger version.
-     */
-    String getVersion();
+  /** The debugger version. */
+  String getVersion();
 
-    /**
-     * The pid where debugger is connected to.
-     */
-    int getPid();
+  /** The pid where debugger is connected to. */
+  int getPid();
 
-    /**
-     * The binary file used by debugger.
-     */
-    @Nullable
-    String getFile();
+  /** The binary file used by debugger. */
+  @Nullable
+  String getFile();
 }

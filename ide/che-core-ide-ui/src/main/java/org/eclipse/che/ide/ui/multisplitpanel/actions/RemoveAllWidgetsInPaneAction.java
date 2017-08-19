@@ -22,17 +22,17 @@ import org.eclipse.che.ide.ui.multisplitpanel.WidgetToShow;
  */
 public class RemoveAllWidgetsInPaneAction extends Action {
 
-    private final SubPanel subPanel;
+  private final SubPanel subPanel;
 
-    public RemoveAllWidgetsInPaneAction(SubPanel subPanel) {
-        super("Close All Tabs In Pane", "Close All Tabs In Pane", null, null);
-        this.subPanel = subPanel;
-    }
+  public RemoveAllWidgetsInPaneAction(SubPanel subPanel) {
+    super("Close All Tabs In Pane", "Close All Tabs In Pane", null, null);
+    this.subPanel = subPanel;
+  }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        for (WidgetToShow widget : subPanel.getAllWidgets()) {
-            subPanel.removeWidget(widget);
-        }
+  @Override
+  public void actionPerformed(ActionEvent e) {
+    for (WidgetToShow widget : subPanel.getAllWidgets()) {
+      subPanel.removeWidget(widget);
     }
+  }
 }

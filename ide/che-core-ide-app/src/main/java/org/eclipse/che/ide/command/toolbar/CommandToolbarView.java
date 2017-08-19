@@ -11,20 +11,18 @@
 package org.eclipse.che.ide.command.toolbar;
 
 import com.google.gwt.user.client.ui.AcceptsOneWidget;
-
 import org.eclipse.che.ide.api.mvp.View;
 
 /** View for command toolbar. */
 public interface CommandToolbarView extends View<CommandToolbarView.ActionDelegate> {
 
-    AcceptsOneWidget getCommandsPanelContainer();
+  AcceptsOneWidget getCommandsPanelContainer();
 
-    AcceptsOneWidget getProcessesListContainer();
+  AcceptsOneWidget getProcessesListContainer();
 
-    AcceptsOneWidget getPreviewUrlsListContainer();
+  AcceptsOneWidget getPreviewUrlsListContainer();
 
-    void addButton(ToolbarButton button);
+  void addButton(ToolbarButton button);
 
-    interface ActionDelegate {
-    }
+  interface ActionDelegate {}
 }

@@ -11,15 +11,15 @@
 package org.eclipse.che.api.vfs;
 
 public class ArchiverFactory {
-    public Archiver createArchiver(VirtualFile folder, String archiveType) {
-        if (archiveType == null) {
-            throw new IllegalArgumentException("Archive type might not be null");
-        }
-        if ("zip".equals(archiveType.toLowerCase())) {
-            return new ZipArchiver(folder);
-        } else if ("tar".equals(archiveType.toLowerCase())) {
-            return new TarArchiver(folder);
-        }
-        throw new IllegalArgumentException(String.format("Unsupported archive type %s", archiveType));
+  public Archiver createArchiver(VirtualFile folder, String archiveType) {
+    if (archiveType == null) {
+      throw new IllegalArgumentException("Archive type might not be null");
     }
+    if ("zip".equals(archiveType.toLowerCase())) {
+      return new ZipArchiver(folder);
+    } else if ("tar".equals(archiveType.toLowerCase())) {
+      return new TarArchiver(folder);
+    }
+    throw new IllegalArgumentException(String.format("Unsupported archive type %s", archiveType));
+  }
 }

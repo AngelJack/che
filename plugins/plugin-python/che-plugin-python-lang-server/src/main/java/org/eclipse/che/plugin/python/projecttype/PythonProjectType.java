@@ -10,25 +10,22 @@
  */
 package org.eclipse.che.plugin.python.projecttype;
 
-import com.google.inject.Inject;
-
-import org.eclipse.che.api.project.server.type.ProjectTypeDef;
-
 import static org.eclipse.che.plugin.python.shared.ProjectAttributes.LANGUAGE;
 import static org.eclipse.che.plugin.python.shared.ProjectAttributes.PYTHON_ID;
 import static org.eclipse.che.plugin.python.shared.ProjectAttributes.PYTHON_NAME;
 
+import com.google.inject.Inject;
+import org.eclipse.che.api.project.server.type.ProjectTypeDef;
 
 /**
- * Python  project type.
+ * Python project type.
  *
  * @author Valeriy Svydenko
  */
 public class PythonProjectType extends ProjectTypeDef {
-    @Inject
-    public PythonProjectType() {
-        super(PYTHON_ID, PYTHON_NAME, true, false, true);
-        addConstantDefinition(LANGUAGE, LANGUAGE, PYTHON_ID);
-    }
-
+  @Inject
+  public PythonProjectType() {
+    super(PYTHON_ID, PYTHON_NAME, true, false, true);
+    addConstantDefinition(LANGUAGE, LANGUAGE, PYTHON_ID);
+  }
 }

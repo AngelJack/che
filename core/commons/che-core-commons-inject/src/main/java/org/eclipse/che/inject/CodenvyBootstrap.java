@@ -15,5 +15,4 @@ package org.eclipse.che.inject;
  * Deprecated in favor of {@link org.eclipse.che.inject.CheBootstrap}
  */
 @Deprecated
-public class CodenvyBootstrap extends CheBootstrap {
-}
+public class CodenvyBootstrap extends CheBootstrap {}

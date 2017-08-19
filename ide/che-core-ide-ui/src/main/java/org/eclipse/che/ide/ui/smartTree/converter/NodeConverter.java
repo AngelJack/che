@@ -18,12 +18,11 @@ import org.eclipse.che.ide.api.data.tree.Node;
  * @author Vlad Zhukovskyi
  */
 public interface NodeConverter<N extends Node, D> {
-    /**
-     * Convert node into another type, e.g. String or other type.
-     *
-     * @param node
-     *         node to be converted.
-     * @return instance of {@link D}
-     */
-    D convert(N node);
+  /**
+   * Convert node into another type, e.g. String or other type.
+   *
+   * @param node node to be converted.
+   * @return instance of {@link D}
+   */
+  D convert(N node);
 }

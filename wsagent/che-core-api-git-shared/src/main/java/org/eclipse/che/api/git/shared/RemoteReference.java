@@ -19,15 +19,15 @@ import org.eclipse.che.dto.shared.DTO;
  */
 @DTO
 public interface RemoteReference {
-    String getCommitId();
+  String getCommitId();
 
-    void setCommitId(String commitId);
+  void setCommitId(String commitId);
 
-    RemoteReference withCommitId(String commitId);
+  RemoteReference withCommitId(String commitId);
 
-    String getReferenceName();
+  String getReferenceName();
 
-    void setReferenceName(String referenceName);
+  void setReferenceName(String referenceName);
 
-    RemoteReference withReferenceName(String referenceName);
+  RemoteReference withReferenceName(String referenceName);
 }

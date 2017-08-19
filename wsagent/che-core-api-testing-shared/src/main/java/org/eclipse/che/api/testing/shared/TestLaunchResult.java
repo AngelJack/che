@@ -10,33 +10,26 @@
  */
 package org.eclipse.che.api.testing.shared;
 
+import javax.validation.constraints.NotNull;
 import org.eclipse.che.dto.shared.DTO;
 
-import javax.validation.constraints.NotNull;
-
-/**
- * Describes test position in document
- */
+/** Describes test position in document */
 @DTO
 public interface TestLaunchResult {
 
-    /**
-     * @return {@code true} if tests were launched successfully otherwise returns false
-     */
-    @NotNull
-    boolean isSuccess();
+  /** @return {@code true} if tests were launched successfully otherwise returns false */
+  @NotNull
+  boolean isSuccess();
 
-    void setSuccess(boolean isSuccess);
+  void setSuccess(boolean isSuccess);
 
-    TestLaunchResult withSuccess(boolean isSuccess);
+  TestLaunchResult withSuccess(boolean isSuccess);
 
-    /**
-     * @return port for connecting to the debugger if Debug Mode is on
-     */
-    @NotNull
-    int getDebugPort();
+  /** @return port for connecting to the debugger if Debug Mode is on */
+  @NotNull
+  int getDebugPort();
 
-    void setDebugPort(int port);
+  void setDebugPort(int port);
 
-    TestLaunchResult withDebugPort(int port);
+  TestLaunchResult withDebugPort(int port);
 }

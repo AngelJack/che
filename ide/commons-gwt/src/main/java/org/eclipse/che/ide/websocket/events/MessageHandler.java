@@ -12,5 +12,5 @@ package org.eclipse.che.ide.websocket.events;
 
 /** Handler messages sent to you on the message bus by subscription. */
 public interface MessageHandler {
-    void onMessage(String message);
+  void onMessage(String message);
 }

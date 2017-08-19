@@ -19,12 +19,12 @@ import org.eclipse.che.dto.shared.DTO;
  */
 @DTO
 public interface Field extends Member {
-    /**
-     * Returns the simple name of this field.
-     * @return the simple name of this field.
-     */
-    String getElementName();
+  /**
+   * Returns the simple name of this field.
+   *
+   * @return the simple name of this field.
+   */
+  String getElementName();
 
-    void setElementName(String elementName);
-
+  void setElementName(String elementName);
 }

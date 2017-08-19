@@ -12,20 +12,18 @@ package org.eclipse.che.plugin.pullrequest.shared.dto;
 
 import org.eclipse.che.dto.shared.DTO;
 
-/**
- * Contribution configuration, which contains the values chosen by the user.
- */
+/** Contribution configuration, which contains the values chosen by the user. */
 @DTO
 public interface Configuration {
-    String getContributionBranchName();
+  String getContributionBranchName();
 
-    Configuration withContributionBranchName(String name);
+  Configuration withContributionBranchName(String name);
 
-    String getContributionComment();
+  String getContributionComment();
 
-    Configuration withContributionComment(String comment);
+  Configuration withContributionComment(String comment);
 
-    String getContributionTitle();
+  String getContributionTitle();
 
-    Configuration withContributionTitle(String title);
+  Configuration withContributionTitle(String title);
 }

@@ -22,14 +22,14 @@ import org.eclipse.che.core.db.cascade.event.RemoveEvent;
 @EventOrigin("user")
 public class BeforeUserRemovedEvent extends RemoveEvent {
 
-    private final UserImpl user;
+  private final UserImpl user;
 
-    public BeforeUserRemovedEvent(UserImpl user) {
-        this.user = user;
-    }
+  public BeforeUserRemovedEvent(UserImpl user) {
+    this.user = user;
+  }
 
-    /** Returns user which is going to be removed. */
-    public UserImpl getUser() {
-        return user;
-    }
+  /** Returns user which is going to be removed. */
+  public UserImpl getUser() {
+    return user;
+  }
 }

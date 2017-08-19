@@ -10,14 +10,13 @@
  */
 package org.eclipse.che.ide.api.editor.codeassist;
 
-/**
- * Interface for an asynchronous source of completions.
- */
+/** Interface for an asynchronous source of completions. */
 public interface CompletionsSource {
 
-    /**
-     * Compute completion proposals.
-     * @param callback what to do when the completions are ready
-     */
-    void computeCompletions(CompletionReadyCallback callback);
+  /**
+   * Compute completion proposals.
+   *
+   * @param callback what to do when the completions are ready
+   */
+  void computeCompletions(CompletionReadyCallback callback);
 }

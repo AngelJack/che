@@ -18,16 +18,16 @@ import com.google.gwt.i18n.client.Messages;
  * @author Oleksii Orel
  */
 public interface ZeroClipboardConstant extends Messages {
-        /* Prompts */
-    @Key("prompt.readyToCopy")
-    String promptReadyToCopy();
+  /* Prompts */
+  @Key("prompt.readyToCopy")
+  String promptReadyToCopy();
 
-    @Key("prompt.afterCopy")
-    String promptAfterCopy();
+  @Key("prompt.afterCopy")
+  String promptAfterCopy();
 
-    @Key("prompt.copyError")
-    String promptCopyError();
+  @Key("prompt.copyError")
+  String promptCopyError();
 
-    @Key("prompt.readyToSelect")
-    String promptReadyToSelect();
+  @Key("prompt.readyToSelect")
+  String promptReadyToSelect();
 }

@@ -10,31 +10,32 @@
  */
 package org.eclipse.che.rmi;
 
-import javax.naming.Context;
-import javax.naming.NamingException;
-import javax.naming.spi.InitialContextFactory;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 import java.util.Hashtable;
+import javax.naming.Context;
+import javax.naming.NamingException;
+import javax.naming.spi.InitialContextFactory;
 
 /**
- * InitialContextFactory implementation.
- * Configured in <code>RmiServer</code>.
+ * InitialContextFactory implementation. Configured in <code>RmiServer</code>.
+ *
  * @author Evgen Vidolob
  */
 public class JNDI implements InvocationHandler, InitialContextFactory {
 
-    @Override
-    public Context getInitialContext(Hashtable< ? , ? > environment) throws NamingException {
-        return (Context)Proxy.newProxyInstance(getClass().getClassLoader(), new Class[]{Context.class}, this);
-    }
+  @Override
+  public Context getInitialContext(Hashtable<?, ?> environment) throws NamingException {
+    return (Context)
+        Proxy.newProxyInstance(getClass().getClassLoader(), new Class[] {Context.class}, this);
+  }
 
-    @Override
-    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-        if (Object.class.equals(method.getDeclaringClass())) {
-            return method.invoke(this, args);
-        }
-        throw new NamingException("JNDI can't serve method not form Object");
+  @Override
+  public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+    if (Object.class.equals(method.getDeclaringClass())) {
+      return method.invoke(this, args);
     }
+    throw new NamingException("JNDI can't serve method not form Object");
+  }
 }

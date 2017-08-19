@@ -19,12 +19,12 @@ import org.eclipse.che.dto.shared.DTO;
  */
 @DTO
 public interface ShowFileContentResponse extends Log {
-    /** @return content of the file */
-    String getContent();
+  /** @return content of the file */
+  String getContent();
 
-    /** set content of the file */
-    void setContent(String content);
+  /** set content of the file */
+  void setContent(String content);
 
-    /** @return response with established file content */
-    ShowFileContentResponse withContent(String content);
+  /** @return response with established file content */
+  ShowFileContentResponse withContent(String content);
 }

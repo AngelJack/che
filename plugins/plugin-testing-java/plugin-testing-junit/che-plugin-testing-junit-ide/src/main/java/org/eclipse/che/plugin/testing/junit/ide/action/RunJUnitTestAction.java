@@ -10,9 +10,11 @@
  */
 package org.eclipse.che.plugin.testing.junit.ide.action;
 
+import static java.util.Collections.singletonList;
+import static org.eclipse.che.ide.workspace.perspectives.project.ProjectPerspective.PROJECT_PERSPECTIVE_ID;
+
 import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.EventBus;
-
 import org.eclipse.che.ide.api.action.ActionEvent;
 import org.eclipse.che.ide.api.app.AppContext;
 import org.eclipse.che.ide.api.debug.DebugConfigurationsManager;
@@ -26,43 +28,39 @@ import org.eclipse.che.plugin.testing.ide.view2.TestResultPresenter;
 import org.eclipse.che.plugin.testing.junit.ide.JUnitTestLocalizationConstant;
 import org.eclipse.che.plugin.testing.junit.ide.JUnitTestResources;
 
-import static java.util.Collections.singletonList;
-import static org.eclipse.che.ide.workspace.perspectives.project.ProjectPerspective.PROJECT_PERSPECTIVE_ID;
-
-/**
- * The action for running JUnit test.
- */
+/** The action for running JUnit test. */
 public class RunJUnitTestAction extends RunDebugTestAbstractAction {
 
-    @Inject
-    public RunJUnitTestAction(JUnitTestResources resources,
-                              EventBus eventBus,
-                              TestingHandler testingHandler,
-                              TestResultPresenter testResultPresenter,
-                              DebugConfigurationsManager debugConfigurationsManager,
-                              TestServiceClient client,
-                              AppContext appContext,
-                              DtoFactory dtoFactory,
-                              NotificationManager notificationManager,
-                              JUnitTestLocalizationConstant localization) {
-        super(eventBus,
-              testResultPresenter,
-              testingHandler,
-              debugConfigurationsManager,
-              client,
-              dtoFactory,
-              appContext,
-              notificationManager,
-              singletonList(PROJECT_PERSPECTIVE_ID),
-              localization.actionRunTestDescription(),
-              localization.actionRunTestTitle(),
-              resources.testIcon());
-    }
+  @Inject
+  public RunJUnitTestAction(
+      JUnitTestResources resources,
+      EventBus eventBus,
+      TestingHandler testingHandler,
+      TestResultPresenter testResultPresenter,
+      DebugConfigurationsManager debugConfigurationsManager,
+      TestServiceClient client,
+      AppContext appContext,
+      DtoFactory dtoFactory,
+      NotificationManager notificationManager,
+      JUnitTestLocalizationConstant localization) {
+    super(
+        eventBus,
+        testResultPresenter,
+        testingHandler,
+        debugConfigurationsManager,
+        client,
+        dtoFactory,
+        appContext,
+        notificationManager,
+        singletonList(PROJECT_PERSPECTIVE_ID),
+        localization.actionRunTestDescription(),
+        localization.actionRunTestTitle(),
+        resources.testIcon());
+  }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        Pair<String, String> frameworkAndTestName = Pair.of(JUNIT_FRAMEWORK_NAME, null);
-        actionPerformed(frameworkAndTestName, false);
-    }
-
+  @Override
+  public void actionPerformed(ActionEvent e) {
+    Pair<String, String> frameworkAndTestName = Pair.of(JUNIT_FRAMEWORK_NAME, null);
+    actionPerformed(frameworkAndTestName, false);
+  }
 }

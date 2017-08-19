@@ -16,29 +16,29 @@ package org.eclipse.che.plugin.maven.server.rmi;
  * @author Evgen Vidolob
  */
 public class Ref<T> {
-    private T value;
+  private T value;
 
-    private Ref(T value) {
-        this.value = value;
-    }
+  private Ref(T value) {
+    this.value = value;
+  }
 
-    public static <T> Ref<T> ofNull() {
-        return new Ref<>(null);
-    }
+  public static <T> Ref<T> ofNull() {
+    return new Ref<>(null);
+  }
 
-    public static <T> Ref<T> of(T value) {
-        return new Ref<>(value);
-    }
+  public static <T> Ref<T> of(T value) {
+    return new Ref<>(value);
+  }
 
-    public T getValue() {
-        return value;
-    }
+  public T getValue() {
+    return value;
+  }
 
-    public void setValue(T value) {
-        this.value = value;
-    }
+  public void setValue(T value) {
+    this.value = value;
+  }
 
-    public boolean isNull() {
-        return value == null;
-    }
+  public boolean isNull() {
+    return value == null;
+  }
 }

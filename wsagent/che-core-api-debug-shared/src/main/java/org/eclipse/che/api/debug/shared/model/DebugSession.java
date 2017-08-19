@@ -18,23 +18,15 @@ import java.util.List;
  * @author Anatoliy Bazko
  */
 public interface DebugSession {
-    /**
-     * The info about debugger is being used.
-     */
-    DebuggerInfo getDebuggerInfo();
+  /** The info about debugger is being used. */
+  DebuggerInfo getDebuggerInfo();
 
-    /**
-     * Session id.
-     */
-    String getId();
+  /** Session id. */
+  String getId();
 
-    /**
-     * Debugger type.
-     */
-    String getType();
+  /** Debugger type. */
+  String getType();
 
-    /**
-     * Returns active breakpoints.
-     */
-    List<? extends Breakpoint> getBreakpoints();
+  /** Returns active breakpoints. */
+  List<? extends Breakpoint> getBreakpoints();
 }

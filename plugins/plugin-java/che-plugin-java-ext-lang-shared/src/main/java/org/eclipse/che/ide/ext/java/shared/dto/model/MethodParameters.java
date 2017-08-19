@@ -20,17 +20,17 @@ import org.eclipse.che.dto.shared.DTO;
 @DTO
 public interface MethodParameters {
 
-    String getMethodName();
+  String getMethodName();
 
-    void setMethodName(String methodName);
+  void setMethodName(String methodName);
 
-    /**
-     * Returns method parameters. Each parameter of method contains parameter type and parameter name. All parameters are represented as
-     * string.
-     *
-     * @return string representation of parameters (e.g. char x, long y, SomeType z)
-     */
-    String getParameters();
+  /**
+   * Returns method parameters. Each parameter of method contains parameter type and parameter name.
+   * All parameters are represented as string.
+   *
+   * @return string representation of parameters (e.g. char x, long y, SomeType z)
+   */
+  String getParameters();
 
-    void setParameters(String parameters);
+  void setParameters(String parameters);
 }

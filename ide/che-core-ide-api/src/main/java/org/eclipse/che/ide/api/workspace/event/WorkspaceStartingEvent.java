@@ -21,35 +21,31 @@ import org.eclipse.che.api.core.model.workspace.Workspace;
  */
 public class WorkspaceStartingEvent extends GwtEvent<WorkspaceStartingEvent.Handler> {
 
-    /**
-     * Implement this handler to handle the event.
-     */
-    public interface Handler extends EventHandler {
+  /** Implement this handler to handle the event. */
+  public interface Handler extends EventHandler {
 
-        void onWorkspaceStarting(WorkspaceStartingEvent event);
+    void onWorkspaceStarting(WorkspaceStartingEvent event);
+  }
 
-    }
+  public static final GwtEvent.Type<WorkspaceStartingEvent.Handler> TYPE = new GwtEvent.Type<>();
 
-    public static final GwtEvent.Type<WorkspaceStartingEvent.Handler> TYPE = new GwtEvent.Type<>();
+  private final Workspace workspace;
 
-    private final Workspace workspace;
+  public WorkspaceStartingEvent(Workspace workspace) {
+    this.workspace = workspace;
+  }
 
-    public WorkspaceStartingEvent(Workspace workspace) {
-        this.workspace = workspace;
-    }
+  public Workspace getWorkspace() {
+    return workspace;
+  }
 
-    public Workspace getWorkspace() {
-        return workspace;
-    }
+  @Override
+  public Type<Handler> getAssociatedType() {
+    return TYPE;
+  }
 
-    @Override
-    public Type<Handler> getAssociatedType() {
-        return TYPE;
-    }
-
-    @Override
-    protected void dispatch(Handler handler) {
-        handler.onWorkspaceStarting(this);
-    }
-
+  @Override
+  protected void dispatch(Handler handler) {
+    handler.onWorkspaceStarting(this);
+  }
 }

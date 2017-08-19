@@ -15,19 +15,18 @@ import com.google.gwt.core.client.JavaScriptObject;
 /** Overlay on the orion JS Attributes objects. */
 public class OrionAttributesOverlay extends JavaScriptObject {
 
-    /** JSO mandated protected constructor. */
-    protected OrionAttributesOverlay() {
-    }
+  /** JSO mandated protected constructor. */
+  protected OrionAttributesOverlay() {}
 
-    public final native void setAttribute(String name, String value) /*-{
+  public final native void setAttribute(String name, String value) /*-{
         this[name] = value;
     }-*/;
 
-    public final native String getAttribute(String name) /*-{
+  public final native String getAttribute(String name) /*-{
         return this[name];
     }-*/;
 
-    public static native OrionAttributesOverlay create() /*-{
+  public static native OrionAttributesOverlay create() /*-{
         return {};
     }-*/;
 }

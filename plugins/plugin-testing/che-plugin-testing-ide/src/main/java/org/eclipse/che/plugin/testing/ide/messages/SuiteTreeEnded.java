@@ -10,16 +10,13 @@
  */
 package org.eclipse.che.plugin.testing.ide.messages;
 
-/**
- * Data class represents test suite ended message.
- */
+/** Data class represents test suite ended message. */
 public class SuiteTreeEnded extends BaseTestSuiteMessage {
 
-    SuiteTreeEnded() {
-    }
+  SuiteTreeEnded() {}
 
-    @Override
-    public void visit(TestingMessageVisitor visitor) {
-        visitor.visitSuiteTreeEnded(this);
-    }
+  @Override
+  public void visit(TestingMessageVisitor visitor) {
+    visitor.visitSuiteTreeEnded(this);
+  }
 }

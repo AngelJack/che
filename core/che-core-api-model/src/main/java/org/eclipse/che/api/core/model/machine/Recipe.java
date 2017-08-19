@@ -17,13 +17,9 @@ package org.eclipse.che.api.core.model.machine;
  */
 public interface Recipe {
 
-    /**
-     * Returns recipe type (i.e. 'Dockerfile')
-     */
-    String getType();
+  /** Returns recipe type (i.e. 'Dockerfile') */
+  String getType();
 
-    /**
-     * Returns recipe script, which is used to instantiate new machine
-     */
-    String getScript();
+  /** Returns recipe script, which is used to instantiate new machine */
+  String getScript();
 }

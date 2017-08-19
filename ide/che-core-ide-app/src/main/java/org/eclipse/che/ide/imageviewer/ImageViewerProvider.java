@@ -10,10 +10,10 @@
  */
 package org.eclipse.che.ide.imageviewer;
 
-import org.eclipse.che.ide.api.editor.EditorPartPresenter;
-import org.eclipse.che.ide.api.editor.EditorProvider;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
+import org.eclipse.che.ide.api.editor.EditorPartPresenter;
+import org.eclipse.che.ide.api.editor.EditorProvider;
 
 /**
  * Provider for image editor(only displaying images).
@@ -21,26 +21,26 @@ import com.google.inject.Provider;
  * @author Ann Shumilova
  */
 public class ImageViewerProvider implements EditorProvider {
-    private Provider<ImageViewer> editorProvider;
+  private Provider<ImageViewer> editorProvider;
 
-    @Inject
-    public ImageViewerProvider(Provider<ImageViewer> editorProvider) {
-        super();
-        this.editorProvider = editorProvider;
-    }
+  @Inject
+  public ImageViewerProvider(Provider<ImageViewer> editorProvider) {
+    super();
+    this.editorProvider = editorProvider;
+  }
 
-    @Override
-    public String getId() {
-        return "codenvyImageViewer";
-    }
+  @Override
+  public String getId() {
+    return "codenvyImageViewer";
+  }
 
-    @Override
-    public String getDescription() {
-        return "Codenvy Image Viewer";
-    }
+  @Override
+  public String getDescription() {
+    return "Codenvy Image Viewer";
+  }
 
-    @Override
-    public EditorPartPresenter getEditor() {
-        return editorProvider.get();
-    }
+  @Override
+  public EditorPartPresenter getEditor() {
+    return editorProvider.get();
+  }
 }

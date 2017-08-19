@@ -11,18 +11,18 @@
 package org.eclipse.che.plugin.csharp.projecttype;
 
 import com.google.inject.Inject;
-
 import org.eclipse.che.api.project.server.type.ProjectTypeDef;
 import org.eclipse.che.plugin.csharp.shared.Constants;
 
 /**
  * C# project type
+ *
  * @author Anatolii Bazko
  */
 public class CSharpProjectType extends ProjectTypeDef {
-    @Inject
-    public CSharpProjectType() {
-        super(Constants.CSHARP_PROJECT_TYPE_ID, "C# .NET Core", true, false, true);
-        addConstantDefinition(Constants.LANGUAGE, "language", Constants.CSHARP_LANG);
-    }
+  @Inject
+  public CSharpProjectType() {
+    super(Constants.CSHARP_PROJECT_TYPE_ID, "C# .NET Core", true, false, true);
+    addConstantDefinition(Constants.LANGUAGE, "language", Constants.CSHARP_LANG);
+  }
 }

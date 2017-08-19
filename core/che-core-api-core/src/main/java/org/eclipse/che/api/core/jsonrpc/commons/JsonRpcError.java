@@ -10,23 +10,21 @@
  */
 package org.eclipse.che.api.core.jsonrpc.commons;
 
-/**
- * Represents JSON RPC error object
- */
+/** Represents JSON RPC error object */
 public class JsonRpcError {
-    private final int    code;
-    private final String message;
+  private final int code;
+  private final String message;
 
-    public JsonRpcError(int code, String message) {
-        this.code = code;
-        this.message = message;
-    }
+  public JsonRpcError(int code, String message) {
+    this.code = code;
+    this.message = message;
+  }
 
-    public String getMessage() {
-        return message;
-    }
+  public String getMessage() {
+    return message;
+  }
 
-    public int getCode() {
-        return code;
-    }
+  public int getCode() {
+    return code;
+  }
 }

@@ -10,17 +10,14 @@
  */
 package org.eclipse.che.api.core.rest.annotations;
 
-import javax.ws.rs.HttpMethod;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
+import javax.ws.rs.HttpMethod;
 
-/**
- * @author andrew00x
- */
+/** @author andrew00x */
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 @HttpMethod(HttpMethod.OPTIONS)
-public @interface OPTIONS {
-}
+public @interface OPTIONS {}

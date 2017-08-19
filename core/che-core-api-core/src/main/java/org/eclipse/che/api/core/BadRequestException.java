@@ -13,18 +13,19 @@ package org.eclipse.che.api.core;
 import org.eclipse.che.api.core.rest.shared.dto.ServiceError;
 
 /**
- * A {@code BadRequestException} should be thrown when server receives invalid input parameter or missed it.
- * <p/>
- * Typically in REST API such errors are converted in HTTP response with status 400.
+ * A {@code BadRequestException} should be thrown when server receives invalid input parameter or
+ * missed it.
+ *
+ * <p>Typically in REST API such errors are converted in HTTP response with status 400.
  *
  * @author Sergii Leschenko
  */
 public class BadRequestException extends ApiException {
-    public BadRequestException(String message) {
-        super(message);
-    }
+  public BadRequestException(String message) {
+    super(message);
+  }
 
-    public BadRequestException(ServiceError serviceError) {
-        super(serviceError);
-    }
+  public BadRequestException(ServiceError serviceError) {
+    super(serviceError);
+  }
 }

@@ -14,10 +14,9 @@ import com.google.gwt.core.client.JavaScriptObject;
 
 public class ResolveFunction<V> extends JavaScriptObject {
 
-    protected ResolveFunction() {
-    }
+  protected ResolveFunction() {}
 
-    public final native void apply(V arg) /*-{
+  public final native void apply(V arg) /*-{
         this(arg);
     }-*/;
 }

@@ -19,18 +19,18 @@ import org.eclipse.che.ide.websocket.rest.Unmarshallable;
  * @author Artem Zatsarynnyi
  */
 public class OutputMessageUnmarshaller implements Unmarshallable<String> {
-    private String payload;
+  private String payload;
 
-    @Override
-    public void unmarshal(Message message) {
-        payload = message.getBody();
-        if (payload.startsWith("[STDOUT]") || payload.startsWith("[STDERR]")) {
-            payload = payload.substring(9);
-        }
+  @Override
+  public void unmarshal(Message message) {
+    payload = message.getBody();
+    if (payload.startsWith("[STDOUT]") || payload.startsWith("[STDERR]")) {
+      payload = payload.substring(9);
     }
+  }
 
-    @Override
-    public String getPayload() {
-        return payload;
-    }
+  @Override
+  public String getPayload() {
+    return payload;
+  }
 }

@@ -11,7 +11,6 @@
 package org.eclipse.che.ide.api.resources.modification;
 
 import com.google.common.annotations.Beta;
-
 import org.eclipse.che.ide.api.resources.marker.Marker;
 
 /**
@@ -23,10 +22,10 @@ import org.eclipse.che.ide.api.resources.marker.Marker;
 @Beta
 public class CutResourceMarker implements Marker {
 
-    public static final String ID = "cutResourceMarker";
+  public static final String ID = "cutResourceMarker";
 
-    @Override
-    public String getType() {
-        return ID;
-    }
+  @Override
+  public String getType() {
+    return ID;
+  }
 }

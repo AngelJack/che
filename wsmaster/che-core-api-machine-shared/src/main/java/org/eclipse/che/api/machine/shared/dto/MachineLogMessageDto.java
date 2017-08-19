@@ -13,16 +13,14 @@ package org.eclipse.che.api.machine.shared.dto;
 import org.eclipse.che.api.core.model.machine.MachineLogMessage;
 import org.eclipse.che.dto.shared.DTO;
 
-/**
- * @author Alexander Garagatyi
- */
+/** @author Alexander Garagatyi */
 @DTO
 public interface MachineLogMessageDto extends MachineLogMessage {
-    void setContent(String content);
+  void setContent(String content);
 
-    MachineLogMessageDto withContent(String content);
+  MachineLogMessageDto withContent(String content);
 
-    void setMachineName(String machineName);
+  void setMachineName(String machineName);
 
-    MachineLogMessageDto withMachineName(String machineName);
+  MachineLogMessageDto withMachineName(String machineName);
 }

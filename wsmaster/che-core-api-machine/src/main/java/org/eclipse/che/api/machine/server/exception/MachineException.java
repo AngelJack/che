@@ -19,19 +19,19 @@ import org.eclipse.che.api.core.rest.shared.dto.ServiceError;
  */
 @SuppressWarnings("serial")
 public class MachineException extends ServerException {
-    public MachineException(String message) {
-        super(message);
-    }
+  public MachineException(String message) {
+    super(message);
+  }
 
-    public MachineException(ServiceError serviceError) {
-        super(serviceError);
-    }
+  public MachineException(ServiceError serviceError) {
+    super(serviceError);
+  }
 
-    public MachineException(Throwable cause) {
-        super(cause);
-    }
+  public MachineException(Throwable cause) {
+    super(cause);
+  }
 
-    public MachineException(String message, Throwable cause) {
-        super(message, cause);
-    }
+  public MachineException(String message, Throwable cause) {
+    super(message, cause);
+  }
 }

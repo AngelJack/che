@@ -13,17 +13,15 @@ package org.eclipse.che.ide.api.data.tree.settings.impl;
 import org.eclipse.che.ide.api.data.tree.settings.NodeSettings;
 import org.eclipse.che.ide.api.data.tree.settings.SettingsProvider;
 
-/**
- * @author Vlad Zhukovskiy
- */
+/** @author Vlad Zhukovskiy */
 public class DummySettingsProvider implements SettingsProvider {
-    @Override
-    public NodeSettings getSettings() {
-        return NodeSettings.DEFAULT_SETTINGS;
-    }
+  @Override
+  public NodeSettings getSettings() {
+    return NodeSettings.DEFAULT_SETTINGS;
+  }
 
-    @Override
-    public void setSettings(NodeSettings settings) {
-        //stub
-    }
+  @Override
+  public void setSettings(NodeSettings settings) {
+    //stub
+  }
 }

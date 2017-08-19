@@ -12,20 +12,18 @@ package org.eclipse.che.plugin.testing.ide.model.event;
 
 import org.eclipse.che.plugin.testing.ide.messages.TestFinished;
 
-/**
- * Event when test was finished.
- */
+/** Event when test was finished. */
 public class TestFinishedEvent extends TestNodeEvent {
 
-    private final Integer duration;
+  private final Integer duration;
 
-    public TestFinishedEvent(TestFinished testFinished) {
-        super(getNodeId(testFinished), testFinished.getTestName());
+  public TestFinishedEvent(TestFinished testFinished) {
+    super(getNodeId(testFinished), testFinished.getTestName());
 
-        this.duration = testFinished.getTestDuration();
-    }
+    this.duration = testFinished.getTestDuration();
+  }
 
-    public Integer getDuration() {
-        return duration;
-    }
+  public Integer getDuration() {
+    return duration;
+  }
 }

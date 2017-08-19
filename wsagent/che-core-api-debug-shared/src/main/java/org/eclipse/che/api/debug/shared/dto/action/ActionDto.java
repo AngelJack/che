@@ -13,14 +13,12 @@ package org.eclipse.che.api.debug.shared.dto.action;
 import org.eclipse.che.api.debug.shared.model.action.Action;
 import org.eclipse.che.dto.shared.DTO;
 
-/**
- * @author Anatoliy Bazko
- */
+/** @author Anatoliy Bazko */
 @DTO
 public interface ActionDto extends Action {
-    Action.TYPE getType();
+  Action.TYPE getType();
 
-    void setType(Action.TYPE type);
+  void setType(Action.TYPE type);
 
-    ActionDto withType(Action.TYPE type);
+  ActionDto withType(Action.TYPE type);
 }

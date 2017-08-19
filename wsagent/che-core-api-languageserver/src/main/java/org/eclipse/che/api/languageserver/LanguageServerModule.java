@@ -28,20 +28,20 @@ import org.eclipse.che.api.languageserver.shared.model.LanguageDescription;
 
 public class LanguageServerModule extends AbstractModule {
 
-    @Override
-    protected void configure() {
-        bind(LanguageServerRegistry.class).to(LanguageServerRegistryImpl.class);
-        bind(ServerInitializer.class).to(ServerInitializerImpl.class);
-        bind(LanguageRegistryService.class);
-        bind(WorkspaceService.class);
-        Multibinder.newSetBinder(binder(), LanguageServerLauncher.class);
+  @Override
+  protected void configure() {
+    bind(LanguageServerRegistry.class).to(LanguageServerRegistryImpl.class);
+    bind(ServerInitializer.class).to(ServerInitializerImpl.class);
+    bind(LanguageRegistryService.class);
+    bind(WorkspaceService.class);
+    Multibinder.newSetBinder(binder(), LanguageServerLauncher.class);
 
-        bind(TextDocumentService.class).asEagerSingleton();
-        bind(PublishDiagnosticsParamsJsonRpcTransmitter.class).asEagerSingleton();
-        bind(ShowMessageJsonRpcTransmitter.class).asEagerSingleton();
-        Multibinder.newSetBinder(binder(), LanguageDescription.class);
+    bind(TextDocumentService.class).asEagerSingleton();
+    bind(PublishDiagnosticsParamsJsonRpcTransmitter.class).asEagerSingleton();
+    bind(ShowMessageJsonRpcTransmitter.class).asEagerSingleton();
+    Multibinder.newSetBinder(binder(), LanguageDescription.class);
 
-        bind(LanguageServerInitializationHandler.class).asEagerSingleton();
-        bind(LanguageServerFileWatcher.class).asEagerSingleton();
-    }
+    bind(LanguageServerInitializationHandler.class).asEagerSingleton();
+    bind(LanguageServerFileWatcher.class).asEagerSingleton();
+  }
 }

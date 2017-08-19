@@ -12,17 +12,11 @@ package org.eclipse.che.api.debug.shared.model;
 
 import java.util.List;
 
-/**
- * @author Anatoliy Bazko
- */
+/** @author Anatoliy Bazko */
 public interface SimpleValue {
-    /**
-     * The nested variables.
-     */
-    List<? extends Variable> getVariables();
+  /** The nested variables. */
+  List<? extends Variable> getVariables();
 
-    /**
-     * The value.
-     */
-    String getValue();
+  /** The value. */
+  String getValue();
 }

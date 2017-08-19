@@ -15,23 +15,24 @@ import org.testng.ISuite;
 import org.testng.ISuiteListener;
 
 /**
- * {@link ISuiteListener} implementation, delegate all events to {@link org.testng.CheTestNGListener}
+ * {@link ISuiteListener} implementation, delegate all events to {@link
+ * org.testng.CheTestNGListener}
  */
 public class CheSuiteListener implements ISuiteListener {
 
-    private final CheTestNGListener delegate;
+  private final CheTestNGListener delegate;
 
-    public CheSuiteListener(CheTestNGListener delegate) {
-        this.delegate = delegate;
-    }
+  public CheSuiteListener(CheTestNGListener delegate) {
+    this.delegate = delegate;
+  }
 
-    @Override
-    public void onStart(ISuite suite) {
-        delegate.onSuiteStart(suite);
-    }
+  @Override
+  public void onStart(ISuite suite) {
+    delegate.onSuiteStart(suite);
+  }
 
-    @Override
-    public void onFinish(ISuite suite) {
-        delegate.onSuiteFinish(suite);
-    }
+  @Override
+  public void onFinish(ISuite suite) {
+    delegate.onSuiteFinish(suite);
+  }
 }

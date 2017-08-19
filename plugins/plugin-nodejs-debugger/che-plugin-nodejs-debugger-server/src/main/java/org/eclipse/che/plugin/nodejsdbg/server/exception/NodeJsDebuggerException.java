@@ -12,15 +12,13 @@ package org.eclipse.che.plugin.nodejsdbg.server.exception;
 
 import org.eclipse.che.api.debugger.server.exceptions.DebuggerException;
 
-/**
- * @author Anatoliy Bazko
- */
+/** @author Anatoliy Bazko */
 public class NodeJsDebuggerException extends DebuggerException {
-    public NodeJsDebuggerException(String message) {
-        super(message);
-    }
+  public NodeJsDebuggerException(String message) {
+    super(message);
+  }
 
-    public NodeJsDebuggerException(String message, Exception cause) {
-        super(message, cause);
-    }
+  public NodeJsDebuggerException(String message, Exception cause) {
+    super(message, cause);
+  }
 }

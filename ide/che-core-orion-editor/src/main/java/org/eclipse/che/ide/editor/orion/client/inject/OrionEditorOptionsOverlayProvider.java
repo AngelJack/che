@@ -10,16 +10,13 @@
  */
 package org.eclipse.che.ide.editor.orion.client.inject;
 
+import com.google.inject.Provider;
 import org.eclipse.che.ide.editor.orion.client.jso.OrionEditorOptionsOverlay;
 
-import com.google.inject.Provider;
-
-/**
- * @author Alexander Andrienko
- */
+/** @author Alexander Andrienko */
 public class OrionEditorOptionsOverlayProvider implements Provider<OrionEditorOptionsOverlay> {
-    @Override
-    public OrionEditorOptionsOverlay get() {
-        return OrionEditorOptionsOverlay.createObject().cast();
-    }
+  @Override
+  public OrionEditorOptionsOverlay get() {
+    return OrionEditorOptionsOverlay.createObject().cast();
+  }
 }

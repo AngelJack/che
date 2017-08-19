@@ -18,5 +18,5 @@ import org.eclipse.che.api.debug.shared.model.Location;
  * @author Anatoliy Bazko
  */
 public interface SuspendEvent extends DebuggerEvent {
-    Location getLocation();
+  Location getLocation();
 }

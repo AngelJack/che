@@ -13,9 +13,7 @@ package org.eclipse.che.api.git;
 import java.io.IOException;
 import java.io.OutputStream;
 
-/**
- * @author andrew00x
- */
+/** @author andrew00x */
 public interface InfoPage {
-    void writeTo(OutputStream out) throws IOException;
+  void writeTo(OutputStream out) throws IOException;
 }

@@ -11,21 +11,17 @@
 package org.eclipse.che.ide.util.storage;
 
 import com.google.gwt.storage.client.Storage;
-
+import javax.inject.Singleton;
 import org.eclipse.che.commons.annotation.Nullable;
 
-import javax.inject.Singleton;
-
-/**
- * Browser based {@link LocalStorageProvider}
- */
+/** Browser based {@link LocalStorageProvider} */
 @Singleton
 public class BrowserLocalStorageProviderImpl implements LocalStorageProvider {
 
-    @Override
-    @Nullable
-    public LocalStorage get() {
-        Storage localStorage = Storage.getLocalStorageIfSupported();
-        return localStorage == null ? null : new BrowserLocalStorageImpl(localStorage);
-    }
+  @Override
+  @Nullable
+  public LocalStorage get() {
+    Storage localStorage = Storage.getLocalStorageIfSupported();
+    return localStorage == null ? null : new BrowserLocalStorageImpl(localStorage);
+  }
 }

@@ -15,5 +15,5 @@ import org.eclipse.che.dto.shared.DTO;
 
 @DTO
 public interface ProcessKillRequestDto extends DtoWithPid {
-    ProcessKillRequestDto withPid(int pid);
+  ProcessKillRequestDto withPid(int pid);
 }

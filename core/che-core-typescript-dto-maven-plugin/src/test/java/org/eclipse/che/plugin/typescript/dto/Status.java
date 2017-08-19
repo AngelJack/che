@@ -10,12 +10,9 @@
  */
 package org.eclipse.che.plugin.typescript.dto;
 
-/**
- * @author Florent Benoit
- */
+/** @author Florent Benoit */
 public enum Status {
+  SHUTDOWN,
 
-    SHUTDOWN,
-
-    ALIVE
+  ALIVE
 }

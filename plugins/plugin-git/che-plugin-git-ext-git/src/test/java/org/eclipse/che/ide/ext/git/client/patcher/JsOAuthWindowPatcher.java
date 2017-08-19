@@ -10,10 +10,9 @@
  */
 package org.eclipse.che.ide.ext.git.client.patcher;
 
-
-import org.eclipse.che.security.oauth.JsOAuthWindow;
 import com.googlecode.gwt.test.patchers.PatchClass;
 import com.googlecode.gwt.test.patchers.PatchMethod;
+import org.eclipse.che.security.oauth.JsOAuthWindow;
 
 /**
  * Patcher for JsOAuthWindow class. Replace native method into JsOAuthWindow.
@@ -23,10 +22,16 @@ import com.googlecode.gwt.test.patchers.PatchMethod;
 @PatchClass(JsOAuthWindow.class)
 public class JsOAuthWindowPatcher {
 
-    /** Patch loginWithOAuth method. */
-    @PatchMethod(override = true)
-    public static void loginWithOAuth(JsOAuthWindow window, String authUrl, String errUrl, int popupHeight, int popupWidth,
-                                      int clientHeight, int clientWidth) {
-        // do nothing
-    }
+  /** Patch loginWithOAuth method. */
+  @PatchMethod(override = true)
+  public static void loginWithOAuth(
+      JsOAuthWindow window,
+      String authUrl,
+      String errUrl,
+      int popupHeight,
+      int popupWidth,
+      int clientHeight,
+      int clientWidth) {
+    // do nothing
+  }
 }

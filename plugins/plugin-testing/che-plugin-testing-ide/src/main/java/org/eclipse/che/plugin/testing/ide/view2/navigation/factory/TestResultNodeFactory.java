@@ -17,12 +17,12 @@ import org.eclipse.che.plugin.testing.ide.view2.navigation.nodes.TestStateNode;
 
 /**
  * Factory for providing test navigation tree nodes.
- * 
+ *
  * @author Mirage Abeysekara
  */
 public interface TestResultNodeFactory {
 
-    TestStateNode create(TestState testState);
+  TestStateNode create(TestState testState);
 
-    TestRootNode create(TestRootState testRootState);
+  TestRootNode create(TestRootState testRootState);
 }

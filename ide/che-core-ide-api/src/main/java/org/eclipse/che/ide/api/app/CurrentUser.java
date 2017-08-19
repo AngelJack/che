@@ -10,10 +10,9 @@
  */
 package org.eclipse.che.ide.api.app;
 
-import org.eclipse.che.api.user.shared.dto.ProfileDto;
-
 import com.google.inject.Singleton;
 import java.util.Map;
+import org.eclipse.che.api.user.shared.dto.ProfileDto;
 
 /**
  * Describes current state of user.
@@ -23,44 +22,43 @@ import java.util.Map;
 @Singleton
 public class CurrentUser {
 
-    private ProfileDto          profileDescriptor;
-    private Map<String, String> preferences;
+  private ProfileDto profileDescriptor;
+  private Map<String, String> preferences;
 
-    public CurrentUser() {
-    }
+  public CurrentUser() {}
 
-    public CurrentUser(ProfileDto profileDescriptor) {
-        this(profileDescriptor, null);
-    }
+  public CurrentUser(ProfileDto profileDescriptor) {
+    this(profileDescriptor, null);
+  }
 
-    public CurrentUser(ProfileDto profileDescriptor, Map<String, String> preferences) {
-        this.profileDescriptor = profileDescriptor;
-        this.preferences = preferences;
-    }
+  public CurrentUser(ProfileDto profileDescriptor, Map<String, String> preferences) {
+    this.profileDescriptor = profileDescriptor;
+    this.preferences = preferences;
+  }
 
-    /**
-     * Return current ProfileDescriptor
-     *
-     * @return
-     */
-    public ProfileDto getProfile() {
-        return profileDescriptor;
-    }
+  /**
+   * Return current ProfileDescriptor
+   *
+   * @return
+   */
+  public ProfileDto getProfile() {
+    return profileDescriptor;
+  }
 
-    public void setProfile(ProfileDto profileDescriptor) {
-        this.profileDescriptor = profileDescriptor;
-    }
+  public void setProfile(ProfileDto profileDescriptor) {
+    this.profileDescriptor = profileDescriptor;
+  }
 
-    /**
-     * Return current preferences
-     *
-     * @return
-     */
-    public Map<String, String> getPreferences() {
-        return preferences;
-    }
+  /**
+   * Return current preferences
+   *
+   * @return
+   */
+  public Map<String, String> getPreferences() {
+    return preferences;
+  }
 
-    public void setPreferences(Map<String, String> preferences) {
-        this.preferences = preferences;
-    }
+  public void setPreferences(Map<String, String> preferences) {
+    this.preferences = preferences;
+  }
 }

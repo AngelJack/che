@@ -10,8 +10,5 @@
  */
 package org.eclipse.che.api.debug.shared.model.action;
 
-/**
- * @author Anatoliy Bazko
- */
-public interface SuspendAction extends Action {
-}
+/** @author Anatoliy Bazko */
+public interface SuspendAction extends Action {}

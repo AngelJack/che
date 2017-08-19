@@ -10,9 +10,8 @@
  */
 package org.eclipse.che.api.project.shared.dto;
 
-import org.eclipse.che.dto.shared.DTO;
-
 import java.util.List;
+import org.eclipse.che.dto.shared.DTO;
 
 /**
  * Data transfer object (DTO) for org.eclipse.che.api.project.shared.AttributeDescription
@@ -21,34 +20,33 @@ import java.util.List;
  */
 @DTO
 public interface AttributeDescriptor {
-    String getName();
+  String getName();
 
-    void setName(String name);
+  void setName(String name);
 
-    AttributeDescriptor withName(String name);
+  AttributeDescriptor withName(String name);
 
-    String getDescription();
+  String getDescription();
 
-    void setDescription(String description);
+  void setDescription(String description);
 
-    AttributeDescriptor withDescription(String description);
+  AttributeDescriptor withDescription(String description);
 
-    boolean getRequired();
+  boolean getRequired();
 
-    void setRequired(boolean required);
+  void setRequired(boolean required);
 
-    AttributeDescriptor withRequired(boolean required);
+  AttributeDescriptor withRequired(boolean required);
 
-    boolean getVariable();
+  boolean getVariable();
 
-    void setVariable(boolean variable);
+  void setVariable(boolean variable);
 
-    AttributeDescriptor withVariable(boolean variable);
+  AttributeDescriptor withVariable(boolean variable);
 
-    List<String> getValues();
+  List<String> getValues();
 
-    void setValues(List<String> values);
+  void setValues(List<String> values);
 
-    AttributeDescriptor withValues(List<String> values);
-
+  AttributeDescriptor withValues(List<String> values);
 }

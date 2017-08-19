@@ -14,12 +14,10 @@ import org.eclipse.che.plugin.pullrequest.client.workflow.Context;
 import org.eclipse.che.plugin.pullrequest.client.workflow.Step;
 import org.eclipse.che.plugin.pullrequest.client.workflow.WorkflowExecutor;
 
-/**
- * @author Mihail Kuznyetsov
- */
+/** @author Mihail Kuznyetsov */
 public class DefineForkRemoteUrlProtocolStep implements Step {
-    @Override
-    public void execute(WorkflowExecutor executor, Context context) {
-        context.setSshAvailable(false);
-    }
+  @Override
+  public void execute(WorkflowExecutor executor, Context context) {
+    context.setSshAvailable(false);
+  }
 }

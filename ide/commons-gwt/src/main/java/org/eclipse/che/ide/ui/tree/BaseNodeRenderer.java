@@ -20,18 +20,16 @@ import elemental.html.SpanElement;
  * @since 5.11.0
  */
 public abstract class BaseNodeRenderer<D> implements NodeRenderer<D> {
-    @Override
-    public Element getNodeKeyTextContainer(SpanElement treeNodeLabel) {
-        return null;
-    }
+  @Override
+  public Element getNodeKeyTextContainer(SpanElement treeNodeLabel) {
+    return null;
+  }
 
-    @Override
-    public SpanElement renderNodeContents(D data) {
-        return null;
-    }
+  @Override
+  public SpanElement renderNodeContents(D data) {
+    return null;
+  }
 
-    @Override
-    public void updateNodeContents(TreeNodeElement<D> treeNode) {
-
-    }
+  @Override
+  public void updateNodeContents(TreeNodeElement<D> treeNode) {}
 }

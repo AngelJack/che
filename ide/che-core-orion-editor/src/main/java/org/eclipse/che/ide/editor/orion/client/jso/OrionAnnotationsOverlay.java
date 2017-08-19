@@ -12,14 +12,11 @@ package org.eclipse.che.ide.editor.orion.client.jso;
 
 import com.google.gwt.core.client.JavaScriptObject;
 
-/**
- * Annotations object, returned by 'orion/editor/annotations' AMD module
- */
+/** Annotations object, returned by 'orion/editor/annotations' AMD module */
 public class OrionAnnotationsOverlay extends JavaScriptObject {
-    protected OrionAnnotationsOverlay() {
-    }
+  protected OrionAnnotationsOverlay() {}
 
-    public native final OrionAnnotationTypeOverlay getAnnotationType() /*-{
+  public final native OrionAnnotationTypeOverlay getAnnotationType() /*-{
         return this.AnnotationType;
     }-*/;
 }

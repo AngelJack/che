@@ -15,14 +15,14 @@ import com.google.gwt.i18n.client.Messages;
 /** @author Andrey Plotnikov */
 public interface HelpExtensionLocalizationConstant extends Messages {
 
-    /* Redirect Actions */
-    @Key("action.redirect.to.support.title")
-    String actionRedirectToSupportTitle();
+  /* Redirect Actions */
+  @Key("action.redirect.to.support.title")
+  String actionRedirectToSupportTitle();
 
-    @Key("action.redirect.to.support.description")
-    String actionRedirectToSupportDescription();
+  @Key("action.redirect.to.support.description")
+  String actionRedirectToSupportDescription();
 
-    /* Buttons */
-    @Key("ok")
-    String ok();
+  /* Buttons */
+  @Key("ok")
+  String ok();
 }

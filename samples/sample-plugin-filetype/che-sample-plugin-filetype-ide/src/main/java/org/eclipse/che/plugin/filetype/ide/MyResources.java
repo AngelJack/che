@@ -21,8 +21,8 @@ import org.vectomatic.dom.svg.ui.SVGResource;
  */
 public interface MyResources extends ClientBundle {
 
-    MyResources INSTANCE = GWT.create(MyResources.class);
+  MyResources INSTANCE = GWT.create(MyResources.class);
 
-    @Source("icons/my.svg")
-    SVGResource icon();
+  @Source("icons/my.svg")
+  SVGResource icon();
 }

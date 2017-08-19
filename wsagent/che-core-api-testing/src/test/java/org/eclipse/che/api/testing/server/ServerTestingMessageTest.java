@@ -14,16 +14,16 @@ import org.eclipse.che.api.testing.server.messages.ServerTestingMessage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-/**
- *
- */
+/** */
 public class ServerTestingMessageTest {
 
-    @Test
-    public void testMessageShouldUnescapeAttributes() throws Exception {
-        String out = "@@<{\"name\":\"testFailed\", \"attributes\":{\"name\":\"Test.testMethod\", \"details\":\"java.lang.Exception: Test!n\tat org.testng.che.tests.ListeneterTest.testName(ListeneterTest.java:71)!n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)!n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)!n\", \"message\":\"Test\"}}>";
-        ServerTestingMessage parse = ServerTestingMessage.parse(out);
-        Assert.assertEquals(parse.asJsonString(), "{\"name\":\"testFailed\",\"attributes\":{\"name\":\"Test.testMethod\",\"details\":\"java.lang.Exception: Test\\n\\tat org.testng.che.tests.ListeneterTest.testName(ListeneterTest.java:71)\\n\\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\\n\\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\\n\",\"message\":\"Test\"}}");
-
-    }
+  @Test
+  public void testMessageShouldUnescapeAttributes() throws Exception {
+    String out =
+        "@@<{\"name\":\"testFailed\", \"attributes\":{\"name\":\"Test.testMethod\", \"details\":\"java.lang.Exception: Test!n\tat org.testng.che.tests.ListeneterTest.testName(ListeneterTest.java:71)!n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)!n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)!n\", \"message\":\"Test\"}}>";
+    ServerTestingMessage parse = ServerTestingMessage.parse(out);
+    Assert.assertEquals(
+        parse.asJsonString(),
+        "{\"name\":\"testFailed\",\"attributes\":{\"name\":\"Test.testMethod\",\"details\":\"java.lang.Exception: Test\\n\\tat org.testng.che.tests.ListeneterTest.testName(ListeneterTest.java:71)\\n\\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\\n\\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\\n\",\"message\":\"Test\"}}");
+  }
 }

@@ -20,26 +20,21 @@ import org.eclipse.che.api.git.shared.ProviderInfo;
  * @author Sergii Kabashniuk
  */
 public interface CredentialsProvider {
-    /**
-     * @return credentials for current user in this provider
-     * to execute git operation.
-     * @throws GitException
-     */
-    UserCredential getUserCredential() throws GitException;
+  /**
+   * @return credentials for current user in this provider to execute git operation.
+   * @throws GitException
+   */
+  UserCredential getUserCredential() throws GitException;
 
-    /**
-     * @return Provider id.
-     */
-    String getId();
+  /** @return Provider id. */
+  String getId();
 
-    /**
-     * @param url
-     * @return return true if current provider can provide credentials for the given url.
-     */
-    boolean canProvideCredentials(String url);
+  /**
+   * @param url
+   * @return return true if current provider can provide credentials for the given url.
+   */
+  boolean canProvideCredentials(String url);
 
-    /**
-     * @return additional information about given provider
-     */
-    ProviderInfo getProviderInfo();
+  /** @return additional information about given provider */
+  ProviderInfo getProviderInfo();
 }

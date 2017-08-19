@@ -20,15 +20,15 @@ import org.eclipse.che.dto.shared.DTO;
  */
 @DTO
 public interface AuthConfig {
-    String getUsername();
+  String getUsername();
 
-    void setUsername(String username);
+  void setUsername(String username);
 
-    AuthConfig withUsername(String username);
+  AuthConfig withUsername(String username);
 
-    String getPassword();
+  String getPassword();
 
-    void setPassword(String password);
+  void setPassword(String password);
 
-    AuthConfig withPassword(String password);
+  AuthConfig withPassword(String password);
 }

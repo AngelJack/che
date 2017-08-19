@@ -10,28 +10,28 @@
  */
 package org.eclipse.che.plugin.maven.shared;
 
-/**
- * @author Evgen Vidolob
- */
+/** @author Evgen Vidolob */
 public enum MessageType {
-    NOTIFICATION(1), UPDATE(2), START_STOP(3);
+  NOTIFICATION(1),
+  UPDATE(2),
+  START_STOP(3);
 
-    private final int type;
+  private final int type;
 
-    MessageType(int type) {
-        this.type = type;
+  MessageType(int type) {
+    this.type = type;
+  }
+
+  public int getType() {
+    return type;
+  }
+
+  public static MessageType valueOf(int type) {
+    for (MessageType messageType : values()) {
+      if (messageType.type == type) {
+        return messageType;
+      }
     }
-
-    public int getType() {
-        return type;
-    }
-
-    public static MessageType valueOf(int type) {
-        for (MessageType messageType : values()) {
-            if(messageType.type == type){
-                return messageType;
-            }
-        }
-        throw new IllegalArgumentException();
-    }
+    throw new IllegalArgumentException();
+  }
 }

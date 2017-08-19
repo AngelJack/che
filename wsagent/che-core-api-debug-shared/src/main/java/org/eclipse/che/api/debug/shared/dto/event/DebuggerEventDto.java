@@ -13,14 +13,12 @@ package org.eclipse.che.api.debug.shared.dto.event;
 import org.eclipse.che.api.debug.shared.model.event.DebuggerEvent;
 import org.eclipse.che.dto.shared.DTO;
 
-/**
- * @author Anatoliy Bazko
- */
+/** @author Anatoliy Bazko */
 @DTO
 public interface DebuggerEventDto extends DebuggerEvent {
-    DebuggerEvent.TYPE getType();
+  DebuggerEvent.TYPE getType();
 
-    void setType(DebuggerEvent.TYPE type);
+  void setType(DebuggerEvent.TYPE type);
 
-    DebuggerEventDto withType(DebuggerEvent.TYPE type);
+  DebuggerEventDto withType(DebuggerEvent.TYPE type);
 }

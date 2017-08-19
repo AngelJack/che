@@ -18,5 +18,5 @@ import java.io.IOException;
  * @author Alexander Garagatyi
  */
 public interface WorkspaceFolderPathProvider {
-    String getPath(String workspaceId) throws IOException;
+  String getPath(String workspaceId) throws IOException;
 }

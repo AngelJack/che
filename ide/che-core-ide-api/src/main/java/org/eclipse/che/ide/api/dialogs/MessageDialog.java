@@ -18,6 +18,6 @@ package org.eclipse.che.ide.api.dialogs;
  */
 public interface MessageDialog {
 
-    /** Operate the message dialog: show it and manage user actions. */
-    void show();
+  /** Operate the message dialog: show it and manage user actions. */
+  void show();
 }

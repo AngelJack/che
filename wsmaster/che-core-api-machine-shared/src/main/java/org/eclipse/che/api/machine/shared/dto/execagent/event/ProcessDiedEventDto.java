@@ -14,21 +14,21 @@ import org.eclipse.che.dto.shared.DTO;
 
 @DTO
 public interface ProcessDiedEventDto extends DtoWithPid {
-    ProcessDiedEventDto withPid(int pid);
+  ProcessDiedEventDto withPid(int pid);
 
-    String getTime();
+  String getTime();
 
-    ProcessDiedEventDto withTime(String time);
+  ProcessDiedEventDto withTime(String time);
 
-    int getNativePid();
+  int getNativePid();
 
-    ProcessDiedEventDto withNativePid(int nativePid);
+  ProcessDiedEventDto withNativePid(int nativePid);
 
-    String getName();
+  String getName();
 
-    ProcessDiedEventDto withName(String name);
+  ProcessDiedEventDto withName(String name);
 
-    String getCommandLine();
+  String getCommandLine();
 
-    ProcessDiedEventDto withCommandLine(String commandLine);
+  ProcessDiedEventDto withCommandLine(String commandLine);
 }

@@ -11,13 +11,12 @@
 package org.eclipse.che.ide.api.data.tree;
 
 /**
- * Indicates that specified node can perform actions when it has been activated e.g. by double click.
+ * Indicates that specified node can perform actions when it has been activated e.g. by double
+ * click.
  *
  * @author Vlad Zhukovskiy
  */
 public interface HasAction {
-    /**
-     * Perform action.
-     */
-    void actionPerformed();
+  /** Perform action. */
+  void actionPerformed();
 }

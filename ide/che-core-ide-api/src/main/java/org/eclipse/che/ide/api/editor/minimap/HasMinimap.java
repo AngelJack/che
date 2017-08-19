@@ -10,14 +10,13 @@
  */
 package org.eclipse.che.ide.api.editor.minimap;
 
-/**
- * Interface for objects that own a minimap.
- */
+/** Interface for objects that own a minimap. */
 public interface HasMinimap {
 
-    /**
-     * Returns the minimap instance.
-     * @return
-     */
-    Minimap getMinimap();
+  /**
+   * Returns the minimap instance.
+   *
+   * @return
+   */
+  Minimap getMinimap();
 }

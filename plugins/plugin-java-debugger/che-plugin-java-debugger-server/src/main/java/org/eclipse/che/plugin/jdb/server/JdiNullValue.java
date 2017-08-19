@@ -14,18 +14,18 @@ import org.eclipse.che.api.debugger.server.exceptions.DebuggerException;
 
 /** @author andrew00x */
 public final class JdiNullValue implements JdiValue {
-    @Override
-    public String getAsString() throws DebuggerException {
-        return "null";
-    }
+  @Override
+  public String getAsString() throws DebuggerException {
+    return "null";
+  }
 
-    @Override
-    public JdiVariable[] getVariables() throws DebuggerException {
-        return new JdiVariable[0];
-    }
+  @Override
+  public JdiVariable[] getVariables() throws DebuggerException {
+    return new JdiVariable[0];
+  }
 
-    @Override
-    public JdiVariable getVariableByName(String name) throws DebuggerException {
-        return null;
-    }
+  @Override
+  public JdiVariable getVariableByName(String name) throws DebuggerException {
+    return null;
+  }
 }

@@ -18,11 +18,10 @@ import com.google.gwt.event.shared.EventHandler;
  * @author Kevin Pollet
  */
 public interface ContextPropertyChangeHandler extends EventHandler {
-    /**
-     * Called when a property of the context object changed.
-     *
-     * @param event
-     *         the {@link ContextPropertyChangeEvent} event.
-     */
-    void onContextPropertyChange(ContextPropertyChangeEvent event);
+  /**
+   * Called when a property of the context object changed.
+   *
+   * @param event the {@link ContextPropertyChangeEvent} event.
+   */
+  void onContextPropertyChange(ContextPropertyChangeEvent event);
 }

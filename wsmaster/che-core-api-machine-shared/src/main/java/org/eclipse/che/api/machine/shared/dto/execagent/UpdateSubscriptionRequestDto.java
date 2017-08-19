@@ -15,9 +15,9 @@ import org.eclipse.che.dto.shared.DTO;
 
 @DTO
 public interface UpdateSubscriptionRequestDto extends DtoWithPid {
-    UpdateSubscriptionRequestDto withPid(int pid);
+  UpdateSubscriptionRequestDto withPid(int pid);
 
-    String getEventTypes();
+  String getEventTypes();
 
-    UpdateSubscriptionRequestDto withEventTypes(String eventTypes);
+  UpdateSubscriptionRequestDto withEventTypes(String eventTypes);
 }

@@ -10,15 +10,13 @@
  */
 package org.eclipse.che.api.debug.shared.model.event;
 
-/**
- * @author Anatoliy Bazko
- */
+/** @author Anatoliy Bazko */
 public interface DebuggerEvent {
-    TYPE getType();
+  TYPE getType();
 
-    enum TYPE {
-        SUSPEND,
-        DISCONNECT,
-        BREAKPOINT_ACTIVATED
-    }
+  enum TYPE {
+    SUSPEND,
+    DISCONNECT,
+    BREAKPOINT_ACTIVATED
+  }
 }

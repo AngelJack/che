@@ -16,5 +16,5 @@ package org.eclipse.che.plugin.maven.server.core;
  * @author Evgen Vidolob
  */
 public interface MavenProjectTask {
-    void perform();
+  void perform();
 }

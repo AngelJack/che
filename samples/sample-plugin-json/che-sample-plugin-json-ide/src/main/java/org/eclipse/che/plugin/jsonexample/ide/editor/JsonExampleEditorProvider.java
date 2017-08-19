@@ -10,44 +10,37 @@
  */
 package org.eclipse.che.plugin.jsonexample.ide.editor;
 
+import javax.inject.Inject;
 import org.eclipse.che.ide.api.editor.EditorProvider;
 import org.eclipse.che.ide.api.editor.defaulteditor.AbstractTextEditorProvider;
 import org.eclipse.che.ide.api.editor.editorconfig.TextEditorConfiguration;
 
-import javax.inject.Inject;
-
-/**
- * The JSON Example specific {@link EditorProvider}.
- */
+/** The JSON Example specific {@link EditorProvider}. */
 public class JsonExampleEditorProvider extends AbstractTextEditorProvider {
 
+  private JsonExampleEditorConfigurationProvider jsonExampleEditorConfigurationProvider;
 
-    private JsonExampleEditorConfigurationProvider jsonExampleEditorConfigurationProvider;
+  /**
+   * @param jsonExampleEditorConfigurationProvider the JSON Example Editor configuration provider
+   */
+  @Inject
+  public JsonExampleEditorProvider(
+      final JsonExampleEditorConfigurationProvider jsonExampleEditorConfigurationProvider) {
+    this.jsonExampleEditorConfigurationProvider = jsonExampleEditorConfigurationProvider;
+  }
 
-    /**
-     *
-     *
-     * @param jsonExampleEditorConfigurationProvider
-     *         the JSON Example Editor configuration provider
-     */
-    @Inject
-    public JsonExampleEditorProvider(final JsonExampleEditorConfigurationProvider jsonExampleEditorConfigurationProvider) {
-        this.jsonExampleEditorConfigurationProvider = jsonExampleEditorConfigurationProvider;
-    }
+  @Override
+  public String getId() {
+    return "JsonExampleEditor";
+  }
 
-    @Override
-    public String getId() {
-        return "JsonExampleEditor";
-    }
+  @Override
+  public String getDescription() {
+    return "JSON Example Editor";
+  }
 
-    @Override
-    public String getDescription() {
-        return "JSON Example Editor";
-    }
-
-
-    @Override
-    protected TextEditorConfiguration getEditorConfiguration() {
-        return jsonExampleEditorConfigurationProvider.get();
-    }
+  @Override
+  protected TextEditorConfiguration getEditorConfiguration() {
+    return jsonExampleEditorConfigurationProvider.get();
+  }
 }

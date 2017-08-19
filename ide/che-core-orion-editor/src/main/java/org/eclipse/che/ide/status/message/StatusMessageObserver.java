@@ -11,17 +11,15 @@
 package org.eclipse.che.ide.status.message;
 
 /**
- * Observer to update object which is
- * interested in {@link StatusMessage} report.
+ * Observer to update object which is interested in {@link StatusMessage} report.
  *
  * @author Alexander Andrienko
  */
 public interface StatusMessageObserver {
-    /**
-     * Update interested object by new editor status message.
-     *
-     * @param message
-     *         message about editor status.
-     */
-    void update(StatusMessage message);
+  /**
+   * Update interested object by new editor status message.
+   *
+   * @param message message about editor status.
+   */
+  void update(StatusMessage message);
 }

@@ -11,7 +11,6 @@
 package org.eclipse.che.ide.ui.multisplitpanel.menu;
 
 import com.google.inject.ImplementedBy;
-
 import org.eclipse.che.ide.api.mvp.View;
 import org.eclipse.che.ide.ui.multisplitpanel.SubPanel;
 
@@ -23,18 +22,18 @@ import org.eclipse.che.ide.ui.multisplitpanel.SubPanel;
 @ImplementedBy(MenuWidget.class)
 public interface Menu extends View<Menu.ActionDelegate> {
 
-    /** Add {@code menuItem} to the menu. */
-    void addListItem(MenuItem menuItem);
+  /** Add {@code menuItem} to the menu. */
+  void addListItem(MenuItem menuItem);
 
-    /** Remove {@code menuItem} from the menu. */
-    void removeListItem(MenuItem menuItem);
+  /** Remove {@code menuItem} from the menu. */
+  void removeListItem(MenuItem menuItem);
 
-    interface ActionDelegate {
+  interface ActionDelegate {
 
-        /** Called when {@code menuItem} has been selected. */
-        void onMenuItemSelected(MenuItem menuItem);
+    /** Called when {@code menuItem} has been selected. */
+    void onMenuItemSelected(MenuItem menuItem);
 
-        /** Called when {@code menuItem} is going to be closed. */
-        void onMenuItemClosing(MenuItem menuItem);
-    }
+    /** Called when {@code menuItem} is going to be closed. */
+    void onMenuItemClosing(MenuItem menuItem);
+  }
 }

@@ -20,27 +20,27 @@ import com.google.gwt.user.client.ui.FocusWidget;
 /** Button for the commands toolbar. */
 class ToolbarButton extends FocusWidget {
 
-    private static final Resources RESOURCES;
+  private static final Resources RESOURCES;
 
-    ToolbarButton(SafeHtml content) {
-        super(Document.get().createDivElement());
+  ToolbarButton(SafeHtml content) {
+    super(Document.get().createDivElement());
 
-        getElement().setInnerSafeHtml(content);
+    getElement().setInnerSafeHtml(content);
 
-        addStyleName(RESOURCES.css().button());
-    }
+    addStyleName(RESOURCES.css().button());
+  }
 
-    public interface Resources extends ClientBundle {
-        @Source({"button.css", "org/eclipse/che/ide/api/ui/style.css"})
-        Css css();
-    }
+  public interface Resources extends ClientBundle {
+    @Source({"button.css", "org/eclipse/che/ide/api/ui/style.css"})
+    Css css();
+  }
 
-    public interface Css extends CssResource {
-        String button();
-    }
+  public interface Css extends CssResource {
+    String button();
+  }
 
-    static {
-        RESOURCES = GWT.create(Resources.class);
-        RESOURCES.css().ensureInjected();
-    }
+  static {
+    RESOURCES = GWT.create(Resources.class);
+    RESOURCES.css().ensureInjected();
+  }
 }

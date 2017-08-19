@@ -20,9 +20,9 @@ import org.eclipse.che.ide.ui.smartTree.converter.NodeConverter;
  */
 public class NodeNameConverter implements NodeConverter<Node, String> {
 
-    /** {@inheritDoc} */
-    @Override
-    public String convert(Node node) {
-        return node.getName();
-    }
+  /** {@inheritDoc} */
+  @Override
+  public String convert(Node node) {
+    return node.getName();
+  }
 }

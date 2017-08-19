@@ -20,11 +20,11 @@ import java.rmi.RemoteException;
  */
 public interface MavenServerProgressNotifier extends Remote {
 
-    void setText(String text) throws RemoteException;
+  void setText(String text) throws RemoteException;
 
-    void setPercent(double percent) throws RemoteException;
+  void setPercent(double percent) throws RemoteException;
 
-    void setPercentUndefined(boolean undefined) throws RemoteException;
+  void setPercentUndefined(boolean undefined) throws RemoteException;
 
-    boolean isCanceled() throws RemoteException;
+  boolean isCanceled() throws RemoteException;
 }

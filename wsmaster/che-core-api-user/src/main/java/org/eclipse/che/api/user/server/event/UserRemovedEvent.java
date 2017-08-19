@@ -21,14 +21,14 @@ import org.eclipse.che.api.user.server.model.impl.UserImpl;
 @EventOrigin("user")
 public class UserRemovedEvent {
 
-    private final String userId;
+  private final String userId;
 
-    public UserRemovedEvent(String userId) {
-        this.userId = userId;
-    }
+  public UserRemovedEvent(String userId) {
+    this.userId = userId;
+  }
 
-    /** Returns id of removed user */
-    public String getUserId() {
-        return userId;
-    }
+  /** Returns id of removed user */
+  public String getUserId() {
+    return userId;
+  }
 }

@@ -21,15 +21,15 @@ import org.eclipse.che.dto.shared.DTO;
  */
 @DTO
 public interface ImportProgressRecordDto extends ImportProgressRecord {
-    void setNum(int num);
+  void setNum(int num);
 
-    ImportProgressRecordDto withNum(int num);
+  ImportProgressRecordDto withNum(int num);
 
-    void setLine(String line);
+  void setLine(String line);
 
-    ImportProgressRecordDto withLine(String line);
+  ImportProgressRecordDto withLine(String line);
 
-    void setProjectName(String projectName);
+  void setProjectName(String projectName);
 
-    ImportProgressRecordDto withProjectName(String projectName);
+  ImportProgressRecordDto withProjectName(String projectName);
 }

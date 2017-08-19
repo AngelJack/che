@@ -17,30 +17,31 @@ package org.eclipse.che.plugin.docker.client;
  * @author Alexander Garagatyi
  */
 public interface LogMessageFormatter extends MessageFormatter<LogMessage> {
-    String format(LogMessage logMessage);
+  String format(LogMessage logMessage);
 
-    LogMessageFormatter DEFAULT = new LogMessageFormatter() {
+  LogMessageFormatter DEFAULT =
+      new LogMessageFormatter() {
         @Override
         public String format(LogMessage logMessage) {
-            final StringBuilder sb = new StringBuilder();
-            final LogMessage.Type type = logMessage.getType();
-            switch (type) {
-                case STDOUT:
-                    sb.append("[STDOUT]");
-                    break;
-                case STDERR:
-                    sb.append("[STDERR]");
-                    break;
-                case DOCKER:
-                    sb.append("[DOCKER]");
-                    break;
-            }
-            final String content = logMessage.getContent();
-            if (content != null) {
-                sb.append(' ');
-                sb.append(content);
-            }
-            return sb.toString();
+          final StringBuilder sb = new StringBuilder();
+          final LogMessage.Type type = logMessage.getType();
+          switch (type) {
+            case STDOUT:
+              sb.append("[STDOUT]");
+              break;
+            case STDERR:
+              sb.append("[STDERR]");
+              break;
+            case DOCKER:
+              sb.append("[DOCKER]");
+              break;
+          }
+          final String content = logMessage.getContent();
+          if (content != null) {
+            sb.append(' ');
+            sb.append(content);
+          }
+          return sb.toString();
         }
-    };
+      };
 }

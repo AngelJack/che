@@ -19,22 +19,22 @@ import org.eclipse.che.dto.shared.DTO;
  */
 @DTO
 public interface ClassPathBuilderResult {
-    /** @return status of maven operation. */
-    Status getStatus();
+  /** @return status of maven operation. */
+  Status getStatus();
 
-    void setStatus(Status name);
+  void setStatus(Status name);
 
-    /** @return output logs of maven operation. */
-    String getLogs();
+  /** @return output logs of maven operation. */
+  String getLogs();
 
-    void setLogs(String logs);
+  void setLogs(String logs);
 
-    String getChannel();
+  String getChannel();
 
-    void setChannel(String channel);
+  void setChannel(String channel);
 
-    enum Status {
-        SUCCESS,
-        ERROR,
-    }
+  enum Status {
+    SUCCESS,
+    ERROR,
+  }
 }

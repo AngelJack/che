@@ -10,44 +10,38 @@
  */
 package org.eclipse.che.plugin.docker.client.json;
 
-/**
- * @author Alexander Garagatyi
- */
+/** @author Alexander Garagatyi */
 public class Ulimit {
-    private String name;
-    private int    soft;
-    private int    hard;
+  private String name;
+  private int soft;
+  private int hard;
 
-    public String getName() {
-        return name;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    public int getSoft() {
-        return soft;
-    }
+  public int getSoft() {
+    return soft;
+  }
 
-    public void setSoft(int soft) {
-        this.soft = soft;
-    }
+  public void setSoft(int soft) {
+    this.soft = soft;
+  }
 
-    public int getHard() {
-        return hard;
-    }
+  public int getHard() {
+    return hard;
+  }
 
-    public void setHard(int hard) {
-        this.hard = hard;
-    }
+  public void setHard(int hard) {
+    this.hard = hard;
+  }
 
-    @Override
-    public String toString() {
-        return "Ulimit{" +
-               "name='" + name + '\'' +
-               ", soft=" + soft +
-               ", hard=" + hard +
-               '}';
-    }
+  @Override
+  public String toString() {
+    return "Ulimit{" + "name='" + name + '\'' + ", soft=" + soft + ", hard=" + hard + '}';
+  }
 }

@@ -10,21 +10,17 @@
  */
 package org.eclipse.che.plugin.testing.ide.messages;
 
-/**
- * Data class represents test out message.
- */
+/** Data class represents test out message. */
 public class TestStdOut extends BaseTestMessage {
 
-    TestStdOut() {
-    }
+  TestStdOut() {}
 
+  @Override
+  public void visit(TestingMessageVisitor visitor) {
+    visitor.visitTestStdOut(this);
+  }
 
-    @Override
-    public void visit(TestingMessageVisitor visitor) {
-        visitor.visitTestStdOut(this);
-    }
-
-    public String getStdOut() {
-        return getAttributeValue("out");
-    }
+  public String getStdOut() {
+    return getAttributeValue("out");
+  }
 }

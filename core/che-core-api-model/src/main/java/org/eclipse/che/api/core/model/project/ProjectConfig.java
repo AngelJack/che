@@ -18,18 +18,17 @@ import java.util.Map;
  * @author Dmitry Shnurenko
  */
 public interface ProjectConfig {
-    String getName();
+  String getName();
 
-    String getPath();
+  String getPath();
 
-    String getDescription();
+  String getDescription();
 
-    String getType();
+  String getType();
 
-    List<String> getMixins();
+  List<String> getMixins();
 
-    Map<String, List<String>> getAttributes();
+  Map<String, List<String>> getAttributes();
 
-    SourceStorage getSource();
-
+  SourceStorage getSource();
 }

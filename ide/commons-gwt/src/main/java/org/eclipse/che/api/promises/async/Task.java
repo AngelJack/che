@@ -10,9 +10,7 @@
  */
 package org.eclipse.che.api.promises.async;
 
-/**
- * @author Evgen Vidolob
- */
+/** @author Evgen Vidolob */
 public interface Task<T> {
-    T run();
+  T run();
 }

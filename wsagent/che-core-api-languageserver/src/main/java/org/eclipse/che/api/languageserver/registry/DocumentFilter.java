@@ -12,26 +12,25 @@ package org.eclipse.che.api.languageserver.registry;
 
 public class DocumentFilter {
 
-    private final String pathRegex;
-    private final String languageId;
-    private final String scheme;
+  private final String pathRegex;
+  private final String languageId;
+  private final String scheme;
 
-    public DocumentFilter(String languageId, String pathRegex, String scheme) {
-        this.pathRegex = pathRegex;
-        this.languageId = languageId;
-        this.scheme = scheme;
-    }
-    
-    public String getLanguageId() {
-        return languageId;
-    }
+  public DocumentFilter(String languageId, String pathRegex, String scheme) {
+    this.pathRegex = pathRegex;
+    this.languageId = languageId;
+    this.scheme = scheme;
+  }
 
-    public String getPathRegex() {
-        return pathRegex;
-    }
+  public String getLanguageId() {
+    return languageId;
+  }
 
-    public String getScheme() {
-        return scheme;
-    }
+  public String getPathRegex() {
+    return pathRegex;
+  }
 
+  public String getScheme() {
+    return scheme;
+  }
 }

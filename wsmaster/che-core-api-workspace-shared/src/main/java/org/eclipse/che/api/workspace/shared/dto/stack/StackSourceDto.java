@@ -13,16 +13,14 @@ package org.eclipse.che.api.workspace.shared.dto.stack;
 import org.eclipse.che.api.workspace.shared.stack.StackSource;
 import org.eclipse.che.dto.shared.DTO;
 
-/**
- * @author Alexander Andrienko
- */
+/** @author Alexander Andrienko */
 @DTO
 public interface StackSourceDto extends StackSource {
-    void setType(String type);
+  void setType(String type);
 
-    StackSourceDto withType(String type);
+  StackSourceDto withType(String type);
 
-    void setOrigin(String origin);
+  void setOrigin(String origin);
 
-    StackSourceDto withOrigin(String origin);
+  StackSourceDto withOrigin(String origin);
 }

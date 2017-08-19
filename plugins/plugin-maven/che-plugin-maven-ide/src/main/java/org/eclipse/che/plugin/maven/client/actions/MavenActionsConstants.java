@@ -12,9 +12,8 @@ package org.eclipse.che.plugin.maven.client.actions;
 
 /** @author Roman Nikitenko */
 public final class MavenActionsConstants {
-    private MavenActionsConstants() {
-    }
+  private MavenActionsConstants() {}
 
-    public static final String MAVEN_GROUP_CONTEXT_MENU_NAME = "Maven";
-    public static final String MAVEN_GROUP_CONTEXT_MENU_ID   = "mavenGroupContextMenu";
+  public static final String MAVEN_GROUP_CONTEXT_MENU_NAME = "Maven";
+  public static final String MAVEN_GROUP_CONTEXT_MENU_ID = "mavenGroupContextMenu";
 }

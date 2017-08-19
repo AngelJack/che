@@ -22,21 +22,21 @@ import javax.ws.rs.core.UriBuilder;
  * @author Alexander Garagatyi
  */
 public class EventBusURLProvider implements Provider<String> {
-    @Inject
-    @Named("user.token")
-    String token;
+  @Inject
+  @Named("user.token")
+  String token;
 
-    @Inject
-    @Named("che.api")
-    String apiEndpoint;
+  @Inject
+  @Named("che.api")
+  String apiEndpoint;
 
-    @Override
-    public String get() {
-        return UriBuilder.fromUri(apiEndpoint)
-                         .scheme(apiEndpoint.startsWith("https") ? "wss" : "ws")
-                         .path("/eventbus/")
-                         .queryParam("token", token)
-                         .build()
-                         .toString();
-    }
+  @Override
+  public String get() {
+    return UriBuilder.fromUri(apiEndpoint)
+        .scheme(apiEndpoint.startsWith("https") ? "wss" : "ws")
+        .path("/eventbus/")
+        .queryParam("token", token)
+        .build()
+        .toString();
+  }
 }

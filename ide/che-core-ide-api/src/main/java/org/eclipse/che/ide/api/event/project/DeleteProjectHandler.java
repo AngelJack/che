@@ -19,11 +19,10 @@ import com.google.gwt.event.shared.EventHandler;
  */
 public interface DeleteProjectHandler extends EventHandler {
 
-    /**
-     * Performs some actions when user removes a project.
-     *
-     * @param event
-     *         contains information about deleted project
-     */
-    void onProjectDeleted(DeleteProjectEvent event);
+  /**
+   * Performs some actions when user removes a project.
+   *
+   * @param event contains information about deleted project
+   */
+  void onProjectDeleted(DeleteProjectEvent event);
 }

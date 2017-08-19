@@ -10,35 +10,31 @@
  */
 package org.eclipse.che.plugin.docker.client.params;
 
-import org.testng.annotations.Test;
-
 import static org.testng.Assert.assertEquals;
 
-/**
- * @author Mykola Morhun
- */
+import org.testng.annotations.Test;
+
+/** @author Mykola Morhun */
 public class StartContainerParamsTest {
 
-    private static final String CONTAINER = "container";
+  private static final String CONTAINER = "container";
 
-    private StartContainerParams startContainerParams;
+  private StartContainerParams startContainerParams;
 
-    @Test
-    public void shouldCreateParamsObjectWithRequiredParameters() {
-        startContainerParams = StartContainerParams.create(CONTAINER);
+  @Test
+  public void shouldCreateParamsObjectWithRequiredParameters() {
+    startContainerParams = StartContainerParams.create(CONTAINER);
 
-        assertEquals(startContainerParams.getContainer(), CONTAINER);
-    }
+    assertEquals(startContainerParams.getContainer(), CONTAINER);
+  }
 
-    @Test(expectedExceptions = NullPointerException.class)
-    public void shouldThrowNullPointerExceptionIfContainerRequiredParameterIsNull() {
-        startContainerParams = StartContainerParams.create(null);
-    }
+  @Test(expectedExceptions = NullPointerException.class)
+  public void shouldThrowNullPointerExceptionIfContainerRequiredParameterIsNull() {
+    startContainerParams = StartContainerParams.create(null);
+  }
 
-    @Test(expectedExceptions = NullPointerException.class)
-    public void shouldThrowNullPointerExceptionIfContainerRequiredParameterResetWithNull() {
-        startContainerParams = StartContainerParams.create(CONTAINER)
-                                                   .withContainer(null);
-    }
-
+  @Test(expectedExceptions = NullPointerException.class)
+  public void shouldThrowNullPointerExceptionIfContainerRequiredParameterResetWithNull() {
+    startContainerParams = StartContainerParams.create(CONTAINER).withContainer(null);
+  }
 }

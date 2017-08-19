@@ -10,10 +10,9 @@
  */
 package org.eclipse.che.api.agent.shared.model;
 
-import org.eclipse.che.api.core.model.workspace.ServerConf2;
-
 import java.util.List;
 import java.util.Map;
+import org.eclipse.che.api.core.model.workspace.ServerConf2;
 
 /**
  * An entity that might additionally injected into machine and brings functionality.
@@ -22,43 +21,27 @@ import java.util.Map;
  */
 public interface Agent {
 
-    /**
-     * Returns the id of the agent.
-     */
-    String getId();
+  /** Returns the id of the agent. */
+  String getId();
 
-    /**
-     * Returns the name of the agent.
-     */
-    String getName();
+  /** Returns the name of the agent. */
+  String getName();
 
-    /**
-     * Returns the version of the agent.
-     */
-    String getVersion();
+  /** Returns the version of the agent. */
+  String getVersion();
 
-    /**
-     * Returns the description of the agent.
-     */
-    String getDescription();
+  /** Returns the description of the agent. */
+  String getDescription();
 
-    /**
-     * Returns the depending agents, that must be applied before.
-     */
-    List<String> getDependencies();
+  /** Returns the depending agents, that must be applied before. */
+  List<String> getDependencies();
 
-    /**
-     * Returns the script to be applied when machine is started.
-     */
-    String getScript();
+  /** Returns the script to be applied when machine is started. */
+  String getScript();
 
-    /**
-     * Returns any machine specific properties.
-     */
-    Map<String, String> getProperties();
+  /** Returns any machine specific properties. */
+  Map<String, String> getProperties();
 
-    /**
-     * Returns Che servers in the machine.
-     */
-    Map<String, ? extends ServerConf2> getServers();
+  /** Returns Che servers in the machine. */
+  Map<String, ? extends ServerConf2> getServers();
 }

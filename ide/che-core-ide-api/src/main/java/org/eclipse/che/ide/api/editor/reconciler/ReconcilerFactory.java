@@ -12,10 +12,8 @@ package org.eclipse.che.ide.api.editor.reconciler;
 
 import org.eclipse.che.ide.api.editor.partition.DocumentPartitioner;
 
-/**
- * Factory for {@link Reconciler} instances.
- */
+/** Factory for {@link Reconciler} instances. */
 public interface ReconcilerFactory {
 
-    Reconciler create(String partitioning, DocumentPartitioner partitioner);
+  Reconciler create(String partitioning, DocumentPartitioner partitioner);
 }

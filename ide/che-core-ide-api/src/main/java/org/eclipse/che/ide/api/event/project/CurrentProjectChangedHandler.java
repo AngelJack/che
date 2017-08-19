@@ -14,18 +14,17 @@ import com.google.gwt.event.shared.EventHandler;
 
 /**
  * Special handler which is called when selected other project.
- * @deprecated since 4.6.0 replaced by {@link org.eclipse.che.ide.api.event.SelectionChangedHandler}
  *
+ * @deprecated since 4.6.0 replaced by {@link org.eclipse.che.ide.api.event.SelectionChangedHandler}
  * @author Dmitry Shnurenko
  */
 @Deprecated
 public interface CurrentProjectChangedHandler extends EventHandler {
 
-    /**
-     * Performs some actions when user clicks on different project.
-     *
-     * @param event
-     *         contains information about project which was selected
-     */
-    void onCurrentProjectChanged(CurrentProjectChangedEvent event);
+  /**
+   * Performs some actions when user clicks on different project.
+   *
+   * @param event contains information about project which was selected
+   */
+  void onCurrentProjectChanged(CurrentProjectChangedEvent event);
 }

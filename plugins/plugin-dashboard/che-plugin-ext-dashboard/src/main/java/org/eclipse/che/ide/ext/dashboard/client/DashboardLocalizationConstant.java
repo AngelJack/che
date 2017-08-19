@@ -12,24 +12,21 @@ package org.eclipse.che.ide.ext.dashboard.client;
 
 import com.google.gwt.i18n.client.Messages;
 
-/**
- * @author vzhukovskii@codenvy.com
- */
+/** @author vzhukovskii@codenvy.com */
 public interface DashboardLocalizationConstant extends Messages {
 
-    @Key("open.dashboard.toolbar-button.title")
-    String openDashboardToolbarButtonTitle();
+  @Key("open.dashboard.toolbar-button.title")
+  String openDashboardToolbarButtonTitle();
 
-    @Key("open.dashboard.url.workspace")
-    String openDashboardUrlWorkspace(String workspaceID);
+  @Key("open.dashboard.url.workspace")
+  String openDashboardUrlWorkspace(String workspaceID);
 
-    @Key("open.dashboard.url.workspaces")
-    String openDashboardUrlWorkspaces();
+  @Key("open.dashboard.url.workspaces")
+  String openDashboardUrlWorkspaces();
 
-    @Key("show.dashboard.navbar.toolbar-button.title")
-    String showDashboardNavBarToolbarButtonTitle();
+  @Key("show.dashboard.navbar.toolbar-button.title")
+  String showDashboardNavBarToolbarButtonTitle();
 
-    @Key("hide.dashboard.navbar.toolbar-button.title")
-    String hideDashboardNavBarToolbarButtonTitle();
-
+  @Key("hide.dashboard.navbar.toolbar-button.title")
+  String hideDashboardNavBarToolbarButtonTitle();
 }

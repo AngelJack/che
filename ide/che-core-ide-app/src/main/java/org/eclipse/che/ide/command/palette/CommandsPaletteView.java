@@ -10,12 +10,11 @@
  */
 package org.eclipse.che.ide.command.palette;
 
+import java.util.List;
+import java.util.Map;
 import org.eclipse.che.ide.api.command.CommandGoal;
 import org.eclipse.che.ide.api.command.CommandImpl;
 import org.eclipse.che.ide.api.mvp.View;
-
-import java.util.List;
-import java.util.Map;
 
 /**
  * The view for {@link CommandsPalettePresenter}.
@@ -24,27 +23,26 @@ import java.util.Map;
  */
 public interface CommandsPaletteView extends View<CommandsPaletteView.ActionDelegate> {
 
-    /** Show the view. */
-    void show();
+  /** Show the view. */
+  void show();
 
-    /** Close the view. */
-    void close();
+  /** Close the view. */
+  void close();
 
-    /**
-     * Sets the commands to display in the view.
-     *
-     * @param commands
-     *         commands grouped by type
-     */
-    void setCommands(Map<CommandGoal, List<CommandImpl>> commands);
+  /**
+   * Sets the commands to display in the view.
+   *
+   * @param commands commands grouped by type
+   */
+  void setCommands(Map<CommandGoal, List<CommandImpl>> commands);
 
-    /** The action delegate for this view. */
-    interface ActionDelegate {
+  /** The action delegate for this view. */
+  interface ActionDelegate {
 
-        /** Called when filtering commands is requested. */
-        void onFilterChanged(String filterValue);
+    /** Called when filtering commands is requested. */
+    void onFilterChanged(String filterValue);
 
-        /** Called when command execution is requested. */
-        void onCommandExecute(CommandImpl command);
-    }
+    /** Called when command execution is requested. */
+    void onCommandExecute(CommandImpl command);
+  }
 }

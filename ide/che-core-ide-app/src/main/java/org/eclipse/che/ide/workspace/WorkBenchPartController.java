@@ -20,49 +20,44 @@ import com.google.inject.ImplementedBy;
 @ImplementedBy(WorkBenchPartControllerImpl.class)
 public interface WorkBenchPartController {
 
-    /**
-     * Get part stack size.
-     *
-     * @return the size
-     */
-    double getSize();
+  /**
+   * Get part stack size.
+   *
+   * @return the size
+   */
+  double getSize();
 
-    /**
-     * Set part stack size.
-     *
-     * @param size
-     *         size which need set
-     */
-    void setSize(double size);
+  /**
+   * Set part stack size.
+   *
+   * @param size size which need set
+   */
+  void setSize(double size);
 
-    /**
-     * Maximizes part stack.
-     */
-    void maximize();
+  /** Maximizes part stack. */
+  void maximize();
 
-    /**
-     * Sets the minimum allowable size for the part.
-     * <p/>
-     * The splitter cannot be dragged to a position that would make the part
-     * smaller than this size.
-     *
-     * @param minSize
-     *         the minimum size for the part
-     */
-    void setMinSize(int minSize);
+  /**
+   * Sets the minimum allowable size for the part.
+   *
+   * <p>The splitter cannot be dragged to a position that would make the part smaller than this
+   * size.
+   *
+   * @param minSize the minimum size for the part
+   */
+  void setMinSize(int minSize);
 
-    /**
-     * Show/hide part stack.
-     *
-     * @param hidden
-     *         <code>true</code> hides part, <code>false</code> display part
-     */
-    void setHidden(boolean hidden);
+  /**
+   * Show/hide part stack.
+   *
+   * @param hidden <code>true</code> hides part, <code>false</code> display part
+   */
+  void setHidden(boolean hidden);
 
-    /**
-     * Return hidden state.
-     *
-     * @return the hidden state
-     */
-    boolean isHidden();
+  /**
+   * Return hidden state.
+   *
+   * @return the hidden state
+   */
+  boolean isHidden();
 }

@@ -15,31 +15,29 @@ import com.google.gwt.inject.client.multibindings.GinMultibinder;
 import com.google.inject.Provides;
 import com.google.inject.Singleton;
 import com.google.inject.name.Named;
-
 import org.eclipse.che.ide.api.extension.ExtensionGinModule;
 import org.eclipse.che.ide.api.filetypes.FileType;
 import org.eclipse.che.ide.api.project.type.wizard.ProjectWizardRegistrar;
-import org.eclipse.che.plugin.csharp.shared.Constants;
 import org.eclipse.che.plugin.csharp.ide.CSharpResources;
 import org.eclipse.che.plugin.csharp.ide.project.CSharpProjectWizardRegistrar;
+import org.eclipse.che.plugin.csharp.shared.Constants;
 
-
-/**
- * @author Vitalii Parfonov
- */
+/** @author Vitalii Parfonov */
 @ExtensionGinModule
 public class CSharpGinModule extends AbstractGinModule {
 
-    /** {@inheritDoc} */
-    @Override
-    protected void configure() {
-        GinMultibinder.newSetBinder(binder(), ProjectWizardRegistrar.class).addBinding().to(CSharpProjectWizardRegistrar.class);
-    }
+  /** {@inheritDoc} */
+  @Override
+  protected void configure() {
+    GinMultibinder.newSetBinder(binder(), ProjectWizardRegistrar.class)
+        .addBinding()
+        .to(CSharpProjectWizardRegistrar.class);
+  }
 
-    @Provides
-    @Singleton
-    @Named("CSharpFileType")
-    protected FileType provideCppFile() {
-        return new FileType(CSharpResources.INSTANCE.csharpFile(), Constants.CSHARP_EXT);
-    }
+  @Provides
+  @Singleton
+  @Named("CSharpFileType")
+  protected FileType provideCppFile() {
+    return new FileType(CSharpResources.INSTANCE.csharpFile(), Constants.CSHARP_EXT);
+  }
 }

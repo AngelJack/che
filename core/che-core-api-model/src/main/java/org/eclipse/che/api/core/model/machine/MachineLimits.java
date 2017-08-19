@@ -16,6 +16,6 @@ package org.eclipse.che.api.core.model.machine;
  * @author Alexander Garagatyi
  */
 public interface MachineLimits {
-    /** Get memory size (in megabytes) that is allocated for starting machine. */
-    int getRam();
+  /** Get memory size (in megabytes) that is allocated for starting machine. */
+  int getRam();
 }

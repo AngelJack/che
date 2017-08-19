@@ -15,13 +15,13 @@ import org.eclipse.che.api.core.model.machine.Machine;
 /** Model of the process. */
 public interface Process {
 
-    String getName();
+  String getName();
 
-    String getCommandLine();
+  String getCommandLine();
 
-    int getPid();
+  int getPid();
 
-    boolean isAlive();
+  boolean isAlive();
 
-    Machine getMachine();
+  Machine getMachine();
 }

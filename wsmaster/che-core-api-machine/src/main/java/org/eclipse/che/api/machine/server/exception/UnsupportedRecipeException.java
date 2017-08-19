@@ -12,12 +12,10 @@ package org.eclipse.che.api.machine.server.exception;
 
 import org.eclipse.che.api.core.NotFoundException;
 
-/**
- * @author gazarenkov
- */
+/** @author gazarenkov */
 @SuppressWarnings("serial")
 public class UnsupportedRecipeException extends NotFoundException {
-    public UnsupportedRecipeException(String message) {
-        super(message);
-    }
+  public UnsupportedRecipeException(String message) {
+    super(message);
+  }
 }

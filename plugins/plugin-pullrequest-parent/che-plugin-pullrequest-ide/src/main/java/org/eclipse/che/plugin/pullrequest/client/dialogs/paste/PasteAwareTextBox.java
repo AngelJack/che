@@ -17,53 +17,50 @@ import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.user.client.Event;
 import com.google.gwt.user.client.ui.TextBox;
 
-/**
- * {@link TextBox} that handles onpaste events.
- */
+/** {@link TextBox} that handles onpaste events. */
 public class PasteAwareTextBox extends TextBox {
 
-    public PasteAwareTextBox() {
-        sinkEvents(Event.ONPASTE);
-    }
+  public PasteAwareTextBox() {
+    sinkEvents(Event.ONPASTE);
+  }
 
-    public PasteAwareTextBox(final Element element) {
-        super(element);
-        sinkEvents(Event.ONPASTE);
-    }
+  public PasteAwareTextBox(final Element element) {
+    super(element);
+    sinkEvents(Event.ONPASTE);
+  }
 
-    @Override
-    public void onBrowserEvent(final Event event) {
-        super.onBrowserEvent(event);
-        switch (event.getTypeInt()) {
-            case Event.ONPASTE:
-                event.stopPropagation();
-                delayedFireEvent();
-                break;
-            default:
-                break;
-        }
+  @Override
+  public void onBrowserEvent(final Event event) {
+    super.onBrowserEvent(event);
+    switch (event.getTypeInt()) {
+      case Event.ONPASTE:
+        event.stopPropagation();
+        delayedFireEvent();
+        break;
+      default:
+        break;
     }
+  }
 
-    /**
-     * Fires an event, after waiting the state of the textbox the be updated.
-     */
-    private void delayedFireEvent() {
-        Scheduler.get().scheduleDeferred(new ScheduledCommand() {
-            @Override
-            public void execute() {
+  /** Fires an event, after waiting the state of the textbox the be updated. */
+  private void delayedFireEvent() {
+    Scheduler.get()
+        .scheduleDeferred(
+            new ScheduledCommand() {
+              @Override
+              public void execute() {
                 fireEvent(new PasteEvent());
-            }
-        });
-    }
+              }
+            });
+  }
 
-    /**
-     * Adds a {@link PasteHandler} to the component.
-     *
-     * @param handler
-     *         the handler to add
-     * @return a registration object for removal
-     */
-    public HandlerRegistration addPasteHandler(final PasteHandler handler) {
-        return addHandler(handler, PasteEvent.TYPE);
-    }
+  /**
+   * Adds a {@link PasteHandler} to the component.
+   *
+   * @param handler the handler to add
+   * @return a registration object for removal
+   */
+  public HandlerRegistration addPasteHandler(final PasteHandler handler) {
+    return addHandler(handler, PasteEvent.TYPE);
+  }
 }

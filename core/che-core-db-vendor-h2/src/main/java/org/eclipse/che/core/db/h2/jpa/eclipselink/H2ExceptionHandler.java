@@ -10,31 +10,30 @@
  */
 package org.eclipse.che.core.db.h2.jpa.eclipselink;
 
+import java.sql.SQLException;
 import org.eclipse.che.core.db.jpa.DuplicateKeyException;
 import org.eclipse.che.core.db.jpa.IntegrityConstraintViolationException;
 import org.eclipse.persistence.exceptions.DatabaseException;
 import org.eclipse.persistence.exceptions.ExceptionHandler;
 
-import java.sql.SQLException;
-
 /**
- * Rethrows vendor specific exceptions as common exceptions.
- * See <a href="http://www.h2database.com/javadoc/org/h2/api/ErrorCode.html">H2 error codes</a>.
+ * Rethrows vendor specific exceptions as common exceptions. See <a
+ * href="http://www.h2database.com/javadoc/org/h2/api/ErrorCode.html">H2 error codes</a>.
  *
  * @author Yevhenii Voevodin
  */
 public class H2ExceptionHandler implements ExceptionHandler {
 
-    public Object handleException(RuntimeException exception) {
-        if (exception instanceof DatabaseException && exception.getCause() instanceof SQLException) {
-            final SQLException sqlEx = (SQLException)exception.getCause();
-            switch (sqlEx.getErrorCode()) {
-                case 23505:
-                    throw new DuplicateKeyException(exception.getMessage(), exception);
-                case 23506:
-                    throw new IntegrityConstraintViolationException(exception.getMessage(), exception);
-            }
-        }
-        throw exception;
+  public Object handleException(RuntimeException exception) {
+    if (exception instanceof DatabaseException && exception.getCause() instanceof SQLException) {
+      final SQLException sqlEx = (SQLException) exception.getCause();
+      switch (sqlEx.getErrorCode()) {
+        case 23505:
+          throw new DuplicateKeyException(exception.getMessage(), exception);
+        case 23506:
+          throw new IntegrityConstraintViolationException(exception.getMessage(), exception);
+      }
     }
+    throw exception;
+  }
 }

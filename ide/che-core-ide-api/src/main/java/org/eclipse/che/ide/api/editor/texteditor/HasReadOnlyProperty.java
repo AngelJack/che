@@ -12,18 +12,17 @@ package org.eclipse.che.ide.api.editor.texteditor;
 
 public interface HasReadOnlyProperty {
 
-    /**
-     * Sets the editable state.
-     *
-     * @param isReadOnly
-     *         the read only state
-     */
-    void setReadOnly(final boolean isReadOnly);
+  /**
+   * Sets the editable state.
+   *
+   * @param isReadOnly the read only state
+   */
+  void setReadOnly(final boolean isReadOnly);
 
-    /**
-     * Returns whether the shown text can be manipulated.
-     *
-     * @return the viewer's readOnly state
-     */
-    boolean isReadOnly();
+  /**
+   * Returns whether the shown text can be manipulated.
+   *
+   * @return the viewer's readOnly state
+   */
+  boolean isReadOnly();
 }

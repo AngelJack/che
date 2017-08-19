@@ -20,16 +20,16 @@ import com.google.gwt.i18n.client.Messages;
  */
 public interface PluginsLocalizationConstant extends Messages {
 
-    /* GwtCheCommandPageView */
-    @Key("view.gwtCheCommandPage.gwtModule.text")
-    String gwtCheCommandPageViewGwtModuleText();
+  /* GwtCheCommandPageView */
+  @Key("view.gwtCheCommandPage.gwtModule.text")
+  String gwtCheCommandPageViewGwtModuleText();
 
-    @Key("view.gwtCheCommandPage.codeServerAddress.text")
-    String gwtCommandPageViewCodeServerAddressText();
+  @Key("view.gwtCheCommandPage.codeServerAddress.text")
+  String gwtCommandPageViewCodeServerAddressText();
 
-    @Key("view.gwtCheCommandPage.classPath.text")
-    String gwtCommandPageViewClassPathText();
+  @Key("view.gwtCheCommandPage.classPath.text")
+  String gwtCommandPageViewClassPathText();
 
-    @Key("view.gwtCheCommandPage.warn")
-    String gwtCommandPageViewWarning();
+  @Key("view.gwtCheCommandPage.warn")
+  String gwtCommandPageViewWarning();
 }

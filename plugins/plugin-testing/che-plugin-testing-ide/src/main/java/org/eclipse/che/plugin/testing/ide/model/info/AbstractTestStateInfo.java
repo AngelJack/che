@@ -14,12 +14,11 @@ import org.eclipse.che.plugin.testing.ide.model.Printable;
 import org.eclipse.che.plugin.testing.ide.model.Printer;
 
 /**
- * Base class for all test states (in progress, ignored, passed etc),
- * extenders should add messages, stacktrace etc.
+ * Base class for all test states (in progress, ignored, passed etc), extenders should add messages,
+ * stacktrace etc.
  */
 public abstract class AbstractTestStateInfo implements Printable, TestStateInfo {
 
-    @Override
-    public void print(Printer printer) {
-    }
+  @Override
+  public void print(Printer printer) {}
 }

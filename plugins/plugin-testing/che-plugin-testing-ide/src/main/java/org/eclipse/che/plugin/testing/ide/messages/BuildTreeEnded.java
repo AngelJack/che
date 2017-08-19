@@ -10,16 +10,13 @@
  */
 package org.eclipse.che.plugin.testing.ide.messages;
 
-/**
- * Data class represents testing tree messages.
- */
+/** Data class represents testing tree messages. */
 public class BuildTreeEnded extends ClientTestingMessage {
 
-    BuildTreeEnded() {
-    }
+  BuildTreeEnded() {}
 
-    @Override
-    public void visit(TestingMessageVisitor visitor) {
-        visitor.visitBuildTreeEnded(this);
-    }
+  @Override
+  public void visit(TestingMessageVisitor visitor) {
+    visitor.visitBuildTreeEnded(this);
+  }
 }

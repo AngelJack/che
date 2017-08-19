@@ -12,14 +12,11 @@ package org.eclipse.che.ide.terminal;
 
 import org.eclipse.che.ide.collections.Jso;
 
-/**
- * @author Evgen Vidolob
- */
-class TerminalOptionsJso extends Jso{
-    protected TerminalOptionsJso() {
-    }
+/** @author Evgen Vidolob */
+class TerminalOptionsJso extends Jso {
+  protected TerminalOptionsJso() {}
 
-    public static native TerminalOptionsJso createDefault() /*-{
+  public static native TerminalOptionsJso createDefault() /*-{
         return {
             cols: 80,
             rows: 24,
@@ -28,7 +25,7 @@ class TerminalOptionsJso extends Jso{
         }
     }-*/;
 
-    public final native TerminalOptionsJso withFocusOnOpen(boolean focusOnOpen) /*-{
+  public final native TerminalOptionsJso withFocusOnOpen(boolean focusOnOpen) /*-{
         this.focusOnOpen = focusOnOpen;
     }-*/;
 }

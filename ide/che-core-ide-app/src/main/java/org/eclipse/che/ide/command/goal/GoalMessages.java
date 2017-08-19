@@ -19,6 +19,6 @@ import com.google.gwt.i18n.client.Messages;
  */
 public interface GoalMessages extends Messages {
 
-    @Key("message.goal_already_registered")
-    String messageGoalAlreadyRegistered(String goalId);
+  @Key("message.goal_already_registered")
+  String messageGoalAlreadyRegistered(String goalId);
 }

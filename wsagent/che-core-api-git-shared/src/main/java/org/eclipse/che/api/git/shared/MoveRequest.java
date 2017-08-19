@@ -19,13 +19,13 @@ import org.eclipse.che.dto.shared.DTO;
  */
 @DTO
 public interface MoveRequest {
-    /** @return source */
-    String getSource();
-    
-    void setSource(String source);
+  /** @return source */
+  String getSource();
 
-    /** @return target */
-    String getTarget();
-    
-    void setTarget(String target);
+  void setSource(String source);
+
+  /** @return target */
+  String getTarget();
+
+  void setTarget(String target);
 }

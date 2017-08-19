@@ -18,6 +18,6 @@ package org.eclipse.che.ide.api.dialogs;
  */
 public interface ConfirmDialog {
 
-    /** Operate the confirmation dialog: show it and manage user actions. */
-    void show();
+  /** Operate the confirmation dialog: show it and manage user actions. */
+  void show();
 }

@@ -13,18 +13,18 @@ package org.eclipse.che.ide.api.machine.events;
 /**
  * Abstract implementation of {@link WsAgentStateHandler}.
  *
- * Need to allow user to use only one event handling if need.
+ * <p>Need to allow user to use only one event handling if need.
  *
  * @author Vlad Zhukovskyi
  */
 public abstract class AbstractWsAgentStateHandler implements WsAgentStateHandler {
-    @Override
-    public void onWsAgentStarted(WsAgentStateEvent event) {
-       //to be override
-    }
+  @Override
+  public void onWsAgentStarted(WsAgentStateEvent event) {
+    //to be override
+  }
 
-    @Override
-    public void onWsAgentStopped(WsAgentStateEvent event) {
-        //to be override
-    }
+  @Override
+  public void onWsAgentStopped(WsAgentStateEvent event) {
+    //to be override
+  }
 }

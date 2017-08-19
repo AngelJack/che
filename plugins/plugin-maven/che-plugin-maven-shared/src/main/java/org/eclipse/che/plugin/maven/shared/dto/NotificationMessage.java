@@ -21,16 +21,15 @@ import org.eclipse.che.dto.shared.DTO;
 @Deprecated
 public interface NotificationMessage {
 
-    String getText();
+  String getText();
 
-    void setText(String text);
+  void setText(String text);
 
-    double getPercent();
+  double getPercent();
 
-    void setPercent(double percent);
+  void setPercent(double percent);
 
-    boolean isPercentUndefined();
+  boolean isPercentUndefined();
 
-    void setPercentUndefined(boolean percentUndefined);
-
+  void setPercentUndefined(boolean percentUndefined);
 }

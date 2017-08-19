@@ -10,30 +10,27 @@
  */
 package org.eclipse.che.ide.factory.welcome;
 
+import javax.inject.Inject;
 import org.eclipse.che.ide.api.action.Action;
 import org.eclipse.che.ide.api.action.ActionEvent;
 import org.eclipse.che.ide.util.loging.Log;
 
-import javax.inject.Inject;
-
-/**
- * @author Sergii Leschenko
- */
+/** @author Sergii Leschenko */
 public class OpenWelcomePageAction extends Action {
-    private final GreetingPartPresenter greetingPart;
+  private final GreetingPartPresenter greetingPart;
 
-    @Inject
-    public OpenWelcomePageAction(GreetingPartPresenter greetingPart) {
-        this.greetingPart = greetingPart;
+  @Inject
+  public OpenWelcomePageAction(GreetingPartPresenter greetingPart) {
+    this.greetingPart = greetingPart;
+  }
+
+  @Override
+  public void actionPerformed(ActionEvent e) {
+    if (e.getParameters() == null) {
+      Log.error(getClass(), "Can't show welcome page without parameters");
+      return;
     }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        if (e.getParameters() == null) {
-            Log.error(getClass(), "Can't show welcome page without parameters");
-            return;
-        }
-
-        greetingPart.showGreeting(e.getParameters());
-    }
+    greetingPart.showGreeting(e.getParameters());
+  }
 }

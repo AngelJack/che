@@ -22,29 +22,31 @@ import org.eclipse.che.dto.shared.DTO;
 @DTO
 public interface WsAgentHealthStateDto {
 
-    void setWorkspaceStatus(WorkspaceStatus status);
+  void setWorkspaceStatus(WorkspaceStatus status);
 
-    WsAgentHealthStateDto withWorkspaceStatus(WorkspaceStatus status);
+  WsAgentHealthStateDto withWorkspaceStatus(WorkspaceStatus status);
 
-    /**
-     * Returns the status of the current workspace instance.
-     * <p>
-     * <p>All the workspaces which are stopped have runtime
-     * are considered {@link WorkspaceStatus#STOPPED}.
-     */
-    WorkspaceStatus getWorkspaceStatus();
+  /**
+   * Returns the status of the current workspace instance.
+   *
+   * <p>
+   *
+   * <p>All the workspaces which are stopped have runtime are considered {@link
+   * WorkspaceStatus#STOPPED}.
+   */
+  WorkspaceStatus getWorkspaceStatus();
 
-    void setCode(int code);
+  void setCode(int code);
 
-    /** Returns HTTP status code, see {@code javax.ws.rs.core.Response.Status} */
-    int getCode();
+  /** Returns HTTP status code, see {@code javax.ws.rs.core.Response.Status} */
+  int getCode();
 
-    WsAgentHealthStateDto withCode(int code);
+  WsAgentHealthStateDto withCode(int code);
 
-    void setReason(String reason);
+  void setReason(String reason);
 
-    /** Returns reason of the state. */
-    String getReason();
+  /** Returns reason of the state. */
+  String getReason();
 
-    WsAgentHealthStateDto withReason(String reason);
+  WsAgentHealthStateDto withReason(String reason);
 }

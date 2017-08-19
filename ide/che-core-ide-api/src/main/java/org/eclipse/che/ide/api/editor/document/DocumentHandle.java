@@ -10,27 +10,28 @@
  */
 package org.eclipse.che.ide.api.editor.document;
 
-/**
- * Handle on an editor document.
- */
+/** Handle on an editor document. */
 public interface DocumentHandle {
 
-    /**
-     * tells if the handles point to the same document.
-     * @param documentHandle the other document handle to compare
-     * @return true iff the pointed document is the same.
-     */
-    boolean isSameAs(DocumentHandle documentHandle);
+  /**
+   * tells if the handles point to the same document.
+   *
+   * @param documentHandle the other document handle to compare
+   * @return true iff the pointed document is the same.
+   */
+  boolean isSameAs(DocumentHandle documentHandle);
 
-    /**
-     * Returns the private event bus for the pointed editor.
-     * @return the private event bus
-     */
-    DocumentEventBus getDocEventBus();
+  /**
+   * Returns the private event bus for the pointed editor.
+   *
+   * @return the private event bus
+   */
+  DocumentEventBus getDocEventBus();
 
-    /**
-     * Returns the pointed document
-     * @return the document
-     */
-    Document getDocument();
+  /**
+   * Returns the pointed document
+   *
+   * @return the document
+   */
+  Document getDocument();
 }

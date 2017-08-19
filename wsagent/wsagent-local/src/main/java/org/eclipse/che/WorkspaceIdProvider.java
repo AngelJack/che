@@ -10,20 +10,18 @@
  */
 package org.eclipse.che;
 
-
 /**
- * Class provide workspace ID which linked to current developer machine it will take from environment variable "CHE_WORKSPACE_ID"
- * if this variable not set return empty String but in real life should never be
- *
+ * Class provide workspace ID which linked to current developer machine it will take from
+ * environment variable "CHE_WORKSPACE_ID" if this variable not set return empty String but in real
+ * life should never be
  *
  * @author Vitalii Parfonov
  */
+public class WorkspaceIdProvider {
 
-public class WorkspaceIdProvider   {
+  public static final String CHE_WORKSPACE_ID = "CHE_WORKSPACE_ID";
 
-    public static final String CHE_WORKSPACE_ID = "CHE_WORKSPACE_ID";
-
-    public static String getWorkspaceId() {
-        return System.getenv(CHE_WORKSPACE_ID) == null ? "" : System.getenv(CHE_WORKSPACE_ID);
-    }
+  public static String getWorkspaceId() {
+    return System.getenv(CHE_WORKSPACE_ID) == null ? "" : System.getenv(CHE_WORKSPACE_ID);
+  }
 }

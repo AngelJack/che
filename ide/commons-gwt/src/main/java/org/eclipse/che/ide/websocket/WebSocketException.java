@@ -18,19 +18,19 @@ package org.eclipse.che.ide.websocket;
 @SuppressWarnings("serial")
 public class WebSocketException extends Exception {
 
-    public WebSocketException() {
-        super();
-    }
+  public WebSocketException() {
+    super();
+  }
 
-    public WebSocketException(String message) {
-        super(message);
-    }
+  public WebSocketException(String message) {
+    super(message);
+  }
 
-    public WebSocketException(Throwable cause) {
-        super(cause);
-    }
+  public WebSocketException(Throwable cause) {
+    super(cause);
+  }
 
-    public WebSocketException(String message, Throwable cause) {
-        super(message, cause);
-    }
+  public WebSocketException(String message, Throwable cause) {
+    super(message, cause);
+  }
 }

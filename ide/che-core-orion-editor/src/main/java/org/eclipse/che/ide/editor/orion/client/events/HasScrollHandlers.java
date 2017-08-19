@@ -15,9 +15,9 @@ import com.google.gwt.event.shared.HasHandlers;
 
 /**
  * Interface for components which handle {@link ScrollEvent}.
- * 
+ *
  * @author "Mickaël Leduque"
  */
 public interface HasScrollHandlers extends HasHandlers {
-    HandlerRegistration addScrollHandler(ScrollHandler handler);
+  HandlerRegistration addScrollHandler(ScrollHandler handler);
 }

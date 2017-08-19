@@ -10,51 +10,51 @@
  */
 package org.eclipse.che.ide.ext.java.client.dependenciesupdater;
 
-import org.eclipse.che.ide.console.DefaultOutputConsole;
-
 import java.util.LinkedList;
 import java.util.List;
+import org.eclipse.che.ide.console.DefaultOutputConsole;
 
 /**
- * The class contains information about components which are associated with channel. For each channel we connected we need console
- * for output, output and status if output from server is ended or not.
+ * The class contains information about components which are associated with channel. For each
+ * channel we connected we need console for output, output and status if output from server is ended
+ * or not.
  *
  * @author Dmitry Shnurenko
  */
 public class ChannelParameters {
 
-    private final DefaultOutputConsole console;
-    private final LinkedList<String>   output;
+  private final DefaultOutputConsole console;
+  private final LinkedList<String> output;
 
-    private boolean isOutputComes;
+  private boolean isOutputComes;
 
-    private ChannelParameters(DefaultOutputConsole console, LinkedList<String> output) {
-        this.console = console;
-        this.output = output;
-        this.isOutputComes = false;
-    }
+  private ChannelParameters(DefaultOutputConsole console, LinkedList<String> output) {
+    this.console = console;
+    this.output = output;
+    this.isOutputComes = false;
+  }
 
-    public static ChannelParameters of(DefaultOutputConsole console, LinkedList<String> output) {
-        return new ChannelParameters(console, output);
-    }
+  public static ChannelParameters of(DefaultOutputConsole console, LinkedList<String> output) {
+    return new ChannelParameters(console, output);
+  }
 
-    public DefaultOutputConsole getConsole() {
-        return console;
-    }
+  public DefaultOutputConsole getConsole() {
+    return console;
+  }
 
-    public LinkedList<String> getOutput() {
-        return output;
-    }
+  public LinkedList<String> getOutput() {
+    return output;
+  }
 
-    public boolean isOutputEnded() {
-        return isOutputComes;
-    }
+  public boolean isOutputEnded() {
+    return isOutputComes;
+  }
 
-    public void addAllLines(List<String> lines) {
-        output.addAll(lines);
-    }
+  public void addAllLines(List<String> lines) {
+    output.addAll(lines);
+  }
 
-    public void outputEnded() {
-        isOutputComes = true;
-    }
+  public void outputEnded() {
+    isOutputComes = true;
+  }
 }

@@ -16,5 +16,4 @@ import com.google.web.bindery.event.shared.SimpleEventBus;
  * EventBus dedicated to a document.<br>
  * Sub-classed to provide strong-typing: this is a dedicated channel.
  */
-public class DocumentEventBus extends SimpleEventBus {
-}
+public class DocumentEventBus extends SimpleEventBus {}

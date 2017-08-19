@@ -15,18 +15,18 @@ import org.eclipse.che.ide.api.mvp.View;
 /** View for displaying the preview URLs. */
 public interface PreviewsView extends View<PreviewsView.ActionDelegate> {
 
-    /** Add preview URL to the view. */
-    void addUrl(String previewUrl);
+  /** Add preview URL to the view. */
+  void addUrl(String previewUrl);
 
-    /** Remove preview URL from the view. */
-    void removeUrl(String previewUrl);
+  /** Remove preview URL from the view. */
+  void removeUrl(String previewUrl);
 
-    /** Remove all preview URLs from the view. */
-    void removeAllURLs();
+  /** Remove all preview URLs from the view. */
+  void removeAllURLs();
 
-    interface ActionDelegate {
+  interface ActionDelegate {
 
-        /** Called when preview URL has been chosen. */
-        void onUrlChosen(String previewUrl);
-    }
+    /** Called when preview URL has been chosen. */
+    void onUrlChosen(String previewUrl);
+  }
 }

@@ -10,15 +10,12 @@
  */
 package org.eclipse.che.plugin.json.languageserver;
 
+import java.util.Map;
 import org.eclipse.lsp4j.jsonrpc.services.JsonNotification;
 
-import java.util.Map;
-
-/**
- *
- */
+/** */
 public interface JsonExtension {
 
-    @JsonNotification(value="json/schemaAssociations", useSegment = false)
-    void jsonSchemaAssociation(Map<String, String[]> associations);
+  @JsonNotification(value = "json/schemaAssociations", useSegment = false)
+  void jsonSchemaAssociation(Map<String, String[]> associations);
 }

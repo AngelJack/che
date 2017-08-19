@@ -10,12 +10,11 @@
  */
 package org.eclipse.che.ide.part.widgets;
 
+import javax.validation.constraints.NotNull;
 import org.eclipse.che.ide.api.editor.EditorPartPresenter;
 import org.eclipse.che.ide.api.parts.EditorPartStack;
 import org.eclipse.che.ide.api.parts.EditorTab;
 import org.eclipse.che.ide.part.widgets.partbutton.PartButton;
-
-import javax.validation.constraints.NotNull;
 
 /**
  * @author Dmitry Shnurenko
@@ -23,7 +22,8 @@ import javax.validation.constraints.NotNull;
  */
 public interface TabItemFactory {
 
-    PartButton createPartButton(@NotNull String title);
+  PartButton createPartButton(@NotNull String title);
 
-    EditorTab createEditorPartButton(@NotNull EditorPartPresenter relatedEditorPart, @NotNull EditorPartStack editorPartStack);
+  EditorTab createEditorPartButton(
+      @NotNull EditorPartPresenter relatedEditorPart, @NotNull EditorPartStack editorPartStack);
 }

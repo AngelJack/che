@@ -12,15 +12,13 @@ package org.eclipse.che.plugin.java.plain.client.service;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-
+import java.util.List;
 import org.eclipse.che.api.promises.client.Promise;
 import org.eclipse.che.ide.api.app.AppContext;
 import org.eclipse.che.ide.ext.java.shared.dto.classpath.ClasspathEntryDto;
 import org.eclipse.che.ide.rest.AsyncRequestFactory;
 import org.eclipse.che.ide.ui.loaders.request.LoaderFactory;
 import org.eclipse.che.ide.ui.loaders.request.MessageLoader;
-
-import java.util.List;
 
 /**
  * The implementation of {@link ClasspathUpdaterServiceClient}.
@@ -30,27 +28,28 @@ import java.util.List;
 @Singleton
 public class ClasspathUpdaterServiceClientImpl implements ClasspathUpdaterServiceClient {
 
-    private final String              pathToService;
-    private final MessageLoader       loader;
-    private final AsyncRequestFactory asyncRequestFactory;
-    private final AppContext          appContext;
+  private final String pathToService;
+  private final MessageLoader loader;
+  private final AsyncRequestFactory asyncRequestFactory;
+  private final AppContext appContext;
 
-    @Inject
-    public ClasspathUpdaterServiceClientImpl(AsyncRequestFactory asyncRequestFactory,
-                                             AppContext appContext,
-                                             LoaderFactory loaderFactory) {
-        this.asyncRequestFactory = asyncRequestFactory;
-        this.appContext = appContext;
-        this.loader = loaderFactory.newLoader();
+  @Inject
+  public ClasspathUpdaterServiceClientImpl(
+      AsyncRequestFactory asyncRequestFactory, AppContext appContext, LoaderFactory loaderFactory) {
+    this.asyncRequestFactory = asyncRequestFactory;
+    this.appContext = appContext;
+    this.loader = loaderFactory.newLoader();
 
-        this.pathToService = "/jdt/classpath/";
-    }
+    this.pathToService = "/jdt/classpath/";
+  }
 
-    @Override
-    public Promise<Void> setRawClasspath(String projectPath, List<ClasspathEntryDto> entries) {
-        final String url = appContext.getDevMachine().getWsAgentBaseUrl() + pathToService + "update?projectpath=" + projectPath;
-        return asyncRequestFactory.createPostRequest(url, entries)
-                                  .loader(loader)
-                                  .send();
-    }
+  @Override
+  public Promise<Void> setRawClasspath(String projectPath, List<ClasspathEntryDto> entries) {
+    final String url =
+        appContext.getDevMachine().getWsAgentBaseUrl()
+            + pathToService
+            + "update?projectpath="
+            + projectPath;
+    return asyncRequestFactory.createPostRequest(url, entries).loader(loader).send();
+  }
 }

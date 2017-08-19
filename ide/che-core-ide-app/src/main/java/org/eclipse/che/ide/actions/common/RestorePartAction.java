@@ -26,33 +26,35 @@ import org.eclipse.che.ide.api.parts.PartStack;
  */
 public class RestorePartAction extends Action implements ActivePartChangedHandler {
 
-    private PartStack activePartStack;
+  private PartStack activePartStack;
 
-    @Inject
-    public RestorePartAction(final EventBus eventBus,
-                             final CoreLocalizationConstant coreLocalizationConstant) {
-        super(coreLocalizationConstant.actionRestorePartTitle(), coreLocalizationConstant.actionRestorePartDescription());
-        eventBus.addHandler(ActivePartChangedEvent.TYPE, this);
+  @Inject
+  public RestorePartAction(
+      final EventBus eventBus, final CoreLocalizationConstant coreLocalizationConstant) {
+    super(
+        coreLocalizationConstant.actionRestorePartTitle(),
+        coreLocalizationConstant.actionRestorePartDescription());
+    eventBus.addHandler(ActivePartChangedEvent.TYPE, this);
+  }
+
+  @Override
+  public void update(ActionEvent e) {
+    if (activePartStack == null) {
+      e.getPresentation().setEnabledAndVisible(false);
+      return;
     }
 
-    @Override
-    public void update(ActionEvent e) {
-        if (activePartStack == null) {
-            e.getPresentation().setEnabledAndVisible(false);
-            return;
-        }
+    e.getPresentation()
+        .setEnabledAndVisible(PartStack.State.MAXIMIZED == activePartStack.getPartStackState());
+  }
 
-        e.getPresentation().setEnabledAndVisible(PartStack.State.MAXIMIZED == activePartStack.getPartStackState());
-    }
+  @Override
+  public void actionPerformed(ActionEvent e) {
+    activePartStack.restore();
+  }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        activePartStack.restore();
-    }
-
-    @Override
-    public void onActivePartChanged(ActivePartChangedEvent event) {
-        activePartStack = event.getActivePart().getPartStack();
-    }
-
+  @Override
+  public void onActivePartChanged(ActivePartChangedEvent event) {
+    activePartStack = event.getActivePart().getPartStack();
+  }
 }

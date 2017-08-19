@@ -10,14 +10,12 @@
  */
 package org.eclipse.che.ide.api.editor.partition;
 
-/**
- * Interface for a factory of {@link DocumentPartitioner}.
- */
+/** Interface for a factory of {@link DocumentPartitioner}. */
 public interface PartitionerFactory {
-    /**
-     * Create an instance of {@link DocumentPartitioner}.
-     * 
-     * @return the instance
-     */
-    DocumentPartitioner create(DocumentPositionMap docPositionMap);
+  /**
+   * Create an instance of {@link DocumentPartitioner}.
+   *
+   * @return the instance
+   */
+  DocumentPartitioner create(DocumentPositionMap docPositionMap);
 }

@@ -19,19 +19,19 @@ import org.eclipse.che.dto.shared.DTO;
  */
 @DTO
 public interface OAuthToken {
-    /** Get OAuth token */
-    String getToken();
+  /** Get OAuth token */
+  String getToken();
 
-    /** Set OAuth token */
-    void setToken(String token);
+  /** Set OAuth token */
+  void setToken(String token);
 
-    OAuthToken withToken(String token);
+  OAuthToken withToken(String token);
 
-    /** Get OAuth scope */
-    String getScope();
+  /** Get OAuth scope */
+  String getScope();
 
-    /** Set OAuth scope */
-    void setScope(String scope);
+  /** Set OAuth scope */
+  void setScope(String scope);
 
-    OAuthToken withScope(String scope);
+  OAuthToken withScope(String scope);
 }

@@ -12,11 +12,9 @@ package org.eclipse.che.ide.api.editor.quickfix;
 
 import org.eclipse.che.ide.api.editor.codeassist.CodeAssistCallback;
 
-/**
- * Quick assist processor for quick fixes and quick assists.
- */
+/** Quick assist processor for quick fixes and quick assists. */
 public interface QuickAssistProcessor {
 
-    void computeQuickAssistProposals(QuickAssistInvocationContext invocationContext, CodeAssistCallback callback);
-
+  void computeQuickAssistProposals(
+      QuickAssistInvocationContext invocationContext, CodeAssistCallback callback);
 }

@@ -16,12 +16,11 @@ package org.eclipse.che.ide.api.action;
  */
 public interface PropertyChangeListener {
 
-    /**
-     * This method gets called when a bound property is changed.
-     *
-     * @param event
-     *         A PropertyChangeEvent object describing the event source
-     *         and the property that has changed.
-     */
-    void onPropertyChange(PropertyChangeEvent event);
+  /**
+   * This method gets called when a bound property is changed.
+   *
+   * @param event A PropertyChangeEvent object describing the event source and the property that has
+   *     changed.
+   */
+  void onPropertyChange(PropertyChangeEvent event);
 }

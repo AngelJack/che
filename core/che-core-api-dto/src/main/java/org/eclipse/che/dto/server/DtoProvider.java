@@ -18,13 +18,13 @@ import com.google.gson.JsonElement;
  * @author andrew00x
  */
 public interface DtoProvider<DTO> {
-    Class<? extends DTO> getImplClass();
+  Class<? extends DTO> getImplClass();
 
-    DTO fromJson(String json);
+  DTO fromJson(String json);
 
-    DTO fromJson(JsonElement json);
+  DTO fromJson(JsonElement json);
 
-    DTO newInstance();
+  DTO newInstance();
 
-    DTO clone(DTO origin);
+  DTO clone(DTO origin);
 }

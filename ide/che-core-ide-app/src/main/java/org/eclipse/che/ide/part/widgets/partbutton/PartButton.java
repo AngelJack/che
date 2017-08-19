@@ -10,12 +10,11 @@
  */
 package org.eclipse.che.ide.part.widgets.partbutton;
 
+import javax.validation.constraints.NotNull;
+import org.eclipse.che.commons.annotation.Nullable;
 import org.eclipse.che.ide.api.mvp.View;
 import org.eclipse.che.ide.api.parts.PartStackView.TabItem;
 import org.vectomatic.dom.svg.ui.SVGResource;
-
-import javax.validation.constraints.NotNull;
-import org.eclipse.che.commons.annotation.Nullable;
 
 /**
  * @author Dmitry Shnurenko
@@ -23,13 +22,13 @@ import org.eclipse.che.commons.annotation.Nullable;
  */
 public interface PartButton extends View<PartButton.ActionDelegate>, TabItem {
 
-    @NotNull
-    PartButton setTooltip(@Nullable String tooltip);
+  @NotNull
+  PartButton setTooltip(@Nullable String tooltip);
 
-    @NotNull
-    PartButton setIcon(@Nullable SVGResource resource);
+  @NotNull
+  PartButton setIcon(@Nullable SVGResource resource);
 
-    interface ActionDelegate {
-        void onTabClicked(@NotNull TabItem selectedTab);
-    }
+  interface ActionDelegate {
+    void onTabClicked(@NotNull TabItem selectedTab);
+  }
 }

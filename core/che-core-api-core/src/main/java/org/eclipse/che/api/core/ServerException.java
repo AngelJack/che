@@ -14,27 +14,27 @@ import org.eclipse.che.api.core.rest.shared.dto.ServiceError;
 
 /**
  * A {@code ServerException} is thrown as a result of an error that internal server error.
- * <p/>
- * Typically in REST API such errors are converted in HTTP response with status 500.
+ *
+ * <p>Typically in REST API such errors are converted in HTTP response with status 500.
  *
  * @author andrew00x
  */
 @SuppressWarnings("serial")
 public class ServerException extends ApiException {
 
-    public ServerException(String message) {
-        super(message);
-    }
+  public ServerException(String message) {
+    super(message);
+  }
 
-    public ServerException(ServiceError serviceError) {
-        super(serviceError);
-    }
+  public ServerException(ServiceError serviceError) {
+    super(serviceError);
+  }
 
-    public ServerException(Throwable cause) {
-        super(cause);
-    }
+  public ServerException(Throwable cause) {
+    super(cause);
+  }
 
-    public ServerException(String message, Throwable cause) {
-        super(message, cause);
-    }
+  public ServerException(String message, Throwable cause) {
+    super(message, cause);
+  }
 }

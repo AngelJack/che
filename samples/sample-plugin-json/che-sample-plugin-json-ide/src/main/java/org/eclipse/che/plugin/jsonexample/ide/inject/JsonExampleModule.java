@@ -12,23 +12,18 @@ package org.eclipse.che.plugin.jsonexample.ide.inject;
 
 import com.google.gwt.inject.client.AbstractGinModule;
 import com.google.gwt.inject.client.multibindings.GinMultibinder;
-
 import org.eclipse.che.ide.api.extension.ExtensionGinModule;
 import org.eclipse.che.ide.api.project.type.wizard.ProjectWizardRegistrar;
 import org.eclipse.che.plugin.jsonexample.ide.project.JsonExampleProjectWizardRegistrar;
 
-/**
- * JSON Example Gin Module for binding the project wizard and helper factories.
- */
+/** JSON Example Gin Module for binding the project wizard and helper factories. */
 @ExtensionGinModule
 public class JsonExampleModule extends AbstractGinModule {
 
-    @Override
-    protected void configure() {
-        GinMultibinder
-                .newSetBinder(binder(), ProjectWizardRegistrar.class)
-                .addBinding()
-                .to(JsonExampleProjectWizardRegistrar.class);
-
-    }
+  @Override
+  protected void configure() {
+    GinMultibinder.newSetBinder(binder(), ProjectWizardRegistrar.class)
+        .addBinding()
+        .to(JsonExampleProjectWizardRegistrar.class);
+  }
 }

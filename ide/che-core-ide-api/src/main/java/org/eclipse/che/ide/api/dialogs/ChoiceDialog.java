@@ -12,11 +12,11 @@ package org.eclipse.che.ide.api.dialogs;
 
 /**
  * Interface to the choice dialog component.
- * 
+ *
  * @author Mickaël Leduque
  */
 public interface ChoiceDialog {
 
-    /** Operate the choice dialog: show it and manage user actions. */
-    void show();
+  /** Operate the choice dialog: show it and manage user actions. */
+  void show();
 }

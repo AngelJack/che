@@ -14,15 +14,15 @@ import org.eclipse.che.dto.shared.DTO;
 
 @DTO
 public interface ProcessStartRequestDto {
-    String getName();
+  String getName();
 
-    ProcessStartRequestDto withName(String name);
+  ProcessStartRequestDto withName(String name);
 
-    String getCommandLine();
+  String getCommandLine();
 
-    ProcessStartRequestDto withCommandLine(String commandLine);
+  ProcessStartRequestDto withCommandLine(String commandLine);
 
-    String getType();
+  String getType();
 
-    ProcessStartRequestDto withType(String type);
+  ProcessStartRequestDto withType(String type);
 }

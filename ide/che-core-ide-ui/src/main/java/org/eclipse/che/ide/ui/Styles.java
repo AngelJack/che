@@ -12,12 +12,10 @@ package org.eclipse.che.ide.ui;
 
 import com.google.gwt.resources.client.CssResource;
 
-/**
- * @author Evgen Vidolob
- */
+/** @author Evgen Vidolob */
 @CssResource.Shared
 public interface Styles extends CssResource {
-    String inputError();
+  String inputError();
 
-    String inputField();
+  String inputField();
 }

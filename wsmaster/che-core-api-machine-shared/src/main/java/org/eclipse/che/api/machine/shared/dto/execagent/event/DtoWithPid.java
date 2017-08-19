@@ -11,5 +11,5 @@
 package org.eclipse.che.api.machine.shared.dto.execagent.event;
 
 public interface DtoWithPid {
-    int getPid();
+  int getPid();
 }

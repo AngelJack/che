@@ -13,27 +13,22 @@ package org.eclipse.che.api.project.shared.dto.event;
 import org.eclipse.che.api.core.notification.EventOrigin;
 import org.eclipse.che.dto.shared.DTO;
 
-/**
- * @author gazarenkov
- */
+/** @author gazarenkov */
 @EventOrigin("vfs")
 @DTO
 public interface VfsWatchEvent {
 
-    String VFS_CHANNEL = "vfs";
+  String VFS_CHANNEL = "vfs";
 
-    String getPath();
+  String getPath();
 
-    VfsWatchEvent withPath(String path);
+  VfsWatchEvent withPath(String path);
 
+  FileWatcherEventType getType();
 
-    FileWatcherEventType getType();
+  VfsWatchEvent withType(FileWatcherEventType type);
 
-    VfsWatchEvent withType(FileWatcherEventType type);
+  boolean isFile();
 
-
-    boolean isFile();
-
-    VfsWatchEvent withFile(boolean isFile);
-
+  VfsWatchEvent withFile(boolean isFile);
 }

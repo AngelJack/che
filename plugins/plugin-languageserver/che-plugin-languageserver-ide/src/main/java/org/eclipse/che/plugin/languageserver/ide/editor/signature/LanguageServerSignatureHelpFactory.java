@@ -12,9 +12,7 @@ package org.eclipse.che.plugin.languageserver.ide.editor.signature;
 
 import org.eclipse.lsp4j.ServerCapabilities;
 
-/**
- * @author Evgen Vidolob
- */
+/** @author Evgen Vidolob */
 public interface LanguageServerSignatureHelpFactory {
-    LanguageServerSignatureHelp create(ServerCapabilities capabilities);
+  LanguageServerSignatureHelp create(ServerCapabilities capabilities);
 }

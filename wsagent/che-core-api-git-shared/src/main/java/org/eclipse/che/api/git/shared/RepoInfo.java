@@ -12,12 +12,10 @@ package org.eclipse.che.api.git.shared;
 
 import org.eclipse.che.dto.shared.DTO;
 
-/**
- * @author andrew00x
- */
+/** @author andrew00x */
 @DTO
 public interface RepoInfo {
-    String getRemoteUri();
-    
-    RepoInfo withRemoteUri(String remoteUri);
+  String getRemoteUri();
+
+  RepoInfo withRemoteUri(String remoteUri);
 }

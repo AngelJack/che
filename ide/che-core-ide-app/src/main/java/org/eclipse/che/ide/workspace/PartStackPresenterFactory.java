@@ -10,10 +10,9 @@
  */
 package org.eclipse.che.ide.workspace;
 
+import javax.validation.constraints.NotNull;
 import org.eclipse.che.ide.api.parts.PartStack;
 import org.eclipse.che.ide.api.parts.PartStackView;
-
-import javax.validation.constraints.NotNull;
 
 /**
  * Gin factory for PartStack
@@ -22,14 +21,13 @@ import javax.validation.constraints.NotNull;
  * @author Dmitry Shnurenko
  */
 public interface PartStackPresenterFactory {
-    /**
-     * Creates new instance of {@link PartStack}. Each call of this method returns new object.
-     *
-     * @param view
-     *         special view which is required for creating part stack
-     * @param workBenchPartController
-     *         controller which is used by part stack
-     * @return an instance of {@link PartStack}
-     */
-    PartStack create(@NotNull PartStackView view, @NotNull WorkBenchPartController workBenchPartController);
+  /**
+   * Creates new instance of {@link PartStack}. Each call of this method returns new object.
+   *
+   * @param view special view which is required for creating part stack
+   * @param workBenchPartController controller which is used by part stack
+   * @return an instance of {@link PartStack}
+   */
+  PartStack create(
+      @NotNull PartStackView view, @NotNull WorkBenchPartController workBenchPartController);
 }

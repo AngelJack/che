@@ -10,9 +10,8 @@
  */
 package org.eclipse.che.api.git.shared;
 
-import org.eclipse.che.dto.shared.DTO;
-
 import java.util.List;
+import org.eclipse.che.dto.shared.DTO;
 
 /**
  * Request to add remote configuration {@link #name} for repository at {@link #url}.
@@ -21,22 +20,22 @@ import java.util.List;
  */
 @DTO
 public interface RemoteAddRequest {
-    /** @return remote name */
-    String getName();
-    
-    void setName(String name);
-    
-    RemoteAddRequest withName(String name);
+  /** @return remote name */
+  String getName();
 
-    /** @return repository url */
-    String getUrl();
-    
-    void setUrl(String url);
-    
-    RemoteAddRequest withUrl(String url);
+  void setName(String name);
 
-    /** @return list of tracked branches in remote repository */
-    List<String> getBranches();
-    
-    void setBranches(List<String> branches);
+  RemoteAddRequest withName(String name);
+
+  /** @return repository url */
+  String getUrl();
+
+  void setUrl(String url);
+
+  RemoteAddRequest withUrl(String url);
+
+  /** @return list of tracked branches in remote repository */
+  List<String> getBranches();
+
+  void setBranches(List<String> branches);
 }

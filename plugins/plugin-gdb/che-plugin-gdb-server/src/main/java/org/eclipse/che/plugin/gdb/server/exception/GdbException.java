@@ -12,15 +12,13 @@ package org.eclipse.che.plugin.gdb.server.exception;
 
 import org.eclipse.che.api.debugger.server.exceptions.DebuggerException;
 
-/**
- * @author Anatoliy Bazko
- */
+/** @author Anatoliy Bazko */
 public class GdbException extends DebuggerException {
-    public GdbException(String message) {
-        super(message);
-    }
+  public GdbException(String message) {
+    super(message);
+  }
 
-    public GdbException(String message, Exception cause) {
-        super(message, cause);
-    }
+  public GdbException(String message, Exception cause) {
+    super(message, cause);
+  }
 }

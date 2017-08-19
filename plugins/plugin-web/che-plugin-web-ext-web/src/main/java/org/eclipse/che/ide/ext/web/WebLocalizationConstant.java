@@ -19,33 +19,33 @@ import com.google.gwt.i18n.client.Messages;
  */
 public interface WebLocalizationConstant extends Messages {
 
-    @Key("action.newCssFile.title")
-    String newCssFileActionTitle();
+  @Key("action.newCssFile.title")
+  String newCssFileActionTitle();
 
-    @Key("action.newCssFile.description")
-    String newCssFileActionDescription();
+  @Key("action.newCssFile.description")
+  String newCssFileActionDescription();
 
-    @Key("action.newLessFile.title")
-    String newLessFileActionTitle();
+  @Key("action.newLessFile.title")
+  String newLessFileActionTitle();
 
-    @Key("action.newLessFile.description")
-    String newLessFileActionDescription();
+  @Key("action.newLessFile.description")
+  String newLessFileActionDescription();
 
-    @Key("action.newHtmlFile.title")
-    String newHtmlFileActionTitle();
+  @Key("action.newHtmlFile.title")
+  String newHtmlFileActionTitle();
 
-    @Key("action.newHtmlFile.description")
-    String newHtmlFileActionDescription();
+  @Key("action.newHtmlFile.description")
+  String newHtmlFileActionDescription();
 
-    @Key("action.newJavaScriptFile.title")
-    String newJavaScriptFileActionTitle();
+  @Key("action.newJavaScriptFile.title")
+  String newJavaScriptFileActionTitle();
 
-    @Key("action.newJavaScriptFile.description")
-    String newJavaScriptFileActionDescription();
+  @Key("action.newJavaScriptFile.description")
+  String newJavaScriptFileActionDescription();
 
-    @Key("action.previewHTML.title")
-    String previewHTMLActionTitle();
+  @Key("action.previewHTML.title")
+  String previewHTMLActionTitle();
 
-    @Key("action.previewHTML.description")
-    String previewHTMLActionDescription();
+  @Key("action.previewHTML.description")
+  String previewHTMLActionDescription();
 }

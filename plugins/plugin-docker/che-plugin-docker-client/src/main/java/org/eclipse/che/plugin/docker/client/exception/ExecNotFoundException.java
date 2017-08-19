@@ -17,7 +17,7 @@ package org.eclipse.che.plugin.docker.client.exception;
  */
 public class ExecNotFoundException extends DockerException {
 
-    public ExecNotFoundException(String message) {
-        super(message, 404);
-    }
+  public ExecNotFoundException(String message) {
+    super(message, 404);
+  }
 }

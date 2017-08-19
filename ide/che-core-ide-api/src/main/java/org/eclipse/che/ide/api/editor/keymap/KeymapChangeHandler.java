@@ -19,11 +19,10 @@ import com.google.gwt.event.shared.EventHandler;
  */
 public interface KeymapChangeHandler extends EventHandler {
 
-    /**
-     * Action triggered by the event.
-     *
-     * @param event
-     *         the event
-     */
-    void onKeymapChanged(KeymapChangeEvent event);
+  /**
+   * Action triggered by the event.
+   *
+   * @param event the event
+   */
+  void onKeymapChanged(KeymapChangeEvent event);
 }

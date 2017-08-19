@@ -11,13 +11,10 @@
 package org.eclipse.che.plugin.ssh.key.client;
 
 import com.google.gwt.resources.client.ClientBundle;
-
 import org.vectomatic.dom.svg.ui.SVGResource;
 
-/**
- * @author Evgen Vidolob
- */
+/** @author Evgen Vidolob */
 public interface SshResources extends ClientBundle {
-    @Source("github-generate.svg")
-    SVGResource sshKeyGithubGenerate();
+  @Source("github-generate.svg")
+  SVGResource sshKeyGithubGenerate();
 }

@@ -20,11 +20,9 @@ import com.google.gwt.dom.client.Element;
  */
 public class HelloWorldViewOverlay extends JavaScriptObject {
 
-    protected HelloWorldViewOverlay() {
-    }
+  protected HelloWorldViewOverlay() {}
 
-    public final static native void sayHello(final Element element, String message) /*-{
+  public static final native void sayHello(final Element element, String message) /*-{
         new $wnd.HelloWorld(element, message);
     }-*/;
-
 }

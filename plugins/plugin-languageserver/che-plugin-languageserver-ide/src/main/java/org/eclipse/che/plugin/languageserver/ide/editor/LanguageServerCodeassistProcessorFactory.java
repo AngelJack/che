@@ -13,10 +13,8 @@ package org.eclipse.che.plugin.languageserver.ide.editor;
 import org.eclipse.che.plugin.languageserver.ide.editor.codeassist.LanguageServerCodeAssistProcessor;
 import org.eclipse.lsp4j.ServerCapabilities;
 
-/**
- * @author Evgen Vidolob
- */
+/** @author Evgen Vidolob */
 public interface LanguageServerCodeassistProcessorFactory {
 
-    LanguageServerCodeAssistProcessor create(ServerCapabilities capabilities);
+  LanguageServerCodeAssistProcessor create(ServerCapabilities capabilities);
 }

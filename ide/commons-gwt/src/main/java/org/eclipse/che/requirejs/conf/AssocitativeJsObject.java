@@ -15,19 +15,17 @@ import com.google.gwt.core.client.JsArrayString;
 
 public class AssocitativeJsObject<T> extends JavaScriptObject {
 
-    protected AssocitativeJsObject() {
-    }
+  protected AssocitativeJsObject() {}
 
-    public final native JsArrayString getKeys() /*-{
+  public final native JsArrayString getKeys() /*-{
         return this.getOwnPropertyNames();
     }-*/;
 
-    public final native void put(String key, T value) /*-{
+  public final native void put(String key, T value) /*-{
         this[key] = value;
     }-*/;
 
-    public final native T get(String key) /*-{
+  public final native T get(String key) /*-{
         return this[key];
     }-*/;
-
 }

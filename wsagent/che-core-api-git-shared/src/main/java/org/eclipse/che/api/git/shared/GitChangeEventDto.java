@@ -10,9 +10,8 @@
  */
 package org.eclipse.che.api.git.shared;
 
-import org.eclipse.che.dto.shared.DTO;
-
 import java.util.List;
+import org.eclipse.che.dto.shared.DTO;
 
 /**
  * Dto object that contains information about changed git file event.
@@ -22,27 +21,27 @@ import java.util.List;
 @DTO
 public interface GitChangeEventDto {
 
-    /** Status of the file. */
-    Status getStatus();
+  /** Status of the file. */
+  Status getStatus();
 
-    GitChangeEventDto withStatus(Status type);
+  GitChangeEventDto withStatus(Status type);
 
-    /** Path of the file. */
-    String getPath();
+  /** Path of the file. */
+  String getPath();
 
-    GitChangeEventDto withPath(String path);
+  GitChangeEventDto withPath(String path);
 
-    /** List of edited regions of the file. */
-    List<Edition> getEditions();
+  /** List of edited regions of the file. */
+  List<Edition> getEditions();
 
-    void setEditions(List<Edition> editions);
+  void setEditions(List<Edition> editions);
 
-    GitChangeEventDto withEditions(List<Edition> editions);
+  GitChangeEventDto withEditions(List<Edition> editions);
 
-    enum Status {
-        ADDED,
-        MODIFIED,
-        UNTRACKED,
-        NOT_MODIFIED
-    }
+  enum Status {
+    ADDED,
+    MODIFIED,
+    UNTRACKED,
+    NOT_MODIFIED
+  }
 }

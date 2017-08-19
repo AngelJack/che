@@ -18,11 +18,10 @@ import com.google.gwt.event.shared.EventHandler;
  * @author Artem Zatsarynnyi
  */
 public interface ConfigureProjectHandler extends EventHandler {
-    /**
-     * Called when someone wants to configure the currently opened project.
-     *
-     * @param event
-     *         the fired {@link ConfigureProjectEvent}
-     */
-    void onConfigureProject(ConfigureProjectEvent event);
+  /**
+   * Called when someone wants to configure the currently opened project.
+   *
+   * @param event the fired {@link ConfigureProjectEvent}
+   */
+  void onConfigureProject(ConfigureProjectEvent event);
 }

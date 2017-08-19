@@ -18,11 +18,9 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
  * @author Ann Shumilova
  */
 public interface SshKeyUploader {
-    /**
-     * @param userId
-     *         user's id, for whom to generate key
-     * @param callback
-     *         callback
-     */
-    void uploadKey(String userId, AsyncCallback<Void> callback);
+  /**
+   * @param userId user's id, for whom to generate key
+   * @param callback callback
+   */
+  void uploadKey(String userId, AsyncCallback<Void> callback);
 }

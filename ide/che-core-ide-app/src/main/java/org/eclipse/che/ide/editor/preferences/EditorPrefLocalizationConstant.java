@@ -19,15 +19,15 @@ import com.google.gwt.i18n.client.Messages;
  */
 public interface EditorPrefLocalizationConstant extends Messages {
 
-    @Key("editortype.title")
-    String editorTypeTitle();
+  @Key("editortype.title")
+  String editorTypeTitle();
 
-    @Key("editortype.category")
-    String editorTypeCategory();
+  @Key("editortype.category")
+  String editorTypeCategory();
 
-    @DefaultMessage("Keys")
-    String keysSectionLabel();
+  @DefaultMessage("Keys")
+  String keysSectionLabel();
 
-    @DefaultMessage("Key Bindings")
-    String keybindingsLabel();
+  @DefaultMessage("Key Bindings")
+  String keybindingsLabel();
 }

@@ -20,17 +20,16 @@ import org.eclipse.che.plugin.testing.ide.model.TestStateEventsListener;
  *
  * @author Mirage Abeysekara
  */
-public interface TestResultView extends View<TestResultView.ActionDelegate>, TestStateEventsListener {
-    /**
-     * Sets whether this panel is visible.
-     *
-     * @param visible visible - true to show the object, false to hide it
-     */
-    void setVisible(boolean visible);
+public interface TestResultView
+    extends View<TestResultView.ActionDelegate>, TestStateEventsListener {
+  /**
+   * Sets whether this panel is visible.
+   *
+   * @param visible visible - true to show the object, false to hide it
+   */
+  void setVisible(boolean visible);
 
-    TestRootState getRootState();
+  TestRootState getRootState();
 
-    interface ActionDelegate extends BaseActionDelegate {
-    }
-
+  interface ActionDelegate extends BaseActionDelegate {}
 }

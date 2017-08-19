@@ -12,65 +12,64 @@ package org.eclipse.che.plugin.testing.ide.model.event;
 
 import org.eclipse.che.plugin.testing.ide.messages.ClientTestingMessage;
 
-/**
- * Base start event.
- */
+/** Base start event. */
 public class BaseStartEvent extends TestNodeEvent {
-    private final String parentId;
-    private final String location;
-    private final String nodeType;
-    private final String nodeArg;
-    private final boolean isRunning;
+  private final String parentId;
+  private final String location;
+  private final String nodeType;
+  private final String nodeArg;
+  private final boolean isRunning;
 
-    public BaseStartEvent(String id,
-                          String name,
-                          String parentId,
-                          String location,
-                          String nodeType,
-                          String nodeArg,
-                          boolean isRunning) {
-        super(id, name);
-        this.parentId = parentId;
-        this.location = location;
-        this.nodeType = nodeType;
-        this.nodeArg = nodeArg;
-        this.isRunning = isRunning;
-    }
+  public BaseStartEvent(
+      String id,
+      String name,
+      String parentId,
+      String location,
+      String nodeType,
+      String nodeArg,
+      boolean isRunning) {
+    super(id, name);
+    this.parentId = parentId;
+    this.location = location;
+    this.nodeType = nodeType;
+    this.nodeArg = nodeArg;
+    this.isRunning = isRunning;
+  }
 
-    protected static String getParantNodeId(ClientTestingMessage message) {
-        return message.getAttributes().get("parentNodeId");
-    }
+  protected static String getParantNodeId(ClientTestingMessage message) {
+    return message.getAttributes().get("parentNodeId");
+  }
 
-    protected static String getNodeType(ClientTestingMessage message) {
-        return message.getAttributes().get("nodeType");
-    }
+  protected static String getNodeType(ClientTestingMessage message) {
+    return message.getAttributes().get("nodeType");
+  }
 
-    protected static String getNodeArg(ClientTestingMessage message) {
-        return message.getAttributes().get("nodeArgs");
-    }
+  protected static String getNodeArg(ClientTestingMessage message) {
+    return message.getAttributes().get("nodeArgs");
+  }
 
-    protected static Boolean isNodeRunning(ClientTestingMessage message) {
-        String running = message.getAttributes().get("running");
-        return running == null || running.isEmpty() || Boolean.parseBoolean(running);
-    }
+  protected static Boolean isNodeRunning(ClientTestingMessage message) {
+    String running = message.getAttributes().get("running");
+    return running == null || running.isEmpty() || Boolean.parseBoolean(running);
+  }
 
-    public String getParentId() {
-        return parentId;
-    }
+  public String getParentId() {
+    return parentId;
+  }
 
-    public String getLocation() {
-        return location;
-    }
+  public String getLocation() {
+    return location;
+  }
 
-    public String getNodeType() {
-        return nodeType;
-    }
+  public String getNodeType() {
+    return nodeType;
+  }
 
-    public String getNodeArg() {
-        return nodeArg;
-    }
+  public String getNodeArg() {
+    return nodeArg;
+  }
 
-    public boolean isRunning() {
-        return isRunning;
-    }
+  public boolean isRunning() {
+    return isRunning;
+  }
 }

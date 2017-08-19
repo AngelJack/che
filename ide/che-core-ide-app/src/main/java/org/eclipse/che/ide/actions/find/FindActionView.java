@@ -10,37 +10,33 @@
  */
 package org.eclipse.che.ide.actions.find;
 
+import java.util.Map;
 import org.eclipse.che.ide.api.action.Action;
 import org.eclipse.che.ide.api.mvp.View;
 
-import java.util.Map;
-
-/**
- * @author Evgen Vidolob
- */
+/** @author Evgen Vidolob */
 public interface FindActionView extends View<FindActionView.ActionDelegate> {
 
-    void focusOnInput();
+  void focusOnInput();
 
-    void show();
+  void show();
 
-    void hide();
+  void hide();
 
-    String getName();
+  String getName();
 
-    void showActions(Map<Action, String> actions);
+  void showActions(Map<Action, String> actions);
 
-    void hideActions();
+  void hideActions();
 
-    boolean getCheckBoxState();
+  boolean getCheckBoxState();
 
-    interface ActionDelegate {
+  interface ActionDelegate {
 
-        void nameChanged(String name, boolean checkBoxState);
+    void nameChanged(String name, boolean checkBoxState);
 
-        void onClose();
+    void onClose();
 
-        void onActionSelected(Action action);
-    }
-
+    void onActionSelected(Action action);
+  }
 }

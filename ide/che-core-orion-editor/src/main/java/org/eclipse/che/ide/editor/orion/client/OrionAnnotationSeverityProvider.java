@@ -10,11 +10,8 @@
  */
 package org.eclipse.che.ide.editor.orion.client;
 
-/**
- *
- * @author Evgen Vidolob
- */
+/** @author Evgen Vidolob */
 public interface OrionAnnotationSeverityProvider {
 
-    String getSeverity(String annotationType);
+  String getSeverity(String annotationType);
 }

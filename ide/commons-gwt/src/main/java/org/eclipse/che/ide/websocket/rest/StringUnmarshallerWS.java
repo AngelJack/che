@@ -18,17 +18,17 @@ import org.eclipse.che.ide.websocket.Message;
  * @author Artem Zatsarynnyi
  */
 public class StringUnmarshallerWS implements Unmarshallable<String> {
-    protected String builder;
+  protected String builder;
 
-    /** {@inheritDoc} */
-    @Override
-    public void unmarshal(Message message) {
-        builder = message.getBody();
-    }
+  /** {@inheritDoc} */
+  @Override
+  public void unmarshal(Message message) {
+    builder = message.getBody();
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public String getPayload() {
-        return builder;
-    }
+  /** {@inheritDoc} */
+  @Override
+  public String getPayload() {
+    return builder;
+  }
 }

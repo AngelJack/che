@@ -15,10 +15,11 @@ import org.eclipse.che.ide.api.editor.texteditor.TextEditor;
 /** Factory for {@link QuickAssistWidget} instances. */
 public interface QuickAssistWidgetFactory {
 
-    /**
-     * Create a {@link QuickAssistWidget}.
-     * @param editor the editor
-     * @return the new widget
-     */
-    QuickAssistWidget createWidget(TextEditor editor);
+  /**
+   * Create a {@link QuickAssistWidget}.
+   *
+   * @param editor the editor
+   * @return the new widget
+   */
+  QuickAssistWidget createWidget(TextEditor editor);
 }

@@ -18,5 +18,4 @@ import com.google.gwt.user.client.ui.ScrollPanel;
  * {@link com.google.gwt.uibinder.client.UiBinder} interface for the configure contribution dialog.
  */
 @UiTemplate("ContributePartViewImpl.ui.xml")
-public interface ContributePartViewUiBinder extends UiBinder<ScrollPanel, ContributePartViewImpl> {
-}
+public interface ContributePartViewUiBinder extends UiBinder<ScrollPanel, ContributePartViewImpl> {}

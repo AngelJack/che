@@ -19,48 +19,48 @@ import org.eclipse.che.ide.api.command.CommandImpl;
  */
 public abstract class AbstractCommandEditorPage implements CommandEditorPage {
 
-    private final String title;
+  private final String title;
 
-    protected CommandImpl editedCommand;
+  protected CommandImpl editedCommand;
 
-    private DirtyStateListener listener;
+  private DirtyStateListener listener;
 
-    /** Creates new page with the given title and tooltip. */
-    protected AbstractCommandEditorPage(String title) {
-        this.title = title;
+  /** Creates new page with the given title and tooltip. */
+  protected AbstractCommandEditorPage(String title) {
+    this.title = title;
+  }
+
+  @Override
+  public String getTitle() {
+    return title;
+  }
+
+  @Override
+  public void edit(CommandImpl command) {
+    editedCommand = command;
+
+    initialize();
+    notifyDirtyStateChanged();
+  }
+
+  /**
+   * Called every time when command is opening in the editor. Typically, implementor should do
+   * initial setup of the page with the {@link #editedCommand}.
+   */
+  protected abstract void initialize();
+
+  @Override
+  public void setDirtyStateListener(DirtyStateListener listener) {
+    this.listener = listener;
+  }
+
+  /**
+   * Should be called by page every time when any command modifications on the page have been
+   * performed.
+   */
+  protected void notifyDirtyStateChanged() {
+    if (listener != null) {
+      listener.onDirtyStateChanged();
     }
-
-    @Override
-    public String getTitle() {
-        return title;
-    }
-
-    @Override
-    public void edit(CommandImpl command) {
-        editedCommand = command;
-
-        initialize();
-        notifyDirtyStateChanged();
-    }
-
-    /**
-     * Called every time when command is opening in the editor.
-     * Typically, implementor should do initial setup of the page with the {@link #editedCommand}.
-     */
-    protected abstract void initialize();
-
-    @Override
-    public void setDirtyStateListener(DirtyStateListener listener) {
-        this.listener = listener;
-    }
-
-    /**
-     * Should be called by page every time when any command
-     * modifications on the page have been performed.
-     */
-    protected void notifyDirtyStateChanged() {
-        if (listener != null) {
-            listener.onDirtyStateChanged();
-        }
-    }
+  }
 }

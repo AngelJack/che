@@ -11,21 +11,18 @@
 package org.eclipse.che.api.project.shared.dto.event;
 
 import com.google.common.annotations.Beta;
-
 import org.eclipse.che.dto.shared.DTO;
 
 /**
  * To transfer modified POM path
  *
  * @author Dmitry Kuleshov
- *
  * @since 4.5
  */
 @Beta
 @DTO
 public interface PomModifiedEventDto {
-    String getPath();
+  String getPath();
 
-    PomModifiedEventDto withPath(String path);
-
+  PomModifiedEventDto withPath(String path);
 }

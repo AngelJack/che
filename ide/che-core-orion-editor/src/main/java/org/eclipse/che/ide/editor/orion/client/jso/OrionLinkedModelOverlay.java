@@ -12,42 +12,38 @@ package org.eclipse.che.ide.editor.orion.client.jso;
 
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.core.client.JsArray;
-
+import java.util.List;
 import org.eclipse.che.ide.api.editor.link.LinkedModel;
 import org.eclipse.che.ide.api.editor.link.LinkedModelGroup;
 
-import java.util.List;
-
-/**
- * @author Evgen Vidolob
- */
+/** @author Evgen Vidolob */
 public class OrionLinkedModelOverlay extends JavaScriptObject implements LinkedModel {
-    protected OrionLinkedModelOverlay() {
-    }
+  protected OrionLinkedModelOverlay() {}
 
-    @Override
-    public final void setGroups(List<LinkedModelGroup> groups) {
-        JsArray<OrionLinkedModelGroupOverlay> arr = JavaScriptObject.createArray().cast();
-        for (LinkedModelGroup group : groups) {
-            if(group instanceof OrionLinkedModelGroupOverlay){
-                arr.push((OrionLinkedModelGroupOverlay)group);
-            } else {
-                throw new IllegalArgumentException("This implementation supports only OrionLinkedModelGroupOverlay groups");
-            }
-        }
-        setGroups(arr);
+  @Override
+  public final void setGroups(List<LinkedModelGroup> groups) {
+    JsArray<OrionLinkedModelGroupOverlay> arr = JavaScriptObject.createArray().cast();
+    for (LinkedModelGroup group : groups) {
+      if (group instanceof OrionLinkedModelGroupOverlay) {
+        arr.push((OrionLinkedModelGroupOverlay) group);
+      } else {
+        throw new IllegalArgumentException(
+            "This implementation supports only OrionLinkedModelGroupOverlay groups");
+      }
     }
+    setGroups(arr);
+  }
 
-    @Override
-    public final native void setEscapePosition(int offset) /*-{
+  @Override
+  public final native void setEscapePosition(int offset) /*-{
         this.escapePosition = offset;
     }-*/;
 
-    public final native void setGroups(JsArray<OrionLinkedModelGroupOverlay> groups) /*-{
+  public final native void setGroups(JsArray<OrionLinkedModelGroupOverlay> groups) /*-{
         this.groups = groups;
     }-*/;
 
-    public static native OrionLinkedModelOverlay create() /*-{
+  public static native OrionLinkedModelOverlay create() /*-{
         return {};
     }-*/;
 }

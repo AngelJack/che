@@ -14,7 +14,6 @@ import org.eclipse.che.ide.api.mvp.View;
 
 /** Status Panel Group View */
 public interface StatusPanelGroupView extends View<StatusPanelGroupView.ActionDelegate> {
-    /** Needs for delegate some function into BottomMenu view. */
-    interface ActionDelegate {
-    }
+  /** Needs for delegate some function into BottomMenu view. */
+  interface ActionDelegate {}
 }

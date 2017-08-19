@@ -21,15 +21,15 @@ import org.eclipse.che.ide.ui.multisplitpanel.SubPanel;
  */
 public class SplitHorizontallyAction extends Action {
 
-    private final SubPanel subPanel;
+  private final SubPanel subPanel;
 
-    public SplitHorizontallyAction(SubPanel subPanel) {
-        super("Split Pane In Two Rows", "Split Pane In Two Rows", null, null);
-        this.subPanel = subPanel;
-    }
+  public SplitHorizontallyAction(SubPanel subPanel) {
+    super("Split Pane In Two Rows", "Split Pane In Two Rows", null, null);
+    this.subPanel = subPanel;
+  }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        subPanel.splitHorizontally();
-    }
+  @Override
+  public void actionPerformed(ActionEvent e) {
+    subPanel.splitHorizontally();
+  }
 }

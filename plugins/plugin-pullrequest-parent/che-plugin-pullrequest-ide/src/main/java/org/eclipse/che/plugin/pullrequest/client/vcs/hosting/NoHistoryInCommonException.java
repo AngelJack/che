@@ -17,7 +17,7 @@ package org.eclipse.che.plugin.pullrequest.client.vcs.hosting;
  */
 public class NoHistoryInCommonException extends Exception {
 
-    public NoHistoryInCommonException(String msg) {
-        super(msg);
-    }
+  public NoHistoryInCommonException(String msg) {
+    super(msg);
+  }
 }
