@@ -16,14 +16,14 @@ import org.eclipse.che.api.git.shared.Branch;
 import org.eclipse.che.api.git.shared.BranchListMode;
 import org.eclipse.che.api.git.shared.CheckoutRequest;
 import org.eclipse.che.api.git.shared.DiffType;
-import org.eclipse.che.api.git.shared.Edition;
+import org.eclipse.che.api.git.shared.EditedRegion;
 import org.eclipse.che.api.git.shared.LogResponse;
 import org.eclipse.che.api.git.shared.MergeResult;
 import org.eclipse.che.api.git.shared.PullResponse;
 import org.eclipse.che.api.git.shared.PushResponse;
 import org.eclipse.che.api.git.shared.Remote;
-import org.eclipse.che.api.git.shared.ResetRequest.ResetType;
 import org.eclipse.che.api.git.shared.Revision;
+import org.eclipse.che.api.git.shared.ResetRequest.ResetType;
 import org.eclipse.che.api.git.shared.ShowFileContentResponse;
 import org.eclipse.che.api.git.shared.Status;
 import org.eclipse.che.api.git.shared.StatusFormat;
@@ -293,7 +293,7 @@ public interface GitServiceClient {
    * @param project project (root of GIT repository)
    * @param file path of the file
    */
-  Promise<List<Edition>> getEditions(Path project, String file);
+  Promise<List<EditedRegion>> getEditions(Path project, String file);
 
   /**
    * Get the file content from specified revision or branch.

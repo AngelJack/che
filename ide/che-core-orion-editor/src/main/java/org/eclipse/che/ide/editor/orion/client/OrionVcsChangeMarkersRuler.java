@@ -46,7 +46,7 @@ public class OrionVcsChangeMarkersRuler implements Gutter {
 
   @Override
   public void addGutterItem(int lineStart, int lineEnd, String gutterId, Element element) {
-    if (!Gutters.EDITIONS_GUTTER.equals(gutterId)) {
+    if (!Gutters.VCS_CHANGE_MARKERS_GUTTER.equals(gutterId)) {
       return;
     }
 
@@ -61,7 +61,7 @@ public class OrionVcsChangeMarkersRuler implements Gutter {
       String gutterId,
       Element element,
       final LineNumberingChangeCallback lineCallback) {
-    if (!Gutters.EDITIONS_GUTTER.equals(gutterId)) {
+    if (!Gutters.VCS_CHANGE_MARKERS_GUTTER.equals(gutterId)) {
       return;
     }
 
@@ -89,7 +89,7 @@ public class OrionVcsChangeMarkersRuler implements Gutter {
 
   @Override
   public void removeGutterItem(int lineStart, int lineEnd, String gutterId) {
-    if (!Gutters.EDITIONS_GUTTER.equals(gutterId)) {
+    if (!Gutters.VCS_CHANGE_MARKERS_GUTTER.equals(gutterId)) {
       return;
     }
 
@@ -99,7 +99,7 @@ public class OrionVcsChangeMarkersRuler implements Gutter {
 
   @Override
   public Element getGutterItem(int lineStart, int lineEnd, String gutterId) {
-    if (!Gutters.EDITIONS_GUTTER.equals(gutterId)) {
+    if (!Gutters.VCS_CHANGE_MARKERS_GUTTER.equals(gutterId)) {
       return null;
     }
 
@@ -115,7 +115,7 @@ public class OrionVcsChangeMarkersRuler implements Gutter {
 
   @Override
   public void clearGutter(String gutterId) {
-    if (!Gutters.EDITIONS_GUTTER.equals(gutterId)) {
+    if (!Gutters.VCS_CHANGE_MARKERS_GUTTER.equals(gutterId)) {
       return;
     }
 
@@ -125,7 +125,7 @@ public class OrionVcsChangeMarkersRuler implements Gutter {
 
   @Override
   public void setGutterItem(int lineStart, int lineEnd, String gutterId, Element element) {
-    if (!Gutters.EDITIONS_GUTTER.equals(gutterId)) {
+    if (!Gutters.VCS_CHANGE_MARKERS_GUTTER.equals(gutterId)) {
       return;
     }
 

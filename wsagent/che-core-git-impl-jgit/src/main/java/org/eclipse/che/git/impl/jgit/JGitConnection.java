@@ -22,6 +22,7 @@ import static java.util.stream.Collectors.toList;
 import static org.eclipse.che.api.git.shared.BranchListMode.LIST_ALL;
 import static org.eclipse.che.api.git.shared.BranchListMode.LIST_LOCAL;
 import static org.eclipse.che.api.git.shared.BranchListMode.LIST_REMOTE;
+import static org.eclipse.che.api.git.shared.EditedRegion.Type.*;
 import static org.eclipse.che.api.git.shared.ProviderInfo.AUTHENTICATE_URL;
 import static org.eclipse.che.api.git.shared.ProviderInfo.PROVIDER_NAME;
 import static org.eclipse.che.dto.server.DtoFactory.newDto;
@@ -95,25 +96,8 @@ import org.eclipse.che.api.git.params.RemoteUpdateParams;
 import org.eclipse.che.api.git.params.ResetParams;
 import org.eclipse.che.api.git.params.RmParams;
 import org.eclipse.che.api.git.params.TagCreateParams;
-import org.eclipse.che.api.git.shared.AddRequest;
-import org.eclipse.che.api.git.shared.Branch;
-import org.eclipse.che.api.git.shared.BranchListMode;
-import org.eclipse.che.api.git.shared.DiffCommitFile;
-import org.eclipse.che.api.git.shared.Edition;
-import org.eclipse.che.api.git.shared.GitUser;
-import org.eclipse.che.api.git.shared.MergeResult;
-import org.eclipse.che.api.git.shared.ProviderInfo;
-import org.eclipse.che.api.git.shared.PullResponse;
-import org.eclipse.che.api.git.shared.PushResponse;
-import org.eclipse.che.api.git.shared.RebaseResponse;
+import org.eclipse.che.api.git.shared.*;
 import org.eclipse.che.api.git.shared.RebaseResponse.RebaseStatus;
-import org.eclipse.che.api.git.shared.Remote;
-import org.eclipse.che.api.git.shared.RemoteReference;
-import org.eclipse.che.api.git.shared.Revision;
-import org.eclipse.che.api.git.shared.ShowFileContentResponse;
-import org.eclipse.che.api.git.shared.Status;
-import org.eclipse.che.api.git.shared.StatusFormat;
-import org.eclipse.che.api.git.shared.Tag;
 import org.eclipse.che.commons.annotation.Nullable;
 import org.eclipse.che.commons.proxy.ProxyAuthenticator;
 import org.eclipse.che.plugin.ssh.key.script.SshKeyProvider;
@@ -148,20 +132,9 @@ import org.eclipse.jgit.diff.DiffEntry;
 import org.eclipse.jgit.diff.DiffFormatter;
 import org.eclipse.jgit.diff.EditList;
 import org.eclipse.jgit.dircache.DirCache;
-import org.eclipse.jgit.dircache.DirCacheIterator;
-import org.eclipse.jgit.lib.BatchingProgressMonitor;
-import org.eclipse.jgit.lib.ConfigConstants;
+import org.eclipse.jgit.lib.*;
 import org.eclipse.jgit.lib.Constants;
-import org.eclipse.jgit.lib.ObjectId;
-import org.eclipse.jgit.lib.ObjectLoader;
-import org.eclipse.jgit.lib.PersonIdent;
-import org.eclipse.jgit.lib.Ref;
-import org.eclipse.jgit.lib.RefUpdate;
 import org.eclipse.jgit.lib.RefUpdate.Result;
-import org.eclipse.jgit.lib.Repository;
-import org.eclipse.jgit.lib.RepositoryCache;
-import org.eclipse.jgit.lib.RepositoryState;
-import org.eclipse.jgit.lib.StoredConfig;
 import org.eclipse.jgit.merge.ResolveMerger;
 import org.eclipse.jgit.revwalk.RevCommit;
 import org.eclipse.jgit.revwalk.RevObject;
@@ -370,10 +343,7 @@ class JGitConnection implements GitConnection {
       } else if (name != null) {
         checkoutCommand.setName(name);
         List<String> localBranches =
-            branchList(LIST_LOCAL)
-                .stream()
-                .map(Branch::getDisplayName)
-                .collect(Collectors.toList());
+            branchList(LIST_LOCAL).stream().map(Branch::getDisplayName).collect(toList());
         if (!localBranches.contains(name)) {
           Optional<Branch> remoteBranch =
               branchList(LIST_REMOTE)
@@ -659,13 +629,13 @@ class JGitConnection implements GitConnection {
           specified
               .stream()
               .filter(path -> staged.stream().anyMatch(s -> s.startsWith(path)))
-              .collect(Collectors.toList());
+              .collect(toList());
 
       List<String> specifiedChanged =
           specified
               .stream()
               .filter(path -> changed.stream().anyMatch(c -> c.startsWith(path)))
-              .collect(Collectors.toList());
+              .collect(toList());
 
       // Check that there are changes present for commit, if 'isAmend' is disabled
       if (!params.isAmend()) {
@@ -740,16 +710,23 @@ class JGitConnection implements GitConnection {
   }
 
   @Override
-  public List<Edition> getEditions(String file) throws GitException {
+  public List<EditedRegion> getEditedRegions(String file) throws GitException {
     DirCache dirCache = null;
-    try {
+    try (ObjectReader reader = repository.newObjectReader()) {
       dirCache = getRepository().lockDirCache();
       DiffFormatter formatter = new DiffFormatter(DisabledOutputStream.INSTANCE);
       formatter.setRepository(repository);
 
+      RevTree tree;
+      try (RevWalk revWalk = new RevWalk(repository)) {
+        tree = revWalk.parseTree(repository.resolve("HEAD"));
+      }
+      CanonicalTreeParser treeParser = new CanonicalTreeParser();
+      treeParser.reset(reader, tree);
+
       Optional<DiffEntry> optional =
           formatter
-              .scan(new DirCacheIterator(dirCache), new FileTreeIterator(repository))
+              .scan(treeParser, new FileTreeIterator(repository))
               .stream()
               .filter(entry -> file.equals(entry.getNewPath()))
               .findAny();
@@ -759,25 +736,25 @@ class JGitConnection implements GitConnection {
             .stream()
             .map(
                 edit -> {
-                  Edition.Type type = null;
+                  EditedRegion.Type type = null;
                   switch (edit.getType()) {
                     case INSERT:
                       {
-                        type = Edition.Type.INSERTION;
+                        type = INSERTION;
                         break;
                       }
                     case REPLACE:
                       {
-                        type = Edition.Type.MODIFICATION;
+                        type = MODIFICATION;
                         break;
                       }
                     case DELETE:
                       {
-                        type = Edition.Type.DELETION;
+                        type = DELETION;
                         break;
                       }
                   }
-                  return newDto(Edition.class)
+                  return newDto(EditedRegion.class)
                       .withBeginLine(
                           edit.getType() == DELETE ? edit.getBeginB() : edit.getBeginB() + 1)
                       .withEndLine(edit.getEndB())
@@ -992,7 +969,7 @@ class JGitConnection implements GitConnection {
     return branches
         .stream()
         .map(branch -> newDto(Branch.class).withName(branch.getName()))
-        .collect(Collectors.toList());
+        .collect(toList());
   }
 
   private List<DiffCommitFile> getCommitDiffFiles(RevCommit revCommit, String pattern)
@@ -1046,7 +1023,7 @@ class JGitConnection implements GitConnection {
                           .withOldPath(diff.getOldPath())
                           .withNewPath(diff.getNewPath())
                           .withChangeType(diff.getChangeType().name()))
-              .collect(Collectors.toList()));
+              .collect(toList()));
     }
     return commitFilesList;
   }
@@ -1402,7 +1379,7 @@ class JGitConnection implements GitConnection {
     }
     List<String> refSpec = params.getRefSpec();
     if (!refSpec.isEmpty()) {
-      pushCommand.setRefSpecs(refSpec.stream().map(RefSpec::new).collect(Collectors.toList()));
+      pushCommand.setRefSpecs(refSpec.stream().map(RefSpec::new).collect(toList()));
     }
     pushCommand.setForce(params.isForce());
     int timeout = params.getTimeout();
@@ -1874,7 +1851,7 @@ class JGitConnection implements GitConnection {
                 newDto(RemoteReference.class)
                     .withCommitId(ref.getObjectId().name())
                     .withReferenceName(ref.getName()))
-        .collect(Collectors.toList());
+        .collect(toList());
   }
 
   @Override

@@ -70,23 +70,17 @@ public class BreakpointRendererImpl implements BreakpointRenderer {
     }
   }
 
-  @Override
-  public void addBreakpointMark(final int lineNumber, final LineChangeAction action) {
-    if (hasGutter != null) {
-      this.hasGutter.addGutterItem(
-          lineNumber,
-          lineNumber,
-          BREAKPOINTS_GUTTER,
-          inactiveBreakpointMark,
-          new LineNumberingChangeCallback() {
-            @Override
-            public void onLineNumberingChange(
-                final int fromLine, final int linesRemoved, final int linesAdded) {
-              action.onLineChange(document.getFile(), fromLine, linesAdded, linesRemoved);
-            }
-          });
+    @Override
+    public void addBreakpointMark(final int lineNumber, final LineChangeAction action) {
+        if (hasGutter != null) {
+            this.hasGutter.addGutterItem(lineNumber,lineNumber, BREAKPOINTS_GUTTER, inactiveBreakpointMark, new LineNumberingChangeCallback() {
+                @Override
+                public void onLineNumberingChange(final int fromLine, final int linesRemoved, final int linesAdded) {
+                    action.onLineChange(document.getFile(), fromLine, linesAdded, linesRemoved);
+                }
+            });
+        }
     }
-  }
 
   @Override
   public void removeBreakpointMark(final int lineNumber) {

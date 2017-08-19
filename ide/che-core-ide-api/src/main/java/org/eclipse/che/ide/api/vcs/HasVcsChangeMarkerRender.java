@@ -8,10 +8,13 @@
  * Contributors:
  *   Red Hat, Inc. - initial API and implementation
  */
-package org.eclipse.che.ide.ext.git.client.oldContentPopup;
+package org.eclipse.che.ide.api.vcs;
 
-/** @author Evgen Vidolob */
-public interface Content {
+import org.eclipse.che.api.promises.client.Promise;
 
-  void showDocumentation();
+/** Indicates that the editor can handle VCS change markers. */
+public interface HasVcsChangeMarkerRender {
+
+  /** Returns new, or created instance (if was created earlier) of {@link VcsChangeMarkerRender}. */
+  Promise<VcsChangeMarkerRender> getOrCreateVcsMarkRender();
 }

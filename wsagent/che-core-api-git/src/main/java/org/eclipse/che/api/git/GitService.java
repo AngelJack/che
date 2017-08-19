@@ -48,39 +48,7 @@ import org.eclipse.che.api.git.params.RemoteUpdateParams;
 import org.eclipse.che.api.git.params.ResetParams;
 import org.eclipse.che.api.git.params.RmParams;
 import org.eclipse.che.api.git.params.TagCreateParams;
-import org.eclipse.che.api.git.shared.AddRequest;
-import org.eclipse.che.api.git.shared.Branch;
-import org.eclipse.che.api.git.shared.BranchCreateRequest;
-import org.eclipse.che.api.git.shared.BranchListMode;
-import org.eclipse.che.api.git.shared.CheckoutRequest;
-import org.eclipse.che.api.git.shared.CloneRequest;
-import org.eclipse.che.api.git.shared.CommitRequest;
-import org.eclipse.che.api.git.shared.Commiters;
-import org.eclipse.che.api.git.shared.ConfigRequest;
-import org.eclipse.che.api.git.shared.Constants;
-import org.eclipse.che.api.git.shared.DiffType;
-import org.eclipse.che.api.git.shared.Edition;
-import org.eclipse.che.api.git.shared.FetchRequest;
-import org.eclipse.che.api.git.shared.MergeRequest;
-import org.eclipse.che.api.git.shared.MergeResult;
-import org.eclipse.che.api.git.shared.MoveRequest;
-import org.eclipse.che.api.git.shared.PullRequest;
-import org.eclipse.che.api.git.shared.PullResponse;
-import org.eclipse.che.api.git.shared.PushRequest;
-import org.eclipse.che.api.git.shared.PushResponse;
-import org.eclipse.che.api.git.shared.RebaseRequest;
-import org.eclipse.che.api.git.shared.RebaseResponse;
-import org.eclipse.che.api.git.shared.Remote;
-import org.eclipse.che.api.git.shared.RemoteAddRequest;
-import org.eclipse.che.api.git.shared.RemoteUpdateRequest;
-import org.eclipse.che.api.git.shared.RepoInfo;
-import org.eclipse.che.api.git.shared.ResetRequest;
-import org.eclipse.che.api.git.shared.Revision;
-import org.eclipse.che.api.git.shared.ShowFileContentResponse;
-import org.eclipse.che.api.git.shared.Status;
-import org.eclipse.che.api.git.shared.StatusFormat;
-import org.eclipse.che.api.git.shared.Tag;
-import org.eclipse.che.api.git.shared.TagCreateRequest;
+import org.eclipse.che.api.git.shared.*;
 import org.eclipse.che.api.project.server.FolderEntry;
 import org.eclipse.che.api.project.server.ProjectRegistry;
 import org.eclipse.che.api.project.server.RegisteredProject;
@@ -250,12 +218,12 @@ public class GitService {
   }
 
   @GET
-  @Path("editions")
+  @Path("edits")
   @Produces(MediaType.APPLICATION_JSON)
-  public List<Edition> getEditions(@Required @QueryParam("file") String file) throws ApiException {
+  public List<EditedRegion> getEditedRegions(@Required @QueryParam("file") String file) throws ApiException {
     requiredNotNull(file, "File path");
     try (GitConnection gitConnection = getGitConnection()) {
-      return gitConnection.getEditions(file);
+      return gitConnection.getEditedRegions(file);
     }
   }
 

@@ -14,17 +14,25 @@ import java.util.List;
 import java.util.Map;
 import org.eclipse.che.dto.shared.DTO;
 
+/**
+ * Dto object that contains information about git index changed event.
+ *
+ * @author Igor Vinokur
+ */
 @DTO
-public interface GitIndexChangeEventDto {
+public interface IndexChangedEventDto {
+
+  /** Status of the repository. */
   Status getStatus();
 
   void setStatus(Status status);
 
-  GitIndexChangeEventDto withStatus(Status status);
+  IndexChangedEventDto withStatus(Status status);
 
-  Map<String, List<Edition>> getModifiedFiles();
+  /** Map of modified files and their edited regions. */
+  Map<String, List<EditedRegion>> getModifiedFiles();
 
-  void setModifiedFiles(Map<String, List<Edition>> modifiedFiles);
+  void setModifiedFiles(Map<String, List<EditedRegion>> modifiedFiles);
 
-  GitIndexChangeEventDto withModifiedFiles(Map<String, List<Edition>> modifiedFiles);
+  IndexChangedEventDto withModifiedFiles(Map<String, List<EditedRegion>> modifiedFiles);
 }

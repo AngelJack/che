@@ -17,19 +17,21 @@ import static org.eclipse.che.dto.server.DtoFactory.newDto;
 import static org.slf4j.LoggerFactory.getLogger;
 
 import java.nio.file.PathMatcher;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.inject.Inject;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.eclipse.che.api.core.jsonrpc.commons.RequestHandlerConfigurator;
 import org.eclipse.che.api.core.jsonrpc.commons.RequestTransmitter;
 import org.eclipse.che.api.git.exception.GitException;
-import org.eclipse.che.api.git.shared.Edition;
-import org.eclipse.che.api.git.shared.GitIndexChangeEventDto;
+import org.eclipse.che.api.git.shared.EditedRegion;
+import org.eclipse.che.api.git.shared.IndexChangedEventDto;
 import org.eclipse.che.api.git.shared.Status;
 import org.eclipse.che.api.git.shared.StatusFormat;
 import org.eclipse.che.api.vfs.watcher.FileWatcherManager;
@@ -124,19 +126,21 @@ public class GitIndexChangedDetector {
         statusDto.setRemoved(status.getRemoved());
         statusDto.setConflicting(status.getConflicting());
 
-        Map<String, List<Edition>> map = new HashMap<>();
+        Map<String, List<EditedRegion>> modifiedFiles = new HashMap<>();
         for (String file : status.getChanged()) {
-          map.put(file, connection.getEditions(file));
+          modifiedFiles.put(file, connection.getEditedRegions(file));
+        }
+        for (String file : status.getModified()) {
+          modifiedFiles.put(file, connection.getEditedRegions(file));
         }
 
-        GitIndexChangeEventDto dto =
-            newDto(GitIndexChangeEventDto.class).withStatus(status).withModifiedFiles(map);
-
+        IndexChangedEventDto indexChangeEventDto =
+            newDto(IndexChangedEventDto.class).withStatus(status).withModifiedFiles(modifiedFiles);
         transmitter
             .newRequest()
             .endpointId(id)
             .methodName(OUTGOING_METHOD)
-            .paramsAsDto(dto)
+            .paramsAsDto(indexChangeEventDto)
             .sendAndSkipResult();
       } catch (GitException e) {
         String errorMessage = e.getMessage();

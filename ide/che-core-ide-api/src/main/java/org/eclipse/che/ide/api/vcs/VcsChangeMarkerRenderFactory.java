@@ -10,23 +10,18 @@
  */
 package org.eclipse.che.ide.api.vcs;
 
-import org.eclipse.che.ide.api.editor.document.Document;
 import org.eclipse.che.ide.api.editor.gutter.Gutter;
-import org.eclipse.che.ide.api.editor.texteditor.LineStyler;
 
 /**
  * Factory for {@link VcsChangeMarkerRender} instances.
  *
  * @author Igor Vinokur
  */
-public interface VcsEditionRenderFactory {
+public interface VcsChangeMarkerRenderFactory {
   /**
    * Creates an instance of {@link VcsChangeMarkerRender} that uses both a gutter and a line styler.
    *
    * @param hasGutter the gutter manager
-   * @param lineStyler the line style manager
-   * @param document the document
    */
-  VcsChangeMarkerRender create(
-      final Gutter hasGutter, final LineStyler lineStyler, final Document document);
+  VcsChangeMarkerRender create(Gutter hasGutter);
 }

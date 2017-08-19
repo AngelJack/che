@@ -8,7 +8,7 @@
  * Contributors:
  *   Red Hat, Inc. - initial API and implementation
  */
-.markAdded:before {
+.markerInsertion:before {
     content: "";
     position: absolute;
     top: 0;
@@ -18,13 +18,13 @@
     background-color: #428046;
 }
 
-.markAdded {
+.markerInsertion {
     position: relative;
     font-size: 11px;
     line-height: 15px;
 }
 
-.markModified:before {
+.markerModification:before {
     content: "";
     position: absolute;
     top: 0;
@@ -34,13 +34,13 @@
     background-color: #2b5da0;
 }
 
-.markModified {
+.markerModification {
     position: relative;
     font-size: 11px;
     line-height: 15px;
 }
 
-.markDeleted:before {
+.markerDeletion:before {
     content: "";
     position: absolute;
     top: 7px;
@@ -51,7 +51,7 @@
     border-left: 6px solid #bfc6ce;
 }
 
-.markDeleted {
+.markerDeletion {
     position: relative;
     font-size: 11px;
     line-height: 15px;

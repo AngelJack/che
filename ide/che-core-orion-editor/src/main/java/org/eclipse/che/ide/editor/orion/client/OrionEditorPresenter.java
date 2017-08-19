@@ -132,9 +132,9 @@ import org.eclipse.che.ide.api.resources.ResourceChangedEvent;
 import org.eclipse.che.ide.api.resources.ResourceDelta;
 import org.eclipse.che.ide.api.resources.VirtualFile;
 import org.eclipse.che.ide.api.selection.Selection;
-import org.eclipse.che.ide.api.vcs.HasVcsMarkRender;
+import org.eclipse.che.ide.api.vcs.HasVcsChangeMarkerRender;
 import org.eclipse.che.ide.api.vcs.VcsChangeMarkerRender;
-import org.eclipse.che.ide.api.vcs.VcsEditionRenderFactory;
+import org.eclipse.che.ide.api.vcs.VcsChangeMarkerRenderFactory;
 import org.eclipse.che.ide.editor.orion.client.jso.OrionExtRulerOverlay;
 import org.eclipse.che.ide.editor.orion.client.jso.OrionLinkedModelDataOverlay;
 import org.eclipse.che.ide.editor.orion.client.jso.OrionLinkedModelGroupOverlay;
@@ -154,7 +154,7 @@ public class OrionEditorPresenter extends AbstractEditorPresenter
     implements TextEditor,
         UndoableEditor,
         HasBreakpointRenderer,
-        HasVcsMarkRender,
+        HasVcsChangeMarkerRender,
         HasReadOnlyProperty,
         HandlesTextOperations,
         EditorWithAutoSave,
@@ -176,7 +176,7 @@ public class OrionEditorPresenter extends AbstractEditorPresenter
   private final BreakpointManager breakpointManager;
   private final PreferencesManager preferencesManager;
   private final BreakpointRendererFactory breakpointRendererFactory;
-  private final VcsEditionRenderFactory vcsEditionRenderFactory;
+  private final VcsChangeMarkerRenderFactory vcsChangeMarkerRenderFactory;
   private final DialogFactory dialogFactory;
   private final DocumentStorage documentStorage;
   private final EditorMultiPartStackPresenter editorMultiPartStackPresenter;
@@ -223,7 +223,7 @@ public class OrionEditorPresenter extends AbstractEditorPresenter
       final BreakpointManager breakpointManager,
       final PreferencesManager preferencesManager,
       final BreakpointRendererFactory breakpointRendererFactory,
-      final VcsEditionRenderFactory vcsEditionRenderFactory,
+      final VcsChangeMarkerRenderFactory vcsChangeMarkerRenderFactory,
       final DialogFactory dialogFactory,
       final DocumentStorage documentStorage,
       final EditorMultiPartStackPresenter editorMultiPartStackPresenter,
@@ -246,7 +246,7 @@ public class OrionEditorPresenter extends AbstractEditorPresenter
     this.breakpointManager = breakpointManager;
     this.preferencesManager = preferencesManager;
     this.breakpointRendererFactory = breakpointRendererFactory;
-    this.vcsEditionRenderFactory = vcsEditionRenderFactory;
+    this.vcsChangeMarkerRenderFactory = vcsChangeMarkerRenderFactory;
     this.dialogFactory = dialogFactory;
     this.documentStorage = documentStorage;
     this.editorMultiPartStackPresenter = editorMultiPartStackPresenter;
@@ -716,15 +716,16 @@ public class OrionEditorPresenter extends AbstractEditorPresenter
   public Promise<VcsChangeMarkerRender> getOrCreateVcsMarkRender() {
     return Promises.create(
         (resolve, reject) -> {
+          String vcsCangeMarker = "vcsChangeMarker";
           java.util.Optional<OrionExtRulerOverlay> optional =
               stream(editorWidget.getTextView().getRulers())
-                  .filter(ruler -> "git".equals(ruler.getStyle().getStyleClass()))
+                  .filter(ruler -> vcsCangeMarker.equals(ruler.getStyle().getStyleClass()))
                   .findAny();
           if (optional.isPresent()) {
             resolve.apply(vcsChangeMarkerRender);
           } else {
             OrionStyleOverlay style = OrionStyleOverlay.create();
-            style.setStyleClass("git");
+            style.setStyleClass(vcsCangeMarker);
             OrionExtRulerOverlay.create(
                 editorWidget.getEditor().getAnnotationModel(),
                 style,
@@ -737,8 +738,7 @@ public class OrionEditorPresenter extends AbstractEditorPresenter
                           orionExtRulerOverlay, editorWidget.getEditor());
 
                   vcsChangeMarkerRender =
-                      vcsEditionRenderFactory.create(
-                          orionVcsChangeMarkersRuler, editorWidget.getLineStyler(), document);
+                      vcsChangeMarkerRenderFactory.create(orionVcsChangeMarkersRuler);
                   resolve.apply(vcsChangeMarkerRender);
                 });
           }

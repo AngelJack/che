@@ -31,8 +31,8 @@ import org.eclipse.che.api.git.shared.CheckoutRequest;
 import org.eclipse.che.api.git.shared.CloneRequest;
 import org.eclipse.che.api.git.shared.CommitRequest;
 import org.eclipse.che.api.git.shared.DiffType;
-import org.eclipse.che.api.git.shared.Edition;
 import org.eclipse.che.api.git.shared.FetchRequest;
+import org.eclipse.che.api.git.shared.EditedRegion;
 import org.eclipse.che.api.git.shared.LogResponse;
 import org.eclipse.che.api.git.shared.MergeRequest;
 import org.eclipse.che.api.git.shared.MergeResult;
@@ -75,7 +75,7 @@ public class GitServiceClientImpl implements GitServiceClient {
   private static final String COMMIT = "/git/commit";
   private static final String CONFIG = "/git/config";
   private static final String DIFF = "/git/diff";
-  private static final String EDITIONS = "/git/editions";
+  private static final String EDITS = "/git/edits";
   private static final String FETCH = "/git/fetch";
   private static final String INIT = "/git/init";
   private static final String LOG = "/git/log";
@@ -431,11 +431,11 @@ public class GitServiceClientImpl implements GitServiceClient {
   }
 
   @Override
-  public Promise<List<Edition>> getEditions(Path project, String file) {
-    String url = getWsAgentBaseUrl() + EDITIONS + "?projectPath=" + project + "&file=" + file;
+  public Promise<List<EditedRegion>> getEditions(Path project, String file) {
+    String url = getWsAgentBaseUrl() + EDITS + "?projectPath=" + project + "&file=" + file;
     return asyncRequestFactory
         .createGetRequest(url)
-        .send(dtoUnmarshallerFactory.newListUnmarshaller(Edition.class));
+        .send(dtoUnmarshallerFactory.newListUnmarshaller(EditedRegion.class));
   }
 
   private AsyncRequest diff(

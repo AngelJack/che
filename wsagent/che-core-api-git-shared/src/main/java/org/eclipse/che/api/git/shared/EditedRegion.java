@@ -12,29 +12,34 @@ package org.eclipse.che.api.git.shared;
 
 import org.eclipse.che.dto.shared.DTO;
 
+/**
+ * Represents edited region of the changed file.
+ *
+ * @author Igor Vinokur
+ */
 @DTO
-public interface Edition {
+public interface EditedRegion {
 
   /** First line of the edited region. */
   int getBeginLine();
 
   void setBeginLine(int startLine);
 
-  Edition withBeginLine(int startLine);
+  EditedRegion withBeginLine(int startLine);
 
   /** Last line of the edited region. */
   int getEndLine();
 
   void setEndLine(int endLine);
 
-  Edition withEndLine(int endLine);
+  EditedRegion withEndLine(int endLine);
 
   /** Status of the edition e.g. insertion, modification, deletion. */
   Type getType();
 
   void setType(Type type);
 
-  Edition withType(Type type);
+  EditedRegion withType(Type type);
 
   enum Type {
     INSERTION,
