@@ -228,6 +228,21 @@ export class WorkspaceDetailsController {
       return;
     }
     this.workspaceDetailsService.publishWorkspaceChange(this.workspaceDetails);
+    const failTabs = [];
+    const tabs = Object.keys(this.tab).filter((tabKey: string) => {
+      return !isNaN(parseInt(tabKey, 10));
+    });
+    tabs.forEach((tabKey: string) => {
+      if (this.checkFormsNotValid(tabKey)) {
+        failTabs.push(this.tab[tabKey]);
+      }
+    });
+    if (failTabs.length) {
+      const url = this.$location.absUrl().split('?')[0];
+      this.editModeMessage = `There are errors in the following <a href='${url}?tab=${failTabs[0]}'>${failTabs[0]}</a> tab`;
+      this.showApplyMessage = true;
+      return;
+    }
     this.editModeMessage = 'Changes will be applied and workspace restarted';
     const needRunningStatus = this.workspaceDetailsService.needRunningToUpdate();
     if (needRunningStatus) {
